@@ -11,12 +11,19 @@ In `src/reorder_instances_for_testing.py`, we already selected 100 instances for
 and put them at the beginning of the `Instances` field. 
 Here we will use these 100 instances for all the evaluation tasks and put them in this single reference file.
 """
+current_directory = os.getcwd()
+print(current_directory)
+contents = os.listdir(current_directory)
+print(contents)
 
-tasks_dir = "tasks/"
+#tasks_dir = "tasks/"
+tasks_dir = "gpt3-tasks/"
 num_test_instances = 100
-test_path = "eval/textual_entailment_first10.txt"
+#test_path = "eval/textual_entailment_first10.txt"
+test_path = "eval/textual_entailment_first10_gpt3.txt"
 
-with open("eval/test_references.jsonl", "w") as fout:
+#with open("eval/test_references.jsonl", "w") as fout:
+with open("eval/test_references_gpt3.jsonl", "w") as fout:
     for track in ["default", "xlingual"]:
         # test_tasks = [l.strip() for l in open(f"splits/{track}/test_tasks.txt")]
         test_tasks = [l.strip() for l in open(test_path)]

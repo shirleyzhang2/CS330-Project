@@ -21,7 +21,8 @@ python src/run_s2s.py \
     --add_explanation False \
     --tk_instruct False \
     --data_dir ../eval \
-    --task_dir ../tasks \
+#    --task_dir ../tasks \
+    --task_dir ../gpt3-tasks \
     --output_dir output/textual_entailment/tk-instruct-small-def-pos/ \
     --overwrite_output_dir \
     --cache_dir ./cache/ \
