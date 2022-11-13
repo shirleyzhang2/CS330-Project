@@ -54,7 +54,7 @@ Run `paraphrase_prompts.py` with desired arguments. The script uses `paraphrase.
 
 ### Generate new tasks using paraphrased prompts
 
-Run `generate_gpt3_tasks.py` to fetch paraphrased prompts from `/gpt3-results`, replace original prompts in `/asks` 
+Run `generate_gpt3_tasks.py` to fetch paraphrased prompts from `/gpt3-results`, replace original prompts in `/tasks` 
 with paraphrased prompts, store each new task in `/gpt-tasks`， then return the list of new task names in `/eval/textual_entailment_gpt3.txt`.
 
 ### Create test references for the new tasks
