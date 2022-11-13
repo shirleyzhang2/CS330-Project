@@ -1,5 +1,10 @@
 # CS330-Project
 
+## Data
+- classification task data are adapted from natural-instructions-master
+- selected tasks from [937, 1388] stored on google drive [here](https://drive.google.com/file/d/1HZixR9XLz4X6sQJXIP7viNtPRsx0ZND4/view?usp=share_link)
+
+### Data sample
 First 10 textual entailment tasks: `eval/textual_entailment_first10.txt`
 All textual entailment tasks: `eval/textual_entailment.txt`
 
@@ -26,4 +31,19 @@ source scripts/eval_tk_instruct.sh
 ```
 
 Predictions and metrics are saved at: `Tk-Instruct/output/`
+
+## GPT-3 prompt engineering
+Run `paraphrase_prompts.py` with desired arguments. The script uses `paraphrase.prompt` as its template and stores generated prompts by default at `gpt3-results`. The generated results have the following signature:
+```
+    {
+        "orignal_task": "task*.json",
+        "action": "Paraphrase",
+        "original_prompt": "",
+        "generated_prompts": []
+    }
+```
+
+- dependencies:
+    - `pip install -r requirements.txt`
+    - `export OPENAI_API_KEY=[YOUR_API_KEY]`
 
