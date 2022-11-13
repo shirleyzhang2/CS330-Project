@@ -50,3 +50,53 @@ Run `paraphrase_prompts.py` with desired arguments. The script uses `paraphrase.
     - `pip install -r requirements.txt`
     - `export OPENAI_API_KEY=[YOUR_API_KEY]`
 
+## Run Tk-Instruct with GPT-3 prompts
+
+### Generate new tasks using paraphrased prompts
+
+Run `generate_gpt3_tasks.py` to fetch paraphrased prompts from `/gpt3-results`, replace original prompts in `/asks` 
+with paraphrased prompts, store each new task in `/gpt-tasks`， then return the list of new task names in `/eval/textual_entailment_gpt3.txt`.
+
+### Create test references for the new tasks
+In `/eval/create_reference_file.py`, update `tasks_dir`, `test_path` and save to `eval/test_references_gpt3.jsonl`.
+
+### Run Tk-Instruct inference using paraphrased prompts
+
+Specify paraphrased textual entailment tasks in `Tk-Instruct/src/ni_dataset.py` 
+```
+            datasets.SplitGenerator(
+                name=datasets.Split.TEST,
+                gen_kwargs={
+                    # "path": os.path.join(split_dir, "textual_entailment_first10.txt"), 
+                    # "path": os.path.join(split_dir, "textual_entailment.txt"), 
+                    "path": os.path.join(split_dir, "textual_entailment_gpt3.txt"),
+                    "task_dir": task_dir, 
+                    "max_num_instances_per_task": self.config.max_num_instances_per_eval_task,
+                    "subset": "test"
+                }),
+```
+
+In `scripts/eval_tk_instruct.sh`, replace 
+```
+    --task_dir ../tasks
+```
+with
+```
+    --task_dir ../gpt3-tasks
+```
+
+Specify your own cache location, then run prediction on the paraphrased textual entailment tasks using tkinstruct model: 
+```
+cd Tk-Instruct/
+source scripts/eval_tk_instruct.sh
+```
+Predictions and metrics are saved at: `Tk-Instruct/output/` as before.
+
+
+
+
+
+
+
+
+

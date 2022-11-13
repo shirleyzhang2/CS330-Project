@@ -5,6 +5,7 @@ import argparse
 parser = argparse.ArgumentParser()
 parser.add_argument('-i', "--input", default="tasks", help="input task file or dir containing task files")
 parser.add_argument('-p', "--prompt", default="gpt3-results", help="input paraphrased prompt file or dir containing paraphrased prompt files")
+parser.add_argument('-l', "--list", default="eval/textual_entailment_gpt3.txt", help="output file for list of paraphrased tasks")
 parser.add_argument('-o', "--output", default="gpt3-tasks", help="output dir for tasks with paraphrased prompts")
 args = parser.parse_args()
 
@@ -32,7 +33,7 @@ for task in prompt_paths:
         json.dump(task_dict, open(save_file, 'w'), indent=4)
 
 
-
-
-
-
+with open(args.list, "w") as a:
+    for path, subdirs, files in os.walk(args.output):
+       for filename in files:
+         a.write(str(filename)[:-5] + '\n')
