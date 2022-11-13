@@ -14,7 +14,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument('-i', "--input", help="input task file or dir containing task files")
 parser.add_argument('-o', "--output", default="gpt3-results", help="output dir")
 parser.add_argument('-t', "--template", default="paraphrase.prompt", help="template file")
-parser.add_argument('-a', "--action", default="Paraphrase", help="hint word for GPT-3")
+parser.add_argument('-a', "--action", default="paraphrase", help="hint word for GPT-3")
 parser.add_argument('-n', "--num_generate", type=int, default=5, help="number of paraphrases to generate")
 parser.add_argument("--num_workers", type=int, default=5, help="number of processes used during generation")
 
