@@ -19,7 +19,7 @@ parser.add_argument('-n', "--num_generate", type=int, default=5, help="number of
 parser.add_argument("--num_workers", type=int, default=5, help="number of processes used during generation")
 
 # GPT-3 generation hyperparameters
-parser.add_argument('--engine', type=str, required=True,
+parser.add_argument('--engine', type=str, default='curie',
                     choices=['ada',
                              'text-ada-001',
                              'babbage',
@@ -136,6 +136,8 @@ prompts = [] # templated prompt for gpt3 consisting of task Definition and an ac
 for task_file in task_paths:
     task_dict = json.load(open(task_file, 'r'))
     instruction = "\n".join(task_dict['Definition'])
+    if not instruction.endswith('.'):
+        instruction += '.' # prevent gpt3 generating a dot
     orig_prompts.append(instruction)
     task_name = os.path.basename(task_file)
     task_names.append(task_name)
@@ -154,8 +156,9 @@ for i in range(args.num_generate):
                 partial_result = batch_generate(chunk.tolist(), args, num_processes=args.num_workers)
                 break
             except openai.error.RateLimitError:
-                time.sleep(5)
+                time.sleep(60)
         result += partial_result
+        time.sleep(60)
     results.append(result)
 
 for task_name, orig_prompt, gen_prompts in zip(task_names, orig_prompts, [list(result) for result in zip(*results)]):
