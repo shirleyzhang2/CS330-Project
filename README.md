@@ -2,13 +2,15 @@
 
 ## Data
 - classification task data are adapted from natural-instructions-master
-- selected tasks from [937, 1388] stored on google drive [here](https://drive.google.com/file/d/1HZixR9XLz4X6sQJXIP7viNtPRsx0ZND4/view?usp=share_link)
+- selected tasks from [937, 1388] stored in the `tasks/` folder and on google drive [here](https://drive.google.com/file/d/1HZixR9XLz4X6sQJXIP7viNtPRsx0ZND4/view?usp=share_link)
 
 ### Data sample
 First 10 textual entailment tasks: `eval/textual_entailment_first10.txt`
 All textual entailment tasks: `eval/textual_entailment.txt`
 
 Read from txt and download tasks to `tasks/` folder: `python utils/download_tasks.py`
+
+## Run Tk-Instruct predictions
 
 Specify whether to use full textual entailment tasks or first 10 textual entailment tasks in `Tk-Instruct/src/ni_dataset.py` 
 ```
@@ -24,13 +26,14 @@ Specify whether to use full textual entailment tasks or first 10 textual entailm
 ```
 Specifiy model configuration (`allenai/tk-instruct-small-def-pos` or `allenai/tk-instruct-base-def-pos`) and output directory in `scripts/eval_tk_instruct.sh`
 
-Run prediction on the first 10 textual entailment tasks using tkinstruct model: 
+Run prediction on textual entailment tasks using tkinstruct model: 
 ```
 cd Tk-Instruct/
 source scripts/eval_tk_instruct.sh
 ```
 
 Predictions and metrics are saved at: `Tk-Instruct/output/`
+Note: it seems that `tk-instruct-small-def-pos` actually has a better eval exact match accuracy on textual entailment tasks than the larger `allenai/tk-instruct-base-def-pos` model. 
 
 ## GPT-3 prompt engineering
 Run `paraphrase_prompts.py` with desired arguments. The script uses `paraphrase.prompt` as its template and stores generated prompts by default at `gpt3-results`. The generated results have the following signature:
