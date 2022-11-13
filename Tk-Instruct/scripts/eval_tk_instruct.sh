@@ -2,7 +2,7 @@
 set -x
 
 export CUDA_DEVICE_ORDER="PCI_BUS_ID"
-export TRANSFORMERS_CACHE=/Users/violetyao/.cache/huggingface
+export TRANSFORMERS_CACHE=/home/violetyao/.cache/huggingface
 
 python src/run_s2s.py \
     --do_predict \
@@ -22,7 +22,7 @@ python src/run_s2s.py \
     --tk_instruct False \
     --data_dir ../eval \
     --task_dir ../tasks \
-    --output_dir output/ \
+    --output_dir output/textual_entailment/tk-instruct-small-def-pos/ \
     --overwrite_output_dir \
     --cache_dir ./cache/ \
     --overwrite_cache \
