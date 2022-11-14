@@ -6,6 +6,7 @@
 
 ### Data sample
 First 10 textual entailment tasks: `eval/textual_entailment_first10.txt`
+
 All textual entailment tasks: `eval/textual_entailment.txt`
 
 Read from txt and download tasks to `tasks/` folder: `python utils/download_tasks.py`
@@ -33,7 +34,12 @@ source scripts/eval_tk_instruct.sh
 ```
 
 Predictions and metrics are saved at: `Tk-Instruct/output/`
+
 Note: it seems that `tk-instruct-small-def-pos` actually has a better eval exact match accuracy on textual entailment tasks than the larger `allenai/tk-instruct-base-def-pos` model. 
+
+- dependencies:
+    - `pip install -r requirements.txt`
+    - `pip install -r Tk-Instruct/requirements.txt`
 
 ## GPT-3 prompt engineering
 Run `paraphrase_prompts.py` with desired arguments. The script uses `paraphrase.prompt` as its template and stores generated prompts by default at `gpt3-results`. The generated results have the following signature:
@@ -93,11 +99,27 @@ source scripts/eval_tk_instruct.sh
 Predictions and metrics are saved at: `Tk-Instruct/output/` as before.
 
 ### Run prompt ensemble
-Specify predictions_path and output_path in `Tk-Instruct/src/ensemble_paraphrased_prompts.py`, and then run
+Specify whether to find majority vote or find best paraphrase in `Tk-Instruct/src/ensemble_paraphrased_prompts.py`
+
+Specify input/output paths
+
+Then run
 ```
 cd Tk-Instruct/src
 python ensemble_paraphrased_prompts.py
 ```
+
+### Experiments tracking
+Eval set: all 27 textual entailment tasks (`eval/textual_entailment.txt`)
+
+Metrics: Average Exact Match over the 27 textual entailment tasks
+
+Model: `allenai/tk-instruct-small-def-pos`
+
+| Baseline (original instruction) | Average of 5 paraphrased prompts | Majority vote of 5 paraphrased prompts | Best of 5 paraphrased prompts | 
+| ---- | ---- | ---- | ---- | 
+| 37.1481 | 35.5407 | 36.1481 | 38.1851 |
+
 
 
 
