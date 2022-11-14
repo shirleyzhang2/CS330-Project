@@ -92,7 +92,12 @@ source scripts/eval_tk_instruct.sh
 ```
 Predictions and metrics are saved at: `Tk-Instruct/output/` as before.
 
-
+### Run prompt ensemble
+Specify predictions_path and output_path in `Tk-Instruct/src/ensemble_paraphrased_prompts.py`, and then run
+```
+cd Tk-Instruct/src
+python ensemble_paraphrased_prompts.py
+```
 
 
 
