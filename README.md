@@ -9,6 +9,8 @@ First 10 textual entailment tasks: `eval/textual_entailment_first10.txt`
 
 All textual entailment tasks: `eval/textual_entailment.txt`
 
+Note: task 463, 464, and 534 are removed because they are non-English.
+
 Read from txt and download tasks to `tasks/` folder: `python utils/download_tasks.py`
 
 ## Run Tk-Instruct predictions
@@ -42,6 +44,7 @@ Note: it seems that `tk-instruct-small-def-pos` actually has a better eval exact
     - `pip install -r Tk-Instruct/requirements.txt`
 
 ## GPT-3 prompt engineering
+#### Paraphrase
 Run `paraphrase_prompts.py` with desired arguments. The script uses `paraphrase.prompt` as its template and stores generated prompts by default at `gpt3-results`. The generated results have the following signature:
 ```
     {
@@ -52,21 +55,29 @@ Run `paraphrase_prompts.py` with desired arguments. The script uses `paraphrase.
     }
 ```
 
+#### Augment (append choice explanation to the original instruction)
+Run `choice_expl_prompts.py` with desired arguments. The script uses `choice_expl.prompt` as its template and stores generated prompts by default at `gpt3-augment-results`. 
+The generated results share the above signature.
+
 - dependencies:
     - `pip install -r requirements.txt`
     - `export OPENAI_API_KEY=[YOUR_API_KEY]`
 
 ## Run Tk-Instruct with GPT-3 prompts
 
-### Generate new tasks using paraphrased prompts
-
+### Generate new tasks using GPT-3 paraphrased/augmented prompts
+#### Paraphrase
 Run `generate_gpt3_tasks.py` to fetch paraphrased prompts from `/gpt3-results`, replace original prompts in `/tasks` 
 with paraphrased prompts, store each new task in `/gpt-tasks`， then return the list of new task names in `/eval/textual_entailment_gpt3.txt`.
+
+#### Augment (append choice explanation to the original instruction)
+Run `generate_gpt3_tasks.py` to fetch paraphrased prompts from `/gpt3-augment-results`, replace original prompts in `/tasks` 
+with paraphrased prompts, store each new task in `/gpt-augment-tasks`， then return the list of new task names in `/eval/textual_entailment_gpt3_augment.txt`.
 
 ### Create test references for the new tasks
 In `/eval/create_reference_file.py`, update `tasks_dir`, `test_path` and save to `eval/test_references_gpt3.jsonl`.
 
-### Run Tk-Instruct inference using paraphrased prompts
+### Run Tk-Instruct inference using paraphrased/augmented prompts
 
 Specify paraphrased textual entailment tasks in `Tk-Instruct/src/ni_dataset.py` 
 ```
@@ -75,7 +86,8 @@ Specify paraphrased textual entailment tasks in `Tk-Instruct/src/ni_dataset.py`
                 gen_kwargs={
                     # "path": os.path.join(split_dir, "textual_entailment_first10.txt"), 
                     # "path": os.path.join(split_dir, "textual_entailment.txt"), 
-                    "path": os.path.join(split_dir, "textual_entailment_gpt3.txt"),
+                    "path": os.path.join(split_dir, "textual_entailment_gpt3.txt"), # paraphrase
+                    # "path": os.path.join(split_dir, "textual_entailment_gpt3.txt"), # augment
                     "task_dir": task_dir, 
                     "max_num_instances_per_task": self.config.max_num_instances_per_eval_task,
                     "subset": "test"
@@ -90,8 +102,13 @@ with
 ```
     --task_dir ../gpt3-tasks
 ```
+for paraphrased prompts, or 
+```
+    --task_dir ../gpt3-augment-tasks
+```
+for augmented prompts
 
-Specify your own cache location, then run prediction on the paraphrased textual entailment tasks using tkinstruct model: 
+Specify your own cache location, then run prediction on the paraphrased/augmented textual entailment tasks using tkinstruct model: 
 ```
 cd Tk-Instruct/
 source scripts/eval_tk_instruct.sh
@@ -110,16 +127,17 @@ python ensemble_paraphrased_prompts.py
 ```
 
 ### Experiments tracking
-Eval set: all 27 textual entailment tasks (`eval/textual_entailment.txt`)
 
-Metrics: Average Exact Match over the 27 textual entailment tasks
+Eval set: all 24 English textual entailment tasks (`eval/textual_entailment.txt`) 
+Note: task 463, 464, and 534 are removed because they are non-English.
+
+Metrics: Average Exact Match over the 24 English textual entailment tasks
 
 Model: `allenai/tk-instruct-small-def-pos`
 
-| Baseline (original instruction) | Average of 5 paraphrased prompts | Majority vote of 5 paraphrased prompts | Best of 5 paraphrased prompts | 
-| ---- | ---- | ---- | ---- | 
-| 37.1481 | 35.5407 | 36.1481 | 38.1851 |
-
+| Baseline (original instruction) | Augmented (choice explanation)| Average of 5 paraphrased prompts | Majority vote of 5 paraphrased prompts | Best of 5 paraphrased prompts | 
+| ---- | ---- |  ---- |  ---- | ---- | 
+| 39.5833 | 40.125 | 37.5083 | 38.29 | 40.0416 |
 
 
 
