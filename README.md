@@ -137,7 +137,7 @@ Model: `allenai/tk-instruct-small-def-pos`
 
 | Baseline (original instruction) | Augmented (choice explanation)| Average of 5 paraphrased prompts | Majority vote of 5 paraphrased prompts | Best of 5 paraphrased prompts | 
 | ---- | ---- |  ---- |  ---- | ---- | 
-| 39.5833 | 40.125 | 37.5083 | 38.29 | 40.0416 |
+| 39.5833 | 41.25 | 37.5083 | 38.29 | 40.0416 |
 
 
 
