@@ -9,13 +9,15 @@ import os
 import json
 import time
 import numpy as np
+import math
+import warnings
+import backoff
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-i', "--input", help="input task file or dir containing task files")
 parser.add_argument('-o', "--output", default="gpt3-results", help="output dir")
 parser.add_argument('-t', "--template", default="paraphrase.prompt", help="template file")
-parser.add_argument('-a', "--action", default="paraphrase", help="hint word for GPT-3")
-parser.add_argument('-n', "--num_generate", type=int, default=5, help="number of paraphrases to generate")
+parser.add_argument('-m', "--max_tries", type=int, default=4, help="number of paraphrases to generate")
 parser.add_argument("--num_workers", type=int, default=5, help="number of processes used during generation")
 
 # GPT-3 generation hyperparameters
@@ -38,6 +40,7 @@ parser.add_argument('--presence_penalty', type=float, default=0.0, required=Fals
 parser.add_argument('--stop_tokens', nargs='+', type=str,
                         default=None, required=False, help='Stop tokens for generation')
 args = parser.parse_args()
+MAXIMUM_TRIES_BEFORE_GIVE_UP = args.max_tries * 2
 
 def fill_template(prompt_template_file: str, **prompt_parameter_values) -> str:
     prompt = ''
@@ -50,43 +53,84 @@ def fill_template(prompt_template_file: str, **prompt_parameter_values) -> str:
         prompt = prompt.replace('{'+parameter+'}', value)
     return prompt
 
-def generate(input_text: str, args, postprocess=True, max_tries=1) -> str:
+@backoff.on_exception(backoff.expo, openai.error.RateLimitError)
+def generate_one(input_text: str, args) -> str:
+    generation_output = openai.Completion.create(engine=args.engine,
+                                                 prompt=input_text,
+                                                 max_tokens=max(args.max_tokens, len(input_text.split(' '))),
+                                                 temperature=args.temperature,
+                                                 top_p=args.top_p,
+                                                 frequency_penalty=args.frequency_penalty,
+                                                 presence_penalty=args.presence_penalty,
+                                                 best_of=1,
+                                                 stop=args.stop_tokens,
+                                                 logprobs=0,  # log probability of top tokens
+                                                 )
+    # print('raw generation output = ', generation_output)
+    # print('='*10)
+    generation_output = generation_output['choices'][0]['text']
+    generation_output = generation_output.strip()
+    return generation_output
+
+def generate(input_text: str, args, postprocess=True) -> str:
     """
     text-in-text-out interface to large OpenAI models
     """
     # don't try multiple times if the temperature is 0, because the results will be the same
-    if max_tries > 1 and args.temperature == 0:
-        max_tries = 1
-    # try at most `max_tries` times to get a non-empty output
-    for _ in range(max_tries):
-        generation_output = openai.Completion.create(engine=args.engine,
-                                                     prompt=input_text,
-                                                     max_tokens=max(args.max_tokens, len(input_text.split(' '))),
-                                                     temperature=args.temperature,
-                                                     top_p=args.top_p,
-                                                     frequency_penalty=args.frequency_penalty,
-                                                     presence_penalty=args.presence_penalty,
-                                                     best_of=1,
-                                                     stop=args.stop_tokens,
-                                                     logprobs=0,  # log probability of top tokens
-                                                     )
-        # print('raw generation output = ', generation_output)
-        # print('='*10)
-        generation_output = generation_output['choices'][0]['text']
-        generation_output = generation_output.strip()
+    if args.max_tries > 1:
+        assert args.temperature != 0
+    # try until get max_tries useful prompts
+    outputs = set()
+    for _ in range(MAXIMUM_TRIES_BEFORE_GIVE_UP):
+        generation_output = generate_one(input_text, args)
         if postprocess:
-            generation_output = _postprocess_generations(
-                generation_output)
+            generation_output = _postprocess_generations(generation_output)
         if len(generation_output) > 0:
+            outputs.add(generation_output)
+        if len(outputs) == args.max_tries:
             break
-    return generation_output
+    if len(outputs) < args.max_tries:
+        warnings.warn("Not enough outputs are generated!", DeprecationWarning)
+    return list(outputs)
 
-def batch_generate(input_texts: List[str], args, postprocess=True, max_tries=1, num_processes=5) -> List[str]:
+# def generate_AI21(input_text: str, args, postprocess=True, max_tries=1) -> str:
+#     """
+#     text-in-text-out interface to large AI21 models
+#     """
+    
+#     # don't try multiple times if the temperature is 0, because the results will be the same
+#     if max_tries > 1 and args.temperature == 0:
+#         max_tries = 1
+#     # try at most `max_tries` times to get a non-empty output
+#     for _ in range(max_tries):
+        
+#         response = requests.post(
+#             "https://api.ai21.com/studio/v1/experimental/rewrite",
+#             headers={"Authorization": "Bearer Ekom33MCuYA4G8x84nZkn1CRqGL9ijB6"},
+#             json={
+#                 "text": input_text,
+#                 "intent": "long"
+#             }
+#         )
+        
+#         # print('raw generation output = ', generation_output)
+#         # print('='*10)
+#         # print(response.json())
+#         generation_output = [gen for gen in response.json()['suggestions']['text']]
+#         if len(generation_output) < 1:
+            
+#         if postprocess:
+#             generation_output = _postprocess_generations(
+#                 generation_output)
+#         if len(generation_output) > 0:
+#             break
+#     return generation_output
+
+def batch_generate(input_texts: List[str], args, postprocess=True, num_processes=5) -> List[str]:
     """
     Call OpenAI's API in parallel, since each call to the biggest model takes ~1 second to return results
     """
-    f = partial(generate, args=args,
-                postprocess=postprocess, max_tries=max_tries)
+    f = partial(generate, args=args, postprocess=postprocess)
     with Pool(num_processes) as p:
         worker_outputs = list(
             tqdm(p.imap(f, input_texts), total=len(input_texts)))
@@ -99,24 +143,19 @@ def _postprocess_generations(generation_output: str) -> str:
     # replace all whitespaces with a single space
     generation_output = ' '.join(generation_output.split())
 
-    # remove extra dialog turns, if any
-    if generation_output.find('You: ') > 0:
-        generation_output = generation_output[:generation_output.find(
-            'You: ')]
-    if generation_output.find('They: ') > 0:
-        generation_output = generation_output[:generation_output.find(
-            'They: ')]
-
     # delete half sentences
     generation_output = generation_output.strip()
     if len(generation_output) == 0:
         return generation_output
 
     if generation_output[-1] not in {'.', '!', '?'}:
-        last_sentence_end = max(generation_output.find(
-            '.'), generation_output.find('!'), generation_output.find('?'))
+        last_sentence_end = max(generation_output.find('.'), generation_output.find('!'), generation_output.find('?'))
         if last_sentence_end > 0:
             generation_output = generation_output[:last_sentence_end+1]
+
+    # remove extraneously generated outputs
+    if 'Original:' in generation_output and 'Paraphrase:' in generation_output:
+        generation_output = generation_output[:generation_output.find('Original:')]
 
     return generation_output
 
@@ -132,7 +171,7 @@ else:
 
 task_names = []
 orig_prompts = [] # the Definition in the original task
-prompts = [] # templated prompt for gpt3 consisting of task Definition and an action word
+prompts = [] # templated prompt for gpt3
 for task_file in task_paths:
     task_dict = json.load(open(task_file, 'r'))
     instruction = "\n".join(task_dict['Definition'])
@@ -141,32 +180,17 @@ for task_file in task_paths:
     orig_prompts.append(instruction)
     task_name = os.path.basename(task_file)
     task_names.append(task_name)
-    prompt = fill_template(args.template, instruction=instruction, action=args.action)
+    prompt = fill_template(args.template, instruction=instruction)
     prompts.append(prompt)
 
-results = []
-for i in range(args.num_generate):
-    print(f"Running {i}th round of generation on all tasks")
-    num_chunks = len(prompts) // 60 + 1
-    chunks = np.array_split(prompts, num_chunks)
-    result = []
-    for chunk in chunks:
-        while True:
-            try:
-                partial_result = batch_generate(chunk.tolist(), args, num_processes=args.num_workers)
-                break
-            except openai.error.RateLimitError:
-                time.sleep(60)
-        result += partial_result
-        time.sleep(60)
-    results.append(result)
+results = batch_generate(prompts, args, num_processes=args.num_workers)
 
-for task_name, orig_prompt, gen_prompts in zip(task_names, orig_prompts, [list(result) for result in zip(*results)]):
+for task_name, orig_prompt, gen_prompts in zip(task_names, orig_prompts, results):
     data_dict = {
         'orignal_task': task_name,
-        'action': args.action,
+        'template': args.template,
         'original_prompt': orig_prompt,
         'generated_prompts': gen_prompts
     }
-    save_file = os.path.join(args.output, args.action.lower()+'_'+task_name)
+    save_file = os.path.join(args.output, args.template+'_'+task_name)
     json.dump(data_dict, open(save_file, 'w'), indent=4)
