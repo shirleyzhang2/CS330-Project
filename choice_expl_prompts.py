@@ -98,12 +98,15 @@ for task_file in task_paths:
         example_explanation = first_example["explanation"]
         examples_prompt += "Explanation: " + example_explanation + "\n"
         num_examples += 1
-    classes_prompt = ", ".join(pos_examples_by_class.keys()).strip(", ")
+    classes_prompt = ""
+    for cls in pos_examples_by_class.keys():
+        classes_prompt += f"'{cls}', "
+    classes_prompt = classes_prompt.strip(", ")
     
     orig_prompts.append(instruction)
     task_name = os.path.basename(task_file)
     task_names.append(task_name)
-    prompt = fill_template(args.template, examples=examples_prompt, classes=classes_prompt)
+    prompt = fill_template(args.template, defintion=instruction, examples=examples_prompt, classes=classes_prompt)
     prompts.append(prompt)
     result = generate_one(prompt, args)
     result = result.split("one by one:")[-1].replace("\n", " ")
