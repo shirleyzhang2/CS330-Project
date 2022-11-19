@@ -16,12 +16,12 @@ import backoff
 parser = argparse.ArgumentParser()
 parser.add_argument('-i', "--input", help="input task file or dir containing task files")
 parser.add_argument('-o', "--output", default="gpt3-results", help="output dir")
-parser.add_argument('-t', "--template", default="paraphrase.prompt", help="template file")
+parser.add_argument("--template", default="paraphrase.prompt", help="template file")
 parser.add_argument('-m', "--max_tries", type=int, default=4, help="number of paraphrases to generate")
 parser.add_argument("--num_workers", type=int, default=5, help="number of processes used during generation")
 
 # GPT-3 generation hyperparameters
-parser.add_argument('--engine', type=str, default='curie',
+parser.add_argument('--engine', type=str, default='text-davinci-002',
                     choices=['ada',
                              'text-ada-001',
                              'babbage',
@@ -32,6 +32,8 @@ parser.add_argument('--engine', type=str, default='curie',
                              'text-davinci-001',
                              'text-davinci-002'],
                     help='The GPT-3 engine to use.')  # choices are from the smallest to the largest model
+parser.add_argument('-t', '--max_tasks', type=int, default=None, help='Maximum number of tasks to process, if provided and\
+                                                            smaller than input folder, random sampling is performed.')
 parser.add_argument('--max_tokens', type=int, default=40, required=False, help='')
 parser.add_argument('--temperature', type=float, default=0.8, required=False, help='')
 parser.add_argument('--top_p', type=float, default=0.9, required=False, help='')
@@ -169,6 +171,10 @@ if os.path.isdir(args.input):
 else:
     task_paths = [args.input]
 
+if args.max_tasks is not None and args.max_tasks < len(task_paths):
+    rng = np.random.default_rng()
+    task_paths = rng.choice(task_paths, size=args.max_tasks, replace=False).tolist()
+
 task_names = []
 orig_prompts = [] # the Definition in the original task
 prompts = [] # templated prompt for gpt3
@@ -183,7 +189,11 @@ for task_file in task_paths:
     prompt = fill_template(args.template, instruction=instruction)
     prompts.append(prompt)
 
-results = batch_generate(prompts, args, num_processes=args.num_workers)
+#results = batch_generate(prompts, args, num_processes=args.num_workers)
+results = []
+for prompt in tqdm(prompts):
+    partial_result = generate(prompt, args)
+    results.append(partial_result)
 
 for task_name, orig_prompt, gen_prompts in zip(task_names, orig_prompts, results):
     # TODO: could also save the args

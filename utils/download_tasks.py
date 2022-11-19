@@ -1,7 +1,7 @@
 import wget
 
-tasks_txt = "./eval/textual_entailment_first10.txt"
-output_directory = "./tasks/"
+tasks_txt = "./train_tasks.txt"
+output_directory = "./tk-instruct-train-tasks/"
 url_base = "https://raw.githubusercontent.com/allenai/natural-instructions/master/tasks/"
 
 def map_to_url(filename):
