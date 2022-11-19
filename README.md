@@ -135,9 +135,9 @@ Metrics: Average Exact Match over the 24 English textual entailment tasks
 
 Model: `allenai/tk-instruct-small-def-pos`
 
-| Baseline (original instruction) | Augmented (choice explanation)| Average of 16 paraphrased prompts | Majority vote of 16 paraphrased prompts | Best of 16 paraphrased prompts | 
-| ---- | ---- |  ---- |  ---- | ---- | 
-| 39.5833 | 41.25 | 40.2188 | 40.0833 | 43.8333 |
+| Baseline (original instruction) | Augmented (choice explanation)| Average of 16 paraphrased prompts | Majority vote of 16 paraphrased prompts | Best of 16 paraphrased prompts | Worst of 16 paraphrased prompts | 
+| ---- | ---- |  ---- |  ---- | ---- | ---- | 
+| 39.5833 | 41.25 | 40.2188 | 40.0833 | 43.8333 | 37.2916 | 
 
 
 

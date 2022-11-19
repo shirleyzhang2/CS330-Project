@@ -8,7 +8,7 @@ from compute_metrics import compute_grouped_metrics
 parser = argparse.ArgumentParser()
 parser.add_argument('-p', "--predictions_path", default="../output/textual_entailment/tk-instruct-small-def-pos/predict_eval_predictions_all_paraphrases.jsonl", help="input path to load predictions jsonl for all paraphrased prompts")
 parser.add_argument('-m', "--metrics_path", default="../output/textual_entailment/tk-instruct-small-def-pos/predict_results_all_paraphrases.json", help="input path to load metrics json for all paraphrased prompts")
-parser.add_argument('-o', "--output_path", default="../output/textual_entailment/tk-instruct-small-def-pos/predict_results_ensemble_avg_k=1.json", help="output path to save metrics, e.g. best, ensemble, k_random_avg")
+parser.add_argument('-o', "--output_path", default="../output/textual_entailment/tk-instruct-small-def-pos/predict_results_best.json", help="output path to save metrics, e.g. best, ensemble, k_random_avg")
 parser.add_argument('-k', "--k", default=1, help="number of paraphrased prompts to sample")
 args = parser.parse_args()
 
@@ -78,6 +78,33 @@ def find_best_paraphrase_metrics(metrics_path, output_path, k):
     with open(output_path, 'w') as output_file:
         json.dump(best_metrics_by_task, output_file, indent=4)
 
+def find_worst_paraphrase_metrics(metrics_path, output_path, k):
+    metrics = json.load(open(metrics_path))
+    # group by tasks
+    metrics_by_task = {}
+    for key, value in metrics.items():
+        if not key.startswith("predict_exact_match_for_task"):
+            continue
+        task = key.split("_gpt")[0]
+        if task in metrics_by_task:
+            metrics_by_task[task].append(value)
+        else:
+            metrics_by_task[task] = [value]
+    best_metrics_by_task = {}
+    exact_match_total = []
+    for task, values in metrics_by_task.items():
+        # downsample
+        sampled_values = random.sample(values, k)
+        max_value = min(sampled_values)
+        best_metrics_by_task[task] = max_value
+        exact_match_total.append(max_value)
+    
+    exact_match = sum(exact_match_total) / len(exact_match_total)
+    best_metrics_by_task["exact_match"] = exact_match
+
+    with open(output_path, 'w') as output_file:
+        json.dump(best_metrics_by_task, output_file, indent=4)
+
 def find_k_paraphrase_avg_metrics(metrics_path, output_path, k):
     metrics = json.load(open(metrics_path))
     # group by tasks
@@ -111,7 +138,10 @@ if __name__=="__main__":
     #find_majority_vote_metrics(args.predictions_path, args.output_path, args.k)
 
     # find best paraphrase
-    #find_best_paraphrase_metrics(args.metrics_path, args.output_path, args.k)
+    find_best_paraphrase_metrics(args.metrics_path, args.output_path, args.k)
+
+    # find worst paraphrase
+    # find_worst_paraphrase_metrics(args.metrics_path, args.output_path, args.k)
 
     # find average of k randomly sampled paraphrase
-    find_k_paraphrase_avg_metrics(args.metrics_path, args.output_path, k=args.k)
+    # find_k_paraphrase_avg_metrics(args.metrics_path, args.output_path, k=args.k)
