@@ -6,6 +6,7 @@ from functools import partial
 import math
 import argparse
 import os
+import shutil
 import json
 import time
 import numpy as np
@@ -33,7 +34,8 @@ parser.add_argument('--engine', type=str, default='text-davinci-002',
                              'text-davinci-002'],
                     help='The GPT-3 engine to use.')  # choices are from the smallest to the largest model
 parser.add_argument('-t', '--max_tasks', type=int, default=None, help='Maximum number of tasks to process, if provided and\
-                                                            smaller than input folder, random sampling is performed.')
+                                                            smaller than input folder, random sampling is performed. The \
+                                                            selected tasks are copied to the "selected_tasks" folder.')
 parser.add_argument('--max_tokens', type=int, default=40, required=False, help='')
 parser.add_argument('--temperature', type=float, default=0.8, required=False, help='')
 parser.add_argument('--top_p', type=float, default=0.9, required=False, help='')
@@ -174,6 +176,13 @@ else:
 if args.max_tasks is not None and args.max_tasks < len(task_paths):
     rng = np.random.default_rng()
     task_paths = rng.choice(task_paths, size=args.max_tasks, replace=False).tolist()
+    if not os.path.exists('selected_tasks'):
+        os.makedirs('selected_tasks')
+    for task_path in task_paths:
+        folder, file = os.path.split(task_path)
+        folder, par = os.path.split(folder)
+        dst = os.path.join(folder, 'selected_tasks', file)
+        shutil.copy(task_path, dst)
 
 task_names = []
 orig_prompts = [] # the Definition in the original task
