@@ -2,7 +2,11 @@ import os
 import shutil
 
 src_dir = 'tk-instruct-train-tasks'
-dst_dir = 'classfication_tasks'
+dst_dir = 'tk-instruct-train-classfication-tasks'
+
+if not os.path.exists(dst_dir):
+    os.mkdir(dst_dir)
+    
 for file in os.listdir(src_dir):
     if 'classification' not in file:
         continue
