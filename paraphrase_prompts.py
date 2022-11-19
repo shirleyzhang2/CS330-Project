@@ -200,18 +200,24 @@ for task_file in task_paths:
 
 #results = batch_generate(prompts, args, num_processes=args.num_workers)
 for i, prompt in enumerate(tqdm(prompts)):
-    task_name = task_names[i]
-    orig_prompt = orig_prompts[i]
-    gen_prompts = generate(prompt, args)
-    data_dict = {
-        'orignal_task': task_name,
-        'engine': args.engine,
-        'template': args.template,
-        'original_prompt': orig_prompt,
-        'generated_prompts': gen_prompts
-    }
-    save_file = os.path.join(args.output, args.engine+'_'+args.template+'_'+task_name)
-    json.dump(data_dict, open(save_file, 'w'), indent=4)
+    try:
+        task_name = task_names[i]
+        orig_prompt = orig_prompts[i]
+        gen_prompts = generate(prompt, args)
+        data_dict = {
+            'orignal_task': task_name,
+            'engine': args.engine,
+            'template': args.template,
+            'original_prompt': orig_prompt,
+            'generated_prompts': gen_prompts
+        }
+        save_file = os.path.join(args.output, args.engine+'_'+args.template+'_'+task_name)
+        json.dump(data_dict, open(save_file, 'w'), indent=4)
+    except KeyboardInterrupt:
+        break
+    except Exception as e:
+        print(e)
+        continue
 
 # results = []
 # for task_name, orig_prompt, gen_prompts in zip(task_names, orig_prompts, results):
