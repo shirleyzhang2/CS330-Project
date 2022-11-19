@@ -199,13 +199,10 @@ for task_file in task_paths:
     prompts.append(prompt)
 
 #results = batch_generate(prompts, args, num_processes=args.num_workers)
-results = []
-for prompt in tqdm(prompts):
-    partial_result = generate(prompt, args)
-    results.append(partial_result)
-
-for task_name, orig_prompt, gen_prompts in zip(task_names, orig_prompts, results):
-    # TODO: could also save the args
+for i, prompt in enumerate(tqdm(prompts)):
+    task_name = task_names[i]
+    orig_prompt = orig_prompts[i]
+    gen_prompts = generate(prompt, args)
     data_dict = {
         'orignal_task': task_name,
         'engine': args.engine,
@@ -215,3 +212,16 @@ for task_name, orig_prompt, gen_prompts in zip(task_names, orig_prompts, results
     }
     save_file = os.path.join(args.output, args.engine+'_'+args.template+'_'+task_name)
     json.dump(data_dict, open(save_file, 'w'), indent=4)
+
+# results = []
+# for task_name, orig_prompt, gen_prompts in zip(task_names, orig_prompts, results):
+#     # TODO: could also save the args
+#     data_dict = {
+#         'orignal_task': task_name,
+#         'engine': args.engine,
+#         'template': args.template,
+#         'original_prompt': orig_prompt,
+#         'generated_prompts': gen_prompts
+#     }
+#     save_file = os.path.join(args.output, args.engine+'_'+args.template+'_'+task_name)
+#     json.dump(data_dict, open(save_file, 'w'), indent=4)
