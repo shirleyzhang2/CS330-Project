@@ -76,7 +76,7 @@ def generate_one(input_text: str, args) -> str:
     generation_output = generation_output.strip()
     return generation_output
 
-def generate(input_text: str, args, postprocess=True) -> str:
+def generate(input_text: str, args, existing=[], postprocess=True) -> str:
     """
     text-in-text-out interface to large OpenAI models
     """
@@ -84,17 +84,19 @@ def generate(input_text: str, args, postprocess=True) -> str:
     if args.max_tries > 1:
         assert args.temperature != 0
     # try until get max_tries useful prompts
-    outputs = set()
-    for _ in range(MAXIMUM_TRIES_BEFORE_GIVE_UP):
+    outputs = set(existing)
+    if len(outputs) > 0:
+        args.temperature = 0.9 # increase temperature to increase chance of success
+    while True:
+        if len(outputs) >= args.max_tries:
+            break
         generation_output = generate_one(input_text, args)
         if postprocess:
             generation_output = _postprocess_generations(generation_output)
         if len(generation_output) > 0:
             outputs.add(generation_output)
-        if len(outputs) == args.max_tries:
-            break
-    if len(outputs) < args.max_tries:
-        warnings.warn("Not enough outputs are generated!", DeprecationWarning)
+    # if len(outputs) < args.max_tries:
+    #     warnings.warn("Not enough outputs are generated!", DeprecationWarning)
     return list(outputs)
 
 # def generate_AI21(input_text: str, args, postprocess=True, max_tries=1) -> str:
@@ -203,7 +205,15 @@ for i, prompt in enumerate(tqdm(prompts)):
     try:
         task_name = task_names[i]
         orig_prompt = orig_prompts[i]
-        gen_prompts = generate(prompt, args)
+        save_file = os.path.join(args.output, args.engine+'_'+args.template+'_'+task_name)
+        
+        if os.path.exists(save_file):
+            existing = json.load(open(save_file, 'r'))['generated_prompts']
+            if len(existing) >= args.max_tries:
+                continue
+            
+        gen_prompts = generate(prompt, args, existing=existing)
+        
         data_dict = {
             'orignal_task': task_name,
             'engine': args.engine,
@@ -211,7 +221,6 @@ for i, prompt in enumerate(tqdm(prompts)):
             'original_prompt': orig_prompt,
             'generated_prompts': gen_prompts
         }
-        save_file = os.path.join(args.output, args.engine+'_'+args.template+'_'+task_name)
         json.dump(data_dict, open(save_file, 'w'), indent=4)
     except KeyboardInterrupt:
         break
