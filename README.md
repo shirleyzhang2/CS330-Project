@@ -67,15 +67,15 @@ The generated results share the above signature.
 
 ### Generate new tasks using GPT-3 paraphrased/augmented prompts
 #### Paraphrase
-Run `generate_gpt3_tasks.py` to fetch paraphrased prompts from `/gpt3-results`, replace original prompts in `/tasks` 
-with paraphrased prompts, store each new task in `/gpt-tasks`， then return the list of new task names in `/eval/textual_entailment_gpt3.txt`.
+Run `generate_gpt3_tasks.py` to fetch paraphrased prompts from `/gpt3-paraphrase-results-tk-instruct-train`, replace original prompts in `/tk-instruct-train-classfication-tasks` 
+with paraphrased prompts, store each new task in `/gpt3-paraphrase-tasks-tk-instruct-train`， then return the list of new task names in `eval/textual_entailment_gpt3_paraphrase.txt`.
 
 #### Augment (append choice explanation to the original instruction)
 Run `generate_gpt3_tasks.py` to fetch paraphrased prompts from `/gpt3-augment-results`, replace original prompts in `/tasks` 
 with paraphrased prompts, store each new task in `/gpt-augment-tasks`， then return the list of new task names in `/eval/textual_entailment_gpt3_augment.txt`.
 
 ### Create test references for the new tasks
-In `/eval/create_reference_file.py`, update `tasks_dir`, `test_path` and save to `eval/test_references_gpt3.jsonl`.
+In `/eval/create_reference_file.py`, update `tasks_dir`, `test_path` and save to `eval/test_references_gpt3_paraphrase.jsonl`.
 
 ### Run Tk-Instruct inference using paraphrased/augmented prompts
 

@@ -16,10 +16,10 @@ Here we will use these 100 instances for all the evaluation tasks and put them i
 tasks_dir = "gpt3-tasks/"
 num_test_instances = 100
 #test_path = "eval/textual_entailment_first10.txt"
-test_path = "eval/textual_entailment_gpt3.txt"
+test_path = "eval/textual_entailment_gpt3_paraphrase.txt"
 
 #with open("eval/test_references.jsonl", "w") as fout:
-with open("eval/test_references_gpt3.jsonl", "w") as fout:
+with open("eval/test_references_gpt3_paraphrase.jsonl", "w") as fout:
     for track in ["default", "xlingual"]:
         # test_tasks = [l.strip() for l in open(f"splits/{track}/test_tasks.txt")]
         test_tasks = [l.strip() for l in open(test_path)]
