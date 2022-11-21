@@ -207,11 +207,12 @@ for i, prompt in enumerate(tqdm(prompts)):
         orig_prompt = orig_prompts[i]
         save_file = os.path.join(args.output, args.engine+'_'+args.template+'_'+task_name)
         
+        existing = []
         if os.path.exists(save_file):
             existing = json.load(open(save_file, 'r'))['generated_prompts']
             if len(existing) >= args.max_tries:
                 continue
-            
+        
         gen_prompts = generate(prompt, args, existing=existing)
         
         data_dict = {
