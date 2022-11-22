@@ -2,7 +2,7 @@
 set -x
 
 export CUDA_DEVICE_ORDER="PCI_BUS_ID"
-export TRANSFORMERS_CACHE=/home/yizhongw/.cache/huggingface
+export TRANSFORMERS_CACHE=/home/zhan4532/.cache/huggingface
 
 port=$(shuf -i25000-30000 -n1)
 
@@ -10,7 +10,7 @@ deepspeed --master_port $port src/run_s2s.py \
     --do_train \
     --do_predict \
     --predict_with_generate \
-    --model_name_or_path google/t5-xl-lm-adapt \
+    --model_name_or_path allenai/tk-instruct-small-def-pos \
     --max_source_length 1024 \
     --max_target_length 128 \
     --generation_max_length 128 \
@@ -22,9 +22,9 @@ deepspeed --master_port $port src/run_s2s.py \
     --num_neg_examples 0 \
     --add_explanation False \
     --tk_instruct False \
-    --data_dir data/splits/default \
-    --task_dir data/tasks \
-    --output_dir output/ \
+    --data_dir splits \
+    --task_dir gpt3-paraphrase-tasks-tk-instruct-train \
+    --output_dir output/finetune \
     --overwrite_output_dir \
     --cache_dir ./cache/ \
     --overwrite_cache \
@@ -42,4 +42,4 @@ deepspeed --master_port $port src/run_s2s.py \
     --save_steps 2500 \
     --deepspeed ds_configs/stage2.config \
     --bf16 \
-    --run_name t5-experiment
+    --run_name gpt3-paraphrase-experiment

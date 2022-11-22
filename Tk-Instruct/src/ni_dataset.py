@@ -134,11 +134,11 @@ class NaturalInstructions(datasets.GeneratorBasedBuilder):
             datasets.SplitGenerator(
                 name=datasets.Split.TEST,
                 gen_kwargs={
-                    # "path": os.path.join(split_dir, "test_tasks.txt"), 
+                    "path": os.path.join(split_dir, "test_tasks.txt"),
                     # "path": os.path.join(split_dir, "textual_entailment_first10.txt"),
                     # "path": os.path.join(split_dir, "textual_entailment_gpt3_paraphrase.txt"),
                     # "path": os.path.join(split_dir, "textual_entailment_gpt3_augment.txt"),
-                    "path": os.path.join(split_dir, "tk_instruct_train_gpt3_paraphrase.txt"),
+                    # "path": os.path.join(split_dir, "tk_instruct_train_gpt3_paraphrase.txt"),
                     "task_dir": task_dir, 
                     "max_num_instances_per_task": self.config.max_num_instances_per_eval_task,
                     "subset": "test"
