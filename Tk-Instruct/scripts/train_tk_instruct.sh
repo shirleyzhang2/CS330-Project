@@ -22,9 +22,9 @@ deepspeed --master_port $port src/run_s2s.py \
     --num_neg_examples 0 \
     --add_explanation False \
     --tk_instruct False \
-    --data_dir splits \
-    --task_dir gpt3-paraphrase-tasks-tk-instruct-train \
-    --output_dir output/finetune \
+    --data_dir ../splits \
+    --task_dir ../gpt3-paraphrase-tasks-tk-instruct-train \
+    --output_dir ../output/finetune \
     --overwrite_output_dir \
     --cache_dir ./cache/ \
     --overwrite_cache \
@@ -41,5 +41,4 @@ deepspeed --master_port $port src/run_s2s.py \
     --save_strategy steps \
     --save_steps 2500 \
     --deepspeed ds_configs/stage2.config \
-    --bf16 \
-    --run_name gpt3-paraphrase-experiment
+    --run_name tk-finetune-experiment
