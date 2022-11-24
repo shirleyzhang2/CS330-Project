@@ -25,7 +25,6 @@ deepspeed --master_port $port src/run_s2s.py \
     --data_dir ../splits \
     --task_dir ../gpt3-paraphrase-tasks-tk-instruct-train \
     --output_dir ../output/finetune \
-    --overwrite_output_dir \
     --cache_dir ./cache/ \
     --overwrite_cache \
     --per_device_train_batch_size 1 \
