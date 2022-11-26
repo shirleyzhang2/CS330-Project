@@ -160,6 +160,17 @@ In the first attempt, the default split was chosen to be 80-10-10 with random sa
 Run `splits/make_splits_v2.py` to split this dataset for training and testing (no validation). First 80% of tasks are used for training and last 20% of tasks are used for testing. A list of task names are saved in files `train_tasks_v2.txt`, `dev_tasks_v2.txt`, and `test_tasks_v2.txt` respectively.
 
 Training in progress...
+### Train prompt quality classification/regression model
+Preprocess paraphrases from predict_results.json:
+```
+cd Tk-Instruct/src/
+python Tk-Instruct/src/ensemble_paraphrased_prompts.py
+```
+
+Specify task type (classification or regression) in `train_prompt_quality_classifier.py`. Load training data from `prompt_quality_data/` and run training:
+```
+python train_prompt_quality_classifier.py
+```
 
 ### Experiments tracking
 
@@ -175,7 +186,16 @@ Model: `allenai/tk-instruct-small-def-pos`
 | 39.5833 | 41.25 | 40.2188 | 40.0833 | 43.8333 | 37.2916 | 
 
 
+#### Prompt Quality Model
 
+Evaluation loss of regression and classification model are both diverging, which indicates that there might not exist some rule to tell whether it is a good paraphrase or not. 
+
+<img width="700" alt="Screen Shot 2022-11-26 at 3 43 34 PM" src="https://user-images.githubusercontent.com/40456127/204085049-dcf3deff-bcd5-4f3d-b36c-2c718e6fd045.png">
+
+#### Semantic textual similarity between paraphrase and original instruction vs exact match accuracy
+Command: `python semantic_textual_similarity.py`
+
+There is a minor positive correlation of 0.05815013. 
 
 
 
