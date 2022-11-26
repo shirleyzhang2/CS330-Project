@@ -182,6 +182,11 @@ Evaluation loss of regression and classification model are both diverging, which
 
 <img width="700" alt="Screen Shot 2022-11-26 at 3 43 34 PM" src="https://user-images.githubusercontent.com/40456127/204085049-dcf3deff-bcd5-4f3d-b36c-2c718e6fd045.png">
 
+#### Semantic textual similarity between paraphrase and original instruction vs exact match accuracy
+Command: `python semantic_textual_similarity.py`
+
+There is a minor positive correlation of 0.05815013. 
+
 
 
 
