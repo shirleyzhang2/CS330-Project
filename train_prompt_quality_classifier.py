@@ -15,6 +15,8 @@ os.environ["WANDB_DISABLED"] = "true"
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
 def find_value_std(value, mean, std):
+    if std == 0:
+        return 0
     if value > mean:
         return (value - mean) / std
     else:
