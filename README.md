@@ -78,8 +78,7 @@ with paraphrased prompts, store each new task in `/gpt-augment-tasks`， then re
 In `/eval/create_reference_file.py`, update `tasks_dir`, `test_path` and save to `eval/test_references_gpt3_paraphrase.jsonl`.
 
 ### Run Tk-Instruct inference using paraphrased/augmented prompts
-
-Specify paraphrased textual entailment tasks in `Tk-Instruct/src/ni_dataset.py` 
+Specify paraphrased textual entailment tasks in `Tk-Instruct/src/ni_dataset.py`.
 ```
             datasets.SplitGenerator(
                 name=datasets.Split.TEST,
@@ -125,6 +124,31 @@ Then run
 cd Tk-Instruct/src
 python ensemble_paraphrased_prompts.py
 ```
+
+Note: Remember to set argument `-k` to the desired number of prompts to include. Set `k` to be equal to the total number of prompts to include all prompts in the ensemble, or smaller than the total for random downsampling. 
+
+### Train Tk-Instruct
+
+Finetune Tk-Instruct on dataset `/gpt3-paraphrase-tasks-tk-instruct-train`.
+
+Run `splits/make_splits.py` to split this dataset for training, validation (optional), and testing. A list of task names are saved in files `train_tasks.txt`, `dev_tasks.txt`, and `test_tasks.txt` respectively. Run `splits/save_tests.py` if you want to save the test dataset to a separate folder.
+
+(Note: The default split is 80-10-10 with random sampling. This means that very similar tasks (i.e., same task with different paraphrased prompts) can be present in both the training and test set. It may be beneficial to use completely different tasks for testing in the next iteration.)
+
+Specify the filenames in the `_split_generators` function in `Tk-Instruct/src/ni_dataset.py`.
+
+Specifiy model configuration (`allenai/tk-instruct-small-def-pos`) and output directory in `scripts/train_tk_instruct.sh`. The `-bfloat16` tag is removed from this script and from the config file due to Nvidia M60 GPU limitations.
+
+Fine-tune tkinstruct model on paraphrased prompts: 
+```
+cd Tk-Instruct/
+source scripts/train_tk_instruct.sh
+```
+Training metrics and results are saved at: `/output/finetune`. Note that some files (e.g., model checkpoints and .jsonl) are too large to save in Github.
+
+### Compare effect of fine-tuning Tk-Instruct
+
+The prediction results on `test_tasks` from the original and finetuned Tk-Instruct are stored in `Tk-Instruct/output/gpt3-paraphrase-tasks-tk-instruct-train-test` `Tk-Instruct/output/gpt3-paraphrase-tasks-tk-instruct-train-test-finetuned`.
 
 ### Experiments tracking
 
