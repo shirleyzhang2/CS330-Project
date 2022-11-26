@@ -8,7 +8,7 @@ python src/run_s2s.py \
     --do_predict \
     --predict_with_generate \
     --evaluation_strategy "no" \
-    --model_name_or_path allenai/tk-instruct-small-def-pos \
+    --model_name_or_path ../output/finetune/checkpoint-120000 \
     --max_source_length 1024 \
     --max_target_length 128 \
     --generation_max_length 128 \
@@ -20,9 +20,9 @@ python src/run_s2s.py \
     --num_neg_examples 0 \
     --add_explanation False \
     --tk_instruct False \
-    --data_dir ../eval \
-    --task_dir ../gpt3-tasks \
-    --output_dir output/textual_entailment/tk-instruct-small-def-pos/ \
+    --data_dir ../test_splits \
+    --task_dir ../gpt3-paraphrase-tasks-tk-instruct-train-test \
+    --output_dir output/gpt3-paraphrase-tasks-tk-instruct-train-test-finetuned \
     --overwrite_output_dir \
     --cache_dir ./cache/ \
     --overwrite_cache \
