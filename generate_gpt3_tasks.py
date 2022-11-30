@@ -5,8 +5,8 @@ import argparse
 parser = argparse.ArgumentParser()
 parser.add_argument('-i', "--input", default="tk-instruct-train-classfication-tasks", help="input task file or dir containing task files")
 parser.add_argument('-p', "--prompt", default="gpt3-paraphrase-results-tk-instruct-train", help="input paraphrased prompt file or dir containing paraphrased prompt files")
-parser.add_argument('-l', "--list", default="eval/textual_entailment_gpt3_paraphrase.txt", help="output file for list of paraphrased tasks")
-parser.add_argument('-o', "--output", default="gpt3-paraphrase-tasks-tk-instruct-train", help="output dir for tasks with paraphrased prompts")
+parser.add_argument('-l', "--list", default="eval/gpt3-paraphrase-results-tk-instruct-train.txt", help="output file for list of paraphrased tasks")
+parser.add_argument('-o', "--output", default="gpt3-paraphrase-tasks-tk-instruct", help="output dir for tasks with paraphrased prompts")
 parser.add_argument('-e', "--engine", default="text-davinci-002", help="GPT3 engine used for generating paraphrase/augmentation")
 args = parser.parse_args()
 
@@ -41,6 +41,7 @@ for task in prompt_paths:
 
 
 with open(args.list, "w") as a:
-    for path, subdirs, files in os.walk(args.output):
-       for filename in files:
+    # for path, subdirs, files in os.walk(args.output):
+    #    for filename in files:
+      for filename in sorted(os.listdir(args.output)):
          a.write(str(filename)[:-5] + '\n')

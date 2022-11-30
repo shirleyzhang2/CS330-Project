@@ -53,6 +53,8 @@ from ni_collator import DataCollatorForNI
 from ni_trainer import NITrainer, DenserEvalCallback
 from compute_metrics import compute_metrics, compute_grouped_metrics
 
+os.environ["WANDB_DISABLED"] = "true"
+
 set_progress_bar_enabled(False)
 logger = logging.getLogger(__name__)
 
@@ -436,7 +438,8 @@ def main():
     )
     # we don't want to remove unused columns because we will prepare each batch during training, 
     # and some of the information will aslo be used in evaluation.
-    training_args.remove_unused_columns = False 
+    training_args.remove_unused_columns = False
+    training_args.save_total_limit= 1 #save one checkpoint
 
     # Metric
 

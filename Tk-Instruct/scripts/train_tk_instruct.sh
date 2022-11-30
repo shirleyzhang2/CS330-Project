@@ -8,8 +8,6 @@ port=$(shuf -i25000-30000 -n1)
 
 deepspeed --master_port $port src/run_s2s.py \
     --do_train \
-    --do_predict \
-    --predict_with_generate \
     --model_name_or_path allenai/tk-instruct-small-def-pos \
     --max_source_length 1024 \
     --max_target_length 128 \
@@ -24,7 +22,7 @@ deepspeed --master_port $port src/run_s2s.py \
     --tk_instruct False \
     --data_dir ../splits \
     --task_dir ../gpt3-paraphrase-tasks-tk-instruct-train \
-    --output_dir ../output/finetune \
+    --output_dir ../output/finetune_v2 \
     --cache_dir ./cache/ \
     --overwrite_cache \
     --per_device_train_batch_size 1 \
@@ -40,4 +38,4 @@ deepspeed --master_port $port src/run_s2s.py \
     --save_strategy steps \
     --save_steps 2500 \
     --deepspeed ds_configs/stage2.config \
-    --run_name tk-finetune-experiment
+    --run_name tk-finetune-experiment-v2
