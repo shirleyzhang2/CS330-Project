@@ -131,7 +131,7 @@ Note: Remember to set argument `-k` to the desired number of prompts to include.
 
 #### First attempt
 
-Finetune Tk-Instruct on dataset `/gpt3-paraphrase-tasks-tk-instruct-train`.
+Finetune Tk-Instruct on dataset `/gpt3-paraphrase-tasks-tk-instruct`.
 
 Run `splits/make_splits.py` to split this dataset for training, validation, and testing. A list of task names are saved in files `train_tasks.txt`, `dev_tasks.txt`, and `test_tasks.txt` respectively. Run `splits/save_tests.py` if you want to save the train and test datasets to separate folders.
 
@@ -148,18 +148,25 @@ Training metrics and results are saved at: `/output/finetune`. Note that some fi
 
 ![Finetune1](images/finetune1.png)
 
-The prediction results on `test_tasks` from the original and finetuned Tk-Instruct are stored in `Tk-Instruct/output/gpt3-paraphrase-tasks-tk-instruct-train-test` `Tk-Instruct/output/gpt3-paraphrase-tasks-tk-instruct-train-test-finetuned`.
+The prediction results on `test_tasks` by the original and finetuned Tk-Instruct model are stored in `Tk-Instruct/output/gpt3-paraphrase-tasks-tk-instruct-train-test` and `Tk-Instruct/output/gpt3-paraphrase-tasks-tk-instruct-train-test-finetuned`.
 
 The original model has a predict_exact_match of 48.4846, while the finetuned model has a predict_exact_match of 77.2986 which is a significant improvement.
 
 
 #### Second attempt
 
-In the first attempt, the default split was chosen to be 80-10-10 with random sampling. This means that very similar tasks (i.e., same task with different paraphrased prompts) can be present in both the training and test set. To prevent leakage, it may be beneficial to use completely different tasks for testing. In addition, Tk-Instruct documentation states that "We found it unclear what should be a meaningful validation set, under such cross-task generalization setting." For this purpose, in a second attempt:
+In the first attempt, the default split was chosen to be 80-10-10 with random sampling. This means that very similar tasks (i.e., same task with different paraphrased prompts) can be present in both the training and test set. To prevent data leakage, it may be beneficial to use completely different tasks for testing. In addition, Tk-Instruct documentation states that "We found it unclear what should be a meaningful validation set, under such cross-task generalization setting." For this purpose, in a second attempt:
 
-Run `splits/make_splits_v2.py` to split this dataset for training and testing (no validation). First 80% of tasks are used for training and last 20% of tasks are used for testing. A list of task names are saved in files `train_tasks_v2.txt`, `dev_tasks_v2.txt`, and `test_tasks_v2.txt` respectively.
+Run `splits/make_splits_v2.py` to split this dataset for training and testing (no validation). First 80% of tasks are used for training and last 20% of tasks are used for testing. A list of task names are saved in files `train_tasks_v2.txt`, `dev_tasks_v2.txt`, and `test_tasks_v2.txt` respectively. The test set is named `gpt3-paraphrase-tasks-tk-instruct-test`. Training metrics and results are saved at: `/output/finetune_v2`. 
 
-Training in progress...
+![Finetune1](images/finetune2.png)
+
+The prediction results on `test_tasks_v2` by the original and finetuned Tk-Instruct model are stored in `Tk-Instruct/output/gpt3-paraphrase-tasks-tk-instruct-finetuned-v2` and `Tk-Instruct/output/gpt3-paraphrase-tasks-tk-instruct-notfinetuned-v2`. 
+
+The original model has a predict_exact_match of 48.5091, while the finetuned model has a predict_exact_match of 46.1247 which is slightly lower. Only the predict_exact_match_for_sentiment_analysis is higher than the original model. One hypothesis is that the model has overfit to the training data during finetuning and does not generalize as well to unseen prompts, especially with a small learning rate of 1e-5 and a very large number of training samples of 529836.
+
+Another observation that these evaluation scores are still higher than the predict_exact match from our previous experiments with 16 paraphrased prompts, which was around 40. This may be attributed to the improvement we made when prompting GPT-3 to generate higher-quality paraphrases.
+
 ### Train prompt quality classification/regression model
 Preprocess paraphrases from predict_results.json:
 ```
