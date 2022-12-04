@@ -145,7 +145,7 @@ python utils/find_paraphrases_std.py
 
 ### Train Tk-Instruct
 
-#### First attempt
+#### First experiment
 
 Finetune Tk-Instruct on dataset `/gpt3-paraphrase-tasks-tk-instruct`.
 
@@ -162,14 +162,18 @@ source scripts/train_tk_instruct.sh
 ```
 Training metrics and results are saved at: `/output/finetune`. Note that some files (e.g., model checkpoints and .jsonl) are too large to save in Github.
 
-![Finetune1](images/finetune1.png)
+![Finetune1](images/finetune1_full.png)
 
 The prediction results on `test_tasks` by the original and finetuned Tk-Instruct model are stored in `Tk-Instruct/output/gpt3-paraphrase-tasks-tk-instruct-train-test` and `Tk-Instruct/output/gpt3-paraphrase-tasks-tk-instruct-train-test-finetuned`.
 
 The original model has a predict_exact_match of 48.4846, while the finetuned model has a predict_exact_match of 77.2986 which is a significant improvement.
 
+#### Experiment v1
+A validation set is added to track the model's performance on unseen tasks. Both training and validation loss for this model are decreasing as training proceeds which is a good sign.
 
-#### Second attempt
+![Finetune1_train](images/finetune1.png) ![Finetune1_val](images/finetune1_eval.png)
+
+#### Experiment v2
 
 In the first attempt, the default split was chosen to be 80-10-10 with random sampling. This means that very similar tasks (i.e., same task with different paraphrased prompts) can be present in both the training and test set. To prevent data leakage, it may be beneficial to use completely different tasks for testing. In addition, Tk-Instruct documentation states that "We found it unclear what should be a meaningful validation set, under such cross-task generalization setting." For this purpose, in a second attempt:
 
@@ -184,6 +188,13 @@ The original model has a predict_exact_match of 48.5091, while the finetuned mod
 Another observation that these evaluation scores are still higher than the predict_exact match from our previous experiments with 16 paraphrased prompts, which was around 40. This may be attributed to the improvement we made when prompting GPT-3 to generate higher-quality paraphrases.
 
 It appears that as we hypothesized, the model becomes less sensitive to different wordings after finetuning. The standard deviation among different paraphrases averaged across all tasks in the test split drops drastically from 5.1135 to 1.4318.
+
+#### Experiment v3
+A validation set is added to track the model's performance on unseen tasks. The validation loss keeps increasing which confirms our hypothesis that the model is overfitting.
+
+![Finetune1_train](images/finetune3.png) ![Finetune1_val](images/finetune3_eval.png)
+
+
 
 ### Train prompt quality classification/regression model
 Preprocess paraphrases from predict_results.json:

@@ -439,7 +439,8 @@ def main():
     # we don't want to remove unused columns because we will prepare each batch during training, 
     # and some of the information will aslo be used in evaluation.
     training_args.remove_unused_columns = False
-    training_args.save_total_limit= 1 #save one checkpoint
+    training_args.save_total_limit= 2 #save two checkpoint
+    training_args.load_best_model_at_end= True #save two checkpoint    
 
     # Metric
 
