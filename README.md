@@ -115,6 +115,17 @@ source scripts/eval_tk_instruct.sh
 Predictions and metrics are saved at: `Tk-Instruct/output/` as before.
 
 ### Run prompt ensemble
+Specify whether to find majority vote or find best paraphrase in `Tk-Instruct/src/ensemble_paraphrased_prompts.py`
+
+Specify input/output paths
+
+Then run
+```
+cd Tk-Instruct/src
+python ensemble_paraphrased_prompts.py
+```
+
+### Compute standard deviation of paraphrases
 Set `find_paraphrase_metrics(args.metrics_path, args.output_path, args.k, best=True, paraphrase_save_file=args.paraphrase_save_file)` in the main function of `Tk-Instruct/src/ensemble_paraphrased_prompts.py`
 
 Specify input/paraphrase_save_file paths
@@ -129,17 +140,6 @@ Specify paraphrase_save_file and run
 ```
 cd ../../
 python utils/find_paraphrases_std.py
-```
-
-### Compute standard deviation of paraphrases
-Specify whether to find majority vote or find best paraphrase in `Tk-Instruct/src/ensemble_paraphrased_prompts.py`
-
-Specify input/output paths
-
-Then run
-```
-cd Tk-Instruct/src
-python ensemble_paraphrased_prompts.py
 ```
 
 
