@@ -1,0 +1,116 @@
+{
+    "Contributors": [
+        "Divya Reddy Katpally"
+    ],
+    "Source": [
+        "dbpedia_14"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/dbpedia_14"
+    ],
+    "Categories": [
+        "Text Matching"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "Given a text and a title, determine if the title is correct. A title is correct if it refers to the same entity as the text. If the title is correct, output \"Yes\". If the title is not correct, output \"No\"."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Wikipedia"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Text: The Mansfield Building Society is a UK building society which has its headquarters in Mansfield Nottinghamshire. It is a member of the Building Societies Association. \nTitle: Mansfield Building Society",
+            "output": "Yes",
+            "explanation": "The title \"Mansfield Building Society\" is present in the text and it is the main entity that is referred in the text. Hence, it is the title of the document."
+        },
+        {
+            "input": "Text:  The third and current HMS Argyll is a Type 23 'Duke' Class frigate. She is currently the oldest serving Type 23 frigate in the Royal Navy. Like all of her class she is named for a British dukedom in this case that of Argyll. \nTitle: HMS Argyll (F231)",
+            "output": "Yes",
+            "explanation": "\"HMS Argyll\" is present in the text and it is the main entity that is referred in the text. Here, the text in parentheses \"F31\" is not present in the document and it can be ignored. Hence, the output is correct. "
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Text: The Mansfield Building Society is a UK building society which has its headquarters in Mansfield Nottinghamshire. It is a member of the Building Societies Association. \nTitle: Mansfield Building Society",
+            "output": "No",
+            "explanation": "The title \"Mansfield Building Society\" is present in the text and it is the main entity that is referred in the text. Hence, the output is incorrect."
+        },
+        {
+            "input": "Text:  The third and current HMS Argyll is a Type 23 'Duke' Class frigate. She is currently the oldest serving Type 23 frigate in the Royal Navy. Like all of her class she is named for a British dukedom in this case that of Argyll. \nTitle: HMS Argyll (F231)",
+            "output": "HMS Argyll",
+            "explanation": "The output should be either \"Yes\" or \"No\". Hence, it is negative example."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task630-963714b9a94941a7b158e232a45823e9",
+            "input": "Text:  Hidhir Hasbiallah is a Singaporean footballer who plays for Woodlands Wellington FC.Initially starting out as a midfielder he was groomed to realize his potential as a defender when he was playing for Gombak United.The 2013 season will be his return to professional football in the S.League after a two-year absence due to his national service conscription. \nTitle: USS Knox (APA-46)",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task630-d51e6380524941b2b1a20e818a52087b",
+            "input": "Text:  The Slingshot (Swedish: K\u00e5disbellan) is a 1993 Swedish drama film starring Jesper Sal\u00e9n Stellan Skarsg\u00e5rd and Basia Frydman. Directed by \u00c5ke Sandgren the film was based on Roland Sch\u00fctt's 1989 autobiographical novel of the same name (translates to The Condom Slingshot). \nTitle: Aglaocrinus",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task630-04ff22f03c074b8594c6908e78571a33",
+            "input": "Text:  Tarzan and the Great River (1967) is an adventure film starring Mike Henry in his second of three film appearances as Tarzan. This movie was produced by Sy Weintraub and Steve Shagan written by Bob Barbash (from a story by Barbash and Lewis Reed) and directed by Robert Day. It was released in September 1967. \nTitle: Tarzan and the Great River",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task630-971c9fff06294531aa4d22abfd1a26ab",
+            "input": "Text:  The Other Me is a 2000 Disney Channel Original Movie about a teenager who accidentally clones himself as a genius and ends up using his clone to pass school. The movie is the 23rd Disney Channel Original Movie and is based on the book Me Two by Mary C. Ryan. \nTitle: The Other Me",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task630-71ecbb410160493f913bf52d2b3a6502",
+            "input": "Text:  Extremist Makeover is the 4th album by 28 Days.Extremist Makeover features Use It and the single Birthday along with a limited edition PC demo version of the Game Medal of Honor: Pacific Assault. \nTitle: Extremist Makeover",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task630-89aa41cf7cc249f7a63b1dd1e5f37fef",
+            "input": "Text:  Super Demetrios is a 2011 Greek film directed by Georgios Papaioannou. \nTitle: Acta Paediatrica",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task630-e36dfe18112b42b792db6b703c89fa90",
+            "input": "Text:  OMERS officially the Ontario Municipal Employees Retirement System is a pension fund created by statute in 1962 to handle the retirement benefits of local government employees in the Canadian province of Ontario. It has become one of the largest institutional investors in Canada. \nTitle: American School of The Hague",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task630-e90d8aecf6a548dfa017c8aecb4cd43a",
+            "input": "Text:  Kohoutov is a village and municipality in Trutnov District in the Hradec Kr\u00e1lov\u00e9 Region of the Czech Republic. \nTitle: Nowe Izdebno",
+            "output": [
+                "No"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY-SA",
+        "GNU Free Documentation 2.0"
+    ]
+}

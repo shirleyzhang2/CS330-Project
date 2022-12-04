@@ -1,0 +1,123 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "dream"
+    ],
+    "URL": [
+        "https://github.com/nlpdata/dream"
+    ],
+    "Categories": [
+        "Question Understanding"
+    ],
+    "Reasoning": [
+        "Reasoning on Social Interactions"
+    ],
+    "Definition": [
+        "In this task, you will be given a conversation and a question. You should categorize the question into matching, summary, logic, arithmetic and commonsense groups. Matching is a question entailed or paraphrased by exactly one sentence in a dialogue. The answer can be extracted from the same sentence. Questions that cannot be answered by the surface meaning of a single sentence belong to the reasoning category. We further define summary, logic, arithmetic and commonsense subcategories. Answering summary questions requires the whole picture of dialogue, such as the topic of dialogue and the relation between speakers. We require logical reasoning to answer logical questions. In arithmetic questions, inferring the answer requires arithmetic knowledge. To answer commonsense questions, besides the textual information in the dialogue, we also require additional commonsense knowledge that cannot be obtained from the dialogue. Note that a question can be in more than one group. \"W\" and \"M\" in the conversations stand for \"woman\" and \"man\"."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue",
+        "Natural Science -> School Science Textbooks"
+    ],
+    "Positive Examples": [
+        {
+            "input": "W: The movie next Tuesday has been cancelled due to lack of interest. M: What do you mean? W: Well, by last night only a few tickets has been sold., Question: What can we conclude about the movie? (A) They want to buy the tickets for the movie. (B) The tickets for the movie were sold. (C) The movie will not be shown.",
+            "output": "commonsense",
+            "explanation": "This is a good example. To answer this question we require commonsense knowledge that cannot be obtained from the dialogue. So, this is a commonsense question."
+        },
+        {
+            "input": "W: What does the term \"alternative energy source\" mean? M: When we think of energy or fuel for our homes and cars, we think of petroleum, a fossil fuel processed from oil removed from the ground, of which there is a limited supply. But alternative fuels can be many things. Wind, sun and water can all be used to create fuel. W: Is the threat of running out of petroleum real? M: It has taken thousands of years to create the natural stores of petroleum we have available at a much faster rate than it is being produced over time. The real controversy surrounding the amount of petroleum we have is how much we need to keep in reserve for future use. Most experts agree that by around 2025, the amount of petroleum we use will reach a peak. Then production and availability will begin to seriously decline. This is not to say there will be no petroleum at this point. But it'll become very difficult and therefore expensive to extract. W: Is that the most important reason to develop alternative fuel and energy sources? M: There are two very clear reasons to do so. One is that whether we have 60 or 600 years of fossil fuels left, we have to find other fuel sources eventually. So the sooner we start, the better off we will be. The other big argument is that when long time, which leads to some long-term negative effects, like global warming and the greenhouse effect., Question: What do we usually refer to when we talk about energy according to the man? (A) Coal burnt daily for the comfort of our homes. (B) Anything that can be used to produce power. (C) Fuel refined from oil extracted from underground.",
+            "output": "matching",
+            "explanation": "The first sentence of the man can answer this question. So, it's a matching question."
+        },
+        {
+            "input": "M: What do you think of my new sweater? W: Well, it looks nice, but why don't you put it on, and then I'll tell you if it suits you? M: Okay. You know, I tried on about twenty at the shop, and this one isn't really what I wanted. I especially can't stand the high neck. W: Why did you buy it then? M: The salesman sold it to me before I realized what had happened. He just never stopped talking about the latest fashions and special reduced prices. Before I could say anything he'd wrapped it up and I realized that I'd paid him. W: Well, it doesn't look too bad. I think it looks good on you. M: But I went out to get a blue sweater to match my black trousers-something with a V-neck, short sleeves and pattern-and I came home with a brown sweater with a high neck, long sleeves and no pattern. W: You've got to learn to stand up to these high-pressure salesmen. They will sell you all sorts of things you don't want if you don't watch out. M: Next time I'll send my wife. She would probably sell something to the salesman. W: That's a good idea. Actually women are much better at shopping than men. Whenever my husband and I buy something important, I always have the finalsay. M: I must admit that women are better at shopping. I should simply leave the whole business to them., Question: Why did the man buy a sweater that he doesn't like? (A) He was pushed by the salesman (B) It was sold at a low price (C) It is the latest fashion.",
+            "output": "logic",
+            "explanation": "To answer this question we need logical reasoning. In the dialogues, they talk about high-pressure salesmen. So by logical reasoning, we could understand that he was pushed by the salesman."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "W: What does the term \"alternative energy source\" mean? M: When we think of energy or fuel for our homes and cars, we think of petroleum, a fossil fuel processed from oil removed from the ground, of which there is a limited supply. But alternative fuels can be many things. Wind, sun and water can all be used to create fuel. W: Is the threat of running out of petroleum real? M: It has taken thousands of years to create the natural stores of petroleum we have available at a much faster rate than it is being produced over time. The real controversy surrounding the amount of petroleum we have is how much we need to keep in reserve for future use. Most experts agree that by around 2025, the amount of petroleum we use will reach a peak. Then production and availability will begin to seriously decline. This is not to say there will be no petroleum at this point. But it'll become very difficult and therefore expensive to extract. W: Is that the most important reason to develop alternative fuel and energy sources? M: There are two very clear reasons to do so. One is that whether we have 60 or 600 years of fossil fuels left, we have to find other fuel sources eventually. So the sooner we start, the better off we will be. The other big argument is that when long time, which leads to some long-term negative effects, like global warming and the greenhouse effect., Question: What do most experts agree on according to the man? (A) Oil will soon be replaced by alternative energy sources. (B) Oil production will begin to decline worldwide by 2025. (C) Oil consumption has given rise to many global problems.",
+            "output": "arithmetic",
+            "explanation": "We don't need arithmetic knowledge to answer this question. It's incorrect. This is a matching question."
+        },
+        {
+            "input": "M: Finally, I've got the chance to put on my new suit tonight. I hope to make a good impression on your family. W: Come on! It's only a family reunion. So jeans and T-shirts are just fine., Question: What does the woman mean? (A) The man has left a good impression on her family. (B) The man can dress casually for the occasion. (C) The man should buy himself a new suit.",
+            "output": "matching",
+            "explanation": "The answer to this question cannot be extracted from the context. We need commonsense knowledge to understand wearing jeans and T-shirts means dressing casually. This is a commonsense question."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task248-2b8e2dc70d0844a68631d98ca5ccee48",
+            "input": "W: How did your interview go? M: I couldn't feel better about it. The questions were very fair and I seemed to find answers for all them., Question: How does the man feel about the interview? (A) He is confident. (B) He is worried. (C) He is bored.",
+            "output": [
+                "commonsense"
+            ]
+        },
+        {
+            "id": "task248-5a208b0bcacb42589ef1515dd95c0a53",
+            "input": "M: Shall we go fishing this Saturday afternoon? F: That sounds great, but only if it doesn't rain., Question: Will they go fishing this Saturday afternoon? (A) Yes. (B) No. (C) It depends on the weather.",
+            "output": [
+                "logic"
+            ]
+        },
+        {
+            "id": "task248-01ba07852be94048ba80e6a1565bb03c",
+            "input": "W: I want to register for this mathematics course. M: I'm sorry registration has closed. W: Closed? The clerk told me I could come back and register any time during the first week of classes. M: Well, that's not possible. The computer's official student account has already been sent to the state. And that's what our budget is best on. Who told you that anyway? W: Some woman here when I tried to register three weeks ago. She said I just had to pay a late fee. M: She must have been a temporary worker. They don't have much training. Why didn't you register then? W: She said I couldn't until I had my birth certificate. Here it is. M: Your birth certificate? W: Well, I'm a new part-time student. So she ask for identification. I don't drive so I don't have a driver's license. M: Huh. That's no reason to demand a birth certificate. We only need to establish residency: a phone bill with your name and address on it would've been fine. W: Really? Only prove of my address? M: Yes. I'm afraid she gave you the wrong information. Still you'll have to wait and take your math's class next semester. W: But that's no fair. M: Well, I sympathize with your problem, but frankly, I don't think there is anything anyone can do for you. You were trapped in the system. If you want to you can talk in the director. She will help you if she can. W: Great. M: Don't get your hopes up., Question: Why does the man imply when he tells the woman \"no to get her hopes up\"? (A) The director probably isn't able to make an exception. (B) The director probably won't see her. (C) The director usually isn't very helpful.",
+            "output": [
+                "commonsense"
+            ]
+        },
+        {
+            "id": "task248-fdd036cfcf8645459615a61e2ed69a55",
+            "input": "M: What's the matter with you, madam? W: I have a headache. And I felt confused and cold. M: You probably have caught a cold. Let me check your pulse and lake your temperature. Oh, you de have a high fever. W: Is it serious? M: Take it easy. Here is the prescription and get some medicine, you will be better soon. W: Do I have to be given an injection? M: Yes, before you leave, I want my nurse to give you an injection. W: Okay. Do I have to go on a diet? M: Not necessarily. Drink as much water or juice as you can, avoid greasy food and keep warm. W: Thank you., Question: What is the probable relationship between the two speakers? (A) Teacher and student. (B) Writer and reader. (C) Doctor and patient.",
+            "output": [
+                "commonsense"
+            ]
+        },
+        {
+            "id": "task248-51c962a38a4a4f7f9a34683afb3bc5c4",
+            "input": "M: Hello, Mary, it's me, Mike. Am I calling at a bad time? W: No, not really. M: I have invited some of my friends to dinner at my house this evening. I thought maybe you'd like to come, too. W: Well, that sounds good, but I'm afraid I've got to do some reading for my English course. M: Today is Friday. You've got to relax and enjoy yourself at the weekend. W: I know. But there is a lot of reading to do. Besides, I really ought to do my washing this evening. M: Then would you like to come just for a drink later on instead? W: Actually, I'd like to go to bed early tonight. I'm a bit tired. M: All right. Have a good rest. I'll call you again tomorrow. W: Don't call me early. I usually sleep until eleven on Saturdays. M: What? That'll be too late for our Saturday country drive. W: Did I say I'll go with you for a drive to the country? M: No, but I have already planned everything. W: Listen, Mike. I like to plan my own days myself., Question: What does the woman want to do in the evening? (A) Stay at home. (B) Hold a dinner party. (C) Have a drink.",
+            "output": [
+                "commonsense"
+            ]
+        },
+        {
+            "id": "task248-8c17442168a7478f9d679b66231e48e1",
+            "input": "W: Can you help me find a book on South America? M: What specifically would you like to know about? We catalogue our books in many different ways., Question: Where does the conversation most probably take place? (A) At a travel agency. (B) At a department store. (C) In a library.",
+            "output": [
+                "commonsense"
+            ]
+        },
+        {
+            "id": "task248-2540d3ef963b4dc1bd0a9c9fb3d35340",
+            "input": "M: Sherry, how are you doing with your thesis? W: Oh my thesis. That's something I definitely don't want to talk about right now. I finished my first draft some time ago. But my supervisor said I should do more research if I want to achieve the quality that he expects of me., Question: What do we learn from the conversation about the woman's thesis? (A) It falls short of her supervisor's expectations. (B) It has drawn criticism from lots of people. (C) It can be finished in a few weeks' time.",
+            "output": [
+                "logic"
+            ]
+        },
+        {
+            "id": "task248-d6d2d4161d1a415fadd7d93fc5f84d8e",
+            "input": "M: Have you ever seen so much snow? It's really beautiful. W: I'm tired of all this cold. I wish we'd see the sun for a change., Question: What is the woman's wish? (A) To have a cold day (B) To have a sunny day (C) To have a lot of snow",
+            "output": [
+                "logic"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Dedicated License (https://github.com/nlpdata/dream/blob/master/license.txt)"
+    ]
+}

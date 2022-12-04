@@ -1,0 +1,193 @@
+{
+    "Contributors": [
+        "Shailaja Keyur Sampat"
+    ],
+    "Source": [
+        "torque"
+    ],
+    "URL": [
+        "https://allennlp.org/torque.html"
+    ],
+    "Categories": [
+        "Information Extraction"
+    ],
+    "Reasoning": [
+        "Commonsense Reasoning"
+    ],
+    "Definition": [
+        "In this task, you will be given a passage, and your goal is to identify an event from the passage. An event is defined as a single word representing something that happened, is happening, or may happen. An event can be factual or hypothetical, positive or negative, certain or uncertain. Most events are based on verbs, but an event can also be based on a noun (ex. storm, snow, rainfall) or a copula verb (is, was, been, etc.). The event cannot be a pronoun or an adjective. For noun events with multiple words, use the last word in the phrase as event."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "News"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Passage: I submitted the hit. The hit was approved, and then I was paid.",
+            "output": "approved",
+            "explanation": "There are three events in this passage (i) submission event (\"submitted\") (ii) the approval event (\"approved\"), and (iii) the payment event (\"paid\"). You can use any one of them as an output."
+        },
+        {
+            "input": "Passage: He was caught in the snow storm.",
+            "output": "storm",
+            "explanation": "There are two events in this passage (i) he was caught (\"caught\") and (ii) the snow storm event (\"storm\"). You can use any one of them as an output. Since snow storm is a noun event with multiple words, we only use the last word 'storm' as an event."
+        },
+        {
+            "input": "Passage: He is on the east coast.",
+            "output": "is",
+            "explanation": "The copula \"is\" an event describing his location."
+        },
+        {
+            "input": "Passage: He wanted to finish the task.",
+            "output": "wanted",
+            "explanation": "There are two events in this passage (i) he wanted to do something (\"wanted\") and (ii) finish the task (\"finish\"). Either of wanted or finish can be used as output. However note that though there is an uncertainty about the task i.e. indeed finished or not, \"finish\" is still a valid event."
+        },
+        {
+            "input": "Passage: If he works hard, then he will finish the task.",
+            "output": "finish",
+            "explanation": "There are two events in this passage (i) he works hard (\"works\") and (ii) he will finish the task. (\"finish\"). You can use either of works or finish as an output. Here the second event happens only if the first one is true, but both are considered as events. This is an example of hypothetical event."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Passage: He is happy.",
+            "output": "happy",
+            "explanation": "Happy is an adjective and hence cannot be an event. The output should be \"is\" which represents an event describing his attribute of happiness."
+        },
+        {
+            "input": "Passage: He was caught in the elevator.",
+            "output": "elevator",
+            "explanation": "Not every noun can be an event. Here \"elevator\" is an object and one cannot say \"an elevator happened\" hence it is not an event. \"caught\" is a correct output."
+        },
+        {
+            "input": "Passage: The flu season is winding down.",
+            "output": "flu season",
+            "explanation": "The \"flu season\" is a noun events with multiple words, but only last word \"season\" sould be used as an event as per definition."
+        },
+        {
+            "input": "Passage: The death toll climbed up to 99 soon after the explosion.",
+            "output": "blast",
+            "explanation": "There are two events in this passage \"climbed\" and \"explosion\". Though blast is a synonym of explosion, it is not present in the passage. The output must contain events that are present in the passage."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task388-08651dedbfa9448ca50be3e810b86733",
+            "input": "Passage: \"The best solution is fresh election,\" BJP Vice President Krishan Lal Sharma told AFP. \"No cosmetic change will be able to sort out the mess that has been created by the Congress and United Front.\"",
+            "output": [
+                "solution",
+                "election",
+                "told",
+                "change",
+                "be",
+                "sort",
+                "mess",
+                "created"
+            ]
+        },
+        {
+            "id": "task388-a2c0e0c546ad41069098dbc84ea0a2ef",
+            "input": "Passage: Price Stern Sloan Inc. said it hired an investment banking firm to assist in evaluating restructuring or merger alternatives and reported a net loss of $8.1 million, or $2.14 a share, for the third quarter ended Sept. 30. These results compare with net income of $1.8 million, or 44 cents a share, for the corresponding period last year.",
+            "output": [
+                "said",
+                "hired",
+                "assist",
+                "evaluating",
+                "restructuring",
+                "merger",
+                "reported",
+                "ended",
+                "compare",
+                "corresponding"
+            ]
+        },
+        {
+            "id": "task388-aa45dcd35814405ea825ecd30d5c1c60",
+            "input": "Passage: \"I set our sights high, but I know we are in a relegation battle,\" said the 35-year-old handler. \"We need to add new players in January, but I am convinced we can go on a little run.",
+            "output": [
+                "set",
+                "know",
+                "are",
+                "battle",
+                "said",
+                "need",
+                "add",
+                "convinced",
+                "run",
+                "go"
+            ]
+        },
+        {
+            "id": "task388-ad72a9edde2b4493a896e7f9aee4d482",
+            "input": "Passage: Our mission will be complete when shooting ceases and abductions stop,\" Kadyrov said. ",
+            "output": [
+                "be",
+                "shooting",
+                "ceases",
+                "abductions",
+                "stop",
+                "said",
+                "mission"
+            ]
+        },
+        {
+            "id": "task388-a83097f5ba864a528bd0f5604d6c6d52",
+            "input": "Passage: Mr. LeGere attributed the earnings increase to growth in the company's longhaul trucking insurance lines and the ability to keep premium rates firm. ",
+            "output": [
+                "attributed",
+                "increase",
+                "growth",
+                "keep",
+                "ability"
+            ]
+        },
+        {
+            "id": "task388-496c9f5760f74198acf6b79cce151aac",
+            "input": "Passage: Valley Federal Savings amp Loan Association took an $89.9 million charge as it reported a third-quarter loss of $70.7 million, or $12.09 a share. The Van Nuys, Calif., thrift had net income of $132,000, or three cents a share, a year ago.",
+            "output": [
+                "took",
+                "reported",
+                "had"
+            ]
+        },
+        {
+            "id": "task388-7b99b7be85f8432085b29c337b6f7d90",
+            "input": "Passage: Intelogic Trace Inc., San Antonio, Texas, said it bought 2.7 million shares, or about 18%, of its common stock from an unaffiliated shareholder for $3.625 a share, or $9.9 million. The move boosts Intelogic Chairman Asher Edelman's stake to 20% from 16.2% and may help prevent Martin Ackerman from making a run at the computer-services concern.",
+            "output": [
+                "said",
+                "bought",
+                "boosts",
+                "help",
+                "prevent",
+                "making",
+                "run"
+            ]
+        },
+        {
+            "id": "task388-0f509faa373846ec8c610ebb3c4d8230",
+            "input": "Passage: If a court edict fails to compel compliance, the Justice Department will have to consider sterner measures, for the relatives will then be resisting the rule of law as defined by both the department and the courts. But Washington ought not to rush to take Elian forcibly from the relatives.",
+            "output": [
+                "fails",
+                "compel",
+                "compliance",
+                "consider",
+                "be",
+                "resisting",
+                "defined",
+                "rush",
+                "take"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Apache 2.0"
+    ]
+}

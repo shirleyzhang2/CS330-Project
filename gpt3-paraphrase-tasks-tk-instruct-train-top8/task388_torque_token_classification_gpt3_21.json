@@ -1,0 +1,200 @@
+{
+    "Contributors": [
+        "Shailaja Keyur Sampat"
+    ],
+    "Source": [
+        "torque"
+    ],
+    "URL": [
+        "https://allennlp.org/torque.html"
+    ],
+    "Categories": [
+        "Information Extraction"
+    ],
+    "Reasoning": [
+        "Commonsense Reasoning"
+    ],
+    "Definition": [
+        "In this task, you will be given a passage, and your goal is to identify an event from the passage. An event is defined as a single word representing something that happened, is happening, or may happen. The event must not be a pronoun or an adjective."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "News"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Passage: I submitted the hit. The hit was approved, and then I was paid.",
+            "output": "approved",
+            "explanation": "There are three events in this passage (i) submission event (\"submitted\") (ii) the approval event (\"approved\"), and (iii) the payment event (\"paid\"). You can use any one of them as an output."
+        },
+        {
+            "input": "Passage: He was caught in the snow storm.",
+            "output": "storm",
+            "explanation": "There are two events in this passage (i) he was caught (\"caught\") and (ii) the snow storm event (\"storm\"). You can use any one of them as an output. Since snow storm is a noun event with multiple words, we only use the last word 'storm' as an event."
+        },
+        {
+            "input": "Passage: He is on the east coast.",
+            "output": "is",
+            "explanation": "The copula \"is\" an event describing his location."
+        },
+        {
+            "input": "Passage: He wanted to finish the task.",
+            "output": "wanted",
+            "explanation": "There are two events in this passage (i) he wanted to do something (\"wanted\") and (ii) finish the task (\"finish\"). Either of wanted or finish can be used as output. However note that though there is an uncertainty about the task i.e. indeed finished or not, \"finish\" is still a valid event."
+        },
+        {
+            "input": "Passage: If he works hard, then he will finish the task.",
+            "output": "finish",
+            "explanation": "There are two events in this passage (i) he works hard (\"works\") and (ii) he will finish the task. (\"finish\"). You can use either of works or finish as an output. Here the second event happens only if the first one is true, but both are considered as events. This is an example of hypothetical event."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Passage: He is happy.",
+            "output": "happy",
+            "explanation": "Happy is an adjective and hence cannot be an event. The output should be \"is\" which represents an event describing his attribute of happiness."
+        },
+        {
+            "input": "Passage: He was caught in the elevator.",
+            "output": "elevator",
+            "explanation": "Not every noun can be an event. Here \"elevator\" is an object and one cannot say \"an elevator happened\" hence it is not an event. \"caught\" is a correct output."
+        },
+        {
+            "input": "Passage: The flu season is winding down.",
+            "output": "flu season",
+            "explanation": "The \"flu season\" is a noun events with multiple words, but only last word \"season\" sould be used as an event as per definition."
+        },
+        {
+            "input": "Passage: The death toll climbed up to 99 soon after the explosion.",
+            "output": "blast",
+            "explanation": "There are two events in this passage \"climbed\" and \"explosion\". Though blast is a synonym of explosion, it is not present in the passage. The output must contain events that are present in the passage."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task388-c12758f5560341e8b5e8980b8bf35b54",
+            "input": "Passage: \"These new aircraft are vital for our continued growth in the face of increasing competition in the years ahead,\" she said. \"They will cater for international capacity growth and new routes, as well as replacing the Qantas Groups fleet of wide-body Boeing 767-300s,\" she said.",
+            "output": [
+                "are",
+                "growth",
+                "said",
+                "cater",
+                "growth",
+                "replacing",
+                "said",
+                "competition"
+            ]
+        },
+        {
+            "id": "task388-c37729884a944fb7a2487525b47431f8",
+            "input": "Passage: The press campaign continued even after the British authorities announced the restrictions on Romanian and Bulgarian workers. Thus, The Sun on Friday warned that Romanian immigrants could spark a tuberculosis outbreak in Great Britain, a country where this plague was long before eradicated.",
+            "output": [
+                "campaign",
+                "continued",
+                "announced",
+                "restrictions",
+                "warned",
+                "spark",
+                "outbreak",
+                "plague",
+                "eradicated"
+            ]
+        },
+        {
+            "id": "task388-6750c08621fa43b187b41380b4b89312",
+            "input": "Passage: Meanwhile, Chidzidzi said the delegation to Kunming would travel to Guangzhou, Beijing and Shanghai after the CITM to conduct sales calls with their Chinese counterparts. Last year the delegates held a workshop in Shanghai during which they met and discussed business with Chinese tour operators.",
+            "output": [
+                "said",
+                "travel",
+                "conduct",
+                "held",
+                "workshop",
+                "met",
+                "discussed"
+            ]
+        },
+        {
+            "id": "task388-100bd239db9642d1ad2ef56607f1fc8f",
+            "input": "Passage: One senior official Monday described the White House as \"a collection of small groups of aides holding their breaths, \"waiting to see whether Sununu survives. One GOP source, reporting on a call from the chief of staff to a Republican leader, said Sununu lamented that \"the noose is tightening around my neck, and I need your help .",
+            "output": [
+                "described",
+                "holding",
+                "waiting",
+                "see",
+                "survives",
+                "reporting",
+                "call",
+                "said",
+                "lamented",
+                "tightening",
+                "help",
+                "breaths"
+            ]
+        },
+        {
+            "id": "task388-f8eb8645c5d64190887bc68d71c373eb",
+            "input": "Passage: They also agreed on the recommendations of the cross-sectoral APEC Symposium on Response to Outbreak of Avian Influenza and Preparedness for a Human Health Emergency held in San Francisco in this July, which sought to minimize the threats to animal and human health, including the threat of transmission from animal to human, as well as the economic consequences of avian and other pandemic influenza. The ministers also instructed all APEC fora to continue to work cooperatively with APEC's Health Task Force and Task force on Emergency Preparedness to achieve this goal.",
+            "output": [
+                "agreed",
+                "Symposium",
+                "Outbreak",
+                "held",
+                "sought",
+                "minimize",
+                "including",
+                "threats",
+                "threat",
+                "instructed",
+                "continue",
+                "work",
+                "achieve",
+                "transmission"
+            ]
+        },
+        {
+            "id": "task388-bf9b1b1a6b4d47d2bc2a2073412f7dca",
+            "input": "Passage: People who remain in junk funds now could get hit again, some analysts and fund specialists say. Many funds in recent weeks and months have been selling their highest-quality junk issues, such as RJR Nabisco, to raise cash to meet expected redemptions.",
+            "output": [
+                "remain",
+                "hit",
+                "say",
+                "selling",
+                "raise",
+                "meet",
+                "redemptions"
+            ]
+        },
+        {
+            "id": "task388-a969a44af5a4406299de9db6665dae77",
+            "input": "Passage: A public security bureau official said the police were unable to comment on the statement. But Shanghai police did say that on March 24 they had taken similar action against Bishop Joseph Fan Zhongliang, coadjutor of the underground Roman Catholic Church.",
+            "output": [
+                "said",
+                "were",
+                "say",
+                "taken"
+            ]
+        },
+        {
+            "id": "task388-f4310f58efab4a85ae7df1871e172f16",
+            "input": "Passage: Qassem Rashad Kamel Arafa, 24, was pronounced dead at a Hebron hospital with several of the settlers' bullets in his chest. A second man was killed by a rubber bullet which entered his brain while a third man was in critical condition on a life support system in a Jerusalem hospital, officials said.",
+            "output": [
+                "pronounced",
+                "killed",
+                "entered",
+                "said",
+                "support"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Apache 2.0"
+    ]
+}

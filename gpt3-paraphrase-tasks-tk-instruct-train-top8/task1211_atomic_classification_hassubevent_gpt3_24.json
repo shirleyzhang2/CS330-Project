@@ -1,0 +1,126 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "atomic"
+    ],
+    "URL": [
+        "https://allenai.org/data/atomic-2020"
+    ],
+    "Categories": [
+        "Commonsense Classification"
+    ],
+    "Reasoning": [
+        "Relational Reasoning",
+        "Reasoning on Social Interactions",
+        "Commonsense Reasoning -> Social Situations"
+    ],
+    "Definition": [
+        "You will be given two phrases: Head and Tail, separated by <sep>. Head and Tail are events that are short phrases possibly involving participants. The names of specific people have been replaced by generic words. PersonX is always the subject of the event. You have to determine whether the Head includes an event or an action in the Tail. This happens when the Tail denotes a step within the larger head event. Classify your answers into \"Yes\" and \"No\". The phrase may also contain \"___\", a placeholder that can be an object, a person, and/or an action."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Sociology",
+        "Commonsense -> Concepts and Relations -> Physical Commonsense",
+        "Commonsense -> Concepts and Relations -> Social Commonsense"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Head: have conversation<sep>Tail: choose subject to discuss",
+            "output": "Yes",
+            "explanation": "This is a good example. The Head includes the event of choosing a subject the Tail."
+        },
+        {
+            "input": "Head: PersonX allergic to bees<sep>Tail: none",
+            "output": "No",
+            "explanation": "In this example, there isn't any action or event in the Tail. So the output should be\"No\"."
+        },
+        {
+            "input": "Head: design software<sep>Tail: check design",
+            "output": "Yes",
+            "explanation": "In this example, designing software includes checking the design. Thus, this example should be classified as \"Yes\"."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Head: PersonX asks to go home<sep>Tail: to go rest",
+            "output": "Yes",
+            "explanation": "Asking to go home doesn't include going rest. So the output should be \"No\"."
+        },
+        {
+            "input": "Head: communicate<sep>Tail: gather thoughts",
+            "output": "No",
+            "explanation": "The communicate includes gathering the thoughts, and the output should be \"Yes\"."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1211-b1d9996137c54d8f8f46fe433126704e",
+            "input": "Head: PersonX applies for a loan<sep>Tail: Know their credit score",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1211-886c5759cab54ef5bf881d4247b1bfd1",
+            "input": "Head: PersonX asks PersonY's mother for help<sep>Tail: to teach x",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1211-999cd7493bca47eba2e0e5e2268ac2db",
+            "input": "Head: mail letter<sep>Tail: put stamp on",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1211-2b78d0aa39e14003bf64bf72b17bc378",
+            "input": "Head: PersonX becomes distracted<sep>Tail: They would suffer injuries too.",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1211-2c0b2d2e9857465d87276916019723bd",
+            "input": "Head: PersonX becomes fast ___<sep>Tail: to beat X in a race.",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1211-e48c113c59654bb1b5c014098aab1bdf",
+            "input": "Head: PersonX becomes PersonY's wife<sep>Tail: becomes closer to personX",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1211-b87f7ee8f60a4de5a74f428ac0b75b9d",
+            "input": "Head: PersonX asks PersonX's mother for help<sep>Tail: hopeful",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1211-c36a49921c604a1eb984fe8cae1fa160",
+            "input": "Head: travel<sep>Tail: go home",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

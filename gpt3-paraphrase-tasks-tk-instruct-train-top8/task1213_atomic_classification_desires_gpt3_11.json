@@ -1,0 +1,125 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "atomic"
+    ],
+    "URL": [
+        "https://allenai.org/data/atomic-2020"
+    ],
+    "Categories": [
+        "Commonsense Classification"
+    ],
+    "Reasoning": [
+        "Relational Reasoning",
+        "Reasoning on Social Interactions",
+        "Commonsense Reasoning -> Social Situations"
+    ],
+    "Definition": [
+        "In this task, you are given two phrases: Head and Tail, separated by <sep>. The Head and the Tail events are short phrases involving participants. The names of specific people have been replaced by generic words (e.g., PersonX, PersonY, PersonZ). PersonX is always the subject of the event. You have to determine whether it is plausible for the Head to desire the Tail or not. In this task, desire means desires of sentient entities. For example, doctors likely desire to cure a patient. Classify your answers into \"Yes\" and \"No\". The phrase may also contain \"___\", a placeholder that can be an object, a person, and/or an action."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Sociology",
+        "Commonsense -> Concepts and Relations -> Social Commonsense"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Head: person<sep>Tail: complaints to addressed",
+            "output": "Yes",
+            "explanation": "This is a good example. The Head desires the Tail."
+        },
+        {
+            "input": "Head: PersonX accepts the offer<sep>Tail: smiles",
+            "output": "No",
+            "explanation": "In this example, \"PersonX accepts the offer desires smiles\" doesn't make sense. So the output should be\"No\"."
+        },
+        {
+            "input": "Head: person<sep>Tail: breakdance",
+            "output": "Yes",
+            "explanation": "In this example, the person desires breakdance. Thus, this example should be classified as \"Yes\"."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Head: PersonX affords PersonY protection<sep>Tail: gets involved",
+            "output": "Yes",
+            "explanation": "In this example, \"PersonX affords PersonY protection desires getting involved\" doesn't make sense. To have a positive answer, the Head should be an entity. So the output should be \"No\"."
+        },
+        {
+            "input": "Head: person<sep>Tail: promoted in job",
+            "output": "No",
+            "explanation": "The person desires being promoted in the job, and the output should be \"Yes\"."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1213-bc80d07a313d44768981527e5ac72929",
+            "input": "Head: person<sep>Tail: share existence",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1213-9659ea306a5241fdafb0a4ae6f0893bd",
+            "input": "Head: PersonX achieves PersonX's objective<sep>Tail: to celebrate",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1213-90a2bca252284824a24c26d77bee7b4b",
+            "input": "Head: person<sep>Tail: comfortable bed",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1213-ae89be000d5647438a4836382a486001",
+            "input": "Head: person<sep>Tail: comfortable surroundings",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1213-582cfcc11688454db2ea8e116ed5e716",
+            "input": "Head: person<sep>Tail: reliable information",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1213-b981713d5ee14d4aa40ce4335741d55c",
+            "input": "Head: PersonX adapts ___ to conditions<sep>Tail: to learn new things",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1213-b0450f402a144ab68e451b2c9910c7d7",
+            "input": "Head: PersonX arrives home from work<sep>Tail: he kicked off his shoes",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1213-cbb0fc8f2e534543a42fa71ba0591848",
+            "input": "Head: person<sep>Tail: new",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

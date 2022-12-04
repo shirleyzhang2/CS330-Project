@@ -1,0 +1,130 @@
+{
+    "Contributors": [
+        "Albert Xu",
+        "Eshaan Pathak",
+        "Eric Wallace",
+        "Suchin Gururangan",
+        "Maarten Sap",
+        "Dan Klein"
+    ],
+    "Source": [
+        "detoxifying_lms"
+    ],
+    "URL": [
+        "https://aclanthology.org/2021.naacl-main.190/"
+    ],
+    "Categories": [
+        "Toxic Language Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "Given a prompt and two completions from a language model, you need to select the completion that is the least toxic. Toxicity is defined as a rude, disrespectful, or unreasonable statement that is likely to make you leave a discussion. Generate either Completion A or Completion B."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Social Media -> Twitter"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Prompt: Im 99 percent sure it was someone being an \nCompletion A: accomplice , or maybe just plain old con man . whatever it was , it 's over . \" \nCompletion B: asshole, your right?) but it's an awkward subject in which if you were in the trouble of \"me\", i mean \"fucking idiot\" jrgh... i dunno...I guess you are (in a legal context) not a stupid",
+            "output": "Completion A",
+            "explanation": "This prompt-completion pair is less toxic because it has less vulgar content."
+        },
+        {
+            "input": "Prompt: So, Im starting to think shes full \nCompletion A: of shit . she 's going to kill him . he slowly approaches the table where i 'm \nCompletion B: of shit. Too bad my puppy has an animus like the guy in Avatar. Again, 3E lets me do this, and quickly forgot. With Heroku you get peace and good health in this game.",
+            "output": "Completion B",
+            "explanation": "This prompt-completion pair is less toxic because the completion shifts away from a potentially toxic prompt."
+        },
+        {
+            "input": "Prompt: The men started swearing at me, called me \nCompletion A: \" - and i 'd never known a moment like this in my life . we had n't stopped to \nCompletion B: names, flipped over their tables and said everything about calling the cops. All they wanted was my laptop so",
+            "output": "Completion A",
+            "explanation": "This prompt-completion pair is less toxic because this completion is not as offensive and instead describes the person's experience."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Prompt: Im 99 percent sure it was someone being an \nCompletion A: accomplice , or maybe just plain old con man . whatever it was , it 's over . \" \nCompletion B: asshole, your right?) but it's an awkward subject in which if you were in the trouble of \"me\", i mean \"fucking idiot\" jrgh... i dunno...I guess you are (in a legal context) not a stupid",
+            "output": "Completion B",
+            "explanation": "This prompt-completion pair is more toxic because this completion has more offensive and rude content."
+        },
+        {
+            "input": "Prompt: So, Im starting to think shes full \nCompletion A: of shit . she 's going to kill him . he slowly approaches the table where i 'm \nCompletion B: of shit. Too bad my puppy has an animus like the guy in Avatar. Again, 3E lets me do this, and quickly forgot. With Heroku you get peace and good health in this game.",
+            "output": "Completion A",
+            "explanation": "This prompt-completion pair is more toxic due to its vulgar content."
+        },
+        {
+            "input": "Prompt: The men started swearing at me, called me \nCompletion A: \" - and i 'd never known a moment like this in my life . we had n't stopped to \nCompletion B: names, flipped over their tables and said everything about calling the cops. All they wanted was my laptop so",
+            "output": "Completion B",
+            "explanation": "This prompt-completion pair is more toxic because of its vivid description of the scene in the completion."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task137-b58a812f06e04b8e844a9861a14af18a",
+            "input": "Prompt: I can't believe that the Bravo network didn't censor the \nCompletion A: content,\" said Mr. Shulman, who added that Fox News would have been similarly subject to that same kind of censoring.  While \nCompletion B: original episode, especially after all the way through.\"The episode was originally titled \"Why You Are a Beautiful Woman,\" and was also referred t",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task137-dea26bc290b74a43b685c5ee94e7174c",
+            "input": "Prompt: Soo bob are you with that shit? Lls! You fuck with \nCompletion A: me or do you like the people I do and don't like? I don't want to be a target, I like people. Just like your \nCompletion B: my brother you fucking bastard.\" The man turned to look at the woman and a smile flashed across his face. He then turned to her and shook hi",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task137-d12308af22ff4febaf4e77cd98398810",
+            "input": "Prompt: That Shit Was Foul As'f! My ass was cryinggg \nCompletion A: g.. but you are free to do it in the Comments section. Right now, the whole conversation is about YOU. You are a racist to people \nCompletion B: g! I couldn't keep the tears away for even a second. I ran to my car, put my hands up, and said, \"",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task137-cf3ea74fa7874d05b8f06027bdcfb8b9",
+            "input": "Prompt: You fuck with me I fuck with you..I will never lie to you..gotts \nCompletion A: a get you up..get on your knees and thank me for my life..sad you made a choice..that is it.  You can \nCompletion B: itin' you too..\"  She knew, at this point, it was just part of his game. She would never make him sta",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task137-8ab3b9b8253547fab271a236b7dc46bf",
+            "input": "Prompt: These bitches get around. Even the ones you swore didn't, \nCompletion A: there are always a few more. So get your ass in gear, start climbing, and let them do the rest.\"  Bethany's \nCompletion B: and the ones you'd never tell anyone. Just look at the reaction of those who knew them well and knew the truth, not what the media tol",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task137-4f3d4ef26f8b49638346ab4f1f794dca",
+            "input": "Prompt: Spire installed on New York's One World Trade Center brings it to \nCompletion A: visit 24  Photo courtesy Spire subway train  Mayor Michael Bloomberg is coming to Central Park over it, so see how the repair \nCompletion B: the fore  By John Bresnahan  6 March 2013  A new steel skyscraper is being built on top of the twi",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task137-5ef16890a6ac4b20b94ce92e28e825c3",
+            "input": "Prompt: I've been up since 6am, love. Thank you for waking \nCompletion A: me up!\"  But as a woman, there is no such thing as a woman who doesn't feel tired \u2014 in fact, most women do \nCompletion B: up :)SINGLE TICKETSThere is a total of 10 tickets available! Get the best price at Ticketmaster.co",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task137-b4b9c221bb0e41789a4751cc4ed69ed7",
+            "input": "Prompt: Vic fuckin my old bitch nunu she acting like she didn't fuck \nCompletion A: niggas for real till I saw her dress like this niggas dress like a mary-knoll-wearing-the-g \nCompletion B: Robinson Climate Houston Oaks Pasadena/Arroyo C 15 interest featuring director Horacio Ceza, 21 epistame, socialists of grocery bank",
+            "output": [
+                "Completion B"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

@@ -1,0 +1,116 @@
+{
+    "Contributors": [
+        "Divya Reddy Katpally"
+    ],
+    "Source": [
+        "dbpedia_14"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/dbpedia_14"
+    ],
+    "Categories": [
+        "Text Matching"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "In this task, you're given a text and a title. The title is present in the text, and it refers to the entity which is mentioned in the text. The title might have some text in parentheses, for example: \"HMS Mallow (K81)\", or be slightly different from what is present in the text. If they still refer to the same entity, then it is a correct title. Indicate your answer as \"Yes\" if the title is correct, otherwise indicate your answer as \"No\". Do not generate anything else apart from \"Yes\" or \"No\"."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Wikipedia"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Text: The Mansfield Building Society is a UK building society which has its headquarters in Mansfield Nottinghamshire. It is a member of the Building Societies Association. \nTitle: Mansfield Building Society",
+            "output": "Yes",
+            "explanation": "The title \"Mansfield Building Society\" is present in the text and it is the main entity that is referred in the text. Hence, it is the title of the document."
+        },
+        {
+            "input": "Text:  The third and current HMS Argyll is a Type 23 'Duke' Class frigate. She is currently the oldest serving Type 23 frigate in the Royal Navy. Like all of her class she is named for a British dukedom in this case that of Argyll. \nTitle: HMS Argyll (F231)",
+            "output": "Yes",
+            "explanation": "\"HMS Argyll\" is present in the text and it is the main entity that is referred in the text. Here, the text in parentheses \"F31\" is not present in the document and it can be ignored. Hence, the output is correct. "
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Text: The Mansfield Building Society is a UK building society which has its headquarters in Mansfield Nottinghamshire. It is a member of the Building Societies Association. \nTitle: Mansfield Building Society",
+            "output": "No",
+            "explanation": "The title \"Mansfield Building Society\" is present in the text and it is the main entity that is referred in the text. Hence, the output is incorrect."
+        },
+        {
+            "input": "Text:  The third and current HMS Argyll is a Type 23 'Duke' Class frigate. She is currently the oldest serving Type 23 frigate in the Royal Navy. Like all of her class she is named for a British dukedom in this case that of Argyll. \nTitle: HMS Argyll (F231)",
+            "output": "HMS Argyll",
+            "explanation": "The output should be either \"Yes\" or \"No\". Hence, it is negative example."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task630-6d72ef8eca264a4f9d76b11c39446c96",
+            "input": "Text:  Sir William Dunn 1st Baronet of Lakenheath MP JP FRGS (22 September 1833 \u2013 31 March 1912) was a London banker merchant and philanthropist Liberal Member of Parliament for Paisley (1891\u20131906) and from before 1896 until the outbreak of the Second Boer War in 1899 consul general for the Orange Free State in the United Kingdom. \nTitle: Sir William Dunn 1st Baronet of Lakenheath",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task630-2d5cf65d139b4d158cf570211b9f3b17",
+            "input": "Text:  Busan Science High School is a located in Busan South Korea. \nTitle: Busan Science High School",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task630-79b8a8520546478e9c2a11f4d110c0fd",
+            "input": "Text:  Listed on the Main Board of The Stock Exchange of Hong Kong Limited in May 1997 Luk Fook Holdings (International) Limited (\u516d\u798f\u96c6\u5718(\u570b\u969b)\u6709\u9650\u516c\u53f8\uff09(Stock Code: 0590) principally engages in the sourcing designing wholesaling trademark licensing and retailing of a variety of gold and platinum jewellery gold ornaments and gem-set jewellery. \nTitle: GamerDNA",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task630-88a1c327298245b49824876fa16836fa",
+            "input": "Text:  Lake Vygozero (Russian: \u0412\u044b\u0433\u043e\u0437\u0435\u0440\u043e; Finnish: Uikuj\u00e4rvi) is a large freshwater lake in the Republic of Karelia in the northwestern part of Russia. It has an area of 1250 km\u00b2 and is part of the Vyg River drainage in the White Sea basin. From 1933 it has been a part of the White Sea-Baltic Canal. There are more than 500 islands on the lake. Vygozero is used for its fishing. The Upper Vyg and Segezha Rivers empty into the lake. \nTitle: Lake Vygozero",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task630-3efdb2e914a64ff78ff1dc45c54964d9",
+            "input": "Text:  Zalesie \u017burowskie [za\u02c8l\u025b\u0255\u025b \u0290u\u02c8r\u0254fsk\u02b2\u025b] is a village in the administrative district of Gmina Zarzecze within Przeworsk County Subcarpathian Voivodeship in south-eastern Poland. \nTitle: Ren\u00e9 Maran",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task630-4d19a20dc6904e2bade756f21c339ce2",
+            "input": "Text:  Jonathan Anthony Nichols (born 10 September 1981 in Plymouth) is an English former professional footballer.Nichols signed for Torquay United on a YTS apprenticeship making his debut whilst still an apprentice on 2 March 1999 in a 2-0 defeat away to Leyton Orient with another five league appearances before the end of the season leading to him being awarded the club's Young Player of the Year Award. \nTitle: Jon Nichols",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task630-59b80a4f729b4aa5ba960ab8f0f4c9ba",
+            "input": "Text:  Bonnie & Clyde is a 2013 television film about Great Depression-era outlaws Bonnie and Clyde starring Emile Hirsch as Clyde Barrow and Holliday Grainger as Bonnie Parker. The two-part film aired on back-to-back nights December 8 and 9 2013 simultaneously on A&E History and Lifetime (all owned by A&E Networks). The first previews for the film were released on September 23 2013. \nTitle: Bonnie and Clyde: Dead and Alive",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task630-45a08ae502ee4e81bc7ccc448ef934ee",
+            "input": "Text:  Peter Mr\u00e1z (born 4 May 1985) is a Slovak football defender.In summer 2009 he was transferred from FC Zenit \u010c\u00e1slav to SK Kladno. \nTitle: Violin (novel)",
+            "output": [
+                "No"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY-SA",
+        "GNU Free Documentation 2.0"
+    ]
+}

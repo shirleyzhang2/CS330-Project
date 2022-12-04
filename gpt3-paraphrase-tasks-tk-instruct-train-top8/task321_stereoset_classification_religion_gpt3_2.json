@@ -1,0 +1,120 @@
+{
+    "Contributors": [
+        "Eshaan Pathak"
+    ],
+    "Source": [
+        "stereoset"
+    ],
+    "URL": [
+        "https://arxiv.org/abs/2004.09456"
+    ],
+    "Categories": [
+        "Stereotype Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "Given two sentences and a target, you must determine whether the second sentence is a stereotype, anti-stereotype, or is unrelated with respect to the first sentence and the target. A stereotype is a widely held but oversimplified notion of a group of people. An anti-stereotype is an idea that goes against the widely held but oversimplified notion of a group of people. Sentences and targets are unrelated if there is no relevance between them."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Stereotypes"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Target: Muslim \nMuslim people live all over the world. They are hateful toward women and children.",
+            "output": "stereotype",
+            "explanation": "This is a stereotype because not every Muslim person is hateful towards women and children."
+        },
+        {
+            "input": "Target: Muslim \nMuslim people live all over the world. There was a yard sale.",
+            "output": "unrelated",
+            "explanation": "This is unrelated because the second sentence has no relevance with the first one."
+        },
+        {
+            "input": "target: Muslim \nMuslim people live all over the world. They are not all the same, and can be very open minded.",
+            "output": "anti-stereotype",
+            "explanation": "This is an anti-stereotype because the second sentence points out how not all Muslims are the same and that they can be open-minded."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Target: Muslim \nMuslim people live all over the world. They are hateful toward women and children.",
+            "output": "anti-stereotype",
+            "explanation": "This is actually a stereotype since it is incorrectly viewed that Muslims are violent and full of rage towards others."
+        },
+        {
+            "input": "target: Muslim \nMuslim people live all over the world. They like to eat cookies.",
+            "output": "anti-stereotype",
+            "explanation": "These sentences are actually unrelated since there is no relevance between them with respect to if they are stereotypical or anti-stereotypical."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task321-8c469cf207e2476cafb1423c5f92df20",
+            "input": "Target: Muslim \nThere are millions of muslims. The child is cute.",
+            "output": [
+                "unrelated"
+            ]
+        },
+        {
+            "id": "task321-e9d035f8f0454bacaa1f6f16a6eba6b0",
+            "input": "Target: Brahmin \nhe did not talk like the son of a New England Brahmin. Everyone thought he was stuck up and despised him.",
+            "output": [
+                "stereotype"
+            ]
+        },
+        {
+            "id": "task321-6005eca902d84c9383f077f47e2b5934",
+            "input": "Target: Muslim \nRebecca is from a Muslim family. She is going to college to become a physician.",
+            "output": [
+                "anti-stereotype"
+            ]
+        },
+        {
+            "id": "task321-162a10b76d4143969d003211e3b93755",
+            "input": "Target: Bible \nThe preacher read from the Bible. The congregation was engaged because it seemed so topical.",
+            "output": [
+                "anti-stereotype"
+            ]
+        },
+        {
+            "id": "task321-3b7d5e2f0d5a467db7e78c1af6f3f0ef",
+            "input": "Target: Bible \nThe Bible is considered a sacred text by some people. People who consider it sacred are often judgmental and mean.",
+            "output": [
+                "stereotype"
+            ]
+        },
+        {
+            "id": "task321-797b381be25e4a52a5dd3ef63264d434",
+            "input": "Target: Muslim \nMuslims follow one of the major religions of the world. They are mostly in the middle east.",
+            "output": [
+                "stereotype"
+            ]
+        },
+        {
+            "id": "task321-55d0191a66094ef288bd964356c09684",
+            "input": "Target: Muslim \nthey come from iraq they must be muslim. they are strict on there beliefs.",
+            "output": [
+                "anti-stereotype"
+            ]
+        },
+        {
+            "id": "task321-bb6b6c08dce2487fad5cb44f842edff3",
+            "input": "Target: Bible \nThe bible was in the hotel drawer. Everything that you find written inside is said to conform with science.",
+            "output": [
+                "anti-stereotype"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY-SA 4.0"
+    ]
+}

@@ -1,0 +1,128 @@
+{
+    "Contributors": [
+        "Ishan Purohit"
+    ],
+    "Source": [
+        "multilingual_amazon_reviews"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/amazon_reviews_multi"
+    ],
+    "Categories": [
+        "Text Categorization"
+    ],
+    "Reasoning": [
+        "Reasoning on Social Interactions",
+        "Commonsense Reasoning"
+    ],
+    "Definition": [
+        "In this task, you're given a review from Amazon and a category of the product. Your task is to classify whether the given category matches the review. Generate \"True\" if the given review and its category match, otherwise generate \"False\"."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Reviews"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Review: Arrived broken. Manufacturer defect. Two of the legs of the base were not completely formed, so there was no way to insert the casters. I unpackaged the entire chair and hardware before noticing this. So, I'll spend twice the amount of time boxing up the whole useless thing and send it back with a 1-star review of part of a chair I never got to sit in. I will go so far as to include a picture of what their injection molding and quality assurance process missed though. I will be hesitant to buy again. It makes me wonder if there aren't missing structures and supports that don't impede the assembly process. \n Category: furniture",
+            "output": "True",
+            "explanation": "It's the correct category. Because the customer gives a review of the product which belongs to the furniture category, which we can see it from the way the customer describes his experience sharing how he unpackaged his chair."
+        },
+        {
+            "input": "Review: the cabinet dot were all detached from backing... got me \n Category: home_improvement",
+            "output": "True",
+            "explanation": "It's the correct category. Because the product belongs to the home_improvement category, we can see it in the review where the customer mentions a cabinet dot."
+        },
+        {
+            "input": "Review: I got this with 50% charge. Put it under the sun. two days later, it has 25%. Never able to charge it once. Should have returned it right away. \n Category: utensils",
+            "output": "False",
+            "explanation": "It's an incorrect category. Because the product belongs to the electronics category and not utensils. Because the customer shared his experience related to the charging issue."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Review: Took way too long for these seeds to arrive and for only a single one to germinate is even more disappointing! Not worth the $ \n Category: gardening",
+            "output": "gardening",
+            "explanation": "It's only supposed to generate True or False."
+        },
+        {
+            "input": "Review: This was the third pair that I returned because they did not fit (the first two pairs were the same size). I received a full refund for those, but not for these! I WILL NEVER BUY FROM THEM, AGAIN!!! EVER! \n Category: shoes",
+            "output": "False",
+            "explanation": "The product belongs to shoes category. So, the answer should be True."
+        },
+        {
+            "input": "Review: Junk never work just damaged the brick \n Category: home_improvement",
+            "output": "True False",
+            "explanation": "It should either return True or False not both."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1308-e15b1dfab86b41b9a3a8b90a11619dda",
+            "input": "Reviews: Locks seem fine. I originally ordered two. They were not keyed alike. I had them replaced and clearly instructed the Amazon service rep to make sure the replacement locks were keyed alike. I was assured they would make sure. I'm now ordering my third set of replacement locks. Hopefully this third set will be keyed alike. Hate to give a low star rating as the locks seem very solid, but Amazon and it's third party sellers need to improve their communication. Once I receive a set that is keyed alike I will change the rating to reflect the lock quality. \n Category: home_improvement",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "id": "task1308-c68c767977eb46849cf3b32c7f464303",
+            "input": "Reviews: Product was shipped with no care box damage. Product was shipped with no bubble wrap or anything to protect my item. Very unsatisfied with handling of my product that I purchased..... \n Category: kitchen",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "id": "task1308-2aa35c95ccbe42d2b100ad41e84df18c",
+            "input": "Reviews: I've had this display port cable since January 2019, about six months into using it my screen kept turning black out of nowhere. So I had to keep plugging it into another display port on my GPU to get the screen to register. I continued to use it like this for another several months until it kept happening more frequently, now I just switched back to HDMI and have not had any issues for a week. This chord looks pretty but is defective. \n Category: pc",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "id": "task1308-70480e9b3a3647be938fe732a34d223b",
+            "input": "Reviews: Although this item is quite adorable and looked fun, I received a unit that did not work properly. It does not respond to my touch about half the time. Playing anything becomes impossible when about half your notes don't register. It appears to be very cheaply made. Amazon refuses to return due to health and safety issues. However, they issued a full refund when I asked about returning it. I would absolutely not purchase this again or recommend getting one. \n Category: wireless",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "id": "task1308-dc5253ed8cbb4eeabf950e7af9914f81",
+            "input": "Reviews: I thought the pictures of this product were a little misleading. I should have looked closer at the measurements because I was looking for something thicker that could hold more than one checkbook. The pockets are too small for that. This is great if you want to store a lot of cards, cash and ONE checkbook. My reason for the negative review is they dont allow returns. I am a bit of a power user when it comes to Amazon and have been using it heavily for something like 10 years. I have NEVER come across a product/seller that didn't allow returns. \n Category: apparel",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "id": "task1308-aec7c85771984f2d813b74157a77f867",
+            "input": "Reviews: Horrible even to get open and then it\u2019s so thick but says to put on a thin layer and I finally thought I got them looking good and put under my lamp and came out looking horrible with bubbles. Plus I thought it was a uv gel builder \n Category: beauty",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "id": "task1308-bd6d8e01756d4347b849452a9cf29c75",
+            "input": "Reviews: My tracking number says my book was delivered yesterday... I still don\u2019t have it. My class started two weeks ago, and now I\u2019m going to miss assignments because my book is no where to be found. Horrible service. \n Category: book",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "id": "task1308-0cc46b9ccd3b48d4b3ff6b8692c93dc9",
+            "input": "Reviews: Don't even think of purchasing this piece of \"stuff.\" Total waste of money. Spent time going thru replacing fuses and bulbs, nothing. It would be nice to think a person could get at least two seasons of use out of a lighted window decoration. \n Category: wireless",
+            "output": [
+                "False"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Amazon License (https://s3.amazonaws.com/amazon-reviews-pds/license.txt)"
+    ]
+}

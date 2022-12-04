@@ -1,0 +1,122 @@
+{
+    "Contributors": [
+        "Hadi Mazboudi"
+    ],
+    "Source": [
+        "wiqa"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/wiqa"
+    ],
+    "Categories": [
+        "Sentence Ordering"
+    ],
+    "Reasoning": [
+        "Temporal Reasoning"
+    ],
+    "Definition": [
+        "Given a set of steps describing a process, you need to answer the question 'Are the given steps in order?' with either 'Yes' or 'No'. 'No' means the steps are out of order and do not make sense in the current order. 'Yes' means the steps are in order and make sense in the current order. A set of steps are not in order if the steps reference information that is introduced in a later step."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Natural Science"
+    ],
+    "Positive Examples": [
+        {
+            "input": " ['The seeds are dispersed by wind, animals, etc', 'The seeds reach the ground', 'Grow into new trees', 'The process repeats itself over and over', 'A tree produces seeds', 'These new trees produce seeds'] ",
+            "output": "No",
+            "explanation": "These steps are not in order. The first step in this sequence is 'The seeds are dispersed by wind, animals, etc' but the step introducing the seed 'A tree produces seeds' is after the steps referencing the seeds. Therefore, the answer is No"
+        },
+        {
+            "input": " ['The carafe is filled with water', 'The water is poured into the machine at the back', 'Coffee beans are put into a grinder', 'The grinder is activated', 'A filter is put into the coffee maker', 'The ground coffee is put into the filter', 'Sometimes a bit of salt is added to the grounds to bring out flavor', 'The top of the machine is closed', 'The power is turned on', 'The water passes through the grounds and becomes coffee.'] ",
+            "output": "Yes",
+            "explanation": "These steps are in order. The information from each previous step leads into the next step. Therefore, the correct answer is Yes"
+        },
+        {
+            "input": " ['The nest is done.', 'The bird makes a flat base with twigs', 'The bird picks a tree', 'The bird makes sides with twigs and other things', 'The bird adds softer material to the inside', 'The bird collects twigs and other refuse'] ",
+            "output": "No",
+            "explanation": "These steps are not in order. The first step is 'The nest is done'. Since these steps outline how birds make a nest, this step should be last. Therefore, the steps are out of order and the answer is No"
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": " ['The cans are transported to a facility', 'The molds are flattened and rolled into sheets to reuse.', 'The cans are heated to 1400 degrees to melt them', 'The molten metal is poured into molds', 'The cans are shredded by a machine', 'Put the aluminum can into a recycle bin'] ",
+            "output": "Yes",
+            "explanation": "This answer is incorrect because these steps are out of order. The step 'Put the aluminum can into a recycle bin' should be first. Without this step, the step 'The cans are transported to a facility' does not make sense because the cans are not introduced yet. The correct answer is No"
+        },
+        {
+            "input": " ['Acid rain is produced by chemicals that reach into the atmosphere', 'Falls onto the ground', 'The acid rain starts scouring rocks', 'Destroys vegetation', 'The lack of vegetation alters the surrounding environment.'] ",
+            "output": "No",
+            "explanation": "This answer is incorrect because these steps are in order. The step, 'Acid rain is produced by chemicals that reach into the atmosphere' introduces the subject of the process, acid rain. The step 'Falls onto the ground' refers to the acid rain that was in the previous step. After the acid falls onto the ground, the next step is 'The acid rain starts scouring rocks'. The next step describes what happens after acid rain falls onto the ground, 'Destroys vegetation'. After the acid rain destroys vegetation, 'The lack of vegetation alters the surrounding environment.' Since each step only uses information from previous steps, the correct answer is Yes"
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1548-930ac5c76c81464eb2e8cbc38908f513",
+            "input": " ['The energy from the reactions gives off different kinds of light', 'There is a lot of pressure on the Sun', 'The pressure forces atoms of hydrogen to fuse together in nuclear reactions', 'The light travels to the Earth.', 'The gravity of the sun pulls its mass inward'] ",
+            "output": [
+                "  No  "
+            ]
+        },
+        {
+            "id": "task1548-c7e64e5cc36149da8eccfbdeaf725293",
+            "input": " ['Water comes through a filter', 'The filter has small pores to catch pollutants', 'The filter will catch chlorine, heavy metals, and other chemicals', 'The filter allows water and mineral ions like fluoride to pass through', 'The water on the other side of the filter is much cleaner'] ",
+            "output": [
+                "  Yes  "
+            ]
+        },
+        {
+            "id": "task1548-b8c4b938d5f14d95b7883f62f4dec127",
+            "input": " ['The turbine spins', 'Flows into a turbine', 'Coal is burned in a boiler', 'Steam is produced under pressure', 'Creates electricity.'] ",
+            "output": [
+                "  No  "
+            ]
+        },
+        {
+            "id": "task1548-2d15a768832d40eabab45749c4176edf",
+            "input": " ['Water evaporates from the ground up to the sky', 'Water droplets are in clouds', 'The air gets cold', 'Water droplets turn into ice crystals', 'Ice crystals in clouds stick together and become snowflakes.'] ",
+            "output": [
+                "  Yes  "
+            ]
+        },
+        {
+            "id": "task1548-f43d9da322b7464cad030ee716cc6288",
+            "input": " ['Two birds meet each other', 'Egg is produced after fertilziation', 'Mother sits on egg until it hatches', 'Bird Hatches', 'Grows up', 'Flee the next', 'Starts family', 'Dies.'] ",
+            "output": [
+                "  Yes  "
+            ]
+        },
+        {
+            "id": "task1548-fd634aa17bff49a38507b34e821a5dd2",
+            "input": " ['Open the Dishwasher', 'Slide out the bottom rack', 'Take a dirty plate', 'Rinse the plate', 'Place the dish in the rack', 'Repeat leaving enough space for water to reach all items', 'Fill the soap cup', 'Turn on the dishwasher.'] ",
+            "output": [
+                "  Yes  "
+            ]
+        },
+        {
+            "id": "task1548-5cd900233e7e4537b3bcc87ef5ebd265",
+            "input": " ['Green is a color that gathers sunlight easily', 'Sunlight is gathered by the leaves of the plant', 'The sunlight is broken down into glucose through photosynthesis', 'The glucose travels the plant', 'The plant uses that glucose as energy to grow.'] ",
+            "output": [
+                "  Yes  "
+            ]
+        },
+        {
+            "id": "task1548-e4f57614129c4b06ac5725842f8cde85",
+            "input": " ['Oxygen is released from the leaves into the atmosphere', 'Water is absorbed by the roots and passes through vessels in the stem on its way to the leaves', 'These pores are called stomata', 'Hydrogen and carbon dioxide are used to form glucose or food for plants.', 'Carbon dioxide from the air passes through small pores (holes) in the leaves', 'Chlorophyll absorbs the sun&#x27;s energy', 'It is this energy that is used to split water molecules into hydrogen and oxygen'] ",
+            "output": [
+                "  No  "
+            ]
+        }
+    ],
+    "Instance License": [
+        "Apache 2.0"
+    ]
+}

@@ -1,0 +1,130 @@
+{
+    "Contributors": [
+        "Albert Xu",
+        "Eshaan Pathak",
+        "Eric Wallace",
+        "Suchin Gururangan",
+        "Maarten Sap",
+        "Dan Klein"
+    ],
+    "Source": [
+        "detoxifying_lms"
+    ],
+    "URL": [
+        "https://aclanthology.org/2021.naacl-main.190/"
+    ],
+    "Categories": [
+        "Text Completion"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "Given a prompt and two completions from a language model, select the completion that is more relevant to continuing the prompt. A prompt-completion pair is considered to be topical if the completion maintains relevance and logical succession (i.e. stays on topic) with the prompt. The flow from the prompt to the completion should be as reasonable as possible. Output either Completion A or Completion B."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Social Media -> Twitter"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Prompt: Im 99 percent sure it was someone being an \nCompletion A: accomplice , or maybe just plain old con man . whatever it was , it 's over . \" \nCompletion B: asshole, your right?) but it's an awkward subject in which if you were in the trouble of \"me\", i mean \"fucking idiot\" jrgh... i dunno...I guess you are (in a legal context) not a stupid",
+            "output": "Completion A",
+            "explanation": "This prompt-completion pair is more topical because the relevance and logical succession is maintained between the prompt and completion."
+        },
+        {
+            "input": "Prompt: So, Im starting to think shes full \nCompletion A: of shit . she 's going to kill him . he slowly approaches the table where i 'm \nCompletion B: of shit. Too bad my puppy has an animus like the guy in Avatar. Again, 3E lets me do this, and quickly forgot. With Heroku you get peace and good health in this game.",
+            "output": "Completion A",
+            "explanation": "This prompt-completion pair is more topical because the relevance and logical succession between the prompt and completion is maintained."
+        },
+        {
+            "input": "Prompt: The men started swearing at me, called me \nCompletion A: \" - and i 'd never known a moment like this in my life . we had n't stopped to \nCompletion B: names, flipped over their tables and said everything about calling the cops. All they wanted was my laptop so",
+            "output": "Completion B",
+            "explanation": "This prompt-completion pair is more topical because there is strong relevance and logical succession with the sequence of events between the prompt and completion."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Prompt: Im 99 percent sure it was someone being an \nCompletion A: accomplice , or maybe just plain old con man . whatever it was , it 's over . \" \nCompletion B: asshole, your right?) but it's an awkward subject in which if you were in the trouble of \"me\", i mean \"fucking idiot\" jrgh... i dunno...I guess you are (in a legal context) not a stupid",
+            "output": "Completion B",
+            "explanation": "This prompt-completion pair is less topical because the completion is essentially gibberish compared to the prompt."
+        },
+        {
+            "input": "Prompt: So, Im starting to think shes full \nCompletion A: of shit . she 's going to kill him . he slowly approaches the table where i 'm \nCompletion B: of shit. Too bad my puppy has an animus like the guy in Avatar. Again, 3E lets me do this, and quickly forgot. With Heroku you get peace and good health in this game.",
+            "output": "Completion B",
+            "explanation": "This prompt-completion pair is less topical because the completion references 'animus', an aspect of psychology, and 'Avatar', which is a movie and also a television series. Both of these do not relate to the prompt as well as how the other completion does."
+        },
+        {
+            "input": "Prompt: The men started swearing at me, called me \nCompletion A: \" - and i 'd never known a moment like this in my life . we had n't stopped to \nCompletion B: names, flipped over their tables and said everything about calling the cops. All they wanted was my laptop so",
+            "output": "Completion A",
+            "explanation": "This prompt-completion pair is less topical because although the individual states that they have never had an experience like this before, the completion is not as relevant as the other one which goes more into detail."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task139-2f2897f2dcfa4e9582319cd3670a58a2",
+            "input": "Prompt: I never wanna go back out there to many fake tough niggas I fuck \nCompletion A: with like you. I got enough money I could just leave my ass behind and go back to being a bitch. If you wanted me, you should \nCompletion B: for fun.\"Another video by a member of the group recently released, \"Jihad,\" has received much of the attention. While others suc",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task139-a71e2a66d66346e8ac0ea2b29abe1ed5",
+            "input": "Prompt: Don't let me find out that bitches on Twitter are trash \nCompletion A: !  You\u2016re right, it's not worth that much. I'm sure you'd find a much more effective way to engage with \nCompletion B: , it's all going on.\"A group of New Yorkers went to the Trump Tower looking for someone who's like Mr. Trump",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task139-5d80c298cea14c309b8473100ac81659",
+            "input": "Prompt: lol mane nun trippin of theze hoez OG she said she'll fuck my nigga \nCompletion A: , and u can do it if u want tho! - December 15, 2014I'm going to keep calling out that thee shit's real \nCompletion B: imho imho OG me and me a lot lolOmni and Nia from The Seagod:Won'",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task139-02872e57e02541e9bc64793891c8e2b9",
+            "input": "Prompt: If you fuck with me wrong, and take me out of my zone, I'll knock the motherfucking \nCompletion A: out of you, okay?\" I'll say so, as a way of making sure you're not one of them.\"I guess it's a pretty \nCompletion B: thing up off your fucking face. And you know what? That shit never happens.\"  \"It's my dick, baby. I fucking d",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task139-10802fd23d5d45b6b8a871cc77a58bfa",
+            "input": "Prompt: I've been up since 6am, love. Thank you for waking \nCompletion A: me up!\"  But as a woman, there is no such thing as a woman who doesn't feel tired \u2014 in fact, most women do \nCompletion B: me. Happy to be home...",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task139-c43e442b234b487fb506a146e16d5b41",
+            "input": "Prompt: Thanks for small flat rate priority boxes. I'll remember to use \nCompletion A: this. \nCompletion B: them. (Thanks to David for this.)So, how do we get this thing up to speed on time?Well, i",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task139-8be72ffd642f4d088b588b09e2fe5a37",
+            "input": "Prompt: Let me sign this contract!! I'm the Chief Executive Officer of \nCompletion A: the company and I have to do it for myself. If you see me in a place where my rights are violated you know what I'm talking about \nCompletion B: the University of Michigan and will never, ever get paid more than the price of my student loans. I will never, ever pay more than my ow",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task139-93c02ff4f5de419893b5577f57bd2d01",
+            "input": "Prompt: Most people compared the Andrew Luck & RG3 draft to Manning and Leaf. \nCompletion A: This makes sense if you look at what Luck did at that time (2014) and how good RG3 is now. But if we look back at \nCompletion B: I'd be shocked if he wasn't the 2nd pick...On August 15, 2014, at 3:45 PM, Jason Leen",
+            "output": [
+                "Completion A"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

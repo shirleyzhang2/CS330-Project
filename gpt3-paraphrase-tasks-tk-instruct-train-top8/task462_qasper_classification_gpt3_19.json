@@ -1,0 +1,120 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "qasper"
+    ],
+    "URL": [
+        "https://allenai.org/project/qasper/home"
+    ],
+    "Categories": [
+        "Question Understanding"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "In this task, you will be given a context from an academic paper and a question based on that context. You will need to classify the questions into one of three categories: \"Extractive\", \"Abstractive\", or \"Yes-no\". Extractive questions can be answered by combining extracts taken from the context into a summary. Abstractive questions require you to paraphrase the context using new sentences. Yes-no questions are questions whose expected answer is one of two choices, typically either yes or no."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Scientific Research Papers"
+    ],
+    "Positive Examples": [
+        {
+            "input": "We build a dataset of Twitter accounts based on two lists annotated in previous works. For the non-factual accounts, we rely on a list of 180 Twitter accounts from BIBREF1. On the other hand, for the factual accounts, we use a list with another 32 Twitter accounts from BIBREF19 that are considered trustworthy by independent third parties. \n Question: How did they obtain the dataset?",
+            "output": "Extractive",
+            "explanation": "The answer to this question has been explicitly mentioned in the context, so the question is extractive."
+        },
+        {
+            "input": "We evaluate our pointer-generator performance using BLEU score. The baseline language model is trained using RNNLM BIBREF23 . Perplexity measure is used in the evaluation.\n\n \n Question: Did they use other evaluation metrics?",
+            "output": "Yes-no",
+            "explanation": "This is a good example, and the given question is a yes-no question."
+        },
+        {
+            "input": "As in the example above, we pre-process documents by removing all numbers and interjections. \n Question: what processing was done on the speeches before being parsed?",
+            "output": "Abstractive",
+            "explanation": "Answering this question needs paraphrasing the context, so this question is abstractive."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "For the English version, we performed both a thorough manual analysis and automatic evaluation across three commonly used TS datasets from two different domains  For the English version, we performed both a thorough manual analysis and automatic evaluation across three commonly used TS datasets from two different domains  The evaluation of the German version is in progress. \n Question: What are the corpora used for the task?",
+            "output": "Yes-no",
+            "explanation": "This question is extractive, and it's not a yes-no question."
+        },
+        {
+            "input": "For Turkish, as the first dataset, we utilised the movie reviews which are collected from a popular website. The number of reviews in this movie corpus is 20,244 and the average number of words in reviews is 39. Each of these reviews has a star-rating score which is indicative of sentiment. These polarity scores are between the values 0.5 and 5, at intervals of 0.5. We consider a review to be negative it the score is equal to or lower than 2.5. On the other hand, if it is equal to or higher than 4, it is assumed to be positive. We have randomly selected 7,020 negative and 7,020 positive reviews and processed only them. \n Question: What details are given about the movie domain dataset?",
+            "output": "Extractive",
+            "explanation": "This question is Abstractive because we need to paraphrase the context to get to the answer."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task462-43ce18a1ef344798bbf70bca03d69778",
+            "input": "Given that words from texts of the same class belong to the same context, it is possible to model word vectors of each class as word subspaces and efficiently compare them in terms of similarity by using canonical angles between the word subspaces.  \n Question: What can word subspace represent?",
+            "output": [
+                "Abstractive"
+            ]
+        },
+        {
+            "id": "task462-f59cf813b85c49ceac4b8a3dfe5c08e9",
+            "input": "Our evaluation comprises of a rich set of 19 different algorithms to recommend tags for e-books, which we group into (i) popularity-based, (ii) similarity-based (i.e., using content information), and (iii) hybrid approaches. \n Question: what algorithms did they use?",
+            "output": [
+                "Extractive"
+            ]
+        },
+        {
+            "id": "task462-404da2303bd042118a60d790948d6982",
+            "input": "Analogous to word embeddings, sentence embeddings, e.g. the Universal Sentence Encoder BIBREF8 and Sentence-BERT BIBREF6, allow one to calculate the cosine similarity of various different sentences, as for instance the similarity of a question and the corresponding answer. The more appropriate a specific answer is to a given question, the stronger is its cosine similarity expected to be. When considering two opposite answers, it is therefore possible to determine a bias value:\n\nwhere $\\vec{q}$ is the vector representation of the question and $\\vec{a}$ and $\\vec{b}$ the representations of the two answers/choices. \n Question: How is moral bias measured?",
+            "output": [
+                "Abstractive"
+            ]
+        },
+        {
+            "id": "task462-30f05520a40d46b6b599cd29e696ca1b",
+            "input": "Nonetheless, the main caveat of this basic pre-training is that the source encoder is trained to be used by an English decoder, while the target decoder is trained to use the outputs of an English encoder \u2014 not of a source encoder. \n Question: Is pivot language used in experiments English or some other language?",
+            "output": [
+                "Yes-no"
+            ]
+        },
+        {
+            "id": "task462-1a92080114a8449d8c0a49575a50e0a1",
+            "input": "For this reason as a baseline algorithm for English dataset we refer to results from BIBREF0, and as for Russian dataset, we used the probabilistic language model, described in BIBREF8. \n Question: Is the RNN model evaluated against any baseline?",
+            "output": [
+                "Yes-no"
+            ]
+        },
+        {
+            "id": "task462-686735697f584324a1337bf0f6fb4ea2",
+            "input": "Firstly, LastStateRNN is the classic RNN model, where the last state passes through an MLP and then the LR Layer estimates the corresponding probability. In contrast, in the AvgRNN model we consider the average vector of all states that come out of the cells. The AttentionRNN model is the one that it has been presented in BIBREF9. \n Question: What was the baseline?",
+            "output": [
+                "Extractive"
+            ]
+        },
+        {
+            "id": "task462-81aacfd7e186451bb29a1585c2a1a01c",
+            "input": "A higher score indicates better step ordering (with a maximum score of 2). tab:coherencemetrics shows that our personalized models achieve average recipe-level coherence scores of 1.78-1.82, surpassing the baseline at 1.77. On average, human evaluators preferred personalized model outputs to baseline 63% of the time, confirming that personalized attention improves the semantic plausibility of generated recipes. \n Question: What were their results on the new dataset?",
+            "output": [
+                "Extractive"
+            ]
+        },
+        {
+            "id": "task462-c988ef8003d24d0eb3ed2f4689a1fac6",
+            "input": "To show the effectiveness of our approach, we show results on the SICK dataset BIBREF1, a common benchmark for logic-based NLI, and find MonaLog to be competitive with more complicated logic-based approaches (many of which require full semantic parsing and more complex logical machinery). \n Question: Do they beat current state-of-the-art on SICK?",
+            "output": [
+                "Yes-no"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

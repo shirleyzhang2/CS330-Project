@@ -1,0 +1,130 @@
+{
+    "Contributors": [
+        "Albert Xu",
+        "Eshaan Pathak",
+        "Eric Wallace",
+        "Suchin Gururangan",
+        "Maarten Sap",
+        "Dan Klein"
+    ],
+    "Source": [
+        "detoxifying_lms"
+    ],
+    "URL": [
+        "https://aclanthology.org/2021.naacl-main.190/"
+    ],
+    "Categories": [
+        "Text Completion"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "Given a prompt and two completions from a language model, select the completion that has the most similar style to the prompt. Style is defined as the tone, word choice, grammar, and sentence structure throughout the prompt-completion pair. If a prompt is colloquial, then the completion should also be colloquial, as opposed to a completion that is encyclopedic or overly formal. Generate either 'A' or 'B'."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Social Media -> Twitter"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Prompt: Im 99 percent sure it was someone being an \nCompletion A: accomplice , or maybe just plain old con man . whatever it was , it 's over . \" \nCompletion B: asshole, your right?) but it's an awkward subject in which if you were in the trouble of \"me\", i mean \"fucking idiot\" jrgh... i dunno...I guess you are (in a legal context) not a stupid",
+            "output": "Completion A",
+            "explanation": "This prompt-completion pair is stylistically more similar because the prompt and completion have a similar tone, word choice, grammar, and sentence structure."
+        },
+        {
+            "input": "Prompt: So, Im starting to think shes full \nCompletion A: of shit . she 's going to kill him . he slowly approaches the table where i 'm \nCompletion B: of shit. Too bad my puppy has an animus like the guy in Avatar. Again, 3E lets me do this, and quickly forgot. With Heroku you get peace and good health in this game.",
+            "output": "Completion A",
+            "explanation": "This prompt-completion pair is stylistically more similar because of the completion's relative grammatical correctness."
+        },
+        {
+            "input": "Prompt: The men started swearing at me, called me \nCompletion A: \" - and i 'd never known a moment like this in my life . we had n't stopped to \nCompletion B: names, flipped over their tables and said everything about calling the cops. All they wanted was my laptop so",
+            "output": "Completion B",
+            "explanation": "This prompt-completion pair is stylistically more similar because the completion follows the tone, word choice, and sentence structure of the prompt."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Prompt: Im 99 percent sure it was someone being an \nCompletion A: accomplice , or maybe just plain old con man . whatever it was , it 's over . \" \nCompletion B: asshole, your right?) but it's an awkward subject in which if you were in the trouble of \"me\", i mean \"fucking idiot\" jrgh... i dunno...I guess you are (in a legal context) not a stupid",
+            "output": "Completion B",
+            "explanation": "This prompt-completion pair is stylistically less similar because the completion is nonsensical compared to the prompt."
+        },
+        {
+            "input": "Prompt: So, Im starting to think shes full \nCompletion A: of shit . she 's going to kill him . he slowly approaches the table where i 'm \nCompletion B: of shit. Too bad my puppy has an animus like the guy in Avatar. Again, 3E lets me do this, and quickly forgot. With Heroku you get peace and good health in this game.",
+            "output": "Completion B",
+            "explanation": "This prompt-completion pair is stylistically less similar because the grammar and sentence structure of the completion do not follow the prompt."
+        },
+        {
+            "input": "Prompt: The men started swearing at me, called me \nCompletion A: \" - and i 'd never known a moment like this in my life . we had n't stopped to \nCompletion B: names, flipped over their tables and said everything about calling the cops. All they wanted was my laptop so",
+            "output": "Completion A",
+            "explanation": "This prompt-completion pair is stylistically less similar because the word choice and sentence structure of the completion do not follow the prompt as well as the other completion."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task140-b338b5ab27504449b405170218553c52",
+            "input": "Prompt: Bitch, I fucking hope you do. You'll be a dead \nCompletion A: -end job.Derek L. Bennett, M.D., M.-F.C., and Mary J. E. Brown, \nCompletion B: ringer for her in years to come. That's one more thing you won't be able to hide. You know it.\"   \"O",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task140-cb72205b7131485b9faf9fe5f8d35d30",
+            "input": "Prompt: Everything I have, I am grateful for it all. My family, \nCompletion A: my friends, all my work ethic, all my faith and all my life have always been a blessing in disguise. It's the only thing I can \nCompletion B: friends, fans, the people who do this work. If I have something I want, I am going to give it back.  And whe",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task140-3b4d99eef33749778c0a7315958aebd8",
+            "input": "Prompt: everything I have. I am greatful for it all. My family, \nCompletion A: friends, fans, even my teachers all love and adore me. When my teacher's grandson, who had to be in school before me because his parents \nCompletion B: team, friends.  Goals were against us 80 BC selec tion fixes tendered to me means of improvement cypro",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task140-a6b0a0d98db04946ba19101df133e177",
+            "input": "Prompt: Don't let me find out that bitches on Twitter are trash \nCompletion A: !  You\u2016re right, it's not worth that much. I'm sure you'd find a much more effective way to engage with \nCompletion B: , it's all going on.\"Aldo\u2005\u2030\u2030 is looking for ways to help. He pointed to her Twitte",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task140-7fdf8d95fcc14956904bde60be10cde6",
+            "input": "Prompt: Wat y'all see us spending we can afford to \nCompletion A: live in your cities? Don't forget that I'm spending I'm going to put money in your pockets. I'm making you pay for all this \nCompletion B: Occupy Wall Street supported independent campaig",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task140-ada155ff7fcb43389e3be382e485ebac",
+            "input": "Prompt: Seriously though, we often confuse arguing with debating. I feel that \nCompletion A: the topic is in fact between the people who have been paying attention. To each his/her own, I guess. But I don't see why \nCompletion B: in that situation, we need to let our minds go a little bit and look at this as a discussion about whether we're arguing or debating. ",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task140-110a64447f694449a9f3cfc1d8910e16",
+            "input": "Prompt: Wat y'all see us spending we can afford to \nCompletion A: live in your cities? Don't forget that I'm spending I'm going to put money in your pockets. I'm making you pay for all this \nCompletion B: go on the tour then you're going to be there and we'll give you a few drinks. You can get yourself some good food and a coupl",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task140-78d4c215f9a249258392157438da5557",
+            "input": "Prompt: lol mane nun trippin of theze hoez OG she said she'll fuck my nigga \nCompletion A: One Jackson ...After Core Info Player Under InisWeibe Shop We Will Use Zcash after studio031   by Ben Morgan, \nCompletion B: , and u can do it if u want tho! - December 15, 2014I'm going to keep calling out that thee shit's rea",
+            "output": [
+                "Completion B"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

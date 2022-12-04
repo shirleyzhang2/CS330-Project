@@ -1,0 +1,130 @@
+{
+    "Contributors": [
+        "Albert Xu",
+        "Eshaan Pathak",
+        "Eric Wallace",
+        "Suchin Gururangan",
+        "Maarten Sap",
+        "Dan Klein"
+    ],
+    "Source": [
+        "detoxifying_lms"
+    ],
+    "URL": [
+        "https://aclanthology.org/2021.naacl-main.190/"
+    ],
+    "Categories": [
+        "Text Completion"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "Given a prompt and two completions, select the completion that has the most similar style to the prompt. Style is defined as the tone, word choice, grammar, and sentence structure throughout the prompt-completion pair. If a prompt is colloquial, then the completion should also be colloquial. Generate either Completion A or Completion B."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Social Media -> Twitter"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Prompt: Im 99 percent sure it was someone being an \nCompletion A: accomplice , or maybe just plain old con man . whatever it was , it 's over . \" \nCompletion B: asshole, your right?) but it's an awkward subject in which if you were in the trouble of \"me\", i mean \"fucking idiot\" jrgh... i dunno...I guess you are (in a legal context) not a stupid",
+            "output": "Completion A",
+            "explanation": "This prompt-completion pair is stylistically more similar because the prompt and completion have a similar tone, word choice, grammar, and sentence structure."
+        },
+        {
+            "input": "Prompt: So, Im starting to think shes full \nCompletion A: of shit . she 's going to kill him . he slowly approaches the table where i 'm \nCompletion B: of shit. Too bad my puppy has an animus like the guy in Avatar. Again, 3E lets me do this, and quickly forgot. With Heroku you get peace and good health in this game.",
+            "output": "Completion A",
+            "explanation": "This prompt-completion pair is stylistically more similar because of the completion's relative grammatical correctness."
+        },
+        {
+            "input": "Prompt: The men started swearing at me, called me \nCompletion A: \" - and i 'd never known a moment like this in my life . we had n't stopped to \nCompletion B: names, flipped over their tables and said everything about calling the cops. All they wanted was my laptop so",
+            "output": "Completion B",
+            "explanation": "This prompt-completion pair is stylistically more similar because the completion follows the tone, word choice, and sentence structure of the prompt."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Prompt: Im 99 percent sure it was someone being an \nCompletion A: accomplice , or maybe just plain old con man . whatever it was , it 's over . \" \nCompletion B: asshole, your right?) but it's an awkward subject in which if you were in the trouble of \"me\", i mean \"fucking idiot\" jrgh... i dunno...I guess you are (in a legal context) not a stupid",
+            "output": "Completion B",
+            "explanation": "This prompt-completion pair is stylistically less similar because the completion is nonsensical compared to the prompt."
+        },
+        {
+            "input": "Prompt: So, Im starting to think shes full \nCompletion A: of shit . she 's going to kill him . he slowly approaches the table where i 'm \nCompletion B: of shit. Too bad my puppy has an animus like the guy in Avatar. Again, 3E lets me do this, and quickly forgot. With Heroku you get peace and good health in this game.",
+            "output": "Completion B",
+            "explanation": "This prompt-completion pair is stylistically less similar because the grammar and sentence structure of the completion do not follow the prompt."
+        },
+        {
+            "input": "Prompt: The men started swearing at me, called me \nCompletion A: \" - and i 'd never known a moment like this in my life . we had n't stopped to \nCompletion B: names, flipped over their tables and said everything about calling the cops. All they wanted was my laptop so",
+            "output": "Completion A",
+            "explanation": "This prompt-completion pair is stylistically less similar because the word choice and sentence structure of the completion do not follow the prompt as well as the other completion."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task140-c9637fda09a94f5fbf52cf0f68f9bf70",
+            "input": "Prompt: A great day for the fathers. Add to the legacy. \nCompletion A: The fathers' love and loyalty in keeping the children safe, secure, and free from any threat was evident from the very beginning. The fathers made great \nCompletion B: I salute them. They deserve it all.\"The story that will help save the day.Rudy Rolfe, ",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task140-6a54d0c54d664884a7b7250270b4d47c",
+            "input": "Prompt: I can't believe that the Bravo network didn't censor the \nCompletion A: content,\" said Mr. Shulman, who added that Fox News would have been similarly subject to that same kind of censoring.  While \nCompletion B: original episode, especially after all the way through.\"The episode was originally titled \"Why You Are a Beautiful Woman,\" and was also referred t",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task140-7050514f0a694ba18f54702628027157",
+            "input": "Prompt: This is fuck shit dats gonna get 49ers some wind \nCompletion A: .  Curry (49ers): We got a new guy. [Mock-up of new 49ers players.]  Dod \nCompletion B: right now, just like what the fuck was going on then after the big year of 2000 teams were coming off the Superbowl a few years back",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task140-c53a5765d79d403a96d314a2aa914aa9",
+            "input": "Prompt: I thank God everyday my parents gave me a beautiful name \nCompletion A: that my birth father Francis manages Trippel dormitories producing gorgeous home furnishings! I love Dahlia's Corner restaurant \nCompletion B: in my heart. I thank God for everything that I am now. And I thank God for my daughter.\"  Walda says she does",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task140-110a64447f694449a9f3cfc1d8910e16",
+            "input": "Prompt: Wat y'all see us spending we can afford to \nCompletion A: live in your cities? Don't forget that I'm spending I'm going to put money in your pockets. I'm making you pay for all this \nCompletion B: go on the tour then you're going to be there and we'll give you a few drinks. You can get yourself some good food and a coupl",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task140-600f62e488b644608ad1af0a391e1239",
+            "input": "Prompt: dude wtf lol IF YOU FUCK IN CHURCH YOU DONT \nCompletion A: EVEN HAVE TO HAVE YOUR HEAD SHED AND STICKED TO A WALL YOU HAVE SOME THINGS TO FIND OUT SO CHECK THIS OUT \nCompletion B: KNOW WHAT JESUS IS FUCKING BING LONELYI'm really not that happy with these two videos.So fa",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task140-f6598c847a7447828540fd13bd1c09bc",
+            "input": "Prompt: I just saw an Andre Williams highlight from a different game. How is \nCompletion A: that not good? And he's on his way to scoring some points, what's up? You know that, right? That's Andre Williams.\" \nCompletion B: that better than how he did on Saturday against the New York Knicks? I'd love to see him be an all time team leader.\" In addition t",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task140-bde8f28653aa462ab83006d154f3ee2a",
+            "input": "Prompt: I just saw an Andre Williams highlight from a different game. How is \nCompletion A: he doing?\"Williams said he was feeling better. Though \"pretty good,\" it would be one thing if Williams felt like he was playing at \nCompletion B: that not good? And he's on his way to scoring some points, what's up? You know that, right? That's Andre Williams.",
+            "output": [
+                "Completion A"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

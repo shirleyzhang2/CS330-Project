@@ -1,0 +1,115 @@
+{
+    "Contributors": [
+        "Kushal Chawla"
+    ],
+    "Source": [
+        "casino"
+    ],
+    "URL": [
+        "https://aclanthology.org/2021.naacl-main.254.pdf"
+    ],
+    "Categories": [
+        "Negotiation Strategy Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "In this task, you are given an utterance and recent dialogue context containing past 3 utterances (wherever available). Your task is to output 'Yes' if the utterance contains the elicit-pref strategy, or 'No' if it does not. 'Elicit-pref' is a cooperative negotiation strategy used to discover the preference order of the opponent in the negotiation."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Context: 'What do you think if in the camp we get together and have a meeting between your family and mine? We can have a small party to get to know each other better.' 'Sounds great!' 'Ok, my proposal is to give you all the firewood you need, on the condition that you give me all the water I need. And regarding food we can negotiate.'\nUtterance: 'That sounds good. What do you propose on the food?'",
+            "output": "No",
+            "explanation": "The primary utterance does not try to elicit information on the preference order of the participant. So this is correct."
+        },
+        {
+            "input": "Context: 'Good morning' 'Hi, how goes it?' 'It's going alright. What do you need the most to trade?'\nUtterance: 'well, I run and could use some extra water. How about you?'",
+            "output": "Yes",
+            "explanation": "This is correct. The utterance asks about the preference of the opponent, which is clear from the context."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Context: 'Which one do you prefer most?' 'They sort of need more water for their meds' 'I'm sorry to hear that! But can you spare 1 for me since you probably don't need all the water.'\nUtterance: 'Sure that sounds fair. Thank you. Besides water what do you need for your trip?'",
+            "output": "No",
+            "explanation": "In the utterance, the participant asks about the needs of the opponent. So the answer should be 'Yes'."
+        },
+        {
+            "input": "Context: 'I am willing to give you the most water if I am able to have the most food.' 'Well I need some food because what if I get lost as well? ' 'I understand that, but walking away with the most food and the most water would essentially leave me for dead lol. Do you prefer water or food? '\nUtterance: 'I prefer to have the most water as I have a medical condition that requires me to stay extremely hydrated at all times. If I get too dehydrated, it's extremely bad for me. How about I get 3 water and 1 food, and 2 firewood?'",
+            "output": "Yes",
+            "explanation": "The participant does not try to elicit anything about the preference order, at least directly. The correct answer is 'No'."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task353-4bf0c49baf364029a9acaf208b6379d1",
+            "input": "Context: \nUtterance: 'How are you today? Did you have any preferences on the supplies we will be trading?'",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task353-5e9e5750a84847a7b0441d15f03ab79a",
+            "input": "Context: 'Your two youngest kids are working? How old is everyone? If there's a lot of people, it will be easier to split up the duties and get things done. My son's 3 years old so as much as he's eager to help, there's not much he can do lol.' 'Ha Ha...no my too youngest have hardly been anywhere because of us adults working,  I have teens (17, 15), tweens (13) and littles (10, 7). We 3 boys and 3 girls. We have a 21 year old but he's in a band so h can't go. They all pitch in anytime. They eat a lot so they have to cook from scratch at home. Awww 3 is so adorable...that's when they are sure they can do and will work so hard! ' 'Home cooking's the best, yumyums! We're planning on doing a lot of fishing since my son's been in love with fishing toys and is currently in love with eating fish (he hasn't gotten tired of eating it every night for dinner). We're thinking of cooking what we catch every night. Do you have any activities planned for your camping trip?'\nUtterance: 'Fishing is so fun! \ud83d\ude42 We really don't have a plan... so many people, so many opinions. If you'll be fishing and eating your catch, you'll probably need more firewood than food. And with the filters, you will need some extra water, especially for your little guy. So would you agree that you take 2 firewood packages, 1 food package and 1 extra water. '",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task353-a8cfe4a4050b46cbad080f717c58225a",
+            "input": "Context: 'I am doing good. Thanks. Which item do you need the most?' 'I was thinking firewood, because the most fun I have camping is roasting marshmellows and hanging out around there. How about you?' 'Oh hmm. I really need extra firewood because I forgot to bring a sleeping bag. I will be freezing to death at night. \u2639\ufe0f'\nUtterance: 'Okay, well tell me what you need the least of, if you don't mind.'",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task353-3c2e66d42c1e4500aed4229bfd03219c",
+            "input": "Context: \nUtterance: 'HI, my heater hasn't arrived yet and we are in need of extra firewood. Plus, we're camping where there is 6 months of darkness, in Sweden. \ud83d\ude2e'",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task353-90f1a24fa3f14db2b673570909c0831b",
+            "input": "Context: 'I brought purification tablets so I can make do with rainwater or river water.  How about you?' 'That's very smart! \ud83d\ude42 Way to be prepared! I didn't think to do that.' 'So if we were to split the firewood more in your favor and I were to take all the food, and then we kind of split the water, I think we could maybe make a deal here?  \ud83d\ude42'\nUtterance: 'I think that is definitely doable! I'd be glad to make a deal with you. Thanks for being so reasonable! \ud83d\ude42\ud83d\ude42'",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task353-8172fc4f5b3242a089a92d1f5a63b165",
+            "input": "Context: 'Hi! I'm very excited for the upcoming camping trip!! \ud83d\ude42'\nUtterance: 'Me too! \ud83d\ude42 What do you think about the extra supplies?'",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task353-724dec3af79c477a8be4e485b58b8e8d",
+            "input": "Context: 'Would you be willing to give me 1 food, 2 firewood, and 2 water?' 'I could make that work \ud83d\ude42 I'm sorry if I came off mean, I'm just trying to make sure I'll be ok. I don't camp often, so I'm not sure how to prepare.' 'I understand. What are you using the extra food for?'\nUtterance: 'I brought some pre-packed snacks, and a few sandwiches. I'm hoping there are no hungry animals around. What about you?'",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task353-63662702e64c473da5148f328b4b05fa",
+            "input": "Context: 'we both have the same high value priority. what is number 2 for you? thanks' '\ud83d\ude42 Food' 'me 2 lol, what if you got 2 of the water and me 1 but then i could do 2 of the food and firewood and things would kind of even out with that arrangement.'\nUtterance: 'Yes, that would be fair. How much of Firewood would you need?'",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

@@ -1,0 +1,113 @@
+{
+    "Contributors": [
+        "Neeraj Varshney"
+    ],
+    "Source": [
+        "timetravel"
+    ],
+    "URL": [
+        "https://github.com/qkaren/Counterfactual-StoryRW"
+    ],
+    "Categories": [
+        "Coherence Classification"
+    ],
+    "Reasoning": [
+        "Temporal Reasoning",
+        "Commonsense Reasoning"
+    ],
+    "Definition": [
+        "In this task, you are given a short story consisting of 5 sentences, with the second sentence missing. You are given two options to fill in the missing sentence, and you need to select the one that best connects the first sentence with the rest of the story. Indicate your answer by 'Option 1' if the first option is correct, otherwise 'Option 2'. The incorrect option will change the subsequent storyline, so that at least one of the three subsequent sentences is no longer consistent with the story."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Commonsense -> Stories"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Sentence 1: The cashier was counting the dollar bills at her desk. \n Sentence 3: Everyone panicked and started to scream. \n  Sentence 4: The men threatened the people to remain quiet. \n Sentence 5: The cashier handed them the cash so they would go away.  \n Option 1:  Two men rushed into the store and held their guns up. \n Option 2: Two dogs rushed into the store.",
+            "output": "Option 1",
+            "explanation": "Option 1 forms a consistent story with the given four sentences. In constrast, Option 2 is incorrect as the entty 'two dogs' is not consistent with 'men' mentioned in Sentence 4."
+        },
+        {
+            "input": "Sentence 1: The cashier was counting the dollar bills at her desk. \n Sentence 3: Everyone panicked and started to scream. \n  Sentence 4: The men threatened the people to remain quiet. \n Sentence 5: The cashier handed them the cash so they would go away.  \n Option 1:  Three men rushed into the store and held their guns up. \n Option 2: Two men rushed into the hospital.",
+            "output": "Option 1",
+            "explanation": "Option 1 forms a consistent story with the given four sentences. In constrast, Option 2 is incorrect as it is not consisitent with sentence 1 ('store cashier' vs 'hospital')."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Sentence 1: The cashier was counting the dollar bills at her desk. \n Sentence 3: Everyone panicked and started to scream. \n  Sentence 4: The men threatened the people to remain quiet. \n Sentence 5: The cashier handed them the cash so they would go away.  \n Option 1:  Two men rushed into the store and held their guns up. \n Option 2: Two dogs rushed into the store.",
+            "output": "Two men rushed into the store and held their guns up.",
+            "explanation": "The selected option is correct but it outputed the entire option text instead of its label i.e 'Option 1'."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task065-ae662989d6634db2a3627b4e29b85388",
+            "input": "Sentence 1: Carla was working hard on a project. \n Sentence 3: Carla finished the project ahead of the due date \n Sentence 4:  Her bosses were impressed with the work that she did \n Sentence 5:  Carla was recognized at the next meeting at work \n Option 1: She stayed after work every day for a week and accidentally ruined the project. \n Option 2: She stayed after work every day for a week to finish the project.",
+            "output": [
+                "Option 2"
+            ]
+        },
+        {
+            "id": "task065-aa02d30f2ac64be69cb7393a6cc0253d",
+            "input": "Sentence 1: Adrian was a high-class pilot who traveled all around the world. \n Sentence 3: One day, he had to fly a famous celebrity through a stormy area \n Sentence 4:  His contacts were all very concerned for the plane's safe travels \n Sentence 5:  Adrian was very skilled, however, and landed the plane safely \n Option 1: His clients were often celebrities or wealthy folk. \n Option 2: His clients were often celebrities who liked crazy rides.",
+            "output": [
+                "Option 1"
+            ]
+        },
+        {
+            "id": "task065-f9d1e723b8954f99907890bbf2bd55db",
+            "input": "Sentence 1: I gave the waiter my cash. \n Sentence 3: I had never paid at a restaurant before \n Sentence 4:  He was having a party \n Sentence 5:  I was with my brother close to his wedding \n Option 1: It was time to pay. \n Option 2: I had already paid for my food earlier, but I had ordered another drink since then.",
+            "output": [
+                "Option 1"
+            ]
+        },
+        {
+            "id": "task065-4871185751a34fe3ad156ce9fca631fe",
+            "input": "Sentence 1: My parents live a few blocks from me. \n Sentence 3: Their new house is really little \n Sentence 4:  We didn't know how we would all fit for Thanksgiving \n Sentence 5:  Somehow there was enough room and it was a lot of fun \n Option 1: They used to have a bigger house, but sold it to a friend. \n Option 2: They used to have a bigger house, but they lost it to the bank.",
+            "output": [
+                "Option 2"
+            ]
+        },
+        {
+            "id": "task065-fe707f60c5834c28838d376e927a8205",
+            "input": "Sentence 1: Amy loves to watch movies on Netflix with her boyfriend. \n Sentence 3: They spent an hour browsing different ones \n Sentence 4:  In the end, they didn't watch anything \n Sentence 5:  Amy knows that she needs to have a movie picked out for now on \n Option 1: Her boyfriend hates watching movies but likes to make Amy happy. \n Option 2: One night, neither one of them could decide on a movie.",
+            "output": [
+                "Option 2"
+            ]
+        },
+        {
+            "id": "task065-3a0462623beb44fdb2e987720ae9f815",
+            "input": "Sentence 1: Dan got a notice from his local public library. \n Sentence 3: Dan looked all over his house for the book \n Sentence 4:  Dan finally found it \n Sentence 5:  Dan took the book to the library, paying a whopping 5 dollar fee \n Option 1: The notice said Dan had an overdue book and was getting fined. \n Option 2: The notice said they were having a used book sale.",
+            "output": [
+                "Option 1"
+            ]
+        },
+        {
+            "id": "task065-290ad9e17a894c4db66ff0754cbae129",
+            "input": "Sentence 1: Sally decided to get a haircut. \n Sentence 3: She was upset when she realized the stylist cut it way too short \n Sentence 4:  The stylist did not charge her but that did not fix her hair \n Sentence 5:  She waited for months for her hair to grow back out \n Option 1: She went to the stylist and got her cut. \n Option 2: Sally got the perfect haircut and was very happy.",
+            "output": [
+                "Option 1"
+            ]
+        },
+        {
+            "id": "task065-4beeb762d3344548ab8339662ff78e30",
+            "input": "Sentence 1: Matt was a freelance writer. \n Sentence 3: One day he ran out of story ideas \n Sentence 4:  Then he sat for a while and thought of new ideas \n Sentence 5:  Now he has a lot of story ideas to write about \n Option 1: He wrote press releases all the time. \n Option 2: He wrote stories all the time.",
+            "output": [
+                "Option 2"
+            ]
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

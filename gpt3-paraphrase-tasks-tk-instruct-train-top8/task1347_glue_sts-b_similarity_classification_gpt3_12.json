@@ -1,0 +1,128 @@
+{
+    "Contributors": [
+        "Arit Chanda"
+    ],
+    "Source": [
+        "sts_b"
+    ],
+    "URL": [
+        "https://dl.fbaipublicfiles.com/glue/data/STS-B.zip"
+    ],
+    "Categories": [
+        "Text Matching"
+    ],
+    "Reasoning": [
+        "Textual Entailment -> Analogical Reasoning"
+    ],
+    "Definition": [
+        "Given two sentences, you must evaluate the similarity between them and classify them into one of the following classes: 0, 1, 2, 3, 4, or 5. Class 0 means the two sentences are completely dissimilar. Class 1 means the two sentences are not equivalent, but are on the same topic. Class 2 means the two sentences are not equivalent, but share some details. Class 3 means the two sentences are roughly equivalent, but some important information differs or is missing. Class 4 means the two sentences are mostly equivalent, but some unimportant details differ. Class 5 means the two sentences are completely equivalent, as they mean the same thing."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Books",
+        "Dialogue"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Sentence 1: A plane is taking off. Sentence 2: An air plane is taking off.",
+            "output": "5",
+            "explanation": "Here both statements are talking about the same thing hence it will be classified as a 5."
+        },
+        {
+            "input": "Sentence 1: A man is playing a large flute. Sentence 2: A man is playing a flute.",
+            "output": "4",
+            "explanation": "In this example both statements mean the same thing but only unimportant details like the size of the flute is missing in the second statement. Hence, it is classified as a 4."
+        },
+        {
+            "input": "Sentence 1: Three men are playing chess. Sentence 2: Two men are playing chess.",
+            "output": "3",
+            "explanation": "In this example important detail of the number of men playing chess is wrong. Hence this example will be clasified as a 3."
+        },
+        {
+            "input": "Sentence 1: A man is smoking. Sentence 2: A man is skating.",
+            "output": "0",
+            "explanation": "Here there is no similarity between the two sentences hence the output classification is 0."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Sentence 1: A man is playing the cello. Sentence 2: A man seated is playing the cello.",
+            "output": "3",
+            "explanation": "Sentence 1 and 2 are only different by an unimportant detail of the man seating so the output should have been 4."
+        },
+        {
+            "input": "Sentence 1: The man is playing the piano. Sentence 2: The man is playing the guitar.",
+            "output": "0",
+            "explanation": "In this example both our sentences are sharing some details about playing an musical instrument so the correct classification should have been 2."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1347-d0e6b2cbb2424f83bf3e5268705cdd92",
+            "input": "Sentence 1: 4 killed in shrine bombing in northwest Pakistan Sentence 2: 12 killed in U.S. drone strike in NW Pakistan",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "id": "task1347-8793904507de459c93918add254f064c",
+            "input": "Sentence 1: A tiger cub is making a sound. Sentence 2: A tiger is walking around.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "id": "task1347-6de535a63a24498ca7535442ce4b2dbb",
+            "input": "Sentence 1: a boy plays with a noodle by the pool. Sentence 2: A boy plays with a foam noodle toy by a pool.",
+            "output": [
+                "5"
+            ]
+        },
+        {
+            "id": "task1347-ed71d8d21b4a4476a0e11a9c0c98f70d",
+            "input": "Sentence 1: their vast properties are protected by the govt. Sentence 2: their great wealth is protected by the govt.",
+            "output": [
+                "3"
+            ]
+        },
+        {
+            "id": "task1347-84bacfaab7064956bab98ef0430aafb7",
+            "input": "Sentence 1: The average American makes four trips a day, 45 percent for shopping or errands. Sentence 2: Nearly half - 45 percent - are for shopping or running errands.",
+            "output": [
+                "3"
+            ]
+        },
+        {
+            "id": "task1347-3c639333178c4352ac2aec930816789a",
+            "input": "Sentence 1: How would Martin not know that that was not the case? Sentence 2: How would Martin or anyone else know his intentions based on his actions?",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "id": "task1347-32e9fe59bca74640a04c46886ccfd9dd",
+            "input": "Sentence 1: A blonde dog is catching a ball in its mouth in the snow. Sentence 2: A little blonde girl is sitting on a green chair.",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "id": "task1347-a6fcad74acff4599880e1cdafb1ed9fe",
+            "input": "Sentence 1: A person is folding a piece of paper. Sentence 2: Someone is folding a piece of paper.",
+            "output": [
+                "5"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

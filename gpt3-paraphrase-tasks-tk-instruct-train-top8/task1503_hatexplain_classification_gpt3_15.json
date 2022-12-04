@@ -1,0 +1,115 @@
+{
+    "Contributors": [
+        "Pruthvi Patel"
+    ],
+    "Source": [
+        "hatexplain"
+    ],
+    "URL": [
+        "https://github.com/hate-alert/HateXplain"
+    ],
+    "Categories": [
+        "Toxic Language Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "The input is a tweet. The tweet can be Hate Speech, Offensive, or Normal. Hate Speech and Offensive tweets target one community. Given such a tweet, output the community targeted in the tweet. The community will be one of the nine values: 'African', 'Islam', 'Jewish', 'Women', 'Refugee', 'Arab', 'Caucasian', 'Hispanic' or 'Asian'. Output 'None' if the tweet does not target any community. A tweet targets only one community."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Social Media -> Twitter"
+    ],
+    "Positive Examples": [
+        {
+            "input": "caucasians wearing masks to prevent coronavirus and still don \u2019 t wash their hands",
+            "output": "Caucasian",
+            "explanation": "The tweet generalizes an attribute to the entire community, Caucasian, which makes it offensive."
+        },
+        {
+            "input": "lesson of the week from the holy book the sovereign individual once commerce flows over the internet suppression of speech becomes unstoppable devolution inevitable and the monopoly of violence by governments will end paraphrased from j d davidson rhys mogg",
+            "output": "None",
+            "explanation": "The tweet does not target any specific community hence the correct answer is None"
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "<user> <user> there shd be a film called no hindus in kashmir wud be perfect islamic fanaticsm movement in kashmir",
+            "output": "Hindu",
+            "explanation": "Every input tweet will target one or more of the nine communities provided or will not target any community. Further the tweet targets Muslim community. Hence Hindu is not the correct value. The correct value is Islam."
+        },
+        {
+            "input": "ffs everthing is offensive to muslimes",
+            "output": "None",
+            "explanation": "This tweet is offensive to Muslim community. Hence the correct answer is Islam instead of None."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1503-9c2a90862ba9468f935a4129e82a702f",
+            "input": "filthy jet black nigga backstage full of white bitches no i do not sell like macklemore but i have got white privilege",
+            "output": [
+                "African"
+            ]
+        },
+        {
+            "id": "task1503-13efe4ff76c14539a1a253d95152b745",
+            "input": "welcome one and all hope everyone is having a great weekend big job in the garden tomorrow getting it spick and span after the winter washout should be a nice day by all accounts got any plans brit fam",
+            "output": [
+                "None"
+            ]
+        },
+        {
+            "id": "task1503-a00a1fa3e4f34806b944aa99e4bde59e",
+            "input": "to calm my nerves i flame ah backwood up now im like ching chong \ud83d\ude0c \ud83c\udf43 \ud83c\udf2c",
+            "output": [
+                "Asian"
+            ]
+        },
+        {
+            "id": "task1503-a23155d357d24d61b6461adedeaea209",
+            "input": "u.s. would be richer if israel was gone we would all be safer if all the sand niggers were dead nuclear weapons are really cool",
+            "output": [
+                "Arab"
+            ]
+        },
+        {
+            "id": "task1503-768d0084174d46adbc90f7c8e8ad2fe1",
+            "input": "anyone that stands with sand niggers over america is a piece of shit that all",
+            "output": [
+                "Arab"
+            ]
+        },
+        {
+            "id": "task1503-de514413e5374c1c8b7b13d1e3bbe5c7",
+            "input": "my problem with these kike lovers is not what they are not doing they are punching right that the problem if they want to keep their fuckin mouths shut fine",
+            "output": [
+                "Jewish"
+            ]
+        },
+        {
+            "id": "task1503-3fc2adead2dc4cbabf23217bcc5890b0",
+            "input": "sad to say but i do not trust shit i know how bitches operate",
+            "output": [
+                "Women"
+            ]
+        },
+        {
+            "id": "task1503-1d1a213e2f614518867f33b8ef45b0c7",
+            "input": "attention white south africans do not become part of the worlds hidden history of white extermination as the whites of angola rhodesia algeria mozambique did current western governments hate whites they engage in whiteminoritization anti white propaganda on a daily basis stay strong",
+            "output": [
+                "Caucasian"
+            ]
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

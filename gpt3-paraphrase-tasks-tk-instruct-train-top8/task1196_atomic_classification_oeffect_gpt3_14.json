@@ -1,0 +1,125 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "atomic"
+    ],
+    "URL": [
+        "https://allenai.org/data/atomic-2020"
+    ],
+    "Categories": [
+        "Commonsense Classification"
+    ],
+    "Reasoning": [
+        "Relational Reasoning",
+        "Reasoning on Social Interactions",
+        "Commonsense Reasoning -> Social Situations"
+    ],
+    "Definition": [
+        "In this task, you are given a tuple consisting of a Head and a Tail event, separated by <sep>. The Head and Tail events are short phrases involving one or more participants. The specific names of people have been replaced by generic terms (e.g., PersonX, PersonY, PersonZ). PersonX is always the subject of the event. You must determine whether, as a result of the Head event, PersonY or others will be affected as mentioned in the Tail event. These effects are social actions that may occur after the Head event. For example, X may get hugged, and Y may blush in response. Classify your answers into \"Yes\" and \"No\". The phrase may also contain \"___\", a placeholder that can be an object, a person, and/or an action."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Sociology",
+        "Commonsense -> Concepts and Relations -> Social Commonsense"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Head: PersonX goes the way of the dodo<sep>Tail: none",
+            "output": "Yes",
+            "explanation": "This is a good example. As a result of the Head, others won't be affected."
+        },
+        {
+            "input": "Head: PersonX applies sunscreen<sep>Tail: safe",
+            "output": "No",
+            "explanation": "In this example, if PersonX applies sunscreen, others won't be safe. So this output is correct."
+        },
+        {
+            "input": "Head: PersonX goes shopping with PersonY<sep>Tail: gets tired",
+            "output": "Yes",
+            "explanation": "If PersonX goes shopping with PersonY, personY will be tired. Thus, this example should be classified as \"Yes\"."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Head: PersonX affords another ___<sep>Tail: to enjoy it",
+            "output": "Yes",
+            "explanation": "If PersonX affords another thing, we don't know whether others enjoy it or not. So the output should be \"No\"."
+        },
+        {
+            "input": "Head: PersonX invites PersonY to join PersonZ<sep>Tail: they get joined by PersonY",
+            "output": "No",
+            "explanation": "If PersonX invites PersonY to join PersonZ, others will be joined by PersonY, and the output should be \"Yes\"."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1196-1ca1cda1d125465099ee6f40401ca456",
+            "input": "Head: PersonX does not get the job<sep>Tail: none",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1196-81fa8650a2274ef8ad8d0770a1b92a4f",
+            "input": "Head: PersonX makes PersonY feel sick<sep>Tail: none",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1196-33071d0b734d4372a5e8dc0b86d36fa1",
+            "input": "Head: PersonX asks PersonX's grandma<sep>Tail: excited",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1196-0bb6eda7811b4811a3b74f5bcd260975",
+            "input": "Head: PersonX comes over last night<sep>Tail: Person Y works with Person X.",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1196-aac27dabbb6c4832b383297d7a98d277",
+            "input": "Head: PersonX asks PersonX's boyfriend<sep>Tail: to think of a question",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1196-66ec54a4e447456c94ffa283c519be5a",
+            "input": "Head: PersonX makes a mountain out of a molehill<sep>Tail: none",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1196-685a705d76f9411fae50f17be811059d",
+            "input": "Head: PersonX babysits PersonX's nephew<sep>Tail: to watch them",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1196-6473ba9e140547fb80e48409886792ed",
+            "input": "Head: PersonX assumes another ___<sep>Tail: think of names",
+            "output": [
+                "No"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

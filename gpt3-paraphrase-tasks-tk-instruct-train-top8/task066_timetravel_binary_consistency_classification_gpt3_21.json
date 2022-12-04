@@ -1,0 +1,118 @@
+{
+    "Contributors": [
+        "Neeraj Varshney"
+    ],
+    "Source": [
+        "timetravel"
+    ],
+    "URL": [
+        "https://github.com/qkaren/Counterfactual-StoryRW"
+    ],
+    "Categories": [
+        "Coherence Classification"
+    ],
+    "Reasoning": [
+        "Temporal Reasoning",
+        "Commonsense Reasoning"
+    ],
+    "Definition": [
+        "In this task, you will be given a short story consisting of exactly 5 sentences. The second sentence will be missing, and you will be given a candidate sentence to fill in the blank. You need to determine if the given sentence connects the first sentence with the rest of the story. If it does, output \"Yes\". If it does not, output \"No\". The given sentence is incorrect if it changes the subsequent storyline, so that at least one of the three subsequent sentences does not form a consistent story."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Commonsense -> Stories"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Sentence 1: The cashier was counting the dollar bills at her desk. \n Sentence 3: Everyone panicked and started to scream. \n  Sentence 4: The men threatened the people to remain quiet. \n Sentence 5: The cashier handed them the cash so they would go away.  \n Given Sentence 2: Two men rushed into the store and held their guns up.",
+            "output": "Yes",
+            "explanation": "People panic when somebody holds their guns up. Sentence 2 correctly connects Sentence 1 with rest of the story. So, the answer is 'Yes'."
+        },
+        {
+            "input": "Sentence 1: The cashier was counting the dollar bills at her desk. \n Sentence 3: Everyone panicked and started to scream. \n  Sentence 4: The men threatened the people to remain quiet. \n Sentence 5: The cashier handed them the cash so they would go away.  \n Given Sentence 2: Two dogs rushed into the store.",
+            "output": "No",
+            "explanation": "The entity 'two dogs' doesn't connect with the rest of the story. Note that with the given sentence, sentence 4: \" The men threatened ...\" is not consistent. So, the answer is 'No'."
+        },
+        {
+            "input": "Sentence 1: The cashier was counting the dollar bills at her desk. \n Sentence 3: Everyone panicked and started to scream. \n  Sentence 4: The men threatened the people to remain quiet. \n Sentence 5: The cashier handed them the cash so they would go away.  \n Given Sentence 2: Two men rushed into the store and started asking for help since their friend was bleeding.",
+            "output": "No",
+            "explanation": "With the given sentence, sentence 5: 'cashier handed them the cash' is no longer consistent. So, 'No' is the correct answer."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Sentence 1: The cashier was counting the dollar bills at her desk. \n Sentence 3: Everyone panicked and started to scream. \n  Sentence 4: The men threatened the people to remain quiet. \n Sentence 5: The cashier handed them the cash so they would go away.  \n Given Sentence 2: Two men rushed into the store and started yelling.",
+            "output": "Given Sentence doesn't connect with the story.",
+            "explanation": "The answer can only be Yes or No. This is a bad answer."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task066-735c85dd262d48dd96a35f874e39bcb4",
+            "input": "Sentence 1: Joe wanted to join The Army. \n Sentence 3: Joe took the entrance exams to join \n Sentence 4:  He was not able to pass and was not permitted to join \n Sentence 5:  His father was happy his son was not joining The Army \n Given Sentence 2: We were waiting on Nancy to appear.",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task066-bc8577d3e0b7448d86543a46cc650dc0",
+            "input": "Sentence 1: Roland decided that he would like to get a job. \n Sentence 3: When he started working there, Roland found it very challenging \n Sentence 4:  However, eventually he enjoyed working \n Sentence 5:  Roland was proud that he got a job \n Given Sentence 2: They saw amazing sights.",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task066-8625dba085aa470d89351bd7c6ddd6bc",
+            "input": "Sentence 1: The sirens started going off. \n Sentence 3: They never thought a tornado would actually hit \n Sentence 4:  The roof started coming off the school \n Sentence 5:  Luckily no one got hurt \n Given Sentence 2: Trombone players were bored.",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task066-d086f8b7ff994acf8998875b98aa76ed",
+            "input": "Sentence 1: Cindy and her husband weren't getting along. \n Sentence 3: She went to her priest for advice \n Sentence 4:  He advised her that God would understand if she divorced her husband \n Sentence 5:  Cindy went ahead with the split and her life improved greatly \n Given Sentence 2: She had an apron that she kept in her pantry.",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task066-ba5ec5533edd4fe288ec5c9a76ceef4c",
+            "input": "Sentence 1: Liz realizes that her diet does not include enough water. \n Sentence 3: At first she finds the habit tedious \n Sentence 4:  But eventually she enjoys having more water \n Sentence 5:  Liz is happy that she has changed her habits \n Given Sentence 2: She decides to start trying to drink more water every day.",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task066-b9c259b8df7d4306b292428fa0f158e7",
+            "input": "Sentence 1: Seth wanted to make mints that weren't so aggressive. \n Sentence 3: Seth's Mints were more mild than those of the competition \n Sentence 4:  Seth carved out a niche in the market \n Sentence 5:  Seth lived comfortably on his mint money \n Given Sentence 2: He started a company and called it Seth's Mints.",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task066-92b29bb2365344de8713cc6d5290509d",
+            "input": "Sentence 1: Billy was a star basketball player. \n Sentence 3: Billy was open and his teammate passed the ball to him \n Sentence 4:  Billy ran up to the hoop \n Sentence 5:  He scored and helped the team win \n Given Sentence 2: Diana couldn't keep her eyes open and fell asleep.",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task066-4b637f2c31ce4e0f9a46d3e44f4c0d62",
+            "input": "Sentence 1: Charles woke up in his throat felt bad. \n Sentence 3: She came back with a thermometer and took his temperature \n Sentence 4:  She told him that he's not going to school today because you are sick \n Sentence 5:  He gave him some medicine and by the morning he was well again \n Given Sentence 2: He hoped she would still leave both of them her house.",
+            "output": [
+                "No"
+            ]
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

@@ -1,0 +1,125 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "atomic"
+    ],
+    "URL": [
+        "https://allenai.org/data/atomic-2020"
+    ],
+    "Categories": [
+        "Commonsense Classification"
+    ],
+    "Reasoning": [
+        "Relational Reasoning",
+        "Reasoning on Social Interactions",
+        "Commonsense Reasoning -> Social Situations"
+    ],
+    "Definition": [
+        "You are given two phrases: Head and Tail, separated with <sep>. The Head and the Tail events are short phrases possibly involving participants. The names of specific people have been replaced by generic words (e.g., PersonX, PersonY, PersonZ). PersonX is always the subject of the event. You have to determine whether, as a result of the Head, PersonX may feel what is mentioned in the Tail or not. In this task, the feeling is an emotional reaction on the part of X or other participants in an event. Classify your answers into \"Yes\" and \"No\". The phrase may also contain \"___\", a placeholder that can be an object, a person, and/or an action."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Sociology",
+        "Commonsense -> Concepts and Relations -> Social Commonsense"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Head: PersonX arrives home<sep>Tail: satisfied",
+            "output": "Yes",
+            "explanation": "This is a good example. As a result of the Head, PersonX will feels satisfied."
+        },
+        {
+            "input": "Head: PersonX becomes distracted<sep>Tail: They would suffer injuries too.",
+            "output": "No",
+            "explanation": "In this example, if PersonX becomes distracted, PersonX won't feel what is mentioned in the Tail. So this output is correct."
+        },
+        {
+            "input": "Head: PersonX finds PersonY's wallet<sep>Tail: glad to help someone get something back.",
+            "output": "Yes",
+            "explanation": "If PersonX finds PersonY's wallet, personX will be glad to help someone get something back. Thus, this example should be classified as \"Yes\"."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Head: PersonX accepts ___ in exchange<sep>Tail: to want to compromise",
+            "output": "Yes",
+            "explanation": "If PersonX accepts something in exchange, PersonX will not feel what is mentioned in the Tail. So the output should be \"No\"."
+        },
+        {
+            "input": "Head: PersonX projects PersonY image<sep>Tail: happy",
+            "output": "No",
+            "explanation": "If PersonX projects PersonY image, as a result, PersonX may feel happy, and the output should be \"Yes\"."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1203-0dabced027f54c64af1b646be66226c2",
+            "input": "Head: PersonX accepts PersonY offer<sep>Tail: PersonX accepts a new job",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1203-823e47eb7ec54f2588ddedc03418cfeb",
+            "input": "Head: PersonX fees the ducks<sep>Tail: enjoyment",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1203-31384d21e6d74cdead373af2df832171",
+            "input": "Head: PersonX cuts off PersonY's retreat<sep>Tail: powerful",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1203-df88f76b730d47678a46a0f7fd80c3a8",
+            "input": "Head: PersonX comes ___ last night<sep>Tail: ready to rest",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1203-fa464a1eac444f36b9dcfb278e1198cc",
+            "input": "Head: PersonX affords every ___<sep>Tail: to learn to help.",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1203-67358d1742ec4cfc9123ea3104628399",
+            "input": "Head: PersonX drinks coffee<sep>Tail: energized",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1203-804a66bb993443d4a9caa00e0025f810",
+            "input": "Head: PersonX eats PersonY's dinner<sep>Tail: content",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1203-93b3df60263046c6b97174c755a61fb9",
+            "input": "Head: PersonX cooks bacon<sep>Tail: happy",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

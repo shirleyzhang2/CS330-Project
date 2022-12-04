@@ -1,0 +1,117 @@
+{
+    "Contributors": [
+        "Ritvik Gaur"
+    ],
+    "Source": [
+        "craigslist_bargains"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/craigslist_bargains"
+    ],
+    "Categories": [
+        "Dialogue State Tracking"
+    ],
+    "Reasoning": [
+        "Reasoning on Social Interactions"
+    ],
+    "Definition": [
+        "Given a text passage as input consisting of dialogues of negotiations between a seller and a buyer about the sale of an item, the task is to classify the text into one of the labels from the two possible outputs - 'accepted'/'rejected'. Select [accepted] if by the end of the conversation the buyer seems likely to buy the item from the seller. A sale is likely made when the buyer and seller agree upon a common price or when a deal is made between them. Select [rejected] if the buyer did not seem interested in buying the item from the seller at the end of the conversation. This happens when the buyer and seller do not agree on the price or other aspects of the item being sold by the seller."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Buyer: Hi,I am interested in your board!\nSeller: Hi, do you have any questions?\nBuyer: Do you know what wood it is made out of?\nSeller: I do not know specifically but the brand is a gravity skateboard. \nBuyer: The wheels seem nice on it, but they could be a beter quality. Would you accept 100 for the board?\nSeller: No, that offer is too low. The board is pretty much brand new as it's been ridden only 4 or 5 times.  The bone bearings are brand new.\nBuyer: If I picked it up at your location would you accpet 120?\nSeller: Make it 150 and we got a deal. \nBuyer: I could do 145, if you can gurantee the painting on the front of the board is not scratched up. \nSeller: Deal\nBuyer: Great!",
+            "output": "accepted",
+            "explanation": "The answer 'accepted' is the correct answer because here the buyer and seller agree on a price and make a deal at the end of the conversation."
+        },
+        {
+            "input": "Buyer: I am interested in the Benz. How much for it?\nSeller: I am asking $26800. \nBuyer: How many miles on it?\nSeller: Only 16,473.\nBuyer: Has it had any major repairs?\nSeller: No, it has been accident free and in great condition.\nBuyer: Why are you selling it?\nSeller: starting to expand our family, time for an suv and baby seat.\nBuyer: I can give you 17000. That will buy a lot of diapers.\nSeller: I need the SUV. That is just way too low for me. Sorry you need to come way up.\nBuyer: I can do 20,000 if you throw in a 3 year warranty to cover any repairs that might naturally arise\nSeller: There is a warranty in place, so that is not a problem. But I need a minimum of 25000\nBuyer: How long is the warranty?\nSeller: Ten more years.\nBuyer: 22500 and you got a deal\nSeller: nO SORRY i am firm on the 25,000 being my lowest offer.\nBuyer: Can't do it.",
+            "output": "rejected",
+            "explanation": "The answer 'rejected' is correct because at the end of the conversation the buyer and seller do not agree to a common price. Since the buyer was asking for a price of 22500 and the seller was not accepting offers below 25000, the buyer did not decide to buy the item from the seller."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Buyer: i want to live in your house but i cant pay 1000k\nSeller: It really is a nice home.\nBuyer: i agree i lvoe the area , how old is the home\nSeller: I am not positive. It looks nice I can't tell sorry.\nBuyer: will you do 500 ? i need to buy new beds and furtinure\nSeller: I can't do half. I am sorry. It has a garage and a fenced in yard if you have kids.\nBuyer: i can do 600 if you waive the deposit\nSeller: Honestly I think the lowest I can do is $800 with the deposit. I am sorry. That is what they go for in this neighborhood. \nBuyer: ok i can do 750 lowest and fits my bussdet\nSeller: Ok I think we can make a deal.\nBuyer: deal\n",
+            "output": "rejected",
+            "explanation": "This is the wrong answer and the correct answer is 'accepted' because here the buyer and seller agree on the same price and make a deal at the end, which indicates that the buyer decided to buy the item from the seller."
+        },
+        {
+            "input": "Buyer: I think this is a fair price\nSeller: Why is there an offer there already?\nBuyer: This is within the area comps and reasonable for this size of home.\nSeller: I can't accept that low. That is $1000 less then asking price.\nBuyer: My final offer would be 1850.00\nSeller: I really don't think I could go that low.\nBuyer: What is your bottom line?\nSeller: For a 4 Bedroom, 2 1/2 bath with a 2 car garage in California. it has a tennis court a children play structure.I think the best I could is $2000.\nBuyer: I don't see anything in the listing about a tennis court or a child's play structure. I am not willing to go over $1850 and will assume all maintenance issues with this rental.\nSeller: You can't make another offer anyway. I can't erase your original offer. I am going to have to reject.\nBuyer: ok\n",
+            "output": "yes",
+            "explanation": "This answer 'yes' is incorrect here because it is not among the only two options 'accepted' or 'rejected' from which the answer is to be chosen. The correct answer is 'rejected' because the buyer and the seller are not able to agree upon the same price as seen in the conversation where the buyer is offering 1850 but the seller will not sell for under 2000 and so the seller rejects the buyer's offer. This indicates that the buyer does not end up buying the item from the seller."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task766-d2af3fe8bc0d4fda9e040ced5bedf723",
+            "output": [
+                "rejected"
+            ],
+            "input": "Seller: hi\nBuyer: Hello\nSeller: do you care to make an offer?\nBuyer: The place sounds nice, but may be a little more than I can afford\nSeller: well how much can you soend?\nBuyer: I was looking for something in the 1500-1600 range\nSeller: That is really unreasonable considering all the immenities and other going rates, you would need to come up to at least 3000\nBuyer: I have seen some 2 bedrooms for that price, which I could split the cost with a roommate, so even with amenities, this may be out of my range\nSeller: it may be then... the absolute lowest i will go is 2700. that is my final offer.\nBuyer: Ok, I think the most I could spend on this is 2000 - we are a ways apart\nSeller: ya that is far too low like i said 2700\nBuyer: Ok, thanks for your consideration. I will have to keep looking for now.\nSeller: good luck\nBuyer: \n"
+        },
+        {
+            "id": "task766-0ade897d33c846e3be1520defd0d0675",
+            "output": [
+                "accepted"
+            ],
+            "input": "Buyer: HI is this still available? Why are you selling it so soon?\nSeller: Brand new, not even opened in the box, received as a present for christmas, this item retails at 2500.  I already have several TVs, but I don't even know where my friends bought this for me, and it's rude to ask them if they know I'm going to return it.\nBuyer: Yes I can understand that. Does it need any additional equipment to connect the smart tv apps?\nSeller: Everything is included.  It comes with one connect box, stand, smart touch remote, table top stand, user's manual and a power choard\nBuyer: Geat, would you possibly take $1500 if Ic an come now to pickup? My tv just went out and I can't afford one from a store and I don't want to miss the next episode of Big brother when it airs\nSeller: I'd really like to get 2100 at the lowest.\nBuyer: How about middle road would you do? 1900\nSeller: deal\nSeller: \nBuyer: \n"
+        },
+        {
+            "id": "task766-aa8b18d895ae4fe680b804b0c167194b",
+            "output": [
+                "rejected"
+            ],
+            "input": "Buyer: Hi.\nSeller: Hello, do you have any questions I can help you with?\nBuyer: Yes, is this a non smokign building?\nSeller: Do you want it to be a non smoking building?\nBuyer: I want to know if it is or not..\nSeller: It is a non smoking building\nBuyer: Great, though you question to my question makes me feel trepidation you are honest at all.\nSeller: Well we are located very close to a lovely medical building where there are top notch psychiatrists, psychologist and therapists who can help you with any emotions you may be feeling right now, including trepidation and trust issues.\nBuyer: wow , you are an asshole!\nBuyer: \n"
+        },
+        {
+            "id": "task766-1a42d8099bd94f828966eb4a4e32fd1c",
+            "output": [
+                "accepted"
+            ],
+            "input": "Buyer: Hello, I just seen your ad for the Ethan Allen dresser. I love it, it would be perfect for my new apartment. Are there any dings, dents or scratches on it?\nSeller: Well it had a few minor scratches with with covered with a brown marker. They were small so it covered them pretty well. You cannot really tell. There are no other dings or dents. Very nicely made.\nBuyer: It IS wonderfully made. Looks like a little antique. But that's the Ethan Allen value. However, I see you are asking $85, but at the moment I am on a tight budget. Will you be willing to accept $76 for it? \nSeller: I think that would be fair. I am partial to Ethan Allen myself as he is actually and this is true, one of my ancestors. 76 would be fine.\nBuyer: Yes! Thank you very much. Please e-mail me your address and I will come out as soon as possible to pick it up. \nBuyer: \nSeller: \n"
+        },
+        {
+            "id": "task766-c3ffb067a89f44028b8c140d89868e7e",
+            "output": [
+                "accepted"
+            ],
+            "input": "Buyer: Hi I am looking for a good phone and was wondering about your's is it nice/\nSeller: Hi! Thanks for your interest. I am asking $275 for the phone.\nBuyer: Right it looks like it might be banged up a bit, how is the condition?\nSeller: Excellent condition. It looks brand new. No problems with the phone at all.\nBuyer: I see that's wonderful!  I was hoping to pay closer to 240 because I am very broke, are you willing to meet me there or have anything to add to the value?\nSeller: I'd accept $260 and throw in a charger and case.\nBuyer: Okay that sounds like it would work for me since it would save me some money on those items, thank you please send me the offer!\nSeller: \nBuyer: \n"
+        },
+        {
+            "id": "task766-9260e9d1d0b74b66a1d4aaebea05e41e",
+            "output": [
+                "accepted"
+            ],
+            "input": "Buyer: Hi! What can you tell me about your house for sale? How many bedrooms/bathrooms?\nSeller: It has 3 bedrooms and 2 Baths with a lot of amenities.\nBuyer: How much is it?\nSeller: I am asking $2320.\nBuyer: How old is the home? how many families have lived in it?\nSeller: There was only one family before ours the home was built recently. It was built in 1998. There is not much wear on the house. This also means that there will not be any lead paint on the walls if you have little ones.\nBuyer: Nice, is there any way I can get you to go down on the price? \nSeller: How low are you thinking. I can't go too low because I am wanting someone to take over the payments.\nBuyer: Ah, I was thinking $1160, I own a grocery store and I'm low on cash right now, but if you accept that I can give you a certificate for $1000 in product.\nSeller: That is a bit too low for me could you do $2000?\nBuyer: Alright, tell me more about the amenities of the home and I will think about it.\nSeller: The A/C unit was replaced two years ago so it is working great. As you can see in the picture the kitchen is up to date. There are hardwood floors throughout the house. There is also a nice size yard of 1 acre that is fenced in.\nBuyer: Alright, that's nothing too special to me, would you go down to $1800? \nSeller: \nBuyer: \n"
+        },
+        {
+            "id": "task766-8bc2589e0ece449593b826f8893140cf",
+            "output": [
+                "accepted"
+            ],
+            "input": "Seller: Hello, are you interested in my iPhone 7?\nBuyer: Hi, yes I am, are you a store or is this private party?\nSeller: I work at a store. I got it as a bonus, but I don't need another phone, so I'm selling it. \nBuyer: Ahh ok I see. Before I buy it, can you send me the ESID on the phone? You don't have to give it to me now, but before I hand over the money I want to run a check to make sure it's not blacklisted or reported stolen or anything.\nSeller: I can do that for you. \nBuyer: Alright, great. Now, I know you're wanting $850 for it, but really I'd like to pay around $500, is there anything you can do for me?\nSeller: Lowest I can go is $650 with a trade-in.\nBuyer: Trade-in, $650, and you throw in those wireless headphones?\nSeller: The wireless headphones don't come with the phone, so I'm afraid not. \nBuyer: Ouch, alright. That's the best I can do I'm afraid. I'll have to keep looking, but thank you for your time.\nBuyer: \nSeller: \n"
+        },
+        {
+            "id": "task766-c7af6ccecc674aefab653f05c436f4d0",
+            "output": [
+                "accepted"
+            ],
+            "input": "Buyer: Is this still available? What service does it work thru\nSeller: its unlocked so you'll find that it works with any carrier in US.\nBuyer: Does the camera still work well\nSeller: The camera works great. lens was kept extremely clean. and youll have a ton of pictures to store on the 32gb on board memory.\nBuyer: How badly is the screen cracked?\nSeller: small crack on lower right side. It was in a case when it took the fall, which just baffled me. Im due for an upgrade so ill be getting that done in next day or two. \nBuyer: Due to it being cracked would you be willing to accept $55?\nSeller: How bout I deliver it to you for $60, and ill toss in the case and a belt clip?\nSeller: \nBuyer: Ok sounds good that will save me some gas\nBuyer: \n"
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

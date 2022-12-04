@@ -1,0 +1,126 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "atomic"
+    ],
+    "URL": [
+        "https://allenai.org/data/atomic-2020"
+    ],
+    "Categories": [
+        "Commonsense Classification"
+    ],
+    "Reasoning": [
+        "Relational Reasoning",
+        "Reasoning on Social Interactions",
+        "Commonsense Reasoning -> Social Situations",
+        "Reasoning on Objects"
+    ],
+    "Definition": [
+        "Given two phrases, Head and Tail, separated by <sep>, where Head and Tail events are short phrases possibly involving participants, and the names of specific people have been replaced by generic words, your task is to determine whether the Head is capable of the Tail or not. Being capable of something includes general capabilities, such as a human is capable of thinking and reasoning or drinking coffee, as well as specialized capabilities, such as a surgeon is capable of operating on a patient. Classify your answers into \"Yes\" and \"No\". The phrase may also contain \"___\", a placeholder that can be an object, a person, and/or an action."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Sociology",
+        "Commonsense -> Concepts and Relations -> Social Commonsense"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Head: chicken<sep>Tail: lay eggs",
+            "output": "Yes",
+            "explanation": "This is a good example. The Head is capable of the Tail."
+        },
+        {
+            "input": "Head: PersonX accomplishes PersonY's work<sep>Tail: satisfied",
+            "output": "No",
+            "explanation": "In this example, being capable of satisfied doesn't make sense. So the output should be\"No\"."
+        },
+        {
+            "input": "Head: warder<sep>Tail: leave jail",
+            "output": "Yes",
+            "explanation": "In this example, the warder is capable of leaving the jail. Thus, this example should be classified as \"Yes\"."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Head: PersonX achieves PersonY end<sep>Tail: to be alone",
+            "output": "Yes",
+            "explanation": "In this example, PersonX achieves PersonY end is/are capable of being alone doesn't make sense. So the output should be \"No\"."
+        },
+        {
+            "input": "Head: scientist<sep>Tail: discover new",
+            "output": "No",
+            "explanation": "The scientist is capable of discovering new things, and the output should be \"Yes\"."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1215-e017a81d367c4098aed4a42bca93c78d",
+            "input": "Head: farmer<sep>Tail: farm corn",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1215-389d9dc5f7584ed08a3743281f1dca96",
+            "input": "Head: teacher<sep>Tail: care students",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1215-acc3e44b17f14d8a8a7f8321ef382598",
+            "input": "Head: movie star<sep>Tail: wave to fans",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1215-3b0d7fdf2b3146d3b37cb990a2e9c13a",
+            "input": "Head: writer<sep>Tail: complete novel",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1215-18c1fdd283b348a3906fba417ea0347b",
+            "input": "Head: PersonX accidentally burned<sep>Tail: scared",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1215-f2c819de81314103b0af2b94f9a3ae26",
+            "input": "Head: butcher<sep>Tail: bone meat",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1215-61330ed529c8464faa31379d7a1cc254",
+            "input": "Head: PersonX accidentally burned ___<sep>Tail: to help him",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1215-ae93b9e6d17249438ce3d4c67542ff38",
+            "input": "Head: PersonX accidentally dropped ___ on the ground<sep>Tail: heartbroked",
+            "output": [
+                "No"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

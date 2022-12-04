@@ -1,0 +1,132 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "matres"
+    ],
+    "URL": [
+        "https://github.com/CogComp/MATRES"
+    ],
+    "Categories": [
+        "Misc."
+    ],
+    "Reasoning": [
+        "Temporal Reasoning"
+    ],
+    "Definition": [
+        "Given a context and a verb, you have to answer if the given verb can be anchored in time or not. A verb can be anchored in the real timeline if and only if a verb happened in the past, is happening now, or is guaranteed to happen in the future. The output should be \"Yes\" if the verb can be anchored in time and \"No\" otherwise."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "News"
+    ],
+    "Positive Examples": [
+        {
+            "input": "It was followed by Denmark, Norway, Germany, France, Greece, Luxembourg, Spain, Britain, the United States, Iceland, Belgium, Italy, Portugal and Turkey. NATO decided at last year's Madrid summit to (invite) the three eastern European countries to start accession talks.  \n Verb: invite",
+            "output": "No",
+            "explanation": "This is a good example. The \"invite\" is not anchorable. Although NATO decided to invite them, they haven't invited them yet, and it's not guaranteed to happen in the future. They might change their decision later."
+        },
+        {
+            "input": "In Washington today, the Federal Aviation Administration (released) air traffic control tapes from the night the TWA Flight eight hundred went down.  \n Verb: released",
+            "output": "Yes",
+            "explanation": "In this sentence, the releasing event happened in the past, and it's anchorable."
+        },
+        {
+            "input": "New York State double-jeopardy laws would make it difficult to prosecute a suspect who had been found not guilty at a federal trial. U.S. Attorney Denise E. O'Donnell declined to discuss what federal charges were being pursued, but she said that in a case like this, potential charges would be abortion-related violence, the use of a firearm in an act of violence, crossing state lines to commit a crime, and, if the suspect's act was (tied) to an organization, violation of the so-called RICO statutes, which prohibit an organized criminal enterprise.  \n Verb: tied",
+            "output": "No",
+            "explanation": "In this sentence, \"tied\" is a conditional verb and it's not happening now and it's not guaranteed to happen in the future. So, it's not anchorable."
+        },
+        {
+            "input": "To get him. Nothing more, she (said).  \n Verb: said",
+            "output": "Yes",
+            "explanation": "In this example, she said something in the past. So, this verb is anchorable."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Preliminary DNA tests link a missing anti-abortion activist to a strand of hair found near where a sniper shot and killed a Buffalo, N.Y., doctor who performed abortions, a law enforcement official said Friday. The first round of DNA tests on the hair at the FBI Laboratory here established a high probability it came from the same person as a hair found in a New Jersey home where James C. Kopp , a 44-year-old anti-abortion protester, lived last year, the official (said).  \n Verb :said",
+            "output": "No",
+            "explanation": "In this sentence, the saying action happened in the past, and it's anchorable."
+        },
+        {
+            "input": " Nobody talks to Fidel, because he doesn't listen, Juanita Castro said. He talks and he (decides).  \n Verb: decides",
+            "output": "Yes",
+            "explanation": "In this sentence, \"decides\" is not anchorable. Because it's not happening now and it's not guaranteed to happen in the future."
+        },
+        {
+            "input": "Kopp remains at-large and police admit that despite a worldwide search and a $1 million reward, they don't know where he is. It's very frustrating (knowing) that he's out there, said Ms. Buckham.  \n Verb: knowing",
+            "output": "No",
+            "explanation": "In this sentence, \"knowing\" is happening now, and it's anchorable."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task383-9c1d18a9e5ff480bbfa8038cf276eff6",
+            "input": "It is the largest reward the government has ever offered for a fugitive. A total of $650,000, meanwhile, is being offered for information leading to the arrest of Kopp, who is charged with (gunning) down Dr. Barnett Slepian last fall in his home in Buffalo, N.Y. Slepian provided legal abortions in western New York state.  \n Verb: gunning",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task383-db2e975010154f4d86ed9a6761207722",
+            "input": "The relatives may be less defiant if they are held in contempt of court. If a court edict fails to (compel) compliance, the Justice Department will have to consider sterner measures, for the relatives will then be resisting the rule of law as defined by both the department and the courts.  \n Verb: compel",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task383-3933e89c885c4ed6a8b99d88ec879437",
+            "input": "The group would be ready to leave for the United States as soon as Tuesday, Castro said. Gonzalez said he would go get his son alone if U.S. authorities promised they would turn Elian over to him immediately and allow them to (fly) back to Cuba right away, Castro said Sunday.  \n Verb: fly",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task383-e08db1128dd94107ba846efd6252e6f0",
+            "input": "Horsley called the move a  temporary setback.   We are presently searching for a bolder and more principled ( Internet service provider ) to host the Nuremburg Files,  the statement (said).  \n Verb: said",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task383-3d76b7a05e5f42cf8fa89f59a9933e6c",
+            "input": "He was thrust into the middle of the swirling Gonzalez family saga when Elian's father, Juan Miguel, sent a letter to U.S. Attorney Janet Reno asking that his son be moved to Manuel Gonzalez's home. Alone among his two brothers and two sisters who have fled Cuba for Miami, Manuel Gonzalez believes Elian should go back to Cuba to (live) with his father.  \n Verb: live",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task383-12d0e285827f431d906e348f50c83733",
+            "input": "\" Extending membership to these three democracies helps to stabilize a region that historically has been the staging ground for many of the disasters of this century, \" Solana added, referring to the two world wars. The U.S. State Department has said the three new members \" enhance NATO's ability to (fulfill) its core mission of collective defense, respond to a range of security challenges and reduce the possibility of another major conflict in Europe of the kind that has claimed so many American lives. \"  \n Verb: fulfill",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task383-f2a2d1886787456da9b50a639a6d8850",
+            "input": "Among non-Cuban Americans, there was a drastic shift in their feelings on the case.  (Send) him back,  said Marsha Raeber, 47, an airline employee.  \n Verb: Send",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task383-aefe9a958ceb49b9ac75eef496e44619",
+            "input": "MIAMI _ With a tense Miami waiting, federal immigration officials said Monday they will (order) the Miami relatives of 6-year-old Cuban rafter Elian Gonzalez to turn the boy over to his father, who could come to the U.S. from Cuba as early as Tuesday.  \n Verb: order",
+            "output": [
+                "No"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

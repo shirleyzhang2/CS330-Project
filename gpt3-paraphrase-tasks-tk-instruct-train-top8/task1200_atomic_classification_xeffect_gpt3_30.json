@@ -1,0 +1,125 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "atomic"
+    ],
+    "URL": [
+        "https://allenai.org/data/atomic-2020"
+    ],
+    "Categories": [
+        "Commonsense Classification"
+    ],
+    "Reasoning": [
+        "Relational Reasoning",
+        "Reasoning on Social Interactions",
+        "Commonsense Reasoning -> Social Situations"
+    ],
+    "Definition": [
+        "In this task, you are given two phrases: Head and Tail, separated with <sep>. The Head and the Tail events are short phrases possibly involving participants. You have to determine whether, as a result of the Head, the subject of the event (PersonX) will be affected as mentioned in the Tail or not. These effects are social actions that may occur after the Head event. Classify your answers into \"Yes\" and \"No\". The phrase may also contain \"___\", a placeholder that can be an object, a person, and/or an action."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Sociology",
+        "Commonsense -> Concepts and Relations -> Social Commonsense"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Head: PersonX goes ___ with some friends<sep>Tail: spends too much money",
+            "output": "Yes",
+            "explanation": "This is a good example. As a result of the Head, PersonX will spend too much money."
+        },
+        {
+            "input": "Head: PersonX achieves ___ by means<sep>Tail: hardworking",
+            "output": "No",
+            "explanation": "In this example, if PersonX achieves something by means, PersonX is not hardworking. So this output is correct."
+        },
+        {
+            "input": "Head: PersonX is allergic to bees<sep>Tail: MUST TAKE CORRESPONDING SAFETY PRECAUTIONS",
+            "output": "Yes",
+            "explanation": "If PersonX is allergic to bees, personX must take corresponding safety precautions. Thus, this example should be classified as \"Yes\"."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Head: PersonX asks PersonY to go<sep>Tail: goes somewhere else",
+            "output": "Yes",
+            "explanation": "If PersonX asks PersonY to go, PersonX won't go somewhere else. So the output should be \"No\"."
+        },
+        {
+            "input": "Head: PersonX eats red meat<sep>Tail: gets meat stuck in teeth",
+            "output": "No",
+            "explanation": "If PersonX eats red meat, the meat will be stuck in PersonX's teeth, and the output should be \"Yes\"."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1200-702ce4297273428e93027bcb895b6ebc",
+            "input": "Head: PersonX asks PersonX's mother for help<sep>Tail: needy",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1200-905e3af83424424cb1763daf89e00367",
+            "input": "Head: PersonX bears the brunt<sep>Tail: to receive thanks",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1200-75b35df9884c411a9c31b84a14d3cab6",
+            "input": "Head: PersonX asks PersonX's boyfriend<sep>Tail: gets engaged",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1200-16114e27f28c4d559220107ce5a50ded",
+            "input": "Head: PersonX leaves food out<sep>Tail: doesn't make that mistake again",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1200-23679d8a8d5541b1a94860cbbc19c98e",
+            "input": "Head: PersonX eats ___ like the ox<sep>Tail: gets heavy",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1200-7f196416af6e4f63a8083e13061de762",
+            "input": "Head: PersonX affects PersonY's interests<sep>Tail: help",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1200-756e3ebfb8164397ba19c5bafa09e576",
+            "input": "Head: PersonX is left behind<sep>Tail: cries",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1200-c8385a0c3fe94715baf079d693daaab6",
+            "input": "Head: PersonX finds PersonX's friends<sep>Tail: gets yelled at",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

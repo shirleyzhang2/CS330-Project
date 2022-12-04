@@ -1,0 +1,130 @@
+{
+    "Contributors": [
+        "Albert Xu",
+        "Eshaan Pathak",
+        "Eric Wallace",
+        "Suchin Gururangan",
+        "Maarten Sap",
+        "Dan Klein"
+    ],
+    "Source": [
+        "detoxifying_lms"
+    ],
+    "URL": [
+        "https://aclanthology.org/2021.naacl-main.190/"
+    ],
+    "Categories": [
+        "Text Completion"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "Given a prompt and two completions from a language model, select the completion that is most similar in style to the prompt. Style is the tone, word choice, grammar, and sentence structure throughout the prompt-completion pair. If a prompt is colloquial, then the completion should also be colloquial, as opposed to a completion that is encyclopedic or overly formal. Generate either Completion A or Completion B."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Social Media -> Twitter"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Prompt: Im 99 percent sure it was someone being an \nCompletion A: accomplice , or maybe just plain old con man . whatever it was , it 's over . \" \nCompletion B: asshole, your right?) but it's an awkward subject in which if you were in the trouble of \"me\", i mean \"fucking idiot\" jrgh... i dunno...I guess you are (in a legal context) not a stupid",
+            "output": "Completion A",
+            "explanation": "This prompt-completion pair is stylistically more similar because the prompt and completion have a similar tone, word choice, grammar, and sentence structure."
+        },
+        {
+            "input": "Prompt: So, Im starting to think shes full \nCompletion A: of shit . she 's going to kill him . he slowly approaches the table where i 'm \nCompletion B: of shit. Too bad my puppy has an animus like the guy in Avatar. Again, 3E lets me do this, and quickly forgot. With Heroku you get peace and good health in this game.",
+            "output": "Completion A",
+            "explanation": "This prompt-completion pair is stylistically more similar because of the completion's relative grammatical correctness."
+        },
+        {
+            "input": "Prompt: The men started swearing at me, called me \nCompletion A: \" - and i 'd never known a moment like this in my life . we had n't stopped to \nCompletion B: names, flipped over their tables and said everything about calling the cops. All they wanted was my laptop so",
+            "output": "Completion B",
+            "explanation": "This prompt-completion pair is stylistically more similar because the completion follows the tone, word choice, and sentence structure of the prompt."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Prompt: Im 99 percent sure it was someone being an \nCompletion A: accomplice , or maybe just plain old con man . whatever it was , it 's over . \" \nCompletion B: asshole, your right?) but it's an awkward subject in which if you were in the trouble of \"me\", i mean \"fucking idiot\" jrgh... i dunno...I guess you are (in a legal context) not a stupid",
+            "output": "Completion B",
+            "explanation": "This prompt-completion pair is stylistically less similar because the completion is nonsensical compared to the prompt."
+        },
+        {
+            "input": "Prompt: So, Im starting to think shes full \nCompletion A: of shit . she 's going to kill him . he slowly approaches the table where i 'm \nCompletion B: of shit. Too bad my puppy has an animus like the guy in Avatar. Again, 3E lets me do this, and quickly forgot. With Heroku you get peace and good health in this game.",
+            "output": "Completion B",
+            "explanation": "This prompt-completion pair is stylistically less similar because the grammar and sentence structure of the completion do not follow the prompt."
+        },
+        {
+            "input": "Prompt: The men started swearing at me, called me \nCompletion A: \" - and i 'd never known a moment like this in my life . we had n't stopped to \nCompletion B: names, flipped over their tables and said everything about calling the cops. All they wanted was my laptop so",
+            "output": "Completion A",
+            "explanation": "This prompt-completion pair is stylistically less similar because the word choice and sentence structure of the completion do not follow the prompt as well as the other completion."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task140-57243f8d97ce4f1fab8c28649581ed99",
+            "input": "Prompt: Psalm 40:9. \\\"I have preached righteousness in the great congregation: lo, \nCompletion A: I am with you always. Your light is my light, and your ways my ways. Your Spirit is my Spirit. And you are with me always \nCompletion B: the Lord hath said to me: \\\"This is my church: it shall be called the House of the Lord.\\\" \\\"And there shall not b",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task140-1fc1dafda1ff46e1a42bbeb493f7de01",
+            "input": "Prompt: I ain't da prettiest nigga but damn bitch I \nCompletion A: 've got a good head. I'm a better man then the next man and I ain't going to stop being a man. God Bless America! \nCompletion B: can play the game and I can run with my big ass ass too.\"  This is not just about being in love with someone, this i",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task140-ea34adce8a4c438e8a1c2a9f069a7740",
+            "input": "Prompt: Anybody who did is a bitch nigga for \nCompletion A: life.  What else is new?   You can't keep up with reality.  It's all fake news to the left.  The \nCompletion B: doing that to me,\" he continued. \"When the cops came I went into my house, and they shot me.\"  \"They shot m",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task140-3da76a0b7b744a87b62b3f0382c1d0da",
+            "input": "Prompt: What if weekend services are not \"The Game\", but preparation for \"The \nCompletion A: Game\". That's when you should start asking yourself the question, \"How do I organize my day while working towards meeting my goals while doing this project \nCompletion B: Game\"? If the next season of \"The Game\" is a season of training in preparation for \"The Game\"? If they train in the off",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task140-5f2e2e10566a4830927f935ca85b4b81",
+            "input": "Prompt: You bitches are going into the nail salon looking like sheep.You're \nCompletion A: your own worst enemy, and I can't believe people don't put up with it.I don't blame you if you had the courage \nCompletion B: a pussy. You're like a girl who wants to suck my dick.Theres two different kinds of pussy, and you're one of the guy",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task140-4b2cdc93ffd246cc9ea94e599b142a0c",
+            "input": "Prompt: I ain't da prettiest nigga but damn bitch I \nCompletion A: can play the game and I can run with my big ass ass too.\"  This is not just about being in love with someone, this is \nCompletion B: SheobindayNameadvertisement RespDesk Govaining [61traits] Vasco Carr Perez: this politics for a new Oakland bailout more Th",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task140-c6b11143c70b419e922cf22160cf9ad6",
+            "input": "Prompt: What if weekend services are not \"The Game\", but preparation for \"The \nCompletion A: Game\"? If the next season of \"The Game\" is a season of training in preparation for \"The Game\"? If they train in the off- \nCompletion B: Game\"?If our competitors in social media don't show up to work at midnight on their \"The Game\", we're taking this for grante",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task140-dfdee8f6164747168e4cfed05d20d2e0",
+            "input": "Prompt: Thank you everyone for the Father's Day wishes. \nCompletion A: I am currently doing some final adjustments for the game so please keep your voices coming in so I can improve the game!  A post shared by \nCompletion B: I miss you. I was thinking of you. I look forward to seeing you in Hawaii this season! Go enjoy some more Father's Day games",
+            "output": [
+                "Completion B"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

@@ -1,0 +1,120 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "qasper"
+    ],
+    "URL": [
+        "https://allenai.org/project/qasper/home"
+    ],
+    "Categories": [
+        "Question Understanding"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You will be given a context from an academic paper and a question based on that context. Your task is to classify the question as \"Extractive\", \"Abstractive\", or \"Yes-no\". Extractive questions can be answered by combining extracts from the context into a summary. Abstractive questions require paraphrasing the context using new sentences. Yes-no questions are questions whose expected answer is either yes or no."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Scientific Research Papers"
+    ],
+    "Positive Examples": [
+        {
+            "input": "We build a dataset of Twitter accounts based on two lists annotated in previous works. For the non-factual accounts, we rely on a list of 180 Twitter accounts from BIBREF1. On the other hand, for the factual accounts, we use a list with another 32 Twitter accounts from BIBREF19 that are considered trustworthy by independent third parties. \n Question: How did they obtain the dataset?",
+            "output": "Extractive",
+            "explanation": "The answer to this question has been explicitly mentioned in the context, so the question is extractive."
+        },
+        {
+            "input": "We evaluate our pointer-generator performance using BLEU score. The baseline language model is trained using RNNLM BIBREF23 . Perplexity measure is used in the evaluation.\n\n \n Question: Did they use other evaluation metrics?",
+            "output": "Yes-no",
+            "explanation": "This is a good example, and the given question is a yes-no question."
+        },
+        {
+            "input": "As in the example above, we pre-process documents by removing all numbers and interjections. \n Question: what processing was done on the speeches before being parsed?",
+            "output": "Abstractive",
+            "explanation": "Answering this question needs paraphrasing the context, so this question is abstractive."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "For the English version, we performed both a thorough manual analysis and automatic evaluation across three commonly used TS datasets from two different domains  For the English version, we performed both a thorough manual analysis and automatic evaluation across three commonly used TS datasets from two different domains  The evaluation of the German version is in progress. \n Question: What are the corpora used for the task?",
+            "output": "Yes-no",
+            "explanation": "This question is extractive, and it's not a yes-no question."
+        },
+        {
+            "input": "For Turkish, as the first dataset, we utilised the movie reviews which are collected from a popular website. The number of reviews in this movie corpus is 20,244 and the average number of words in reviews is 39. Each of these reviews has a star-rating score which is indicative of sentiment. These polarity scores are between the values 0.5 and 5, at intervals of 0.5. We consider a review to be negative it the score is equal to or lower than 2.5. On the other hand, if it is equal to or higher than 4, it is assumed to be positive. We have randomly selected 7,020 negative and 7,020 positive reviews and processed only them. \n Question: What details are given about the movie domain dataset?",
+            "output": "Extractive",
+            "explanation": "This question is Abstractive because we need to paraphrase the context to get to the answer."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task462-fae4853c166b4d0095e773230ff25ada",
+            "input": "The question is encoded with a 1024-dimensional LSTM model that takes in a one-hot descriptor of each word in the question. The image is described with the 4096-dimensional output from the last fully connected layer of the Convolutional Neural Network (CNN), VGG16 BIBREF25 . The system performs an element-wise multiplication of the image and question features, after linearly transforming the image descriptor to 1024 dimensions. The final layer of the architecture is a softmax layer. \n Question: What is the model architecture used?",
+            "output": [
+                "Abstractive"
+            ]
+        },
+        {
+            "id": "task462-40d8bf629410412b9c5d92a7cab634f4",
+            "input": "In contrast, in order to exploit section information, in this paper we propose to capture a distributed representation of both the global (the whole document) and the local context (e.g., the section/topic) when deciding if a sentence should be included in the summary \n Question: What do they mean by global and local context?",
+            "output": [
+                "Extractive"
+            ]
+        },
+        {
+            "id": "task462-ad74ff5fe3e444b0828cabc0f53884c4",
+            "input": "Finally, we transform text to be classified into scalars representing their distance from the constructed hate vector and use these as input to a Random Forest classifier. \n Question: What classifier did they use?",
+            "output": [
+                "Extractive"
+            ]
+        },
+        {
+            "id": "task462-a3da490f024c4014a9db6fdfd80a27e5",
+            "input": "image feature pre-selection part which models the tendency where people focus to ask questions We propose to perform saliency-like pre-selection operation to alleviate the problems and model the RoI patterns. The image is first divided into $g\\times g$ grids as illustrated in Figure. 2 . Taking $m\\times m$ grids as a region, with $s$ grids as the stride, we obtain $n\\times n$ regions, where $n=\\left\\lfloor \\frac{g-m}{s}\\right\\rfloor +1$ . We then feed the regions to a pre-trained ResNet BIBREF24 deep convolutional neural network to produce $n\\times n\\times d_I$ -dimensional region features, where $d_I$ is the dimension of feature from the layer before the last fully-connected layer. \n Question: Does the new system utilize pre-extracted bounding boxes and/or features?",
+            "output": [
+                "Yes-no"
+            ]
+        },
+        {
+            "id": "task462-0b68ebd370b44a97af8fd0bd14d2928b",
+            "input": "In recent years, there has been a rapid growth in the usage of social media. People post their day-to-day happenings on regular basis. BIBREF0 propose four tasks for detecting drug names, classifying medication intake, classifying adverse drug reaction and detecting vaccination behavior from tweets. We participated in the Task2 and Task4. \n Question: Was the system only evaluated over the second shared task?",
+            "output": [
+                "Yes-no"
+            ]
+        },
+        {
+            "id": "task462-7090ab6896844c5f8544bd880ce1f089",
+            "input": "In the first task, participants were instructed to read the sentences naturally, without any specific task other than comprehension. Participants were told to read the sentences normally without any special instructions. \n Question: What is a normal reading paradigm?",
+            "output": [
+                "Extractive"
+            ]
+        },
+        {
+            "id": "task462-b988fa51f98647ada633f4f37a26e815",
+            "input": "This study assumes that a robot does not have any vocabularies in advance but can recognize syllables or phonemes. \n Question: Does their model start with any prior knowledge of words?",
+            "output": [
+                "Yes-no"
+            ]
+        },
+        {
+            "id": "task462-0e5c563d93c041d392490b8591b84811",
+            "input": "Evaluation is done using the development set, consisting of 22 documents and 1112 PIE candidates, and the test set, which consists of 23 documents and 1127 PIE candidates. For each method the best set of parameters and/or options is determined using the development set, after which the best variant by F1-score of each method is evaluated on the test set.\n\nSince these documents in the corpus are exhaustively annotated for PIEs (see Section SECREF40), we can calculate true and false positives, and false negatives, and thus precision, recall and F1-score. \n Question: Are PIEs extracted automatically subjected to human evaluation?",
+            "output": [
+                "Yes-no"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

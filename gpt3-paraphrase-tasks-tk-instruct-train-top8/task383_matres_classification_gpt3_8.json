@@ -1,0 +1,132 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "matres"
+    ],
+    "URL": [
+        "https://github.com/CogComp/MATRES"
+    ],
+    "Categories": [
+        "Misc."
+    ],
+    "Reasoning": [
+        "Temporal Reasoning"
+    ],
+    "Definition": [
+        "You will be given a context and a verb separated by a newline character. You have to answer whether the given verb can be anchored in time or not. A verb can be anchored in the real timeline if it happened in the past, is happening now, or is guaranteed to happen in the future. The output should be \"Yes\" if the verb can be anchored in time and \"No\" otherwise."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "News"
+    ],
+    "Positive Examples": [
+        {
+            "input": "It was followed by Denmark, Norway, Germany, France, Greece, Luxembourg, Spain, Britain, the United States, Iceland, Belgium, Italy, Portugal and Turkey. NATO decided at last year's Madrid summit to (invite) the three eastern European countries to start accession talks.  \n Verb: invite",
+            "output": "No",
+            "explanation": "This is a good example. The \"invite\" is not anchorable. Although NATO decided to invite them, they haven't invited them yet, and it's not guaranteed to happen in the future. They might change their decision later."
+        },
+        {
+            "input": "In Washington today, the Federal Aviation Administration (released) air traffic control tapes from the night the TWA Flight eight hundred went down.  \n Verb: released",
+            "output": "Yes",
+            "explanation": "In this sentence, the releasing event happened in the past, and it's anchorable."
+        },
+        {
+            "input": "New York State double-jeopardy laws would make it difficult to prosecute a suspect who had been found not guilty at a federal trial. U.S. Attorney Denise E. O'Donnell declined to discuss what federal charges were being pursued, but she said that in a case like this, potential charges would be abortion-related violence, the use of a firearm in an act of violence, crossing state lines to commit a crime, and, if the suspect's act was (tied) to an organization, violation of the so-called RICO statutes, which prohibit an organized criminal enterprise.  \n Verb: tied",
+            "output": "No",
+            "explanation": "In this sentence, \"tied\" is a conditional verb and it's not happening now and it's not guaranteed to happen in the future. So, it's not anchorable."
+        },
+        {
+            "input": "To get him. Nothing more, she (said).  \n Verb: said",
+            "output": "Yes",
+            "explanation": "In this example, she said something in the past. So, this verb is anchorable."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Preliminary DNA tests link a missing anti-abortion activist to a strand of hair found near where a sniper shot and killed a Buffalo, N.Y., doctor who performed abortions, a law enforcement official said Friday. The first round of DNA tests on the hair at the FBI Laboratory here established a high probability it came from the same person as a hair found in a New Jersey home where James C. Kopp , a 44-year-old anti-abortion protester, lived last year, the official (said).  \n Verb :said",
+            "output": "No",
+            "explanation": "In this sentence, the saying action happened in the past, and it's anchorable."
+        },
+        {
+            "input": " Nobody talks to Fidel, because he doesn't listen, Juanita Castro said. He talks and he (decides).  \n Verb: decides",
+            "output": "Yes",
+            "explanation": "In this sentence, \"decides\" is not anchorable. Because it's not happening now and it's not guaranteed to happen in the future."
+        },
+        {
+            "input": "Kopp remains at-large and police admit that despite a worldwide search and a $1 million reward, they don't know where he is. It's very frustrating (knowing) that he's out there, said Ms. Buckham.  \n Verb: knowing",
+            "output": "No",
+            "explanation": "In this sentence, \"knowing\" is happening now, and it's anchorable."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task383-b9786c32d1f14279b146b202b82b44d8",
+            "input": "Our clients are adventure travelers and most of them are very savvy. They (read) a lot, they stay on top of world events.   \n Verb: read",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task383-117d978e23784b8ca1700115cc6b2074",
+            "input": "The first DNA tests did not exclude a match between the two strands. Kopp has (eluded) authorities since they obtained a warrant for him as a material witness in the Oct. 23 sniper shooting of Dr. Barnett Slepian, a 52-year-old obstetrician-gynecologist who performed abortions.  \n Verb: eluded",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task383-f0b3aad5fa754f6c916f20c8faf24e75",
+            "input": "We will not lend our respective resources, whether they be in the form of police officers or any other resources, to assist the federal government in any way, shape or form to inappropriately repatriate Elian Gonzalez to Cuba,  said Alex Penelas, mayor of Miami-Dade County. As of Wednesday evening, Lazaro Gonzalez, the boy's great-uncle and temporary guardian, still had not (signed) an agreement to hand the child over to immigration officials if the Miami relatives lose a fight to keep him when the case is heard in May in the 11th Circuit U.S. Court of Appeals.  \n Verb: signed",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task383-a8830e88ae094df5a90bbc925dd2b985",
+            "input": "But an INS spokeswoman said the agency would revoke Elian's permission to stay in the United States, clearing the way for his return to Cuba. In Havana, Cuban President Fidel Castro said that the boy's father, Juan Miguel Gonzalez, would travel to the United States to bring his son home after the custody battle has been (decided) in the courts.  \n Verb: decided",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task383-4e1db09b75fb41fabc763909c355935a",
+            "input": "On the FBI list, Bin Laden and Kopp replace two former Libyan intelligence agents charged in the Dec. 21, 1988, bombing of Pan Am Flight 103 that killed 259 people on the plane and 11 on the ground in Lockerbie, Scotland. The two were removed from the list after Libyan leader Moammar Gadhafi (agreed) in April to hand them over for trial in the Netherlands, a neutral venue.  \n Verb: agreed",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task383-e51f5dea92f2488885859a08253e4a67",
+            "input": "( AP ) -- An abortion foe who is the subject of an international manhunt was (charged) with murder Thursday in the slaying of a doctor who was cut down in his kitchen by a sniper's bullet.  \n Verb: charged",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task383-676b34ab90ca41358de5c681742bcf6c",
+            "input": "FBI Director Louis Freeh said the U.S. government is offering a reward of up to $5 million for information that leads to the arrest and conviction of Bin Laden, indicted as the architect of the twin bombings of American embassies in Kenya and Tanzania. The Aug. 7, 1998, bombings (killed) more than 200 people, including 12 Americans.  \n Verb: killed",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task383-a2562a5d8d3040d59a094c83727ad641",
+            "input": "He said Cuba has not prohibited Gonzalez from going to Miami to retrieve Elian, American attorneys -- and even American officials -- have counseled against it.  We have gotten the same message from U.S. officials -- in private -- several times that it is not advisable for this man to appear in U.S. territory,  (said) Alarcon.  \n Verb: said",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

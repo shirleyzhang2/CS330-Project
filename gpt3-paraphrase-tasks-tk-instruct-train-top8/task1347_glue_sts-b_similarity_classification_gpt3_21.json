@@ -1,0 +1,128 @@
+{
+    "Contributors": [
+        "Arit Chanda"
+    ],
+    "Source": [
+        "sts_b"
+    ],
+    "URL": [
+        "https://dl.fbaipublicfiles.com/glue/data/STS-B.zip"
+    ],
+    "Categories": [
+        "Text Matching"
+    ],
+    "Reasoning": [
+        "Textual Entailment -> Analogical Reasoning"
+    ],
+    "Definition": [
+        "Given two sentences, you will need to evaluate the similarity between them and classify them into one of the following six classes: 0 : The two sentences are completely dissimilar. 1 : The two sentences are not equivalent, but are on the same topic. 2 : The two sentences are not equivalent, but share some details. 3 : The two sentences are roughly equivalent, but some important information differs/missing. 4 : The two sentences are mostly equivalent, but some unimportant details differ. 5 : The two sentences are completely equivalent, as they mean the same thing."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Books",
+        "Dialogue"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Sentence 1: A plane is taking off. Sentence 2: An air plane is taking off.",
+            "output": "5",
+            "explanation": "Here both statements are talking about the same thing hence it will be classified as a 5."
+        },
+        {
+            "input": "Sentence 1: A man is playing a large flute. Sentence 2: A man is playing a flute.",
+            "output": "4",
+            "explanation": "In this example both statements mean the same thing but only unimportant details like the size of the flute is missing in the second statement. Hence, it is classified as a 4."
+        },
+        {
+            "input": "Sentence 1: Three men are playing chess. Sentence 2: Two men are playing chess.",
+            "output": "3",
+            "explanation": "In this example important detail of the number of men playing chess is wrong. Hence this example will be clasified as a 3."
+        },
+        {
+            "input": "Sentence 1: A man is smoking. Sentence 2: A man is skating.",
+            "output": "0",
+            "explanation": "Here there is no similarity between the two sentences hence the output classification is 0."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Sentence 1: A man is playing the cello. Sentence 2: A man seated is playing the cello.",
+            "output": "3",
+            "explanation": "Sentence 1 and 2 are only different by an unimportant detail of the man seating so the output should have been 4."
+        },
+        {
+            "input": "Sentence 1: The man is playing the piano. Sentence 2: The man is playing the guitar.",
+            "output": "0",
+            "explanation": "In this example both our sentences are sharing some details about playing an musical instrument so the correct classification should have been 2."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1347-a80985ff98bc449cb8e421e35d784a75",
+            "input": "Sentence 1: An animal is walking on the ground. Sentence 2: A solenodon is walking along the ground.",
+            "output": [
+                "3"
+            ]
+        },
+        {
+            "id": "task1347-91a95d7291814fdfb281453a8e85c679",
+            "input": "Sentence 1: Some men are playing guitars. Sentence 2: Three men are playing guitars and singing together.",
+            "output": [
+                "3"
+            ]
+        },
+        {
+            "id": "task1347-6fd3fc50aa8c4c339fb240bd77e6f387",
+            "input": "Sentence 1: A man in a black leather jacket is sleeping in a subway car. Sentence 2: A man in a black leather jacket falls asleep on public transportation.",
+            "output": [
+                "5"
+            ]
+        },
+        {
+            "id": "task1347-f804150daff4402baaffbb2e780ca9b9",
+            "input": "Sentence 1: A man is lifting heavy weights. Sentence 2: A wallaby is licking a woman's hand.",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "id": "task1347-ba76d338c8dc489faeab0f52ba8f55f2",
+            "input": "Sentence 1: A women and small child sitting at a dinner table smiling at the camera. Sentence 2: A small cat laying on a wooden beam looking up at the camera.",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "id": "task1347-a6858686463148028f7236c669e7d384",
+            "input": "Sentence 1: A dog wearing a green sweater and a backpack walking on snow. Sentence 2: A small dog wearing a green sweater and a backpack walks through snow.",
+            "output": [
+                "4"
+            ]
+        },
+        {
+            "id": "task1347-7d602443c2974dacbf34db8aacb7edb2",
+            "input": "Sentence 1: We need a certifiable pay as you go budget by mid-July or schools wont open in September, Strayhorn said. Sentence 2: Texas lawmakers must close a $185.9 million budget gap by the middle of July or the schools wont open in September, Comptroller Carole Keeton Strayhorn said Thursday.",
+            "output": [
+                "3"
+            ]
+        },
+        {
+            "id": "task1347-34a7e796feb644b9a9fcb1a40c8b21c4",
+            "input": "Sentence 1: A silver AreoMexico Jet Liner sitting on the tarmac. Sentence 2: An aeromexico silver plane is on a runway.",
+            "output": [
+                "4"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

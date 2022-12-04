@@ -1,0 +1,191 @@
+{
+    "Contributors": [
+        "Shailaja Keyur Sampat"
+    ],
+    "Source": [
+        "torque"
+    ],
+    "URL": [
+        "https://allennlp.org/torque.html"
+    ],
+    "Categories": [
+        "Information Extraction"
+    ],
+    "Reasoning": [
+        "Commonsense Reasoning"
+    ],
+    "Definition": [
+        "In this task, you will be given a passage, and your goal is to identify an event from the passage. An event is defined as a single word representing something that happened, is happening, or may happen. Most events are based on verbs, but an event can also be based on a noun (ex. storm, snow, rainfall) or a copula verb (is, was, been, etc.). The event must not be a pronoun or an adjective. For noun events with multiple words, use the last word in the phrase as event."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "News"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Passage: I submitted the hit. The hit was approved, and then I was paid.",
+            "output": "approved",
+            "explanation": "There are three events in this passage (i) submission event (\"submitted\") (ii) the approval event (\"approved\"), and (iii) the payment event (\"paid\"). You can use any one of them as an output."
+        },
+        {
+            "input": "Passage: He was caught in the snow storm.",
+            "output": "storm",
+            "explanation": "There are two events in this passage (i) he was caught (\"caught\") and (ii) the snow storm event (\"storm\"). You can use any one of them as an output. Since snow storm is a noun event with multiple words, we only use the last word 'storm' as an event."
+        },
+        {
+            "input": "Passage: He is on the east coast.",
+            "output": "is",
+            "explanation": "The copula \"is\" an event describing his location."
+        },
+        {
+            "input": "Passage: He wanted to finish the task.",
+            "output": "wanted",
+            "explanation": "There are two events in this passage (i) he wanted to do something (\"wanted\") and (ii) finish the task (\"finish\"). Either of wanted or finish can be used as output. However note that though there is an uncertainty about the task i.e. indeed finished or not, \"finish\" is still a valid event."
+        },
+        {
+            "input": "Passage: If he works hard, then he will finish the task.",
+            "output": "finish",
+            "explanation": "There are two events in this passage (i) he works hard (\"works\") and (ii) he will finish the task. (\"finish\"). You can use either of works or finish as an output. Here the second event happens only if the first one is true, but both are considered as events. This is an example of hypothetical event."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Passage: He is happy.",
+            "output": "happy",
+            "explanation": "Happy is an adjective and hence cannot be an event. The output should be \"is\" which represents an event describing his attribute of happiness."
+        },
+        {
+            "input": "Passage: He was caught in the elevator.",
+            "output": "elevator",
+            "explanation": "Not every noun can be an event. Here \"elevator\" is an object and one cannot say \"an elevator happened\" hence it is not an event. \"caught\" is a correct output."
+        },
+        {
+            "input": "Passage: The flu season is winding down.",
+            "output": "flu season",
+            "explanation": "The \"flu season\" is a noun events with multiple words, but only last word \"season\" sould be used as an event as per definition."
+        },
+        {
+            "input": "Passage: The death toll climbed up to 99 soon after the explosion.",
+            "output": "blast",
+            "explanation": "There are two events in this passage \"climbed\" and \"explosion\". Though blast is a synonym of explosion, it is not present in the passage. The output must contain events that are present in the passage."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task388-20cd38f27b224c9695d312ca544526d1",
+            "input": "Passage: As the situation was being sorted out, Anthony landed a punch on Collins. All 10 players on the court were ejected.",
+            "output": [
+                "sorted",
+                "landed",
+                "ejected",
+                "situation"
+            ]
+        },
+        {
+            "id": "task388-fe63fb9828094910978f71b7ea367f57",
+            "input": "Passage: Dissident sources and human rights groups said in Beijing Tuesday that treatment of Chinese dissidents was worsening, following a report from China's Justice Ministry on Monday proclaiming \"remarkable achievements\" last year in judicial guarantees of Chinese citizens' rights. The UN representative also harshly critized Burma, Cuba, Iran and Iraq for gross human rights violations.",
+            "output": [
+                "said",
+                "worsening",
+                "report",
+                "proclaiming",
+                "year",
+                "achievements",
+                "guarantees",
+                "critized",
+                "violations"
+            ]
+        },
+        {
+            "id": "task388-2df40af7a0264c808fae1ed0b9e389ce",
+            "input": "Passage: \"The local tourism scene has seen phenomenal growth in the last couple of months and we want to support this route,\" he said. The increase in the number of international visitors to Kenya has spurred a greater interest in the tourism sector with the airports registering the highest number of traffic in the last five years.",
+            "output": [
+                "scene",
+                "growth",
+                "support",
+                "route",
+                "said",
+                "increase",
+                "spurred",
+                "interest",
+                "registering",
+                "traffic"
+            ]
+        },
+        {
+            "id": "task388-6d4406ed7d2f4cd1b0ac3f48d83e41d6",
+            "input": "Passage: Three centres have been set up in the city to receive foreign investors' complaints, Lu said. ",
+            "output": [
+                "set",
+                "receive",
+                "said",
+                "complaints"
+            ]
+        },
+        {
+            "id": "task388-fcd598874c284762864bc36a86b3e67c",
+            "input": "Passage: \"We must reach a decision in the debate that has been going on for 38 years since the Six-Day War.\" \"The parties must present the voters with clear, responsible positions on all the issues that are on the balance, including the state's permanent borders,\" Katsav added.",
+            "output": [
+                "reach",
+                "debate",
+                "going",
+                "War",
+                "present",
+                "are",
+                "added",
+                "decision"
+            ]
+        },
+        {
+            "id": "task388-9ac038c60ff8469bb4882a860cb51fe7",
+            "input": "Passage: The NDP chose to back the Conservatives and the Bloc Quebecois following failed talks with the Liberals over health care following the initial investigation report on the sponsorship scandal confirmed former Liberal government was responsible for the scandal. The three opposition parties hold the majority of the 308 seats in the House.",
+            "output": [
+                "back",
+                "talks",
+                "investigation",
+                "scandal",
+                "confirmed",
+                "scandal",
+                "hold",
+                "chose"
+            ]
+        },
+        {
+            "id": "task388-31a5bcd87d9d400dadb58f4a07d1edd5",
+            "input": "Passage: Aircraft have taken off from the United States, Europe and elsewhere in Africa bearing medical suplies and other equipment, along with replacement personnel for the two embassies. A 62-member rescue team, previously sent to the bombed-out federal building in Oklahoma City, Okla., was en route to Nairobi.",
+            "output": [
+                "taken",
+                "bearing",
+                "sent",
+                "was"
+            ]
+        },
+        {
+            "id": "task388-f8b87b416df04da49d7b1d8c53020372",
+            "input": "Passage: Rescued on Nov. 25 by fishermen off the Florida coast, Elian has become the subject of an international custody battle. His mother died in a boating accident trying to get Elian and herself to the United States.",
+            "output": [
+                "Rescued",
+                "Nov",
+                "25",
+                "become",
+                "battle",
+                "died",
+                "boating",
+                "accident",
+                "trying",
+                "get"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Apache 2.0"
+    ]
+}

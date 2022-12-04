@@ -1,0 +1,130 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "atomic"
+    ],
+    "URL": [
+        "https://allenai.org/data/atomic-2020"
+    ],
+    "Categories": [
+        "Commonsense Classification"
+    ],
+    "Reasoning": [
+        "Relational Reasoning",
+        "Reasoning on Social Interactions",
+        "Commonsense Reasoning -> Social Situations"
+    ],
+    "Definition": [
+        "Given two phrases, Head and Tail, your task is to determine whether the subject of the Head event needs what is mentioned in the Tail event in order to happen. You will classify your answers into \"Yes\" or \"No\". The phrases may contain a placeholder, \"___\", which can be an object, a person, or an action."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Sociology",
+        "Commonsense -> Concepts and Relations -> Social Commonsense"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Head: PersonX is at PersonY's friend's house<sep>Tail: to walk up to PersonY's friend's house",
+            "output": "Yes",
+            "explanation": "This is a good example. PersonX is at PersonY's friend's house. But before, PersonX needed to walk up to PersonY's friend's house."
+        },
+        {
+            "input": "Head: PersonX bats PersonX's eyelashes<sep>Tail: to take someone home",
+            "output": "No",
+            "explanation": "In this example, PersonX doesn't need to take someone home before PersonX bats PersonX's eyelashes. So this output is correct."
+        },
+        {
+            "input": "Head: PersonX finds PersonY opportunity<sep>Tail: research stocks",
+            "output": "Yes",
+            "explanation": "PersonX may need to research stocks before finding an opportunity. Thus, this example should be classified as \"Yes\"."
+        },
+        {
+            "input": "Head: PersonX increases PersonY's rate<sep>Tail: none",
+            "output": "Yes",
+            "explanation": "This is a good example. Since nothing is specified and nothing is a precondition for all the events."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Head: PersonX asks PersonY's boyfriend<sep>Tail: scared",
+            "output": "Yes",
+            "explanation": "PersonX doesn't need to be scared before asking PersonY's boyfriend. So the output should be \"No\"."
+        },
+        {
+            "input": "Head: PersonX holds hands<sep>Tail: to go near him",
+            "output": "No",
+            "explanation": "PersonX needs to go near him before holding the hands, and the output should be \"Yes\"."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1202-10691b65d87f46c38dc8bbf59cf2bb91",
+            "input": "Head: PersonX affects PersonY's interests<sep>Tail: to help others too",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1202-64506240cada40aaa37f329e3f408a33",
+            "input": "Head: PersonX gives PersonY everything<sep>Tail: to gather what they have",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1202-393e6118aa054541aaaee4d4f2deceb1",
+            "input": "Head: PersonX gives PersonY the number<sep>Tail: none",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1202-326b1b1a8bc34c588dc214758d6caa75",
+            "input": "Head: PersonX bends over backwards<sep>Tail: stands up",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1202-43373d3e83d74e64ab50b169feac10a7",
+            "input": "Head: PersonX bears the brunt<sep>Tail: guilty",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1202-81188e1a891340828c454289794edd48",
+            "input": "Head: PersonX affects PersonY's interests<sep>Tail: responds to the affect",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1202-95958ed4f1b04a45bb89d8b08d4fa4c9",
+            "input": "Head: PersonX asks PersonY to go<sep>Tail: PersonY goes away from PersonX",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1202-0188cd7d9ed14a9dad36f4162ef8b62a",
+            "input": "Head: PersonX comes ___ last night<sep>Tail: be away from home",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

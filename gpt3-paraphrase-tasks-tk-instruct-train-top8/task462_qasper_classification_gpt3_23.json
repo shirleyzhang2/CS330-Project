@@ -1,0 +1,120 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "qasper"
+    ],
+    "URL": [
+        "https://allenai.org/project/qasper/home"
+    ],
+    "Categories": [
+        "Question Understanding"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "In this task, you will be given a context from an academic paper and a question based on that context. Your task is to classify the questions into one of three categories: \"Extractive\", \"Abstractive\", or \"Yes-no\". Extractive questions can be answered by combining extracts taken from the context into a summary. Abstractive questions require you to paraphrase the context using new sentences. Yes-no questions are questions whose expected answer is one of two choices, typically either yes or no."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Scientific Research Papers"
+    ],
+    "Positive Examples": [
+        {
+            "input": "We build a dataset of Twitter accounts based on two lists annotated in previous works. For the non-factual accounts, we rely on a list of 180 Twitter accounts from BIBREF1. On the other hand, for the factual accounts, we use a list with another 32 Twitter accounts from BIBREF19 that are considered trustworthy by independent third parties. \n Question: How did they obtain the dataset?",
+            "output": "Extractive",
+            "explanation": "The answer to this question has been explicitly mentioned in the context, so the question is extractive."
+        },
+        {
+            "input": "We evaluate our pointer-generator performance using BLEU score. The baseline language model is trained using RNNLM BIBREF23 . Perplexity measure is used in the evaluation.\n\n \n Question: Did they use other evaluation metrics?",
+            "output": "Yes-no",
+            "explanation": "This is a good example, and the given question is a yes-no question."
+        },
+        {
+            "input": "As in the example above, we pre-process documents by removing all numbers and interjections. \n Question: what processing was done on the speeches before being parsed?",
+            "output": "Abstractive",
+            "explanation": "Answering this question needs paraphrasing the context, so this question is abstractive."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "For the English version, we performed both a thorough manual analysis and automatic evaluation across three commonly used TS datasets from two different domains  For the English version, we performed both a thorough manual analysis and automatic evaluation across three commonly used TS datasets from two different domains  The evaluation of the German version is in progress. \n Question: What are the corpora used for the task?",
+            "output": "Yes-no",
+            "explanation": "This question is extractive, and it's not a yes-no question."
+        },
+        {
+            "input": "For Turkish, as the first dataset, we utilised the movie reviews which are collected from a popular website. The number of reviews in this movie corpus is 20,244 and the average number of words in reviews is 39. Each of these reviews has a star-rating score which is indicative of sentiment. These polarity scores are between the values 0.5 and 5, at intervals of 0.5. We consider a review to be negative it the score is equal to or lower than 2.5. On the other hand, if it is equal to or higher than 4, it is assumed to be positive. We have randomly selected 7,020 negative and 7,020 positive reviews and processed only them. \n Question: What details are given about the movie domain dataset?",
+            "output": "Extractive",
+            "explanation": "This question is Abstractive because we need to paraphrase the context to get to the answer."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task462-90e623a8031d46e4a0d97db4ea0eac8e",
+            "input": "MTMSN BIBREF4 is the first, and only model so far, that specifically tried to tackle the multi-span questions of DROP. Their approach consisted of two parts. The first was to train a dedicated categorical variable to predict the number of spans to extract. The second was to generalize the single-span head method of extracting a span, by utilizing the non-maximum suppression (NMS) algorithm BIBREF7 to find the most probable set of non-overlapping spans. The number of spans to extract was determined by the aforementioned categorical variable \n Question: What approach did previous models use for multi-span questions?",
+            "output": [
+                "Abstractive"
+            ]
+        },
+        {
+            "id": "task462-9acc4fd137fa4fafb411cc20b1bcd788",
+            "input": "Further, FSDM has a new module called response slot binary classifier that adds extra supervision to generate the slots that will be present in the response more precisely before generating the final textual agent response (see Section \"Methodology\" for details). \n Question: How do slot binary classifiers improve performance?",
+            "output": [
+                "Abstractive"
+            ]
+        },
+        {
+            "id": "task462-398d6bf256a242fd83a9b50a21ba6f1c",
+            "input": "String kernels represent a way of using information at the character level by measuring the similarity of strings through character n-grams. \n Question: What is a string kernel?",
+            "output": [
+                "Abstractive"
+            ]
+        },
+        {
+            "id": "task462-6771ca4ba0ea455987a63e9a229fa89b",
+            "input": "Results in Table TABREF13 show ten probes. Again, we see the performance of baseline ELMo-transformer and mSynC are similar, with mSynC doing slightly worse on 7 out of 9 tasks. \n Question: For how many probe tasks the shallow-syntax-aware contextual embedding perform better than ELMo\u2019s embedding?",
+            "output": [
+                "Extractive"
+            ]
+        },
+        {
+            "id": "task462-5564bc3cd6824e438e8d1bcd0fafdc3c",
+            "input": "Comparing Eq.DISPLAY_FORM14 with Eq.DISPLAY_FORM22, we can see that Eq.DISPLAY_FORM14 is actually a soft form of $F1$, using a continuous $p$ rather than the binary $\\mathbb {I}( p_{i1}>0.5)$. This gap isn't a big issue for balanced datasets, but is extremely detrimental if a big proportion of training examples are easy-negative ones: easy-negative examples can easily dominate training since their probabilities can be pushed to 0 fairly easily. Meanwhile, the model can hardly distinguish between hard-negative examples and positive ones, which has a huge negative effect on the final F1 performance.\n\nTo address this issue, we propose to multiply the soft probability $p$ with a decaying factor $(1-p)$, changing Eq.DISPLAY_FORM22 to the following form:\n\nOne can think $(1-p_{i1})$ as a weight associated with each example, which changes as training proceeds. The intuition of changing $p_{i1}$ to $(1-p_{i1}) p_{i1}$ is to push down the weight of easy examples. For easy examples whose probability are approaching 0 or 1, $(1-p_{i1}) p_{i1}$ makes the model attach significantly less focus to them. Figure FIGREF23 gives gives an explanation from the perspective in derivative: the derivative of $\\frac{(1-p)p}{1+(1-p)p}$ with respect to $p$ approaches 0 immediately after $p$ approaches 0, which means the model attends less to examples once they are correctly classified.\n\nA close look at Eq.DISPLAY_FORM14 reveals that it actually mimics the idea of focal loss (FL for short) BIBREF16 for object detection in vision. Focal loss was proposed for one-stage object detector to handle foreground-background tradeoff encountered during training. It down-weights the loss assigned to well-classified examples by adding a $(1-p)^{\\beta }$ factor, leading the final loss to be $(1-p)^{\\beta }\\log p$. \n Question: How are weights dynamically adjusted?",
+            "output": [
+                "Extractive"
+            ]
+        },
+        {
+            "id": "task462-9c09201394134d01b09395de6d937429",
+            "input": "The encoder is a Convolutional Neural Network (CNN) and the decoder is a Long Short-Term Memory (LSTM) network, as presented in Figure 2 . The image is passed through the encoder generating the image representation that is used by the decoder to know the content of the image and generate the description word by word. \n Question: What model is used to encode the images?",
+            "output": [
+                "Extractive"
+            ]
+        },
+        {
+            "id": "task462-f4e4d298a205457999562ae8b3892e07",
+            "input": " In particular, we use Semeval 2014 BIBREF34 Twitter Sentiment Analysis Dataset for the training Sarcasm Datasets Used in the Experiment\nThis dataset was created by BIBREF8 . The tweets were downloaded from Twitter using #sarcasm as a marker for sarcastic tweets. It is a monolingual English dataset which consists of a balanced distribution of 50,000 sarcastic tweets and 50,000 non-sarcastic tweets.\n\nSince sarcastic tweets are less frequently used BIBREF8 , we also need to investigate the robustness of the selected features and the model trained on these features on an imbalanced dataset. To this end, we used another English dataset from BIBREF8 . It consists of 25,000 sarcastic tweets and 75,000 non-sarcastic tweets.\n\nWe have obtained this dataset from The Sarcasm Detector. It contains 120,000 tweets, out of which 20,000 are sarcastic and 100,000 are non-sarcastic. We randomly sampled 10,000 sarcastic and 20,000 non-sarcastic tweets from the dataset. Visualization of both the original and subset data show similar characteristics. \n Question: Which benchmark datasets are used?",
+            "output": [
+                "Extractive"
+            ]
+        },
+        {
+            "id": "task462-348dd5e2cda642bea9d2bee480b6b0f3",
+            "input": "We now seek to know if a pre-trained multi-BERT has ability to solve RC tasks in the zero-shot setting. \n Question: What model is used as a baseline?  ",
+            "output": [
+                "Extractive"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

@@ -1,0 +1,125 @@
+{
+    "Contributors": [
+        "Mirali Purohit"
+    ],
+    "Source": [
+        "roc_stories"
+    ],
+    "URL": [
+        "https://cs.rochester.edu/nlp/rocstories/"
+    ],
+    "Categories": [
+        "Text Completion"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You will be given four sentences of a story written in natural language. The story is incomplete and you must select one of the sentence choices from (A) and (B) to complete the story such that it sounds fully coherent."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Story"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Sentence1: Rick grew up in a troubled household. Sentence2: He never found good support in family, and turned to gangs. Sentence3: It wasn't long before Rick got shot in a robbery. Sentence4: The incident caused him to turn a new leaf. \n (A) He is happy now. (B) He joined a gang.",
+            "output": "A",
+            "explanation": "As mentioned in fourth sentence, the incident turned a new leaf to Rick's life; so, he must be happy now."
+        },
+        {
+            "input": "Sentence1: Laverne needs to prepare something for her friend's party. Sentence2: She decides to bake a batch of brownies. Sentence3: She chooses a recipe and follows it closely. Sentence4: Laverne tests one of the brownies to make sure it is delicious. \n (A) The brownies are so delicious Laverne eats two of them. (B) Laverne doesn't go to her friend's party.",
+            "output": "A",
+            "explanation": "As mentioned in the third sentence, Laverne follows the recipe closely; brownies should be delicious."
+        },
+        {
+            "input": "Sentence1: Sarah had been dreaming of visiting Europe for years. Sentence2: She had finally saved enough for the trip. Sentence3: She landed in Spain and traveled east across the continent. Sentence4: She didn't like how different everything was. \n (A) Sarah then decided to move to Europe. (B) Sarah decided that she preferred her home over Europe.",
+            "output": "B",
+            "explanation": "As mentioned in fourth sentence, Sarah didn't like that everything was different in Europe; she must have preferred her home over Europe."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Sentence1: Rick grew up in a troubled household. Sentence2: He never found good support in family, and turned to gangs. Sentence3: It wasn't long before Rick got shot in a robbery. Sentence4: The incident caused him to turn a new leaf. \n (A) He is happy now. (B) He joined a gang.",
+            "output": "B",
+            "explanation": "As mentioned in fourth sentence, the incident turned a new leaf to Rick's life; output does not match with the flow of the story."
+        },
+        {
+            "input": "Sentence1: Laverne needs to prepare something for her friend's party. Sentence2: She decides to bake a batch of brownies. Sentence3: She chooses a recipe and follows it closely. Sentence4: Laverne tests one of the brownies to make sure it is delicious. \n (A) The brownies are so delicious Laverne eats two of them. (B) Laverne doesn't go to her friend's party.",
+            "output": "B",
+            "explanation": "As mentioned in the third sentence, Laverne follows the recipe closely; brownies should be delicious and she should not cancel going to her friend's party."
+        },
+        {
+            "input": "Sentence1: Sarah had been dreaming of visiting Europe for years. Sentence2: She had finally saved enough for the trip. Sentence3: She landed in Spain and traveled east across the continent. Sentence4: She didn't like how different everything was. \n (A) Sarah then decided to move to Europe. (B) Sarah decided that she preferred her home over Europe.",
+            "output": "A",
+            "explanation": "As mentioned in fourth sentence, Sarah didn't like that everything was different; Sarah cannot decide to move to Europe."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task296-b08feb33f9a94554b294bd83e1de5f46",
+            "input": "Sentence1: Harvey's roommates teased him about being so thin. Sentence2: They were egotistical football players. Sentence3: They challenged Harvey to a ping pong game, expecting him to lose. Sentence4: But they did not know that Harvey was a nationally ranked player. \n (A) Harvey choked, and lost every match he played. (B) They all sat with their mouths open as Harvey beat them all.",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "id": "task296-0d900f3873b84178a6b941b5de678779",
+            "input": "Sentence1: Ace was playing poker with friends. Sentence2: At first he was having fun. Sentence3: Then he noticed something odd. Sentence4: One of his friends was sneakily cheating! \n (A) Ace called out his friend for cheating. (B) Ace was happy for his friend.",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "id": "task296-71a848f051024b70af3742707d160735",
+            "input": "Sentence1: Gina and her friend Tami were walking to their classroom. Sentence2: Down the hall Gina could see he bully who had tripped her. Sentence3: Gina tried to keep her composure. Sentence4: She took a deep breath and put on a weak smile. \n (A) Tami bullied Gina until Gina started crying. (B) Tami told the bully to get lost, and he looked intimidated.",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "id": "task296-96edbdbcb37a4012b6dbf3c6dab5110c",
+            "input": "Sentence1: We got in the car to go to the zoo. Sentence2: I couldn't wait to see the zebra. Sentence3: We walked around and saw so many animals. Sentence4: I got to see the zebra play. \n (A) I enjoyed visiting the zoo. (B) But I didn't like zebras.",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "id": "task296-a53eb60c9c1240bd922f50427fbf7aab",
+            "input": "Sentence1: Chris went shopping for a new car. Sentence2: While on the lot, he saw plenty of cars but none that he liked. Sentence3: He was about to leave when he spotted it. Sentence4: The shiny red car was right in front of him, begging him to buy it. \n (A) Chris bought the red car. (B) Chris bought a motorcycle.",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "id": "task296-31ca5f7402fe40a0a6f2dd394732b5ec",
+            "input": "Sentence1: Lisa wanted to make a cake. Sentence2: First she had to decide what kind of cake she wanted to bake. Sentence3: After she had to go buy the ingredients. Sentence4: She decided to make a chocolate cake. \n (A) Lisa loved to bake. (B) Lisa hated baking.",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "id": "task296-a8b402dd81aa40a1915a086342e93c08",
+            "input": "Sentence1: Jasper notices that he has begun to develop dandruff in his hair. Sentence2: He feels very embarrassed about this. Sentence3: Jasper decides to buy a special anti-dandruff shampoo. Sentence4: Finally he notices that the dandruff is going away. \n (A) Jasper is happy. (B) Jasper is disappointed.",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "id": "task296-7f5cc1184a92493d9c12d55fd1f96013",
+            "input": "Sentence1: Gina liked to volunteer at a homeless shelter. Sentence2: She had spent Years going there for many hours a week. Sentence3: The staff decided to do something to show their appreciation. Sentence4: They chipped in and got Gina a gift. \n (A) Gina stopped volunteering because she felt unappreciated. (B) Gina was so touched she cried when they gave it to her.",
+            "output": [
+                "B"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

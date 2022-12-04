@@ -1,0 +1,123 @@
+{
+    "Contributors": [
+        "Pegah Alipoormolabashi"
+    ],
+    "Source": [
+        "wsc; enhanced_wsc"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/winograd_wsc; https://github.com/mhany90/perturbed-wsc"
+    ],
+    "Categories": [
+        "Text Matching"
+    ],
+    "Reasoning": [
+        "Commonsense Reasoning"
+    ],
+    "Definition": [
+        "You will be given two sentences. One of them is created by paraphrasing the original one, with changes on an aspect, or using synonyms. Your task is to decide what is the difference between two sentences. The types of change are explained below: Tense: The verbs in the sentence are changed in tense. Number: Plural nouns, verbs and pronouns are changed into single ones or the other way around. Voice: If the verbs are in active voice, they're changed to passive or the other way around. Adverb: The paraphrase has one adverb or more than the original sentence. Gender: The paraphrase differs from the original sentence in the gender of the names and pronouns. Synonym: Some words or phrases of the original sentence are replaced with synonym words or phrases. Changes in the names of people are also considered a synonym change. Your task is to classify the differences between the two sentences into Tense, Number, Voice, Adverb, Gender, and Synonym."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue",
+        "Narrative"
+    ],
+    "Positive Examples": [
+        {
+            "input": "original sentence: Lily spoke to Donna , breaking her silence . paraphrase: Lily is speaking to Donna , breaking her silence .",
+            "output": "Tense",
+            "explanation": "The verbs in this example are changed from past tense to present tense."
+        },
+        {
+            "input": "original sentence: I'm sure that my map will show this building ; it is very good . paraphrase: I'm sure that my maps will show these buildings ; they are very good .",
+            "output": "Number",
+            "explanation": "In this example, map and building and their pronouns has been changed. So, the output should be Number."
+        },
+        {
+            "input": "original sentence: Jim signaled the barman and gestured toward his bathroom key . paraphrase: Jim dreamily signaled the barman and vaguely gestured toward his bathroom key .",
+            "output": "Adverb",
+            "explanation": "In this example the adverbs \"vaguely\" and \"dreamily\" are added to the original sentence."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "original sentence: The dog chased the cat , which ran up a tree . It waited at the bottom . paraphrase: The dog is chasing the cat , which is running up a tree . It is waiting at the bottom .",
+            "output": "Voice",
+            "explanation": "The change in the original sentence is to tense, as the past tense verbs are changed to present tense ones. \"Voice\" is not a correct answer here."
+        },
+        {
+            "input": "original sentence: John was doing research in the library when he heard a man humming and whistling . He was very annoyed . paraphrase: John and Steve were doing research in the library when they heard men humming and whistling . They were very annoyed .",
+            "output": "Number is changed.",
+            "explanation": "You should only output the title of the change, and nothing more."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task276-54b70b3acb8d48f48ceba656305099f3",
+            "input": "original sentence: John couldn't see the stage with Billy in front of him because he is so short . paraphrase: John can't see the stage with Billy in front of him because he is so short .",
+            "output": [
+                "Tense"
+            ]
+        },
+        {
+            "id": "task276-8ae852b969414a199df5c26681fccfa7",
+            "input": "original sentence: In the storm , the tree fell down and crashed through the roof of my house . Now , I have to get it removed . paraphrase: in the storm , the willow fell down and crashed through the ceiling of my house . now , i have to get it removed .",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "id": "task276-b8800771ab934a76bf63e850a9a6f3ae",
+            "input": "original sentence: Bob collapsed on the sidewalk . Soon he saw Carl coming to help . He was very concerned . paraphrase: Bob and Henry collapsed on the sidewalk . Soon they saw Carl and Ben coming to help . They were very concerned .",
+            "output": [
+                "Number"
+            ]
+        },
+        {
+            "id": "task276-ebdc5717efa34d2f8d8ff2d27316512d",
+            "input": "original sentence: The journalists interviewed the stars of the new movie . They were very persistent , so the interview lasted for a long time . paraphrase: The stars of the new movie were interviewed by the journalists . They were very persistent , so the interview lasted for a long time .",
+            "output": [
+                "Voice"
+            ]
+        },
+        {
+            "id": "task276-39b475933f8e447db59f1f697076d57a",
+            "input": "original sentence: Joe's uncle can still beat him at tennis , even though he is 30 years older . paraphrase: Joe's uncle can still easily beat him at tennis , even though he is 30 years older .",
+            "output": [
+                "Adverb"
+            ]
+        },
+        {
+            "id": "task276-a9f3a73d0098463c831d60fd68cbbe94",
+            "input": "original sentence: Bill passed the half-empty plate to John because he was full . paraphrase: gaston passed the half-empty plate to hershel because he was full .",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "id": "task276-a69cd40887044d2b9ed4129a6e92cd43",
+            "input": "original sentence: Fred watched TV while George went out to buy groceries . After an hour he got back . paraphrase: Fred lazily watched TV while George dutifully went out to buy groceries . After an hour he then got back .",
+            "output": [
+                "Adverb"
+            ]
+        },
+        {
+            "id": "task276-ceff2850144d454fb1ea08947162f874",
+            "input": "original sentence: Tom threw his schoolbag down to Ray after he reached the top of the stairs . paraphrase: ted threw his schoolbag down to clark after he reached the top of the stairs .",
+            "output": [
+                "Synonym"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

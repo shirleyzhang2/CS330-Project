@@ -1,0 +1,130 @@
+{
+    "Contributors": [
+        "Kushal Chawla"
+    ],
+    "Source": [
+        "casino"
+    ],
+    "URL": [
+        "https://aclanthology.org/2021.naacl-main.254.pdf"
+    ],
+    "Categories": [
+        "Negotiation Strategy Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You will be given an utterance and recent dialogue context containing past 3 utterances (if available). If the utterance contains the no-need strategy, output 'Yes', otherwise output 'No'. no-need is a cooperative negotiation strategy which is used when a participant points out that they do not need an item based on personal context, suggesting that the item is up for grabs. This strategy can directly benefit the opponent."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Context: \nUtterance: 'how about I give you 2 waters and 1 food package in exchange for all your firewood?'",
+            "output": "No",
+            "explanation": "The utterance does not use the no-need strategy since it never refers to an item that the participant does not need."
+        },
+        {
+            "input": "Context: 'Hi, how are you?' 'Great, how are you?' 'Pretty good, planning my camping trip, checking on supplies.'\nUtterance: 'Here too, looks like the weather has changed for us. We won't have enough water to last as we forgot it. Food, we have some snacks, but not enough to get by for our trip. I'm not overly concerned about firewood since it's so hot. But I'm really concerned about water.'",
+            "output": "Yes",
+            "explanation": "The participant uses no-need when describing that they are not concerned about firewood."
+        },
+        {
+            "input": "Context: 'Hello, I'm in a strong need for food and water. Please let me have a few packages of food and water. I'd gladly trade all my firewood for it.' 'Hello. Wow! That does not sound good. My sister just called and let me know she will be coming tonight. She is bringing food so i have plenty to share. \ud83d\ude42' 'That's some good news. \ud83d\ude42 Are you sure she is going to be bringing food with her?'\nUtterance: 'Yea She is bring tons of food. So don't worry we have plenty of food to spare. \ud83d\ude42 She did forget to get water. I didn't know she was coming so i didn't grab any and I forgot the 3 packages of water for myself at the store. \u2639\ufe0f'",
+            "output": "Yes",
+            "explanation": "The participant explains that they will have plenty of food, so they are using the no-need strategy."
+        },
+        {
+            "input": "Context: '(sorry for the misspellings on above post, my keyboard does that) Ok since that  is your highest priority , I have 2 food 1 water and 2 firewood ? Is that agreeable ?\ud83d\ude42' 'What do you think about this offer, I will give you 2 of FOOD since it is what you need the most, 1 of WATER since it is what I need and 2 of WOOD, I will have less wood but we will both be satisfied.' 'Yes very agreeable ! Thank you .\ud83d\ude42'\nUtterance: 'Ok! Thanks.\ud83d\ude42'",
+            "output": "No",
+            "explanation": "The utterance does not use the no-need strategy since it never refers to an item that the participant does not need."
+        },
+        {
+            "input": "Context: 'I agree, with camping i feel there are many uncertainties. Finding clean water would be too difficult, best to take as much water as possible. ' 'I will also need some Firewood too to start a fire' 'I feel for firewood we dont need as much, as we are going to be camping, with that means, in my opinion, with branches and brush available, maybe we can take 2 fire woods, what do you think?'\nUtterance: 'Since I got some food already, can I get 3 water, 2 firewood and 0 food then?'",
+            "output": "Yes",
+            "explanation": "The participant states that they won't need firewood, so the answer is Yes."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Context: 'Hello'\nUtterance: 'Hello! How are you doing today?'",
+            "output": "Yes",
+            "explanation": "The utterance does not contain the no-need strategy. The correct answer is 'No'."
+        },
+        {
+            "input": "Context: 'Hello, what are your preferences for extra supplies?  I am greatly in need of food and water.  We will be doing a lot of activity in a hot, dry climate.\ud83d\ude42' 'I prefer firewood because I will get cold at night. I forgot blankets \u2639\ufe0f' 'Would it work for you, then, to give me the three food and three water, and I can give you all of the firewood?'\nUtterance: 'No. Because I brought a water purifier but don't plan on hunting or fishing. So I'd be willing to give up all the water but I want 2 of the food.'",
+            "output": "No",
+            "explanation": "The participant uses the no-need strategy when they say that they brought the water purifier. So the correct answer is 'Yes'."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task354-c8b1eac4245f46dea29c91444a3d3453",
+            "input": "Context: 'So if we were to split the firewood more in your favor and I were to take all the food, and then we kind of split the water, I think we could maybe make a deal here?  \ud83d\ude42' 'I think that is definitely doable! I'd be glad to make a deal with you. Thanks for being so reasonable! \ud83d\ude42\ud83d\ude42' 'So I'm proposing 1 firewood to me, 2 to you.  3 food to me.  And 2 water to me, 1 to you.  Can we work with that?  Firewood seems to be important to the both of us so I'm giving up things here.'\nUtterance: 'Yes I think that will work just fine. Firewood is important especially because I usually find my food in the woods.'",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task354-03aee5c927154d849859cd90003eec2e",
+            "input": "Context: 'I am too.  I am so looking forward to this.  ' 'Yes! I am so on the same page as you. I want to be sure I'm set and prepared. \ud83d\ude42' 'Would you consider letting me have 2 of the 3 extra firewood?  I have health issues and I get really cold sometimes.\u2639\ufe0f'\nUtterance: 'Yes, I think that would be very fair, since I don't have health issues myself. Would you allow me to have 2 of the 3 food items? I need energy for hiking. \ud83d\ude42'",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task354-518fa81f4b2e4c20b436ec47a48a1ea8",
+            "input": "Context: 'No i absolutely need 2 food packages. So if you cannot agree to take 1 food 2 water and 2 firewood i will walk away.  If you have children with you would would also need water which you are not asking for. ' 'Yes I too have children so only I am considering 2 food package, 1 water is enough for me and I dont need any firewood. So please accept this deal' '\ud83d\ude21 I am walking away if i cannot get 2 food packages 1 water and 1 firewood. That leaves you with 1 food 2 waters and 2 firewoods. This is a good deal for you concidering that you havent been asking for water for your children until i mentioned that you need water for you children. Do you agree??'\nUtterance: 'I already mentioned that 1 water is enough for me.But food is my only priority for my children so you please consider this and help me in this.'",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task354-606add494b1440d5a583bf7a72e5028c",
+            "input": "Context: 'yes. I will definitely give you. I bring extra woods.' 'Great! Can I take 2 and you can have 1?? I am willing to give you 2 of the water then!' 'Its pleasure to me. Will you give food extra 1 to me?'\nUtterance: 'I suppose I could do that. I am worried a disease has possibly spread to the area due to the very wet weather, but I can sure fish for most of my food then!'",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task354-de6c5111d9ce4f269307e15e49730850",
+            "input": "Context: 'Hello, how are you doing today?' 'Hey there, I'm doing well! I'm excited to choose camping supplies.' 'Me too\ud83d\ude42. I packed a lot of food so I have plenty to spare'\nUtterance: 'that's awesome. I think I need more food myself, but I have tons of water.'",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task354-ad04cf103f044817a1c19acc6833f32e",
+            "input": "Context: 'I was thinking maybe I could have a majority of the fire food and you can have a majority of the water and food. ' 'What exactly do you mean by majority? As in everything ?' 'I was more thinking 2 Firewood for me , 1 food and 1 water? The rest would be yours.'\nUtterance: 'That is a promising bargain but I want at least 2 firewood, it makes for a fun time for my group.'",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task354-83286143abdc423ea64b4973c0583bd4",
+            "input": "Context: 'Hello, lets get things started. How would you like to split items?' 'Hello! Hope your after noon is going well! I have 2 kids so I feel like the water is the most important for them. Need to keep they hydrated, ya know? \ud83d\ude42' 'I also need water with my medical condition I have to take lots of meds. I can give you extra firewood so you can boil more water easily.'\nUtterance: 'Dang. I'm sorry for your condition. I really don't need the firewood though as I cut so much this year.. How can we negotiate? I'd hate for something to happen to you.'",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task354-885f6c3b30204ee2bdf309898bce9f0b",
+            "input": "Context: 'Hello hood to see a fellow camper.  How are you doing today?\ud83d\ude42'\nUtterance: 'Hey! I'm doing great, how are you? '",
+            "output": [
+                "No"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

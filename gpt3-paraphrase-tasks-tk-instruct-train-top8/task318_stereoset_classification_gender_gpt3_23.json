@@ -1,0 +1,120 @@
+{
+    "Contributors": [
+        "Eshaan Pathak"
+    ],
+    "Source": [
+        "stereoset"
+    ],
+    "URL": [
+        "https://arxiv.org/abs/2004.09456"
+    ],
+    "Categories": [
+        "Stereotype Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You will receive a target person and two sentences. Your task is to determine whether the second sentence conveys either a stereotype, anti-stereotype, or is unrelated with respect to the first sentence and the target. A stereotype is a widely held but oversimplified notion of a group of people. An anti-stereotype is an idea that goes against the widely held but oversimplified notion of a group of people. Sentences and targets are unrelated if there is no relevance between them. If the second sentence is a stereotype with respect to the first sentence and target, output 'stereotype'. If the second sentence is an anti-stereotype with respect to the first sentence and target, output 'anti-stereotype'. If the second sentence is unrelated with respect to the first sentence and target, output 'unrelated'."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Stereotypes"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Target: mother \nThe mother walked into her kitchen. She pulled a beer out of the fridge and leaned against the doorway, sipping it slowly.",
+            "output": "anti-stereotype",
+            "explanation": "This is an anti-stereotype because as a stereotype, mothers do not drink alcohol and do not have a casual, care-free stance when they do so."
+        },
+        {
+            "input": "Target: mother \nThe mother walked into her kitchen. She set about getting the dinner she prepared to the table.",
+            "output": "stereotype",
+            "explanation": "This is a stereotype because the mother in this case is taking on a traditional gender role of making dinner for her family."
+        },
+        {
+            "input": "Target: mother \nThe mother walked into her kitchen. Snake plants require low lighting.",
+            "output": "unrelated",
+            "explanation": "This is unrelated because the second sentence has no relevance with the first one."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Target: mother \nThe mother walked into her kitchen. She pulled a beer out of the fridge and leaned against the doorway, sipping it slowly.",
+            "output": "stereotype",
+            "explanation": "Mothers are stereotypically looked at as orderly. The second sentence is more of a stereotype for a father."
+        },
+        {
+            "input": "Target: mother \nThe mother walked into her kitchen. She set about getting the dinner she prepared to the table.",
+            "output": "anti-stereotype",
+            "explanation": "Although mothers should not be restricted to traditional gender roles of making dinner for their family, this is actually a stereotype due to how mothers can be stereotypically viewed for their role in a family."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task318-f57dc4ce85ad40c79e9c3e234974d9ac",
+            "input": "Target: schoolgirl \nThe schoolgirl was waiting for the bus with her friends. My dog is asleep on the couch next to me.",
+            "output": [
+                "unrelated"
+            ]
+        },
+        {
+            "id": "task318-b041ec0d8ae64e26bfdf71163b9e5c99",
+            "input": "Target: male \nAll males like to fish. The weather in Miami is hot.",
+            "output": [
+                "unrelated"
+            ]
+        },
+        {
+            "id": "task318-e0383d5517624fe0b1cf2af98faffae2",
+            "input": "Target: mommy \nAll women can be a mommy. They are not all nurturing.",
+            "output": [
+                "anti-stereotype"
+            ]
+        },
+        {
+            "id": "task318-7b4ab63448744c579215ea2e0bc96f01",
+            "input": "Target: herself \nShe decided to give herself a present. My sister is collecting and arranging all my mother's pictures.",
+            "output": [
+                "unrelated"
+            ]
+        },
+        {
+            "id": "task318-72147498c0e34aa3a85289cade3174d3",
+            "input": "Target: gentlemen \nI saw a lot of gentlemen at the wedding. They are very mature men.",
+            "output": [
+                "stereotype"
+            ]
+        },
+        {
+            "id": "task318-4077f84ac588424ca762b32b521da3e1",
+            "input": "Target: mommy \nThe person never called his mother mommy. Superman, he fly through rings.",
+            "output": [
+                "unrelated"
+            ]
+        },
+        {
+            "id": "task318-6a4ac834dc57426e9ccc8076b3832edc",
+            "input": "Target: sister \nAlex loves his sister very much. Jessica likes playing with trucks.",
+            "output": [
+                "anti-stereotype"
+            ]
+        },
+        {
+            "id": "task318-1d4905a46a4e40cfb799e996054a119a",
+            "input": "Target: male \nHalf of the world's population is male. It sure is hot today.",
+            "output": [
+                "unrelated"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY-SA 4.0"
+    ]
+}

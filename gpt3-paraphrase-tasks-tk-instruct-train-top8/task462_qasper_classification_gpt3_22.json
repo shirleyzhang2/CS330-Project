@@ -1,0 +1,120 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "qasper"
+    ],
+    "URL": [
+        "https://allenai.org/project/qasper/home"
+    ],
+    "Categories": [
+        "Question Understanding"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "In this task, you will read a context from an academic paper and answer a question based on the context. You will classify the questions into one of three categories: \"Extractive\", \"Abstractive\", or \"Yes-no\". Extractive questions can be answered by combining extracts taken from the context into a summary. Answering abstractive questions requires paraphrasing the context using new sentences. A Yes-no question is a question whose expected answer is either yes or no."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Scientific Research Papers"
+    ],
+    "Positive Examples": [
+        {
+            "input": "We build a dataset of Twitter accounts based on two lists annotated in previous works. For the non-factual accounts, we rely on a list of 180 Twitter accounts from BIBREF1. On the other hand, for the factual accounts, we use a list with another 32 Twitter accounts from BIBREF19 that are considered trustworthy by independent third parties. \n Question: How did they obtain the dataset?",
+            "output": "Extractive",
+            "explanation": "The answer to this question has been explicitly mentioned in the context, so the question is extractive."
+        },
+        {
+            "input": "We evaluate our pointer-generator performance using BLEU score. The baseline language model is trained using RNNLM BIBREF23 . Perplexity measure is used in the evaluation.\n\n \n Question: Did they use other evaluation metrics?",
+            "output": "Yes-no",
+            "explanation": "This is a good example, and the given question is a yes-no question."
+        },
+        {
+            "input": "As in the example above, we pre-process documents by removing all numbers and interjections. \n Question: what processing was done on the speeches before being parsed?",
+            "output": "Abstractive",
+            "explanation": "Answering this question needs paraphrasing the context, so this question is abstractive."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "For the English version, we performed both a thorough manual analysis and automatic evaluation across three commonly used TS datasets from two different domains  For the English version, we performed both a thorough manual analysis and automatic evaluation across three commonly used TS datasets from two different domains  The evaluation of the German version is in progress. \n Question: What are the corpora used for the task?",
+            "output": "Yes-no",
+            "explanation": "This question is extractive, and it's not a yes-no question."
+        },
+        {
+            "input": "For Turkish, as the first dataset, we utilised the movie reviews which are collected from a popular website. The number of reviews in this movie corpus is 20,244 and the average number of words in reviews is 39. Each of these reviews has a star-rating score which is indicative of sentiment. These polarity scores are between the values 0.5 and 5, at intervals of 0.5. We consider a review to be negative it the score is equal to or lower than 2.5. On the other hand, if it is equal to or higher than 4, it is assumed to be positive. We have randomly selected 7,020 negative and 7,020 positive reviews and processed only them. \n Question: What details are given about the movie domain dataset?",
+            "output": "Extractive",
+            "explanation": "This question is Abstractive because we need to paraphrase the context to get to the answer."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task462-1c221f7e54cd4f41bc26d69cb22176dc",
+            "input": "Even though this corpus has incorrect sentences and their emotional labels, they lack their respective corrected sentences, necessary for the training of our model. In order to obtain this missing information, we outsource native English speakers from an unbiased and anonymous platform, called Amazon Mechanical Turk (MTurk) BIBREF19, which is a paid marketplace for Human Intelligence Tasks (HITs). We use this platform to create tasks for native English speakers to format the original incorrect tweets into correct sentences. Some examples are shown in Table TABREF12. The dataset used to evaluate the models' performance is the Chatbot Natural Language Unerstanding (NLU) Evaluation Corpus, introduced by Braun et al. BIBREF20 to test NLU services. It is a publicly available benchmark and is composed of sentences obtained from a German Telegram chatbot used to answer questions about public transport connections. The dataset has two intents, namely Departure Time and Find Connection with 100 train and 106 test samples, shown in Table TABREF18. Even though English is the main language of the benchmark, this dataset contains a few German station and street names. \n Question: Do they report results only on English datasets?",
+            "output": [
+                "Yes-no"
+            ]
+        },
+        {
+            "id": "task462-f9e34b93cf7e453589f975d5be16c9b8",
+            "input": "This framework has potential applications when comparing different gold standards, considering the design choices for a new gold standard and performing qualitative error analyses for a proposed approach. \n Question: Have they made any attempt to correct MRC gold standards according to their findings? ",
+            "output": [
+                "Yes-no"
+            ]
+        },
+        {
+            "id": "task462-d55d0d80b94641bca26024f33051bf9f",
+            "input": "We found interesting patterns which are learned by our model and help understand these monolingual gains. For example, a recurring pattern is that words in English which are translated to the same word, or to semantically close words, in the target language end up closer together after our transformation. For example, in the case of English-Spanish the following pairs were among the pairs whose similarity increased the most by applying our transformation: cellphone-telephone, movie-film, book-manuscript or rhythm-cadence, which are either translated to the same word in Spanish (i.e., tel\u00e9fono and pel\u00edcula in the first two cases) or are already very close in the Spanish space. More generally, we found that word pairs which move together the most tend to be semantically very similar and belong to the same domain, e.g., car-bicycle, opera-cinema, or snow-ice.\n\n \n Question: Why does the model improve in monolingual spaces as well? ",
+            "output": [
+                "Abstractive"
+            ]
+        },
+        {
+            "id": "task462-ecd4e960116a42f98334b9e24748b457",
+            "input": "Understanding a user's intent and sentiment is of utmost importance for current intelligent chatbots to respond appropriately to human requests. However, current systems are not able to perform to their best capacity when presented with incomplete data, meaning sentences with missing or incorrect words. This scenario is likely to happen when one considers human error done in writing. In fact, it is rather naive to assume that users will always type fully grammatically correct sentences.  \n Question: How do the authors define or exemplify 'incorrect words'?",
+            "output": [
+                "Abstractive"
+            ]
+        },
+        {
+            "id": "task462-ecd1c18a739e4068806d0ce40f303b13",
+            "input": "This paper used the real-time method to randomly collect 10% of publicly available English tweets using several pre-defined DDEO-related queries (Table TABREF6 ) within a specific time frame.  \n Question: Do they evaluate only on English data?",
+            "output": [
+                "Yes-no"
+            ]
+        },
+        {
+            "id": "task462-1290d003f347471e84150d7fc17c090b",
+            "input": "On the other hand, Go-Explore Seq2Seq shows promising results by solving almost half of the unseen games. Figure FIGREF62 (in Appendix SECREF60) shows that most of the lost games are in the hardest set, where a very long sequence of actions is required for winning the game. These results demonstrate both the relative effectiveness of training a Seq2Seq model on Go-Explore trajectories, but they also indicate that additional effort needed for designing reinforcement learning algorithms that effectively generalize to unseen games. \n Question: How do the authors show that their learned policy generalize better than existing solutions to unseen games?",
+            "output": [
+                "Extractive"
+            ]
+        },
+        {
+            "id": "task462-a96a3d99440c4460ab4fb7d81701a153",
+            "input": " In almost all genres, DenseNMT models are significantly better than the baselines. \n Question: did they outperform previous methods?",
+            "output": [
+                "Yes-no"
+            ]
+        },
+        {
+            "id": "task462-06fcbb55fc064f6b91da4f0f2deb300e",
+            "input": "With an intention to exploit the contribution of hashtag use to stance detection, we have also used the existence of hashtags in tweets as an additional feature to unigrams. \n Question: What are hashtag features?",
+            "output": [
+                "Abstractive"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

@@ -1,0 +1,125 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "atomic"
+    ],
+    "URL": [
+        "https://allenai.org/data/atomic-2020"
+    ],
+    "Categories": [
+        "Commonsense Classification"
+    ],
+    "Reasoning": [
+        "Relational Reasoning",
+        "Reasoning on Social Interactions",
+        "Commonsense Reasoning -> Social Situations"
+    ],
+    "Definition": [
+        "In this task, you are given two phrases: Head and Tail, separated with <sep>. The Head and the Tail events are short phrases possibly involving participants. The names of specific people have been replaced by generic words (e.g., PersonX, PersonY, PersonZ). PersonX is always the subject of the event. The Tail is the possible intention of PersonX from the Head. You have to determine if The Tail is the intention of PersonX from the Head. The intention is the likely intent or desire of PersonX behind the execution of an event. For example, given the Head PersonX gives PersonY gifts, an intention might be that PersonX wanted to be thoughtful. Classify your answers into \"Yes\" and \"No\". The phrase may also contain \"___\", a placeholder that can be an object, a person, and/or an action."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Sociology",
+        "Commonsense -> Concepts and Relations -> Social Commonsense"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Head: PersonX plays a song<sep>Tail: to hear music.",
+            "output": "Yes",
+            "explanation": "This is a good example. PersonX plays a song because PersonX wanted to hear music."
+        },
+        {
+            "input": "Head: PersonX becomes distracted<sep>Tail: occupied",
+            "output": "No",
+            "explanation": "In this example, occupied is not the intention of PersonX's distraction. So this output is correct."
+        },
+        {
+            "input": "Head: PersonX brings PersonX's kids<sep>Tail: to take them to play",
+            "output": "Yes",
+            "explanation": "PersonX brings PersonX's kids because PersonX wants to take them to play. Thus, this example should be classified as \"Yes\"."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Head: PersonX addresses PersonY audience<sep>Tail: excited",
+            "output": "Yes",
+            "explanation": "Being excited is not the intention of PersonX in the Head sentence. So the output should be \"No\"."
+        },
+        {
+            "input": "Head: PersonX saves the money<sep>Tail: to buy something special",
+            "output": "No",
+            "explanation": "PersonX saves the money because PersonX wanted to buy something special, and the output should be \"Yes\"."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1201-5fec21efde17435696ae4cb9ea060795",
+            "input": "Head: PersonX always lost<sep>Tail: are kicked out the competition",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1201-31202bde9e21428f8ec4ddcc3383f84f",
+            "input": "Head: PersonX plays dumb<sep>Tail: to give out an impression that he/she's not intelligent.",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1201-4cf19537716e40249b05d78b0cae1e29",
+            "input": "Head: PersonX gives PersonY a number<sep>Tail: communicate information.",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1201-0945975f409a4a18942a9c484937e804",
+            "input": "Head: PersonX needs a place to live<sep>Tail: to move out",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1201-43409c7cfab44486846a3cd6d28c31dc",
+            "input": "Head: PersonX makes a splash<sep>Tail: to be the best",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1201-7163cf4680b144899d737c515c23711d",
+            "input": "Head: PersonX asks PersonY to make<sep>Tail: agrees",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1201-93192f31aca84ff7a149130f32534acb",
+            "input": "Head: PersonX pays ___ to the problems<sep>Tail: to be careful",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1201-d28296acbdb94a3dbf17728652517d0a",
+            "input": "Head: PersonX builds PersonY church<sep>Tail: to be helpful",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

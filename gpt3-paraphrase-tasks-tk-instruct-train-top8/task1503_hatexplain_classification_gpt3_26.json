@@ -1,0 +1,115 @@
+{
+    "Contributors": [
+        "Pruthvi Patel"
+    ],
+    "Source": [
+        "hatexplain"
+    ],
+    "URL": [
+        "https://github.com/hate-alert/HateXplain"
+    ],
+    "Categories": [
+        "Toxic Language Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "Given a tweet, output the community that it targets. The community will be one of the nine values: 'African', 'Islam', 'Jewish', 'Women', 'Refugee', 'Arab', 'Caucasian', 'Hispanic' or 'Asian'. Output 'None' if the tweet does not target any community. A tweet can only target one community."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Social Media -> Twitter"
+    ],
+    "Positive Examples": [
+        {
+            "input": "caucasians wearing masks to prevent coronavirus and still don \u2019 t wash their hands",
+            "output": "Caucasian",
+            "explanation": "The tweet generalizes an attribute to the entire community, Caucasian, which makes it offensive."
+        },
+        {
+            "input": "lesson of the week from the holy book the sovereign individual once commerce flows over the internet suppression of speech becomes unstoppable devolution inevitable and the monopoly of violence by governments will end paraphrased from j d davidson rhys mogg",
+            "output": "None",
+            "explanation": "The tweet does not target any specific community hence the correct answer is None"
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "<user> <user> there shd be a film called no hindus in kashmir wud be perfect islamic fanaticsm movement in kashmir",
+            "output": "Hindu",
+            "explanation": "Every input tweet will target one or more of the nine communities provided or will not target any community. Further the tweet targets Muslim community. Hence Hindu is not the correct value. The correct value is Islam."
+        },
+        {
+            "input": "ffs everthing is offensive to muslimes",
+            "output": "None",
+            "explanation": "This tweet is offensive to Muslim community. Hence the correct answer is Islam instead of None."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1503-774e129cb4aa480cb10942ec4e203ebc",
+            "input": "long dead redneck friend of mine when discussing basketball said i have never seen a nigger run so fast unless he had a tv under each arm",
+            "output": [
+                "African"
+            ]
+        },
+        {
+            "id": "task1503-b439e2890e8e4e29a6260debaeb58f3b",
+            "input": "<user> oh and there the gay rainbow flag these are not women they are mostly lesbians irrelevant termagants with empty wombs",
+            "output": [
+                "Women"
+            ]
+        },
+        {
+            "id": "task1503-f106892586c84b089a4bfeb75b93933e",
+            "input": "mfw beaners buying something at <number> <number> have a conversation with the cashier in spanish",
+            "output": [
+                "Hispanic"
+            ]
+        },
+        {
+            "id": "task1503-351c8e3397514a10ac66943367846ae6",
+            "input": "miss america shall embrace beer for beer makes fat women look beautiful",
+            "output": [
+                "Women"
+            ]
+        },
+        {
+            "id": "task1503-30498e9b6a0d4d0ab2df53b8a89f12fc",
+            "input": "<user> does american people include all the illegal immigrants",
+            "output": [
+                "Refugee"
+            ]
+        },
+        {
+            "id": "task1503-141f8a38515549b09bd4b35b1885bf13",
+            "input": "if they do not like it here they need to get the fuck of our lands and go back to sand nigger country crusade muslims getout",
+            "output": [
+                "Arab"
+            ]
+        },
+        {
+            "id": "task1503-e6761ad3521740e89010180c695cde17",
+            "input": "i am a white nationalist who else is a white nationalist",
+            "output": [
+                "None"
+            ]
+        },
+        {
+            "id": "task1503-05f47e98cda24cbf80c6875b23c81779",
+            "input": "if i were kurdish in germany i would be joining them the kurds are sick and tired of arabs and those who are violent and the kurds are the best fighters after koreans in the world",
+            "output": [
+                "Arab"
+            ]
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

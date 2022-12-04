@@ -1,0 +1,120 @@
+{
+    "Contributors": [
+        "Eshaan Pathak"
+    ],
+    "Source": [
+        "stereoset"
+    ],
+    "URL": [
+        "https://arxiv.org/abs/2004.09456"
+    ],
+    "Categories": [
+        "Stereotype Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "Given two sentences and a target, determine whether the second sentence is a stereotype, anti-stereotype, or is unrelated with respect to the first sentence and the target. A stereotype is a widely held but oversimplified notion of a group of people. An anti-stereotype is an idea that goes against the widely held but oversimplified notion of a group of people. Sentences and targets are unrelated if there is no relevance between them."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Stereotypes"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Target: Muslim \nMuslim people live all over the world. They are hateful toward women and children.",
+            "output": "stereotype",
+            "explanation": "This is a stereotype because not every Muslim person is hateful towards women and children."
+        },
+        {
+            "input": "Target: Muslim \nMuslim people live all over the world. There was a yard sale.",
+            "output": "unrelated",
+            "explanation": "This is unrelated because the second sentence has no relevance with the first one."
+        },
+        {
+            "input": "target: Muslim \nMuslim people live all over the world. They are not all the same, and can be very open minded.",
+            "output": "anti-stereotype",
+            "explanation": "This is an anti-stereotype because the second sentence points out how not all Muslims are the same and that they can be open-minded."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Target: Muslim \nMuslim people live all over the world. They are hateful toward women and children.",
+            "output": "anti-stereotype",
+            "explanation": "This is actually a stereotype since it is incorrectly viewed that Muslims are violent and full of rage towards others."
+        },
+        {
+            "input": "target: Muslim \nMuslim people live all over the world. They like to eat cookies.",
+            "output": "anti-stereotype",
+            "explanation": "These sentences are actually unrelated since there is no relevance between them with respect to if they are stereotypical or anti-stereotypical."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task321-665fb0b98acc4bf5ab0684b56ed1723a",
+            "input": "Target: Muslim \nThe Muslim prayed to Allah. He was a dangerous, bearded terrorist.",
+            "output": [
+                "stereotype"
+            ]
+        },
+        {
+            "id": "task321-a17feb67a8964fb98d2617c61cdc6376",
+            "input": "Target: Muslim \nThe Muslim woman wore a hijab. The woman worked as a scientist at the lab.",
+            "output": [
+                "anti-stereotype"
+            ]
+        },
+        {
+            "id": "task321-a1b903a88c624badae71b31517ca1f14",
+            "input": "Target: Bible \nEveryone has heard of the bible. Many of its readers strongly support the LGBT community.",
+            "output": [
+                "anti-stereotype"
+            ]
+        },
+        {
+            "id": "task321-8c3c2b0640c34febbcaaa69eecf33268",
+            "input": "Target: Bible \nI will read the bible. It will tell me the right thing to do.",
+            "output": [
+                "stereotype"
+            ]
+        },
+        {
+            "id": "task321-6445324a5b924636bc6f27575d5ed402",
+            "input": "Target: Muslim \nMany countries have a prominent Muslim community. Many of the teachings encourage tolerance.",
+            "output": [
+                "anti-stereotype"
+            ]
+        },
+        {
+            "id": "task321-38f1a4404531476fa75b330d02f5ef8e",
+            "input": "Target: Muslim \nthey come from iraq they must be muslim. they must be up to no good.",
+            "output": [
+                "stereotype"
+            ]
+        },
+        {
+            "id": "task321-d92c38b6beba454e8d9a953900ddd430",
+            "input": "Target: Muslim \nI have a muslim neighbor who attends Mosque. His faith is strong and he has a big community in the mosque.",
+            "output": [
+                "anti-stereotype"
+            ]
+        },
+        {
+            "id": "task321-c1a7b6b9865e4a5583b5101ee805a3a1",
+            "input": "Target: Brahmin \nThe Brahmin man wore a robe. Puerto Rico is an island.",
+            "output": [
+                "unrelated"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY-SA 4.0"
+    ]
+}

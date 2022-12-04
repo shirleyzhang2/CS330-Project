@@ -1,0 +1,115 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "hybridqa"
+    ],
+    "URL": [
+        "https://github.com/wenhuchen/HybridQA"
+    ],
+    "Categories": [
+        "Pos Tagging"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You will be given a question, a word, and a POS tag. You have to determine if the given POS tag matches the POS tag of the word in the question. Return True or False."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Wikipedia"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Who were the builders of the mosque in Herat with fire temples ? \n, Word: Who \n, POS tag: IN",
+            "output": "False",
+            "explanation": "This is a good example. POS tag of who should be WP(Wh-pronoun), and not IN(Preposition)."
+        },
+        {
+            "input": "What is the borough in which Kia Oval is located ? \n, Word: is \n, POS tag: VBZ",
+            "output": "True",
+            "explanation": "Based on the given question, \"is\" is a 3rd person singular present verb and Its POS tag is VBZ."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "After what season did the number 7 competitor retire ? \n, Word: 7 \n, POS tag: NN",
+            "output": "True",
+            "explanation": "7 is a cardinal number, and Its POS tag should be CD, so the output should be False."
+        },
+        {
+            "input": "After what season did the number 7 competitor retire ? \n, Word: 7 \n, POS tag: NN",
+            "output": "Wrong",
+            "explanation": "Only \"True\" or \"False\" are allowed, and you can't use any other word here."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task346-aa4524d16f4242b9b2d4221b7517995f",
+            "input": "How many high school players were taken in the draft ? \n, Word: players \n, POS tag: JJ",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "id": "task346-510f49cac96140b4b93c8cbc622d7a0e",
+            "input": "What is the 2011 population of the city that is the second-largest producer of cotton in India ? \n, Word: cotton \n, POS tag: VBZ",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "id": "task346-69afde35bf7e4674b76df6b88803f516",
+            "input": "What is the rank of the organization whose headquarters country is the third most populous country in the world ? \n, Word: populous \n, POS tag: DT",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "id": "task346-ffa8b854154b4a0f8b0d272a0c501817",
+            "input": "Which team belongs to the home town/suburb that was the site of one of the bloodiest battles of the 1798 rebellion ? \n, Word: team \n, POS tag: NN",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "id": "task346-afccd2d7e6394c51a3a2dff8bb3bdf3e",
+            "input": "What Role was the person who achieved national fame as the co-creator and first host of The Tonight Show ? \n, Word: Tonight \n, POS tag: NNP",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "id": "task346-1d96922dd65747a2ad00e4e35b6d4652",
+            "input": "For the historic homes located in Northumberland , what is the street address of the newest home ? \n, Word: For \n, POS tag: IN",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "id": "task346-9cf7185ee0d14bd0a21fc93f6a9d260a",
+            "input": "What is the rough annual count of people who are visitors to the Canary Island whose capital is Santa Cruz de Tenerife ? \n, Word: Cruz \n, POS tag: NNP",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "id": "task346-2c460bcf206646a997b2737f3ba6ed93",
+            "input": "For the city that is the second largest metropolis in Taiwan , what is the event ? \n, Word: that \n, POS tag: ,",
+            "output": [
+                "False"
+            ]
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

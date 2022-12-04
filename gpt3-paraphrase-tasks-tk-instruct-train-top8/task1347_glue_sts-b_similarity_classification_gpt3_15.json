@@ -1,0 +1,128 @@
+{
+    "Contributors": [
+        "Arit Chanda"
+    ],
+    "Source": [
+        "sts_b"
+    ],
+    "URL": [
+        "https://dl.fbaipublicfiles.com/glue/data/STS-B.zip"
+    ],
+    "Categories": [
+        "Text Matching"
+    ],
+    "Reasoning": [
+        "Textual Entailment -> Analogical Reasoning"
+    ],
+    "Definition": [
+        "You will be given two sentences and you must compare them in order to classify them into one of the following classes: 0 : The two sentences are completely dissimilar. 1 : The two sentences are not equivalent, but are on the same topic. 2 : The two sentences are not equivalent, but share some details. 3 : The two sentences are roughly equivalent, but some important information differs/missing. 4 : The two sentences are mostly equivalent, but some unimportant details differ. 5 : The two sentences are completely equivalent, as they mean the same thing."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Books",
+        "Dialogue"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Sentence 1: A plane is taking off. Sentence 2: An air plane is taking off.",
+            "output": "5",
+            "explanation": "Here both statements are talking about the same thing hence it will be classified as a 5."
+        },
+        {
+            "input": "Sentence 1: A man is playing a large flute. Sentence 2: A man is playing a flute.",
+            "output": "4",
+            "explanation": "In this example both statements mean the same thing but only unimportant details like the size of the flute is missing in the second statement. Hence, it is classified as a 4."
+        },
+        {
+            "input": "Sentence 1: Three men are playing chess. Sentence 2: Two men are playing chess.",
+            "output": "3",
+            "explanation": "In this example important detail of the number of men playing chess is wrong. Hence this example will be clasified as a 3."
+        },
+        {
+            "input": "Sentence 1: A man is smoking. Sentence 2: A man is skating.",
+            "output": "0",
+            "explanation": "Here there is no similarity between the two sentences hence the output classification is 0."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Sentence 1: A man is playing the cello. Sentence 2: A man seated is playing the cello.",
+            "output": "3",
+            "explanation": "Sentence 1 and 2 are only different by an unimportant detail of the man seating so the output should have been 4."
+        },
+        {
+            "input": "Sentence 1: The man is playing the piano. Sentence 2: The man is playing the guitar.",
+            "output": "0",
+            "explanation": "In this example both our sentences are sharing some details about playing an musical instrument so the correct classification should have been 2."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1347-9461d5c827024de5ab09524aed2c5f43",
+            "input": "Sentence 1: The figures are becoming catastrophic, said Dr. Patrick Pelloux, the president of the association of emergency room physicians. Sentence 2: This is unacceptable,\" said Patrick Pelloux, the president of France's Association of Emergency Doctors.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "id": "task1347-a98708b426904c4ba7da2ef060b49e24",
+            "input": "Sentence 1: A man is traveling in a boat. Sentence 2: A woman is cutting up a carrot with a knife.",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "id": "task1347-2d93a9e86421440188991ae9ff6c0549",
+            "input": "Sentence 1: Old green bottle sitting on a table. Sentence 2: Three men in suits sitting at a table.",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "id": "task1347-7b1593bbcd504e3790c3f4e51fdd467a",
+            "input": "Sentence 1: DICKSHOT Matt Holliday owns. Sentence 2: Matt Holliday owns, y'all.",
+            "output": [
+                "4"
+            ]
+        },
+        {
+            "id": "task1347-92a771f5733c4937af9600fce8771248",
+            "input": "Sentence 1: CYCLONE FORMATION IS NOT EXPECTED DURING THE NEXT  HOURS. Sentence 2: TROPICAL CYCLONE FORMATION IS NOT EXPECTED.",
+            "output": [
+                "3"
+            ]
+        },
+        {
+            "id": "task1347-ba76d338c8dc489faeab0f52ba8f55f2",
+            "input": "Sentence 1: A women and small child sitting at a dinner table smiling at the camera. Sentence 2: A small cat laying on a wooden beam looking up at the camera.",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "id": "task1347-9d0dbd11d5fa48de9f26ca4220125148",
+            "input": "Sentence 1: A small plane parked at an airfield with a cloudy sky overhead. Sentence 2: A small white plane parked in an airport on a cloudy day.",
+            "output": [
+                "5"
+            ]
+        },
+        {
+            "id": "task1347-29d3745603ac42a7bf43344dd3f5cfaa",
+            "input": "Sentence 1: China's new PM rejects US hacking claims Sentence 2: China Premier Li rejects 'groundless' US hacking accusations",
+            "output": [
+                "5"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

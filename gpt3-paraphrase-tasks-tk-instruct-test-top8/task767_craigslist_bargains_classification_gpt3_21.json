@@ -1,0 +1,117 @@
+{
+    "Contributors": [
+        "Ritvik Gaur"
+    ],
+    "Source": [
+        "craigslist_bargains"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/craigslist_bargains"
+    ],
+    "Categories": [
+        "Text Categorization"
+    ],
+    "Reasoning": [
+        "Reasoning on Social Interactions"
+    ],
+    "Definition": [
+        "Your task is to read a text passage comprising of dialogue between a seller and a buyer about the sale of an item, and classify the item into exactly one of these categories: 'housing', 'furniture', 'bike', 'phone', 'car', or 'electronics'. The output should be the name of the category from the stated options, and there should be only one category for the given text passage."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Seller: hi\nBuyer: Hello\nSeller: do you care to make an offer?\nBuyer: The place sounds nice, but may be a little more than I can afford\nSeller: well how much can you soend?\nBuyer: I was looking for something in the 1500-1600 range\nSeller: That is really unreasonable considering all the immenities and other going rates, you would need to come up to at least 3000\nBuyer: I have seen some 2 bedrooms for that price, which I could split the cost with a roommate, so even with amenities, this may be out of my range\nSeller: it may be then... the absolute lowest i will go is 2700. that is my final offer.\nBuyer: Ok, I think the most I could spend on this is 2000 - we are a ways apart\nSeller: ya that is far too low like i said 2700\nBuyer: Ok, thanks for your consideration. I will have to keep looking for now.\nSeller: good luck",
+            "output": "housing",
+            "explanation": "The answer 'housing' is correct because a house is being talked about which is indicated by the mention of 'bedrooms' and 'amenities' which are words that are both related to housing."
+        },
+        {
+            "input": "Seller: Hello, how are you today\nBuyer: Hi, very well thank you! So, is the DVD player in a good condition?\nSeller: It is in great condition. I have barely taken it out of the box. \nBuyer: How much can you give it for?\nSeller: The price is $55\nBuyer: Yeah but its too much for me\nSeller: I understand that would normally be a lot for a used DVD player but this item has only been used for one week.  \nBuyer: Yeah, but there are a lot of different options in the market. I am a student and can only afford what my budget allows me to do so. I can pay $41. Will you accept it?\nSeller: I understand a student's budget, as I have no to long ago graduated myself. I just am already letting it go real cheap. I paid $130 for the product. The only reason I am parting with it is that It only streams the big streaming channels like Netflix, Hulu, Vudu and Youtube and I bought a DVD player/Android Box combo that will allow me to stream those plus add my own channels. I can't possibly sell it for $41. \nBuyer: Okay I can only afford $48 that's the last I can pay\nSeller: Make it $50 and we have a deal. I know it is a stretch to your budget but trust me with everything this player does, you will save more than $2 on entertainment",
+            "output": "electronics",
+            "explanation": "The answer 'electronic' is correct as the buyer and seller are talking about a 'DVD player' which is an electronic item."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Seller: Hello.\nBuyer: Hello. I saw your listing and I am interested in your car. However, I have a few questions.\nSeller: Sure, go ahead.\nBuyer: Has it been in any major accidents?\nSeller: No, I`ve kept it in very good condition.\nBuyer: All of the electronics are in working order, correct?\nSeller: Yes, everything has been checked out recently.\nBuyer: Great! Would you take $10,000? 120k miles is kinda a lot.\nSeller: I`m open to negotiate but 10k is a bit low. We could meet in the middle and say 13 000? I`ll include the extra speakers I recently purchased.\nBuyer: 13,000 is fair, however I can only afford paying 12,500\nSeller: Alright, I think that`s reasonable. We can agree on 12,500 then.\nBuyer: Great!",
+            "output": "toys",
+            "explanation": "This answer is incorrect because 'toys' does not belong in any of the categories from which the answer is to be chosen from ('phone', 'electronics', 'housing', 'furniture', 'car', 'bike'). The correct answer is 'car' because a car is being talked about in this conversation between the buyer and seller."
+        },
+        {
+            "input": "Buyer: I'm interested in this item, but I had some questions\nSeller: Geat, ask away.\nBuyer: Do I have to remove it myself?\nSeller: I am renting out the appartment, you \"Don't Remove Anything\"\nBuyer: Nice. Is it fully furnished?\nSeller: No, you will need your own \"basic\" furnishing\nBuyer: How much is the security deposit, is there one?\nSeller: Just first and last month rent\nBuyer: It's a bit pricy, I'm not sure if I can afford it...\nSeller: I'm only asking $140, that is really cheap for the area\nBuyer: I'd totally take 140!!!   but how about 1300 instead?\nSeller: Oops, I ment $1400, how about we meet in the middle at $1350?\nBuyer: 1325, and I'll accept\nBuyer: \nSeller: How about $1337.50",
+            "output": "bike",
+            "explanation": "This answer is incorrect as the item that is being talked about in the given conversation between the buyer and seller is not a bike. The correct answer is 'housing' because the words 'renting' and 'apartment' are mentioned in the conversation which indicates that the item in question is related to housing since apartments come under houses."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task767-5fa5fee7ea714b9eb84770bef209b030",
+            "output": [
+                "car"
+            ],
+            "input": "Buyer: Hello do you still have this car?\nSeller: Yes!  It is still available and I'm interested in selling!  :)\nBuyer: Can you tell me anything about it\nSeller: I am the original owner, bought it new in 2006.  Great vehicle - has never left me stranded.  The interior is nearly pristine and the exterior looks very good (some dings like you would expect from an 11 year old vehicle).  Still drives great.  Only 85,000 miles.\nBuyer: Ok, how much are you asking?\nSeller: I'm asking $7800.  I bought a new Escalade and no longer need this one.\nBuyer: Ok, I will offer you 4600 for it.\nSeller: Uh, no.  Book on it is $8300.  I'm already below that.  I'd be willing to consider an offer that is more reasonable, but $4600 is over three-thousand below my asking price.\nBuyer: Well to be honest I found the same care with less miles for cheaper.  If oyu are willing to throw in a warranty and deliver it for me I will offer more.\nSeller: OK, I can offer a 1 year warranty and will bring it to you, but I need you to make an offer.  \nBuyer: Best I can go is 6900\nSeller: Make it an even $7000 and you have a deal.\nBuyer: \nSeller: \n"
+        },
+        {
+            "id": "task767-f44de8a53ad94302af8ef7ec54be586e",
+            "output": [
+                "bike"
+            ],
+            "input": "Seller: Hey there, you're interested in this seatpost?\nBuyer: Hi can you please tell me more about the On One Pompino Frame-Easton Fork-Chris King-VO Grand Cru seatpost? \nSeller: Yeah definitely, it's pretty new, the original selling price is 350 and we're only looking to sell it because we're moving. What's your budget?\nBuyer: My budget is $260. I cannot really spend more than that because the wife will kill me. If you're willing to accept, I could come pick it up? I know gas is expensive right now so I'd be willing to make the trip to you.\nSeller: Definitely, 260 sounds like a good deal, when will you be available to pick it up?\nBuyer: I meant my budget is $182, I'm sorry! I was looking at your price and got confused. All I can afford is $182\nSeller: Give me 200 and I'll drop it off, deal?\nBuyer: Deal\nBuyer: \nSeller: \n"
+        },
+        {
+            "id": "task767-58da11b9d6f044c78c6d1814c99ed885",
+            "output": [
+                "housing"
+            ],
+            "input": "Buyer: Hello how are you\nSeller: Great! How about yourself?\nBuyer: Super special awesome!  I see you're renting out an apartment\nSeller: I am! It's very close to the UC Berkeley campus, and to lots of transit and entertainment options even if you're not a student or faculty. The asking price is $2200.\nBuyer: But what is the neighborhood like?\nSeller: It's near campus, and many of the people living in the neighborhood go to Berkeley or teach there. It's also full of things to do and see.\nBuyer: What is the lease agreement you are thinking of\nSeller: Open to different types of lease agreements if there's something you're looking for. But our standard is a month to month lease with one month's rent as deposit.\nBuyer: Hmmm.  No credit check?  How about $1600 a month?\nSeller: $1600 is fine for a deposit, and we're happy to pick you up for a tour of the unit. We generally don't fool with credit checks, especially on month to month leases.\nBuyer: Alright, I think I can come in later today\nBuyer: \nSeller: \n"
+        },
+        {
+            "id": "task767-79e57e59876040219170751244ed43a9",
+            "output": [
+                "bike"
+            ],
+            "input": "Buyer: Are you offering this bike in one color or all three for the listed price?\nSeller: Just blue for this one.\nBuyer: OK, how old is it?\nSeller: It's like brand new. Never used. We bought it then decided to move, and want to sell it rather than take it with us.\nBuyer: Sure, I just wonder how long you owned it?\nSeller: We've only had it for about two weeks and have been busy getting ready for the move. It was a short notice thing right after we bought it. So it just been sitting in the garage since then.\nBuyer: Ok, would you accept $150 for it?\nSeller: Can you make an offer a little closer to $200?\nBuyer: Could you deliver it if I pay $200?\nSeller: Sure, if you're within 25 miles of us.\nBuyer: What city are you in?\nSeller: That's a good question. I think I'm in the same town you're in. So it's just a matter of how far out of town do you live?\nBuyer: I'm downtown\nSeller: That's great, cause I just 5 miles from town. Deal. Send through the offer and I'll accept it.\nBuyer: \nSeller: \n"
+        },
+        {
+            "id": "task767-b4abec43e7cb49da9ff269514afce017",
+            "output": [
+                "housing"
+            ],
+            "input": "Seller: Hi there\nBuyer: Hi, a studio apartment would be great for me right now. I am a responsible student with rental history looking to negotiate within my budget. \nSeller: That sounds great.  What is your price range?\nBuyer: I'm looking to pay around 1288  but would be willing to sign an extra 6 months to lock in the price. \nSeller: So you'd be willing to sign a lease for 1.5 years? Make it 2 years and I'll seriously consider the 1288\nBuyer: I would be finished with uni by then so that sound reasonable and I can hold off purchasing for 2 years. Sounds good to me. \nBuyer: \nSeller: Awesome. \nSeller: \n"
+        },
+        {
+            "id": "task767-61e14d37a8244355b4bbd22c10d55e94",
+            "output": [
+                "bike"
+            ],
+            "input": "Seller: Hi!\nBuyer: Hi how are you this morning. I would really like to convert my bicycle into a moped. \nSeller: doing well, thanks! This is a great kit for you then, it's a blast having this thing hooked up, no more peddling up hills!\nBuyer: I only have $100 available. I could throw a great bottle of scotch into the deal. Interested?\nSeller: you've got my attention, what kind of scotch?\nBuyer: Johnny Walker Black\nSeller: Thats pretty close to what I'm asking for this, can you come get it to save me $ on shipping?\nBuyer: Do you live near me? I live in Boca Raton.\nSeller: yeah, about 30 minutes away, do we have a deal, hundo bucks and unopened bottle of JWB?\nBuyer: Deal. Ill put the offer in the submit box. Send me your address\nSeller: \nBuyer: \n"
+        },
+        {
+            "id": "task767-9a15edce7f674f2e894ce5af64a133c9",
+            "output": [
+                "bike"
+            ],
+            "input": "Seller: Hey there, I hear you're interested in my listing.\nBuyer: Yes\nSeller: So what do you think of the price? Honestly I'm quite low-balling it here, it's a vintage classic, but I need the space!\nBuyer: What's the lowest u can go\nSeller: I could drop about 10%. How does $3105 sound?\nBuyer: Is there anything wrong with it\nSeller: The body is antique, but solid metal so no issues. The rest is practically new, and it rides like a beauty.\nBuyer: Do you accept trades\nSeller: I'm looking for cash only, unfortunately. Just making space.\nBuyer: Will you accept 2622\nSeller: I can't drop that low unfortunately.\nBuyer: Is there any extras that come with it\nSeller: Nope, I'm just selling the bike, though it is autographed by the 1990 Russian Olympic Team. Will you do $3100?\nBuyer: Can you do 2900\nSeller: I can do $3000, let's split it down the middle, shall we?\nBuyer: Sure\nSeller: Great, sending my offer. Enjoy your day! I'll get back to my Turkey.\nSeller: \nBuyer: \n"
+        },
+        {
+            "id": "task767-fad240aa44d040e8a190263f5810b30b",
+            "output": [
+                "car"
+            ],
+            "input": "Seller: how we doing today\nBuyer: Hi, I am interested in your tahoe. can you tell me anything i need to know about this car\nSeller: it's my second tahoe, I like it but I don't need it anymore, it has all the luxuries inside and great for long distance,  no rips, new tires\nBuyer: how long have you personally owned this vehicle\nSeller: 10 years\nBuyer: okay, great. I did not see in the ad, is this a manual or automatic?\nSeller: automatic , it's really great\nBuyer: perfect. I am very interested in purchasing this vehicle, since this is a car you no longer need and since it is such high mileage are you willing to negotiate on the price. The listed price is just a little above my budget.\nSeller: ok we can work something out, what can you do\nBuyer: I'm concerned about any repairs and maintenance that I may have to do. I'm looking closer to the 2100.00 price range\nSeller: yeah it went for a full check up and it runs great, o you ok on that, but 2100 is way out of my range\nBuyer: I'm not sure If I can do much more, while it looks great I would need to be able to take the car to a mechanic that I trust in order to go much higher than this. Without the most I could go is 2500\nSeller: ok it's you lucky day, but you have to come an pick it up, and cash only please, fair enough ?\nBuyer: I can do cash, can we meet in the middle?\nBuyer: \nSeller: \n"
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

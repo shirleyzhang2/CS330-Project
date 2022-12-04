@@ -1,0 +1,115 @@
+{
+    "Contributors": [
+        "Kushal Chawla"
+    ],
+    "Source": [
+        "casino"
+    ],
+    "URL": [
+        "https://aclanthology.org/2021.naacl-main.254.pdf"
+    ],
+    "Categories": [
+        "Negotiation Strategy Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "In this task you are given an utterance and recent dialogue context containing past 3 utterances (wherever available). You need to output Yes if the utterance contains the other-need strategy, otherwise output No. other-need is a selfish negotiation strategy. It is used when the participants discuss a need for someone else rather than themselves."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Context: 'I was hoping to get alot of water as well, would you be ok with me getting two waters and three firewoods if you get all the food and one water?' 'Hmm, that's not favorable for me going by the volume of items left in my arsenal. Water is more of a higher priority than food. So, I would exchange 1 pack of food for an additional water' 'So that way you would get two waters and two foods? Those are my priorities as well but i would be ok with it since that way i would get five items and you would get only four.'\nUtterance: 'Those are your priorities?? Then that's not fair for you. Then I take 2 water, 1 firewood and 1 food. This is the lowest I can offer'",
+            "output": "No",
+            "explanation": "This is correct. The participant does not create a specific need for anybody."
+        },
+        {
+            "input": "Context: 'I am doing okay but am in need of some supplies. What about you?' 'Same here. My kids are really looking forward to this. What is most important to you?' 'Firewood! I need it to cook my food and also to stay warm. What about you?'\nUtterance: 'That is the same for me as well. My kids were really looking forward to making s'mores and telling stories by the campfire. That's all they've been talking about'",
+            "output": "Yes",
+            "explanation": "In this utterance, the participant uses other-need by mentioning the needs of their kids."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Context: 'Hi! How are you doing today?' 'I'm fine. And yourself?' 'Pretty good. I'm really excited about going camping though!'\nUtterance: 'Me too. I haven't been camping for several years. '",
+            "output": "Yes",
+            "explanation": "There is no need created here. So the correct answer is 'No'."
+        },
+        {
+            "input": "Context: 'Hi, I hope we can work together to get an offer that benefits both of us.\ud83d\ude42'\nUtterance: 'I agree! Nice to meet you... I have two boys who always eat! Any chance I canget 2 food?'",
+            "output": "No",
+            "explanation": "The participant mentions that their boys eat and hence implies that they would need food. Hence, the correct answer here is 'Yes'."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task355-532b1309636043e089d48335df1721ac",
+            "input": "Context: \nUtterance: 'hello, how do you suggest we share the items?'",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task355-c54fb7bd5e604ed6b65c9522287b643c",
+            "input": "Context: 'Hello hope you are excited for the trip Im hoping we can discuss the supplies. I would like to get 2 water 1 food and 2 of the firewood ' 'I can give you 2 waters and 1 food, but I really need more firewood. I ran out last time and I don't want to go through that again! How about you take 2 waters, 1 food, and 1 firewood? ' 'I feel like we are almost there I hunt so im ok with the one food; why would  I only get one firewood?'\nUtterance: 'I just want to make sure that I don't run out. I will have my kids with me and need to make sure they don't get too cold \ud83d\ude42'",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task355-3af4190b68c24297a14cc775f15a9afa",
+            "input": "Context: \nUtterance: 'Howdy! Looking for firewood, water and food--really trying to get 3 packages of each, want to make sure my family has enough supplies for camping. I don't want anyone injured or our vacation cut short.'",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task355-d26e0759442a47ad8b97945f45030ecb",
+            "input": "Context: 'I am also going camping! What do you think you're going to need the most of? What are your preferences?' 'It's going to be hot during the day where I'm going so I'll need some extra hydration.  So water is my main priority.' 'Got it! I am going to need the most of food. There aren't any animals or berries that I feel safe eating where I'm going.'\nUtterance: 'Well I think we can make a good deal then.  How many packages of food would you want?'",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task355-3906c4ec78b246abb1501c4a3c2acd83",
+            "input": "Context: 'Hi! I am doing good.What about you?' 'Doing well, I'm exciting about my next camping trip with my family. ' 'Yeah that's fine.What you need the most?'\nUtterance: 'I need food because I have mouths to feed and maybe a firewood?'",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task355-f286c6a0886d4a48b0130c80bf53c4b5",
+            "input": "Context: 'What is it that you need?' 'I need food and firewood' 'I need water and then firewood'\nUtterance: 'You can have all the water if I can have all the extra food'",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task355-3c99cf9d0cf64c849578f092ff16d604",
+            "input": "Context: 'Hi''\nUtterance: 'Hello I would like to take 3 extra food packages and 3 extra water package and 1 extra firewood packages because we had some unexpected guest join us on our camping trip.\ud83d\ude42'",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task355-6223dc50df004e7d98cbfac86464b9fd",
+            "input": "Context: 'I need an extra supply of food, as I exercise a lot! \ud83d\ude42' 'Hmmm.  And the firewood?' 'I get cold easily. I need the firewood to get warm. I might catch a cold.\ud83d\ude42'\nUtterance: 'I think water should be your priority.  You have food and firewood also in your basics.  I will let you have the 3 water but I will need the 3 Firewood and the 3 Food.  I have a medical condition.'",
+            "output": [
+                "No"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

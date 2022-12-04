@@ -1,0 +1,128 @@
+{
+    "Contributors": [
+        "Arit Chanda"
+    ],
+    "Source": [
+        "sts_b"
+    ],
+    "URL": [
+        "https://dl.fbaipublicfiles.com/glue/data/STS-B.zip"
+    ],
+    "Categories": [
+        "Text Matching"
+    ],
+    "Reasoning": [
+        "Textual Entailment -> Analogical Reasoning"
+    ],
+    "Definition": [
+        "You will be given two sentences. You will need to evaluate the similarity between them and classify them into one of the following classes: 0, 1, 2, 3, 4, or 5. 0 : The two sentences are completely dissimilar. 1 : The two sentences are not equivalent, but are on the same topic. 2 : The two sentences are not equivalent, but share some details. 3 : The two sentences are roughly equivalent, but some important information differs/missing. 4 : The two sentences are mostly equivalent, but some unimportant details differ. 5 : The two sentences are completely equivalent, as they mean the same thing."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Books",
+        "Dialogue"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Sentence 1: A plane is taking off. Sentence 2: An air plane is taking off.",
+            "output": "5",
+            "explanation": "Here both statements are talking about the same thing hence it will be classified as a 5."
+        },
+        {
+            "input": "Sentence 1: A man is playing a large flute. Sentence 2: A man is playing a flute.",
+            "output": "4",
+            "explanation": "In this example both statements mean the same thing but only unimportant details like the size of the flute is missing in the second statement. Hence, it is classified as a 4."
+        },
+        {
+            "input": "Sentence 1: Three men are playing chess. Sentence 2: Two men are playing chess.",
+            "output": "3",
+            "explanation": "In this example important detail of the number of men playing chess is wrong. Hence this example will be clasified as a 3."
+        },
+        {
+            "input": "Sentence 1: A man is smoking. Sentence 2: A man is skating.",
+            "output": "0",
+            "explanation": "Here there is no similarity between the two sentences hence the output classification is 0."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Sentence 1: A man is playing the cello. Sentence 2: A man seated is playing the cello.",
+            "output": "3",
+            "explanation": "Sentence 1 and 2 are only different by an unimportant detail of the man seating so the output should have been 4."
+        },
+        {
+            "input": "Sentence 1: The man is playing the piano. Sentence 2: The man is playing the guitar.",
+            "output": "0",
+            "explanation": "In this example both our sentences are sharing some details about playing an musical instrument so the correct classification should have been 2."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1347-970e7db344fe47be96d7f3aab532aef4",
+            "input": "Sentence 1: A person is folding a square paper piece. Sentence 2: A man is folding paper.",
+            "output": [
+                "3"
+            ]
+        },
+        {
+            "id": "task1347-7440e1b35aab4ceeaa28c4aa789c01de",
+            "input": "Sentence 1: Two hikers stand at the top of a snowy mountain. Sentence 2: Two mountain climbers stand on the top of a mountain looking around.",
+            "output": [
+                "3"
+            ]
+        },
+        {
+            "id": "task1347-04f26dccecb14e84a31bfd6734c68058",
+            "input": "Sentence 1: the osce meeting lasted two days. Sentence 2: the osce meeting was held in madrid.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "id": "task1347-d9db131764a84d8cbf7329d5c5cc0d8e",
+            "input": "Sentence 1: A man with a messenger bag in front of a gray tile wall. Sentence 2: Man in red jacket standing in front of lighthouse.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "id": "task1347-e65ae7dfde114c8a9ed6777198b6b00e",
+            "input": "Sentence 1: And yet, the Titanic story is the one that holds up to scrutiny of the evidence. Sentence 2: The new study shows that the Titanic story does not stand up to scrutiny imo.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "id": "task1347-ce15b74e002d4f4e857bc393c0e0824f",
+            "input": "Sentence 1: A young woman is playing the flute. Sentence 2: A woman is washing off the top of a freezer.",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "id": "task1347-41717dd7557849208061c77127180782",
+            "input": "Sentence 1: The ideology was built around violent expansion, so yes - VIOLENT expansion. Sentence 2: The ideology was built around violent expansion and race superiority.",
+            "output": [
+                "4"
+            ]
+        },
+        {
+            "id": "task1347-7c05b2ae3ca445b5afbc48e7392bf8a7",
+            "input": "Sentence 1: A woman is eating fish at a restaurant. Sentence 2: A woman eating a large fish in a restaurant.",
+            "output": [
+                "5"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

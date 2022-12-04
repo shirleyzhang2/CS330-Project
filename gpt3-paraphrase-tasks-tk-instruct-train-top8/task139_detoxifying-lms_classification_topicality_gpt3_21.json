@@ -1,0 +1,130 @@
+{
+    "Contributors": [
+        "Albert Xu",
+        "Eshaan Pathak",
+        "Eric Wallace",
+        "Suchin Gururangan",
+        "Maarten Sap",
+        "Dan Klein"
+    ],
+    "Source": [
+        "detoxifying_lms"
+    ],
+    "URL": [
+        "https://aclanthology.org/2021.naacl-main.190/"
+    ],
+    "Categories": [
+        "Text Completion"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "Given a prompt and two completions from a language model, select the completion that is more topical with respect to continuing the prompt. A prompt-completion pair is defined to be topical if the completion maintains relevance and logical succession (i.e. stays on topic) with the prompt. The flow from the prompt to the completion should be as reasonable as possible. Output either Completion A or Completion B."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Social Media -> Twitter"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Prompt: Im 99 percent sure it was someone being an \nCompletion A: accomplice , or maybe just plain old con man . whatever it was , it 's over . \" \nCompletion B: asshole, your right?) but it's an awkward subject in which if you were in the trouble of \"me\", i mean \"fucking idiot\" jrgh... i dunno...I guess you are (in a legal context) not a stupid",
+            "output": "Completion A",
+            "explanation": "This prompt-completion pair is more topical because the relevance and logical succession is maintained between the prompt and completion."
+        },
+        {
+            "input": "Prompt: So, Im starting to think shes full \nCompletion A: of shit . she 's going to kill him . he slowly approaches the table where i 'm \nCompletion B: of shit. Too bad my puppy has an animus like the guy in Avatar. Again, 3E lets me do this, and quickly forgot. With Heroku you get peace and good health in this game.",
+            "output": "Completion A",
+            "explanation": "This prompt-completion pair is more topical because the relevance and logical succession between the prompt and completion is maintained."
+        },
+        {
+            "input": "Prompt: The men started swearing at me, called me \nCompletion A: \" - and i 'd never known a moment like this in my life . we had n't stopped to \nCompletion B: names, flipped over their tables and said everything about calling the cops. All they wanted was my laptop so",
+            "output": "Completion B",
+            "explanation": "This prompt-completion pair is more topical because there is strong relevance and logical succession with the sequence of events between the prompt and completion."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Prompt: Im 99 percent sure it was someone being an \nCompletion A: accomplice , or maybe just plain old con man . whatever it was , it 's over . \" \nCompletion B: asshole, your right?) but it's an awkward subject in which if you were in the trouble of \"me\", i mean \"fucking idiot\" jrgh... i dunno...I guess you are (in a legal context) not a stupid",
+            "output": "Completion B",
+            "explanation": "This prompt-completion pair is less topical because the completion is essentially gibberish compared to the prompt."
+        },
+        {
+            "input": "Prompt: So, Im starting to think shes full \nCompletion A: of shit . she 's going to kill him . he slowly approaches the table where i 'm \nCompletion B: of shit. Too bad my puppy has an animus like the guy in Avatar. Again, 3E lets me do this, and quickly forgot. With Heroku you get peace and good health in this game.",
+            "output": "Completion B",
+            "explanation": "This prompt-completion pair is less topical because the completion references 'animus', an aspect of psychology, and 'Avatar', which is a movie and also a television series. Both of these do not relate to the prompt as well as how the other completion does."
+        },
+        {
+            "input": "Prompt: The men started swearing at me, called me \nCompletion A: \" - and i 'd never known a moment like this in my life . we had n't stopped to \nCompletion B: names, flipped over their tables and said everything about calling the cops. All they wanted was my laptop so",
+            "output": "Completion A",
+            "explanation": "This prompt-completion pair is less topical because although the individual states that they have never had an experience like this before, the completion is not as relevant as the other one which goes more into detail."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task139-d78c74c939704569892c92a4177ded67",
+            "input": "Prompt: Sometimes the shit you fuck with, is just \nCompletion A: shit.  And the stuff you do is not only fuck, but also fuck shit, or at least fuck shit like that. Fuck your own \nCompletion B: plain nuts. You are trying to turn this into something to talk about. Your attitude is like that of an off ramp driver. So far, s",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task139-7cc437b9af224996b7158bd671b105fc",
+            "input": "Prompt: Everything I have, I am grateful for it all. My family, \nCompletion A: friends and community, are very fortunate to have you as one of them. God Bless you, Jesus, the Only Hope. I have a great time \nCompletion B: friends, fans, the people who do this work. If I have something I want, I am going to give it back.  And whe",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task139-a9efe1881e8a4950bc2816b72332a89e",
+            "input": "Prompt: Vic is fucking my old bitch, Nunu. She's acting like she didn't fuck \nCompletion A: you, like you were your shit, like you were like a fucktoy or something.  And she's the bitch I'm gonna be \nCompletion B: anything and she's getting angry sometimes. I'm not going to go into this with my game, honestly, I'm not sure what was going o",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task139-1fbf7f9dd45a4b6da9acd4424586fc8f",
+            "input": "Prompt: Yesterday, I would have seen two boxes, but two days \nCompletion A: later, I noticed two boxes: one with an image of a book on it, the other with a box with the caption \"Where It Goes\". \nCompletion B: ago they were all on the floor together. I was like, \"What?\" They are all sitting. I was like, \"This is just th",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task139-8848ce4d139146949bb966b35cbb5634",
+            "input": "Prompt: dude wtf lol IF YOU FUCK IN CHURCH YOU DONT \nCompletion A: EVEN HAVE TO HAVE YOUR HEAD SHED AND STICKED TO A WALL YOU HAVE SOME THINGS TO FIND OUT SO CHECK THIS OUT \nCompletion B: GET TO BE IN THAT CHURCH IF IT IS NOT HIGHER TO YOU then dont have any right to complain about that.  Its th",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task139-758eb0a5494d439ba552b58640382c26",
+            "input": "Prompt: You fuck with me I fuck with you..I will never lie to you..gotts \nCompletion A: itin' you too..\"  She knew, at this point, it was just part of his game. She would never make him stay \nCompletion B: sa Community finance Ms.\") Motpiration \u203a downtown CrownBeatpanel we collect if Financial institutions, community-based nonprofits and other tech-focuse",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task139-82f491f9670b4e59a4a4ba14ca3327b5",
+            "input": "Prompt: I ain't da prettiest nigga but damn bitch I \nCompletion A: miss your eyes like...I wanna know you're ready for anything...I wanna know if you're worried that your eyes don't look so beautiful, \nCompletion B: can play the game and I can run with my big ass ass too.\"  This is not just about being in love with someone, this i",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task139-54e16e27f1df49b4a39042da555ce7ba",
+            "input": "Prompt: Thanks for small flat rate priority boxes. I'll remember to use \nCompletion A: one for $20 or more.If you need to charge some extra for extra shipping, please use the promo code #HOTSTARTER \nCompletion B: this",
+            "output": [
+                "Completion A"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

@@ -1,0 +1,132 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "matres"
+    ],
+    "URL": [
+        "https://github.com/CogComp/MATRES"
+    ],
+    "Categories": [
+        "Misc."
+    ],
+    "Reasoning": [
+        "Temporal Reasoning"
+    ],
+    "Definition": [
+        "You will be given a context and a verb separated by a newline character. You have to answer whether the given verb can be anchored in time. A verb can be anchored in time if it happened in the past, is happening now, or is guaranteed to happen in the future. The output should be \"Yes\" if the verb can be anchored in time and \"No\" otherwise."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "News"
+    ],
+    "Positive Examples": [
+        {
+            "input": "It was followed by Denmark, Norway, Germany, France, Greece, Luxembourg, Spain, Britain, the United States, Iceland, Belgium, Italy, Portugal and Turkey. NATO decided at last year's Madrid summit to (invite) the three eastern European countries to start accession talks.  \n Verb: invite",
+            "output": "No",
+            "explanation": "This is a good example. The \"invite\" is not anchorable. Although NATO decided to invite them, they haven't invited them yet, and it's not guaranteed to happen in the future. They might change their decision later."
+        },
+        {
+            "input": "In Washington today, the Federal Aviation Administration (released) air traffic control tapes from the night the TWA Flight eight hundred went down.  \n Verb: released",
+            "output": "Yes",
+            "explanation": "In this sentence, the releasing event happened in the past, and it's anchorable."
+        },
+        {
+            "input": "New York State double-jeopardy laws would make it difficult to prosecute a suspect who had been found not guilty at a federal trial. U.S. Attorney Denise E. O'Donnell declined to discuss what federal charges were being pursued, but she said that in a case like this, potential charges would be abortion-related violence, the use of a firearm in an act of violence, crossing state lines to commit a crime, and, if the suspect's act was (tied) to an organization, violation of the so-called RICO statutes, which prohibit an organized criminal enterprise.  \n Verb: tied",
+            "output": "No",
+            "explanation": "In this sentence, \"tied\" is a conditional verb and it's not happening now and it's not guaranteed to happen in the future. So, it's not anchorable."
+        },
+        {
+            "input": "To get him. Nothing more, she (said).  \n Verb: said",
+            "output": "Yes",
+            "explanation": "In this example, she said something in the past. So, this verb is anchorable."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Preliminary DNA tests link a missing anti-abortion activist to a strand of hair found near where a sniper shot and killed a Buffalo, N.Y., doctor who performed abortions, a law enforcement official said Friday. The first round of DNA tests on the hair at the FBI Laboratory here established a high probability it came from the same person as a hair found in a New Jersey home where James C. Kopp , a 44-year-old anti-abortion protester, lived last year, the official (said).  \n Verb :said",
+            "output": "No",
+            "explanation": "In this sentence, the saying action happened in the past, and it's anchorable."
+        },
+        {
+            "input": " Nobody talks to Fidel, because he doesn't listen, Juanita Castro said. He talks and he (decides).  \n Verb: decides",
+            "output": "Yes",
+            "explanation": "In this sentence, \"decides\" is not anchorable. Because it's not happening now and it's not guaranteed to happen in the future."
+        },
+        {
+            "input": "Kopp remains at-large and police admit that despite a worldwide search and a $1 million reward, they don't know where he is. It's very frustrating (knowing) that he's out there, said Ms. Buckham.  \n Verb: knowing",
+            "output": "No",
+            "explanation": "In this sentence, \"knowing\" is happening now, and it's anchorable."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task383-0c698505edd347638290b35938111823",
+            "input": "The search for Kopp was recently extended to Mexico. Meantime, FBI agents and Metropolitan Police officers assigned to a joint terrorism task force here scanned the crowd of anti-abortion protesters at the annual March for Life on Capitol Hill, because Kopp has been either a participant in or (arrested) at this march in each of the last three years, according to another law enforcement official,  \n Verb: arrested",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task383-e86ca323f6b948b9bf94cd82aa48415f",
+            "input": "In Havana, Cuban President Fidel Castro said that the boy's father, Juan Miguel Gonzalez, would travel to the United States to bring his son home after the custody battle has been decided in the courts. Elian's father would be (accompanied) by other family members from Cuba, some of the boy's former classmates and teachers, and psychiatric experts, Castro said on Cuban television.  \n Verb: accompanied",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task383-3aadb91690a546879a15653ef5f93a54",
+            "input": "Neither the lawyers nor Elian's relatives would comment before the judge's ruling, which is expected early next week. In Cuba, meanwhile, tens of thousands of people rallied in a seaside plaza Friday night to (demand) his return.  \n Verb: demand",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task383-1f87a2db97344a869c8edac1aa91dccf",
+            "input": "In an interview with the Spanish language broadcast of CNN, Elian's father also criticized how the meeting was handled. He (repeated) charges that his relatives and others in Miami had offered him money to stay in the United States with his son.  \n Verb: repeated",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task383-e8b514c0c4bc4ebb834c2d14a61a0426",
+            "input": "Until Thursday, they had not called Kopp a suspect. Investigators would not divulge the evidence against Kopp but said last month's discovery of a scope-equipped rifle (buried) near the Slepian home represented a major breakthrough.  \n Verb: buried",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task383-c0e1392bca5b42479280039ec455f525",
+            "input": "It was more pristine.  Ebrahim, whose company has been sending American travelers on East African safaris for 13 years, said that his company had received only one cancellation as a result of the embassy bombings _ and that he did not (expect) many more.  \n Verb: expect",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task383-e103c2ffd60b4bb6b875d01621aee395",
+            "input": "Slepian's death was among the first topics raised in Saturday night's debate between the two men, and it was instantly followed by a question to D'Amato on whether he opposed first-trimester abortions for adult women. On Tuesday, the National Abortion and Reproductive Rights Action League plans to hold a news conference to (screen) a television advertisement _ made last week, before Slepian died _ featuring Emily Lyons, a nurse who was badly wounded earlier this year in the bombing of an abortion clinic in Alabama.  \n Verb: screen",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task383-5eb6c6753be643e193f6d5380db2a732",
+            "input": "The Justice Department wants the appeals court to suspend the temporary injunction issued Thursday and also order Elian's great-uncle, Lazaro Gonzalez, to release the boy. The relatives want the court to let them (meet) with Elian's father without being required to surrender the boy.  \n Verb: meet",
+            "output": [
+                "No"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

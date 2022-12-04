@@ -1,0 +1,130 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "atomic"
+    ],
+    "URL": [
+        "https://allenai.org/data/atomic-2020"
+    ],
+    "Categories": [
+        "Commonsense Classification"
+    ],
+    "Reasoning": [
+        "Relational Reasoning",
+        "Reasoning on Social Interactions",
+        "Commonsense Reasoning -> Social Situations"
+    ],
+    "Definition": [
+        "In this task, you are given two phrases: Head and Tail, separated with <sep>. The Head and the Tail events are short phrases possibly involving participants. The names of specific people have been replaced by generic words (e.g., PersonX, PersonY, PersonZ). PersonX is always the subject of the event. You have to determine whether PersonX needs to do what is mentioned in the Tail before the Head event happens. Classify your answers into \"Yes\" and \"No\". The phrase may also contain \"___\", a placeholder that can be an object, a person, and/or an action."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Sociology",
+        "Commonsense -> Concepts and Relations -> Social Commonsense"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Head: PersonX is at PersonY's friend's house<sep>Tail: to walk up to PersonY's friend's house",
+            "output": "Yes",
+            "explanation": "This is a good example. PersonX is at PersonY's friend's house. But before, PersonX needed to walk up to PersonY's friend's house."
+        },
+        {
+            "input": "Head: PersonX bats PersonX's eyelashes<sep>Tail: to take someone home",
+            "output": "No",
+            "explanation": "In this example, PersonX doesn't need to take someone home before PersonX bats PersonX's eyelashes. So this output is correct."
+        },
+        {
+            "input": "Head: PersonX finds PersonY opportunity<sep>Tail: research stocks",
+            "output": "Yes",
+            "explanation": "PersonX may need to research stocks before finding an opportunity. Thus, this example should be classified as \"Yes\"."
+        },
+        {
+            "input": "Head: PersonX increases PersonY's rate<sep>Tail: none",
+            "output": "Yes",
+            "explanation": "This is a good example. Since nothing is specified and nothing is a precondition for all the events."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Head: PersonX asks PersonY's boyfriend<sep>Tail: scared",
+            "output": "Yes",
+            "explanation": "PersonX doesn't need to be scared before asking PersonY's boyfriend. So the output should be \"No\"."
+        },
+        {
+            "input": "Head: PersonX holds hands<sep>Tail: to go near him",
+            "output": "No",
+            "explanation": "PersonX needs to go near him before holding the hands, and the output should be \"Yes\"."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1202-4e3ceae722a44dcf864df2a2ad84ea37",
+            "input": "Head: PersonX furthers PersonX's ends<sep>Tail: to carry that plan out",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1202-8665619d59ca441c98e959e349b84286",
+            "input": "Head: PersonX addresses PersonY audience<sep>Tail: is hopeful for personY",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1202-e50b8ed52b8b4064b2208ca4f793b115",
+            "input": "Head: PersonX leaves early in the morning<sep>Tail: none",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1202-4409e8ef06494e0f84e127abc13ba167",
+            "input": "Head: PersonX badly wanted<sep>Tail: to see them get it",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1202-71e034d782eb49b78ecc084470b001a9",
+            "input": "Head: PersonX affects PersonY's interests<sep>Tail: none",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1202-99433baa93724d07a673ffbef52f0ea1",
+            "input": "Head: PersonX leaves PersonY impression<sep>Tail: to impress PersonY",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1202-3cf6b727b7c34da4bef610e3511f2a73",
+            "input": "Head: PersonX knocks ___ out cold<sep>Tail: to pick a fight",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1202-2b705a4ec8c444f091cd4bb37781d868",
+            "input": "Head: PersonX asks PersonX's grandma<sep>Tail: to have a question for grandma",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

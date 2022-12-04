@@ -1,0 +1,197 @@
+{
+    "Contributors": [
+        "Shailaja Keyur Sampat"
+    ],
+    "Source": [
+        "torque"
+    ],
+    "URL": [
+        "https://allennlp.org/torque.html"
+    ],
+    "Categories": [
+        "Information Extraction"
+    ],
+    "Reasoning": [
+        "Commonsense Reasoning"
+    ],
+    "Definition": [
+        "In this task, a passage will be given and the goal is to identify an event from the passage. An event is defined as a single word representing something that happened, is happening, or may happen. The event must not be a pronoun or an adjective."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "News"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Passage: I submitted the hit. The hit was approved, and then I was paid.",
+            "output": "approved",
+            "explanation": "There are three events in this passage (i) submission event (\"submitted\") (ii) the approval event (\"approved\"), and (iii) the payment event (\"paid\"). You can use any one of them as an output."
+        },
+        {
+            "input": "Passage: He was caught in the snow storm.",
+            "output": "storm",
+            "explanation": "There are two events in this passage (i) he was caught (\"caught\") and (ii) the snow storm event (\"storm\"). You can use any one of them as an output. Since snow storm is a noun event with multiple words, we only use the last word 'storm' as an event."
+        },
+        {
+            "input": "Passage: He is on the east coast.",
+            "output": "is",
+            "explanation": "The copula \"is\" an event describing his location."
+        },
+        {
+            "input": "Passage: He wanted to finish the task.",
+            "output": "wanted",
+            "explanation": "There are two events in this passage (i) he wanted to do something (\"wanted\") and (ii) finish the task (\"finish\"). Either of wanted or finish can be used as output. However note that though there is an uncertainty about the task i.e. indeed finished or not, \"finish\" is still a valid event."
+        },
+        {
+            "input": "Passage: If he works hard, then he will finish the task.",
+            "output": "finish",
+            "explanation": "There are two events in this passage (i) he works hard (\"works\") and (ii) he will finish the task. (\"finish\"). You can use either of works or finish as an output. Here the second event happens only if the first one is true, but both are considered as events. This is an example of hypothetical event."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Passage: He is happy.",
+            "output": "happy",
+            "explanation": "Happy is an adjective and hence cannot be an event. The output should be \"is\" which represents an event describing his attribute of happiness."
+        },
+        {
+            "input": "Passage: He was caught in the elevator.",
+            "output": "elevator",
+            "explanation": "Not every noun can be an event. Here \"elevator\" is an object and one cannot say \"an elevator happened\" hence it is not an event. \"caught\" is a correct output."
+        },
+        {
+            "input": "Passage: The flu season is winding down.",
+            "output": "flu season",
+            "explanation": "The \"flu season\" is a noun events with multiple words, but only last word \"season\" sould be used as an event as per definition."
+        },
+        {
+            "input": "Passage: The death toll climbed up to 99 soon after the explosion.",
+            "output": "blast",
+            "explanation": "There are two events in this passage \"climbed\" and \"explosion\". Though blast is a synonym of explosion, it is not present in the passage. The output must contain events that are present in the passage."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task388-d1cdfda74ceb48d4a51f47d3df8cd117",
+            "input": "Passage: \"It is only the beginning of aid to Albania,\" he said. Three Italian military helicopters landed the two officials and their entourage earlier for a 90-minute visit to the town, during which they held talks with town leaders, journalists contacted by telephone from Tirana said.",
+            "output": [
+                "beginning",
+                "aid",
+                "said",
+                "landed",
+                "visit",
+                "held",
+                "talks",
+                "contacted",
+                "said",
+                "is"
+            ]
+        },
+        {
+            "id": "task388-b2c454416da24138917768480e7fad93",
+            "input": "Passage: Track events are running races that take place on a 400m outdoor track in the main stadium. The sprint races provide instant excitement, but look out for clever tactics and fast finishing in the longer races.",
+            "output": [
+                "running",
+                "races",
+                "races",
+                "provide",
+                "excitement",
+                "tactics",
+                "finishing",
+                "races",
+                "take"
+            ]
+        },
+        {
+            "id": "task388-dcfc78c6270d42c8a2ea0751a601fb13",
+            "input": "Passage: Mr. Potach says the growth is surprising since membership in hate groups usually declines during periods of economic prosperity. We in fact have seen hate group numbers dropping through the nineties, uh but this year they jumped up uh twenty percent, quite a dramatic rise.",
+            "output": [
+                "says",
+                "declines",
+                "seen",
+                "dropping",
+                "jumped",
+                "growth"
+            ]
+        },
+        {
+            "id": "task388-926fdd2392ca4829b5a56ad7ec8370e3",
+            "input": "Passage: The plan provides for the distribution of one common stock-purchase right as a dividend for each share of common outstanding. Each right entitles shareholders to buy one-half share of common for $30.",
+            "output": [
+                "provides",
+                "distribution",
+                "entitles",
+                "buy"
+            ]
+        },
+        {
+            "id": "task388-5966ced8b366464d88efc45a99db4fbf",
+            "input": "Passage: At present, 12 candidates are sued for being suspected of taking bribes for more votes. ",
+            "output": [
+                "sued",
+                "suspected",
+                "taking",
+                "bribes",
+                "votes"
+            ]
+        },
+        {
+            "id": "task388-17c050d335e8498e84f46a70c3817de8",
+            "input": "Passage: A breakaway rebel faction inflicted heavy casualties on the Sudan People's Liberation Army which attacked its Wun Roj stronghold in south Sudan's Bahrel Ghazal state last week, it was reported Wednesday. Faustino Obanj, spokesman of the SPLA rebel Bahrel Ghazal group, said its forces had \"repulsed the attackers, inflicting heavy casualties, in the form of soldiers and weapons,\" the independent Alwan daily newspaper reported.",
+            "output": [
+                "inflicted",
+                "attacked",
+                "reported",
+                "said",
+                "repulsed",
+                "inflicting",
+                "reported",
+                "casualties"
+            ]
+        },
+        {
+            "id": "task388-c1cb2d22e31b46d0a7c79eb6024e695d",
+            "input": "Passage: The Washington Post was more circumspect, saying that the execution came on the heels of an \"imperfect\" trial for Saddam. \"For those who oppose the death penalty, as we do, any execution is regrettable -- and this one, should it come to pass, will follow highly imperfect judicial proceedings and may, in the short term, inflame sectarian divisions,\" the daily said.",
+            "output": [
+                "was",
+                "came",
+                "saying",
+                "oppose",
+                "is",
+                "pass",
+                "follow",
+                "inflame",
+                "said",
+                "execution",
+                "trial"
+            ]
+        },
+        {
+            "id": "task388-5cd61100fdbc4037b1ca59d5ad0f9413",
+            "input": "Passage: After EU finance ministers gave Slovenia the green light last July to join the euro, the government and central bank had to carry out wide preparations for the switch, such as minting Slovenian euro coins and distributing bills to banks. \"I believe we are well-prepared,\" central bank governor Mitja Gaspari said on Friday.",
+            "output": [
+                "gave",
+                "join",
+                "carry",
+                "preparations",
+                "switch",
+                "minting",
+                "distributing",
+                "believe",
+                "are",
+                "said"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Apache 2.0"
+    ]
+}

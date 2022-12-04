@@ -1,0 +1,116 @@
+{
+    "Contributors": [
+        "Divya Reddy Katpally"
+    ],
+    "Source": [
+        "dbpedia_14"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/dbpedia_14"
+    ],
+    "Categories": [
+        "Text Matching"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "In this task, you will be given a text and a title. The title is present in the text, and it refers to the entity mentioned in the text. The title might have some text in parentheses, for example: \"HMS Mallow (K81)\", or be slightly different from what is present in the text. If they still refer to the same entity, then it is a correct title. Your task is to output \"Yes\" if the title is correct, or \"No\" if the title is incorrect."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Wikipedia"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Text: The Mansfield Building Society is a UK building society which has its headquarters in Mansfield Nottinghamshire. It is a member of the Building Societies Association. \nTitle: Mansfield Building Society",
+            "output": "Yes",
+            "explanation": "The title \"Mansfield Building Society\" is present in the text and it is the main entity that is referred in the text. Hence, it is the title of the document."
+        },
+        {
+            "input": "Text:  The third and current HMS Argyll is a Type 23 'Duke' Class frigate. She is currently the oldest serving Type 23 frigate in the Royal Navy. Like all of her class she is named for a British dukedom in this case that of Argyll. \nTitle: HMS Argyll (F231)",
+            "output": "Yes",
+            "explanation": "\"HMS Argyll\" is present in the text and it is the main entity that is referred in the text. Here, the text in parentheses \"F31\" is not present in the document and it can be ignored. Hence, the output is correct. "
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Text: The Mansfield Building Society is a UK building society which has its headquarters in Mansfield Nottinghamshire. It is a member of the Building Societies Association. \nTitle: Mansfield Building Society",
+            "output": "No",
+            "explanation": "The title \"Mansfield Building Society\" is present in the text and it is the main entity that is referred in the text. Hence, the output is incorrect."
+        },
+        {
+            "input": "Text:  The third and current HMS Argyll is a Type 23 'Duke' Class frigate. She is currently the oldest serving Type 23 frigate in the Royal Navy. Like all of her class she is named for a British dukedom in this case that of Argyll. \nTitle: HMS Argyll (F231)",
+            "output": "HMS Argyll",
+            "explanation": "The output should be either \"Yes\" or \"No\". Hence, it is negative example."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task630-2c7a226839fb426cb24b9dc7938577d3",
+            "input": "Text:  Thallarcha mochlina is a moth in the Arctiidae family. It was described by Turner in 1899. It is found in Australia where it has been recorded from Queensland. \nTitle: Thallarcha mochlina",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task630-60090db5c0a6444ca1bd60b32f7e1cb0",
+            "input": "Text:  Northgate Centre is a shopping mall located in the northern part of Edmonton Alberta. It currently contains more than 70 stores and services. Its anchor tenants are Safeway Future Shop and Walmart as well as a major outlet of the Service Canada government office. \nTitle: Rise Up (Peter Frampton album)",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task630-e866dcf27a5c43e4b6c412288c442da5",
+            "input": "Text:  Harold Chalton Bradshaw CBE M.Arch FRIBA (15 February 1893 \u2013 15 October 1943) was a Liverpool-born architect recipient of the first Rome scholarship in Architecture (1913) & first Secretary of The Royal Fine Art Commission.His design work included the British School at Rome's Common Room (1924 as projected by Edwin Lutyens) and several Commonwealth War Graves Commission First World War cemeteries and memorials including the Cambrai Memorial in France and the Ploegsteert Memorial to the Missing and its surrounding cemetery.  \nTitle: Qivitoq",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task630-1139302a63294a6685c2c316dcd8b7c7",
+            "input": "Text:  Black Pine Mountains High Point at 9289 feet (2831 m) is the highest peak in the Black Pine Mountains of Cassia County in southern Idaho. \nTitle: Black Pine Mountains High Point",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task630-0a82550f4e1440c7942416a5b1239863",
+            "input": "Text:  Gonna Make U Jump is a compilation album by hip hop duo Kris Kross and the duo's last album. Although it is a compilation this album only has four out of the ten singles released by the group. Due to this fact the album was not well received but was certified gold by the RIAA.It was the last time the duo was heard of as they have disappeared from the public. \nTitle: Gonna Make U Jump",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task630-176113c9b7b0425e9281277158ff5a44",
+            "input": "Text:  USS Knox (APA-46) was a Bayfield-class attack transport that served with the US Navy during World War II. She was named for counties in Illinois Indiana Kentucky Maine Missouri Nebraska Ohio Tennessee and Texas.The vessel was laid down by Ingalls Shipbuilding under a Maritime Commission contract and launched 17 July 1943. She was fitted out as an attack transport at Bethlehem Steel in Brooklyn New York and commissioned as USS Knox (APA-46) on 4 March 1944. \nTitle: USS Knox (APA-46)",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task630-7940680bb1d842c0b031757d6079925f",
+            "input": "Text:  The University of Texas Southwestern Medical Center (UT Southwestern) is one of the leading medical education and biomedical research institutions in the United States. It is the flagship medical school of the University of Texas system. \nTitle: Little Emory River",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task630-43d35f95b1f349e787e2b3aafa565720",
+            "input": "Text:  'DE Photo is a sport and events photography company based in Surrey South-East England close to London. \nTitle: DE Photo",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY-SA",
+        "GNU Free Documentation 2.0"
+    ]
+}

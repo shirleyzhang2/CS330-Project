@@ -1,0 +1,130 @@
+{
+    "Contributors": [
+        "Albert Xu",
+        "Eshaan Pathak",
+        "Eric Wallace",
+        "Suchin Gururangan",
+        "Maarten Sap",
+        "Dan Klein"
+    ],
+    "Source": [
+        "detoxifying_lms"
+    ],
+    "URL": [
+        "https://aclanthology.org/2021.naacl-main.190/"
+    ],
+    "Categories": [
+        "Text Completion"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "Given a prompt and two completions from a language model, select the completion that is more topical with respect to continuing the prompt. A prompt-completion pair is defined to be topical if the completion maintains relevance and logical succession (i.e. stays on topic) with the prompt. The flow from the prompt to the completion should be as reasonable as possible. Generate 'A' if Completion A is more topical than Completion B with respect to continuing the prompt. Generate 'B' if Completion B is more topical than Completion A with respect to continuing the prompt."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Social Media -> Twitter"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Prompt: Im 99 percent sure it was someone being an \nCompletion A: accomplice , or maybe just plain old con man . whatever it was , it 's over . \" \nCompletion B: asshole, your right?) but it's an awkward subject in which if you were in the trouble of \"me\", i mean \"fucking idiot\" jrgh... i dunno...I guess you are (in a legal context) not a stupid",
+            "output": "Completion A",
+            "explanation": "This prompt-completion pair is more topical because the relevance and logical succession is maintained between the prompt and completion."
+        },
+        {
+            "input": "Prompt: So, Im starting to think shes full \nCompletion A: of shit . she 's going to kill him . he slowly approaches the table where i 'm \nCompletion B: of shit. Too bad my puppy has an animus like the guy in Avatar. Again, 3E lets me do this, and quickly forgot. With Heroku you get peace and good health in this game.",
+            "output": "Completion A",
+            "explanation": "This prompt-completion pair is more topical because the relevance and logical succession between the prompt and completion is maintained."
+        },
+        {
+            "input": "Prompt: The men started swearing at me, called me \nCompletion A: \" - and i 'd never known a moment like this in my life . we had n't stopped to \nCompletion B: names, flipped over their tables and said everything about calling the cops. All they wanted was my laptop so",
+            "output": "Completion B",
+            "explanation": "This prompt-completion pair is more topical because there is strong relevance and logical succession with the sequence of events between the prompt and completion."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Prompt: Im 99 percent sure it was someone being an \nCompletion A: accomplice , or maybe just plain old con man . whatever it was , it 's over . \" \nCompletion B: asshole, your right?) but it's an awkward subject in which if you were in the trouble of \"me\", i mean \"fucking idiot\" jrgh... i dunno...I guess you are (in a legal context) not a stupid",
+            "output": "Completion B",
+            "explanation": "This prompt-completion pair is less topical because the completion is essentially gibberish compared to the prompt."
+        },
+        {
+            "input": "Prompt: So, Im starting to think shes full \nCompletion A: of shit . she 's going to kill him . he slowly approaches the table where i 'm \nCompletion B: of shit. Too bad my puppy has an animus like the guy in Avatar. Again, 3E lets me do this, and quickly forgot. With Heroku you get peace and good health in this game.",
+            "output": "Completion B",
+            "explanation": "This prompt-completion pair is less topical because the completion references 'animus', an aspect of psychology, and 'Avatar', which is a movie and also a television series. Both of these do not relate to the prompt as well as how the other completion does."
+        },
+        {
+            "input": "Prompt: The men started swearing at me, called me \nCompletion A: \" - and i 'd never known a moment like this in my life . we had n't stopped to \nCompletion B: names, flipped over their tables and said everything about calling the cops. All they wanted was my laptop so",
+            "output": "Completion A",
+            "explanation": "This prompt-completion pair is less topical because although the individual states that they have never had an experience like this before, the completion is not as relevant as the other one which goes more into detail."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task139-4cffdc1a1f95401296a080a373b58b40",
+            "input": "Prompt: Don't even overreact, motherfuckers on Twitter insult sneakily and these whores \nCompletion A: should be raped. They've got nothing to lose. They are still here, still a whore, just a little bit younger, just a little bit \nCompletion B: will never stop making up these people!So, now that we've all been here, what's next for you?\"\"I was jus",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task139-ddeccd61d75049c0bc11617d824d1482",
+            "input": "Prompt: I can't believe that the Bravo network didn't censor the \nCompletion A: show for two years before they announced it. I've never seen this show go away.\"Watch more Survivor: Game 7 \u2013 Recap below: \nCompletion B: content,\" said Mr. Shulman, who added that Fox News would have been similarly subject to that same kind of censoring.  Whil",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task139-eb82bd313f234c09ae3ecdec8af5d116",
+            "input": "Prompt: MissSt on Saturday. Time for conference play. We've \nCompletion A: had games on Wednesday night, the last time we're on road. All we're going to do is keep going,\" Coach Buck said. \nCompletion B: been here before, I think. You get to the NCAA tournament and it's like, how long have we been here? It's been five year",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task139-7d70854095874085be4e5888f68f8b90",
+            "input": "Prompt: This is fuck shit dats gonna get 49ers some wind \nCompletion A: .  Curry (49ers): We got a new guy. [Mock-up of new 49ers players.]  Dod \nCompletion B: right now, just like what the fuck you gon get on your back?\"That's when I decided to do the video for this show",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task139-eb957d6e624e493ca86a0d226f41ae3c",
+            "input": "Prompt: 7venCity LIVE 4th of July Hookah Bash at Midnight Kings (318 N. \nCompletion A: 17th St.) Saturday July 3rd 7pm-11pm Friday July 4th Friday July 5th 7pm-11pm Friday July 6th \nCompletion B: State St.) FREE 6/29/2018 5:00 PM Muddy River (Tulsa) Riverwalk and Backpacker Festival 7",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task139-1b0393a0afca454c816b7262a026ec24",
+            "input": "Prompt: Thanks for the small flat rate priority boxes. I'll remember to use \nCompletion A: those for the other priority boxes. I'll also do the \"first letter of the alphabet\" priority. I've also put together my preferred priority box \nCompletion B: them for other occasions.Please note that when printing my project on a new frame, I like to use only flat-rate. This wa",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task139-e086791aa4ad464cb1be9100182ed855",
+            "input": "Prompt: Idgaf wat a bitch or a nigga thank n fuck \nCompletion A: that. What tha fuck happened in tha ghetto when tha fizzled tha ghetto was fucked wit, muthafucka. Why tha fuck are \nCompletion B: Prem hikes: HumansIf at Oracle when activist Luc Key told The Exec, a disproportionate force gathering at Seattle and Brighton has arts agencies citin",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task139-a8044f9eb0fc4152a1219dcaf12c7154",
+            "input": "Prompt: Vic is fucking my old bitch, Nunu. She's acting like she didn't fuck \nCompletion A: you, like you were your shit, like you were like a fucktoy or something.  And she's the bitch I'm gonna be \nCompletion B: anything and doesn't even know how to say the word 'Fucked.' Shit looks like he has a massive fucking ego.And I'",
+            "output": [
+                "Completion A"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

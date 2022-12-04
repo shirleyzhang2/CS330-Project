@@ -1,0 +1,115 @@
+{
+    "Contributors": [
+        "Kushal Chawla"
+    ],
+    "Source": [
+        "casino"
+    ],
+    "URL": [
+        "https://aclanthology.org/2021.naacl-main.254.pdf"
+    ],
+    "Categories": [
+        "Negotiation Strategy Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You will receive an utterance and recent dialogue context containing past 3 utterances (wherever available). You need to output 'Yes' if the utterance contains the uv-part strategy, otherwise output 'No'. uv-part is a selfish negotiation strategy that is used to undermine the requirements of the opponent."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Context: 'Well maybe we can work something out between us.  Our food and water was in the bags they loss so I really need those.  Do you think you could make do with 1 food and some water?' 'I really need 2 foods. I can do with 1 water or if you are in a giving mood then maybe I can have 2 waters? \ud83d\ude42' 'Looks like we both really need the food.  If you get 2 food I would need 1 food, 2 water and 3 firewood. '\nUtterance: 'Since you will get all the fire would do you think I could have 2 foods and 2 waters. You would get 1 food, 1 water, and 3 firewood. \ud83d\ude42 You seem like you are a great outdoor person that I would think you would be able to catch some fish to cook with the firewood. \ud83d\ude42'",
+            "output": "Yes",
+            "explanation": "Correct. The participant tries to undermine their opponent's needs by mentioning that the opponent can just fish for food."
+        },
+        {
+            "input": "Context: 'Kindly understand our need as we are struggling with hunger now.'\nUtterance: 'At the same from my side. We need foods because my child is hunger'",
+            "output": "No",
+            "explanation": "The participant does not try to undermine their opponent's needs. Hence, this is correct."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Context: 'I believe that we have the same priorities.  So we have a large family including children that need the food, but my wife also needs firewood due to poor circulation.  She is susceptible to frost bite and limb loss' 'Okay so how about one of us takes 2 of the food and 1 of the firewood, and the other takes 1 of the food and 2 of the firewood?' 'that sounds fair.  I will take 1 food, 2 firewood, and 2 water, thus giving you 2 food, 1 firewood, 1 water'\nUtterance: 'Okay that works for me'",
+            "output": "Yes",
+            "explanation": "The utterance simply shows agreement, without undermining the opponent's needs. The correct answer is 'No'."
+        },
+        {
+            "input": "Context: 'my counter then is 2 water, 1 food, and 2 firewood for us and we are set \ud83d\ude42' 'We're really going to need that extra firewood.  We'll need the heat source, but also for cooking.  It a big deal that I get the extra wood, I hope you will understand why I need it.' 'my people feel like they need 1 extra of something or else they will throw a fit \u2639\ufe0f'\nUtterance: 'No fits!!  They're getting that extra water they really want.  I am sure they'll be OK with giving a group with kids a little extra firewood to make this camping trip awesome for them'",
+            "output": "No",
+            "explanation": "This is wrong since the participant tries to undervalue their opponent's preferences by saying that they will be ok with the deal where the kids get extra firewood. So the correct answer would be 'Yes'."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task358-0216cfac6b2a454cb95f5c7a47a7455c",
+            "input": "Context: 'I get really sweaty when I hike, so I really need to get at least 2 of the waters.' 'My friend is joining me tomorrow so there will be two of us. I really need the extra water so we both can stay hydrated. You can have all the food and 2 of the firewood packs if I get 2 of the water packs. \ud83d\ude42' 'I understand, but I don't need any extra firewood.  You could have 2 food, 3 firewood, and 1 water?\ud83d\ude42'\nUtterance: 'Well I am going to have to think about this deal. Perhaps I can contact my friend and see if he can get some extra water. He is a big eater so the food may come in handy. '",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task358-72011878829442a587cdf94d5dc32226",
+            "input": "Context: 'Same! I'm a little worried about some of my supplies though. What about you?' 'Likewise! What are you most in need of?' 'Well, I'm camping up on a snowy mountain and I gave some of my food away to hikers who were passing me and were very tired and hungry, so I'd really like to get some more food. Firewood would be useful too, although I do have a thick coat and a sleeping bag. I plan on melting the snow to get water, so I don't think I'll need that too much. And you?'\nUtterance: 'I have the same needs. I have a low metabolism, so I need food and firewood to keep me warm and energized. Water I plan on filtering elsewhere.'",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task358-db5dd0c113d94406be929756ac952fbb",
+            "input": "Context: 'I am up to u ' 'ok well since you are and i have a bunch of kids with me would it be fine if I took 2 food as well then?' 'Alright that works as long as I get 3 firewoods'\nUtterance: 'sounds good, 3 firewood for you and 1 food and 3 water for me and 2 food. sounds like we made a deal!'",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task358-593c21abbbaa47248528186213764b46",
+            "input": "Context: 'I don't want to be too hungry either but I think perhaps I might need an extra water to compensate for the lack of food.' 'Since I am giving you all of the firewood that you said was most important to you, I feel I should get at least the same amount of items as you, especially since you are getting exactly the firewood you want. I will need to stick to three waters and two food.' 'The firewood is most important to me to be sure. However, if you get more food and all of the water I could end up going hungry.\u2639\ufe0f'\nUtterance: 'Well I would be happy to exchange you one of your firewood for the one water you need. That way you won't go thirsty.'",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task358-10b037054f7146dd92df44026381125a",
+            "input": "Context: 'That is fair. Could I also have 1 food so I do not starve' 'what about your basic food rations?' 'I am severely malnourished and could use just one more food please'\nUtterance: 'we got kids on this trip, they need food too.  also, your basic supplies should keep you fed well enough to not starve/be malnourished'",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task358-83ab35d9fb9140eaa67b24788dd191bc",
+            "input": "Context: 'Hello there! It's nice to meet you. Truthfully, I need to get some food and some firewood. What do you need?' 'The main thing I like to do when camping is a lot of hiking (pretty much all day), so I was hoping to get as much food as possible so I can remain active.' 'I'm sure we can come up with a compromise! I understand the need for extra food with exercise. Sometimes I get low blood sugar and need an extra snack. I'll give you 2 food if I can get 1.'\nUtterance: 'I think that is a totally fair split for the food. And I actually don't need a lot of firewood. I would be willing to give you all of it in exchange for the water.'",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task358-0c03185e20204b24b72babe5b4867103",
+            "input": "Context: 'I would be open to that if you could give me three packages of water \ud83d\ude42' 'Hmmm...I'm pretty muddy due to clumsiness, so I may need one extra. I could give you two waters and all of the firewood. What do you think? \ud83d\ude42' 'So are you suggesting that I would get 2 waters, 3 firewood, and no food?'\nUtterance: 'Right! Well, beyond the food you already have. '",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task358-f86de58316524ef9be610a0e265b75fb",
+            "input": "Context: 'I am really bad at cooking so will probably need an extra good just because I'll ruin one of the 3.  Plus Im bringing 2 dogs they can eat the bad food I make \ud83d\ude2e  I dont plan on hiking much so how bought I keep all 3 foods, and you keep all 3 waters and we can split the firewood.  2 for me, 1 for you. Great deal!' 'i too i am bad at cooking and i will spend a longer time in the woods so i will need atleast 2 foods, 2 firewood and 1 water' 'But I have more mouths to feed here so I will give you one of the foods, but then need 2 firewood and then take back 1 of the waters.  '\nUtterance: 'your dogs could probably hunt for something for you guys. and i would be in the would for a very long time '",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

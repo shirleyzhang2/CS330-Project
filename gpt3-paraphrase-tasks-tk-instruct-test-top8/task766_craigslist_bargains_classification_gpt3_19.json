@@ -1,0 +1,117 @@
+{
+    "Contributors": [
+        "Ritvik Gaur"
+    ],
+    "Source": [
+        "craigslist_bargains"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/craigslist_bargains"
+    ],
+    "Categories": [
+        "Dialogue State Tracking"
+    ],
+    "Reasoning": [
+        "Reasoning on Social Interactions"
+    ],
+    "Definition": [
+        "This task requires you to read a text passage consisting of a dialogue between a seller and a buyer, and classify it as either 'accepted' or 'rejected'. If, by the end of the conversation, it seems likely that the buyer will purchase the item from the seller, select [accepted]. This is usually the case when the buyer and seller agree upon a price, or when some other kind of deal is made. If, however, the buyer does not seem interested in purchasing the item from the seller, select [rejected]. This happens when the buyer and seller cannot agree on a price, or some other aspect of the sale."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Buyer: Hi,I am interested in your board!\nSeller: Hi, do you have any questions?\nBuyer: Do you know what wood it is made out of?\nSeller: I do not know specifically but the brand is a gravity skateboard. \nBuyer: The wheels seem nice on it, but they could be a beter quality. Would you accept 100 for the board?\nSeller: No, that offer is too low. The board is pretty much brand new as it's been ridden only 4 or 5 times.  The bone bearings are brand new.\nBuyer: If I picked it up at your location would you accpet 120?\nSeller: Make it 150 and we got a deal. \nBuyer: I could do 145, if you can gurantee the painting on the front of the board is not scratched up. \nSeller: Deal\nBuyer: Great!",
+            "output": "accepted",
+            "explanation": "The answer 'accepted' is the correct answer because here the buyer and seller agree on a price and make a deal at the end of the conversation."
+        },
+        {
+            "input": "Buyer: I am interested in the Benz. How much for it?\nSeller: I am asking $26800. \nBuyer: How many miles on it?\nSeller: Only 16,473.\nBuyer: Has it had any major repairs?\nSeller: No, it has been accident free and in great condition.\nBuyer: Why are you selling it?\nSeller: starting to expand our family, time for an suv and baby seat.\nBuyer: I can give you 17000. That will buy a lot of diapers.\nSeller: I need the SUV. That is just way too low for me. Sorry you need to come way up.\nBuyer: I can do 20,000 if you throw in a 3 year warranty to cover any repairs that might naturally arise\nSeller: There is a warranty in place, so that is not a problem. But I need a minimum of 25000\nBuyer: How long is the warranty?\nSeller: Ten more years.\nBuyer: 22500 and you got a deal\nSeller: nO SORRY i am firm on the 25,000 being my lowest offer.\nBuyer: Can't do it.",
+            "output": "rejected",
+            "explanation": "The answer 'rejected' is correct because at the end of the conversation the buyer and seller do not agree to a common price. Since the buyer was asking for a price of 22500 and the seller was not accepting offers below 25000, the buyer did not decide to buy the item from the seller."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Buyer: i want to live in your house but i cant pay 1000k\nSeller: It really is a nice home.\nBuyer: i agree i lvoe the area , how old is the home\nSeller: I am not positive. It looks nice I can't tell sorry.\nBuyer: will you do 500 ? i need to buy new beds and furtinure\nSeller: I can't do half. I am sorry. It has a garage and a fenced in yard if you have kids.\nBuyer: i can do 600 if you waive the deposit\nSeller: Honestly I think the lowest I can do is $800 with the deposit. I am sorry. That is what they go for in this neighborhood. \nBuyer: ok i can do 750 lowest and fits my bussdet\nSeller: Ok I think we can make a deal.\nBuyer: deal\n",
+            "output": "rejected",
+            "explanation": "This is the wrong answer and the correct answer is 'accepted' because here the buyer and seller agree on the same price and make a deal at the end, which indicates that the buyer decided to buy the item from the seller."
+        },
+        {
+            "input": "Buyer: I think this is a fair price\nSeller: Why is there an offer there already?\nBuyer: This is within the area comps and reasonable for this size of home.\nSeller: I can't accept that low. That is $1000 less then asking price.\nBuyer: My final offer would be 1850.00\nSeller: I really don't think I could go that low.\nBuyer: What is your bottom line?\nSeller: For a 4 Bedroom, 2 1/2 bath with a 2 car garage in California. it has a tennis court a children play structure.I think the best I could is $2000.\nBuyer: I don't see anything in the listing about a tennis court or a child's play structure. I am not willing to go over $1850 and will assume all maintenance issues with this rental.\nSeller: You can't make another offer anyway. I can't erase your original offer. I am going to have to reject.\nBuyer: ok\n",
+            "output": "yes",
+            "explanation": "This answer 'yes' is incorrect here because it is not among the only two options 'accepted' or 'rejected' from which the answer is to be chosen. The correct answer is 'rejected' because the buyer and the seller are not able to agree upon the same price as seen in the conversation where the buyer is offering 1850 but the seller will not sell for under 2000 and so the seller rejects the buyer's offer. This indicates that the buyer does not end up buying the item from the seller."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task766-b19ffc44eb964d59bdc62a0ea2bfefb6",
+            "output": [
+                "accepted"
+            ],
+            "input": "Buyer: HI is this item still available?\nSeller: Yes, and it gently used condition. It's leather so no stains. \nBuyer: Has it been around any pets, my son has allergies?\nSeller: Smoke free pet free. It's full size so I'm willing to help move if you can meet my price. \nBuyer: How long have you owed it?\nSeller: 2 years, in the formal living area so not sat on daily. \nBuyer: I don't have much the next couple weeks due to medical bills any way you would accept $175 please\nSeller: It's in great condition. If you can do 250 I can still help move and you save gas money. \nSeller: \nBuyer: Ok thanks sounds good\nBuyer: \n"
+        },
+        {
+            "id": "task766-4b46e5f0bbc44f3ba452516df78ce78f",
+            "output": [
+                "accepted"
+            ],
+            "input": "Seller: Hello, Are you interested in buying my car?\nBuyer: I believe I am. The first moment I seen the ad I feel in love with the Chevrolet. Can you tell me a little more about it. Has the engine been serviced anytime since 1959 and what's the milage? \nSeller: The engine is in great condition. It has 150,000 miles, but it's vintage. There's absolutely no rust since it was kept in a garage.\nBuyer: Yes, it seems in perfect shape for a barn find! I see that you are asking $15,000 for the truck. But at the moment I am on a tight budget. Would you be willing to take $10,500 for it? I would love to fix it up for my car shows.\nSeller: It's in excellent condition. I'd take $12,000 for it.\nBuyer: Well, that seems fair for a great antique. Sold! Let me know where to go and I'll send out a tow truck to pick it up. \nBuyer: \nSeller: \n"
+        },
+        {
+            "id": "task766-fb4fa04d4d624851b640ee22ec7046cb",
+            "output": [
+                "accepted"
+            ],
+            "input": "Seller: Hello, I received your e-mail regarding your interest in my '02' Mercedes c240. any questions?\nBuyer: Hello, yes I have a few questions. What is the mileage on this car and how long have you owned it?\nSeller: I am the first owner of this car, bought it right off the lot. It has only 80k miles and the new michilin tires have seen only 3k miles.I am asking only $4500 for her. \nBuyer: That all sounds pretty good. If I came by tonight would I be able to take it for a test drive? And you would consider taking $4 for it if I paid cash?\nSeller: The test drive is okay, the engine purrs like a kitten. I was looking for serious offers only. BUT, I am willing to let her go for $4250. \nBuyer: Do you have a cover for it?\nSeller: I sure do and that comes with the vehicle. Not a scratch of ding on it. \nBuyer: Alright I think I can do $4250 if everything checks out\nBuyer: \nSeller: Come on by for that test drive. I'll e-mail you my address. \nSeller: \n"
+        },
+        {
+            "id": "task766-a2e6018306384de69d14a24e0d4c62ac",
+            "output": [
+                "rejected"
+            ],
+            "input": "Buyer: Hello\nSeller: Hi, are you interested in buying my table?\nBuyer: Yes I am, but I'm hoping you can negotiate the price some. \nSeller: Alright! I am. Similar ones online sell for about $2000 so let me know your price and we can figure something out.\nBuyer: I'd like to keep it around $200 if possible. I can come pick it up myself and save you the delivery trouble.\nSeller: That's a bit lower than I anticipated. If you can do $500 plus pick up I'm ok with that\nBuyer: You're increasing the price now? And asking me to pick it up? The list is only $399...\nSeller: Sorry, finger slipped. Meant $300\nBuyer: \n"
+        },
+        {
+            "id": "task766-800f85b1bf154a1b87bd624b4beacd95",
+            "output": [
+                "rejected"
+            ],
+            "input": "Buyer: Hi there. Can you give me some details about this phone? I don't see anything on your advertisement. \nSeller: I am very interested in the Shwinn.\nSeller: It is a Samsung. 32GB Gold cell phone. It is a S6\nBuyer: Great and is it new or used?\nBuyer: is this new or used?\nSeller: It is slightly used. Plenty of battery life left in it,\nBuyer: okay and do you just have it in this color?\nSeller: Yes this one is just the gold color. \nSeller: It is a Samsung. 32GB Gold cell phone. It is a S6\nBuyer: okay I really am interested but its way too pricy for me?\nSeller: I am negotiable. I could let it go for $220 if we could pick it up.\nBuyer: My budget is around$137 and I will come pick it up myself and pay cash right away?\nSeller: Yes this one is just the gold color. \nSeller: It is slightly used. Plenty of battery life left in it,\nSeller: That's way too low for this phone. I won't be able to go that low.\nSeller: I am negotiable. I could let it go for $220 if we could pick it up.\nBuyer: What's the last you can do?\nSeller: What if I throw in a charger?\nBuyer: What's the last price? \nSeller: $200\nSeller: That's way too low for this phone. I won't be able to go that low.\nBuyer: that's over my budget I can't afford that. I am sorry then I guess I will have to pass on this. Thank you for your time though!\nSeller: \n"
+        },
+        {
+            "id": "task766-fc17341f4a16452b9c490d8907aa5fd4",
+            "output": [
+                "accepted"
+            ],
+            "input": "Seller: hello, are you interested in this beautiful mid century dining set?\nBuyer: Yes, I am, actually. I can't see the table top and am wondering what condition the whole set is in.\nSeller: The table top is not pictured. My husband was cleaning with when I snapped this photo. It is in great condition though!\nBuyer: Are there any more chairs for the table, or just the four pictured?\nSeller: Only the ones pictured. I will not fit anymore.\nBuyer: I see. What color is the upholstery?\nSeller: grey! \nBuyer: Good color. Since it is a smaller set than I thought, would you be willing to accept $120 for it?\nSeller: I can not take that low for it. But, if you are willing to pick up tonight by 7pm I can let it go for 175. but, you must bring help to load it and cash in hand\nBuyer: I think I can do that, as long as it is in really good condition.\nSeller: i assure you, you will not be disappointed\nSeller: \nBuyer: Terrific! $175 it is.\nBuyer: \n"
+        },
+        {
+            "id": "task766-41e07f85526747638466c53d1cb08c95",
+            "output": [
+                "accepted"
+            ],
+            "input": "Seller: Hello, Were you interested in my 2008 toyota? Her name is Shirley and shes Mint Condition, Low mileage.\nBuyer: Yes i am I would like to check what is the lowest you will accept\nSeller: I am looking to get around $6400 for her. There are no issues and it has one of those snazzy Aux ports all the kids rave about.\nBuyer: I love the aux ports do it have any scratches or marks?\nSeller: Nothing major, Just the small little scratches here and there. Hardly noticable. they will buff right out.\nBuyer: Can i pick it up today?\nSeller: Sure, why not. Do we have a deal on $6400?\nBuyer: Yes we do!\nBuyer: \nSeller: \n"
+        },
+        {
+            "id": "task766-fcb4b29185484fe39744f09fb1b16631",
+            "output": [
+                "accepted"
+            ],
+            "input": "Buyer: Hello. I'm interested in the hospital bed. Can you tell me about it?\nSeller:  it is in excellent condition. It is fully adjustable It adjust at the head knees and height as well. It also has rolling wheels for easy moving. The mattress is very nice. It comes with side rails. It breaks down into 3 sections so when you pick it up you should be good if you are in a station wagon, mini van or SUV and I will be willing to help you load it\nBuyer: Did you obtain this bed from a hospital or a medical supply store?\nSeller: I purchased it from a medical supply store. \nBuyer: Why did you need such a bed?\nSeller: My husband had to use it for a short time after a surgery he had. He is now recovered and we no longer need it.\nBuyer: How long was he in the bed?\nSeller: He used it for 10 weeks. So it is still like new condition.\nBuyer: How old is the bed?\nSeller: We purchased it about 4 months ago in preparation for him needing it for his surgery.\nBuyer: It's a drive for me to come to Sunol. Would you be willing to take $400 for the bed to cover my gas expense?\nSeller: I have someone else wanting to come look that is willing to pay more, If you are really in need of the bed I can deliver if you pay asking price of $525 or I can take $450 if you come pick it up and I help you load.\nBuyer: I would be willing to do the $450. \nSeller: \nBuyer: \n"
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

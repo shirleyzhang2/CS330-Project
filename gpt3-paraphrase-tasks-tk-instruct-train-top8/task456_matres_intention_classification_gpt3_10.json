@@ -1,0 +1,120 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "matres"
+    ],
+    "URL": [
+        "https://github.com/CogComp/MATRES"
+    ],
+    "Categories": [
+        "Information Extraction"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You will be given a context and a verb, separated by a newline character. You need to identify if the given verb implies an opinion, an intention, a wish, or none of the three. A verb refers to an intention only if it refers to an event planned to happen in the future and is not conditional (or part of a condition). Output 'Yes' if the verb refers to an opinion, an intention, or a wish. Output 'No' if the verb does not refer to any of the three."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "News"
+    ],
+    "Positive Examples": [
+        {
+            "input": "It was followed by Denmark, Norway, Germany, France, Greece, Luxembourg, Spain, Britain, the United States, Iceland, Belgium, Italy, Portugal and Turkey. NATO decided at last year's Madrid summit to (invite) the three eastern European countries to start accession talks.  \n Verb: invite",
+            "output": "Yes",
+            "explanation": "They planned to \"invite\" the three eastern European countries, so this verb refers to an intention."
+        },
+        {
+            "input": "In Washington today, the Federal Aviation Administration (released) air traffic control tapes from the night the TWA Flight eight hundred went down.  \n Verb: released",
+            "output": "No",
+            "explanation": "In this sentence, the releasing event happened in the past, and hence it's not an intention."
+        },
+        {
+            "input": "We will act again if we have evidence he is (rebuilding) his weapons of mass destruction capabilities, senior officials say. In a bit of television diplomacy, Iraq\u2019s deputy foreign minister responded from Baghdad in less than one hour.  \n Verb: rebuilding",
+            "output": "No",
+            "explanation": "In this sentence, the verb is part of of a condition. Therefore, it cannot be known for sure if he is already rebuilding weapons but we have no evidence, or if he will be building weapons in the future, and hence it's not an intention."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "The Justice Department wants the appeals court to suspend the temporary injunction issued Thursday and also order Elian's great-uncle, Lazaro Gonzalez, to release the boy. The relatives want the court to let them meet with Elian's father without being (required) to surrender the boy.  \n Verb: required",
+            "output": "Yes",
+            "explanation": "In this sentence, required is not an intention, wish, or opinion, as it is part of a condition."
+        },
+        {
+            "input": "The federal charge also carries a fine of up to $250,000. The newly filed charges will (intensify) the ongoing international manhunt, Tolbert said.  \n Verb: intensify",
+            "output": "No",
+            "explanation": "In this sentence, \"intensify\" is planned to happen in the future, and it is an opinion or intention."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task456-ee3024e43f7a4b35bfe1082687b67fb7",
+            "input": "It was likely to be opposed by Elian's Miami relatives, who are fighting to keep the boy in the United States and who have said they think Gonzalez is being controlled by Fidel Castro's government. Hundreds of former fighters in the revolution that brought Castro to power 42 years ago gathered Wednesday night to (denounce) the Miami  worms  who support Elian's being kept in the United States.  \n Verb: denounce",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task456-cd7216a863d547bd8bdf5f00792cdc84",
+            "input": "A six-year-old boy who arrived on US shores as a motherless refugee and became a political symbol for anti-Castro exiles must be returned to his father in Cuba, immigration authorities ruled Wednesday. Faced with the choice of keeping Elian Gonzalez with relatives in Miami, where the boy has been wooed with American toys and theme-park visits, or (returning) him to his apparently distraught father in Havana, the Immigration and Naturalization Service decided the boy should go home by Jan. 14, INS commissioner Doris Meissner told reporters.  \n Verb: returning",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task456-07a6c4d280b3407abaca3ecfd9176dea",
+            "input": "Terrorist bombings at U.S. embassies in Kenya and Tanzania blew apart buildings and buses, trapping people under slabs of concrete and twisted steel that rescuers cleared with cranes, blow torches and bare hands. At least 82 were killed and more than 1,700 injured, officials said as dawn (broke) Saturday.  \n Verb: broke",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task456-5f11f9ec5a26411fb2eb265d25032b05",
+            "input": "The commemorations began early Friday morning, as tens of thousands of Cubans marched through Havana's streets by torchlight. Similar events were (held) all day in the capital and across the island.  \n Verb: held",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task456-c83065f5932c41128214e1ba9081c18b",
+            "input": "It is for me very symbolic that it is precisely here that we today accept the guarantee that my country never again will become the powerless victim of foreign invasion,  Kavan said. In looking ahead to even greater expansion of NATO, Polish Foreign Minister Bronislaw Geremek said,  We should keep the door of the alliance open for those who have (fought) for freedom...  \n Verb: fought",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task456-598310718c994a2eb900beb5ac8452af",
+            "input": "She said she and other family members had spoken to Elian's father by phone both before and after the mother perished. The father's response when learning that his boy was safe in Miami was  take care of him until I can go, (meaning) go to the United States,  Cid said.  \n Verb: meaning",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task456-85323d6ced4240a595f5f61d00937959",
+            "input": "No cause is so great that it can justify wanton murder and maiming of the innocent.  In all, the bombings in Kenya and Tanzania last week claimed at least 217 lives and (injured) nearly 5,000.  \n Verb: injured",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task456-e97fc8eb8f354b9d936f23624d3b0bc9",
+            "input": "And I, at least, will be there to see him off.  He said the group would be met on arriving in Washington by Craig and Joan Brown Campbell of the National Council of Churches, who (traveled) with Craig on his lightning trip to Havana on Wednesday.  \n Verb: traveled",
+            "output": [
+                "No"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

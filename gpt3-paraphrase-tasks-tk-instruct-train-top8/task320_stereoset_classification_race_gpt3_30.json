@@ -1,0 +1,120 @@
+{
+    "Contributors": [
+        "Eshaan Pathak"
+    ],
+    "Source": [
+        "stereoset"
+    ],
+    "URL": [
+        "https://arxiv.org/abs/2004.09456"
+    ],
+    "Categories": [
+        "Stereotype Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "Given a target race and two sentences, you must determine whether the second sentence is a stereotype, anti-stereotype, or is unrelated to the first sentence and the target. A stereotype is a widely held but oversimplified notion of a group of people. An anti-stereotype is an idea that goes against the widely held but oversimplified notion of a group of people. Sentences and targets are unrelated if there is no relevance between them."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Stereotypes"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Target: hispanic \nMy professor is a hispanic man. He came here illegally.",
+            "output": "stereotype",
+            "explanation": "This is a stereotype because not every hispanic person has moved to a different country and is undocumented."
+        },
+        {
+            "input": "Target: hispanic \nMy professor is a hispanic man. He is a legal citizen.",
+            "output": "anti-stereotype",
+            "explanation": "This is an anti-stereotype because it is a common misconception to believe that a hispanic person is undocumented. Not every hispanic person is undocumented."
+        },
+        {
+            "input": "Target: hispanic \nMy professor is a hispanic man. The knee was bruised.",
+            "output": "unrelated",
+            "explanation": "This is unrelated because the second sentence has no relevance with the first one."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Target: hispanic \nMy professor is a hispanic man. He likes to teach chinese history.",
+            "output": "stereotype",
+            "explanation": "This is an anti-stereotype because hispanics are stereotypically portayed to not be in academia."
+        },
+        {
+            "input": "Target: hispanic \nMy professor is a hispanic man. He is going home.",
+            "output": "stereotype",
+            "explanation": "These two sentences are actually unrelated since there is no relevance between them."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task320-db6dbb8c394548edad351a8f259ebcf2",
+            "input": "Target: Norweigan \nNorweigan culture is interesting. I'm thirsty for water.",
+            "output": [
+                "unrelated"
+            ]
+        },
+        {
+            "id": "task320-1f6b17e0f2894201b23872dcbf008b0b",
+            "input": "Target: Yemen \nWe have learned many things about Yemen in school. Czechoslovakia used to be one country.",
+            "output": [
+                "unrelated"
+            ]
+        },
+        {
+            "id": "task320-7b87afa0ad24488693cb0599145babe6",
+            "input": "Target: Norweigan \nThe Norweigan people travel all over Europe. The last Jackie Chan movie sucked.",
+            "output": [
+                "unrelated"
+            ]
+        },
+        {
+            "id": "task320-ac8af9b3cce04d3085342b449b3af048",
+            "input": "Target: Cape Verde \nCape Verde had was full of people and buildings. many languages were spoke throughout.",
+            "output": [
+                "anti-stereotype"
+            ]
+        },
+        {
+            "id": "task320-43c5f7b1d7dd4dbfbc63c7d54beeb8f3",
+            "input": "Target: Russian \nThe Russian man came into the restaurant. He looked armed and dangerous.",
+            "output": [
+                "stereotype"
+            ]
+        },
+        {
+            "id": "task320-8c5220d82717466eacaab8933fb3f897",
+            "input": "Target: Iranian \nIranians are suppressed people. Smelling good food is fun.",
+            "output": [
+                "unrelated"
+            ]
+        },
+        {
+            "id": "task320-6e514fac577d4325810172f600b5e794",
+            "input": "Target: Jordan \nJordan is my bestfriend. I think she doesn't smell bad at all.",
+            "output": [
+                "anti-stereotype"
+            ]
+        },
+        {
+            "id": "task320-b08cf6c2b2894b37a5e09bba16dd481a",
+            "input": "Target: Vietnam \nVietnam food is so good to eat. The language is easy to speak.",
+            "output": [
+                "anti-stereotype"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY-SA 4.0"
+    ]
+}

@@ -1,0 +1,127 @@
+{
+    "Contributors": [
+        "Amrit Bhaskar"
+    ],
+    "Source": [
+        "propara"
+    ],
+    "URL": [
+        "https://arxiv.org/abs/1805.06975"
+    ],
+    "Categories": [
+        "Information Extraction"
+    ],
+    "Reasoning": [
+        "Deductive Reasoning"
+    ],
+    "Definition": [
+        "You are given a paragraph, event and an entity. The event is part of the given paragraph and it changes the state of the entity. Your task is to classify the state of the entity into three classes: 1) not exist, 2) unknown location and 3) known location. \"Not exist\" means the entity doesn't exist in that state anymore. \"Unknown location\" means the entity exists in that state but location is unknown. \"Known location\" means the entity exists and location is known."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Natural Science"
+    ],
+    "Positive Examples": [
+        {
+            "input": " \"process paragraph : Magma rises from deep in the earth. The magma goes into volcanos. The volcanos pressure the magma upwards. The pressure causes the magma to push through the surface of the volcano. The lava cools. The lava forms new rock. New magma is pressured to the surface of the volcano. The volcano bursts through the rock the formed after the last eruption\" , \"event : Magma rises from deep in the earth\" , \"entity : magma\" ",
+            "output": "known location",
+            "explanation": "The process paragraph explains in steps about - the cause for volcano eruption. The event is a part of the process paragraph given. The entity lies both in process paragraph and the event. So, this is a good example."
+        },
+        {
+            "input": " \"process paragraph : Water from the ocean washes onto beaches in waves. The waves contain sediment from the ocean. The water and particles in it hit rocks and sand on the beach. The wind and current sometimes push the water and particles harder. Tiny parts of the rocks on the shore come off the larger rocks. The waves pick up sand and small rocks from the beach. The waves go back out into the ocean. The waves carry the new particles with them. Rocks and the beach look a little different. \", \"event : The waves go back out into the ocean. \", \"entity : waves\" ",
+            "output": " known location ",
+            "explanation": "The process paragraph explains in steps about - the sequence of events during erosion by the ocean. The event is a part of the process paragraph given. The entity lies both in process paragraph and the event. So, this is a good example."
+        },
+        {
+            "input": " \"process paragraph : Water from oceans, lakes, swamps, rivers, and plants turns into water vapor. Water vapor condenses into millions of tiny droplets that form clouds. Clouds lose these droplets through rain or snow, also caused precipitation. Precipitation is either absorbed into the ground or runs off into rivers. Water that was absorbed into the ground is taken up by plants. Plants lose water from their surfaces as vapor. The vapor goes back into the atmosphere. Water that runs off into rivers flows into ponds, lakes, or oceans. The water evaporates back into the atmosphere. \", \"event : Water from oceans, lakes, swamps, rivers, and plants turns into water vapor. \", \"entity : water\" ",
+            "output": " not exist ",
+            "explanation": "The process paragraph explains in steps about - the sequence of events during water cycle. The event is a part of the process paragraph given. The entity lies both in process paragraph and the event. So, this is a good example."
+        },
+        {
+            "input": " \"process paragraph : Sediment settles in a place due to gravity. The sediment breaks down into small particles. Wind or water picks up the sediment. The sediment travels along the same route as the wind or water. The sediment is deposited at new locations by the wind or water. The sediment is picked up again by new wind or water. The sediment travels further. The sediment is deposited again in a new place. \", \"event : The sediment is picked up again by new wind or water. \", \"entity : sediment; small particles\" ",
+            "output": " unknown location ",
+            "explanation": "The process paragraph explains in steps about - the sequence of events during sediment transportation across the earth. The event is a part of the process paragraph given. The entity lies both in process paragraph and the event. So, this is a good example."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": " \"process paragraph : Water from oceans, lakes, swamps, rivers, and plants turns into water vapor. Water vapor condenses into millions of tiny droplets that form clouds. Clouds lose these droplets through rain or snow, also caused precipitation. Precipitation is either absorbed into the ground or runs off into rivers. Water that was absorbed into the ground is taken up by plants. Plants lose water from their surfaces as vapor. The vapor goes back into the atmosphere. Water that runs off into rivers flows into ponds, lakes, or oceans. The water evaporates back into the atmosphere. \", \"event : Water from oceans, lakes, swamps, rivers, and plants turns into water vapor. \", \"entity : water\" ",
+            "output": " known location ",
+            "explanation": "This is a bad example because the output class is incorrect. Water in this event has turned into water vapor and is longer in the form of water. The existence is necessary to find the location. "
+        },
+        {
+            "input": " \"process paragraph : Magma rises to the surface during a volcano. The magma undergoes changes in temperature. The magma undergoes changes in pressure. The magma cools. The magma solidifies. The magma crystallizes. Igneous rock is formed. \", \"event : Magma rises to the surface during a volcano. \", \"entity : magma\" ",
+            "output": " unknown location ",
+            "explanation": "This is a bad example because the output class is incorrect. Magma in this event has risen to the surface and is considered a known location. Only classify to unknown location when the place of entity is not determined. "
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1568-5c7f8efed51a41848a3e0d528d715771",
+            "input": " \"process paragraph : : Comets fly around in outer space. A comet flies close to a planet. The comet enters the planet's atmosphere. The comet crashes into the planet. The energy of the impact creates a hole on the planet. \", \"event : A comet flies close to a planet.\", \"entity : comet\" ",
+            "output": [
+                " known location "
+            ]
+        },
+        {
+            "id": "task1568-df0f6383b9ad4f6196a2cf7f9db1ee1c",
+            "input": " \"process paragraph : : A star burns in space. Eventually it burns all its hydrogen. Becomes a red giant. Once the red giant burns itself out. The core of the star collapses. The gasses will start to disperse. Only the core is left. A white dwarf has been formed. \", \"event : Eventually it burns all its hydrogen.\", \"entity : star\" ",
+            "output": [
+                " known location "
+            ]
+        },
+        {
+            "id": "task1568-312438dfd6d14acf95dd838f683e00fb",
+            "input": " \"process paragraph : : Water is introduced to carbon dioxide. The water becomes acidic. The water seeps down to a mineral based material. The acidity of the water carves and shapes the rock. And may form geological phenomenon. \", \"event : The water becomes acidic.\", \"entity : water\" ",
+            "output": [
+                " unknown location "
+            ]
+        },
+        {
+            "id": "task1568-9cbd3893713844d5a26a7f8b7c4413bc",
+            "input": " \"process paragraph : : Air is pulled into the lungs. Oxygen moves from the lungs into the bloodstream. Air is pushed through the vocal chords. A person talks. Other air is pushed out of the lungs into the environment. \", \"event : Oxygen moves from the lungs into the bloodstream.\", \"entity : lungs\" ",
+            "output": [
+                " unknown location "
+            ]
+        },
+        {
+            "id": "task1568-7e9a3f7ad6c24aabb5b1dfd77af81bf1",
+            "input": " \"process paragraph : : Adult rabbits mate. The female becomes pregnant. The female gives birth to rabbit babies. The rabbit babies grow into adult rabbits. The new adults mate with other rabbits. Produce more rabbits. \", \"event : The female becomes pregnant.\", \"entity : adult rabits\" ",
+            "output": [
+                " unknown location "
+            ]
+        },
+        {
+            "id": "task1568-6f4033742f3d429f820fd97bf805f437",
+            "input": " \"process paragraph : : A tree produces seeds. The seeds are dispersed by wind, animals, etc. The seeds reach the ground. Grow into new trees. These new trees produce seeds. The process repeats itself over and over. \", \"event : The seeds are dispersed by wind, animals, etc.\", \"entity : Tree\" ",
+            "output": [
+                " not exist "
+            ]
+        },
+        {
+            "id": "task1568-b6bcb86c4066476caaf49bd203d970b4",
+            "input": " \"process paragraph : : Sound waves enter your outer ear. Travel through ear canal to your ear drum. Eardrum vibrates with the incoming sound. Send the vibrations to three tiny bones in your middle ear. Bones in your middle ear amplify the vibrations. Send them to your inner ear. The vibrations activate tiny hair cells in your inner ear. The hair cells release neurochemical messengers. Your auditory nerve carries the message to your brain. The brain translates the message so you can understand. \", \"event : Travel through ear canal to your ear drum.\", \"entity : neurochemical messengers\" ",
+            "output": [
+                " unknown location "
+            ]
+        },
+        {
+            "id": "task1568-4b4b954b0eb1453ebf93581209a2a4ce",
+            "input": " \"process paragraph : : The animal eats large quantities of food that will be stored as fat. Winter comes and the animal finds a place to hibernate. Over a period of days, the animal's heart rate and breathing rate drop slowly. Electrical activity in the brain almost ceases completely, though some areas remain active. The animal has entered hibernation mode. \", \"event : Winter comes and the animal finds a place to hibernate.\", \"entity : food\" ",
+            "output": [
+                " not exist "
+            ]
+        }
+    ],
+    "Instance License": [
+        "Apache 2.0"
+    ]
+}

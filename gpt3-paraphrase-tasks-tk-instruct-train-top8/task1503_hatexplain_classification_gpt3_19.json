@@ -1,0 +1,115 @@
+{
+    "Contributors": [
+        "Pruthvi Patel"
+    ],
+    "Source": [
+        "hatexplain"
+    ],
+    "URL": [
+        "https://github.com/hate-alert/HateXplain"
+    ],
+    "Categories": [
+        "Toxic Language Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "The input is a tweet which can be classified as Hate Speech, Offensive, or Normal. Hate Speech and Offensive tweets target one specific community. Given such a tweet, your task is to output the community that is targeted in the tweet. The community will be one of the nine values: 'African', 'Islam', 'Jewish', 'Women', 'Refugee', 'Arab', 'Caucasian', 'Hispanic' or 'Asian'. Output 'None' if the tweet does not target any community. A tweet can only target one community."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Social Media -> Twitter"
+    ],
+    "Positive Examples": [
+        {
+            "input": "caucasians wearing masks to prevent coronavirus and still don \u2019 t wash their hands",
+            "output": "Caucasian",
+            "explanation": "The tweet generalizes an attribute to the entire community, Caucasian, which makes it offensive."
+        },
+        {
+            "input": "lesson of the week from the holy book the sovereign individual once commerce flows over the internet suppression of speech becomes unstoppable devolution inevitable and the monopoly of violence by governments will end paraphrased from j d davidson rhys mogg",
+            "output": "None",
+            "explanation": "The tweet does not target any specific community hence the correct answer is None"
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "<user> <user> there shd be a film called no hindus in kashmir wud be perfect islamic fanaticsm movement in kashmir",
+            "output": "Hindu",
+            "explanation": "Every input tweet will target one or more of the nine communities provided or will not target any community. Further the tweet targets Muslim community. Hence Hindu is not the correct value. The correct value is Islam."
+        },
+        {
+            "input": "ffs everthing is offensive to muslimes",
+            "output": "None",
+            "explanation": "This tweet is offensive to Muslim community. Hence the correct answer is Islam instead of None."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1503-a80c2ca2c1994392b88f42480aaffa47",
+            "input": "<user> <user> agreed lucie they are not refugees socioeconomic parasites at best islamists and sex attackers at worst",
+            "output": [
+                "Islam"
+            ]
+        },
+        {
+            "id": "task1503-60172e173050448fb41a75148127973a",
+            "input": "liberal logic illegal alien kills kate steinle conservatives upset over acquittal ergo conservatives hate immigrants conservative logic illegal alien kills kate steinle knows there is a difference between legal illegal immigrants ergo liberals are shameless liars",
+            "output": [
+                "Refugee"
+            ]
+        },
+        {
+            "id": "task1503-b0f237a1b2614050bdea28fcc7624409",
+            "input": "shivaji companion during his fabled escape from the mughal internment in agra was madari mehtar \u2014 a muslim shivaji even extended courtesy to sworn enemies like afzal khan 21 st century rss rss roadmaps",
+            "output": [
+                "None"
+            ]
+        },
+        {
+            "id": "task1503-9c86ee9ff6984133867a0f13598a5610",
+            "input": "would not dap you with the left hoe",
+            "output": [
+                "Women"
+            ]
+        },
+        {
+            "id": "task1503-9c2a90862ba9468f935a4129e82a702f",
+            "input": "filthy jet black nigga backstage full of white bitches no i do not sell like macklemore but i have got white privilege",
+            "output": [
+                "African"
+            ]
+        },
+        {
+            "id": "task1503-f8dc1717f42d4691af846f3eda519fc1",
+            "input": "bathing in honky privilege",
+            "output": [
+                "Caucasian"
+            ]
+        },
+        {
+            "id": "task1503-55bf65f2650d465097f4ab4e5016b08e",
+            "input": "stop telling women what to wear fam it dead",
+            "output": [
+                "None"
+            ]
+        },
+        {
+            "id": "task1503-f3f6168b075149b9a7c012c4a9cd0f58",
+            "input": "these nigger biches look like aunt jemima",
+            "output": [
+                "African"
+            ]
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

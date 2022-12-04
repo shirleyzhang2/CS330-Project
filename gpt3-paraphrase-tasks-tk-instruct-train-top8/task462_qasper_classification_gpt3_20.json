@@ -1,0 +1,120 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "qasper"
+    ],
+    "URL": [
+        "https://allenai.org/project/qasper/home"
+    ],
+    "Categories": [
+        "Question Understanding"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You will be given a context from an academic paper and a question based on the context. Your task is to classify the questions into \"Extractive\", \"Abstractive\", or \"Yes-no\" questions. Extractive questions can be answered by taking extracts from the context and concatenating them into a summary. Abstractive questions require you to paraphrase the context using new sentences. Yes-no questions are questions whose expected answer is one of two choices, typically yes or no."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Scientific Research Papers"
+    ],
+    "Positive Examples": [
+        {
+            "input": "We build a dataset of Twitter accounts based on two lists annotated in previous works. For the non-factual accounts, we rely on a list of 180 Twitter accounts from BIBREF1. On the other hand, for the factual accounts, we use a list with another 32 Twitter accounts from BIBREF19 that are considered trustworthy by independent third parties. \n Question: How did they obtain the dataset?",
+            "output": "Extractive",
+            "explanation": "The answer to this question has been explicitly mentioned in the context, so the question is extractive."
+        },
+        {
+            "input": "We evaluate our pointer-generator performance using BLEU score. The baseline language model is trained using RNNLM BIBREF23 . Perplexity measure is used in the evaluation.\n\n \n Question: Did they use other evaluation metrics?",
+            "output": "Yes-no",
+            "explanation": "This is a good example, and the given question is a yes-no question."
+        },
+        {
+            "input": "As in the example above, we pre-process documents by removing all numbers and interjections. \n Question: what processing was done on the speeches before being parsed?",
+            "output": "Abstractive",
+            "explanation": "Answering this question needs paraphrasing the context, so this question is abstractive."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "For the English version, we performed both a thorough manual analysis and automatic evaluation across three commonly used TS datasets from two different domains  For the English version, we performed both a thorough manual analysis and automatic evaluation across three commonly used TS datasets from two different domains  The evaluation of the German version is in progress. \n Question: What are the corpora used for the task?",
+            "output": "Yes-no",
+            "explanation": "This question is extractive, and it's not a yes-no question."
+        },
+        {
+            "input": "For Turkish, as the first dataset, we utilised the movie reviews which are collected from a popular website. The number of reviews in this movie corpus is 20,244 and the average number of words in reviews is 39. Each of these reviews has a star-rating score which is indicative of sentiment. These polarity scores are between the values 0.5 and 5, at intervals of 0.5. We consider a review to be negative it the score is equal to or lower than 2.5. On the other hand, if it is equal to or higher than 4, it is assumed to be positive. We have randomly selected 7,020 negative and 7,020 positive reviews and processed only them. \n Question: What details are given about the movie domain dataset?",
+            "output": "Extractive",
+            "explanation": "This question is Abstractive because we need to paraphrase the context to get to the answer."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task462-0be980c10a404794a532f009209d84ca",
+            "input": "We evaluated our model on three benchmark datasets, namely the CNN/DailyMail news highlights dataset BIBREF24, the New York Times Annotated Corpus (NYT; BIBREF25), and XSum BIBREF22. \n Question: What are the datasets used for evaluation?",
+            "output": [
+                "Extractive"
+            ]
+        },
+        {
+            "id": "task462-3d644004cfa045d19c87edd03981f424",
+            "input": "The annotator carried out all annotation. \n Question: How many annotators tagged each tweet?",
+            "output": [
+                "Abstractive"
+            ]
+        },
+        {
+            "id": "task462-d73f87c56a05420fb8457ee9500d3b5d",
+            "input": "is the standard word counting method whereby the feature vector represents the term frequency of the words in a sentence. is similar to BoW, except that it is derived by the counting of the words in the sentence weighted by individual word's term-frequency and inverse-document-frequency BIBREF31 . is derived from clustering of words-embeddings with k-means into 5000 clusters, and follow by BoW representation of the words in 5000 clusters. \n Question: What other non-neural baselines do the authors compare to? ",
+            "output": [
+                "Abstractive"
+            ]
+        },
+        {
+            "id": "task462-70b6c7a8300142cd88d788fb911b2492",
+            "input": "Currently, the following WSD models induced from a text corpus are available: Word senses based on cluster word features. This model uses the cluster words from the induced word sense inventory as sparse features that represent the sense.\n\nWord senses based on context word features. This representation is based on a sum of word vectors of all cluster words in the induced sense inventory weighted by distributional similarity scores.\n\nSuper senses based on cluster word features. To build this model, induced word senses are first globally clustered using the Chinese Whispers graph clustering algorithm BIBREF9 . The edges in this sense graph are established by disambiguation of the related words BIBREF11 , BIBREF12 . The resulting clusters represent semantic classes grouping words sharing a common hypernym, e.g. \u201canimal\u201d. This set of semantic classes is used as an automatically learned inventory of super senses: There is only one global sense inventory shared among all words in contrast to the two previous traditional \u201cper word\u201d models. Each semantic class is labeled with hypernyms. This model uses words belonging to the semantic class as features.\n\nSuper senses based on context word features. This model relies on the same semantic classes as the previous one but, instead, sense representations are obtained by averaging vectors of words sharing the same class. \n Question: Do they use a neural model for their task?",
+            "output": [
+                "Yes-no"
+            ]
+        },
+        {
+            "id": "task462-7a40d6ac207c4b7ba83ea4b55e902bf5",
+            "input": "Table TABREF15 shows a comparison of the results on SimCluster versus K-means algorithm. Here our SimCluster algorithm improves the F1-scores from 0.412 and 0.417 in the two domains to 0.442 and 0.441. The ARI scores also improve from 0.176 and 0.180 to 0.203 and 0.204. \n Question: Do they use the same distance metric for both the SimCluster and K-means algorithm?",
+            "output": [
+                "Yes-no"
+            ]
+        },
+        {
+            "id": "task462-38c909e7f9f2478cab9d3ace72cb0baf",
+            "input": "GE-FL reduces the heavy load of instance annotation and performs well when we provide prior knowledge with no bias. In our experiments, we observe that comparable numbers of labeled features for each class have to be supplied. We randomly select $t \\in [1, 20]$ features from the feature pool for one class, and only one feature for the other. Our methods are also evaluated on datasets with different unbalanced class distributions. We manually construct several movie datasets with class distributions of 1:2, 1:3, 1:4 by randomly removing 50%, 67%, 75% positive documents. Incorporating KL divergence is robust enough to control unbalance both in the dataset and in labeled features while the other three methods are not so competitive. \n Question: How do they define robustness of a model?",
+            "output": [
+                "Abstractive"
+            ]
+        },
+        {
+            "id": "task462-a55cf999c46443faab3b0d66d4441235",
+            "input": " In recent years, researchers have proposed various filter based feature selection methods to raise the performance of document text classification BIBREF19.  Furthermore, in order to rank the terms based on their discriminative power among the classes, we use filter based feature selection method named as Normalized Difference Measure (NDM)BIBREF5. Considering the features contour plot, Rehman et al. BIBREF5 suggested that all those features which exist in top left, and bottom right corners of the contour are extremely significant as compared to those features which exist around diagonals. State-of-the-art filter based feature selection algorithms such as ACC2 treat all those features in the same fashion which exist around the diagonals BIBREF5. \n Question: Is the filter based feature selection (FSE) a form of regularization?",
+            "output": [
+                "Yes-no"
+            ]
+        },
+        {
+            "id": "task462-65a2ad044e3f4bb5b013714be4d394d4",
+            "input": "Last but not least, ethics and fairness are important considerations, that deserve to be studied. In that sense, detection of individual and global bias should be prioritized in order to give useful feedbacks to practitioners. Furthermore we are considering using adversarial learning as in BIBREF33 in order to ensure fairness during the training process. \n Question: Do they analyze if their system has any bias?",
+            "output": [
+                "Yes-no"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

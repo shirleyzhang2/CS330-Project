@@ -1,0 +1,127 @@
+{
+    "Contributors": [
+        "Amrit Bhaskar"
+    ],
+    "Source": [
+        "propara"
+    ],
+    "URL": [
+        "https://arxiv.org/abs/1805.06975"
+    ],
+    "Categories": [
+        "Information Extraction"
+    ],
+    "Reasoning": [
+        "Deductive Reasoning"
+    ],
+    "Definition": [
+        "You are given a paragraph, an event from that paragraph, and an entity affected by the event. Your task is to classify the state of the entity into one of three classes: 1) not exist, 2) unknown location, or 3) known location. \"not exist\" means the entity no longer exists in that state. \"unknown location\" means the entity exists in that state but its location is unknown. \"known location\" means the entity exists and its location is known."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Natural Science"
+    ],
+    "Positive Examples": [
+        {
+            "input": " \"process paragraph : Magma rises from deep in the earth. The magma goes into volcanos. The volcanos pressure the magma upwards. The pressure causes the magma to push through the surface of the volcano. The lava cools. The lava forms new rock. New magma is pressured to the surface of the volcano. The volcano bursts through the rock the formed after the last eruption\" , \"event : Magma rises from deep in the earth\" , \"entity : magma\" ",
+            "output": "known location",
+            "explanation": "The process paragraph explains in steps about - the cause for volcano eruption. The event is a part of the process paragraph given. The entity lies both in process paragraph and the event. So, this is a good example."
+        },
+        {
+            "input": " \"process paragraph : Water from the ocean washes onto beaches in waves. The waves contain sediment from the ocean. The water and particles in it hit rocks and sand on the beach. The wind and current sometimes push the water and particles harder. Tiny parts of the rocks on the shore come off the larger rocks. The waves pick up sand and small rocks from the beach. The waves go back out into the ocean. The waves carry the new particles with them. Rocks and the beach look a little different. \", \"event : The waves go back out into the ocean. \", \"entity : waves\" ",
+            "output": " known location ",
+            "explanation": "The process paragraph explains in steps about - the sequence of events during erosion by the ocean. The event is a part of the process paragraph given. The entity lies both in process paragraph and the event. So, this is a good example."
+        },
+        {
+            "input": " \"process paragraph : Water from oceans, lakes, swamps, rivers, and plants turns into water vapor. Water vapor condenses into millions of tiny droplets that form clouds. Clouds lose these droplets through rain or snow, also caused precipitation. Precipitation is either absorbed into the ground or runs off into rivers. Water that was absorbed into the ground is taken up by plants. Plants lose water from their surfaces as vapor. The vapor goes back into the atmosphere. Water that runs off into rivers flows into ponds, lakes, or oceans. The water evaporates back into the atmosphere. \", \"event : Water from oceans, lakes, swamps, rivers, and plants turns into water vapor. \", \"entity : water\" ",
+            "output": " not exist ",
+            "explanation": "The process paragraph explains in steps about - the sequence of events during water cycle. The event is a part of the process paragraph given. The entity lies both in process paragraph and the event. So, this is a good example."
+        },
+        {
+            "input": " \"process paragraph : Sediment settles in a place due to gravity. The sediment breaks down into small particles. Wind or water picks up the sediment. The sediment travels along the same route as the wind or water. The sediment is deposited at new locations by the wind or water. The sediment is picked up again by new wind or water. The sediment travels further. The sediment is deposited again in a new place. \", \"event : The sediment is picked up again by new wind or water. \", \"entity : sediment; small particles\" ",
+            "output": " unknown location ",
+            "explanation": "The process paragraph explains in steps about - the sequence of events during sediment transportation across the earth. The event is a part of the process paragraph given. The entity lies both in process paragraph and the event. So, this is a good example."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": " \"process paragraph : Water from oceans, lakes, swamps, rivers, and plants turns into water vapor. Water vapor condenses into millions of tiny droplets that form clouds. Clouds lose these droplets through rain or snow, also caused precipitation. Precipitation is either absorbed into the ground or runs off into rivers. Water that was absorbed into the ground is taken up by plants. Plants lose water from their surfaces as vapor. The vapor goes back into the atmosphere. Water that runs off into rivers flows into ponds, lakes, or oceans. The water evaporates back into the atmosphere. \", \"event : Water from oceans, lakes, swamps, rivers, and plants turns into water vapor. \", \"entity : water\" ",
+            "output": " known location ",
+            "explanation": "This is a bad example because the output class is incorrect. Water in this event has turned into water vapor and is longer in the form of water. The existence is necessary to find the location. "
+        },
+        {
+            "input": " \"process paragraph : Magma rises to the surface during a volcano. The magma undergoes changes in temperature. The magma undergoes changes in pressure. The magma cools. The magma solidifies. The magma crystallizes. Igneous rock is formed. \", \"event : Magma rises to the surface during a volcano. \", \"entity : magma\" ",
+            "output": " unknown location ",
+            "explanation": "This is a bad example because the output class is incorrect. Magma in this event has risen to the surface and is considered a known location. Only classify to unknown location when the place of entity is not determined. "
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1568-509c709a24514817aa01494b249cda6d",
+            "input": " \"process paragraph : : Fuel is converted to energy when air and petrol mix. The car engine burns the mix of air and petrol. Hot gas from the burning pushes the pistons. The resulting energy powers the crankshaft. Crankshaft powers the gears. The gears make the wheels roll. \", \"event : The car engine burns the mix of air and petrol.\", \"entity : air\" ",
+            "output": [
+                " not exist "
+            ]
+        },
+        {
+            "id": "task1568-2ac5177a902441cfb57404246b761a08",
+            "input": " \"process paragraph : : Get the ice tray. Remove any ice cubes currently in the tray. Fill the tray with cold water. Ensure the tray is evenly filled to an appropriate level. Open the freezer. Place the tray in the freezer. Close the freezer door. Wait. \", \"event : Remove any ice cubes currently in the tray.\", \"entity : ice tray ; tray\" ",
+            "output": [
+                " unknown location "
+            ]
+        },
+        {
+            "id": "task1568-175a74907d6a4ecaa154e1d9b5ed8642",
+            "input": " \"process paragraph : : Fans blow air onto the evaporator's coils. The refrigerant within the coils absorbs the heat. The refrigerant changes from a liquid to a gas. The compressor compresses the gas, increasing the pressure. The hot, pressurized gas moves to the condenser. The gas condenses in the condenser and becomes a liquid again. Heat is radiated away from the condenser. The cooled liquid is returned to the evaporator. \", \"event : The refrigerant within the coils absorbs the heat.\", \"entity : Air\" ",
+            "output": [
+                " known location "
+            ]
+        },
+        {
+            "id": "task1568-9ffb991728bd47f7af341f992910ce9d",
+            "input": " \"process paragraph : : The frog eggs hatch. The tadpole breaks free. Slowly, the gills disappear over the next 6 weeks. The hind legs begin to form at 8 weeks. The front legs form at 12 weeks. The tail shrinks. The mouth grows larger. The tadpole can live on land as a frog. \", \"event : The tadpole breaks free.\", \"entity : frog eggs\" ",
+            "output": [
+                " not exist "
+            ]
+        },
+        {
+            "id": "task1568-b59b9c91dae741f8b0ac5ed7c9b7e02b",
+            "input": " \"process paragraph : : Blood sugar levels increase after a meal. Cells in the pancreas release insulin. Insulin causes the body to absorb glucose from the blood. Blood sugar goes back to normal. Blood sugar is too low. The amount of insulin goes down. Cells in the pancreas release glucagon. The liver turns stored glycogen into glucose. The liver releases the glucose into the blood. Blood sugar goes back to normal. \", \"event : Cells in the pancreas release insulin.\", \"entity : insulin\" ",
+            "output": [
+                " known location "
+            ]
+        },
+        {
+            "id": "task1568-232fe2b50d5740a4af39d2be33941ab9",
+            "input": " \"process paragraph : : Wind and water cause erosion and weathering to the rocks. Eroded rock particles are carried away by wind or by rain, streams, rivers, and oceans. Rock particles sink to the bottom of rivers and oceans creating a layer of sediment. Layers of sediment stack up compacting the bottom layers. Minerals fill in the gaps in the sediment eventuality becoming sedimentary rocks. Rocks buried deep underground exposed to high heat and pressure become metamorphic rock. Metamorphic rocks underground melt to become magma. Magma flows from volcanoes in the form of lava. Lava cools and forms igneous rock. Igneous rock begins being weathered and eroded by water and wind. \", \"event : Eroded rock particles are carried away by wind or by rain, streams, rivers, and oceans.\", \"entity : rocks\" ",
+            "output": [
+                " unknown location "
+            ]
+        },
+        {
+            "id": "task1568-fb1c9f92259545239aee7393ff7edb62",
+            "input": " \"process paragraph : : An airline reservation is made. The passenger arrives early at the airport. The luggage is checked. The passenger waits in line. The passenger shows their identification and gets a boarding pass. The passenger goes to their gate. The passenger gets in line when it's time to board. The person boards the plane. The plane arrives at the destination. The passenger gets off the plane at their destination. \", \"event : The passenger arrives early at the airport.\", \"entity : plane\" ",
+            "output": [
+                " unknown location "
+            ]
+        },
+        {
+            "id": "task1568-79f3c296b7ce49909f5fd6abd7369746",
+            "input": " \"process paragraph : : You inhale air through your nose and mouth. The air travels down into your lungs. Oxygen from the air goes into your bloodstream. Oxygen circulates throughout the body due to the heart's pumping. Carbon dioxide travels from the blood into the lungs. Carbon dioxide travels from the lungs up the windpipe. Carbon dioxide is exhaled. \", \"event : The air travels down into your lungs.\", \"entity : air\" ",
+            "output": [
+                " known location "
+            ]
+        }
+    ],
+    "Instance License": [
+        "Apache 2.0"
+    ]
+}

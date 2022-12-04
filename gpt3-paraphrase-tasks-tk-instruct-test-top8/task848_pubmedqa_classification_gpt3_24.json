@@ -1,0 +1,125 @@
+{
+    "Contributors": [
+        "Jalansh Munshi"
+    ],
+    "Source": [
+        "pubmed_qa"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/pubmed_qa"
+    ],
+    "Categories": [
+        "Intent Identification"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "Given a passage, classify if the passage has a definite objective/aim/goal. Output '1' if it does, and output '0' if it does not."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Medicine"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Chronic rhinosinusitis (CRS) is a heterogeneous disease with an uncertain pathogenesis. Group 2 innate lymphoid cells (ILC2s) represent a recently discovered cell population which has been implicated in driving Th2 inflammation in CRS; however, their relationship with clinical disease characteristics has yet to be investigated. The aim of this study was to identify ILC2s in sinus mucosa in patients with CRS and controls and compare ILC2s across characteristics of disease. A cross-sectional study of patients with CRS undergoing endoscopic sinus surgery was conducted. Sinus mucosal biopsies were obtained during surgery and control tissue from patients undergoing pituitary tumour resection through transphenoidal approach. ILC2s were identified as CD45(+) Lin(-) CD127(+) CD4(-) CD8(-) CRTH2(CD294)(+) CD161(+) cells in single cell suspensions through flow cytometry. ILC2 frequencies, measured as a percentage of CD45(+) cells, were compared across CRS phenotype, endotype, inflammatory CRS subtype and other disease characteristics including blood eosinophils, serum IgE, asthma status and nasal symptom score. 35 patients (40% female, age 48 \u00b1 17 years) including 13 with eosinophilic CRS (eCRS), 13 with non-eCRS and 9 controls were recruited. ILC2 frequencies were associated with the presence of nasal polyps (P = 0.002) as well as high tissue eosinophilia (P = 0.004) and eosinophil-dominant CRS (P = 0.001) (Mann-Whitney U). They were also associated with increased blood eosinophilia (P = 0.005). There were no significant associations found between ILC2s and serum total IgE and allergic disease. In the CRS with nasal polyps (CRSwNP) population, ILC2s were increased in patients with co-existing asthma (P = 0.03). ILC2s were also correlated with worsening nasal symptom score in CRS (P = 0.04).",
+            "output": "1",
+            "explanation": "There is a line in the passage which say 'The aim of this study was...' which suggests that it is talking about a specific aim. Hence, the output should be 1 as this passage has a definite aim."
+        },
+        {
+            "input": "Phosphatidylethanolamine N-methyltransferase (PEMT), a liver enriched enzyme, is responsible for approximately one third of hepatic phosphatidylcholine biosynthesis. When fed a high-fat diet (HFD), Pemt(-/-) mice are protected from HF-induced obesity; however, they develop steatohepatitis. The vagus nerve relays signals between liver and brain that regulate peripheral adiposity and pancreas function. Here we explore a possible role of the hepatic branch of the vagus nerve in the development of diet induced obesity and steatohepatitis in Pemt(-/-) mice. 8-week old Pemt(-/-) and Pemt(+/+) mice were subjected to hepatic vagotomy (HV) or capsaicin treatment, which selectively disrupts afferent nerves, and were compared to sham-operated or vehicle-treatment, respectively. After surgery, mice were fed a HFD for 10 weeks. HV abolished the protection against the HFD-induced obesity and glucose intolerance in Pemt(-/-) mice. HV normalized phospholipid content and prevented steatohepatitis in Pemt(-/-) mice. Moreover, HV increased the hepatic anti-inflammatory cytokine interleukin-10, reduced chemokine monocyte chemotactic protein-1 and the ER stress marker C/EBP homologous protein. Furthermore, HV normalized the expression of mitochondrial electron transport chain proteins and of proteins involved in fatty acid synthesis, acetyl-CoA carboxylase and fatty acid synthase in Pemt(-/-) mice. However, disruption of the hepatic afferent vagus nerve by capsaicin failed to reverse either the protection against the HFD-induced obesity or the development of HF-induced steatohepatitis in Pemt(-/-) mice.",
+            "output": "1",
+            "explanation": "If you take a look at the line 'Here we explore a possible role of the hepatic branch', it says that it is exploring a possible role. This means that it has a specific goal and hence, the output should be 1."
+        },
+        {
+            "input": "Psammaplin A (PsA) is a natural product isolated from marine sponges, which has been demonstrated to have anticancer activity against several human cancer cell lines via the induction of cell cycle arrest and apoptosis. New drugs that are less toxic and more effective against multidrug-resistant cancers are urgently needed. We tested cell proliferation, cell cycle progression and autophagic cell death pathway in doxorubicin-resistant MCF-7 (MCF-7/adr) human breast cancer cells. The potency of PsA was further determined using an in vivo xenograft model.",
+            "output": "0",
+            "explanation": "This passage does not have any sentences which talk about a specific goal, objective, or aim. Hence, the output should be 0."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "This study examined links between DNA methylation and birth weight centile (BWC), and explored the impact of genetic variation. Using HumanMethylation450 arrays, we examined candidate gene-associated CpGs in cord blood from newborns with low (<15th centile), medium (40-60th centile) and high (>85th centile) BWC (n = 12). Candidates were examined in an investigation cohort (n = 110) using pyrosequencing and genotyping for putative methylation-associated polymorphisms performed using standard PCR. Array analysis identified 314 candidate genes associated with BWC extremes, four of which showed \u2265 4 BWC-linked CpGs. Of these, PM20D1 and MI886 suggested genetically determined methylation levels. However, methylation at three CpGs in FGFR2 remained significantly associated with high BWC (p = 0.004-0.027).",
+            "output": "0",
+            "explanation": "This passage talks about examining links between DNA methylation and also explores impact of genetic variation. This suggests that it has a definite objective and hence, the output should be 1. Output 0 is wrong."
+        },
+        {
+            "input": "Tumor microenvironment immunity is associated with breast cancer outcome. A high lymphocytic infiltration has been associated with response to neoadjuvant chemotherapy, but the contribution to response and prognosis of immune cell subpopulations profiles in both pre-treated and post-treatment residual tumor is still unclear. We analyzed pre- and post-treatment tumor-infiltrating immune cells (CD3, CD4, CD8, CD20, CD68, Foxp3) by immunohistochemistry in a series of 121 breast cancer patients homogeneously treated with neoadjuvant chemotherapy. Immune cell profiles were analyzed and correlated with response and survival. We identified three tumor-infiltrating immune cell profiles, which were able to predict pathological complete response (pCR) to neoadjuvant chemotherapy (cluster B: 58%, versus clusters A and C: 7%). A higher infiltration by CD4 lymphocytes was the main factor explaining the occurrence of pCR, and this association was validated in six public genomic datasets. A higher chemotherapy effect on lymphocytic infiltration, including an inversion of CD4/CD8 ratio, was associated with pCR and with better prognosis. Analysis of the immune infiltrate in post-chemotherapy residual tumor identified a profile (cluster Y), mainly characterized by high CD3 and CD68 infiltration, with a worse disease free survival.",
+            "output": "1",
+            "explanation": "There is no mention about how chemotherapy can cure breast cancer in the input passage. Hence, this question is a bad example."
+        },
+        {
+            "input": "Hidradenitis suppurativa (HS) is a chronic inflammatory disease involving intertriginous skin. Previous epidemiologic studies have been limited by small sample size. We sought to describe the prevalence and comorbidities of HS in a large patient care database. In this retrospective case-control study, we chart-validated all patients within a hospital database who received at least 1 billing code for HS between 1980 and 2013. Verified cases were matched with controls based on age, gender, and race. Prevalences of a priori selected comorbidities were compared between HS and control groups. A total of 2292 patients at Massachusetts General Hospital received at least 1 code for HS. A total of 1776 cases had a validated diagnosis of HS, yielding a prevalence of 0.08%. In unadjusted analysis, all comorbidities were diagnosed significantly more in HS compared with control including (in rank order of likelihood): smoking, arthropathies, dyslipidemia, polycystic ovarian syndrome, psychiatric disorders, obesity, drug dependence, hypertension, diabetes, thyroid disease, alcohol dependence, and lymphoma (all P < .01).",
+            "output": "0",
+            "explanation": "In the line 'We sought to describe the prevalence...' it is evident that the passage has a specific goal in mind. Hence, the output should be 1 and not 0. Therefore, the output is wrong."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task848-9dc007c5998d407b8c93d7a3705ea542",
+            "input": "The modification of the Model for End-Stage Liver Disease (MELD) scoring system (Refit MELD) and the modification of MELD-Na (Refit MELDNa), which optimized the MELD coefficients, were published in 2011. We aimed to validate the superiority of the Refit MELDNa over the Refit MELD for the prediction of 3-month mortality in Korean patients with cirrhosis and ascites.', 'We reviewed the medical records of patients admitted with hepatic cirrhosis and ascites to the Konkuk University Hospital between January 2006 and December 2011. The Refit MELD and Refit MELDNa were compared using the predictive value of the 3-month mortality, as assessed by the Child-Pugh score.', 'In total, 530 patients were enrolled, 87 of whom died within 3 months. Alcohol was the most common etiology of their cirrhosis (n=271, 51.1%), and the most common cause of death was variceal bleeding (n=20, 23%). The areas under the receiver operating curve (AUROCs) for the Child-Pugh, Refit MELD, and Refit MELDNa scores were 0.754, 0.791, and 0.764 respectively; the corresponding values when the analysis was performed only in patients with persistent ascites (n=115) were 0.725, 0.804, and 0.796, respectively. The significant difference found among the Child-Pugh, Refit MELD, and Refit MELDNa scores was between the Child-Pugh score and Refit MELD in patients with persistent ascites (P=0.039).",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "id": "task848-b888e9115d4a417dba32e1a131521fbf",
+            "input": "Although drug-eluting stents (DES) have been widely used for the treatment of coronary artery disease, they potentially increase the risk of late thrombosis. It is, therefore, desirable to establish a strategy to stimulate reendothelialization. Endothelial injury models have been widely used to analyze the mechanisms of coronary restenosis. However, animal models deployed with coronary stents in the blood vessels are necessary to accurately analyze the mechanisms of coronary restenosis and late thrombosis because persistent inflammation occurs around the coronary stents.', 'Coronary stents were implanted into rat abdominal aorta and adipose tissue-derived stem cells (ASC) were administered from the adventitial side. Reendothelialization was then visualized by Evans blue staining, and neointimal formation was analyzed histologically. ASC significantly stimulated reendothelialization and inhibited neointimal formation in bare metal stents (BMS)-implanted aorta. In addition, ASC promoted reendothelialization in DES-implanted aorta; however, the effects were weaker than in BMS-implanted aorta. Among the cytokines that ASC produce, adrenomedullin (AM) significantly stimulated reendothelialization and inhibited neointimal formation in BMS-implanted aorta, when an adenovirus expressing AM was administered from the adventitial side.",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "id": "task848-b40ee3d817a246ec8472eba6eac23973",
+            "input": "Adolescent intermittent alcohol exposure (AIE) has profound effects on neuronal function. We have previously shown that AIE causes aberrant hippocampal structure and function that persists into adulthood. However, the possible contributions of astrocytes and their signaling factors remain largely unexplored. We investigated the acute and enduring effects of AIE on astrocytic reactivity and signaling on synaptic expression in the hippocampus, including the impact of the thrombospondin (TSP) family of astrocyte-secreted synaptogenic factors and their neuronal receptor, alpha2delta-1 (\u03b12\u03b4-1). Our hypothesis is that some of the influences of AIE on neuronal function may be secondary to direct effects on astrocytes.', 'We conducted Western blot analysis on TSPs 1 to 4 and \u03b12\u03b4-1 from whole hippocampal lysates 24 hours after the 4th and 10th doses of AIE, then 24 days after the last dose (in adulthood). We used immunohistochemistry to assess astrocyte reactivity (i.e., morphology) and synaptogenesis (i.e., colocalization of pre- and postsynaptic puncta).', 'Adolescent AIE reduced \u03b12\u03b4-1 expression, and colocalized pre- and postsynaptic puncta after the fourth ethanol (EtOH) dose. By the 10th dose, increased TSP2 levels were accompanied by an increase in colocalized pre- and postsynaptic puncta, while \u03b12\u03b4-1 returned to control levels. Twenty-four days after the last EtOH dose (i.e., adulthood), TSP2, TSP4, and \u03b12\u03b4-1 expression were all elevated. Astrocyte reactivity, indicated by increased astrocytic volume and area, was also observed at that time.",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "id": "task848-af974f829ea241d3bf65e6a14d7cebb7",
+            "input": "To determine whether patients with a rapid rate of joint space narrowing (JSN) in the hip have higher initial bone mineral density (BMD) in the proximal femur and/or lumbar spine than corresponding patients with a slow rate of JSN.', 'Twenty-eight patients undergoing unilateral total hip replacement (THR) for osteoarthritis (OA), but whose contralateral hips were asymptomatic and had minimal or no radiographic OA, were evaluated. The contralateral proximal femur (i.e., non-operated hip) and lumbar spine were scanned by dual energy x-ray absorptiometry at baseline (prior to THR) and at 2 years. The rate of JSN was determined by serial longitudinal quantification of the joint spaces over the 2 year period following THR from conventional radiographs, and the patients were divided into a group with a slow rate of JSN (< or = 0.2 mm/yr, n = 20) and a group with a rapid rate of JSN (> 0.2 mm/yr, n = 8).', \"The baseline BMD z and t scores at the femoral neck, Ward's triangle, and lumbar spine of the patients with subsequent rapid rates of JSN were significantly higher than those of patients with slower rates (p < 0.05). There was no difference between the rapid and slow narrowers at the greater trochanter (p > 0.2). Age, sex, weight, height, body mass index, Kellgren- Lawrence scores, and initial joint space width were not significantly different between the 2 groups.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "id": "task848-e65f21c94e964b9f9f0744feb96840dd",
+            "input": "Prognosis of severe coronary artery disease with no indication of percutaneous coronary intervention or coronary artery bypass grafting remains poor. We have recently demonstrated that shock wave therapy effectively induces neovascularization and improves myocardial ischemia in a porcine model in vivo.', 'With permission from the Ethical Committee of our Institute, we treated nine patients with end-stage coronary artery disease with no indication of percutaneous coronary intervention or coronary artery bypass grafting (55-82 years old, five men and four women) with our cardiac shock wave therapy (200 shots/spot at 0.09 mJ/mm for 20-40 spots, 3 times a week/series). We followed-up the patients at 1, 3, 6, and 12 months after the therapy to examine the amelioration of myocardial ischemia. When needed, shock wave therapy was performed up to three series at 0, and 1, 3 or 6 months.', 'The cardiac shock wave therapy improved symptoms (Canadian Cardiovascular Society functional class score, from 2.7+/-0.2 to 1.8+/-0.2, P<0.01) and reduced nitroglycerin use (from 5.4+/-2.5 to 0.3+/-0.3/week, P<0.05). The treatment also improved myocardial perfusion as assessed by dipyridamole stress thallium scintigraphy (severity score, 25.2+/-7.2% improvement, P<0.05; extent score, 23.3+/-9.0% improvement, P=0.10; washout rate, 20+/-3 to 34+/-3, P<0.05). Myocardial perfusion was improved only in the ischemic area treated with the therapy. These beneficial effects persisted for 12 months. No procedural complications or adverse effects were noted.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "id": "task848-9ed74d60dcd24b458511b422b8bb881f",
+            "input": "Trauma centers often receive transfers from lower-level trauma centers or nontrauma hospitals. The aim of this study was to analyze the incidence and pattern of secondary overtriage to our Level I trauma center.', 'We performed a 2-year retrospective analysis of all trauma patients transferred to our Level I trauma center and discharged within 24 hours of admission. Reason for referral, referring specialty, mode of transport, and intervention details were collected. Outcomes measures were incidence of secondary overtriage as well as requirement of major or minor procedure. Major procedure was defined as surgical intervention in the operating room. Minor procedures were defined as procedures performed in the emergency department.', 'A total of 1,846 patients were transferred to our Level I trauma center, of whom 440 (24%) were discharged within 24 hours of admission. The mean (SD) age was 35 (21) years, 72% were male, and mean (SD) Injury Severity Score (ISS) 4 (4). The most common reasons for referral were extremity fractures (31%), followed by head injury (23%) and soft tissue injuries (13%).Of the 440 patients discharged within 24 hours, 380 (86%) required only observation (268 of 380) or minor procedure (112 of 380). Minor procedures were entirely consisted of fracture management (n = 47, 42%) and wound care (n = 65, 58%). The mean (SD) interfacility transfer distance was 45 (46) miles. Mean (SD) hospital charges per transfer were $12,549 ($5,863).",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "id": "task848-43d881880d4541de8760571f11368e13",
+            "input": "It is unknown whether hypoxia regulates aurora kinase A (AURKA), a serine/threonine kinase, in neuroblastoma to stimulate cell growth or migration. We sought to determine whether AURKA mediates hypoxia-induced regulation of neuroblastoma tumorigenicity.', 'Human neuroblastoma BE(2)-C cells were treated with CoCl2, a chemical hypoxia mimetic, and MLN8237, a pharmalogical inhibitor of AURKA, to assess cell viability, colony formation and transwell migration. Focal adhesion kinase (FAK) expression was analyzed after silencing of AURKA under normoxic vs. hypoxic conditions.', 'Hypoxia up-regulated expression of AURKA mRNA and protein. CoCl2 stimulated cell proliferation and migration, while inhibiting colony formation. MLN8237 reduced colony formation and cell migration. Silencing of AURKA reduced expression of FAK and pFAK under normoxia and hypoxia.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "id": "task848-f7e35ecd062149a589096e28f5c40f71",
+            "input": "Hypertension of the recipient is strongly associated with chronic allograft nephropathy. It is unclear, however, whether hypertension is the cause or the consequence of chronic allograft nephropathy.', 'The present study was performed in the Fisher to Lewis rat kidney transplant model. Transplanted rats (N = eight in each group) received either no treatment or were made hypertensive by administration of deoxycorticosteron acetate (DOCA) and salt. Proteinuria and systolic blood pressure was measured monthly, grafts were harvested at 3 and 6 months for semiquantitative reverse transcription-polymerase chain reaction (RT-PCR) and for immunohistology.', 'Systolic blood pressure was markedly elevated in rats receiving DOCA/salt. Allografts of hypertensive animals contained significantly more cells expressing the proliferating cell nuclear antigen compared to isografts and to allografts from normotensive animals (P < 0.05). Histologic staining and mRNA expression of major histocompatibility complex (MHC) II was markedly increased in allografts of hypertensive animals compared to all other groups (P < 0.05). Expression of mRNA for platelet-derived growth factor-B (PDGF-B), transforming growth factor-beta (TGF-beta) and collagen was higher in allografts than in isografts and was highest in hypertensive animals.",
+            "output": [
+                "0"
+            ]
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

@@ -1,0 +1,120 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "matres"
+    ],
+    "URL": [
+        "https://github.com/CogComp/MATRES"
+    ],
+    "Categories": [
+        "Information Extraction"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You will be given a context and a verb, separated with a newline character. You need to output 'Yes' if the verb implies an opinion, an intention, or a wish. Output 'No' otherwise. A verb refers to an intention only if it refers to an event planned to happen in the future and is not conditional (or part of a condition)."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "News"
+    ],
+    "Positive Examples": [
+        {
+            "input": "It was followed by Denmark, Norway, Germany, France, Greece, Luxembourg, Spain, Britain, the United States, Iceland, Belgium, Italy, Portugal and Turkey. NATO decided at last year's Madrid summit to (invite) the three eastern European countries to start accession talks.  \n Verb: invite",
+            "output": "Yes",
+            "explanation": "They planned to \"invite\" the three eastern European countries, so this verb refers to an intention."
+        },
+        {
+            "input": "In Washington today, the Federal Aviation Administration (released) air traffic control tapes from the night the TWA Flight eight hundred went down.  \n Verb: released",
+            "output": "No",
+            "explanation": "In this sentence, the releasing event happened in the past, and hence it's not an intention."
+        },
+        {
+            "input": "We will act again if we have evidence he is (rebuilding) his weapons of mass destruction capabilities, senior officials say. In a bit of television diplomacy, Iraq\u2019s deputy foreign minister responded from Baghdad in less than one hour.  \n Verb: rebuilding",
+            "output": "No",
+            "explanation": "In this sentence, the verb is part of of a condition. Therefore, it cannot be known for sure if he is already rebuilding weapons but we have no evidence, or if he will be building weapons in the future, and hence it's not an intention."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "The Justice Department wants the appeals court to suspend the temporary injunction issued Thursday and also order Elian's great-uncle, Lazaro Gonzalez, to release the boy. The relatives want the court to let them meet with Elian's father without being (required) to surrender the boy.  \n Verb: required",
+            "output": "Yes",
+            "explanation": "In this sentence, required is not an intention, wish, or opinion, as it is part of a condition."
+        },
+        {
+            "input": "The federal charge also carries a fine of up to $250,000. The newly filed charges will (intensify) the ongoing international manhunt, Tolbert said.  \n Verb: intensify",
+            "output": "No",
+            "explanation": "In this sentence, \"intensify\" is planned to happen in the future, and it is an opinion or intention."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task456-3981229002424afc8c0766e7001c2787",
+            "input": "But Gonzalez, backed by Castro, has demanded his rights as Elian's sole surviving parent and insisted that the child be returned to him. Elian's mother perished along with 10 others when their boat (sank) during the crossing from Cuba to the United States.  \n Verb: sank",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task456-75c9ea35f6f349579415fdbdcf1ad73a",
+            "input": "In addition, a Customs Service videotape from a border crossing point shows the woman's car returning from Mexico, these officials said. Authorities (obtained) a material-witness arrest warrant for Kopp after they said Kopp's car was spotted in Amherst in the weeks before Slepian was killed.  \n Verb: obtained",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task456-3fb163e15f05460fba2da54082001cc9",
+            "input": "The warnings came after Pakistan handed over to Kenyan officials a suspect in the U.S. Embassy bombings, Mohammed Saddiq Odeh, also known as Mohammad Sadiq Howaida and Abdull Bast Awadh. The first batch of evidence from the Nairobi bombing (arrived) over the weekend at the FBI lab at the bureau's Washington headquarters and is being analyzed, FBI officials said Monday.  \n Verb: arrived",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task456-eb3bd5b235bc43c5890fcf69ce303e09",
+            "input": "New York State double-jeopardy laws would make it difficult to prosecute a suspect who had been found not guilty at a federal trial. U.S. Attorney Denise E. O'Donnell declined to discuss what federal charges were being pursued, but she said that in a case like this, potential charges would (be) abortion-related violence, the use of a firearm in an act of violence, crossing state lines to commit a crime, and, if the suspect's act was tied to an organization, violation of the so-called RICO statutes, which prohibit an organized criminal enterprise.  \n Verb: be",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task456-90f201731d7b48cba5a763107f8e1472",
+            "input": "If that's true, the narrowing of his support would make it easier for someone to push him aside from within. Yet, paradoxically, the perception that the U.S. (wants) to destroy Iraq may increase Saddam Hussein's support within the Iraqi military.  \n Verb: wants",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task456-7010062a48e04d2bb2ccf7794e195b4c",
+            "input": "\" Terrorism is inconsistent with our African history, our tradition, our culture and our beliefs, \" he said. \" Americans and Africans (need) to strengthen their cooperation in this universal battle \" against terrorism.  \n Verb: need",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task456-a8b32bee796c42c39673d9591ac730d8",
+            "input": "And I, at least, will be there to see him off.  He said the group would be met on (arriving) in Washington by Craig and Joan Brown Campbell of the National Council of Churches, who traveled with Craig on his lightning trip to Havana on Wednesday.  \n Verb: arriving",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task456-7d079c787a5a4c56ac28a6afbb831352",
+            "input": "NATO warplanes helped end the war in Bosnia almost four years ago and now are poised to intervene in Yugoslavia should peace efforts in the province of Kosovo fail. A decade ago, the military planning of Poland, Hungary and the Czech Republic was (built) around the possibility of a ground assault toward the west.  \n Verb: built",
+            "output": [
+                "No"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

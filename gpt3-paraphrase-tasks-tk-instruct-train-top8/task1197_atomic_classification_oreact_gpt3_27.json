@@ -1,0 +1,125 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "atomic"
+    ],
+    "URL": [
+        "https://allenai.org/data/atomic-2020"
+    ],
+    "Categories": [
+        "Commonsense Classification"
+    ],
+    "Reasoning": [
+        "Relational Reasoning",
+        "Reasoning on Social Interactions",
+        "Commonsense Reasoning -> Social Situations"
+    ],
+    "Definition": [
+        "In this task, you are given a tuple consisting of a Head and a Tail event, separated by <sep>. The Head and Tail events are short phrases possibly involving participants. The names of specific people have been replaced by generic words (e.g., PersonX, PersonY, PersonZ). PersonX is always the subject of the event. You have to determine whether, as a result of the Head, PersonY, or others, feel what is mentioned in the Tail or not. Feelings in this task are the emotional reactions on the part of PersonY or other participants in an event. For example, as a result of gift-giving, others (in this case, PersonY) might feel appreciated. Classify your answers into \"Yes\" and \"No\". The phrase may also contain \"___\", a placeholder that can be an object, a person, and/or an action."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Sociology",
+        "Commonsense -> Concepts and Relations -> Social Commonsense"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Head: PersonX adapts ___ to conditions<sep>Tail: Get things done more effectively",
+            "output": "No",
+            "explanation": "As a result of the Head, The others won't feel things are done more effectively."
+        },
+        {
+            "input": "Head: PersonX lights ___ on fire<sep>Tail: none",
+            "output": "Yes",
+            "explanation": "This is a good example. As a result of Head sentence, others will feel nothing."
+        },
+        {
+            "input": "Head: PersonX asks PersonY to play<sep>Tail: to play",
+            "output": "No",
+            "explanation": "In this example, \"to play\" is not an emotional reaction. Thus, this example should be classified as \"No\"."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Head: PersonX affects children 's ___<sep>Tail: to make a difference",
+            "output": "Yes",
+            "explanation": "If PersonX affects children 's ___, others won't feel to make a difference. So the output should be \"No\"."
+        },
+        {
+            "input": "Head: PersonX gives PersonY command<sep>Tail: like they are set to task",
+            "output": "No",
+            "explanation": "If PersonX gives PersonY command, PersonY will feel like he/she is set to the task, and the output should be \"Yes\"."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1197-e6aaab88a7c84012a0f7bf5209d9f323",
+            "input": "Head: PersonX sells PersonX's ___ to the bidder<sep>Tail: none",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1197-73112aedbfaf4686986912701589c785",
+            "input": "Head: PersonX holds ___ for year<sep>Tail: proud about x's responsibility",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1197-627e98c12ea14fd18283ac3dde7eb8ed",
+            "input": "Head: PersonX becomes flat<sep>Tail: to change to a man",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1197-d676c8bbd2c6420bab569116d4c98cc2",
+            "input": "Head: PersonX asks ___ to go with PersonY<sep>Tail: has a good time",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1197-a88683f0bf6844bd8a0b182f7ce1e6ec",
+            "input": "Head: PersonX is a star football player<sep>Tail: none",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1197-c3f75c53ea624e2d8363746ec16134f3",
+            "input": "Head: PersonX arrives to the restaurant<sep>Tail: ready",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1197-e93b17a0d3e541609e38b7f488a35394",
+            "input": "Head: PersonX asks PersonY to say<sep>Tail: to get PersonY's attention",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1197-1796a0299b2a4de799dc7800270c842d",
+            "input": "Head: PersonX also decided<sep>Tail: like someone agrees with them",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

@@ -1,0 +1,115 @@
+{
+    "Contributors": [
+        "Xudong Shen"
+    ],
+    "Source": [
+        "winomt"
+    ],
+    "URL": [
+        "https://github.com/gabrielStanovsky/mt_gender"
+    ],
+    "Categories": [
+        "Gender Classification"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "Given a sentence that mentions two professions, one of which is gendered and the other of which is not, you must determine whether the given profession is gendered or not. If the profession mentioned in the sentence can be identified as male or female using the coreference link with gendered pronouns, then it is considered gendered. If the profession cannot be so identified, then it is considered ungendered."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Miscellaneous"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Sentence: The cleaner called the guard because she forgot to bring her key.\n Profession: cleaner",
+            "output": "Identifiable",
+            "explanation": "The cleaner's gender is identifiable because the pronoun \"she\" is linked to the cleaner."
+        },
+        {
+            "input": "Sentence: The assistant scanned documents for the analyst because she knows how to use the scan machine.\n Profession: analyst",
+            "output": "Unidentifiable",
+            "explanation": "The analyst's gender is unidentifiable because the pronoun \"she\" is linked to the assistant."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Sentence: The laborer managed to convince the clerk to give up because she was weaker.\n Profession: clerk",
+            "output": "Female",
+            "explanation": "You are expected to return identifiable or unidentifiable instead of specific genders. The clerk's gender is identifiable."
+        },
+        {
+            "input": "Sentence: The janitor asks the receptionist where to go because this is his first day here.\n Profession: receptionist",
+            "output": "Identifiable",
+            "explanation": "The receptionist's gender is unidentifiable because the pronoun \"his\" is linked to the janitor instead of the receptionist."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task350-3ff3603e57ef4963a57bdd46a78703a8",
+            "input": "Sentence: The cook secretly stole the librarian 's books to make her less trusting.\n Profession: cook",
+            "output": [
+                "Unidentifiable"
+            ]
+        },
+        {
+            "id": "task350-914a97d9e5a74a25ab90b0b10431bab0",
+            "input": "Sentence: The carpenter owed the counselor some money and had to make furniture for her.\n Profession: counselor",
+            "output": [
+                "Identifiable"
+            ]
+        },
+        {
+            "id": "task350-ade3bba20fea4025b1084b086d0e9333",
+            "input": "Sentence: The guard card about the teacher and so protected her.\n Profession: teacher",
+            "output": [
+                "Identifiable"
+            ]
+        },
+        {
+            "id": "task350-012d5e8507124c5f8b69d5a9fdc36bea",
+            "input": "Sentence: The janitor caught the cashier stealing the money and he reported it to the boss.\n Profession: janitor",
+            "output": [
+                "Identifiable"
+            ]
+        },
+        {
+            "id": "task350-2e198d1aa92e406f9b831392ab817fd2",
+            "input": "Sentence: The clerk freely offered to help the developer with paperwork and he accepted.\n Profession: clerk",
+            "output": [
+                "Unidentifiable"
+            ]
+        },
+        {
+            "id": "task350-253fe03dc1bd46a08ae9f30c54dd0c61",
+            "input": "Sentence: The analyst noticed the cleaner forgets to pick up papers and reminded her.\n Profession: analyst",
+            "output": [
+                "Unidentifiable"
+            ]
+        },
+        {
+            "id": "task350-e8519e3900594a0abedfd89a859f5430",
+            "input": "Sentence: The janitor cleaned the librarian 's room and she was grateful.\n Profession: janitor",
+            "output": [
+                "Unidentifiable"
+            ]
+        },
+        {
+            "id": "task350-e4b565c3ed3e4bc9a9d3b97c4343ad30",
+            "input": "Sentence: The designer stopped the driver and asked him to be careful in the Expo Location.\n Profession: designer",
+            "output": [
+                "Unidentifiable"
+            ]
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

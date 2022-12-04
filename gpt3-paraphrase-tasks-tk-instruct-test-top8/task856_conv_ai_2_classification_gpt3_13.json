@@ -1,0 +1,117 @@
+{
+    "Contributors": [
+        "Neil Franks"
+    ],
+    "Source": [
+        "conv_ai_2"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/conv_ai_2"
+    ],
+    "Categories": [
+        "Speaker Identification"
+    ],
+    "Reasoning": [
+        "Reasoning on Social Interactions"
+    ],
+    "Definition": [
+        "Read the given message and determine whether it was written by a 'Bot' or by a 'Human'. Bots will have a more disjointed manner of speaking, and will make statements that don't relate to each other, don't make coherent sense, or otherwise appear unnatural. Humans will make statements in a more or less coherent and logical way.Since these messages are supposed to be conversation openers, humans will generally start sensibly with a hello or an introduction. Humans may also ask why the other person is not responding. Bots, however, may act as if they are in the middle of a nonsensical conversation."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue"
+    ],
+    "Positive Examples": [
+        {
+            "input": "hello\n",
+            "output": "Human",
+            "explanation": "This is an example of correct classification because the sender really was a human. To start with a hello is a normal thing for a human to do. Frequently bots don't start with hello, or if they do, they follow it with non-sequiturs."
+        },
+        {
+            "input": "I work as a mechanic, i work as a mechanic\n",
+            "output": "Bot",
+            "explanation": "This is a good example of correct classification because the sender was indeed a bot. You can tell by the odd repetition the sender employs; humans would most probably not start a conversation by repeating themselves awkwardly."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "hello\ni'm a baby delivery nurse.\nhi\ni love disneyland.\n",
+            "output": "Bot",
+            "explanation": "This is an example of incorrect classification. The sender is actually a human. You should tell it's a human by it's attempts to say 'hello' then 'hi' again after the other person doesn't respond. The facts they give about themselves should be interpreted as an honest attempt at introducing themselves, which humans sometimes do when trying to start a conversation about their interests."
+        },
+        {
+            "input": "In High School, even a family holiday can inspire gossip.\n",
+            "output": "Human",
+            "explanation": "This is an example of misclassification because the sender is actually a bot. You can tell by the lack of any hello or even introduction. Instead, the sender sends a nonsense sentence about high school and family, which makes no sense given it's supposed to be the start of a conversation. This is a good indicator that the sender is a bot."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task856-e53aeb988c674f3ab85f2990f429d58a",
+            "input": "SENDER A: So, today was quite hard.\nSENDER A: It's good to be at home. Finally i can rest.\nSENDER A: What have you done all day?\nSENDER A: ConAI, you there ?\nSENDER A: ConvAI ?\nSENDER A: Anyway, seems like you're not in the mood to say anything. I'll be the one talking then.\nSENDER A: Even though i like my job, i don't think i am deserve that less payment. I should look for another job openings i guess\nSENDER A: My friend Kal gave me some opinions. So i'll consider which one is better.\nSENDER A: Where is my children ?  Did you fed them ?\nSENDER A: Oh there you are\nSENDER A: Better take a nap for an hour. Please don't wake me up unless anything important happens.\nSENDER A: Bye\n",
+            "output": [
+                "Human"
+            ]
+        },
+        {
+            "id": "task856-baaa499277be48d9ad674460b7a0e81c",
+            "input": "SENDER A: I work at a restaurant, so i can do it.\n",
+            "output": [
+                "Bot"
+            ]
+        },
+        {
+            "id": "task856-27116c7d6bd34ce588f71d648335d4d6",
+            "input": "SENDER A: /start\n",
+            "output": [
+                "Bot"
+            ]
+        },
+        {
+            "id": "task856-12c8a7d93aa044d28f0c4087586c8ae5",
+            "input": "SENDER A: Hello, how are you doing?\nSENDER A: Let's talk\nSENDER A: Are you sleeping there?\nSENDER A: Hello?\n",
+            "output": [
+                "Human"
+            ]
+        },
+        {
+            "id": "task856-884af2cdf7b747cb9a06b50bcd71ff8a",
+            "input": "SENDER A: Hi\n",
+            "output": [
+                "Human"
+            ]
+        },
+        {
+            "id": "task856-24dee1b4a1f24094a845862120db5da5",
+            "input": "SENDER A: i'm married.\n",
+            "output": [
+                "Bot"
+            ]
+        },
+        {
+            "id": "task856-0f425481ef38482b8ccdf6c067061bf8",
+            "input": "SENDER A: i am a little tired from work\n",
+            "output": [
+                "Bot"
+            ]
+        },
+        {
+            "id": "task856-6417e9bdcd0742b0aedbbd842d50fde6",
+            "input": "SENDER A: Hi\nSENDER A: Talk to me\nSENDER A: What do you do for living?\nSENDER A: Do you like to read?\nSENDER A: Do you like movies?\nSENDER A: Got it\nSENDER A: Bye\n",
+            "output": [
+                "Human"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

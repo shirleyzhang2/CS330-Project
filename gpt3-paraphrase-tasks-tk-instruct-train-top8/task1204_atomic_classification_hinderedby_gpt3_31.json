@@ -1,0 +1,125 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "atomic"
+    ],
+    "URL": [
+        "https://allenai.org/data/atomic-2020"
+    ],
+    "Categories": [
+        "Commonsense Classification"
+    ],
+    "Reasoning": [
+        "Relational Reasoning",
+        "Reasoning on Social Interactions",
+        "Commonsense Reasoning -> Social Situations"
+    ],
+    "Definition": [
+        "You are given two phrases, Head and Tail, separated by <sep>. The Head and Tail events are short phrases involving participants. The names of specific people have been replaced by generic words. PersonX is always the subject of the event. You have to determine whether the Head can be hindered by what is mentioned in the Tail or not. In this task, hindering introduces hindrances that obstruct the natural path to the achievement of a goal. For example, the event PersonX adopts a cat can be obstructed if PersonX is allergic to cats. Classify your answers into \"Yes\" and \"No\". The phrase may also contain \"___\", a placeholder that can be an object, a person, and/or an action."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Sociology",
+        "Commonsense -> Concepts and Relations -> Social Commonsense"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Head: PersonX touches a nerve<sep>Tail: PersonX is too nice",
+            "output": "Yes",
+            "explanation": "This is a good example. The Tail can hinder the Head."
+        },
+        {
+            "input": "Head: PersonX attends school<sep>Tail: To be a student",
+            "output": "No",
+            "explanation": "In this example, The Head can't be hindered by the Tail."
+        },
+        {
+            "input": "Head: PersonX is driving down the street<sep>Tail: PersonX's car is in the shop.",
+            "output": "Yes",
+            "explanation": "If PersonX's car is in the shop, PersonX can't drive down the street. Thus, this example should be classified as \"Yes\"."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Head: PersonX asks if PersonY was okay<sep>Tail: to thank PersonX",
+            "output": "Yes",
+            "explanation": "In this example, The Head can't be hindered by the Tail. So the output should be \"No\"."
+        },
+        {
+            "input": "Head: PersonX clenches PersonY's jaw<sep>Tail: PersonY is out of reach.",
+            "output": "No",
+            "explanation": "If PersonY is out of reach, PersonX can't clench PersonY's jaw, and the output should be \"Yes\"."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1204-455af09f0b9e409486512b4506464ad8",
+            "input": "Head: PersonX asks PersonY to make<sep>Tail: to call PersonY and make a request",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1204-a64e063e59b14ac6a4b3dca88b3aedb8",
+            "input": "Head: PersonX gives PersonY a pep talk<sep>Tail: PersonY walked away",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1204-ce2cf67affb44458bfd544c597a9bf91",
+            "input": "Head: PersonX serves PersonY country<sep>Tail: PersonY won't grant PersonX citizenship",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1204-2994b4dcdcd8463e864471f8fd1f559d",
+            "input": "Head: PersonX seems interested<sep>Tail: PersonX's friend just ridiculed him.",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1204-70f59587183a4f4fa3fdaf4e8440afea",
+            "input": "Head: PersonX applies for a loan<sep>Tail: can buy a house",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1204-7e8d28cd23ac4a0b9a67ce825d20a869",
+            "input": "Head: PersonX asks PersonY to go<sep>Tail: PersonY feels bad for how they acted.",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1204-f28ba9a0ed39432fb386d24da70f3916",
+            "input": "Head: PersonX adjusts spacing as well as minimizing<sep>Tail: make sure they are correct",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1204-58de59b5b80f4111abfdf7b5b66fa78e",
+            "input": "Head: PersonX adjusts spacing as well as minimizing<sep>Tail: ALLIGNMENT TO AREA",
+            "output": [
+                "No"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

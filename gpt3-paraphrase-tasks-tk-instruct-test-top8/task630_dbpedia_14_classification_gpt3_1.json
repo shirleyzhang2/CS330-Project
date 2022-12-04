@@ -1,0 +1,116 @@
+{
+    "Contributors": [
+        "Divya Reddy Katpally"
+    ],
+    "Source": [
+        "dbpedia_14"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/dbpedia_14"
+    ],
+    "Categories": [
+        "Text Matching"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "In this task, you're given a text which is the body of a document and a title which is the title of the document. The title might have some text in parentheses, for example: \"HMS Mallow (K81)\", or be slightly different from what is present in the text. If they still refer to the same entity, then it is a correct title. Indicate your answer as \"Yes\" if the title is correct, otherwise indicate your answer as \"No\"."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Wikipedia"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Text: The Mansfield Building Society is a UK building society which has its headquarters in Mansfield Nottinghamshire. It is a member of the Building Societies Association. \nTitle: Mansfield Building Society",
+            "output": "Yes",
+            "explanation": "The title \"Mansfield Building Society\" is present in the text and it is the main entity that is referred in the text. Hence, it is the title of the document."
+        },
+        {
+            "input": "Text:  The third and current HMS Argyll is a Type 23 'Duke' Class frigate. She is currently the oldest serving Type 23 frigate in the Royal Navy. Like all of her class she is named for a British dukedom in this case that of Argyll. \nTitle: HMS Argyll (F231)",
+            "output": "Yes",
+            "explanation": "\"HMS Argyll\" is present in the text and it is the main entity that is referred in the text. Here, the text in parentheses \"F31\" is not present in the document and it can be ignored. Hence, the output is correct. "
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Text: The Mansfield Building Society is a UK building society which has its headquarters in Mansfield Nottinghamshire. It is a member of the Building Societies Association. \nTitle: Mansfield Building Society",
+            "output": "No",
+            "explanation": "The title \"Mansfield Building Society\" is present in the text and it is the main entity that is referred in the text. Hence, the output is incorrect."
+        },
+        {
+            "input": "Text:  The third and current HMS Argyll is a Type 23 'Duke' Class frigate. She is currently the oldest serving Type 23 frigate in the Royal Navy. Like all of her class she is named for a British dukedom in this case that of Argyll. \nTitle: HMS Argyll (F231)",
+            "output": "HMS Argyll",
+            "explanation": "The output should be either \"Yes\" or \"No\". Hence, it is negative example."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task630-e917d5b889a04ca6bba09bcec5904cf5",
+            "input": "Text:  Piz Terza (also known as Urtirolaspitz) is a mountain in the Sesvenna Range of the Alps located on the border between Italy and Switzerland.The closest locality is M\u00fcstair. \nTitle: Shilo Inns",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task630-61370e864e2342eda15a3c8bead9cb54",
+            "input": "Text:  Northgate Centre is a shopping mall located in the northern part of Edmonton Alberta. It currently contains more than 70 stores and services. Its anchor tenants are Safeway Future Shop and Walmart as well as a major outlet of the Service Canada government office. \nTitle: Northgate Centre",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task630-4e9a4e219b1b4ad89635c03d4a9f364f",
+            "input": "Text:  Longcanoe Lake is a narrow lake in Thunder Bay District Ontario Canada about 15 kilometres (9 mi) north-east of the community of Rossport and 11 kilometres (7 mi) north of Highway 17. It is oriented in a north-south direction and is about 1100 metres (3609 ft) long and 250 metres (820 ft) at its widest at its north end. The lake is part of the Whitesand River system and flows out at its south end via this river into Hornblende Lake and eventually via the Hewitson River into Lake Superior. \nTitle: Samuel Chase House",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task630-57e9d8759aba4b0a8a13629b373dc7b2",
+            "input": "Text:  William Mason is a 4-4-0 steam locomotive currently in operation at the Baltimore and Ohio Railroad Museum in Baltimore Maryland USA. It was built for the Baltimore and Ohio Railroad carrying that railroad's number 25. The locomotive is named in honor of its builder William Mason who built around 754 steam locomotives at his Mason Machine Works firm in Taunton Massachusetts from 1853 until his death in 1883. \nTitle: William Mason (locomotive)",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task630-02bdfc2754c140b08a202cf8c6a9ebb2",
+            "input": "Text:  OMERS officially the Ontario Municipal Employees Retirement System is a pension fund created by statute in 1962 to handle the retirement benefits of local government employees in the Canadian province of Ontario. It has become one of the largest institutional investors in Canada. \nTitle: OMERS",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task630-aabd5270fe464134a19e323eba5d82f1",
+            "input": "Text:  Borboletta is the sixth studio album by Santana. It is one of his jazz-funk-fusion oriented albums along with Caravanserai Welcome Love Devotion Surrender with John McLaughlin and Illuminations with Alice Coltrane Jack DeJohnette and Jules Broussard. The guitarist leaves a lot of room to percussion saxophone and keyboards to set moods (Spring Manifestations) as well as lengthy solos by himself (Promise of a Fisherman) and vocals (Give and Take a funky guitar-led song). \nTitle: Bonnie Tyler",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task630-03e98749516a4ed68682c22086216351",
+            "input": "Text:  Jos\u00e9 Luis Cantero Rada (August 20 1937 \u2013 June 19 2007) known professionally as El Fary was a Spanish singer and actor.The youngest of six children Jos\u00e9 Luis Cantero was born in Madrid close to a famous bullring. As a boy he would play truant from school preferring to spend time partying with Gypsies imitating his idol the traditional copla singer Rafael Farina. It was from Farina that Cantero adopted his stage name of El Fary. \nTitle: Queen of Peace High School (New Jersey)",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task630-a22a67d73cbf4d2ea1e2a16c61aa14a1",
+            "input": "Text:  Barbara J Zitwer is an American film producer playwright and literary agent.She started her career as a still photographer and location co-ordinator on Larry Cohen's 1984 horror movie Special Effects. In 1985 she worked as a location scout on The Stuff and was the associate producer of 1987's It's Alive III: Island of the Alive. She produced the 1988 Nicolas Cage film Vampire's Kiss. and was the associate producer of the 1990 movie The Ambulance. \nTitle: Barbara Zitwer",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY-SA",
+        "GNU Free Documentation 2.0"
+    ]
+}

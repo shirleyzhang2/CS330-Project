@@ -1,0 +1,127 @@
+{
+    "Contributors": [
+        "Amrit Bhaskar"
+    ],
+    "Source": [
+        "propara"
+    ],
+    "URL": [
+        "https://arxiv.org/abs/1805.06975"
+    ],
+    "Categories": [
+        "Information Extraction"
+    ],
+    "Reasoning": [
+        "Deductive Reasoning"
+    ],
+    "Definition": [
+        "In this task, you are given a paragraph, an event from that paragraph, and an entity affected by that event. Your task is to classify the state of the entity after the event into one of three classes: 1) not exist, 2) unknown location, or 3) known location. \"Not exist\" means the entity no longer exists in that state. \"Unknown location\" means the entity exists in that state but its location is unknown. \"Known location\" means the entity exists and its location is known."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Natural Science"
+    ],
+    "Positive Examples": [
+        {
+            "input": " \"process paragraph : Magma rises from deep in the earth. The magma goes into volcanos. The volcanos pressure the magma upwards. The pressure causes the magma to push through the surface of the volcano. The lava cools. The lava forms new rock. New magma is pressured to the surface of the volcano. The volcano bursts through the rock the formed after the last eruption\" , \"event : Magma rises from deep in the earth\" , \"entity : magma\" ",
+            "output": "known location",
+            "explanation": "The process paragraph explains in steps about - the cause for volcano eruption. The event is a part of the process paragraph given. The entity lies both in process paragraph and the event. So, this is a good example."
+        },
+        {
+            "input": " \"process paragraph : Water from the ocean washes onto beaches in waves. The waves contain sediment from the ocean. The water and particles in it hit rocks and sand on the beach. The wind and current sometimes push the water and particles harder. Tiny parts of the rocks on the shore come off the larger rocks. The waves pick up sand and small rocks from the beach. The waves go back out into the ocean. The waves carry the new particles with them. Rocks and the beach look a little different. \", \"event : The waves go back out into the ocean. \", \"entity : waves\" ",
+            "output": " known location ",
+            "explanation": "The process paragraph explains in steps about - the sequence of events during erosion by the ocean. The event is a part of the process paragraph given. The entity lies both in process paragraph and the event. So, this is a good example."
+        },
+        {
+            "input": " \"process paragraph : Water from oceans, lakes, swamps, rivers, and plants turns into water vapor. Water vapor condenses into millions of tiny droplets that form clouds. Clouds lose these droplets through rain or snow, also caused precipitation. Precipitation is either absorbed into the ground or runs off into rivers. Water that was absorbed into the ground is taken up by plants. Plants lose water from their surfaces as vapor. The vapor goes back into the atmosphere. Water that runs off into rivers flows into ponds, lakes, or oceans. The water evaporates back into the atmosphere. \", \"event : Water from oceans, lakes, swamps, rivers, and plants turns into water vapor. \", \"entity : water\" ",
+            "output": " not exist ",
+            "explanation": "The process paragraph explains in steps about - the sequence of events during water cycle. The event is a part of the process paragraph given. The entity lies both in process paragraph and the event. So, this is a good example."
+        },
+        {
+            "input": " \"process paragraph : Sediment settles in a place due to gravity. The sediment breaks down into small particles. Wind or water picks up the sediment. The sediment travels along the same route as the wind or water. The sediment is deposited at new locations by the wind or water. The sediment is picked up again by new wind or water. The sediment travels further. The sediment is deposited again in a new place. \", \"event : The sediment is picked up again by new wind or water. \", \"entity : sediment; small particles\" ",
+            "output": " unknown location ",
+            "explanation": "The process paragraph explains in steps about - the sequence of events during sediment transportation across the earth. The event is a part of the process paragraph given. The entity lies both in process paragraph and the event. So, this is a good example."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": " \"process paragraph : Water from oceans, lakes, swamps, rivers, and plants turns into water vapor. Water vapor condenses into millions of tiny droplets that form clouds. Clouds lose these droplets through rain or snow, also caused precipitation. Precipitation is either absorbed into the ground or runs off into rivers. Water that was absorbed into the ground is taken up by plants. Plants lose water from their surfaces as vapor. The vapor goes back into the atmosphere. Water that runs off into rivers flows into ponds, lakes, or oceans. The water evaporates back into the atmosphere. \", \"event : Water from oceans, lakes, swamps, rivers, and plants turns into water vapor. \", \"entity : water\" ",
+            "output": " known location ",
+            "explanation": "This is a bad example because the output class is incorrect. Water in this event has turned into water vapor and is longer in the form of water. The existence is necessary to find the location. "
+        },
+        {
+            "input": " \"process paragraph : Magma rises to the surface during a volcano. The magma undergoes changes in temperature. The magma undergoes changes in pressure. The magma cools. The magma solidifies. The magma crystallizes. Igneous rock is formed. \", \"event : Magma rises to the surface during a volcano. \", \"entity : magma\" ",
+            "output": " unknown location ",
+            "explanation": "This is a bad example because the output class is incorrect. Magma in this event has risen to the surface and is considered a known location. Only classify to unknown location when the place of entity is not determined. "
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1568-bd10567dae714e71b74527c525e906ad",
+            "input": " \"process paragraph : : Trash is put into a household trashbag. The trashbags are thrown into a large outdoor trashcan. The trashcan is emptied by a large trash truck. The trash truck travels to the landfill. Unloads all the trash the truck has collected. \", \"event : The trashbags are thrown into a large outdoor trashcan.\", \"entity : trash\" ",
+            "output": [
+                " known location "
+            ]
+        },
+        {
+            "id": "task1568-e45cc81e0ac940ae8918878a503c222d",
+            "input": " \"process paragraph : : Baby rabbits are born alive. Rabbits are (only occasionally) nursed by their mothers. Many of the babies do not survive. Larger and stronger rabbit do manage to survive. Rabbits quickly become able to have babies of their own. The rabbit lifecycle continues. The amount of rabbits stays reasonable because of predators and low survival rates for their young. \", \"event : Rabbits are (only occasionally) nursed by their mothers.\", \"entity : rabbits\" ",
+            "output": [
+                " unknown location "
+            ]
+        },
+        {
+            "id": "task1568-2ba394f0999147d6a6c0a866d8fe97cf",
+            "input": " \"process paragraph : : Magma is formed when rock melts inside the Earth's crust. Magma rises. Collects inside magma chambers underneath a volcano. Pressure builds in the magma chambers as they fill. Gain energy for eruption. Some of the energy is converted into seismic activity (earthquakes). If the magma building in the volcano is thick and sticky it will trap gases. Results in an explosive eruption when the pressure becomes too intense. If the magma is thin and runs. The magma results in a low-pressure, slow-moving flow of magma instead of a violent eruption. \", \"event : Magma rises.\", \"entity : volcano\" ",
+            "output": [
+                " unknown location "
+            ]
+        },
+        {
+            "id": "task1568-312438dfd6d14acf95dd838f683e00fb",
+            "input": " \"process paragraph : : Water is introduced to carbon dioxide. The water becomes acidic. The water seeps down to a mineral based material. The acidity of the water carves and shapes the rock. And may form geological phenomenon. \", \"event : The water becomes acidic.\", \"entity : water\" ",
+            "output": [
+                " unknown location "
+            ]
+        },
+        {
+            "id": "task1568-f2a3e2ed64a741a89b51b8f40114a027",
+            "input": " \"process paragraph : : The butterfly starts as an egg. The egg hatches to form a larva, also called a caterpillar. The carterpillar molts (loses its skin) many times as it grows. The caterpillar then forms itself into a pupa, or chrysalis. The caterpillar in the chrysalis begins change, a process called mmetaphorphosis. The caterpillar completes its metamorphosis and has turned into a butterfly. The adult butterfly emerges out of the chrysalis and flys away!. \", \"event : The egg hatches to form a larva, also called a caterpillar.\", \"entity : egg\" ",
+            "output": [
+                " not exist "
+            ]
+        },
+        {
+            "id": "task1568-a937554e8985478780d99fc7ea073606",
+            "input": " \"process paragraph : : A flowering plant has stamen and pistils. An insect ot bird lands on the plant. Some of the pollen sticks to it. The insect or bird travels to another plant of the same species. The pollen is tranferred to the new plant. \", \"event : An insect ot bird lands on the plant.\", \"entity : stamen and pistils\" ",
+            "output": [
+                " known location "
+            ]
+        },
+        {
+            "id": "task1568-893e4bf9e81848949eba6aabe663648a",
+            "input": " \"process paragraph : : Air is drawn in through the mouth. The air goes down the esophagus. The air moves into the lungs. The carbon dioxide is removed. The remaining oxygen enters the body. The remaining carbon dioxide is expelled through the mouth. \", \"event : The air goes down the esophagus.\", \"entity : air\" ",
+            "output": [
+                " known location "
+            ]
+        },
+        {
+            "id": "task1568-ef816034e8bf405ab8b41dd19936f14d",
+            "input": " \"process paragraph : : Food. Water enter the body. Bloodstream. Food and water enter the pancreas. The pancreas breaks down carbs. Helps digest other foods and liquids. \", \"event : Water enter the body.\", \"entity : carbs\" ",
+            "output": [
+                " known location "
+            ]
+        }
+    ],
+    "Instance License": [
+        "Apache 2.0"
+    ]
+}

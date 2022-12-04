@@ -1,0 +1,123 @@
+{
+    "Contributors": [
+        "Pegah Alipoormolabashi"
+    ],
+    "Source": [
+        "wsc; enhanced_wsc"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/winograd_wsc; https://github.com/mhany90/perturbed-wsc"
+    ],
+    "Categories": [
+        "Text Matching"
+    ],
+    "Reasoning": [
+        "Commonsense Reasoning"
+    ],
+    "Definition": [
+        "You will be given two sentences. One sentence is created by paraphrasing the original sentence, with changes on one or more aspects. Your task is to decide what is the difference between the two sentences. The possible types of changes are explained below: Tense: The verbs in the sentence are changed in tense. Number: Plural nouns, verbs and pronouns are changed into single ones or the other way around. Voice: If the verbs are in active voice, they're changed to passive or the other way around. Adverb: The paraphrase has one adverb or more than the original sentence. Gender: The paraphrase differs from the original sentence in the gender of the names and pronouns. Synonym: Some words or phrases of the original sentence are replaced with synonym words or phrases. Changes in the names of people are also considered a synonym change. Classify your answers into Tense, Number, Voice, Adverb, Gender, and Synonym."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue",
+        "Narrative"
+    ],
+    "Positive Examples": [
+        {
+            "input": "original sentence: Lily spoke to Donna , breaking her silence . paraphrase: Lily is speaking to Donna , breaking her silence .",
+            "output": "Tense",
+            "explanation": "The verbs in this example are changed from past tense to present tense."
+        },
+        {
+            "input": "original sentence: I'm sure that my map will show this building ; it is very good . paraphrase: I'm sure that my maps will show these buildings ; they are very good .",
+            "output": "Number",
+            "explanation": "In this example, map and building and their pronouns has been changed. So, the output should be Number."
+        },
+        {
+            "input": "original sentence: Jim signaled the barman and gestured toward his bathroom key . paraphrase: Jim dreamily signaled the barman and vaguely gestured toward his bathroom key .",
+            "output": "Adverb",
+            "explanation": "In this example the adverbs \"vaguely\" and \"dreamily\" are added to the original sentence."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "original sentence: The dog chased the cat , which ran up a tree . It waited at the bottom . paraphrase: The dog is chasing the cat , which is running up a tree . It is waiting at the bottom .",
+            "output": "Voice",
+            "explanation": "The change in the original sentence is to tense, as the past tense verbs are changed to present tense ones. \"Voice\" is not a correct answer here."
+        },
+        {
+            "input": "original sentence: John was doing research in the library when he heard a man humming and whistling . He was very annoyed . paraphrase: John and Steve were doing research in the library when they heard men humming and whistling . They were very annoyed .",
+            "output": "Number is changed.",
+            "explanation": "You should only output the title of the change, and nothing more."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task276-e05314752d6f4f61b56c5f4b4972de7f",
+            "input": "original sentence: Tom said \"Check\" to Ralph as he took his bishop . paraphrase: Linda said \"Check\" to Nina as she took her bishop .",
+            "output": [
+                "Gender"
+            ]
+        },
+        {
+            "id": "task276-22d9c6e1cda5488296dec2f657bed98e",
+            "input": "original sentence: Joe paid the detective after he received the final report on the case . paraphrase: Anne paid the detective after she received the final report on the case .",
+            "output": [
+                "Gender"
+            ]
+        },
+        {
+            "id": "task276-63b6f5ef214442dd9472ae5ce7304fc2",
+            "input": "original sentence: I was trying to open the lock with the key , but someone had filled the keyhole with chewing gum , and I couldn't get it out . paraphrase: I am trying to open the lock with the key , but someone had filled the keyhole with chewing gum , and I can't get it out .",
+            "output": [
+                "Tense"
+            ]
+        },
+        {
+            "id": "task276-6aed151426fd401ebf366534fc035d7c",
+            "input": "original sentence: The delivery truck zoomed by the school bus because it was going so slow . paraphrase: The delivery trucks zoomed by the school buses because they were going so slow .",
+            "output": [
+                "Number"
+            ]
+        },
+        {
+            "id": "task276-7f5fb76e80374bc0a7a206606d1d6fdf",
+            "input": "original sentence: Fred is the only man still alive who remembers my great-grandfather . He is a remarkable man . paraphrase: Fred and Julian are the only men still alive who remember my great-grandfathers . They are remarkable men .",
+            "output": [
+                "Number"
+            ]
+        },
+        {
+            "id": "task276-f1facd1407544b91aa308a3f737db44c",
+            "input": "original sentence: Jim yelled at Kevin because he was so upset . paraphrase: Kevin was yelled at by Jim because he was so upset .",
+            "output": [
+                "Voice"
+            ]
+        },
+        {
+            "id": "task276-79eb02595dff4bad91c80e7eda26ea4c",
+            "input": "original sentence: My meeting started at 4:00 and I needed to catch the train at 4:30 , so there wasn't much time . Luckily , it was delayed , so it worked out . paraphrase: My meeting supposedly started at 4:00 and I desperately needed to catch the train at 4:30 , so there wasn't much time . Luckily , it was delayed , so it worked out .",
+            "output": [
+                "Adverb"
+            ]
+        },
+        {
+            "id": "task276-b451483ba3854328bd44b912230d56b6",
+            "input": "original sentence: The painting in Mark's living room shows an oak tree . it is to the right of the bookcase . paraphrase: The painting in Mark's living room supposedly shows an oak tree . it is to the right of the bookcase .",
+            "output": [
+                "Adverb"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

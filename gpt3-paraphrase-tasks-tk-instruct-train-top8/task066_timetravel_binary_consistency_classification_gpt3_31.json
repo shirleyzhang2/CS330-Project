@@ -1,0 +1,118 @@
+{
+    "Contributors": [
+        "Neeraj Varshney"
+    ],
+    "Source": [
+        "timetravel"
+    ],
+    "URL": [
+        "https://github.com/qkaren/Counterfactual-StoryRW"
+    ],
+    "Categories": [
+        "Coherence Classification"
+    ],
+    "Reasoning": [
+        "Temporal Reasoning",
+        "Commonsense Reasoning"
+    ],
+    "Definition": [
+        "In this task, you are given a short story consisting of exactly 5 sentences, with the second sentence missing. You are given a candidate sentence for the second sentence, and you need to identify if the given sentence connects the first sentence with the rest of the story. Indicate your answer by \"Yes\" if it connects, otherwise \"No\". Do not generate anything else apart from \"Yes\" or \"No\". The given sentence is incorrect if it changes the subsequent storyline, so that at least one of the three subsequent sentences form a consistent story."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Commonsense -> Stories"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Sentence 1: The cashier was counting the dollar bills at her desk. \n Sentence 3: Everyone panicked and started to scream. \n  Sentence 4: The men threatened the people to remain quiet. \n Sentence 5: The cashier handed them the cash so they would go away.  \n Given Sentence 2: Two men rushed into the store and held their guns up.",
+            "output": "Yes",
+            "explanation": "People panic when somebody holds their guns up. Sentence 2 correctly connects Sentence 1 with rest of the story. So, the answer is 'Yes'."
+        },
+        {
+            "input": "Sentence 1: The cashier was counting the dollar bills at her desk. \n Sentence 3: Everyone panicked and started to scream. \n  Sentence 4: The men threatened the people to remain quiet. \n Sentence 5: The cashier handed them the cash so they would go away.  \n Given Sentence 2: Two dogs rushed into the store.",
+            "output": "No",
+            "explanation": "The entity 'two dogs' doesn't connect with the rest of the story. Note that with the given sentence, sentence 4: \" The men threatened ...\" is not consistent. So, the answer is 'No'."
+        },
+        {
+            "input": "Sentence 1: The cashier was counting the dollar bills at her desk. \n Sentence 3: Everyone panicked and started to scream. \n  Sentence 4: The men threatened the people to remain quiet. \n Sentence 5: The cashier handed them the cash so they would go away.  \n Given Sentence 2: Two men rushed into the store and started asking for help since their friend was bleeding.",
+            "output": "No",
+            "explanation": "With the given sentence, sentence 5: 'cashier handed them the cash' is no longer consistent. So, 'No' is the correct answer."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Sentence 1: The cashier was counting the dollar bills at her desk. \n Sentence 3: Everyone panicked and started to scream. \n  Sentence 4: The men threatened the people to remain quiet. \n Sentence 5: The cashier handed them the cash so they would go away.  \n Given Sentence 2: Two men rushed into the store and started yelling.",
+            "output": "Given Sentence doesn't connect with the story.",
+            "explanation": "The answer can only be Yes or No. This is a bad answer."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task066-844f564b11644abb9873602fda82c8bf",
+            "input": "Sentence 1: Gabe was staying in an apartment. \n Sentence 3: Gabe's lease was coming up for renewal \n Sentence 4:  The landlord didn't want to let Gabe switch apartments \n Sentence 5:  Gabe didn't renew his lease with at the apartment building \n Given Sentence 2: She would take them for free.",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task066-191742467e6e45d1b85d711dfe06eac8",
+            "input": "Sentence 1: I wanted to do a different thing than the usual. \n Sentence 3: I stopped at a blockbuster video store \n Sentence 4:  I went inside and rented a movie \n Sentence 5:  I brought the movie home and watched the whole thing \n Given Sentence 2: SHe went to SHoprite.",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task066-34bf5d56bfca4ac3af1bda31a447eba5",
+            "input": "Sentence 1: Max was standing in the bank. \n Sentence 3: Suddenly, he dropped it \n Sentence 4:  It crashed to the floor \n Sentence 5:  When Max picked it up, he saw that it was broken \n Given Sentence 2: Today, the class went outside to play baseball.",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task066-24e6293f44e642e3967a6543cce19492",
+            "input": "Sentence 1: I do mTurk every day. \n Sentence 3: Today my wife sent me an article about mTurking \n Sentence 4:  I read it and was very amused, as the article was realistic \n Sentence 5:  Despite the grind, I liked making a few bucks \n Given Sentence 2: My family has been quite amused by this.",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task066-c5804a9a194a4e9ba833156a1358ca63",
+            "input": "Sentence 1: One day Sloane and her friends went to the beach. \n Sentence 3: The crab tried to attack her \n Sentence 4:  She ran away \n Sentence 5:  Everyone laughed \n Given Sentence 2: We took some canoes.",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task066-5f8584ac1d054643ac607d58b387a85f",
+            "input": "Sentence 1: My dad try showing me the constellations. \n Sentence 3: When my dad pointed them out I was even more confused \n Sentence 4:  I didn't see a big dipper or anything \n Sentence 5:  I just see random stars \n Given Sentence 2: I had no idea where they were located.",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task066-33fcc818027249e9ab8116971bcccf05",
+            "input": "Sentence 1: Tara was working out in the gym. \n Sentence 3: Tara hadn't taken a break \n Sentence 4:  She wasn't drinking enough water \n Sentence 5:  Tara passed out in the gym \n Given Sentence 2: She couldn't get the TV to work!",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task066-8c43de7e228f453d90c573228fa83b97",
+            "input": "Sentence 1: Dan has worn the same pair of boots for almost 20 Years. \n Sentence 3: Finally his friends convince him to buy a new pair \n Sentence 4:  Dan buys a new pair of boots that looks the same as his old ones \n Sentence 5:  He hopes that his new boots also last 20 Years \n Given Sentence 2: The boots are now completely worn out.",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

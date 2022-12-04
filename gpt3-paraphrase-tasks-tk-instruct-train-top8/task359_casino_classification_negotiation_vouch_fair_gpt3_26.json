@@ -1,0 +1,115 @@
+{
+    "Contributors": [
+        "Kushal Chawla"
+    ],
+    "Source": [
+        "casino"
+    ],
+    "URL": [
+        "https://aclanthology.org/2021.naacl-main.254.pdf"
+    ],
+    "Categories": [
+        "Negotiation Strategy Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You will receive an utterance and recent dialogue context containing past 3 utterances. Output 'Yes' if the utterance contains the vouch-fair strategy, otherwise output 'No'. Vouch-fair is a selfish negotiation strategy which can be explicit or implied. It is used to call out fairness for personal benefit, either when acknowledging a fair deal or when the opponent offers a deal that benefits them."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Context: 'Yeah, I'm going to the desert so I'm hoping to have enough water. I'm good on food and I hunt for a lot of it anyways.' 'I've never been a good hunter. I wish I had those abilities.' 'I would part with all the food if I could get all the firewood.'\nUtterance: 'That seems fair. How about water. How would that be split? I'm very concerned.'",
+            "output": "Yes",
+            "explanation": "This is correct since the participant points out that the proposed deal seems fair."
+        },
+        {
+            "input": "Context: 'I really need that extra food for me and my bother. we have one to spare' 'so what is the whole deal here? ' 'you get 3 firewood I get 3 waters and now food I will give you 1 if that is ok\ud83d\ude42'\nUtterance: 'and I have to give you more food or not?'",
+            "output": "No",
+            "explanation": "Correct. The participant does not call out the fairness of the deal in any way."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Context: 'Heck yes! I am excited. How about you?' 'I can't wait \ud83d\ude42 Let's talk about these supplies. I've got hungry mouths to feed, Can I take the food and you can have half the firewood and all the water?' 'Hmm, I need food too. I am willing to split. I will give you 2 food since you claimed it first. Can I have 2 waters then?'\nUtterance: 'That's fair, but I have wiggle room on the water, how about I take two food, two firewood and you take 3 water, 1 food, 1 firewood?'",
+            "output": "No",
+            "explanation": "The participant explicitly points out that the proposal by the opponent is fair so this is wrong. The correct answer would be 'Yes'."
+        },
+        {
+            "input": "Context: 'You can take two firewood an i can get one. I really don't need much. of that. are you okay with that?' 'I am okay with that \ud83d\ude42' 'okay an for as the water two for me an 2 for you right? are you sure?'\nUtterance: 'Yes, as long as I can get two of the food. '",
+            "output": "Yes",
+            "explanation": "This is wrong since the utterance does not refer to the evaluation of the deal. The correct answer is No."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task359-fc294020cb0841919a7e66bf3f993670",
+            "input": "Context: 'It took a while to load but good.' 'Let's talk about how we can split the camping supplies' 'Ok I think we should split evenly'\nUtterance: 'yes we should come to a fair deal, what are your priority items?'",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task359-6a2d4d3bc2004701b24daaa55a4cb306",
+            "input": "Context: \nUtterance: 'Ireall would like the water as I forgot to bring it and would not be able to survive without it'",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task359-caa4407f7a4d4b58a70aedef5e1b8ce6",
+            "input": "Context: 'hello!' 'Hi how are you today? '\nUtterance: 'am fine and you?'",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task359-efcebb5a56104854a890f5c5e3145771",
+            "input": "Context: 'I am working hard around the camp and getting hungry!' 'You came here to work? I\u2019ve been taking it easy. ' 'LOL, I mean setting up the tent and clearing the area for a campfire. I'll take a break now.'\nUtterance: 'Sounds good.  I suggest you make a fire and relax. '",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task359-18dc433ef1164f558ce13fe2eeb327e9",
+            "input": "Context: 'Hello' 'Hi can I ask what camping supplies you most need?'\nUtterance: 'I would like the 3 food packages because my sister forgot to pack any food items for the trip. You can have all the water and firewood. '",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task359-09af75361bd744918e520765ba244b59",
+            "input": "Context: 'I can't give out all the water. I need to be hydrated as well. ' 'You already have all the basics, though, so you won't lack sufficient water to be hydrated. I have a serious medical condition that requires that I have access to additional water. ' 'The maximum bundle I can give is all packages of food + 1 package of water'\nUtterance: 'Sorry, that won't work for me. I've already said that I have a medical condition that requires additional water. You do not need that much water just to be hydrated -- you already have basic water. I can give you all of the firewood, but I need all of the water. '",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task359-059ecd883717498f87b0094c57959404",
+            "input": "Context: 'I'm doing well. I'm very excited about our camping trip!' 'I am too! I have a rather large family and we are looking forward to getting out for some time away!' 'How nice. I am bringing my daughter and her girl scout troop. I am the co leader.'\nUtterance: 'Oh that'",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task359-e76d28938bca42eea4e5f76868d0fc54",
+            "input": "Context: 'then you can get 2 food, 1 water and 2 firewoods ' 'After talking it over the boys I think with can go with 2 water 1 food and 2 firewood\ud83d\ude42' 'sounds good want to submit?'\nUtterance: 'I want to make sure that we have everything we need. Are you sure that deal is okay for you and your camp?\ud83d\ude2e'",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

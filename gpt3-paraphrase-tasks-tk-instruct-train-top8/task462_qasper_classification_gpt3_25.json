@@ -1,0 +1,120 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "qasper"
+    ],
+    "URL": [
+        "https://allenai.org/project/qasper/home"
+    ],
+    "Categories": [
+        "Question Understanding"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You will be given a context from an academic paper and a question based on that context. Your task is to classify the questions into \"Extractive\", \"Abstractive\", or \"Yes-no\" questions. Extractive questions can be answered by combining extracts taken from the context into a summary. Abstractive questions require you to paraphrase the context using new sentences. Yes-no questions are questions whose expected answer is one of two choices, typically yes or no."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Scientific Research Papers"
+    ],
+    "Positive Examples": [
+        {
+            "input": "We build a dataset of Twitter accounts based on two lists annotated in previous works. For the non-factual accounts, we rely on a list of 180 Twitter accounts from BIBREF1. On the other hand, for the factual accounts, we use a list with another 32 Twitter accounts from BIBREF19 that are considered trustworthy by independent third parties. \n Question: How did they obtain the dataset?",
+            "output": "Extractive",
+            "explanation": "The answer to this question has been explicitly mentioned in the context, so the question is extractive."
+        },
+        {
+            "input": "We evaluate our pointer-generator performance using BLEU score. The baseline language model is trained using RNNLM BIBREF23 . Perplexity measure is used in the evaluation.\n\n \n Question: Did they use other evaluation metrics?",
+            "output": "Yes-no",
+            "explanation": "This is a good example, and the given question is a yes-no question."
+        },
+        {
+            "input": "As in the example above, we pre-process documents by removing all numbers and interjections. \n Question: what processing was done on the speeches before being parsed?",
+            "output": "Abstractive",
+            "explanation": "Answering this question needs paraphrasing the context, so this question is abstractive."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "For the English version, we performed both a thorough manual analysis and automatic evaluation across three commonly used TS datasets from two different domains  For the English version, we performed both a thorough manual analysis and automatic evaluation across three commonly used TS datasets from two different domains  The evaluation of the German version is in progress. \n Question: What are the corpora used for the task?",
+            "output": "Yes-no",
+            "explanation": "This question is extractive, and it's not a yes-no question."
+        },
+        {
+            "input": "For Turkish, as the first dataset, we utilised the movie reviews which are collected from a popular website. The number of reviews in this movie corpus is 20,244 and the average number of words in reviews is 39. Each of these reviews has a star-rating score which is indicative of sentiment. These polarity scores are between the values 0.5 and 5, at intervals of 0.5. We consider a review to be negative it the score is equal to or lower than 2.5. On the other hand, if it is equal to or higher than 4, it is assumed to be positive. We have randomly selected 7,020 negative and 7,020 positive reviews and processed only them. \n Question: What details are given about the movie domain dataset?",
+            "output": "Extractive",
+            "explanation": "This question is Abstractive because we need to paraphrase the context to get to the answer."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task462-9140cb82d089404da344881c9cf58cae",
+            "input": " The unlabeled set of development data was used in the training of both the UBM and the i-vector extractor. \n Question: Do they single out a validation set from the fixed SRE training set?",
+            "output": [
+                "Yes-no"
+            ]
+        },
+        {
+            "id": "task462-cb949162927149868aefebe9ea5c4016",
+            "input": "The result on original WikiQA indicates that all three transfer learning methods not only do not improve the results but also hurt the F1-score. These are because other datasets could not add new information to the original dataset or they apparently add some redundant information which are dissimilar to the target dataset. \n Question: Do transferring hurt the performance is the corpora are not related?",
+            "output": [
+                "Yes-no"
+            ]
+        },
+        {
+            "id": "task462-e315a29b152f492c93bbe4bc5faedc0e",
+            "input": "We have created a dataset of discharge summaries and nursing notes, all in the English language, with a focus on frequently readmitted patients, labeled with 15 clinical patient phenotypes believed to be associated with risk of recurrent Intensive Care Unit (ICU) readmission per our domain experts (co-authors LAC, PAT, DAG) as well as the literature. BIBREF10 BIBREF11 BIBREF12 \n Question: How many different phenotypes are present in the dataset?",
+            "output": [
+                "Extractive"
+            ]
+        },
+        {
+            "id": "task462-5292089326a647f0bf07f698c06adad3",
+            "input": "Of the 144 schemas in the collection at WinogradSchemas there are 33 that can plausibly be translated this way. \n Question: Did they collect their own datasets?",
+            "output": [
+                "Yes-no"
+            ]
+        },
+        {
+            "id": "task462-23daa65b033c4138aaf31637e628dce5",
+            "input": " We defined a sequence labeling task to extract custom entities from user input. We assumed seven (7) possible entities (see Table TABREF43) to be recognized by the model: topic, subtopic, examination mode and level, question number, intent, as well as the entity other for remaining words in the utterance.   We defined a classification problem to predict the system's next action according to the given user input. We assumed 13 custom actions (see Table TABREF42) that we considered being our labels. In the conversational dataset, each input was automatically labeled by the rule-based system with the corresponding next action and the dialogue-id. Thus, no additional post-labeling was required.  \n Question: How does the IPA label data after interacting with users?",
+            "output": [
+                "Abstractive"
+            ]
+        },
+        {
+            "id": "task462-9c958f92848a4a919e34f4caa4c3ea95",
+            "input": "In this section, we propose new simple disentanglement models that perform better than prior methods, and re-examine prior work. \n Question: Did they experiment with the corpus?",
+            "output": [
+                "Yes-no"
+            ]
+        },
+        {
+            "id": "task462-3451406570a64a0387e4572c9db1f293",
+            "input": "Input of the model is the concatenation of word embedding and another embedding indicating whether this word is predicate: $ \\mathbf {x}_t = [\\mathbf {W}_{\\text{emb}}(w_t), \\mathbf {W}_{\\text{mask}}(w_t = v)]. $ \n Question: What's the input representation of OpenIE tuples into the model?",
+            "output": [
+                "Abstractive"
+            ]
+        },
+        {
+            "id": "task462-d64746b7851c4429a49f245be95ba39c",
+            "input": "We identified some limitations during the process, which we describe in this section.\n\nWhen deciding publisher partisanship, the number of people from whom we computed the score was small. For example, de Stentor is estimated to reach 275K readers each day on its official website. Deciding the audience leaning from 55 samples was subject to sampling bias. Besides, the scores differ very little between publishers. None of the publishers had an absolute score higher than 1, meaning that even the most partisan publisher was only slightly partisan. Deciding which publishers we consider as partisan and which not is thus not very reliable.\n\nThe article-level annotation task was not as well-defined as on a crowdsourcing platform. We included the questions as part of an existing survey and didn't want to create much burden to the annotators. Therefore, we did not provide long descriptive text that explained how a person should annotate an article. We thus run under the risk of annotator bias. This is one of the reasons for a low inter-rater agreement. \n Question: What limitations are mentioned?",
+            "output": [
+                "Abstractive"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

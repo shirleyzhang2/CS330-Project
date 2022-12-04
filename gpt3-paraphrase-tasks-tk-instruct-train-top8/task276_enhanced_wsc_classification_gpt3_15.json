@@ -1,0 +1,123 @@
+{
+    "Contributors": [
+        "Pegah Alipoormolabashi"
+    ],
+    "Source": [
+        "wsc; enhanced_wsc"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/winograd_wsc; https://github.com/mhany90/perturbed-wsc"
+    ],
+    "Categories": [
+        "Text Matching"
+    ],
+    "Reasoning": [
+        "Commonsense Reasoning"
+    ],
+    "Definition": [
+        "You will be given two sentences. One sentence is created by paraphrasing the other sentence, with changes in one or more aspects. Your task is to decide what the difference is between the two sentences. The types of change are explained below: Tense: The verbs in the sentence are changed in tense. Number: Plural nouns, verbs and pronouns are changed into single ones or the other way around. Voice: If the verbs are in active voice, they're changed to passive or the other way around. Adverb: The paraphrase has one adverb or more than the original sentence. Gender: The paraphrase differs from the original sentence in the gender of the names and pronouns. Synonym: Some words or phrases of the original sentence are replaced with synonym words or phrases. Changes in the names of people are also considered a synonym change. Classify your answers into Tense, Number, Voice, Adverb, Gender, and Synonym."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue",
+        "Narrative"
+    ],
+    "Positive Examples": [
+        {
+            "input": "original sentence: Lily spoke to Donna , breaking her silence . paraphrase: Lily is speaking to Donna , breaking her silence .",
+            "output": "Tense",
+            "explanation": "The verbs in this example are changed from past tense to present tense."
+        },
+        {
+            "input": "original sentence: I'm sure that my map will show this building ; it is very good . paraphrase: I'm sure that my maps will show these buildings ; they are very good .",
+            "output": "Number",
+            "explanation": "In this example, map and building and their pronouns has been changed. So, the output should be Number."
+        },
+        {
+            "input": "original sentence: Jim signaled the barman and gestured toward his bathroom key . paraphrase: Jim dreamily signaled the barman and vaguely gestured toward his bathroom key .",
+            "output": "Adverb",
+            "explanation": "In this example the adverbs \"vaguely\" and \"dreamily\" are added to the original sentence."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "original sentence: The dog chased the cat , which ran up a tree . It waited at the bottom . paraphrase: The dog is chasing the cat , which is running up a tree . It is waiting at the bottom .",
+            "output": "Voice",
+            "explanation": "The change in the original sentence is to tense, as the past tense verbs are changed to present tense ones. \"Voice\" is not a correct answer here."
+        },
+        {
+            "input": "original sentence: John was doing research in the library when he heard a man humming and whistling . He was very annoyed . paraphrase: John and Steve were doing research in the library when they heard men humming and whistling . They were very annoyed .",
+            "output": "Number is changed.",
+            "explanation": "You should only output the title of the change, and nothing more."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task276-9d5bef9e9f924422bf5c12f9c257d295",
+            "input": "original sentence: Jane knocked on Susan's door , but there was no answer . She was out . paraphrase: Jane is knocking on Susan's door , but there is no answer . She is out .",
+            "output": [
+                "Tense"
+            ]
+        },
+        {
+            "id": "task276-73602c8d72104ab6863c0a3bb3994688",
+            "input": "original sentence: Sam and Amy are passionately in love , but Amy's parents are unhappy about it , because they are snobs . paraphrase: Sam and Amy were passionately in love , but Amy's parents were unhappy about it , because they were snobs .",
+            "output": [
+                "Tense"
+            ]
+        },
+        {
+            "id": "task276-4c9c1ecfa0aa49109aea1586c185f11a",
+            "input": "original sentence: As Ollie carried Tommy up the long winding steps , his legs ached . paraphrase: As Ollie cautiously carried Tommy up the long winding steps , his legs sort of ached .",
+            "output": [
+                "Adverb"
+            ]
+        },
+        {
+            "id": "task276-8d1d565557e94d72b26375e7adcffac8",
+            "input": "original sentence: Anne gave birth to a daughter last month . She is a very charming baby . paraphrase: Anne is giving birth to a daughter next month . She is a very charming baby .",
+            "output": [
+                "Tense"
+            ]
+        },
+        {
+            "id": "task276-1ffba8c9347c418da372fb51aa4137eb",
+            "input": "original sentence: Jim signaled the barman and gestured toward his bathroom key . paraphrase: Jim is signaling the barman and gesturing toward his bathroom key .",
+            "output": [
+                "Tense"
+            ]
+        },
+        {
+            "id": "task276-5871a40d2f874a61b75de36a17214051",
+            "input": "original sentence: Although they ran at about the same speed , Sue beat Sally because she had such a bad start . paraphrase: although they ran at about the same speed , fanny beat dana because she had such a bad start .",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "id": "task276-2cd03eb226bb4348b6653b2667354123",
+            "input": "original sentence: Beth didn't get angry with Sally , who had cut her off , because she stopped and counted to ten . paraphrase: Jack didn't get angry with Peter , who had cut him off , because he stopped and counted to ten .",
+            "output": [
+                "Gender"
+            ]
+        },
+        {
+            "id": "task276-1cad9c13512c40e689c24dacf0847561",
+            "input": "original sentence: Carol believed that Rebecca suspected that she had stolen the watch . paraphrase: cathy believed that evette suspected that she had stolen the watch .",
+            "output": [
+                "Synonym"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

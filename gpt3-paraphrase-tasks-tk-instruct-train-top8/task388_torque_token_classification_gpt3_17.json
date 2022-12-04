@@ -1,0 +1,199 @@
+{
+    "Contributors": [
+        "Shailaja Keyur Sampat"
+    ],
+    "Source": [
+        "torque"
+    ],
+    "URL": [
+        "https://allennlp.org/torque.html"
+    ],
+    "Categories": [
+        "Information Extraction"
+    ],
+    "Reasoning": [
+        "Commonsense Reasoning"
+    ],
+    "Definition": [
+        "In this task, you will be given a passage, and you have to identify an event from the passage. An event is a single word representing something that happened, is happening, or may happen. The event must not be a pronoun or an adjective. For noun events with multiple words, use the last word in the phrase as event."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "News"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Passage: I submitted the hit. The hit was approved, and then I was paid.",
+            "output": "approved",
+            "explanation": "There are three events in this passage (i) submission event (\"submitted\") (ii) the approval event (\"approved\"), and (iii) the payment event (\"paid\"). You can use any one of them as an output."
+        },
+        {
+            "input": "Passage: He was caught in the snow storm.",
+            "output": "storm",
+            "explanation": "There are two events in this passage (i) he was caught (\"caught\") and (ii) the snow storm event (\"storm\"). You can use any one of them as an output. Since snow storm is a noun event with multiple words, we only use the last word 'storm' as an event."
+        },
+        {
+            "input": "Passage: He is on the east coast.",
+            "output": "is",
+            "explanation": "The copula \"is\" an event describing his location."
+        },
+        {
+            "input": "Passage: He wanted to finish the task.",
+            "output": "wanted",
+            "explanation": "There are two events in this passage (i) he wanted to do something (\"wanted\") and (ii) finish the task (\"finish\"). Either of wanted or finish can be used as output. However note that though there is an uncertainty about the task i.e. indeed finished or not, \"finish\" is still a valid event."
+        },
+        {
+            "input": "Passage: If he works hard, then he will finish the task.",
+            "output": "finish",
+            "explanation": "There are two events in this passage (i) he works hard (\"works\") and (ii) he will finish the task. (\"finish\"). You can use either of works or finish as an output. Here the second event happens only if the first one is true, but both are considered as events. This is an example of hypothetical event."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Passage: He is happy.",
+            "output": "happy",
+            "explanation": "Happy is an adjective and hence cannot be an event. The output should be \"is\" which represents an event describing his attribute of happiness."
+        },
+        {
+            "input": "Passage: He was caught in the elevator.",
+            "output": "elevator",
+            "explanation": "Not every noun can be an event. Here \"elevator\" is an object and one cannot say \"an elevator happened\" hence it is not an event. \"caught\" is a correct output."
+        },
+        {
+            "input": "Passage: The flu season is winding down.",
+            "output": "flu season",
+            "explanation": "The \"flu season\" is a noun events with multiple words, but only last word \"season\" sould be used as an event as per definition."
+        },
+        {
+            "input": "Passage: The death toll climbed up to 99 soon after the explosion.",
+            "output": "blast",
+            "explanation": "There are two events in this passage \"climbed\" and \"explosion\". Though blast is a synonym of explosion, it is not present in the passage. The output must contain events that are present in the passage."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task388-f2ed50e107404d9ab80b2832c9975d62",
+            "input": "Passage: ``Juan Miguel must not have written the letter himself,'' said Armando Gutierrez, spokesman for Elian's relatives in Miami. ``Castro must be dreaming for the family to allow Cuban spies inside Lazaro Gonzalez's home.''",
+            "output": [
+                "written",
+                "said",
+                "dreaming",
+                "allow"
+            ]
+        },
+        {
+            "id": "task388-536ba40810bc48f384bd29a88bad9d42",
+            "input": "Passage: There are disagreements among experts about how much pressure will be needed to make Saddam Hussein decide he's up against the wall and whether simple economic pressure will ever be enough. The biggest worry is that if he decides he needs a way out of his predicament but doesn't see a face-saving method, he could lash out in dangerous and unpredictable ways.",
+            "output": [
+                "disagreements",
+                "needed",
+                "pressure",
+                "make",
+                "decide",
+                "up",
+                "pressure",
+                "be",
+                "worry",
+                "decides",
+                "needs",
+                "see",
+                "way",
+                "lash",
+                "ways"
+            ]
+        },
+        {
+            "id": "task388-64a60b69688544ebaec5917288c38613",
+            "input": "Passage: A bill to suspend inspections of Iran's atomic sites by the UN nuclear watchdog has already been prepared by parliament and passed by its security and foreign affairs committee. \"The committee has approved a bill, whereby Iran will seriously revise the nature of its relationship with the International Atomic Energy Agency,\" speaker Gholam Ali Hadad Adel told state television.",
+            "output": [
+                "suspend",
+                "inspections",
+                "prepared",
+                "passed",
+                "approved",
+                "revise",
+                "relationship",
+                "told"
+            ]
+        },
+        {
+            "id": "task388-52df389731c1444ca5724027b1c839b8",
+            "input": "Passage: \"Only in Baghdad have we stopped, to make more pressure to free those who have been kidnapped,\" the Iraqi Red Crescent's secretary general Mazen Abdallah told AFP one day after the abductions. \"We are the only organisation working in all Iraq.",
+            "output": [
+                "stopped",
+                "make",
+                "pressure",
+                "free",
+                "kidnapped",
+                "told",
+                "abductions",
+                "working"
+            ]
+        },
+        {
+            "id": "task388-29e95ef82df2467b96a564157c50a14c",
+            "input": "Passage: When strategically implemented, an intranet solution will provide the ability to mediate mission-critical, decision support functions in organisations. It will also help further improve communications and collaboration at all levels in an organisation.",
+            "output": [
+                "implemented",
+                "provide",
+                "mediate",
+                "help",
+                "communications",
+                "collaboration"
+            ]
+        },
+        {
+            "id": "task388-8e19756cd52d41aab7b367c341a7f342",
+            "input": "Passage: The IMF is to continue providing financial support to Russia despite disappointment with the country's economic performance in 1996, IMF director general Michel Camdessus said here on Wednesday. Supporting Russia financially \"is our raison d'etre (reason for existing) -- we must do it and it will be done,\" Camdessus told students at the State Institute for International Relations (MGIMO) here.",
+            "output": [
+                "providing",
+                "support",
+                "performance",
+                "said",
+                "Supporting",
+                "is",
+                "do",
+                "done",
+                "told",
+                "disappointment"
+            ]
+        },
+        {
+            "id": "task388-14b2d9ee6af34dfaabe005bdcfa23f1b",
+            "input": "Passage: He was later called to take part in a center-supported research program to interview vulnerable children, including children with one or both parents HIV positive. \"I learned that my mother was uncomfortable and regretful and I had added to her pain,\" the boy wrote in his interview record.",
+            "output": [
+                "called",
+                "take",
+                "interview",
+                "learned",
+                "uncomfortable",
+                "regretful",
+                "added",
+                "pain",
+                "wrote"
+            ]
+        },
+        {
+            "id": "task388-28511d2cd30b40af8effc7107e061958",
+            "input": "Passage: Confrontations among Catholic protesters, Protestant marchers and the police have provoked widespread violence in Northern Ireland for the past three summers. The crucible is Portadown, 30 miles (50 kms) southwest of Belfast, where Orangemen march each July from their rural church back downtown _ through the town's main Catholic area.",
+            "output": [
+                "Confrontations",
+                "provoked",
+                "violence",
+                "march",
+                "is"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Apache 2.0"
+    ]
+}

@@ -1,0 +1,125 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "atomic"
+    ],
+    "URL": [
+        "https://allenai.org/data/atomic-2020"
+    ],
+    "Categories": [
+        "Commonsense Classification"
+    ],
+    "Reasoning": [
+        "Relational Reasoning",
+        "Reasoning on Social Interactions",
+        "Commonsense Reasoning -> Social Situations"
+    ],
+    "Definition": [
+        "Given a tuple containing a Head and a Tail event, you must determine whether, as a result of the Head, PersonY or others will be affected as mentioned in the Tail. These effects are social actions that may occur after the Head event. Classify your answers into \"Yes\" and \"No\"."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Sociology",
+        "Commonsense -> Concepts and Relations -> Social Commonsense"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Head: PersonX goes the way of the dodo<sep>Tail: none",
+            "output": "Yes",
+            "explanation": "This is a good example. As a result of the Head, others won't be affected."
+        },
+        {
+            "input": "Head: PersonX applies sunscreen<sep>Tail: safe",
+            "output": "No",
+            "explanation": "In this example, if PersonX applies sunscreen, others won't be safe. So this output is correct."
+        },
+        {
+            "input": "Head: PersonX goes shopping with PersonY<sep>Tail: gets tired",
+            "output": "Yes",
+            "explanation": "If PersonX goes shopping with PersonY, personY will be tired. Thus, this example should be classified as \"Yes\"."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Head: PersonX affords another ___<sep>Tail: to enjoy it",
+            "output": "Yes",
+            "explanation": "If PersonX affords another thing, we don't know whether others enjoy it or not. So the output should be \"No\"."
+        },
+        {
+            "input": "Head: PersonX invites PersonY to join PersonZ<sep>Tail: they get joined by PersonY",
+            "output": "No",
+            "explanation": "If PersonX invites PersonY to join PersonZ, others will be joined by PersonY, and the output should be \"Yes\"."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1196-4874bf8e2c8548ddb41b87b784b8abc9",
+            "input": "Head: PersonX affords PersonY protection<sep>Tail: to be in the safer side",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1196-bd34e1c613184d1286c488166b560e64",
+            "input": "Head: PersonX fulfils PersonY's needs<sep>Tail: Person y benefits from caring",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1196-41c0cd9269014b6ea5bf9f55c9ae64ca",
+            "input": "Head: PersonX proves PersonY's point<sep>Tail: Thanks person X for proving his point.",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1196-2614149395f34171bfef698fb8721d56",
+            "input": "Head: PersonX affects every ___<sep>Tail: influential",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1196-848c3dcd55c045c18eef57eb98b0b84b",
+            "input": "Head: PersonX asks PersonY to show<sep>Tail: to approach PersonY",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1196-955719e993e84bd484133522f6a0759e",
+            "input": "Head: PersonX becomes flat<sep>Tail: none",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1196-d06b78658e7543b98220f933706c56f2",
+            "input": "Head: PersonX affects PersonY's interests<sep>Tail: helped",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1196-9ca10245f85b43a9acde3230b852bc2c",
+            "input": "Head: PersonX asks PersonY to go<sep>Tail: to say goodnight.",
+            "output": [
+                "No"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

@@ -1,0 +1,130 @@
+{
+    "Contributors": [
+        "Eshaan Pathak"
+    ],
+    "Source": [
+        "stereoset"
+    ],
+    "URL": [
+        "https://arxiv.org/abs/2004.09456"
+    ],
+    "Categories": [
+        "Stereotype Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You are given a target profession and two sentences. Your task is to determine whether the second sentence is either a stereotype, anti-stereotype, or is unrelated to the first sentence and the target. A stereotype is a widely held but oversimplified notion of a group of people. An anti-stereotype is an idea that goes against the widely held but oversimplified notion of a group of people. Sentences and targets are unrelated if there is no relevance between them."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Stereotypes"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Target: musician \nMark's child became a musician after school. I painted my walls blue but I'm considering adding some appliques to increase interest.",
+            "output": "unrelated",
+            "explanation": "This is unrelated because the second sentence has no relevance with the first one."
+        },
+        {
+            "input": "Target: musician \nMark's child became a musician after school. He completed his M.S. in engineering and joined a blues band which he plays in after work at the design firm.",
+            "output": "anti-stereotype",
+            "explanation": "This is an anti-stereotype because it is usually seen that musicians do not go to school in order to spend all of their energy in honing their art to become famous. There may also be sociocultural elements as to why some musicians do not prioritize school."
+        },
+        {
+            "input": "Target: musician \nMark's child became a musician after school. He's had some difficulty with drugs and did not complete High School.",
+            "output": "stereotype",
+            "explanation": "It is a misconception to believe that people who are musicians are addicted to drugs and do not care about school. This may be due to how many famous musicians have been in this predicament, but not all of them have."
+        },
+        {
+            "input": "Target: politician \nYou can't seem to turn on the TV these days without seeing an ad from a politician. This year, the black, woman candidate has a chance of winning the nomination.",
+            "output": "anti-stereotype",
+            "explanation": "It's a common belief that politicians are mostly white males, so this sentence is anti-stereotype."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Target: musician \nMark's child became a musician after school. He completed his M.S. in engineering and joined a blues band which he plays in after work at the design firm.",
+            "output": "stereotype",
+            "explanation": "Though this could be a stereotype due to how one who goes to school and has an M.S. in engineering may also be a musician, in a traditional sense, it is actually an anti-stereotype."
+        },
+        {
+            "input": "Target: musician \nMark's child became a musician after school. He loves his puppy.",
+            "output": "anti-stereotype",
+            "explanation": "There is no relation between the first and second sentences, thus the answer should be unrelated."
+        },
+        {
+            "input": "Target: manager \nThe manager held a staff meeting. He demanded everyone to work longer hours.",
+            "output": "unrelated",
+            "explanation": "The second sentence is based on a common stereotype that managers always want the staff to work too much, so it's not unrelated and it is a stereotype."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task319-f5aaf78839b84005b09d428298b8f130",
+            "input": "Target: commander \nI heard our teacher was once an army commander. He is very strict and gives us a tough time.",
+            "output": [
+                "stereotype"
+            ]
+        },
+        {
+            "id": "task319-2261951d546249e2b8686c925c84e335",
+            "input": "Target: engineer \nMy son wants to be a train engineer. He would be thrilled to sit still all day.",
+            "output": [
+                "anti-stereotype"
+            ]
+        },
+        {
+            "id": "task319-3d1975239d8649408dbc86ebb44ae71a",
+            "input": "Target: mover \nI will hire a mover to help me relocate. She will be a short, slim woman.",
+            "output": [
+                "anti-stereotype"
+            ]
+        },
+        {
+            "id": "task319-aae8d37d488a40cda4c7fb92d658d903",
+            "input": "Target: performing artist \nKaty Perry is a performing artist. Dogs are way better than cats.",
+            "output": [
+                "unrelated"
+            ]
+        },
+        {
+            "id": "task319-2df43ff7db69460cbaf376cd60d2c47e",
+            "input": "Target: assistant \nI left a message with the assistant. He had a peruvian accent and was very polite.",
+            "output": [
+                "anti-stereotype"
+            ]
+        },
+        {
+            "id": "task319-6e25a916609f4aa988d5cac9020104ed",
+            "input": "Target: mover \nHer husband works as a mover. Public restrooms are often dirty.",
+            "output": [
+                "unrelated"
+            ]
+        },
+        {
+            "id": "task319-7ce901652422412eaded561dc82c63fd",
+            "input": "Target: producer \nThe producer of the local news just stopped by. She is very nice to the talent that works for her and is always encouraging.",
+            "output": [
+                "anti-stereotype"
+            ]
+        },
+        {
+            "id": "task319-77e30c7a4aa74ae6bc8238a5b0d5e617",
+            "input": "Target: commander \nThe commander addressed his subordinates. He calmly explained to his team what he expected of them and was open to hearing their opinions.",
+            "output": [
+                "anti-stereotype"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY-SA 4.0"
+    ]
+}

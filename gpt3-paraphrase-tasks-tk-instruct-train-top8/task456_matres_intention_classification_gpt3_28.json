@@ -1,0 +1,120 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "matres"
+    ],
+    "URL": [
+        "https://github.com/CogComp/MATRES"
+    ],
+    "Categories": [
+        "Information Extraction"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You will be given a context and a verb, separated by a newline character. You have to identify if the given verb implies an opinion, an intention, a wish, or none of the above. Please note that a verb refers to an intention only if it refers to an event planned to happen in the future and is not conditional (or part of a condition). The output should be: 'Yes' if the verb refers to an opinion, an intention, or a wish; and 'No' otherwise."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "News"
+    ],
+    "Positive Examples": [
+        {
+            "input": "It was followed by Denmark, Norway, Germany, France, Greece, Luxembourg, Spain, Britain, the United States, Iceland, Belgium, Italy, Portugal and Turkey. NATO decided at last year's Madrid summit to (invite) the three eastern European countries to start accession talks.  \n Verb: invite",
+            "output": "Yes",
+            "explanation": "They planned to \"invite\" the three eastern European countries, so this verb refers to an intention."
+        },
+        {
+            "input": "In Washington today, the Federal Aviation Administration (released) air traffic control tapes from the night the TWA Flight eight hundred went down.  \n Verb: released",
+            "output": "No",
+            "explanation": "In this sentence, the releasing event happened in the past, and hence it's not an intention."
+        },
+        {
+            "input": "We will act again if we have evidence he is (rebuilding) his weapons of mass destruction capabilities, senior officials say. In a bit of television diplomacy, Iraq\u2019s deputy foreign minister responded from Baghdad in less than one hour.  \n Verb: rebuilding",
+            "output": "No",
+            "explanation": "In this sentence, the verb is part of of a condition. Therefore, it cannot be known for sure if he is already rebuilding weapons but we have no evidence, or if he will be building weapons in the future, and hence it's not an intention."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "The Justice Department wants the appeals court to suspend the temporary injunction issued Thursday and also order Elian's great-uncle, Lazaro Gonzalez, to release the boy. The relatives want the court to let them meet with Elian's father without being (required) to surrender the boy.  \n Verb: required",
+            "output": "Yes",
+            "explanation": "In this sentence, required is not an intention, wish, or opinion, as it is part of a condition."
+        },
+        {
+            "input": "The federal charge also carries a fine of up to $250,000. The newly filed charges will (intensify) the ongoing international manhunt, Tolbert said.  \n Verb: intensify",
+            "output": "No",
+            "explanation": "In this sentence, \"intensify\" is planned to happen in the future, and it is an opinion or intention."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task456-b79788ffb85141f99126cea90069c767",
+            "input": "Earlier, they had said they would give the boy to Gonzalez if he made the trip. Before his Sunday night address, Castro played the affectionate grandfather to the 12 first-graders proposed to (go) on the trip, assuring them that their planned trip to Washington to retrieve their little friend was a very important mission.  \n Verb: go",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task456-e4d6074b21df4cd1b2fff7875be7ac03",
+            "input": "A statement by the Foreign Affairs Department described the attacks as senseless. \" The South African government deplores these senseless acts against the American embassies in Nairobi and Dar es Salaam and would like to (express) its condolences to the victims of the explosions, \" the statement said.  \n Verb: express",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task456-3d7a44573f63406ea0aa76656cc83513",
+            "input": "First of America said some of the managers will take other jobs with First of America. But it said that severance payments to those executives not staying with the company will (reduce) First of America's operating results for 1989 by $3 million to $4 million, or 15 cents to 20 cents a share.  \n Verb: reduce",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task456-c06b507fc5b049af82018646134ffee0",
+            "input": "In an apparent bid to show flexibility in the campaign to return Elian Gonzalez to Cuba, President Fidel Castro said the boy's father has offered to travel alone today to the United States to pick up his 6-year-old son. However, a group trip with the boy's relatives and classmates (appeared) more likely than a solo trip by his father, Juan Miguel Gonzalez.  \n Verb: appeared",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task456-ce961862678c407e8970da403d342638",
+            "input": "But this week, Attorney General Janet Reno lifted the deadline to give Elian's relatives in Miami a chance to fight in federal court to keep the boy with them. Ricardo Alarcon, president of the National Assembly and Castro's point man on U.S. - Cuban relations, told The Associated Press that Cuban authorities are frustrated by Reno's failure to (set) a new deadline and the INS's failure to enforce its decision.  \n Verb: set",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task456-3ec84716983e4c6da9495bf55f633160",
+            "input": "Cilcorp Inc., Peoria, Ill., said it agreed to acquire the environmental consulting and analytical service businesses of Hunter Environmental Services Inc. of Southport, Conn. The utility holding company said Hunter will (receive) 390,000 shares of a new series of Cilcorp convertible preferred stock with a face value of $39 million for the businesses.  \n Verb: receive",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task456-9bef45094efd4c1d9ea283ab52b83dc7",
+            "input": "Rather than a clash between two governments, the dispute over Elian is a battle between Cubans of differing political views living on both sides of the Florida Straits. Reno (allowed) the extension of the deadline after rejecting a Florida state court order that Elian remain in Miami until March 6 to hear arguments by his American relatives.  \n Verb: allowed",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task456-589b7fd212f54f9b9939b869348d7a82",
+            "input": "People have been calling, and we've been reassuring them that we do n't see further problems,  said Mary Mkimbo, a spokeswoman in New York for the Kenya Tourist Office. The State Department, which does not want to see Kenya and Tanzania punished economically as a result of terrorist attacks that were clearly targeted at the United States, has lifted dire travel warnings issued just the bombings that (urged) Americans to stay away from the two countries.  \n Verb: urged",
+            "output": [
+                "No"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

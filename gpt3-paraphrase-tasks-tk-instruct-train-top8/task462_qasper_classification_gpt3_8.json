@@ -1,0 +1,120 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "qasper"
+    ],
+    "URL": [
+        "https://allenai.org/project/qasper/home"
+    ],
+    "Categories": [
+        "Question Understanding"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "In this task, you will be presented with a context from an academic paper and a question based on the context. You will need to classify the questions into one of three categories: \"Extractive\", \"Abstractive\", or \"Yes-no\". Extractive questions can be answered by concatenating extracts taken from the context into a summary. Answering abstractive questions requires paraphrasing the context using novel sentences. Yes-no questions are questions whose expected answer is one of two choices, typically either yes or no."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Scientific Research Papers"
+    ],
+    "Positive Examples": [
+        {
+            "input": "We build a dataset of Twitter accounts based on two lists annotated in previous works. For the non-factual accounts, we rely on a list of 180 Twitter accounts from BIBREF1. On the other hand, for the factual accounts, we use a list with another 32 Twitter accounts from BIBREF19 that are considered trustworthy by independent third parties. \n Question: How did they obtain the dataset?",
+            "output": "Extractive",
+            "explanation": "The answer to this question has been explicitly mentioned in the context, so the question is extractive."
+        },
+        {
+            "input": "We evaluate our pointer-generator performance using BLEU score. The baseline language model is trained using RNNLM BIBREF23 . Perplexity measure is used in the evaluation.\n\n \n Question: Did they use other evaluation metrics?",
+            "output": "Yes-no",
+            "explanation": "This is a good example, and the given question is a yes-no question."
+        },
+        {
+            "input": "As in the example above, we pre-process documents by removing all numbers and interjections. \n Question: what processing was done on the speeches before being parsed?",
+            "output": "Abstractive",
+            "explanation": "Answering this question needs paraphrasing the context, so this question is abstractive."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "For the English version, we performed both a thorough manual analysis and automatic evaluation across three commonly used TS datasets from two different domains  For the English version, we performed both a thorough manual analysis and automatic evaluation across three commonly used TS datasets from two different domains  The evaluation of the German version is in progress. \n Question: What are the corpora used for the task?",
+            "output": "Yes-no",
+            "explanation": "This question is extractive, and it's not a yes-no question."
+        },
+        {
+            "input": "For Turkish, as the first dataset, we utilised the movie reviews which are collected from a popular website. The number of reviews in this movie corpus is 20,244 and the average number of words in reviews is 39. Each of these reviews has a star-rating score which is indicative of sentiment. These polarity scores are between the values 0.5 and 5, at intervals of 0.5. We consider a review to be negative it the score is equal to or lower than 2.5. On the other hand, if it is equal to or higher than 4, it is assumed to be positive. We have randomly selected 7,020 negative and 7,020 positive reviews and processed only them. \n Question: What details are given about the movie domain dataset?",
+            "output": "Extractive",
+            "explanation": "This question is Abstractive because we need to paraphrase the context to get to the answer."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task462-9ff5a82107ed444791cdd26249ea418b",
+            "input": "We compare our approach to two other, the first one uses almost the same tweet data as we use for training, and the second one is the CrowdFlower dataset annotated for emotions. In the first one Wang et al. BIBREF21 downloaded over 5M tweets which included one of 131 emotional hashtags based on Parrott's three-level categorization of emotions in seven categories: joy, sadness, anger, love, fear, thankfulness, surprise.  \n Question: What data is used in experiments?",
+            "output": [
+                "Extractive"
+            ]
+        },
+        {
+            "id": "task462-314984f81d8b4050ba9a69d3098aba34",
+            "input": "While it is obvious that our embeddings can be used as features for new predictive models, it is also very easy to incorporate our learned Dolores embeddings into existing predictive models on knowledge graphs. The only requirement is that the model accepts as input, an embedding layer (for entities and relations). If a model fulfills this requirement (which a large number of neural models on knowledge graphs do), we can just use Dolores embeddings as a drop-in replacement. We just initialize the corresponding embedding layer with Dolores embeddings. In our evaluation below, we show how to improve several state-of-the-art models on various tasks simply by incorporating Dolores as a drop-in replacement to the original embedding layer. \n Question: How are meaningful chains in the graph selected?",
+            "output": [
+                "Yes-no"
+            ]
+        },
+        {
+            "id": "task462-47f1fdda4b164b168ec020f0f774270e",
+            "input": "Querying posts on Twitter with extracted lexicons led to a collection of $19,300$ tweets. In order to have lexical diversity, we added 2500 randomly sampled tweets to our dataset. \n Question: How many tweets were collected?",
+            "output": [
+                "Extractive"
+            ]
+        },
+        {
+            "id": "task462-9fdcf697781144cc9c9ce25acae5c011",
+            "input": "We seek a function controlled by gates that can mix states across timesteps, but which acts independently on each channel of the state vector. The simplest option, which BIBREF12 term \u201cdynamic average pooling\u201d, uses only a forget gate: DISPLAYFORM0 \n Question: What pooling function is used?",
+            "output": [
+                "Extractive"
+            ]
+        },
+        {
+            "id": "task462-4c831be9d566400894b0dcce4a1161e4",
+            "input": "Therefore, we implement reinforcement learning and elaborately design two rewards to describe the irony accuracy and sentiment preservation, respectively. \n Question: What is the combination of rewards for reinforcement learning?",
+            "output": [
+                "Extractive"
+            ]
+        },
+        {
+            "id": "task462-3597159b74334dd89c81e2ef1e958804",
+            "input": "In Figure FIGREF15 , we plot the zero-resource German and Japanese test set accuracy as a function of the number of steps taken, with and without adversarial training. The plot shows that the variation in the test accuracy is reduced with adversarial training, which suggests that the cross-lingual performance is more consistent when adversarial training is applied. \n Question: Do any of the evaluations show that adversarial learning improves performance in at least two different language families?",
+            "output": [
+                "Yes-no"
+            ]
+        },
+        {
+            "id": "task462-d3d7a0133db74a4fa18c611583effcec",
+            "input": "In order to represent individual sentences, we insert external [cls] tokens at the start of each sentence, and each [cls] symbol collects features for the sentence preceding it. We also use interval segment embeddings to distinguish multiple sentences within a document. This way, document representations are learned hierarchically where lower Transformer layers represent adjacent sentences, while higher layers, in combination with self-attention, represent multi-sentence discourse. Position embeddings in the original Bert model have a maximum length of 512; we overcome this limitation by adding more position embeddings that are initialized randomly and fine-tuned with other parameters in the encoder. \n Question: What is novel about their document-level encoder?",
+            "output": [
+                "Extractive"
+            ]
+        },
+        {
+            "id": "task462-b3b5fef853044286a33be0797f90dfc3",
+            "input": "The data set we evaluate on in this work is WMT English-French NewsTest2014, which has 380M words of parallel training data and a 3003 sentence test set. The NewsTest2013 set is used for validation. \n Question: Do they only test on one dataset?",
+            "output": [
+                "Yes-no"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

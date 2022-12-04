@@ -1,0 +1,191 @@
+{
+    "Contributors": [
+        "Shailaja Keyur Sampat"
+    ],
+    "Source": [
+        "torque"
+    ],
+    "URL": [
+        "https://allennlp.org/torque.html"
+    ],
+    "Categories": [
+        "Information Extraction"
+    ],
+    "Reasoning": [
+        "Commonsense Reasoning"
+    ],
+    "Definition": [
+        "In this task, you will be given a passage. Your goal is to identify an event from the passage. An event is a single word representing something that happened, is happening, or may happen. The event must not be a pronoun or an adjective. For noun events with multiple words, use the last word in the phrase as event."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "News"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Passage: I submitted the hit. The hit was approved, and then I was paid.",
+            "output": "approved",
+            "explanation": "There are three events in this passage (i) submission event (\"submitted\") (ii) the approval event (\"approved\"), and (iii) the payment event (\"paid\"). You can use any one of them as an output."
+        },
+        {
+            "input": "Passage: He was caught in the snow storm.",
+            "output": "storm",
+            "explanation": "There are two events in this passage (i) he was caught (\"caught\") and (ii) the snow storm event (\"storm\"). You can use any one of them as an output. Since snow storm is a noun event with multiple words, we only use the last word 'storm' as an event."
+        },
+        {
+            "input": "Passage: He is on the east coast.",
+            "output": "is",
+            "explanation": "The copula \"is\" an event describing his location."
+        },
+        {
+            "input": "Passage: He wanted to finish the task.",
+            "output": "wanted",
+            "explanation": "There are two events in this passage (i) he wanted to do something (\"wanted\") and (ii) finish the task (\"finish\"). Either of wanted or finish can be used as output. However note that though there is an uncertainty about the task i.e. indeed finished or not, \"finish\" is still a valid event."
+        },
+        {
+            "input": "Passage: If he works hard, then he will finish the task.",
+            "output": "finish",
+            "explanation": "There are two events in this passage (i) he works hard (\"works\") and (ii) he will finish the task. (\"finish\"). You can use either of works or finish as an output. Here the second event happens only if the first one is true, but both are considered as events. This is an example of hypothetical event."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Passage: He is happy.",
+            "output": "happy",
+            "explanation": "Happy is an adjective and hence cannot be an event. The output should be \"is\" which represents an event describing his attribute of happiness."
+        },
+        {
+            "input": "Passage: He was caught in the elevator.",
+            "output": "elevator",
+            "explanation": "Not every noun can be an event. Here \"elevator\" is an object and one cannot say \"an elevator happened\" hence it is not an event. \"caught\" is a correct output."
+        },
+        {
+            "input": "Passage: The flu season is winding down.",
+            "output": "flu season",
+            "explanation": "The \"flu season\" is a noun events with multiple words, but only last word \"season\" sould be used as an event as per definition."
+        },
+        {
+            "input": "Passage: The death toll climbed up to 99 soon after the explosion.",
+            "output": "blast",
+            "explanation": "There are two events in this passage \"climbed\" and \"explosion\". Though blast is a synonym of explosion, it is not present in the passage. The output must contain events that are present in the passage."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task388-f2ed50e107404d9ab80b2832c9975d62",
+            "input": "Passage: ``Juan Miguel must not have written the letter himself,'' said Armando Gutierrez, spokesman for Elian's relatives in Miami. ``Castro must be dreaming for the family to allow Cuban spies inside Lazaro Gonzalez's home.''",
+            "output": [
+                "written",
+                "said",
+                "dreaming",
+                "allow"
+            ]
+        },
+        {
+            "id": "task388-b013062eb6f24c47973e0c275c7f16a7",
+            "input": "Passage: Among high school graduates, the rate was 3.9 percent, and college graduates, 1.9 percent. ",
+            "output": [
+                "was"
+            ]
+        },
+        {
+            "id": "task388-fee226657a714c49a4722783b89b4adf",
+            "input": "Passage: Daiwa Securities Co. Ltd. and Nikko Securities Co. Ltd., two of Japan's Big Four stockbrokers, announced Friday net losses for the year to March, joining market leader Nomura Securities Co. Ltd. which disclosed its own net loss of 243 billion yen (two billion dollars) on Thursday. Daiwa, the country's second-largest broker, said it suffered a net parent company loss of 84.0 billion yen, reversing a net profit of 43.7 billion yen a year earlier.",
+            "output": [
+                "announced",
+                "losses",
+                "joining",
+                "disclosed",
+                "loss",
+                "said",
+                "suffered",
+                "loss",
+                "reversing",
+                "profit"
+            ]
+        },
+        {
+            "id": "task388-84f500f56bed41228dae6cdab36bd516",
+            "input": "Passage: A false fire alarm went off at a state-run nuclear fuel reprocessing plant northeast of Tokyo Saturday, nearly four weeks after it leaked radioactive substances following a fire and explosion. The alarm sounded at about noon at a facility for mixing nuclear waste with asphalt at the plant in Tokai Mura, about 115 kilometres (70 miles) from Tokyo, the Power Reactor and Nuclear Fuel Development Corp. (Donen) said.",
+            "output": [
+                "went",
+                "leaked",
+                "fire",
+                "explosion",
+                "alarm",
+                "sounded",
+                "said",
+                "alarm"
+            ]
+        },
+        {
+            "id": "task388-0de24575b56a403398820ce9d1aa5ec9",
+            "input": "Passage: He took Polly Peck, once a small fabric wholesaler, and used it at as a base to build a conglomerate that has been doubling its profits annually since 1980. In September, it announced plans to acquire the tropical-fruit business of RJR Nabisco Inc.'s Del Monte foods unit for #557 million ($878 million).",
+            "output": [
+                "took",
+                "used",
+                "1980",
+                "profits",
+                "announced",
+                "acquire",
+                "build"
+            ]
+        },
+        {
+            "id": "task388-4342024f00e54f33b67e3da625f302b6",
+            "input": "Passage: Soviet officials also said Soviet women, children and invalids would be allowed to leave Iraq. President Bush today denounced Saddam's ``ruinous policies of war,'' and said the United States is ``striking a blow for the principle that might does not make right.''",
+            "output": [
+                "said",
+                "allowed",
+                "leave",
+                "denounced",
+                "said",
+                "striking",
+                "blow",
+                "make"
+            ]
+        },
+        {
+            "id": "task388-16087f7148ec418793e6232d930f329d",
+            "input": "Passage: The appeal was sparked by fears that new clashes could erupt on Sydney beaches this weekend. Dozens of people were injured and arrested in the violence, in which white mobs set out to \"reclaim the beach\" from groups of Lebanese-Australians accused of intimidating other beachgoers with boorish behaviour at weekends.",
+            "output": [
+                "appeal",
+                "sparked",
+                "clashes",
+                "erupt",
+                "injured",
+                "arrested",
+                "set",
+                "reclaim",
+                "accused",
+                "intimidating"
+            ]
+        },
+        {
+            "id": "task388-813f7cf764184c249e78c2fdbcfd70e2",
+            "input": "Passage: China hopes US President George W. Bush's imminent visit to the country will advance Sino-US relations in an all-round day, a Chinese Foreign Ministry spokesman Thursday \"We expect that Bush's visit, slated for Nov. 19 to 21, will increase consensus, step up mutual trust, expand exchange and cooperation, and promote Sino-US constructive and cooperative relations in 21st century in an all-round way,\" Foreign Ministry spokesman Liu Jianchao told the regular briefing Thursday afternoon.",
+            "output": [
+                "hopes",
+                "visit",
+                "advance",
+                "visit",
+                "increase",
+                "step",
+                "promote",
+                "relations",
+                "told"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Apache 2.0"
+    ]
+}

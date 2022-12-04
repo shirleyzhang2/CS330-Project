@@ -1,0 +1,122 @@
+{
+    "Contributors": [
+        "Eshaan Pathak"
+    ],
+    "Source": [
+        "codah"
+    ],
+    "URL": [
+        "https://aclanthology.org/W19-2008.pdf"
+    ],
+    "Categories": [
+        "Text Completion"
+    ],
+    "Reasoning": [
+        "Commonsense Reasoning"
+    ],
+    "Definition": [
+        "Given a prompt, select the completion from the four options that is the most plausible in continuing or answering the prompt. This task is designed to test common sense and has various categories ranging between idioms, negated statements, polysemy, subject referencing, and quantitative reasoning."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Commonsense -> Concepts and Relations"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Prompt: A clown is fashioning animals from long balloons. He \nCompletion A: releases the animals into their natural habitat. \nCompletion B: makes a giraffe and hands it to a child. \nCompletion C: yells out for his second in command to pilot the battleship around the obstacle. \nCompletion D: releases the balloon and it flies high into the air.",
+            "output": "Completion B",
+            "explanation": "The clown is an entertainer and is twisting balloons to resemble an animal. There are no live animals, and these types of twistable balloons are not able to fly or float up."
+        },
+        {
+            "input": "Prompt: I am feeling hungry. I think I will \nCompletion A: call my mother. \nCompletion B: have some ravioli. \nCompletion C: fly out the window. \nCompletion D: go on a run outside.",
+            "output": "Completion B",
+            "explanation": "If one is hungry, then they will eat some food to satiate their hunger. One must look at the entire context rather than just the current sentence when selecting the best completion to the prompt."
+        },
+        {
+            "input": "Prompt: I am feeling nervous about my midterm tomorrow. I fear that \nCompletion A: the professor will delay the midterm. \nCompletion B: I will doodle on my exam and receive points for it. \nCompetion C: my grandpa has diabetes. \nCompletion D: I will fail.",
+            "output": "Completion D",
+            "explanation": "If one is feeling nervous about their midterm the next day, then they are most likely worried and anxious about the grade they will receive. They will not doodle on their exam because they will surely not do well in that case. The professor delaying a midterm is usually not why a person would feel nervous about the midterm. One may be worried about their grandpa having diabetes, but that is not relevant to taking a midterm."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Prompt: The man entered his house. The man \nCompletion A: can't find the keys to unlock the door. \nCompletion B: goes to school at his university. \nCompletion C: eats the garbage. \nCompletion D: takes his shoes off.",
+            "output": "Completion A",
+            "explanation": "The man must have found the keys to unlock the door in order to have entered his house in the first place. After he entered the house, it is most plausible that he took his shoes off to not get his house dirty. Thus, Completion D is actually the correct answer."
+        },
+        {
+            "input": "The boy likes animals, but only invertebrates. He \nCompletion A: likes pigs. \nCompletion B: likes vertebrates. \nCompletion C: likes spiders. \nCompletion D: likes elephants.",
+            "output": "Completion D",
+            "explanation": "Out of the four possible completions, only one of them mentions an invertebrate. Spiders are invertebrates since they do not have a spine or vertebral column. Thus, Completion C is actually the correct answer."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task156-712cb6edf3554880af4b0c1f892272b7",
+            "input": "Prompt: I was born in India but I wish I was born in Germany. I am \nCompletion A: an Indian \nCompletion B: German \nCompletion C: American \nCompletion D: Alien",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task156-4c7937ab1c39432e97e3f887d6eb27be",
+            "input": "Prompt: Today I ate an apple. I \nCompletion A: borrowed the apple from my friend. I will return it to him after I eat it. \nCompletion B: put it into a machine and it gave me an apple pie. \nCompletion C: grew it overnight on my farm. \nCompletion D: need to eat healthy to stay in shape.",
+            "output": [
+                "Completion D"
+            ]
+        },
+        {
+            "id": "task156-386c5f69f32141d9b98161cf8b5354d0",
+            "input": "Prompt: I like putting cream in my coffee. I \nCompletion A: don't like bitter drinks. \nCompletion B: don't like coffee flavored ice cream. \nCompletion C: love to eat ice cream every day. \nCompletion D: never drink coffee.",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task156-5043a9303bab4e69a2579e34566ce0c0",
+            "input": "Prompt: Tina likes nuts, but she is full now. Tina \nCompletion A: orders a bowl of nuts. \nCompletion B: never eats nuts. \nCompletion C: doesn't eat nuts now. \nCompletion D: eats a lot of nuts.",
+            "output": [
+                "Completion C"
+            ]
+        },
+        {
+            "id": "task156-c10f7ad23cea4bf5a7a25a5cedb2ae26",
+            "input": "Prompt: Ella needs glasses. Ella \nCompletion A: has twelve eyes. \nCompletion B: drinks the ocean. \nCompletion C: is having people over and wants to serve them drinks. \nCompletion D: has no eyes.",
+            "output": [
+                "Completion C"
+            ]
+        },
+        {
+            "id": "task156-b3e72787266b4879bf4e5ef8a74b880f",
+            "input": "Prompt: I needed to buy a jacket. I \nCompletion A: checked out nearby outlets for something stylish. \nCompletion B: asked my friend if I could eat his jacket. \nCompletion C: wore six jackets to convince people to buy me more. \nCompletion D: went into the mall and attacked people.",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task156-54cf0b168c8942529eeb890dcbb48c8a",
+            "input": "Prompt: The boy likes reading, not writing. He \nCompletion A: likes reading books. \nCompletion B: wants to become a billionaire. \nCompletion C: likes sleeping in the lab. \nCompletion D: enjoys writing books.",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task156-709f2b7a5fc54415ae7c31bf91157ff0",
+            "input": "Prompt: Zorblax, destroyer of worlds, has a local world he can destroy or a much bigger, more enticing world he only might be able to destroy if he tried. Zorblax thinks \nCompletion A: that he is very hungry. \nCompletion B: that he really likes worlds. \nCompletion C: that a bird in hand is worth two in the bush. \nCompletion D: that the price of real estate is too high.",
+            "output": [
+                "Completion C"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

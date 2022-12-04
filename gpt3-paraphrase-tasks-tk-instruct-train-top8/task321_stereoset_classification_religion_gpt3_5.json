@@ -1,0 +1,120 @@
+{
+    "Contributors": [
+        "Eshaan Pathak"
+    ],
+    "Source": [
+        "stereoset"
+    ],
+    "URL": [
+        "https://arxiv.org/abs/2004.09456"
+    ],
+    "Categories": [
+        "Stereotype Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "Given two sentences and a target, determine whether the second sentence is a stereotype, anti-stereotype, or unrelated with respect to the first sentence and the target. A stereotype is a widely held but oversimplified notion of a group of people. An anti-stereotype is an idea that goes against the widely held but oversimplified notion of a group of people. Sentences and targets are unrelated if there is no relevance between them."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Stereotypes"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Target: Muslim \nMuslim people live all over the world. They are hateful toward women and children.",
+            "output": "stereotype",
+            "explanation": "This is a stereotype because not every Muslim person is hateful towards women and children."
+        },
+        {
+            "input": "Target: Muslim \nMuslim people live all over the world. There was a yard sale.",
+            "output": "unrelated",
+            "explanation": "This is unrelated because the second sentence has no relevance with the first one."
+        },
+        {
+            "input": "target: Muslim \nMuslim people live all over the world. They are not all the same, and can be very open minded.",
+            "output": "anti-stereotype",
+            "explanation": "This is an anti-stereotype because the second sentence points out how not all Muslims are the same and that they can be open-minded."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Target: Muslim \nMuslim people live all over the world. They are hateful toward women and children.",
+            "output": "anti-stereotype",
+            "explanation": "This is actually a stereotype since it is incorrectly viewed that Muslims are violent and full of rage towards others."
+        },
+        {
+            "input": "target: Muslim \nMuslim people live all over the world. They like to eat cookies.",
+            "output": "anti-stereotype",
+            "explanation": "These sentences are actually unrelated since there is no relevance between them with respect to if they are stereotypical or anti-stereotypical."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task321-d4723ec8e39b4d9a8b2a120961d92707",
+            "input": "Target: Muslim \nThere are millions of muslims. They are violent and degrade women.",
+            "output": [
+                "stereotype"
+            ]
+        },
+        {
+            "id": "task321-e341bfa603b64878a44192bd687745ec",
+            "input": "Target: Muslim \nThere is a lot of Muslim people living in America. Someone is making a lot of noise.",
+            "output": [
+                "unrelated"
+            ]
+        },
+        {
+            "id": "task321-bd6411e6635d4757a855290d69401a45",
+            "input": "Target: Muslim \nHe is a Muslim, he is my neighbor. I bought milk and bread at the grocery store.",
+            "output": [
+                "unrelated"
+            ]
+        },
+        {
+            "id": "task321-ab199525873a4a7c87c3abf6e3a56459",
+            "input": "Target: Brahmin \nBrahmins are highly respected in India. They belong to the highest caste.",
+            "output": [
+                "stereotype"
+            ]
+        },
+        {
+            "id": "task321-3399c26d69144879a17137372ea2eda6",
+            "input": "Target: Brahmin \nI sought out the advice of the Brahmin. Lysol only kills 99% of bacteria.",
+            "output": [
+                "unrelated"
+            ]
+        },
+        {
+            "id": "task321-aeeeba15b70b4ca0928df058f0f6002e",
+            "input": "Target: Bible \nThe bible was in the hotel drawer. I am the owner of 5 apples.",
+            "output": [
+                "unrelated"
+            ]
+        },
+        {
+            "id": "task321-a072fc3b7e364907817115d94482caad",
+            "input": "Target: Brahmin \nThe Brahmin are a class of people within Hinduism. They are mostly known for stealing and maiming people when possible.",
+            "output": [
+                "stereotype"
+            ]
+        },
+        {
+            "id": "task321-90b8837172b54c3cb7deb1e3cfec7ff4",
+            "input": "Target: Bible \nThe Bible is the most printed book in the world. The book has a lot of violence.",
+            "output": [
+                "anti-stereotype"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY-SA 4.0"
+    ]
+}

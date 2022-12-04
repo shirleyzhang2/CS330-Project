@@ -1,0 +1,125 @@
+{
+    "Contributors": [
+        "Mirali Purohit"
+    ],
+    "Source": [
+        "roc_stories"
+    ],
+    "URL": [
+        "https://cs.rochester.edu/nlp/rocstories/"
+    ],
+    "Categories": [
+        "Text Completion"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You will be given four sentences of a story written in natural language. The story is incomplete and you must choose one of the sentence choices from (A) and (B) to complete the story so that it is coherent."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Story"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Sentence1: Rick grew up in a troubled household. Sentence2: He never found good support in family, and turned to gangs. Sentence3: It wasn't long before Rick got shot in a robbery. Sentence4: The incident caused him to turn a new leaf. \n (A) He is happy now. (B) He joined a gang.",
+            "output": "A",
+            "explanation": "As mentioned in fourth sentence, the incident turned a new leaf to Rick's life; so, he must be happy now."
+        },
+        {
+            "input": "Sentence1: Laverne needs to prepare something for her friend's party. Sentence2: She decides to bake a batch of brownies. Sentence3: She chooses a recipe and follows it closely. Sentence4: Laverne tests one of the brownies to make sure it is delicious. \n (A) The brownies are so delicious Laverne eats two of them. (B) Laverne doesn't go to her friend's party.",
+            "output": "A",
+            "explanation": "As mentioned in the third sentence, Laverne follows the recipe closely; brownies should be delicious."
+        },
+        {
+            "input": "Sentence1: Sarah had been dreaming of visiting Europe for years. Sentence2: She had finally saved enough for the trip. Sentence3: She landed in Spain and traveled east across the continent. Sentence4: She didn't like how different everything was. \n (A) Sarah then decided to move to Europe. (B) Sarah decided that she preferred her home over Europe.",
+            "output": "B",
+            "explanation": "As mentioned in fourth sentence, Sarah didn't like that everything was different in Europe; she must have preferred her home over Europe."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Sentence1: Rick grew up in a troubled household. Sentence2: He never found good support in family, and turned to gangs. Sentence3: It wasn't long before Rick got shot in a robbery. Sentence4: The incident caused him to turn a new leaf. \n (A) He is happy now. (B) He joined a gang.",
+            "output": "B",
+            "explanation": "As mentioned in fourth sentence, the incident turned a new leaf to Rick's life; output does not match with the flow of the story."
+        },
+        {
+            "input": "Sentence1: Laverne needs to prepare something for her friend's party. Sentence2: She decides to bake a batch of brownies. Sentence3: She chooses a recipe and follows it closely. Sentence4: Laverne tests one of the brownies to make sure it is delicious. \n (A) The brownies are so delicious Laverne eats two of them. (B) Laverne doesn't go to her friend's party.",
+            "output": "B",
+            "explanation": "As mentioned in the third sentence, Laverne follows the recipe closely; brownies should be delicious and she should not cancel going to her friend's party."
+        },
+        {
+            "input": "Sentence1: Sarah had been dreaming of visiting Europe for years. Sentence2: She had finally saved enough for the trip. Sentence3: She landed in Spain and traveled east across the continent. Sentence4: She didn't like how different everything was. \n (A) Sarah then decided to move to Europe. (B) Sarah decided that she preferred her home over Europe.",
+            "output": "A",
+            "explanation": "As mentioned in fourth sentence, Sarah didn't like that everything was different; Sarah cannot decide to move to Europe."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task296-39bd13fd3205427bbc4ae4baa27151eb",
+            "input": "Sentence1: Reba worried that she was going to be a killer, like her father. Sentence2: He went to prison for murder. Sentence3: Reba spent her entire life doing good deeds. Sentence4: She became a nun, and comforted orphaned children. \n (A) Reba thought she was doing the right thing. (B) Reba was just like her dad.",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "id": "task296-4819eaccb2a4476b85f533c1b1364718",
+            "input": "Sentence1: Oscar headed over to the nursery to find a tree to plant in his yard. Sentence2: He had a hard time deciding which tree to get. Sentence3: There were a lot of trees to go through. Sentence4: Finally, he opted on a Bonsai tree. \n (A) It went perfectly with his home decor. (B) He destroyed it as soon as he got home.",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "id": "task296-672e0a2daf23442981898f6fedc2959a",
+            "input": "Sentence1: Gina's dad turned on the water hose for her. Sentence2: He watched as she sprayed the soda spill on the porch. Sentence3: It had been sitting there for hours. Sentence4: It was a dried gooey mess by the time she began cleaning it. \n (A) Gina licked her plate clean. (B) Gina finally got it all cleaned after a couple of hours.",
+            "output": [
+                "B"
+            ]
+        },
+        {
+            "id": "task296-5e56c74614ee4ea087729bddb3f59345",
+            "input": "Sentence1: I wanted to learn how chocolate chips are made. Sentence2: I went to the internet and did a search on the subject. Sentence3: I scanned through all the results, and finally found what I wanted. Sentence4: I read the whole article. \n (A) I made the cookies. (B) I made roasted pork.",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "id": "task296-0083faf9fe31409098b9530d6c793f4d",
+            "input": "Sentence1: Amy was going to buy coffee to beat her coffee crash. Sentence2: But there was no coffee machine in the school for kids. Sentence3: There was however a soda vending machine. Sentence4: Amy just needed to decide which soda had the most caffeine. \n (A) Amy picked a Pepsi to drink. (B) Amy decided to buy water.",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "id": "task296-cea8fdfb142540bda8444fd51972ebad",
+            "input": "Sentence1: Nora wanted to go on vacation. Sentence2: She decided to visit the mountain cabin. Sentence3: The cabin was beautiful, set in the woods, beside a stream. Sentence4: Nora loved to picnic by the stream. \n (A) She spread out a blanket and had a lovely picnic. (B) She ate all her meals in the cabin while on vacation.",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "id": "task296-d7caa8cdf16e4ccc81809ccc454591f9",
+            "input": "Sentence1: A new Chick-Fil-A just opened up and I couldn't wait to try it. Sentence2: The line was out the door. Sentence3: I waited for a half hour just to order something. Sentence4: I ordered a spicy chicken sandwich. \n (A) Right then I decided this was my new favorite food. (B) As a vegetarian, I refused to eat the chicken sandwich.",
+            "output": [
+                "A"
+            ]
+        },
+        {
+            "id": "task296-34c67ba8529a48cb9521590966df16a6",
+            "input": "Sentence1: Gordon bought his son a remote control car for Christmas. Sentence2: But he realized that it needed AA batteries. Sentence3: Gordon could not find any. Sentence4: So the next day, he went to the toy store where he bought the car. \n (A) He bought a big package of AA batteries. (B) He bought another remote control car for himself.",
+            "output": [
+                "A"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

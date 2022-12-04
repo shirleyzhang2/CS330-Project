@@ -1,0 +1,125 @@
+{
+    "Contributors": [
+        "Mirali Purohit"
+    ],
+    "Source": [
+        "roc_stories"
+    ],
+    "URL": [
+        "https://cs.rochester.edu/nlp/rocstories/"
+    ],
+    "Categories": [
+        "Coherence Classification"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You will receive four sentences of a story written in natural language, and one last sentence (Sentence5). Your job is to classify whether the last sentence completes the rest of the story by providing 'Yes' or 'No'."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Story"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Sentence1: Rick grew up in a troubled household. Sentence2: He never found good support in family, and turned to gangs. Sentence3: It wasn't long before Rick got shot in a robbery. Sentence4: The incident caused him to turn a new leaf. \n Sentence5: He is happy now.",
+            "output": "Yes",
+            "explanation": "As mentioned in fourth sentence, the incident turned a new leaf to Rick's life; so, he must be happy now."
+        },
+        {
+            "input": "Sentence1: Laverne needs to prepare something for her friend's party. Sentence2: She decides to bake a batch of brownies. Sentence3: She chooses a recipe and follows it closely. Sentence4: Laverne tests one of the brownies to make sure it is delicious. \n Sentence5: Laverne doesn't go to her friend's party.",
+            "output": "No",
+            "explanation": "As mentioned in the third sentence, Laverne follows the recipe closely; brownies should be delicious and she should not cancel going to her friend's party."
+        },
+        {
+            "input": "Sentence1: Sarah had been dreaming of visiting Europe for years. Sentence2: She had finally saved enough for the trip. Sentence3: She landed in Spain and traveled east across the continent. Sentence4: She didn't like how different everything was. \n Sentence5 Sarah then decided to move to Europe.",
+            "output": "No",
+            "explanation": "As mentioned in fourth sentence, Sarah didn't like that everything was different; Sarah cannot decide to move to Europe."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Sentence1: Rick grew up in a troubled household. Sentence2: He never found good support in family, and turned to gangs. Sentence3: It wasn't long before Rick got shot in a robbery. Sentence4: The incident caused him to turn a new leaf. \n Sentence5: He is happy now.",
+            "output": "No",
+            "explanation": "As mentioned in fourth sentence, the incident turned a new leaf to Rick's life; so, he must be happy now. So, output should be Yes because Sentencce5 properly ends the story"
+        },
+        {
+            "input": "Sentence1: Laverne needs to prepare something for her friend's party. Sentence2: She decides to bake a batch of brownies. Sentence3: She chooses a recipe and follows it closely. Sentence4: Laverne tests one of the brownies to make sure it is delicious. \n Sentence5: Laverne doesn't go to her friend's party.",
+            "output": "False",
+            "explanation": "The answer can only be Yes or No."
+        },
+        {
+            "input": "Sentence1: Sarah had been dreaming of visiting Europe for years. Sentence2: She had finally saved enough for the trip. Sentence3: She landed in Spain and traveled east across the continent. Sentence4: She didn't like how different everything was. \n Sentence5 Sarah then decided to move to Europe.",
+            "output": "Answer can be Sarah returned to the home.",
+            "explanation": "The answer can only be Yes or No."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task298-7215a15feaa94820aaf224c28e1c631b",
+            "input": "Sentence1: Seven-year-old Ben went to play at his friend Mike's house. Sentence2: Mike greeted Ben, and they went to play in Mike's room. Sentence3: First, they played with Mike's quadcopters for a long time. Sentence4: Then, they played with some trucks. \n Sentence5: But they didn't have any fun.",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task298-cc541417440b4cd08fb9830ffedae618",
+            "input": "Sentence1: Pete had to meet with his realtor. Sentence2: He was soon to buy a house. Sentence3: Pete could not find the contract given to him by his realtor. Sentence4: He looked all over his home. \n Sentence5: Pete decided it would be a great time to take a trip to Vegas.",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task298-c946ec7dc4f7460aa8c9fe7aad45dcf7",
+            "input": "Sentence1: Solomon didn't like his first name. Sentence2: He thought that it was too old-fashioned. Sentence3: At a job interview, the interviewer praised his name. Sentence4: Solomon suspected that his being hired was related to his unique name. \n Sentence5: Solomon asked the interviewer for an old-fashioned.",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task298-4a641a37d95e4f65b0bd5150bc7d3e61",
+            "input": "Sentence1: Gina was in the middle of the backseat surrounded by siblings. Sentence2: They were driving out of town in heavy traffic. Sentence3: Gina looked out the window. Sentence4: In the next car a child was showing his mouth of chewed food. \n Sentence5: Gina continued to stare.",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task298-07faa5369a3143798760766b93ca930b",
+            "input": "Sentence1: Ben was waiting at the crossroads for a lift from his friend Tom. Sentence2: Tom had said that he would pick him up at 8:00 PM and it was after 9. Sentence3: Ben was frightened by odd noises he heard coming from the darkness. Sentence4: After a while Tom walked out of the shadows laughing. \n Sentence5: Ben was annoyed that Tom had tricked him.",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task298-28f5ce65f5094d4a8dc26701638358ff",
+            "input": "Sentence1: Jenny was at the store hungry one day. Sentence2: She wandered around thinking about what she wanted to eat. Sentence3: When she came upon the cookie aisle she knew exactly what she wanted. Sentence4: She grabs some cookies and heads towards the front of the store. \n Sentence5: Jenny bought the cookies.",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task298-52912898c5604e11868421e6d8d002c1",
+            "input": "Sentence1: Albert was a young man who had just gotten CPR certified. Sentence2: He decided to celebrate by going out to eat. Sentence3: While at the restaurant, another patron started choking on her food. Sentence4: Albert rushed to her side and quickly did the Heimlich maneuver. \n Sentence5: Albert saved the day.",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task298-171f51df017a458c89c7f937d9ce0bab",
+            "input": "Sentence1: Don's friend pulled Don's pants down in front of his graduating class. Sentence2: Don was angry and embarrassed at being exposed in this way. Sentence3: Don decided that this friend would no longer be his friend. Sentence4: Don's shame and embarrassment grew. \n Sentence5: Don laughs at the experience.",
+            "output": [
+                "No"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

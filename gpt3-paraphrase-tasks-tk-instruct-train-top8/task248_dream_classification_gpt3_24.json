@@ -1,0 +1,123 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "dream"
+    ],
+    "URL": [
+        "https://github.com/nlpdata/dream"
+    ],
+    "Categories": [
+        "Question Understanding"
+    ],
+    "Reasoning": [
+        "Reasoning on Social Interactions"
+    ],
+    "Definition": [
+        "In this task, you will be shown a conversation and a question. You should categorize the question into one of the following groups: matching, summary, logic, arithmetic, and commonsense. Matching questions are entailed or paraphrased by exactly one sentence in the dialogue, and the answer can be extracted from that sentence. Questions that cannot be answered by the surface meaning of a single sentence belong in the reasoning category, which is further divided into the subcategories summary, logic, arithmetic, and commonsense. Answering summary questions requires an understanding of the whole dialogue, including the topic and the relation between the speakers. Logical reasoning is required to answer logical questions. Inferring the answer to arithmetic questions requires arithmetic knowledge. To answer commonsense questions, in addition to the textual information in the dialogue, additional commonsense knowledge is required that cannot be obtained from the dialogue. Note that a question can belong to more than one group. \"W\" and \"M\" in the conversations stand for \"woman\" and \"man\"."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue",
+        "Natural Science -> School Science Textbooks"
+    ],
+    "Positive Examples": [
+        {
+            "input": "W: The movie next Tuesday has been cancelled due to lack of interest. M: What do you mean? W: Well, by last night only a few tickets has been sold., Question: What can we conclude about the movie? (A) They want to buy the tickets for the movie. (B) The tickets for the movie were sold. (C) The movie will not be shown.",
+            "output": "commonsense",
+            "explanation": "This is a good example. To answer this question we require commonsense knowledge that cannot be obtained from the dialogue. So, this is a commonsense question."
+        },
+        {
+            "input": "W: What does the term \"alternative energy source\" mean? M: When we think of energy or fuel for our homes and cars, we think of petroleum, a fossil fuel processed from oil removed from the ground, of which there is a limited supply. But alternative fuels can be many things. Wind, sun and water can all be used to create fuel. W: Is the threat of running out of petroleum real? M: It has taken thousands of years to create the natural stores of petroleum we have available at a much faster rate than it is being produced over time. The real controversy surrounding the amount of petroleum we have is how much we need to keep in reserve for future use. Most experts agree that by around 2025, the amount of petroleum we use will reach a peak. Then production and availability will begin to seriously decline. This is not to say there will be no petroleum at this point. But it'll become very difficult and therefore expensive to extract. W: Is that the most important reason to develop alternative fuel and energy sources? M: There are two very clear reasons to do so. One is that whether we have 60 or 600 years of fossil fuels left, we have to find other fuel sources eventually. So the sooner we start, the better off we will be. The other big argument is that when long time, which leads to some long-term negative effects, like global warming and the greenhouse effect., Question: What do we usually refer to when we talk about energy according to the man? (A) Coal burnt daily for the comfort of our homes. (B) Anything that can be used to produce power. (C) Fuel refined from oil extracted from underground.",
+            "output": "matching",
+            "explanation": "The first sentence of the man can answer this question. So, it's a matching question."
+        },
+        {
+            "input": "M: What do you think of my new sweater? W: Well, it looks nice, but why don't you put it on, and then I'll tell you if it suits you? M: Okay. You know, I tried on about twenty at the shop, and this one isn't really what I wanted. I especially can't stand the high neck. W: Why did you buy it then? M: The salesman sold it to me before I realized what had happened. He just never stopped talking about the latest fashions and special reduced prices. Before I could say anything he'd wrapped it up and I realized that I'd paid him. W: Well, it doesn't look too bad. I think it looks good on you. M: But I went out to get a blue sweater to match my black trousers-something with a V-neck, short sleeves and pattern-and I came home with a brown sweater with a high neck, long sleeves and no pattern. W: You've got to learn to stand up to these high-pressure salesmen. They will sell you all sorts of things you don't want if you don't watch out. M: Next time I'll send my wife. She would probably sell something to the salesman. W: That's a good idea. Actually women are much better at shopping than men. Whenever my husband and I buy something important, I always have the finalsay. M: I must admit that women are better at shopping. I should simply leave the whole business to them., Question: Why did the man buy a sweater that he doesn't like? (A) He was pushed by the salesman (B) It was sold at a low price (C) It is the latest fashion.",
+            "output": "logic",
+            "explanation": "To answer this question we need logical reasoning. In the dialogues, they talk about high-pressure salesmen. So by logical reasoning, we could understand that he was pushed by the salesman."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "W: What does the term \"alternative energy source\" mean? M: When we think of energy or fuel for our homes and cars, we think of petroleum, a fossil fuel processed from oil removed from the ground, of which there is a limited supply. But alternative fuels can be many things. Wind, sun and water can all be used to create fuel. W: Is the threat of running out of petroleum real? M: It has taken thousands of years to create the natural stores of petroleum we have available at a much faster rate than it is being produced over time. The real controversy surrounding the amount of petroleum we have is how much we need to keep in reserve for future use. Most experts agree that by around 2025, the amount of petroleum we use will reach a peak. Then production and availability will begin to seriously decline. This is not to say there will be no petroleum at this point. But it'll become very difficult and therefore expensive to extract. W: Is that the most important reason to develop alternative fuel and energy sources? M: There are two very clear reasons to do so. One is that whether we have 60 or 600 years of fossil fuels left, we have to find other fuel sources eventually. So the sooner we start, the better off we will be. The other big argument is that when long time, which leads to some long-term negative effects, like global warming and the greenhouse effect., Question: What do most experts agree on according to the man? (A) Oil will soon be replaced by alternative energy sources. (B) Oil production will begin to decline worldwide by 2025. (C) Oil consumption has given rise to many global problems.",
+            "output": "arithmetic",
+            "explanation": "We don't need arithmetic knowledge to answer this question. It's incorrect. This is a matching question."
+        },
+        {
+            "input": "M: Finally, I've got the chance to put on my new suit tonight. I hope to make a good impression on your family. W: Come on! It's only a family reunion. So jeans and T-shirts are just fine., Question: What does the woman mean? (A) The man has left a good impression on her family. (B) The man can dress casually for the occasion. (C) The man should buy himself a new suit.",
+            "output": "matching",
+            "explanation": "The answer to this question cannot be extracted from the context. We need commonsense knowledge to understand wearing jeans and T-shirts means dressing casually. This is a commonsense question."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task248-3e8c2d2b2271427db5a41be5ef4511f0",
+            "input": "M: I'll pick you up at a quarter to eleven tomorrow morning. W: How long will the journey last? M: It's a three-and-a half-hour drive. And we should give ourselves forty minutes to have lunch and another ten to wait for the ferry., Question: At what time will the speakers meet tomorrow morning? (A) 11:15. (B) 3:30. (C) 10:45.",
+            "output": [
+                "matching"
+            ]
+        },
+        {
+            "id": "task248-9d9550b595654c4bbaf4fe163c3eadb5",
+            "input": "M: Would you like to see those pants in brown and navy blue? These two colors are coming in this season. W: Oh, actually grey is my favorite color, but I prefer something made from cotton, 100% cotton I mean., Question: What is the woman looking for? (A) Grey pants made from pure cotton. (B) Fashionable pants in bright colors. (C) 100% cotton pants in dark blue.",
+            "output": [
+                "logic"
+            ]
+        },
+        {
+            "id": "task248-02c8b0f9633e44eea7afe3513034d33c",
+            "input": "W: Harry, let's play some ping-pong today. M: I'd love to play a set or two, but my right arm hurts. I've decided to stop playing ping-pong until it feels better. W: Well, how about going skating? M: I'd like to, but my knee hurts, too. W: Harry, stop making excuses! You're just lazy. M: No, I'm not! You know, there's a basketball match on TV today. Let's just stay home and watch it. W: OK. You stay, and I'll play with Helen., Question: Why is Harry unwilling to join the woman? (A) He has a pain in his knee. (B) He wants to watch TV. (C) He is too lazy.",
+            "output": [
+                "logic"
+            ]
+        },
+        {
+            "id": "task248-92d7aa653c6545cf80ad1af17abd9e59",
+            "input": "W: I can't believe we got tickets to the baseball game! M: I know. I've wanted to see the team play all year. W: It's too bad that we are in the last row. M: That's okay. I just love the game. Do you think the game will start on time? W: I don't know. M: It has been raining hard. It would be a shame if we wasted our Sunday. W: It's not a waste. We are together! M: Yes, that is a wonderful point. W: And, even if they don't play baseball, it's nice to be outside. M: Yes, I do enjoy the rain., Question: What is happening now? (A) It's raining. (B) The game is on. (C) They are leaving for home.",
+            "output": [
+                "matching"
+            ]
+        },
+        {
+            "id": "task248-0a977cd0957848fba98e890d23b633d9",
+            "input": "A: Hello, this is Andrea. B: Hello, Andrea, this is Alex. I have some very good news for you. Miranda was very satisfied with you and said she's very much looking forward to working with you. Isn't that wonderful? Congratulations dear! How does it feel to be Miranda's new assistant? I imagine that you'll just be delighted with this news. So let's see, you can start on Monday, right? A: Umm, well, I don't think I can start Monday. I am visiting my father in Baltimore. And because I don't live in New York, I'll need a couple of days to find a flat and buy some furniture and move my things from Avon. B: Oh, well then, in that case I suppose Wednesday would be good. Ok, see you then!, Question: Why does the man call the woman? (A) To tell her about her new job. (B) To ask about her job program. (C) To plan a meeting with her.",
+            "output": [
+                "commonsense"
+            ]
+        },
+        {
+            "id": "task248-0df9f207c97c4dad9142af11f19a4731",
+            "input": "W: Good morning. This is Shanghai Car Rental. M: Good morning, Miss. A friend of mine suggested I call you to hire a car. W: Oh, yes. A lot of people do this these days. M: Yes, we are just on holiday here for a few days and they said it would be a good idea to hire a car to get around the city. W: Well, it certainly is. What kind of car do you want to hire? M: What can you suggest? W: We have a variety of choice, such as Xiali, which is the cheapest, 200 yuan a day, Citroen, Jatta, Elysee, but Santana sedans are the big favorite these days. M: How much if I hire a Santana for three days? W: Oh, that will be 1,200 yuan. M: On, it sounds a bit too expensive. What about a Jetta? W: It will be 300 yuan a day. M: Then I'd better hire a Jetta tomorrow morning, would there be any problem? W: No problem at all. Now let me take down your name and telephone number., Question: Why does the man want to hire a car? (A) To go and see his friends. (B) To visit the city. (C) To go shopping.",
+            "output": [
+                "matching"
+            ]
+        },
+        {
+            "id": "task248-3eed05db888c487e952eaec262e54316",
+            "input": "W: Good morning, sir. May I help you? M: Yes, would you please find a room for our business meeting? W: Certainly, sir. How many people do you have? M: Well, about 10. W: Fine. We have a conference room which can seat up to 20 people. M: That's great. What about the charge? W: It is 90 RMB per hour. There is no minimum charge. Do you want to book it? M: Yes, I think so. W: May I have your name and room number, please, sir? M: Mr. Black, Room 1208. W: Thank you, Mr. Black. How long will you be using the conference room? M: We'll start at 10 o'clock tomorrow morning but I'm not sure when we'll finish. W: No problem, Mr. Black. The room will be at your disposal then., Question: What's the probable relationship between the two speakers? (A) Clerk and guest. (B) Shop assistant and customer. (C) Employer and employee.",
+            "output": [
+                "commonsense"
+            ]
+        },
+        {
+            "id": "task248-59c923213a9d426090e20620c35eedd3",
+            "input": "W: How's your dinner, sir? M: It's just fine. W: Can I bring you any thing? M: No, thanks. Everything's fine., Question: What does the man think of the dinner? (A) He thinks it's bad. (B) He thinks it's fine. (C) He thinks it's neither bad or fine.",
+            "output": [
+                "logic"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Dedicated License (https://github.com/nlpdata/dream/blob/master/license.txt)"
+    ]
+}

@@ -1,0 +1,125 @@
+{
+    "Contributors": [
+        "Amirreza Mirzaei"
+    ],
+    "Source": [
+        "paws"
+    ],
+    "URL": [
+        "https://arxiv.org/abs/1904.01130"
+    ],
+    "Categories": [
+        "Text Matching"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You will be given a sentence pair from Wikipedia that has high lexical overlap. If the sentences have the same meaning and are just paraphrases of each other, label them as \"Paraphrase.\" If not, label them as \"Not paraphrase.\" The two sentences are separated by a new line."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Wikipedia"
+    ],
+    "Positive Examples": [
+        {
+            "input": "In January 2011 , the Deputy Secretary General of FIBA Asia , Hagop Khajirian , inspected the venue together with SBP - President Manuel V. Pangilinan .\nIn January 2011 , FIBA Asia deputy secretary general Hagop Khajirian along with SBP president Manuel V. Pangilinan inspected the venue .",
+            "output": "Paraphrase",
+            "explanation": "The second sentence has the same meaning as the first sentence and is just a paraphrased version of it."
+        },
+        {
+            "input": "The smallest number that can be represented in two positive and seventh ways as a sum of four different powers is 2056364173794800 .\nThe smallest number that can be represented as a sum of four positive seventh potences in two different ways is 2056364173794800 .",
+            "output": "Not paraphrase",
+            "explanation": "The second sentence doesn't have the same meaning as the first."
+        },
+        {
+            "input": "Luciano Williames Dias ( born July 25 , 1970 ) is a Brazilian football coach and former player .\nLuciano Williames Dias ( born 25 July 1970 ) is a former football coach and Brazilian player .",
+            "output": "Not paraphrase",
+            "explanation": "The second sentence doesn't have the same meaning as the first."
+        },
+        {
+            "input": "During her sophomore , junior and senior summers , she spent half of it with her Alaska team , and half playing , and living in Oregon .\nDuring her second , junior and senior summers , she spent half of it with her Alaska team , half playing and living in Oregon .",
+            "output": "Paraphrase",
+            "explanation": "The second sentence doesn't have the same meaning as the first."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "This was a series of nested angular standards , so that measurements in azimuth and elevation could be done directly in polar coordinates relative to the ecliptic .\nThis was a series of nested polar scales , so that measurements in azimuth and elevation could be performed directly in angular coordinates relative to the ecliptic .",
+            "output": "Paraphrase",
+            "explanation": "The second sentence doesn't have the same meaning as the first. As pointed out in the task definition both sentences in all the instances have high lexical overlap, which doesn't mean they have the same meaning."
+        },
+        {
+            "input": "His father emigrated to Missouri in 1868 but returned when his wife became ill and before the rest of the family could also go to America .\nHis father emigrated to America in 1868 , but returned when his wife became ill and before the rest of the family could go to Missouri .",
+            "output": "Paraphrase",
+            "explanation": "In the second sentence, it is not mentioned that the father went to Missouri, so the part about the rest of the family doesn't imply the same meaning as the first sentence. These are not paraphrases."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task400-c4dc30d778ec4a7a8ed19c4de75899d3",
+            "input": "The show would be pronounced in September 2015 as Up Late NW ( redesigned by Up Late Northwest ) .\nThe show would be pronounced as Up Late NW ( revamped Up Late Northwest ) in September 2015 .",
+            "output": [
+                "Paraphrase"
+            ]
+        },
+        {
+            "id": "task400-0b4a4e1ad2984f1b8adc2a9267064cdd",
+            "input": "Since Split , the two former members have formed new bands : Todd Marriott has established an electronic duo YGT with Tom Mclean .\nSince the split , both former members have created new bands . Todd Marriott has formed YGT , an electronic duo with Tom Mclean .",
+            "output": [
+                "Paraphrase"
+            ]
+        },
+        {
+            "id": "task400-718cd3f77be748b091e016bbdc745f0d",
+            "input": "The town has a library , several primary schools and secondary schools .\nThe town has a library , primary and secondary schools , several .",
+            "output": [
+                "Paraphrase"
+            ]
+        },
+        {
+            "id": "task400-57bf0f8a246743838c2fcd07735e351c",
+            "input": "Bayern Munich were the second German club to win the Intercontinental Cup , after Borussia Dortmund in 1976 .\nAfter Bayern Munich , Borussia Dortmund was the second German club to win the Intercontinental Cup in 1976 .",
+            "output": [
+                "Not paraphrase"
+            ]
+        },
+        {
+            "id": "task400-af57221a6e664ba6b740880b7c9b389b",
+            "input": "This episode marked the return of Spanky , who from 1934 to 1935 was the Sidekick of Scotty Beckett .\nThis episode marked the return of Scotty Beckett , who was Spanky 's sidekick from 1934 to 1935 .",
+            "output": [
+                "Not paraphrase"
+            ]
+        },
+        {
+            "id": "task400-d0b179e6e40d47e79d1416fe2722392e",
+            "input": "Bhagat Beni has also said that Guru Arjan Dev attained enlightenment only through the Holy Word .\nGuru Arjan Dev also said that Bhagat Beni has only achieved enlightenment through the Holy Word .",
+            "output": [
+                "Not paraphrase"
+            ]
+        },
+        {
+            "id": "task400-76c01706ffe243c792e1e0ec1827a5a3",
+            "input": "Lycoming County was formed from Sullivan County in 1847 , and two years later Cherry Township was formed from Colley Township .\nIn 1847 , Sullivan County was formed from Lycoming County , and two years later Colley Township was founded from Cherry Township .",
+            "output": [
+                "Not paraphrase"
+            ]
+        },
+        {
+            "id": "task400-db53cfa952c94df48193fa5fbc31df6b",
+            "input": "The majority of the inhabitants of Babulo officially follow the entire religion , as in Catholic East Timor .\nThe majority of the inhabitants of Babulo follow officially the entire religion , as in Catholic East - Timor .",
+            "output": [
+                "Paraphrase"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Dedicated License (https://github.com/google-research-datasets/paws/blob/master/LICENSE)"
+    ]
+}

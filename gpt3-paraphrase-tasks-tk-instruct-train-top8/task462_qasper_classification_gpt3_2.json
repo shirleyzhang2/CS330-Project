@@ -1,0 +1,120 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "qasper"
+    ],
+    "URL": [
+        "https://allenai.org/project/qasper/home"
+    ],
+    "Categories": [
+        "Question Understanding"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "In this task, you will be presented with a context from an academic paper and a question based on the context. You have to classify the questions into one of three categories: \"Extractive\", \"Abstractive\", or \"Yes-no\". Extractive questions can be answered by taking extracts from the context and concatenating them into a summary. Abstractive questions require paraphrasing the context using novel sentences. Yes-no questions are questions whose expected answer is one of two choices, typically either yes or no."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Scientific Research Papers"
+    ],
+    "Positive Examples": [
+        {
+            "input": "We build a dataset of Twitter accounts based on two lists annotated in previous works. For the non-factual accounts, we rely on a list of 180 Twitter accounts from BIBREF1. On the other hand, for the factual accounts, we use a list with another 32 Twitter accounts from BIBREF19 that are considered trustworthy by independent third parties. \n Question: How did they obtain the dataset?",
+            "output": "Extractive",
+            "explanation": "The answer to this question has been explicitly mentioned in the context, so the question is extractive."
+        },
+        {
+            "input": "We evaluate our pointer-generator performance using BLEU score. The baseline language model is trained using RNNLM BIBREF23 . Perplexity measure is used in the evaluation.\n\n \n Question: Did they use other evaluation metrics?",
+            "output": "Yes-no",
+            "explanation": "This is a good example, and the given question is a yes-no question."
+        },
+        {
+            "input": "As in the example above, we pre-process documents by removing all numbers and interjections. \n Question: what processing was done on the speeches before being parsed?",
+            "output": "Abstractive",
+            "explanation": "Answering this question needs paraphrasing the context, so this question is abstractive."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "For the English version, we performed both a thorough manual analysis and automatic evaluation across three commonly used TS datasets from two different domains  For the English version, we performed both a thorough manual analysis and automatic evaluation across three commonly used TS datasets from two different domains  The evaluation of the German version is in progress. \n Question: What are the corpora used for the task?",
+            "output": "Yes-no",
+            "explanation": "This question is extractive, and it's not a yes-no question."
+        },
+        {
+            "input": "For Turkish, as the first dataset, we utilised the movie reviews which are collected from a popular website. The number of reviews in this movie corpus is 20,244 and the average number of words in reviews is 39. Each of these reviews has a star-rating score which is indicative of sentiment. These polarity scores are between the values 0.5 and 5, at intervals of 0.5. We consider a review to be negative it the score is equal to or lower than 2.5. On the other hand, if it is equal to or higher than 4, it is assumed to be positive. We have randomly selected 7,020 negative and 7,020 positive reviews and processed only them. \n Question: What details are given about the movie domain dataset?",
+            "output": "Extractive",
+            "explanation": "This question is Abstractive because we need to paraphrase the context to get to the answer."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task462-a6bdaeb54561468cb75eb33bb422c267",
+            "input": "Experimental results on public datasets show that our CRU model could substantially outperform various systems by a large margin, and set up new state-of-the-art performances on related datasets. \n Question: Are there some results better than state of the art on these tasks?",
+            "output": [
+                "Yes-no"
+            ]
+        },
+        {
+            "id": "task462-c50f97b970a144e7ba3cb1b5d35f6951",
+            "input": "We then proceed to connect these mentions i) if they co-occur within the same document (we will refer to this as DOC-BASED edges), ii) if the pair of named entity mentions is identical (MATCH edges\u2014these may connect nodes across and within documents), or iii) if they are in the same coreference chain, as predicted by the external coreference system (COREF edges). \n Question: Did they use a relation extraction method to construct the edges in the graph?",
+            "output": [
+                "Yes-no"
+            ]
+        },
+        {
+            "id": "task462-e1b8c08507c94af49953c96b6bf9c5a4",
+            "input": "We also conduct two human evaluations in order to assess (a) which type of summary participants prefer (we compare extractive and abstractive systems) and (b) how much key information from the document is preserved in the summary (we ask participants to answer questions pertaining to the content in the document by reading system summaries). \n Question: Do they use other evaluation metrics besides ROUGE?",
+            "output": [
+                "Yes-no"
+            ]
+        },
+        {
+            "id": "task462-9e091ffeb9ec4ab7b4e9586e8fab254c",
+            "input": "For the evaluation of summaries we use the standard ROGUE metric. For comparison with previous AMR based summarization methods, we report the Recall, Precision and INLINEFORM0 scores for ROGUE-1. \n Question: Which evaluation methods are used?",
+            "output": [
+                "Abstractive"
+            ]
+        },
+        {
+            "id": "task462-3b3be431008c4557beda6ad458cd8ca7",
+            "input": "Car-speak is abstract language that pertains to a car's physical attribute(s). In this instance the physical attributes that the term \u201cfast\u201d pertains to could be the horsepower, or it could be the car's form factor (how the car looks). However, we do not know exactly which attributes the term \u201cfast\u201d refers to. We train a series of classifiers in order to classify car-speak. We train three classifiers on the review vectors that we prepared in Section SECREF8. The classifiers we use are K Nearest Neighbors (KNN), Random Forest (RF), Support Vector Machine (SVM), and Multi-layer Perceptron (MLP) BIBREF13. \n Question: Is car-speak language collection of abstract features that classifier is later trained on?",
+            "output": [
+                "Yes-no"
+            ]
+        },
+        {
+            "id": "task462-f77f9a6f4ed34030b3520dd8bff53f95",
+            "input": "We started by answering always YES (in batch 2 and 3) to get the baseline performance. For batch 4 we used entailment. \n Question: What was the baseline model?",
+            "output": [
+                "Extractive"
+            ]
+        },
+        {
+            "id": "task462-aa8632b9c482406797eaa549d9df9312",
+            "input": "We would expect that explanation performance should correlate with prediction performance. Since Possible-answer knowledge is primarily needed to decide if the net has enough information to answer the challenge question without guessing and relevant-variable knowledge is needed for the net to know what to query, we analyzed the network's performance on querying and answering separately. The memory network has particular difficulty learning to query relevant variables, reaching only about .5 accuracy when querying. At the same time, it learns to answer very well, reaching over .9 accuracy there. Since these two parts of the interaction are what we ask it to explain in the two modes, we find that the quality of the explanations strongly correlates with the quality of the algorithm executed by the network. \n Question: How do they measure correlation between the prediction and explanation quality?",
+            "output": [
+                "Abstractive"
+            ]
+        },
+        {
+            "id": "task462-fa592661e5e447f3b0726a0c706c26e8",
+            "input": "We use the Bayesian model of garg2012unsupervised as our base monolingual model. The semantic roles are predicate-specific. \n Question: What does an individual model consist of?",
+            "output": [
+                "Extractive"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

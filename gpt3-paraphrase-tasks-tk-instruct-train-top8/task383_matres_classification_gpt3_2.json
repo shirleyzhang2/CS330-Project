@@ -1,0 +1,132 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "matres"
+    ],
+    "URL": [
+        "https://github.com/CogComp/MATRES"
+    ],
+    "Categories": [
+        "Misc."
+    ],
+    "Reasoning": [
+        "Temporal Reasoning"
+    ],
+    "Definition": [
+        "Given a context and a verb, separated by a newline character, output \"Yes\" if the verb can be anchored in time and \"No\" otherwise. A verb can be anchored in time if it happened in the past, is happening now, or is guaranteed to happen in the future."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "News"
+    ],
+    "Positive Examples": [
+        {
+            "input": "It was followed by Denmark, Norway, Germany, France, Greece, Luxembourg, Spain, Britain, the United States, Iceland, Belgium, Italy, Portugal and Turkey. NATO decided at last year's Madrid summit to (invite) the three eastern European countries to start accession talks.  \n Verb: invite",
+            "output": "No",
+            "explanation": "This is a good example. The \"invite\" is not anchorable. Although NATO decided to invite them, they haven't invited them yet, and it's not guaranteed to happen in the future. They might change their decision later."
+        },
+        {
+            "input": "In Washington today, the Federal Aviation Administration (released) air traffic control tapes from the night the TWA Flight eight hundred went down.  \n Verb: released",
+            "output": "Yes",
+            "explanation": "In this sentence, the releasing event happened in the past, and it's anchorable."
+        },
+        {
+            "input": "New York State double-jeopardy laws would make it difficult to prosecute a suspect who had been found not guilty at a federal trial. U.S. Attorney Denise E. O'Donnell declined to discuss what federal charges were being pursued, but she said that in a case like this, potential charges would be abortion-related violence, the use of a firearm in an act of violence, crossing state lines to commit a crime, and, if the suspect's act was (tied) to an organization, violation of the so-called RICO statutes, which prohibit an organized criminal enterprise.  \n Verb: tied",
+            "output": "No",
+            "explanation": "In this sentence, \"tied\" is a conditional verb and it's not happening now and it's not guaranteed to happen in the future. So, it's not anchorable."
+        },
+        {
+            "input": "To get him. Nothing more, she (said).  \n Verb: said",
+            "output": "Yes",
+            "explanation": "In this example, she said something in the past. So, this verb is anchorable."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Preliminary DNA tests link a missing anti-abortion activist to a strand of hair found near where a sniper shot and killed a Buffalo, N.Y., doctor who performed abortions, a law enforcement official said Friday. The first round of DNA tests on the hair at the FBI Laboratory here established a high probability it came from the same person as a hair found in a New Jersey home where James C. Kopp , a 44-year-old anti-abortion protester, lived last year, the official (said).  \n Verb :said",
+            "output": "No",
+            "explanation": "In this sentence, the saying action happened in the past, and it's anchorable."
+        },
+        {
+            "input": " Nobody talks to Fidel, because he doesn't listen, Juanita Castro said. He talks and he (decides).  \n Verb: decides",
+            "output": "Yes",
+            "explanation": "In this sentence, \"decides\" is not anchorable. Because it's not happening now and it's not guaranteed to happen in the future."
+        },
+        {
+            "input": "Kopp remains at-large and police admit that despite a worldwide search and a $1 million reward, they don't know where he is. It's very frustrating (knowing) that he's out there, said Ms. Buckham.  \n Verb: knowing",
+            "output": "No",
+            "explanation": "In this sentence, \"knowing\" is happening now, and it's anchorable."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task383-ec6c41c46461433fbc8df626f2c465fd",
+            "input": "His mother and 10 other people fleeing Cuba drowned when their boat sank. The Clinton administration has pushed for the boy's return to his father, ruling only he can (speak) for his son on immigration matters.  \n Verb: speak",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task383-1f51d0b4721846598a38e9d6965f02f9",
+            "input": "The Immigration and Naturalization Service has ruled in favor of the father's request that the boy be returned to him in Cuba, but that decision was put on hold while the Miami relatives battle in federal court to keep him in this country. Holder (said) that INS acted appropriately but  now that we have this new information, we'll have to look at it, and see, like I said, what steps if any are appropriate.   \n Verb: said",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task383-fd07d54251d943ecaf41e6450ab42968",
+            "input": "Liberty !  blocked intersections and cut off access to the Port of Miami. In one case, riot police had to (use) tear gas to clear them.  \n Verb: use",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task383-499087e78bc14931b834928fdf199ace",
+            "input": "Protesters planned a large demonstration in Little Havana on Saturday and were planning to drive around Miami International Airport on Monday.  If the child is (sent) back to Cuba without his day in court, all hell is going to break loose,  said Jose Basulto, founder of Brothers to the Rescue, an anti-Castro group.  \n Verb: sent",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task383-abb9265f1b2c4864bd7f4cbd059205f8",
+            "input": "Ironically, NATO's three newest members just a decade ago were still under the Soviet umbrella. Czech Foreign Minister Jan Kavan (said) he was in nearby Kansas City working with the anti-Soviet undergound in 1968 when Russian troops swept through Praque in the occupation of Czechoslovakia.  \n Verb: said",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task383-9f31806782fd4701b8355c833cf7b2da",
+            "input": "It was likely to be opposed by Elian's Miami relatives, who are fighting to keep the boy in the United States and who have said they think Gonzalez is being controlled by Fidel Castro's government. Gonzalez also wrote to Attorney General Janet Reno earlier this week, demanding that Elian be returned to him and saying he does not recognize the courts (hearing) the custody battle.  \n Verb: hearing",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task383-4987dca3927a45d0ba84d99d842e2580",
+            "input": "Juan Miguel Gonzalez objected to the media access to Elian that Lazaro Gonzalez's family has permitted and to the treatment of Elian by psychologists selected by Lazaro Gonzalez's family. Meantime, the possibility of a meeting between Attorney General Janet Reno and Lazaro Gonzalez's family (reemerged) Thursday.  \n Verb: reemerged",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task383-fbbf9e7edba1427db6fa4ca49a25c231",
+            "input": "In rapid-fire Spanish, so fast that even people who learned the language in other Hispanic cultures can have trouble keeping up, they villify Attorney General Janet Reno, President Clinton and others who want to send the child back to his father in Cuba. And they question _ or ridicule _ news that the boy's father is planning to come here to (retrieve) his son.  \n Verb: retrieve",
+            "output": [
+                "No"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

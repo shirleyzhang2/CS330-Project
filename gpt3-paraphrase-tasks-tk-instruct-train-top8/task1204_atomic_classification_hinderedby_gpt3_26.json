@@ -1,0 +1,125 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "atomic"
+    ],
+    "URL": [
+        "https://allenai.org/data/atomic-2020"
+    ],
+    "Categories": [
+        "Commonsense Classification"
+    ],
+    "Reasoning": [
+        "Relational Reasoning",
+        "Reasoning on Social Interactions",
+        "Commonsense Reasoning -> Social Situations"
+    ],
+    "Definition": [
+        "In this task, you are given two phrases: Head and Tail, separated by <sep>. The Head and Tail events are short phrases possibly involving participants. The names of specific people have been replaced by generic words (e.g., PersonX, PersonY, PersonZ). PersonX is always the subject of the event. You have to determine whether the Head can be hindered by what is mentioned in the Tail. In this task, hindering introduces hindrances that obstruct the natural path to the achievement of a goal. For example, the event PersonX adopts a cat can be obstructed if PersonX is allergic to cats. Classify your answers into \"Yes\" and \"No\". The phrase may also contain \"___\", a placeholder that can be an object, a person, and/or an action."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Sociology",
+        "Commonsense -> Concepts and Relations -> Social Commonsense"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Head: PersonX touches a nerve<sep>Tail: PersonX is too nice",
+            "output": "Yes",
+            "explanation": "This is a good example. The Tail can hinder the Head."
+        },
+        {
+            "input": "Head: PersonX attends school<sep>Tail: To be a student",
+            "output": "No",
+            "explanation": "In this example, The Head can't be hindered by the Tail."
+        },
+        {
+            "input": "Head: PersonX is driving down the street<sep>Tail: PersonX's car is in the shop.",
+            "output": "Yes",
+            "explanation": "If PersonX's car is in the shop, PersonX can't drive down the street. Thus, this example should be classified as \"Yes\"."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Head: PersonX asks if PersonY was okay<sep>Tail: to thank PersonX",
+            "output": "Yes",
+            "explanation": "In this example, The Head can't be hindered by the Tail. So the output should be \"No\"."
+        },
+        {
+            "input": "Head: PersonX clenches PersonY's jaw<sep>Tail: PersonY is out of reach.",
+            "output": "No",
+            "explanation": "If PersonY is out of reach, PersonX can't clench PersonY's jaw, and the output should be \"Yes\"."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1204-d5a9aaf68c054e0d815d94cb4684eb58",
+            "input": "Head: PersonX goes too far<sep>Tail: Their brother dragged them out of the room.",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1204-83a459d32c4e426eb794556b037aca3e",
+            "input": "Head: PersonX buys all of the ingredients<sep>Tail: some ingredients are out of stock",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1204-65c279f9c6e44e5997157985d9f89de4",
+            "input": "Head: PersonX always wore<sep>Tail: get laughed at",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1204-fe346d7ff68e4554b4f638866af009cc",
+            "input": "Head: PersonX arrives home from lunch<sep>Tail: late",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1204-dd85ebf40a5f49d19fd7dabda1883feb",
+            "input": "Head: PersonX looks very nice<sep>Tail: PersonX's mother didn't wash PersonX's clothing, so they only have tattered clothing to wear.",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1204-97ed1087b2dc45098e3dcd10a5c1d271",
+            "input": "Head: PersonX is a professional photographer<sep>Tail: PersonX's camera was stolen by Chad",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1204-49418c39cc854707b5fdddd60c73747b",
+            "input": "Head: PersonX asks PersonX's grandma<sep>Tail: answers personX",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1204-7c8583faacd44aa9bdf43e7128401be7",
+            "input": "Head: PersonX asks PersonY's mother<sep>Tail: to see what she says",
+            "output": [
+                "No"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

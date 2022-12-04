@@ -1,0 +1,123 @@
+{
+    "Contributors": [
+        "Pegah Alipoormolabashi"
+    ],
+    "Source": [
+        "wsc; enhanced_wsc"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/winograd_wsc; https://github.com/mhany90/perturbed-wsc"
+    ],
+    "Categories": [
+        "Text Matching"
+    ],
+    "Reasoning": [
+        "Commonsense Reasoning"
+    ],
+    "Definition": [
+        "You will be given two sentences. One of them is a paraphrase of the original sentence, with changes in one or more aspects. Your task is to decide what the difference is between the two sentences. The types of changes are explained below: Tense: The verbs in the sentence are changed in tense. Number: Plural nouns, verbs and pronouns are changed into single ones or the other way around. Voice: If the verbs are in active voice, they're changed to passive or the other way around. Adverb: The paraphrase has one adverb or more than the original sentence. Gender: The paraphrase differs from the original sentence in the gender of the names and pronouns. Synonym: Some words or phrases of the original sentence are replaced with synonym words or phrases. Changes in the names of people are also considered a synonym change. Classify your answers into Tense, Number, Voice, Adverb, Gender, and Synonym."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue",
+        "Narrative"
+    ],
+    "Positive Examples": [
+        {
+            "input": "original sentence: Lily spoke to Donna , breaking her silence . paraphrase: Lily is speaking to Donna , breaking her silence .",
+            "output": "Tense",
+            "explanation": "The verbs in this example are changed from past tense to present tense."
+        },
+        {
+            "input": "original sentence: I'm sure that my map will show this building ; it is very good . paraphrase: I'm sure that my maps will show these buildings ; they are very good .",
+            "output": "Number",
+            "explanation": "In this example, map and building and their pronouns has been changed. So, the output should be Number."
+        },
+        {
+            "input": "original sentence: Jim signaled the barman and gestured toward his bathroom key . paraphrase: Jim dreamily signaled the barman and vaguely gestured toward his bathroom key .",
+            "output": "Adverb",
+            "explanation": "In this example the adverbs \"vaguely\" and \"dreamily\" are added to the original sentence."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "original sentence: The dog chased the cat , which ran up a tree . It waited at the bottom . paraphrase: The dog is chasing the cat , which is running up a tree . It is waiting at the bottom .",
+            "output": "Voice",
+            "explanation": "The change in the original sentence is to tense, as the past tense verbs are changed to present tense ones. \"Voice\" is not a correct answer here."
+        },
+        {
+            "input": "original sentence: John was doing research in the library when he heard a man humming and whistling . He was very annoyed . paraphrase: John and Steve were doing research in the library when they heard men humming and whistling . They were very annoyed .",
+            "output": "Number is changed.",
+            "explanation": "You should only output the title of the change, and nothing more."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task276-be7dc1f6e0a9463a845d0af683607c61",
+            "input": "original sentence: When the sponsors of the bill got to the town hall , they were surprised to find that the room was full of opponents . They were very much in the minority . paraphrase: when the advocates of the bill got to the town hall , they were surprised to find that the room was full of adversaries . they were very much in the minority .",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "id": "task276-1a949aee199b4f04869b66bdb8b3382b",
+            "input": "original sentence: Sam pulled up a chair to the piano , but it was broken , so he had to stand instead . paraphrase: A chair was pulled up to the piano by Sam , but it was broken , so he had to stand instead .",
+            "output": [
+                "Voice"
+            ]
+        },
+        {
+            "id": "task276-bf314f1410cf45e9a66c850564d9c9df",
+            "input": "original sentence: I put the heavy book on the table and it broke . paraphrase: I am putting the heavy book on the table and it is breaking .",
+            "output": [
+                "Tense"
+            ]
+        },
+        {
+            "id": "task276-dc416fd3c9f544e98d12096f56be75a6",
+            "input": "original sentence: George got free tickets to the play , but he gave them to Eric , even though he was particularly eager to see it . paraphrase: Free tickets to the play were gotten by George , but they were given by him to Eric , even though he was particularly eager to see it .",
+            "output": [
+                "Voice"
+            ]
+        },
+        {
+            "id": "task276-1def3e1dd7894a2f91415bc8abc13b08",
+            "input": "original sentence: In the middle of the outdoor concert , the rain started falling , and it continued until 10 . paraphrase: In the middle of the outdoor concert , the rain is starting to fall , and it will continue until 10 .",
+            "output": [
+                "Tense"
+            ]
+        },
+        {
+            "id": "task276-2f1d874a515b462191aa445a49d64c4c",
+            "input": "original sentence: Susan knows all about Ann's personal problems because she is nosy . paraphrase: Bill knows all about John's personal problems because he is nosy .",
+            "output": [
+                "Gender"
+            ]
+        },
+        {
+            "id": "task276-c5ed638c4f5c4cf5b114fcb3988c7fc9",
+            "input": "original sentence: Bill passed the half-empty plate to John because he was hungry . paraphrase: Bill carefully passed the half-empty plate to John because he was hungry .",
+            "output": [
+                "Adverb"
+            ]
+        },
+        {
+            "id": "task276-9aa7b89592d5460cb2a49b9e905d1355",
+            "input": "original sentence: The police arrested all of the gang members . They were trying to stop the drug trade in the neighborhood . paraphrase: The policeman arrested the gang member . He was trying to stop the drug trade in the neighborhood .",
+            "output": [
+                "Number"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

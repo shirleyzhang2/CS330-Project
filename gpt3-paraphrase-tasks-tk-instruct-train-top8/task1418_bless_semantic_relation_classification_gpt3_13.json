@@ -1,0 +1,159 @@
+{
+    "Contributors": [
+        "Atharva Naik"
+    ],
+    "Source": [
+        "bless"
+    ],
+    "URL": [
+        "https://aclanthology.org/W11-2501/"
+    ],
+    "Categories": [
+        "Word Relation Classification"
+    ],
+    "Reasoning": [
+        "Commonsense Reasoning",
+        "Relational Reasoning"
+    ],
+    "Definition": [
+        "Given a pair of words, you need to generate the relation between them. The first word is the 'concept' and the second word is the 'relatum'. The relation can be one of the following: co-hyponym (coordinate), hypernym, meronym, attribute, event, or random. A coordinate relation means that the concept and relatum belong to the same semantic class. A hypernym relation means that the relatum is a category of which the concept is a specific instance. A meronym relation means that the relatum is a part/component/organ/member of the concept. An attribute relation is when the relatum is an adjective expressing an attribute of the concept. An event relation is when the relatum is a verb referring to an action/activity/happening/event that is performed by or with the concept. If the relatum and concept are unrelated, the relation between them is 'random'. Classify your answers into coord, hyper, mero, attri, event, and random."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Animals",
+        "Commonsense"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Concept: alligator, Relatum: lizard.",
+            "output": "coord",
+            "explanation": "Alligator and lizard belong to the same semantic class of reptiles, so the relation is coordinate."
+        },
+        {
+            "input": "Concept: alligator, Relatum: animal.",
+            "output": "hyper",
+            "explanation": "Animal is a general category of which alligator is a specific instance, so they have a hypernym relation."
+        },
+        {
+            "input": "Concept: alligator, Relatum: mouth.",
+            "output": "mero",
+            "explanation": "Mouth is an organ/part of an alligator, so the relationship between them is meronymy."
+        },
+        {
+            "input": "Concept: alligator, Relatum: aquatic.",
+            "output": "attri",
+            "explanation": "Alligators can be described as aquatic creatures, so the relationship between them is attribute."
+        },
+        {
+            "input": "Concept: alligator, Relatum: swim.",
+            "output": "event",
+            "explanation": "Swim is an action performed by an alligator, therefore the relation between them is event."
+        },
+        {
+            "input": "Concept: alligator, Relatum: methyl.",
+            "output": "random",
+            "explanation": "The two words an unrelated so the relation between them is random."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Concept: trumpet, Relatum: elephant.",
+            "output": "coord",
+            "explanation": "This answer is incorrect as a trumpet is a musical instrument while an elephant is an animal, and therefore the two belong to different semantic classes. The correct answer should be random, as the two words are unrelated."
+        },
+        {
+            "input": "Concept: tiger, Relatum: elephant.",
+            "output": "hyper",
+            "explanation": "The given answer is incorrect. The relationship between the two is coordinate as elephant and tiger are both animals, and therefore belong to the same semantic class."
+        },
+        {
+            "input": "Concept: mammoth, Relatum: elephant.",
+            "output": "mero",
+            "explanation": "The given answer is incorrect as elephant and mammoth are both animals and therefore have a coordinate relation and not a meronym relation."
+        },
+        {
+            "input": "Concept: tiger, Relatum: creature.",
+            "output": "attri",
+            "explanation": "The relationship between tiger and creature is hypernym, not attribute, because creature is a category to which tiger belongs."
+        },
+        {
+            "input": "Concept: piano, Relatum: superfluid.",
+            "output": "event",
+            "explanation": "The relationship between piano and superfluid cannot be event, as superfluid is not an action that can be performed by or on a piano. The two words are in fact unrelated nouns, and thus the relation should be random and not event."
+        },
+        {
+            "input": "Concept: bookcase, Relatum: fix.",
+            "output": "random",
+            "explanation": "The given answer is incorrect. The true relationship between the two words is event, as fix is an action that can be performed on a bookcase."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1418-154490663e184cfd94233907e521b58c",
+            "input": "Concept: bomber, Relatum: vehicle.",
+            "output": [
+                "hyper"
+            ]
+        },
+        {
+            "id": "task1418-b96f6b13a0cb453fb6f6f74184f5b678",
+            "input": "Concept: sweater, Relatum: comfortable.",
+            "output": [
+                "attri"
+            ]
+        },
+        {
+            "id": "task1418-06e6e0a3c8544420a77e23625e2866c1",
+            "input": "Concept: shirt, Relatum: expensive.",
+            "output": [
+                "attri"
+            ]
+        },
+        {
+            "id": "task1418-853b8c3a09d943d097cd1ddcfef13c58",
+            "input": "Concept: dress, Relatum: sweater.",
+            "output": [
+                "coord"
+            ]
+        },
+        {
+            "id": "task1418-036cdd951a2741eea2955f379347cc0c",
+            "input": "Concept: washer, Relatum: device.",
+            "output": [
+                "hyper"
+            ]
+        },
+        {
+            "id": "task1418-6e5884a784fd4643bc85dd62a81257f6",
+            "input": "Concept: desk, Relatum: round.",
+            "output": [
+                "attri"
+            ]
+        },
+        {
+            "id": "task1418-25df48e66486441b84afb2bab8874a75",
+            "input": "Concept: screwdriver, Relatum: artefact.",
+            "output": [
+                "hyper"
+            ]
+        },
+        {
+            "id": "task1418-2057e19c47a740b4b52d4989d332fb07",
+            "input": "Concept: turtle, Relatum: aquatic.",
+            "output": [
+                "attri"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Apache 2.0"
+    ]
+}

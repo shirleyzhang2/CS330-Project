@@ -1,0 +1,120 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "qasper"
+    ],
+    "URL": [
+        "https://allenai.org/project/qasper/home"
+    ],
+    "Categories": [
+        "Question Understanding"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "In this task, you will be presented with a context from an academic paper and a question based on the context. You have to classify the questions into \"Extractive\", \"Abstractive\", or \"Yes-no\" questions. Extractive questions can be answered by concatenating extracts taken from a context into a summary while answering abstractive questions involves paraphrasing the context using novel sentences. Yes-no question is a question whose expected answer is one of two choices, one that affirms the question and one that denies the question. Typically, the choices are either yes or no."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Scientific Research Papers"
+    ],
+    "Positive Examples": [
+        {
+            "input": "We build a dataset of Twitter accounts based on two lists annotated in previous works. For the non-factual accounts, we rely on a list of 180 Twitter accounts from BIBREF1. On the other hand, for the factual accounts, we use a list with another 32 Twitter accounts from BIBREF19 that are considered trustworthy by independent third parties. \n Question: How did they obtain the dataset?",
+            "output": "Extractive",
+            "explanation": "The answer to this question has been explicitly mentioned in the context, so the question is extractive."
+        },
+        {
+            "input": "We evaluate our pointer-generator performance using BLEU score. The baseline language model is trained using RNNLM BIBREF23 . Perplexity measure is used in the evaluation.\n\n \n Question: Did they use other evaluation metrics?",
+            "output": "Yes-no",
+            "explanation": "This is a good example, and the given question is a yes-no question."
+        },
+        {
+            "input": "As in the example above, we pre-process documents by removing all numbers and interjections. \n Question: what processing was done on the speeches before being parsed?",
+            "output": "Abstractive",
+            "explanation": "Answering this question needs paraphrasing the context, so this question is abstractive."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "For the English version, we performed both a thorough manual analysis and automatic evaluation across three commonly used TS datasets from two different domains  For the English version, we performed both a thorough manual analysis and automatic evaluation across three commonly used TS datasets from two different domains  The evaluation of the German version is in progress. \n Question: What are the corpora used for the task?",
+            "output": "Yes-no",
+            "explanation": "This question is extractive, and it's not a yes-no question."
+        },
+        {
+            "input": "For Turkish, as the first dataset, we utilised the movie reviews which are collected from a popular website. The number of reviews in this movie corpus is 20,244 and the average number of words in reviews is 39. Each of these reviews has a star-rating score which is indicative of sentiment. These polarity scores are between the values 0.5 and 5, at intervals of 0.5. We consider a review to be negative it the score is equal to or lower than 2.5. On the other hand, if it is equal to or higher than 4, it is assumed to be positive. We have randomly selected 7,020 negative and 7,020 positive reviews and processed only them. \n Question: What details are given about the movie domain dataset?",
+            "output": "Extractive",
+            "explanation": "This question is Abstractive because we need to paraphrase the context to get to the answer."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task462-1241a3b4b25742e8affd39b6299cdb40",
+            "input": "In this subsection, we see the influence of each component of a model on performance by removing or replacing its components. the SNLI dataset is used for experiments, and the best performing configuration is used as a baseline for modifications. We consider the following variants: (i) models that use plain stacked LSTMs, (ii) models with different INLINEFORM0 , (iii) models without INLINEFORM1 , and (iv) models that integrate lower contexts via peephole connections. \n Question: What were the baselines?",
+            "output": [
+                "Extractive"
+            ]
+        },
+        {
+            "id": "task462-36f8b48ff1d24bb681a565285c7e7727",
+            "input": "We have collected total 3500 questions from the Internet and other sources such as books of general knowledge questions, history etc. The corpus contains the questions and the classes each question belongs to. \n Question: what datasets did they use?",
+            "output": [
+                "Abstractive"
+            ]
+        },
+        {
+            "id": "task462-e0375f6c0e7144d1b1e4b028380d9bf3",
+            "input": "Our Recurrent +ELMo model uses the language model from BIBREF9 to provide contextualized embeddings to the baseline model outlined above, as recommended by the authors.\n\nOur OpenAI GPT model fine-tunes the 12 layer 768 dimensional uni-directional transformer from BIBREF27 , which has been pre-trained as a language model on the Books corpus BIBREF36 . \n Question: did they use other pretrained language models besides bert?",
+            "output": [
+                "Yes-no"
+            ]
+        },
+        {
+            "id": "task462-a8511e7bee864fcb9d1387044fcc8ff8",
+            "input": " In this work, we develop a technique to rapidly transfer an existing pre-trained model from English to other languages in an energy efficient way BIBREF8. As the first step, we focus on building a bilingual language model (LM) of English and a target language. Starting from a pre-trained English LM, we learn the target language specific parameters (i.e., word embeddings), while keeping the encoder layers of the pre-trained English LM fixed. We then fine-tune both English and target model to obtain the bilingual LM.  \n Question: How is the model transferred to other languages?",
+            "output": [
+                "Abstractive"
+            ]
+        },
+        {
+            "id": "task462-5faff7ddbe58431b8995d1088af090ef",
+            "input": "We compare the performance of our model (Table 2 ) with traditional Bag of Words (BoW), TF-IDF, and n-grams features based classifiers. We also compare against averaged Skip-Gram BIBREF29 , Doc2Vec BIBREF30 , CNN BIBREF23 , Hierarchical Attention (HN-ATT) BIBREF24 and hierarchical network (HN) models. HN it is similar to our model HN-SA but without any self attention. We further investigated the performance on SWBD2 by examining the confusion matrix of the model. Figure 2 shows the heatmap of the normalized confusion matrix of the model on SWBD2. \n Question: Do the authors do manual evaluation?",
+            "output": [
+                "Yes-no"
+            ]
+        },
+        {
+            "id": "task462-681c62dde10e476693369fbe86c52026",
+            "input": "To better exploit such existing data sources, we propose an end-to-end (E2E) model based on pointer networks with attention, which can be trained end-to-end on the input/output pairs of human IE tasks, without requiring token-level annotations. Since our model does not need token-level labels, we create an E2E version of each data set without token-level labels by chunking the BIO-labeled words and using the labels as fields to extract. \n Question: Do they assume sentence-level supervision?",
+            "output": [
+                "Yes-no"
+            ]
+        },
+        {
+            "id": "task462-9b94de81c5134597b2d818d890cd1b70",
+            "input": "The NLG model is a seq2seq model with attention as described in section SECREF2. \n Question: Do they use attention?",
+            "output": [
+                "Yes-no"
+            ]
+        },
+        {
+            "id": "task462-9c4c70a36f714cc0af341a34860820c3",
+            "input": "To collect a diverse training dataset, we have randomly sampled 1000 posts each from the subreddits politics, business, science, and AskReddit, and 1000 additional posts from the Reddit frontpage. \n Question: what are the topics pulled from Reddit?",
+            "output": [
+                "Extractive"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

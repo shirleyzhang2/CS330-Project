@@ -1,0 +1,127 @@
+{
+    "Contributors": [
+        "Amrit Bhaskar"
+    ],
+    "Source": [
+        "propara"
+    ],
+    "URL": [
+        "https://arxiv.org/abs/1805.06975"
+    ],
+    "Categories": [
+        "Information Extraction"
+    ],
+    "Reasoning": [
+        "Deductive Reasoning"
+    ],
+    "Definition": [
+        "In this task, you are given a paragraph and an event. The event is part of the paragraph and it changes the state of an entity. Your task is to classify the state of the entity into three classes: 1) not exist, 2) unknown location and 3) known location. \"not exist\" means the entity doesn't exist in that state anymore. \"unknown location\" means the entity exists in that state but location is unknown. \"known location\" means the entity exists and location is known."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Natural Science"
+    ],
+    "Positive Examples": [
+        {
+            "input": " \"process paragraph : Magma rises from deep in the earth. The magma goes into volcanos. The volcanos pressure the magma upwards. The pressure causes the magma to push through the surface of the volcano. The lava cools. The lava forms new rock. New magma is pressured to the surface of the volcano. The volcano bursts through the rock the formed after the last eruption\" , \"event : Magma rises from deep in the earth\" , \"entity : magma\" ",
+            "output": "known location",
+            "explanation": "The process paragraph explains in steps about - the cause for volcano eruption. The event is a part of the process paragraph given. The entity lies both in process paragraph and the event. So, this is a good example."
+        },
+        {
+            "input": " \"process paragraph : Water from the ocean washes onto beaches in waves. The waves contain sediment from the ocean. The water and particles in it hit rocks and sand on the beach. The wind and current sometimes push the water and particles harder. Tiny parts of the rocks on the shore come off the larger rocks. The waves pick up sand and small rocks from the beach. The waves go back out into the ocean. The waves carry the new particles with them. Rocks and the beach look a little different. \", \"event : The waves go back out into the ocean. \", \"entity : waves\" ",
+            "output": " known location ",
+            "explanation": "The process paragraph explains in steps about - the sequence of events during erosion by the ocean. The event is a part of the process paragraph given. The entity lies both in process paragraph and the event. So, this is a good example."
+        },
+        {
+            "input": " \"process paragraph : Water from oceans, lakes, swamps, rivers, and plants turns into water vapor. Water vapor condenses into millions of tiny droplets that form clouds. Clouds lose these droplets through rain or snow, also caused precipitation. Precipitation is either absorbed into the ground or runs off into rivers. Water that was absorbed into the ground is taken up by plants. Plants lose water from their surfaces as vapor. The vapor goes back into the atmosphere. Water that runs off into rivers flows into ponds, lakes, or oceans. The water evaporates back into the atmosphere. \", \"event : Water from oceans, lakes, swamps, rivers, and plants turns into water vapor. \", \"entity : water\" ",
+            "output": " not exist ",
+            "explanation": "The process paragraph explains in steps about - the sequence of events during water cycle. The event is a part of the process paragraph given. The entity lies both in process paragraph and the event. So, this is a good example."
+        },
+        {
+            "input": " \"process paragraph : Sediment settles in a place due to gravity. The sediment breaks down into small particles. Wind or water picks up the sediment. The sediment travels along the same route as the wind or water. The sediment is deposited at new locations by the wind or water. The sediment is picked up again by new wind or water. The sediment travels further. The sediment is deposited again in a new place. \", \"event : The sediment is picked up again by new wind or water. \", \"entity : sediment; small particles\" ",
+            "output": " unknown location ",
+            "explanation": "The process paragraph explains in steps about - the sequence of events during sediment transportation across the earth. The event is a part of the process paragraph given. The entity lies both in process paragraph and the event. So, this is a good example."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": " \"process paragraph : Water from oceans, lakes, swamps, rivers, and plants turns into water vapor. Water vapor condenses into millions of tiny droplets that form clouds. Clouds lose these droplets through rain or snow, also caused precipitation. Precipitation is either absorbed into the ground or runs off into rivers. Water that was absorbed into the ground is taken up by plants. Plants lose water from their surfaces as vapor. The vapor goes back into the atmosphere. Water that runs off into rivers flows into ponds, lakes, or oceans. The water evaporates back into the atmosphere. \", \"event : Water from oceans, lakes, swamps, rivers, and plants turns into water vapor. \", \"entity : water\" ",
+            "output": " known location ",
+            "explanation": "This is a bad example because the output class is incorrect. Water in this event has turned into water vapor and is longer in the form of water. The existence is necessary to find the location. "
+        },
+        {
+            "input": " \"process paragraph : Magma rises to the surface during a volcano. The magma undergoes changes in temperature. The magma undergoes changes in pressure. The magma cools. The magma solidifies. The magma crystallizes. Igneous rock is formed. \", \"event : Magma rises to the surface during a volcano. \", \"entity : magma\" ",
+            "output": " unknown location ",
+            "explanation": "This is a bad example because the output class is incorrect. Magma in this event has risen to the surface and is considered a known location. Only classify to unknown location when the place of entity is not determined. "
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1568-804321386dde4b4d9b65644dddd81a88",
+            "input": " \"process paragraph : : Air rises. Rising air cools. Water vapor forms. Water vapor condenses. Clouds form. \", \"event : Rising air cools.\", \"entity : air ; rising air\" ",
+            "output": [
+                " unknown location "
+            ]
+        },
+        {
+            "id": "task1568-6f4033742f3d429f820fd97bf805f437",
+            "input": " \"process paragraph : : A tree produces seeds. The seeds are dispersed by wind, animals, etc. The seeds reach the ground. Grow into new trees. These new trees produce seeds. The process repeats itself over and over. \", \"event : The seeds are dispersed by wind, animals, etc.\", \"entity : Tree\" ",
+            "output": [
+                " not exist "
+            ]
+        },
+        {
+            "id": "task1568-e24574e5712d4ba1a9ddc07dab7d733c",
+            "input": " \"process paragraph : : Get some seeds. Pick a spot to plant them. Dig a hole in the dirt. Put the seed in the hole. Pour some water on the seed and hole. Cover up the hole. Press down on it. Spray some plant food on it. \", \"event : Pick a spot to plant them.\", \"entity : seed\" ",
+            "output": [
+                " unknown location "
+            ]
+        },
+        {
+            "id": "task1568-f5519d6f5a23400b9024e4c4c18ea9be",
+            "input": " \"process paragraph : : Water vapor gets into the atmosphere through a process called evaporation. This then turns the water that is at the top of oceans, rivers and lakes into water vapor in the atmosphere using energy from the sun. The water vapor rises in the atmosphere and there it cools down. Water vapor rises in the atmosphere and there it cools down and forms tiny water droplets through something called condensation. These then turn into clouds. When they all combine together, they grow bigger and are too heavy to stay up there in the air. This is when they will fall to the ground as rain, or maybe snow or hail by gravity. \", \"event : This then turns the water that is at the top of oceans, rivers and lakes into water vapor in the atmosphere using energy from the sun.\", \"entity : water\" ",
+            "output": [
+                " not exist "
+            ]
+        },
+        {
+            "id": "task1568-08db442936dd4a8aa7d3b9be9f053ae9",
+            "input": " \"process paragraph : : 300 millions years ago plants and trees died. The plant and tree remains sank to the bottom of steamy, swampy areas. Layer upon layer of remains accumulated. Eventually forming a soggy, dense material called peat. The peat was buried over millions of years by sand, clay, and other mineral material. Pressure caused by the wait of the materials squeezed water from the peat. With the heat caused by increased burial peat slowly became coal. \", \"event : The plant and tree remains sank to the bottom of steamy, swampy areas.\", \"entity : plants; trees\" ",
+            "output": [
+                " not exist "
+            ]
+        },
+        {
+            "id": "task1568-2d3f55f90b624aa0bfdebd183b1d318e",
+            "input": " \"process paragraph : : A plant or animal dies in mud or soil. The bones are all that remains. Over time the bones are covered in sediment. The sediment becomes rock. The rock becomes a fossil. \", \"event : The bones are all that remains.\", \"entity : plant or animal\" ",
+            "output": [
+                " not exist "
+            ]
+        },
+        {
+            "id": "task1568-ef816034e8bf405ab8b41dd19936f14d",
+            "input": " \"process paragraph : : Food. Water enter the body. Bloodstream. Food and water enter the pancreas. The pancreas breaks down carbs. Helps digest other foods and liquids. \", \"event : Water enter the body.\", \"entity : carbs\" ",
+            "output": [
+                " known location "
+            ]
+        },
+        {
+            "id": "task1568-806169e315e44a0580d76c0d78fb9e78",
+            "input": " \"process paragraph : : A hurricane usually starts as an organized thunderstorm activity that stretches at least 100 miles across and maintains its identity for more than 24 hours. Under the right conditions it can develop further and start to spin around a low-pressure center. If it develops it's classified as a \"tropical cyclone\" or \"tropical depression\". If the system strengthens and wind speeds rise past 39 mph, the system is dubbed a \"tropical storm\". If the pressure in the center drops even further and the winds really pick up and forms a clearly defined \"eye\" it's a hurricane. \", \"event : Under the right conditions it can develop further and start to spin around a low-pressure center.\", \"entity : hurricane\" ",
+            "output": [
+                " not exist "
+            ]
+        }
+    ],
+    "Instance License": [
+        "Apache 2.0"
+    ]
+}

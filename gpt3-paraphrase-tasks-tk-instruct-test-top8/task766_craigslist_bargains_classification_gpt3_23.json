@@ -1,0 +1,117 @@
+{
+    "Contributors": [
+        "Ritvik Gaur"
+    ],
+    "Source": [
+        "craigslist_bargains"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/craigslist_bargains"
+    ],
+    "Categories": [
+        "Dialogue State Tracking"
+    ],
+    "Reasoning": [
+        "Reasoning on Social Interactions"
+    ],
+    "Definition": [
+        "Given a text passage as input consisting of dialogues between a seller and a buyer about the sale of an item, the task is to classify the text into one of two possible outputs: 'accepted' or 'rejected'. Select 'accepted' if, by the end of the conversation, the buyer seems likely to buy the item from the seller. A sale is likely to be made when the buyer and seller agree upon a common price, or when a deal is made between them. Select 'rejected' if the buyer did not seem interested in buying the item from the seller at the end of the conversation. This happens when the buyer and seller do not agree on the price or other aspects of the item being sold."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Buyer: Hi,I am interested in your board!\nSeller: Hi, do you have any questions?\nBuyer: Do you know what wood it is made out of?\nSeller: I do not know specifically but the brand is a gravity skateboard. \nBuyer: The wheels seem nice on it, but they could be a beter quality. Would you accept 100 for the board?\nSeller: No, that offer is too low. The board is pretty much brand new as it's been ridden only 4 or 5 times.  The bone bearings are brand new.\nBuyer: If I picked it up at your location would you accpet 120?\nSeller: Make it 150 and we got a deal. \nBuyer: I could do 145, if you can gurantee the painting on the front of the board is not scratched up. \nSeller: Deal\nBuyer: Great!",
+            "output": "accepted",
+            "explanation": "The answer 'accepted' is the correct answer because here the buyer and seller agree on a price and make a deal at the end of the conversation."
+        },
+        {
+            "input": "Buyer: I am interested in the Benz. How much for it?\nSeller: I am asking $26800. \nBuyer: How many miles on it?\nSeller: Only 16,473.\nBuyer: Has it had any major repairs?\nSeller: No, it has been accident free and in great condition.\nBuyer: Why are you selling it?\nSeller: starting to expand our family, time for an suv and baby seat.\nBuyer: I can give you 17000. That will buy a lot of diapers.\nSeller: I need the SUV. That is just way too low for me. Sorry you need to come way up.\nBuyer: I can do 20,000 if you throw in a 3 year warranty to cover any repairs that might naturally arise\nSeller: There is a warranty in place, so that is not a problem. But I need a minimum of 25000\nBuyer: How long is the warranty?\nSeller: Ten more years.\nBuyer: 22500 and you got a deal\nSeller: nO SORRY i am firm on the 25,000 being my lowest offer.\nBuyer: Can't do it.",
+            "output": "rejected",
+            "explanation": "The answer 'rejected' is correct because at the end of the conversation the buyer and seller do not agree to a common price. Since the buyer was asking for a price of 22500 and the seller was not accepting offers below 25000, the buyer did not decide to buy the item from the seller."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Buyer: i want to live in your house but i cant pay 1000k\nSeller: It really is a nice home.\nBuyer: i agree i lvoe the area , how old is the home\nSeller: I am not positive. It looks nice I can't tell sorry.\nBuyer: will you do 500 ? i need to buy new beds and furtinure\nSeller: I can't do half. I am sorry. It has a garage and a fenced in yard if you have kids.\nBuyer: i can do 600 if you waive the deposit\nSeller: Honestly I think the lowest I can do is $800 with the deposit. I am sorry. That is what they go for in this neighborhood. \nBuyer: ok i can do 750 lowest and fits my bussdet\nSeller: Ok I think we can make a deal.\nBuyer: deal\n",
+            "output": "rejected",
+            "explanation": "This is the wrong answer and the correct answer is 'accepted' because here the buyer and seller agree on the same price and make a deal at the end, which indicates that the buyer decided to buy the item from the seller."
+        },
+        {
+            "input": "Buyer: I think this is a fair price\nSeller: Why is there an offer there already?\nBuyer: This is within the area comps and reasonable for this size of home.\nSeller: I can't accept that low. That is $1000 less then asking price.\nBuyer: My final offer would be 1850.00\nSeller: I really don't think I could go that low.\nBuyer: What is your bottom line?\nSeller: For a 4 Bedroom, 2 1/2 bath with a 2 car garage in California. it has a tennis court a children play structure.I think the best I could is $2000.\nBuyer: I don't see anything in the listing about a tennis court or a child's play structure. I am not willing to go over $1850 and will assume all maintenance issues with this rental.\nSeller: You can't make another offer anyway. I can't erase your original offer. I am going to have to reject.\nBuyer: ok\n",
+            "output": "yes",
+            "explanation": "This answer 'yes' is incorrect here because it is not among the only two options 'accepted' or 'rejected' from which the answer is to be chosen. The correct answer is 'rejected' because the buyer and the seller are not able to agree upon the same price as seen in the conversation where the buyer is offering 1850 but the seller will not sell for under 2000 and so the seller rejects the buyer's offer. This indicates that the buyer does not end up buying the item from the seller."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task766-6a850555714847d68e20be3dd2234165",
+            "output": [
+                "rejected"
+            ],
+            "input": "Seller: it's a steal at 350. make an offer i can't refuse\nBuyer: Being a used item, I will offer $150.\nSeller: whoa there fella. talk about low balling. i'll tell you seeing as how we're moving and we need to sell this, i'm willing to let it go for, say... 300.\nBuyer: Anything else you can throw in, that's still too high.\nSeller: it has a footbaord that comes with it already. I guess I could throw in my daughter's old make up sets. but they're used. there are quite a few items in there probably 30 things. foundation, eye kits, etc. she's moved out and no one is using them \nBuyer: Sorry not interested in used makeup.  I am willing to pickup, for $200.\nSeller: yeah. no can do for that low. guess we have no deal.\nBuyer: good luck\nSeller: \n"
+        },
+        {
+            "id": "task766-e8019984c62b4a8999b782214edd6b02",
+            "output": [
+                "rejected"
+            ],
+            "input": "Buyer: I am interested in the Benz. How much for it?\nSeller: I am asking $26800. \nBuyer: How many miles on it?\nSeller: Only 16,473.\nBuyer: Has it had any major repairs?\nSeller: No, it has been accident free and in great condition.\nBuyer: Why are you selling it?\nSeller: starting to expand our family, time for an suv and baby seat.\nBuyer: I can give you 17000. That will buy a lot of diapers.\nSeller: I need the SUV. That is just way too low for me. Sorry you need to come way up.\nBuyer: I can do 20,000 if you throw in a 3 year warranty to cover any repairs that might naturally arise\nSeller: There is a warranty in place, so that is not a problem. But I need a minimum of 25000\nBuyer: How long is the warranty?\nSeller: Ten more years.\nBuyer: 22500 and you got a deal\nSeller: nO SORRY i am firm on the 25,000 being my lowest offer.\nBuyer: Can't do it.\nBuyer: \n"
+        },
+        {
+            "id": "task766-ba1785fc36e54325aabef8e97ebf154f",
+            "output": [
+                "accepted"
+            ],
+            "input": "Buyer: Hello. I came across your listing for an apartment. It looks very nice. I would like to know if you allow any pets at all?\nSeller: PETS ARE ALLOWED.FEEL FREE TO YOUR HOME\nBuyer: That is wonderful. Thank you. This apartment would stretch the budget a bit, but having pets is a great perk. Is there any parking available?\nSeller: yes\nBuyer: My original budget was $850 but saving money on parking will help. Would you consider $1250?\nSeller: can u offer 1800$\nBuyer: The listing I am looking at has an asking price of $1700. I just can't afford that, even though it is a perfect arrangement. Would you consider $1450?\nSeller: \nBuyer: \n"
+        },
+        {
+            "id": "task766-6b0a7a43db3b434ca8ff4e4d7fdf6c8e",
+            "output": [
+                "rejected"
+            ],
+            "input": "Buyer: Hello, I am interested in this apartment. Could you please tell me if this apartment is furnished? \nSeller: No it does not come furnished.\nBuyer: Okay thanks.. I'd have to furnish this apartment and I just got a new job working as an ecologist in the bay area. Eventually I could afford to pay full price but would like to negotiate if possible until I can get more acclimated.  \nSeller: I can work with you on the price within reason, do you have an offer?\nSeller: \nBuyer: I'd like to pay no more than $1,400.00 at first and provide you will a full  deposit with a two lease that would steadily double on rent after one year. This will give me the means to properly furnish this apartment and get to save the extra money back for the years ahead. \n"
+        },
+        {
+            "id": "task766-2919190d1de54dfdbea74c087f2780d7",
+            "output": [
+                "rejected"
+            ],
+            "input": "Seller: hi\nBuyer: Are willing to negotiate with the price quite a bit? I don't want to waste your time if you're stuck on the list price, but I would love to look into your home. It looks lovely.\nSeller: I am a littleflexible, perahps you wanto knwo more about the property?\nBuyer: Yes, how many square feet?\nSeller: 3000 so pretty large\nBuyer: I have a pretty strict budget, so I'd have to negotiate, but I'm interested in finding out more about your home.\nSeller: Yes I already said we coudl work on the price\nBuyer: Sorry, do you know how close it is to grocery shopping?\nSeller: no problem it is about a 4 minute drive to 3 different grcoery stores, walmart market, publix, and whole foods .. Alsi is a further 5 min drive down the road\nBuyer: Thanks! I'll tell you what. I will offer you $1736 right now.\nSeller: well I can work with you on lowering the $2480, but 1736 si far too low.\nBuyer: Are there any other amenities or perks you can offer?\nSeller: well I can offer it furnished if you can 2300.\nBuyer: Being furnished sounds nice, but that's still too high. How about $2000?\nSeller: no sorry, thisis one of the nicest homes in the area at an already great price of 2480, which is low for the area.\nBuyer: $2000 is already higher than I'm supposed to go, so I can't offer anything higher.\nSeller: I think we are not a good match for this home. sorry. good luck\nSeller: \nBuyer: \n"
+        },
+        {
+            "id": "task766-bd0ac2d47b7c47fc8d381103e83353cb",
+            "output": [
+                "rejected"
+            ],
+            "input": "Buyer: hi how are you???\nSeller: awesome. Need an apartment?\nBuyer: yeah man, I like the pics and all but damn the price is high\nSeller: What can I say, It's a high-end neighborhood.\nBuyer: Kool man, but do you got any wiggle room at all?\nSeller: What were you thinking?\nBuyer: how about a grand cash\nSeller: Well, that's way too low for this area. I hope you can afford over 2500.\nBuyer: WOW, I see you point on where it is and all, but how many offers got cash on hand and will meet you today with that cash, how about 1200 cash\nSeller: We usually only take personal checks. If you have great credit we might rent it for 2400.\nBuyer: I am in the cash only type of buiz.  how about 1600 cash?\nSeller: It sounds like you need to look in a different type of area for housing.\nBuyer: nah man, 1600?  To low?  Tell you what thrown the TV in the pic and I will do 1900?\nSeller: I'm sorry but it doesn't seem like we will be able to rent to you. Have a nice day.\nSeller: \n"
+        },
+        {
+            "id": "task766-0de3570276ae4e73aae003d2ca116ea6",
+            "output": [
+                "rejected"
+            ],
+            "input": "Seller: hello\nBuyer: hi\nSeller: this is a great place. tons of amenities, and a really great neighborhood. super lawn and near some cool parks i'm looking for $3,100 and its yours\nSeller: have you had time to think about my offer of $3100? this place is great\nBuyer: i will offer you 1500\nSeller: that is way too low. please make a more reasonable offer\nBuyer: how about 1750\nSeller: i can't go much lower than 3000. that would be way below market for a place like this\nBuyer: what if i agree to pay for utilities\nSeller: if you pick up the utilities, I could go to $2900\nBuyer: that's still too high for me. what if I agree to furnish the place myself?\nSeller: i'm afraid I absolutely can not go any lower than 2850\nBuyer: my budget is 1500, but i'd be willing to go 2250 max\nSeller: that's just too low. i can't accept that\nBuyer: how about we meet in the middle, 2500? that's my final offer\nSeller: no thank you, you will just have to find another place\nBuyer: alright, thanks anyways, have a good day\nBuyer: \n"
+        },
+        {
+            "id": "task766-f22e57007ef54ed3a94a6d99354845d9",
+            "output": [
+                "rejected"
+            ],
+            "input": "Buyer: \nBuyer: I think this is a fair price\nSeller: Why is there an offer there already?\nBuyer: This is within the area comps and reasonable for this size of home.\nSeller: I can't accept that low. That is $1000 less then asking price.\nBuyer: My final offer would be 1850.00\nSeller: I really don't think I could go that low.\nBuyer: What is your bottom line?\nSeller: For a 4 Bedroom, 2 1/2 bath with a 2 car garage in California. it has a tennis court a children play structure.I think the best I could is $2000.\nBuyer: I don't see anything in the listing about a tennis court or a child's play structure. I am not willing to go over $1850 and will assume all maintenance issues with this rental.\nSeller: You can't make another offer anyway. I can't erase your original offer. I am going to have to reject.\nBuyer: ok\nBuyer: \n"
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

@@ -1,0 +1,116 @@
+{
+    "Contributors": [
+        "Divya Reddy Katpally"
+    ],
+    "Source": [
+        "dbpedia_14"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/dbpedia_14"
+    ],
+    "Categories": [
+        "Text Matching"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "In this task, you're given a text which is the body of a document and a title which is the title of the document. Here the title is present in the document and it is the entity which is referred in the document. The title might have some text in parentheses, for example: \"HMS Mallow (K81)\", or be slightly different from what is present in the text. If they still refer to the same entity, then it is a correct title. Indicate your answer as \"Yes\" if the title is correct, otherwise indicate your answer as \"No\". Do not generate anything else apart from \"Yes\" or \"No\"."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Wikipedia"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Text: The Mansfield Building Society is a UK building society which has its headquarters in Mansfield Nottinghamshire. It is a member of the Building Societies Association. \nTitle: Mansfield Building Society",
+            "output": "Yes",
+            "explanation": "The title \"Mansfield Building Society\" is present in the text and it is the main entity that is referred in the text. Hence, it is the title of the document."
+        },
+        {
+            "input": "Text:  The third and current HMS Argyll is a Type 23 'Duke' Class frigate. She is currently the oldest serving Type 23 frigate in the Royal Navy. Like all of her class she is named for a British dukedom in this case that of Argyll. \nTitle: HMS Argyll (F231)",
+            "output": "Yes",
+            "explanation": "\"HMS Argyll\" is present in the text and it is the main entity that is referred in the text. Here, the text in parentheses \"F31\" is not present in the document and it can be ignored. Hence, the output is correct. "
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Text: The Mansfield Building Society is a UK building society which has its headquarters in Mansfield Nottinghamshire. It is a member of the Building Societies Association. \nTitle: Mansfield Building Society",
+            "output": "No",
+            "explanation": "The title \"Mansfield Building Society\" is present in the text and it is the main entity that is referred in the text. Hence, the output is incorrect."
+        },
+        {
+            "input": "Text:  The third and current HMS Argyll is a Type 23 'Duke' Class frigate. She is currently the oldest serving Type 23 frigate in the Royal Navy. Like all of her class she is named for a British dukedom in this case that of Argyll. \nTitle: HMS Argyll (F231)",
+            "output": "HMS Argyll",
+            "explanation": "The output should be either \"Yes\" or \"No\". Hence, it is negative example."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task630-d491c75f89c34065a71bc132d91ffcd9",
+            "input": "Text:  Hans M\u00fcller (born March 7 1931) is a Swiss figure skater. He is the 1955 Swiss national champion. He represented Switzerland at the 1956 Winter Olympics and placed 12th in the men's event. \nTitle: Hans M\u00fcller (figure skater)",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task630-ff64df8fd83245d6940561fcc06826f8",
+            "input": "Text:  The Biruin\u021ba River is a tributary of the Black Sea Lake Techirghiol in Romania. \nTitle: Biruin\u021ba River",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task630-0064019449c74e77912fdc4bfb64aac1",
+            "input": "Text:  La Libre Belgique (literally The Free Belgium) now sold under the name La Libre is a Belgian newspaper in French. In Belgium it is seen as roughly equivalent to the Flemish De Standaard. The paper is widely perceived as pro-catholic. \nTitle: La Libre Belgique",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task630-7be6a37e381a4a4287d1db708e18e0a3",
+            "input": "Text:  Sir William Dunn 1st Baronet of Lakenheath MP JP FRGS (22 September 1833 \u2013 31 March 1912) was a London banker merchant and philanthropist Liberal Member of Parliament for Paisley (1891\u20131906) and from before 1896 until the outbreak of the Second Boer War in 1899 consul general for the Orange Free State in the United Kingdom. \nTitle: Lake District Hospital",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task630-e127ef8223374a61b5fa99e1fd72a18b",
+            "input": "Text:  Cherry Shares was a high-yield investment program which claimed to generate a profit for its investors by engaging in arbitrage trading. The site offered several investment programs with varying timelines and rates of return. It was run by Brooksell Universal Limited which was created on August 25 2008. \nTitle: Christ the King Preparatory School (New Jersey)",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task630-d96cf82c258547e39973f117b0e6ce52",
+            "input": "Text:  The Sagemont School is a private preparatory school in Weston Florida United States. \nTitle: Sagemont School",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task630-65e2f5650ed0460a8f2594dcd2ef2caa",
+            "input": "Text:  Chah Abi-ye Ki Mohammad (Persian: \u0686\u0627\u0647 \u0627\u0628\u064a \u0643\u064a \u0645\u062d\u0645\u062f\u200e also Romanized as Ch\u0101h \u0100b\u012b-ye K\u012b Mo\u1e29ammad) is a village in Sorkheh Rural District Fath Olmobin District Shush County Khuzestan Province Iran. At the 2006 census its existence was noted but its population was not reported. \nTitle: Chah Abi-ye Ki Mohammad",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task630-c19bcd5eb57b4797b99926ceaba9f39d",
+            "input": "Text:  Martin Luther Smyser (April 3 1851 \u2013 May 6 1908) was a U.S. Representative from Ohio.Born on a farm in Plain Township Wayne County Ohio Smyser attended the common schools and was graduated from Wittenberg College Springfield Ohio in 1870.He studied law at Wooster under Lyman R. Critchfield.He was admitted to the bar in 1872 and practiced in Wooster.In 1873 he entered into partnership with Addison S. \nTitle: Violin (novel)",
+            "output": [
+                "No"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY-SA",
+        "GNU Free Documentation 2.0"
+    ]
+}

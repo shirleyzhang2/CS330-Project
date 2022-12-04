@@ -1,0 +1,120 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "matres"
+    ],
+    "URL": [
+        "https://github.com/CogComp/MATRES"
+    ],
+    "Categories": [
+        "Information Extraction"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You will receive a context and a verb separated by a newline character. Your task is to identify if the given verb implies an opinion, an intention, or a wish. Please note that a verb refers to an intention only if it refers to an event planned to happen in the future and is not conditional (or part of a condition). Output 'Yes' if the verb refers to an opinion, an intention, or a wish, and 'No' otherwise."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "News"
+    ],
+    "Positive Examples": [
+        {
+            "input": "It was followed by Denmark, Norway, Germany, France, Greece, Luxembourg, Spain, Britain, the United States, Iceland, Belgium, Italy, Portugal and Turkey. NATO decided at last year's Madrid summit to (invite) the three eastern European countries to start accession talks.  \n Verb: invite",
+            "output": "Yes",
+            "explanation": "They planned to \"invite\" the three eastern European countries, so this verb refers to an intention."
+        },
+        {
+            "input": "In Washington today, the Federal Aviation Administration (released) air traffic control tapes from the night the TWA Flight eight hundred went down.  \n Verb: released",
+            "output": "No",
+            "explanation": "In this sentence, the releasing event happened in the past, and hence it's not an intention."
+        },
+        {
+            "input": "We will act again if we have evidence he is (rebuilding) his weapons of mass destruction capabilities, senior officials say. In a bit of television diplomacy, Iraq\u2019s deputy foreign minister responded from Baghdad in less than one hour.  \n Verb: rebuilding",
+            "output": "No",
+            "explanation": "In this sentence, the verb is part of of a condition. Therefore, it cannot be known for sure if he is already rebuilding weapons but we have no evidence, or if he will be building weapons in the future, and hence it's not an intention."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "The Justice Department wants the appeals court to suspend the temporary injunction issued Thursday and also order Elian's great-uncle, Lazaro Gonzalez, to release the boy. The relatives want the court to let them meet with Elian's father without being (required) to surrender the boy.  \n Verb: required",
+            "output": "Yes",
+            "explanation": "In this sentence, required is not an intention, wish, or opinion, as it is part of a condition."
+        },
+        {
+            "input": "The federal charge also carries a fine of up to $250,000. The newly filed charges will (intensify) the ongoing international manhunt, Tolbert said.  \n Verb: intensify",
+            "output": "No",
+            "explanation": "In this sentence, \"intensify\" is planned to happen in the future, and it is an opinion or intention."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task456-7b757293005e4f59839f2c9a7d68e49d",
+            "input": "The Cuban leader said that the U.S. government still did not know how it would transfer Elian to his father, but that it would happen quickly. The U.S. Immigration and Naturalization Service said earlier this week that once Gonzalez arrives in the United States it will begin the process to transfer Elian to his custody from the Miami relatives who have been (caring) for him since he was rescued off the coast of Florida in late November.  \n Verb: caring",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task456-f190144561394a61882296f3807d3c45",
+            "input": "Israel-Syrian talks have been cut off for nearly two years. Defense Minister Yitzhak Mordechai was the first senior Israeli official to refer to U.N. resolution 425 in a speech six weeks ago, saying at the time he was willing to (withdraw) troops in exchange for guarantees that Israel would not be attacked.  \n Verb: withdraw",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task456-62a79c4c672c43c498bd3629977e17b6",
+            "input": "It is the US economic and political embargo which has kept Cuba in a box. The main positive for Castro to invite the Pope is international, to be able to (say) to the rest of the world, this government is not as closed, as intolerant, uh as totalitarian as some make it out to be.  \n Verb: say",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task456-251ed01dd2024b6eae2574e140683924",
+            "input": "One exception was the swine flu pandemic of 2009-2010, when 348 children died. The CDC recommends that all children ages 6 months and older be (vaccinated) against flu each season, though only about half get a flu shot or nasal spray.  \n Verb: vaccinated",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task456-6d7247a7dd4d4032bbaaccba9a020992",
+            "input": "U.S. commanders said 5,500 Iraqi prisoners were taken in the first hours of the ground war, though some military officials later said the total may have climbed above 8,000. The U.S. hopes its troops will (drive) Iraqi forces out of Kuwait quickly, leaving much of Iraq's offensive military equipment destroyed or abandoned in Kuwait.  \n Verb: drive",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task456-fae2ba16fa8a48fb88a8318400c0b5c3",
+            "input": "In Cape Town, South Africa, police spokesman Capt. Rod Beer said the FBI arrested Mohamed at the city's airport in the early hours of Thursday morning as he was about to be deported for being in the country illegally. The Cape Argus newspaper in Cape Town (reported) that a search has been launched for accomplices in the region.  \n Verb: reported",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task456-99c7985387834aa19a60fb252ed7aa10",
+            "input": "Lamen Khalifa Fhimah and Abdel Basset Ali al-Megrahi are charged with murder, conspiracy to commit murder and violations of international aviation safety laws. Bin Laden and Kopp (are) the 455th and 456th persons to be placed on the FBI's most wanted list, which began in 1950.  \n Verb: are",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task456-a0470479e87c43fd8bd9b4d6a5afad65",
+            "input": "However, Russia has stalled ratification, trying to tie it to an agreement that would permit the Russian navy to use a naval base on Ukraine's Crimean peninsula for at least 20 more years. In their joint statement issued after the talks, Yeltsin and Kuchma called for the fastest possible ratification of the treaty, saying it would create a  strong legal foundation  for bilateral ties and (help) stability in Europe.  \n Verb: help",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

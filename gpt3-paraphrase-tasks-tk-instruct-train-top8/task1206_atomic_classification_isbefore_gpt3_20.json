@@ -1,0 +1,127 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "atomic"
+    ],
+    "URL": [
+        "https://allenai.org/data/atomic-2020"
+    ],
+    "Categories": [
+        "Commonsense Classification"
+    ],
+    "Reasoning": [
+        "Relational Reasoning",
+        "Reasoning on Social Interactions",
+        "Commonsense Reasoning -> Social Situations",
+        "Commonsense Reasoning -> Spatial Reasoning"
+    ],
+    "Definition": [
+        "You will be given two phrases, Head and Tail, separated with <sep>. Head and Tail are short phrases possibly involving participants. The names of specific people have been replaced by generic words (e.g., PersonX, PersonY, PersonZ). PersonX is always the subject of the event. You need to determine whether the Head happens before the Tail or not, and output \"Yes\" or \"No\". The phrase may also contain \"___\", a placeholder that can be an object, a person, and/or an action."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Sociology",
+        "Commonsense -> Concepts and Relations -> Social Commonsense",
+        "Commonsense -> Concepts and Relations -> Spatial Commonsense"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Head: PersonX swims at the local pool<sep>Tail: PersonX learns a new way of swimming",
+            "output": "Yes",
+            "explanation": "This is a good example. The Head happens before the Tail."
+        },
+        {
+            "input": "Head: PersonX acts as PersonY intermediary<sep>Tail: assist and protect PersonY's interests",
+            "output": "No",
+            "explanation": "In this example, the Head and the Tail can happen at the same time. So the output should be\"No\"."
+        },
+        {
+            "input": "Head: PersonX gets new glasses<sep>Tail: PersonX reads the tiny print on the bottle",
+            "output": "Yes",
+            "explanation": "In this example, getting new glasses happens before reading the tiny print on the bottle. Thus, this example should be classified as \"Yes\"."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Head: PersonX acts like a PersonY<sep>Tail: to observe",
+            "output": "Yes",
+            "explanation": "Observing is not an event that happens before the Head. So the output should be \"No\"."
+        },
+        {
+            "input": "Head: PersonX tries to fix it<sep>Tail: PersonX orders new glass",
+            "output": "No",
+            "explanation": "Trying to fix happens before ordering new glass, and the output should be \"Yes\"."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1206-ffdb09e0239a45e3a4533c7f0624f10c",
+            "input": "Head: PersonX flies the flag<sep>Tail: PersonX celebrates the fourth of july",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1206-316945e51b3b494f81e64ffcdb549695",
+            "input": "Head: PersonX learns to play the guitar<sep>Tail: PersonX wins the guitar competition",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1206-ed767fb78437434697953a24b24d1f5b",
+            "input": "Head: PersonX visits friends<sep>Tail: PersonX walks back home",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1206-7f49e15f90cc463f9d32ffff377cb5fb",
+            "input": "Head: PersonX is asked to leave<sep>Tail: PersonX walks out",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1206-da71c411c33543daa87d8901f8b15597",
+            "input": "Head: PersonX acts as PersonY intermediary<sep>Tail: to want to step in and settle something",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1206-73e3300357934948b9e3652697a3b676",
+            "input": "Head: PersonX accepts the fact<sep>Tail: gripes",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1206-6374116034da4bf0b3ebcf9fe544b193",
+            "input": "Head: PersonX tries to get up<sep>Tail: PersonX slips and falls again",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1206-cb26cfd26f3f4ca4b598d1141080433f",
+            "input": "Head: PersonX acts on PersonY's behalf<sep>Tail: stresses",
+            "output": [
+                "No"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

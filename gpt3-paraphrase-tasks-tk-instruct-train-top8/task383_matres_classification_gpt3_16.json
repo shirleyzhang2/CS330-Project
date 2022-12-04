@@ -1,0 +1,132 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "matres"
+    ],
+    "URL": [
+        "https://github.com/CogComp/MATRES"
+    ],
+    "Categories": [
+        "Misc."
+    ],
+    "Reasoning": [
+        "Temporal Reasoning"
+    ],
+    "Definition": [
+        "Given a context and a verb, you will need to output \"Yes\" if the verb can be anchored in time, and \"No\" otherwise. A verb can be anchored in time if it happened in the past, is happening now, or is guaranteed to happen in the future."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "News"
+    ],
+    "Positive Examples": [
+        {
+            "input": "It was followed by Denmark, Norway, Germany, France, Greece, Luxembourg, Spain, Britain, the United States, Iceland, Belgium, Italy, Portugal and Turkey. NATO decided at last year's Madrid summit to (invite) the three eastern European countries to start accession talks.  \n Verb: invite",
+            "output": "No",
+            "explanation": "This is a good example. The \"invite\" is not anchorable. Although NATO decided to invite them, they haven't invited them yet, and it's not guaranteed to happen in the future. They might change their decision later."
+        },
+        {
+            "input": "In Washington today, the Federal Aviation Administration (released) air traffic control tapes from the night the TWA Flight eight hundred went down.  \n Verb: released",
+            "output": "Yes",
+            "explanation": "In this sentence, the releasing event happened in the past, and it's anchorable."
+        },
+        {
+            "input": "New York State double-jeopardy laws would make it difficult to prosecute a suspect who had been found not guilty at a federal trial. U.S. Attorney Denise E. O'Donnell declined to discuss what federal charges were being pursued, but she said that in a case like this, potential charges would be abortion-related violence, the use of a firearm in an act of violence, crossing state lines to commit a crime, and, if the suspect's act was (tied) to an organization, violation of the so-called RICO statutes, which prohibit an organized criminal enterprise.  \n Verb: tied",
+            "output": "No",
+            "explanation": "In this sentence, \"tied\" is a conditional verb and it's not happening now and it's not guaranteed to happen in the future. So, it's not anchorable."
+        },
+        {
+            "input": "To get him. Nothing more, she (said).  \n Verb: said",
+            "output": "Yes",
+            "explanation": "In this example, she said something in the past. So, this verb is anchorable."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Preliminary DNA tests link a missing anti-abortion activist to a strand of hair found near where a sniper shot and killed a Buffalo, N.Y., doctor who performed abortions, a law enforcement official said Friday. The first round of DNA tests on the hair at the FBI Laboratory here established a high probability it came from the same person as a hair found in a New Jersey home where James C. Kopp , a 44-year-old anti-abortion protester, lived last year, the official (said).  \n Verb :said",
+            "output": "No",
+            "explanation": "In this sentence, the saying action happened in the past, and it's anchorable."
+        },
+        {
+            "input": " Nobody talks to Fidel, because he doesn't listen, Juanita Castro said. He talks and he (decides).  \n Verb: decides",
+            "output": "Yes",
+            "explanation": "In this sentence, \"decides\" is not anchorable. Because it's not happening now and it's not guaranteed to happen in the future."
+        },
+        {
+            "input": "Kopp remains at-large and police admit that despite a worldwide search and a $1 million reward, they don't know where he is. It's very frustrating (knowing) that he's out there, said Ms. Buckham.  \n Verb: knowing",
+            "output": "No",
+            "explanation": "In this sentence, \"knowing\" is happening now, and it's anchorable."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task383-f643be60c56840e596a0805f1aa0fd3e",
+            "input": "Since the tragedy, Elian has become a political poster boy for Cubans with diametrically opposed ideologies living on both sides of the Florida Straits. During his speech Wednesday night, Castro expressed irritation that much of the rest of the delegation was not granted visas to travel to the United States to stay with Elian while waiting out a federal appeal filed by Elian's Miami relatives and (assist) in his  rehabilitation.   \n Verb: assist",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task383-9b4daa4c69fa41e8b32fecdf40fc8121",
+            "input": "We will look at that, try to make some kind of factual determination and then decide what steps, if any, need to be taken.  In addition, the department is still (considering) a request last week from Elian's father in Cuba, Juan Miguel Gonzalez, to have Elian's temporary custody shifted from his great-uncle Lazaro Gonzalez to another great-uncle, Manolo Gonzalez.  \n Verb: considering",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task383-56d3a97da3e44a59baf8496b4fd97dd1",
+            "input": "It's all of the other dark nights.  A memorial service planned at the University of Rochester for Saturday was (canceled) after security plans were leaked.  \n Verb: canceled",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task383-ae9001d548214702a61c0ce5e3b66303",
+            "input": "A six-year-old boy who arrived on US shores as a motherless refugee and became a political symbol for anti-Castro exiles must be returned to his father in Cuba, immigration authorities ruled Wednesday. Faced with the choice of keeping Elian Gonzalez with relatives in Miami, where the boy has been wooed with American toys and theme-park visits, or (returning) him to his apparently distraught father in Havana, the Immigration and Naturalization Service decided the boy should go home by Jan. 14, INS commissioner Doris Meissner told reporters.  \n Verb: returning",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task383-c283425faad14612890bac2bab55c1d6",
+            "input": "In Nairobi, a top Kenyan police official denied a newspaper report that more arrests had been made there. Officials said last week that six people were in custody for (questioning) about the bombing.  \n Verb: questioning",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task383-62c5656fd3914885a010059ed500abc7",
+            "input": "That matter is under review,  Deputy Attorney General Eric Holder said when asked Thursday about the violations.  We will look at that, try to (make) some kind of factual determination and then decide what steps, if any, need to be taken.   \n Verb: make",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task383-5204d190269e4504bb6e893b5a9d0c0d",
+            "input": "With the political implications so strong, it's unlikely the case of Elian Gonzalez will be closed quickly, said Richard Nuccio, a former Clinton administration Cuba adviser.  With two members of Congress representing Elian's family's constituency, I do n't see how Elian could be returned by the federal government without it (going) through the court system,  Nuccio said.  \n Verb: going",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task383-97afce1705a947558f4b8866e26a21ab",
+            "input": "But Elian's paternal great-uncle in the United States, backed by the anti-Castro Cuban American National Foundation, is fighting in the courts to keep the boy in Miami. Cuba (kept) up its condemnation of the handling of Wednesday's meeting between Elian and his grandmothers at the home of a Roman Catholic nun in Miami Beach, Fla.  \n Verb: kept",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

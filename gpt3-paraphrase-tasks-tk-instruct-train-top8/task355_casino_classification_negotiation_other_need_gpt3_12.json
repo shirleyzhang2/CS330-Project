@@ -1,0 +1,115 @@
+{
+    "Contributors": [
+        "Kushal Chawla"
+    ],
+    "Source": [
+        "casino"
+    ],
+    "URL": [
+        "https://aclanthology.org/2021.naacl-main.254.pdf"
+    ],
+    "Categories": [
+        "Negotiation Strategy Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You will receive an utterance and recent dialogue context containing past 3 utterances (whenever available). The utterance is from a negotiation between two participants who take the role of campsite neighbors and negotiate for Food, Water, and Firewood packages, based on their individual preferences and requirements. Output 'Yes' if the utterance contains the other-need strategy, otherwise output 'No'. The other-need strategy is a selfish negotiation strategy. It is used when the participants discuss a need for someone else rather than themselves."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Context: 'I was hoping to get alot of water as well, would you be ok with me getting two waters and three firewoods if you get all the food and one water?' 'Hmm, that's not favorable for me going by the volume of items left in my arsenal. Water is more of a higher priority than food. So, I would exchange 1 pack of food for an additional water' 'So that way you would get two waters and two foods? Those are my priorities as well but i would be ok with it since that way i would get five items and you would get only four.'\nUtterance: 'Those are your priorities?? Then that's not fair for you. Then I take 2 water, 1 firewood and 1 food. This is the lowest I can offer'",
+            "output": "No",
+            "explanation": "This is correct. The participant does not create a specific need for anybody."
+        },
+        {
+            "input": "Context: 'I am doing okay but am in need of some supplies. What about you?' 'Same here. My kids are really looking forward to this. What is most important to you?' 'Firewood! I need it to cook my food and also to stay warm. What about you?'\nUtterance: 'That is the same for me as well. My kids were really looking forward to making s'mores and telling stories by the campfire. That's all they've been talking about'",
+            "output": "Yes",
+            "explanation": "In this utterance, the participant uses other-need by mentioning the needs of their kids."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Context: 'Hi! How are you doing today?' 'I'm fine. And yourself?' 'Pretty good. I'm really excited about going camping though!'\nUtterance: 'Me too. I haven't been camping for several years. '",
+            "output": "Yes",
+            "explanation": "There is no need created here. So the correct answer is 'No'."
+        },
+        {
+            "input": "Context: 'Hi, I hope we can work together to get an offer that benefits both of us.\ud83d\ude42'\nUtterance: 'I agree! Nice to meet you... I have two boys who always eat! Any chance I canget 2 food?'",
+            "output": "No",
+            "explanation": "The participant mentions that their boys eat and hence implies that they would need food. Hence, the correct answer here is 'Yes'."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task355-b718245cb1494ff8aad9d9df094338c0",
+            "input": "Context: 'Hello, How are you? My children love to eat and have fires daily. I hope this deal works for you.\ud83d\ude42' 'Hello, I'm fine. I understand your need. I have health issue I can't stand without food and water.I hope you will understand my situation.' 'I completely understand where you are coming from. How much food do you need?'\nUtterance: 'I need at least 2 package of food and 3 package of water. Please do favor for me.'",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task355-46f0f3364b2f42cf883c8326e0cffdf7",
+            "input": "Context: 'I was just negotiating the water for now.  I was trying to do one at a time.' 'ah, I'm definitely ok with doing one at a time: A 2:1 split is definitely OK with me: The issue is, if we consider each individually, it might be harder to come to a deal, but I'm happy to do it your way.' 'How about you take 1 firewood, I''l take 2 and with food, you can have 2 and I'll take one package.  I have two very hungry boys!'\nUtterance: 'Is there a reason you want the 2:1 split? Food my group's largest priority by a large margin (We eat a lot). It's worth a lot more to my group then the firewood would be.'",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task355-6223dc50df004e7d98cbfac86464b9fd",
+            "input": "Context: 'I need an extra supply of food, as I exercise a lot! \ud83d\ude42' 'Hmmm.  And the firewood?' 'I get cold easily. I need the firewood to get warm. I might catch a cold.\ud83d\ude42'\nUtterance: 'I think water should be your priority.  You have food and firewood also in your basics.  I will let you have the 3 water but I will need the 3 Firewood and the 3 Food.  I have a medical condition.'",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task355-5ec017c1bbdd40e4b41a3af634561927",
+            "input": "Context: 'Absolutely! I don't think I'll be needing any extra firewood, you can have all three! The only other thing I'd like is 2 waters for my hike in the morning so I can stay hydrated.' 'That is so helpful, thanks! Can you send everything you would like to take so we can make sure we are on the same page? ' 'Sure. \ud83d\ude42 I'd like to take 2 waters for my hike and 2 food for my get-together later. You would have 3 firewood, 1 water and 1 food. Sounds like a good compromise to me!'\nUtterance: 'That sounds great. \ud83d\ude42'",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task355-396ae33d7d154feba562cc4924c1588c",
+            "input": "Context: 'I\u2019m doing fine. How about you?' 'I'm doing well. I was hoping I could have the extra firewood because my group decided to camp for a few extra days and want to make sure we have enough' 'How many of you are on the camping grounds?'\nUtterance: 'It's just my family. There are 6 of us total'",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task355-12c8e022e8384ea38c0f96ef8a602989",
+            "input": "Context: 'two pack to who you or me?' 'for me. 2 pack of water 2 pack of fire wood and 2 pack of food. ' 'I gotta have one extra of the food or wood at least if you want two water'\nUtterance: 'i already reduce my package in water. now what can i do? in my group my wife is cansive and one kid and a old man he is sicked person. so i need this package friend. please friend'",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task355-6788d577c2c1431ab1aaa97cd52bfb9a",
+            "input": "Context: 'That is fantastic. ' 'I'm glad negotiating feels smooth and clear' 'I know and out of all the other turkers I have negotiated with, you are by far the fastest.'\nUtterance: 'Great, I'm going to input our agreed amounts.'",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task355-5c43a75ebcd04f0ca85796a336776577",
+            "input": "Context: 'Hello there! I look forward to striking up a deal that's good for both of us. \ud83d\ude42' 'hello, me too. what is most valued to you?'\nUtterance: 'I just want to make sure that I get a lot of firewood. It's going to be freezing cold on my trip, and I need to make sure I can stay warm. What's most valued to you?'",
+            "output": [
+                "No"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

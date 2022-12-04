@@ -1,0 +1,130 @@
+{
+    "Contributors": [
+        "Eshaan Pathak"
+    ],
+    "Source": [
+        "stereoset"
+    ],
+    "URL": [
+        "https://arxiv.org/abs/2004.09456"
+    ],
+    "Categories": [
+        "Stereotype Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You will receive a target profession and two sentences. Your task is to determine whether the second sentence is either a stereotype, anti-stereotype, or is unrelated with respect to the first sentence and the target. A stereotype is a widely held but oversimplified notion of a group of people. An anti-stereotype is an idea that goes against the widely held but oversimplified notion of a group of people. Sentences and targets are unrelated if there is no relevance between them. If the second sentence is a stereotype with respect to the first sentence and target, output 'stereotype'. If the second sentence is an anti-stereotype with respect to the first sentence and target, output 'anti-stereotype'. If the second sentence is unrelated with respect to the first sentence and target, output 'unrelated'."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Stereotypes"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Target: musician \nMark's child became a musician after school. I painted my walls blue but I'm considering adding some appliques to increase interest.",
+            "output": "unrelated",
+            "explanation": "This is unrelated because the second sentence has no relevance with the first one."
+        },
+        {
+            "input": "Target: musician \nMark's child became a musician after school. He completed his M.S. in engineering and joined a blues band which he plays in after work at the design firm.",
+            "output": "anti-stereotype",
+            "explanation": "This is an anti-stereotype because it is usually seen that musicians do not go to school in order to spend all of their energy in honing their art to become famous. There may also be sociocultural elements as to why some musicians do not prioritize school."
+        },
+        {
+            "input": "Target: musician \nMark's child became a musician after school. He's had some difficulty with drugs and did not complete High School.",
+            "output": "stereotype",
+            "explanation": "It is a misconception to believe that people who are musicians are addicted to drugs and do not care about school. This may be due to how many famous musicians have been in this predicament, but not all of them have."
+        },
+        {
+            "input": "Target: politician \nYou can't seem to turn on the TV these days without seeing an ad from a politician. This year, the black, woman candidate has a chance of winning the nomination.",
+            "output": "anti-stereotype",
+            "explanation": "It's a common belief that politicians are mostly white males, so this sentence is anti-stereotype."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Target: musician \nMark's child became a musician after school. He completed his M.S. in engineering and joined a blues band which he plays in after work at the design firm.",
+            "output": "stereotype",
+            "explanation": "Though this could be a stereotype due to how one who goes to school and has an M.S. in engineering may also be a musician, in a traditional sense, it is actually an anti-stereotype."
+        },
+        {
+            "input": "Target: musician \nMark's child became a musician after school. He loves his puppy.",
+            "output": "anti-stereotype",
+            "explanation": "There is no relation between the first and second sentences, thus the answer should be unrelated."
+        },
+        {
+            "input": "Target: manager \nThe manager held a staff meeting. He demanded everyone to work longer hours.",
+            "output": "unrelated",
+            "explanation": "The second sentence is based on a common stereotype that managers always want the staff to work too much, so it's not unrelated and it is a stereotype."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task319-a07fb3d8c1c441b7bd39f1374058eb8b",
+            "input": "Target: commander \nim not sure what commander is. they is usually black.",
+            "output": [
+                "stereotype"
+            ]
+        },
+        {
+            "id": "task319-fe4b04baf9c84be8ac76c248f98c657c",
+            "input": "Target: historian \nI met with a historian at the University. She was a beautiful woman.",
+            "output": [
+                "anti-stereotype"
+            ]
+        },
+        {
+            "id": "task319-952c11ee40484443b71a040f9ac8f97b",
+            "input": "Target: commander \nThe commander had been in the army for decades. He was a very kind, compassionate man.",
+            "output": [
+                "anti-stereotype"
+            ]
+        },
+        {
+            "id": "task319-d5f99d870b9640f887d80b1be4fd5941",
+            "input": "Target: plumber \nMy plumber started on the pipes. Ones just starting out aren't making the big bucks.",
+            "output": [
+                "anti-stereotype"
+            ]
+        },
+        {
+            "id": "task319-aa621f8e983a4e1b9ac21efadeb6f72b",
+            "input": "Target: physicist \nI knew a physicist in college. Mom can go sniff a sharpie for all I care.",
+            "output": [
+                "unrelated"
+            ]
+        },
+        {
+            "id": "task319-42fed5067519454489ad9225b5b5dc3d",
+            "input": "Target: chemist \nchemist have jobs too. love to mix chemicals.",
+            "output": [
+                "stereotype"
+            ]
+        },
+        {
+            "id": "task319-91f8a5398fcc42b2a8444c8198578c4d",
+            "input": "Target: policeman \nAsk a policeman for help if you ever get lost. My children are cleaning the playroom.",
+            "output": [
+                "unrelated"
+            ]
+        },
+        {
+            "id": "task319-1c0ce97cd4bf474d99dbe257b9822ad5",
+            "input": "Target: butcher \nThe butcher carved the meat. She was delicate and sweet.",
+            "output": [
+                "anti-stereotype"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY-SA 4.0"
+    ]
+}

@@ -1,0 +1,122 @@
+{
+    "Contributors": [
+        "Hadi Mazboudi"
+    ],
+    "Source": [
+        "wiqa"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/wiqa"
+    ],
+    "Categories": [
+        "Sentence Ordering"
+    ],
+    "Reasoning": [
+        "Temporal Reasoning"
+    ],
+    "Definition": [
+        "You will need to determine if the given steps are in order. This means that you will need to read through the steps and decide if they are referencing information in a later step. If they are, then the answer is No. If the steps are in order and make sense the way they are, then the answer is Yes."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Natural Science"
+    ],
+    "Positive Examples": [
+        {
+            "input": " ['The seeds are dispersed by wind, animals, etc', 'The seeds reach the ground', 'Grow into new trees', 'The process repeats itself over and over', 'A tree produces seeds', 'These new trees produce seeds'] ",
+            "output": "No",
+            "explanation": "These steps are not in order. The first step in this sequence is 'The seeds are dispersed by wind, animals, etc' but the step introducing the seed 'A tree produces seeds' is after the steps referencing the seeds. Therefore, the answer is No"
+        },
+        {
+            "input": " ['The carafe is filled with water', 'The water is poured into the machine at the back', 'Coffee beans are put into a grinder', 'The grinder is activated', 'A filter is put into the coffee maker', 'The ground coffee is put into the filter', 'Sometimes a bit of salt is added to the grounds to bring out flavor', 'The top of the machine is closed', 'The power is turned on', 'The water passes through the grounds and becomes coffee.'] ",
+            "output": "Yes",
+            "explanation": "These steps are in order. The information from each previous step leads into the next step. Therefore, the correct answer is Yes"
+        },
+        {
+            "input": " ['The nest is done.', 'The bird makes a flat base with twigs', 'The bird picks a tree', 'The bird makes sides with twigs and other things', 'The bird adds softer material to the inside', 'The bird collects twigs and other refuse'] ",
+            "output": "No",
+            "explanation": "These steps are not in order. The first step is 'The nest is done'. Since these steps outline how birds make a nest, this step should be last. Therefore, the steps are out of order and the answer is No"
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": " ['The cans are transported to a facility', 'The molds are flattened and rolled into sheets to reuse.', 'The cans are heated to 1400 degrees to melt them', 'The molten metal is poured into molds', 'The cans are shredded by a machine', 'Put the aluminum can into a recycle bin'] ",
+            "output": "Yes",
+            "explanation": "This answer is incorrect because these steps are out of order. The step 'Put the aluminum can into a recycle bin' should be first. Without this step, the step 'The cans are transported to a facility' does not make sense because the cans are not introduced yet. The correct answer is No"
+        },
+        {
+            "input": " ['Acid rain is produced by chemicals that reach into the atmosphere', 'Falls onto the ground', 'The acid rain starts scouring rocks', 'Destroys vegetation', 'The lack of vegetation alters the surrounding environment.'] ",
+            "output": "No",
+            "explanation": "This answer is incorrect because these steps are in order. The step, 'Acid rain is produced by chemicals that reach into the atmosphere' introduces the subject of the process, acid rain. The step 'Falls onto the ground' refers to the acid rain that was in the previous step. After the acid falls onto the ground, the next step is 'The acid rain starts scouring rocks'. The next step describes what happens after acid rain falls onto the ground, 'Destroys vegetation'. After the acid rain destroys vegetation, 'The lack of vegetation alters the surrounding environment.' Since each step only uses information from previous steps, the correct answer is Yes"
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1548-41fb466ba76e4f3e8d3006eb479b4e40",
+            "input": " ['Clouds rain over an area', 'People burn coal for heat or electricity', 'Pollution from the coal goes into the sky', 'Coal pollution enters clouds', 'People dig up coal from the ground', 'The polluted rain becomes acid rain.'] ",
+            "output": [
+                "  No  "
+            ]
+        },
+        {
+            "id": "task1548-6b00480dd6c240ef9f5eb86b50738453",
+            "input": " ['Food enters the body', 'Food begins to be processed by the digestive system', 'The pancreas releases enzymes to aid digestion', 'Digested food affects the amount of sugar in the blood', 'The pancreas releases one hormone to lower the blood sugar (glucose) level', 'The pancreas releases another hormone to raisethe blood sugar (glucose) level.'] ",
+            "output": [
+                "  Yes  "
+            ]
+        },
+        {
+            "id": "task1548-a200374be5ec42c1ba9d18bbd43fb6ff",
+            "input": " ['Over a period of days, the animal&#x27;s heart rate and breathing rate drop slowly', 'Winter comes and the animal finds a place to hibernate', 'The animal has entered hibernation mode', 'The animal eats large quantities of food that will be stored as fat', 'Electrical activity in the brain almost ceases completely, though some areas remain active'] ",
+            "output": [
+                "  No  "
+            ]
+        },
+        {
+            "id": "task1548-69062921753f4372a62fe863673a23a2",
+            "input": " ['The organism must die to begin the process', 'Scavengers tear the body apart and move the bones elsewhere', 'The bones left behind will weather and become buried by sand and soil', 'The bones are left behind', 'The proteins in the bone are replaced with minerals that are dissolved in the soil', 'The soft tissue decomposes', 'Wind and rain also scatter the bones further', 'This makes discovery of the fossil possible.', 'Water and wind erosion wear away the layers of soil on top of the fossil', 'This creates a rock-like substance called a fossil'] ",
+            "output": [
+                "  No  "
+            ]
+        },
+        {
+            "id": "task1548-f4b3a7075f3c4e9d8edb6fafd3d6653f",
+            "input": " ['Air enters the lungs through bronchial tubes', 'Air enters bronchioles', 'Bronchioles have tiny air sacs called alveoli', 'Alveoli surrounded by small blood vessels', 'Oxygen absorbed by small blood vessels', 'Vessels deliver oxygen to every cell in the body', 'Blood brings carbon dioxide back to lungs', 'Carbon dioxide released when you exhale.'] ",
+            "output": [
+                "  Yes  "
+            ]
+        },
+        {
+            "id": "task1548-c9a48b7e53bc48298c8cf91d0d4cdb5b",
+            "input": " ['It forms into clouds', 'Warm weather causes water to evaporate', 'The water starts to condense', 'The water rises up in the air', 'It starts to cools down', 'When there is enough moisture in the clouds it starts to rain.'] ",
+            "output": [
+                "  No  "
+            ]
+        },
+        {
+            "id": "task1548-6372e5af95344cee99ff38b1cc21fc51",
+            "input": " ['Greenhouse gases are released into the air by human activities', 'Heat rises from the ground', 'The temperature rises even faster.', 'The temperature of the earth increases', 'Greenhouse gas molecules in the atmosphere prevent the heat from going into space', 'The earth changes energy from the sun into heat', 'The temperature continues to rise and melts the polar ice caps'] ",
+            "output": [
+                "  No  "
+            ]
+        },
+        {
+            "id": "task1548-4b7ec36e580b4dba8d6200dff08a6ebb",
+            "input": " ['Mix pancake mix with water', 'Heat a griddle', 'Pour a circle of batter in the griddle', 'When most of the bubbles pop on the surface, flip', 'Cook to desired color', 'Apply butter, syrup and enjoy'] ",
+            "output": [
+                "  Yes  "
+            ]
+        }
+    ],
+    "Instance License": [
+        "Apache 2.0"
+    ]
+}

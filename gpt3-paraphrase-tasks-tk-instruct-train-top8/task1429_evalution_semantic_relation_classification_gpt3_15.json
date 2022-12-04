@@ -1,0 +1,187 @@
+{
+    "Contributors": [
+        "Atharva Naik"
+    ],
+    "Source": [
+        "evalution"
+    ],
+    "URL": [
+        "https://aclanthology.org/W15-4208"
+    ],
+    "Categories": [
+        "Word Relation Classification"
+    ],
+    "Reasoning": [
+        "Commonsense Reasoning"
+    ],
+    "Definition": [
+        "Given a pair of words, you must deduce the type of relationship between them. The types of relations are: 'Entails, HasProperty, Synonym, Antonym, HasA, MemberOf, PartOf, MadeOf, IsA'. The first word is denoted by X and the second word is denoted by Y. An 'IsA' relation means that 'X is a kind of Y'. An 'Antonym' relation means that 'X can be used as the opposite of Y'. A 'Synonym' relation means that 'X can be used in place of Y without changing the meaning'. A 'PartOf' relation means that 'X is a part of Y'. A 'MemberOf' relation means that 'X is a member of Y'. A 'MadeOf' relation means that 'X is made of Y'. An 'Entailment' relation means that 'If X is true, then Y is true as well'. A 'HasA' relation means that 'X can have or contain Y'. A 'HasProperty' relation means that 'Y is to specify X'."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Commonsense"
+    ],
+    "Positive Examples": [
+        {
+            "input": "X: balance, Y: scale",
+            "output": "IsA",
+            "explanation": "Balance is a kind of scale."
+        },
+        {
+            "input": "X: big, Y: small",
+            "output": "Antonym",
+            "explanation": "Big can be used as the opposite of small."
+        },
+        {
+            "input": "X: bird, Y: feather",
+            "output": "HasProperty",
+            "explanation": "Birds have feathers."
+        },
+        {
+            "input": "X: bloom, Y: flower",
+            "output": "Synonym",
+            "explanation": "Bloom and flower can mean the same thing. E.g. the roses bloomed or the roses flowered."
+        },
+        {
+            "input": "X: cake, Y: egg",
+            "output": "HasA",
+            "explanation": "A cake can have or can contain eggs."
+        },
+        {
+            "input": "X: cannon, Y: tank",
+            "output": "PartOf",
+            "explanation": "A cannon is a part of a tank."
+        },
+        {
+            "input": "X: dog, Y: hair",
+            "output": "MadeOf",
+            "explanation": "A dog is made of hair (among other things)."
+        },
+        {
+            "input": "X: tribe, Y: family",
+            "output": "MemberOf",
+            "explanation": "A tribe is a member of family."
+        },
+        {
+            "input": "X: write, Y: spell",
+            "output": "Entails",
+            "explanation": "If write is true then also spell is true."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "X: balance, Y: scale",
+            "output": "HasA",
+            "explanation": "The label is incorrect because, balance is a kind of scale, but doesn't have a scale."
+        },
+        {
+            "input": "X: big, Y: small",
+            "output": "Synonym",
+            "explanation": "Big can be used as the opposite of small so the label of Synonym is incorrect."
+        },
+        {
+            "input": "X: bird, Y: feather",
+            "output": "PartOf",
+            "explanation": "Incorrect because bird is not a part of feather."
+        },
+        {
+            "input": "X: bloom, Y: flower",
+            "output": "Antonym",
+            "explanation": "The label is incorrect as bloom and flower can be used in the same sense and hence are synonyms."
+        },
+        {
+            "input": "X: cake, Y: egg",
+            "output": "IsA",
+            "explanation": "The label is incorrect as a cake is not an egg."
+        },
+        {
+            "input": "X: cannon, Y: tank",
+            "output": "MadeOf",
+            "explanation": "Incorrect because a cannon is not made of a tank."
+        },
+        {
+            "input": "X: write, Y: speak",
+            "output": "Entails",
+            "explanation": "Incorrect because even when write is true, speak might not be true."
+        },
+        {
+            "input": "X: tribe, Y: country",
+            "output": "MemberOf",
+            "explanation": "incorrect as tribe is not a member of country."
+        },
+        {
+            "input": "X: write, Y: read",
+            "output": "HasProperty",
+            "explanation": "Incorrect because write is neither characterized by nor does is it have read as a property."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1429-bcacb086693d4ace957cd48f97996f04",
+            "input": "X: harp, Y: pluck",
+            "output": [
+                "Entails"
+            ]
+        },
+        {
+            "id": "task1429-4b1c0ff09dd0415a90eb16f8a53c6b3d",
+            "input": "X: beer, Y: liquid",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "id": "task1429-5a94f82fa3a14474adad314499ed7083",
+            "input": "X: beach, Y: white",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "id": "task1429-e77cbba32d304ba7af057935b7980457",
+            "input": "X: beer, Y: tasty",
+            "output": [
+                "HasProperty"
+            ]
+        },
+        {
+            "id": "task1429-61c58b9fbe304f238c204186e4235b6a",
+            "input": "X: data, Y: bit",
+            "output": [
+                "MadeOf"
+            ]
+        },
+        {
+            "id": "task1429-4d7f334f8ad845b18a8470d9dbbb452c",
+            "input": "X: automobile, Y: trunk",
+            "output": [
+                "HasA"
+            ]
+        },
+        {
+            "id": "task1429-15b53bc17cec49b4a828d80bdd0656d0",
+            "input": "X: bell, Y: phone",
+            "output": [
+                "PartOf"
+            ]
+        },
+        {
+            "id": "task1429-9e73644ef178486eaefda0d01176dea7",
+            "input": "X: exercise, Y: move",
+            "output": [
+                "Entails"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

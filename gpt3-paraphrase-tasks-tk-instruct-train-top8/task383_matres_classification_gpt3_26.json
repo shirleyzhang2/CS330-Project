@@ -1,0 +1,132 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "matres"
+    ],
+    "URL": [
+        "https://github.com/CogComp/MATRES"
+    ],
+    "Categories": [
+        "Misc."
+    ],
+    "Reasoning": [
+        "Temporal Reasoning"
+    ],
+    "Definition": [
+        "You will be given a context and a verb separated by a newline character. You need to output \"Yes\" if the verb can be anchored in time, and \"No\" otherwise. A verb can be anchored in time if it happened in the past, is happening now, or is guaranteed to happen in the future."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "News"
+    ],
+    "Positive Examples": [
+        {
+            "input": "It was followed by Denmark, Norway, Germany, France, Greece, Luxembourg, Spain, Britain, the United States, Iceland, Belgium, Italy, Portugal and Turkey. NATO decided at last year's Madrid summit to (invite) the three eastern European countries to start accession talks.  \n Verb: invite",
+            "output": "No",
+            "explanation": "This is a good example. The \"invite\" is not anchorable. Although NATO decided to invite them, they haven't invited them yet, and it's not guaranteed to happen in the future. They might change their decision later."
+        },
+        {
+            "input": "In Washington today, the Federal Aviation Administration (released) air traffic control tapes from the night the TWA Flight eight hundred went down.  \n Verb: released",
+            "output": "Yes",
+            "explanation": "In this sentence, the releasing event happened in the past, and it's anchorable."
+        },
+        {
+            "input": "New York State double-jeopardy laws would make it difficult to prosecute a suspect who had been found not guilty at a federal trial. U.S. Attorney Denise E. O'Donnell declined to discuss what federal charges were being pursued, but she said that in a case like this, potential charges would be abortion-related violence, the use of a firearm in an act of violence, crossing state lines to commit a crime, and, if the suspect's act was (tied) to an organization, violation of the so-called RICO statutes, which prohibit an organized criminal enterprise.  \n Verb: tied",
+            "output": "No",
+            "explanation": "In this sentence, \"tied\" is a conditional verb and it's not happening now and it's not guaranteed to happen in the future. So, it's not anchorable."
+        },
+        {
+            "input": "To get him. Nothing more, she (said).  \n Verb: said",
+            "output": "Yes",
+            "explanation": "In this example, she said something in the past. So, this verb is anchorable."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Preliminary DNA tests link a missing anti-abortion activist to a strand of hair found near where a sniper shot and killed a Buffalo, N.Y., doctor who performed abortions, a law enforcement official said Friday. The first round of DNA tests on the hair at the FBI Laboratory here established a high probability it came from the same person as a hair found in a New Jersey home where James C. Kopp , a 44-year-old anti-abortion protester, lived last year, the official (said).  \n Verb :said",
+            "output": "No",
+            "explanation": "In this sentence, the saying action happened in the past, and it's anchorable."
+        },
+        {
+            "input": " Nobody talks to Fidel, because he doesn't listen, Juanita Castro said. He talks and he (decides).  \n Verb: decides",
+            "output": "Yes",
+            "explanation": "In this sentence, \"decides\" is not anchorable. Because it's not happening now and it's not guaranteed to happen in the future."
+        },
+        {
+            "input": "Kopp remains at-large and police admit that despite a worldwide search and a $1 million reward, they don't know where he is. It's very frustrating (knowing) that he's out there, said Ms. Buckham.  \n Verb: knowing",
+            "output": "No",
+            "explanation": "In this sentence, \"knowing\" is happening now, and it's anchorable."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task383-8222b4415d994861897daded7e5b87d4",
+            "input": "Slepian was one of only three doctors who performed abortions in the Buffalo, N.Y., area, and harassment and threats against him by anti-abortion groups had become routine over the past decade. He persevered through courage and a belief in the right of his patients to (choose) whether to bear a child.  \n Verb: choose",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task383-12d0e285827f431d906e348f50c83733",
+            "input": "\" Extending membership to these three democracies helps to stabilize a region that historically has been the staging ground for many of the disasters of this century, \" Solana added, referring to the two world wars. The U.S. State Department has said the three new members \" enhance NATO's ability to (fulfill) its core mission of collective defense, respond to a range of security challenges and reduce the possibility of another major conflict in Europe of the kind that has claimed so many American lives. \"  \n Verb: fulfill",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task383-fd18a5c62fa544d59f0c523e68251ee7",
+            "input": "Clinton said the United States will not retreat from the world because of terrorist attacks. Albright, echoing the president, said the United States would \" continue to be present around the world, wherever we have interests to (defend). \"  \n Verb: defend",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task383-5a0d50a66ffe4b41a555bdc3be58e1f9",
+            "input": "The raid was necessary because the Gonzalez relatives in Miami, refusing to return the boy, made him into a symbol of resistance to Fidel Castro. Elian printed his name on an application for asylum and was put in front of a video camera to say that he did not (want) to go back to Cuba.  \n Verb: want",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task383-d73c3500758b49fb940db4fbef756f3c",
+            "input": "More than 5,500 people were injured, mostly Kenyans. McKinnon's spokeswoman said the United States had  very good intelligence  linking the sites (struck) overnight with the embassy attacks.  \n Verb: struck",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task383-950e83e419fb4049b3762baad5dc8e58",
+            "input": "Kopp, who is from Vermont, was indicted last year in the October 1998 shooting death of Dr. Barnet Slepian, an obstetrician in Buffalo, New York. He also is (wanted) in connection with the shooting of doctors in Winnipeg, Vancouver and Rochester, New York.  \n Verb: wanted",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task383-8dc31354f52b4bf199f81b1029dd2818",
+            "input": "The source for the Tanzanian figures is the U.S. Embassy in Dar es Salaam. KENYA : Total Dead : 192 Americans : 12 Injured : 4,877 Hospitalized : 542 Treated and (discharged) : 4,257  \n Verb: discharged",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task383-de38712f807b4f988bc57544c88d76ae",
+            "input": "It allows us to spread his name far and wide across Canada and say that he is wanted for attempted murder,  said police Inspector Dave Bowen. Kopp, who is from Vermont, was indicted last year in the October 1998 (shooting) death of Dr. Barnet Slepian, an obstetrician in Buffalo, New York.  \n Verb: shooting",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

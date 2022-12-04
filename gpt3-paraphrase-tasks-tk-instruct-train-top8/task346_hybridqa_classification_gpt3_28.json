@@ -1,0 +1,115 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "hybridqa"
+    ],
+    "URL": [
+        "https://github.com/wenhuchen/HybridQA"
+    ],
+    "Categories": [
+        "Pos Tagging"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "In this task, you will be given a question, a word, and a POS tag. You have to determine if the word in the question is of the same POS tag as the given POS tag. Answer with True or False. Here is the Alphabetical list of part-of-speech tags used in this task: CC: Coordinating conjunction, CD: Cardinal number, DT: Determiner, EX: Existential there, FW: Foreign word, IN: Preposition or subordinating conjunction, JJ: Adjective, JJR: Adjective, comparative, JJS: Adjective, superlative, LS: List item marker, MD: Modal, NN: Noun, singular or mass, NNS: Noun, plural, NNP: Proper noun, singular, NNPS: Proper noun, plural, PDT: Predeterminer, POS: Possessive ending, PRP: Personal pronoun, PRP$: Possessive pronoun, RB: Adverb, RBR: Adverb, comparative, RBS: Adverb, superlative, RP: Particle, SYM: Symbol, TO: to, UH: Interjection, VB: Verb, base form, VBD: Verb, past tense, VBG: Verb, gerund or present participle, VBN: Verb, past participle, VBP: Verb, non-3rd person singular present, VBZ: Verb, 3rd person singular present, WDT: Wh-determiner, WP: Wh-pronoun, WP$: Possessive wh-pronoun, WRB: Wh-adverb."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Wikipedia"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Who were the builders of the mosque in Herat with fire temples ? \n, Word: Who \n, POS tag: IN",
+            "output": "False",
+            "explanation": "This is a good example. POS tag of who should be WP(Wh-pronoun), and not IN(Preposition)."
+        },
+        {
+            "input": "What is the borough in which Kia Oval is located ? \n, Word: is \n, POS tag: VBZ",
+            "output": "True",
+            "explanation": "Based on the given question, \"is\" is a 3rd person singular present verb and Its POS tag is VBZ."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "After what season did the number 7 competitor retire ? \n, Word: 7 \n, POS tag: NN",
+            "output": "True",
+            "explanation": "7 is a cardinal number, and Its POS tag should be CD, so the output should be False."
+        },
+        {
+            "input": "After what season did the number 7 competitor retire ? \n, Word: 7 \n, POS tag: NN",
+            "output": "Wrong",
+            "explanation": "Only \"True\" or \"False\" are allowed, and you can't use any other word here."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task346-52c7e113e3f542b3aa679787a3bf48a9",
+            "input": "For how many years was the top ranking Russian athlete a State Duma Deputy from the United Russia Party ? \n, Word: years \n, POS tag: DT",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "id": "task346-809a800803644b968eff887c4909ebbe",
+            "input": "Number 29 plays for a club founded in which year ? \n, Word: for \n, POS tag: IN",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "id": "task346-4b0ac4eff39f4f75b7f7bf9734172e46",
+            "input": "For how many years did the BA ( Social Work ) [ PIT ] association with RMIT person serve as Shadow Minister of Heath ? \n, Word: association \n, POS tag: IN",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "id": "task346-dd293df0af354d28b3fb28571c462e02",
+            "input": "What is the nickname of the former BYU player ? \n, Word: of \n, POS tag: IN",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "id": "task346-546edc07234d4190afe14a0917a38d41",
+            "input": "What is Mickey Rourke 's role in the 1983 movie in which Laurence Fishburne played Midget ? \n, Word: Laurence \n, POS tag: NNP",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "id": "task346-44d588e6ca3a44d98b71d97676865951",
+            "input": "Who was the creator of the series that ran from 1959-1964 ? \n, Word: from \n, POS tag: VBD",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "id": "task346-dafb1c555f144122acadd9d5074cb545",
+            "input": "What is the name of the municipality that has the site that belongs to the S\u014dt\u014d-school of Japanese Zen Buddhism ? \n, Word: the \n, POS tag: DT",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "id": "task346-fca9e208b49a49daba6d1e5f300ed472",
+            "input": "In what year was the Tatzelwurm in service ? \n, Word: Tatzelwurm \n, POS tag: NN",
+            "output": [
+                "False"
+            ]
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

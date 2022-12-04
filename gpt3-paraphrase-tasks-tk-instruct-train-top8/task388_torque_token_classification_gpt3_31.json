@@ -1,0 +1,190 @@
+{
+    "Contributors": [
+        "Shailaja Keyur Sampat"
+    ],
+    "Source": [
+        "torque"
+    ],
+    "URL": [
+        "https://allennlp.org/torque.html"
+    ],
+    "Categories": [
+        "Information Extraction"
+    ],
+    "Reasoning": [
+        "Commonsense Reasoning"
+    ],
+    "Definition": [
+        "In this task, you will be given a passage, and your goal is to identify an event from the passage. An event is defined as a single word representing something that happened, is happening, or may happen. Most events are based on verbs, but an event can also be based on a noun or a copula verb. The event must not be a pronoun or an adjective. For noun events with multiple words, use the last word in the phrase as the event."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "News"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Passage: I submitted the hit. The hit was approved, and then I was paid.",
+            "output": "approved",
+            "explanation": "There are three events in this passage (i) submission event (\"submitted\") (ii) the approval event (\"approved\"), and (iii) the payment event (\"paid\"). You can use any one of them as an output."
+        },
+        {
+            "input": "Passage: He was caught in the snow storm.",
+            "output": "storm",
+            "explanation": "There are two events in this passage (i) he was caught (\"caught\") and (ii) the snow storm event (\"storm\"). You can use any one of them as an output. Since snow storm is a noun event with multiple words, we only use the last word 'storm' as an event."
+        },
+        {
+            "input": "Passage: He is on the east coast.",
+            "output": "is",
+            "explanation": "The copula \"is\" an event describing his location."
+        },
+        {
+            "input": "Passage: He wanted to finish the task.",
+            "output": "wanted",
+            "explanation": "There are two events in this passage (i) he wanted to do something (\"wanted\") and (ii) finish the task (\"finish\"). Either of wanted or finish can be used as output. However note that though there is an uncertainty about the task i.e. indeed finished or not, \"finish\" is still a valid event."
+        },
+        {
+            "input": "Passage: If he works hard, then he will finish the task.",
+            "output": "finish",
+            "explanation": "There are two events in this passage (i) he works hard (\"works\") and (ii) he will finish the task. (\"finish\"). You can use either of works or finish as an output. Here the second event happens only if the first one is true, but both are considered as events. This is an example of hypothetical event."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Passage: He is happy.",
+            "output": "happy",
+            "explanation": "Happy is an adjective and hence cannot be an event. The output should be \"is\" which represents an event describing his attribute of happiness."
+        },
+        {
+            "input": "Passage: He was caught in the elevator.",
+            "output": "elevator",
+            "explanation": "Not every noun can be an event. Here \"elevator\" is an object and one cannot say \"an elevator happened\" hence it is not an event. \"caught\" is a correct output."
+        },
+        {
+            "input": "Passage: The flu season is winding down.",
+            "output": "flu season",
+            "explanation": "The \"flu season\" is a noun events with multiple words, but only last word \"season\" sould be used as an event as per definition."
+        },
+        {
+            "input": "Passage: The death toll climbed up to 99 soon after the explosion.",
+            "output": "blast",
+            "explanation": "There are two events in this passage \"climbed\" and \"explosion\". Though blast is a synonym of explosion, it is not present in the passage. The output must contain events that are present in the passage."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task388-d0040c41640f4dafb26a362e760ec8f2",
+            "input": "Passage: The euro was quoted at 1.1700-1702 dollar and 137.84-88 yen, against Thursday's 5 p.m. quotes of 1.1682-1692 dollar and 138.08- 18 yen in New York and 1.1767-1769 dollar and 138.43-47 yen in Tokyo. The dollar weakened slightly against the yen after the report showed early in the morning that Japan's economy grew at an annualized rate of 1.7 percent in the third quarter, beating a consensus market forecast of 1.1 percent.",
+            "output": [
+                "quoted",
+                "weakened",
+                "showed",
+                "grew",
+                "beating",
+                "forecast"
+            ]
+        },
+        {
+            "id": "task388-a19853230a9349dfb0c3246896acb810",
+            "input": "Passage: Amir, 27, is serving a life sentence for the November 1995 assassination of Rabin at a Tel Aviv peace rally. Newspaper reports have said Amir was infatuated with Har-Shefi and may have been trying to impress her by killing the prime minister.",
+            "output": [
+                "serving",
+                "assassination",
+                "rally",
+                "said",
+                "infatuated",
+                "trying",
+                "killing",
+                "impress"
+            ]
+        },
+        {
+            "id": "task388-da835bde27cc4d2fac2f114b140fa4e8",
+            "input": "Passage: Mexico's president-elect Felipe Calderon, of the ruling National Action Party (PAN), named on Thursday the last four cabinet ministers who will assist him in his six-year term to start on Dec. 1. Calderon named Eduardo Medina Mora as Attorney General, Genaro Garcia Luna as Public Security Minister, Guillermo Galvan Galvan as Minister of National Defense and Mariano Francisco Sainez Mendoza as Navy Minister.",
+            "output": [
+                "named",
+                "assist",
+                "start",
+                "named"
+            ]
+        },
+        {
+            "id": "task388-5b922b12b70245798a7d98ae62fbc936",
+            "input": "Passage: The season started about a month earlier than usual, sparking concerns it might turn into the worst in a decade. It ended up being very hard on the elderly, but was moderately severe overall, according to the Centers for Disease Control and Prevention.",
+            "output": [
+                "started",
+                "sparking",
+                "turn",
+                "ended",
+                "being",
+                "was"
+            ]
+        },
+        {
+            "id": "task388-ea398287920a40f78f8621dde23cf268",
+            "input": "Passage: The advanced Italian units landed on Albanian soil on Friday, about 20 arriving by sea and the same number flying in to Tirana airport. Italian Prime Minister Romano Prodi told a press conference here held along with his Albanian counterpart Bashkim Fino that Operation Alba would end one month after elections are held sometime before the end of June.",
+            "output": [
+                "landed",
+                "arriving",
+                "flying",
+                "told",
+                "conference",
+                "end",
+                "elections",
+                "held",
+                "held"
+            ]
+        },
+        {
+            "id": "task388-5757f5f0eea744e0a4b496f0bb0101b4",
+            "input": "Passage: The Malaysian won the title as a 15-year-old in Bangkok in 1998 but crashed to a demoralising defeat in Busan in 2002 when the weight of expectation proved too much. Now, with another world title under her belt and with her place at the top of the world rankings confirmed by having twice as many points as her closest rival, the 23-year-old insists she is ready to take back her Asian crown.",
+            "output": [
+                "won",
+                "crashed",
+                "defeat",
+                "proved",
+                "confirmed",
+                "having",
+                "insists",
+                "is",
+                "take",
+                "expectation"
+            ]
+        },
+        {
+            "id": "task388-9e977fa828314a12bf1496559d284c28",
+            "input": "Passage: The Volunteer Fire Service also found five male corpses in different areas of Guatemala City. One of the victims was found in a cardboard box in a market of the city.",
+            "output": [
+                "found",
+                "found"
+            ]
+        },
+        {
+            "id": "task388-1a8f4802c1ae41bba133e72a2b6ce4a8",
+            "input": "Passage: Larijani in early November forwarded a letter to foreign ministers of the European trio of Britain, France and Germany, calling for resuming bilateral nuclear negotiations, but the EU insists that Iran implement the IAEA resolution before the reopening of nuclear talks. The United States accuses Iran of developing nuclear weapons secretly, a charge rejected by Tehran as politically motivated.",
+            "output": [
+                "forwarded",
+                "calling",
+                "resuming",
+                "negotiations",
+                "insists",
+                "implement",
+                "reopening",
+                "talks",
+                "accuses",
+                "developing",
+                "rejected"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Apache 2.0"
+    ]
+}

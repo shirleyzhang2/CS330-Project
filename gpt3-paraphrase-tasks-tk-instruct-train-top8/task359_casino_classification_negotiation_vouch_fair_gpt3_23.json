@@ -1,0 +1,115 @@
+{
+    "Contributors": [
+        "Kushal Chawla"
+    ],
+    "Source": [
+        "casino"
+    ],
+    "URL": [
+        "https://aclanthology.org/2021.naacl-main.254.pdf"
+    ],
+    "Categories": [
+        "Negotiation Strategy Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You will be given an utterance and recent dialogue context containing past 3 utterances. You need to output 'Yes' if the utterance contains the vouch-fair strategy, otherwise output 'No'. Vouch-fair is a selfish negotiation strategy used to call out fairness for personal benefit. This can be done through an explicit call out or can be implied."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Context: 'Yeah, I'm going to the desert so I'm hoping to have enough water. I'm good on food and I hunt for a lot of it anyways.' 'I've never been a good hunter. I wish I had those abilities.' 'I would part with all the food if I could get all the firewood.'\nUtterance: 'That seems fair. How about water. How would that be split? I'm very concerned.'",
+            "output": "Yes",
+            "explanation": "This is correct since the participant points out that the proposed deal seems fair."
+        },
+        {
+            "input": "Context: 'I really need that extra food for me and my bother. we have one to spare' 'so what is the whole deal here? ' 'you get 3 firewood I get 3 waters and now food I will give you 1 if that is ok\ud83d\ude42'\nUtterance: 'and I have to give you more food or not?'",
+            "output": "No",
+            "explanation": "Correct. The participant does not call out the fairness of the deal in any way."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Context: 'Heck yes! I am excited. How about you?' 'I can't wait \ud83d\ude42 Let's talk about these supplies. I've got hungry mouths to feed, Can I take the food and you can have half the firewood and all the water?' 'Hmm, I need food too. I am willing to split. I will give you 2 food since you claimed it first. Can I have 2 waters then?'\nUtterance: 'That's fair, but I have wiggle room on the water, how about I take two food, two firewood and you take 3 water, 1 food, 1 firewood?'",
+            "output": "No",
+            "explanation": "The participant explicitly points out that the proposal by the opponent is fair so this is wrong. The correct answer would be 'Yes'."
+        },
+        {
+            "input": "Context: 'You can take two firewood an i can get one. I really don't need much. of that. are you okay with that?' 'I am okay with that \ud83d\ude42' 'okay an for as the water two for me an 2 for you right? are you sure?'\nUtterance: 'Yes, as long as I can get two of the food. '",
+            "output": "Yes",
+            "explanation": "This is wrong since the utterance does not refer to the evaluation of the deal. The correct answer is No."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task359-8a056093e04341ceb61528fd9dba426a",
+            "input": "Context: 'That's awesome! And oh no! I have a medium amount of food so we can work that out! How are you doing on water?' 'I have a medium amount of water so I would like some more. I wish we had lots of supplies to split up evenly but I'm sure we can work it out\ud83d\ude42' 'I agree! We can figure out working out a deal! What if I gave you 2 food and 2 waters and you gave me your wood and one of food/water? If that doesn't work for you we can also figure something else out.'\nUtterance: 'I think that sounds reasonable. Of course, I could counter with I take 2 food, 2 waters and 1 firewood. What do you think of that?'",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task359-feaf416ba5f24b5a878c3ad830185317",
+            "input": "Context: 'well I am sure between you and me we will find a way....' 'I really need some food, but I could also use extra firewood. It is supposed to be pretty cold at night and we would love to cook up some smores.' 'I hear you we have the same issues well you can have either 2 food or 2 firewood what would you prefer?'\nUtterance: 'I would prefer 2 food. I could give you 1 food, 2 firewood and 2 water?'",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task359-d968c6b90e2b42a2b0b9ae077dae61e9",
+            "input": "Context: 'Right...hmm. What do you say to 2 food, 1 firewood for me?' 'i am good with that how many waters do you want can i have 2?' 'Sure we can do that \ud83d\ude42'\nUtterance: 'ok so i get 1 food 2 firewood and 2 water? sound fair?'",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task359-cf8b3c3a01b4459eb0ce17cabbc7a316",
+            "input": "Context: 'I think food is my highest priority, What about you?' 'Food is also my highest priority, but firewood is also pretty close for me.' 'Would you be willing to take more firewood for less food?'\nUtterance: 'Yes I think that sounds fair.'",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task359-293c184d952c4bd18d0b98f09751ee95",
+            "input": "Context: \nUtterance: 'Who is willing to cooperate in a consensual offer so that we can all get fruitful dividends\ud83d\ude21'",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task359-5511bb9fe7c548f3aa4daa2ac32786d7",
+            "input": "Context: 'Hey there, unfortunately, I'm in a bit of a quandary with firewood too, as I am going to a place where it's fairly cold and will need more for heat. ' 'thats terrible! i broke my leg and wont be able to collect my own firewood , could i maybe get 2 packages? \u2639\ufe0f' 'Terribly sorry to hear that; it sounds like you won't be able to camp much in that condition. I assume you have someone coming along to help you because of your leg?'\nUtterance: 'just a bunch of children under 5 who wont be able to gather firewood. so i desperately need at least 2'",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task359-50c11456a8bc4ab28a00f307465b6b6d",
+            "input": "Context: 'sounds reasonable' 'Great! glad we could come to an agreement. May I ask why you are camping while pregnant?' 'its fun, pregnancy cravings\ud83d\ude42'\nUtterance: 'ahh I see. respect!'",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task359-198adfa5106a49a89bdf4cbb18ccb8b8",
+            "input": "Context: 'We will be in an area where there is not much firewood to collect. You have to bring it in.  We hope to cook with it and keep warm in the evenings.  I am hoping to take at least 2 firewood packages.' 'I will give you water. Firewood also need for me because of my health condition i want some warm.' 'Will one extra firewood be enough to keep you warm?'\nUtterance: 'I'm not sure why you entered a deal we did not agree on.  I can leave you the three food and one firewood.'",
+            "output": [
+                "No"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

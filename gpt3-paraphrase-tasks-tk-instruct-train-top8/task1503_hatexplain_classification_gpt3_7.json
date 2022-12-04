@@ -1,0 +1,115 @@
+{
+    "Contributors": [
+        "Pruthvi Patel"
+    ],
+    "Source": [
+        "hatexplain"
+    ],
+    "URL": [
+        "https://github.com/hate-alert/HateXplain"
+    ],
+    "Categories": [
+        "Toxic Language Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "The input will be a tweet. The tweet can be one of three things: Hate Speech, Offensive, or Normal. Hate Speech and Offensive tweets target one community out of the nine values. These values are: 'African', 'Islam', 'Jewish', 'Women', 'Refugee', 'Arab', 'Caucasian', 'Hispanic', and 'Asian'. If the tweet does not target any community, the output will be 'None'."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Social Media -> Twitter"
+    ],
+    "Positive Examples": [
+        {
+            "input": "caucasians wearing masks to prevent coronavirus and still don \u2019 t wash their hands",
+            "output": "Caucasian",
+            "explanation": "The tweet generalizes an attribute to the entire community, Caucasian, which makes it offensive."
+        },
+        {
+            "input": "lesson of the week from the holy book the sovereign individual once commerce flows over the internet suppression of speech becomes unstoppable devolution inevitable and the monopoly of violence by governments will end paraphrased from j d davidson rhys mogg",
+            "output": "None",
+            "explanation": "The tweet does not target any specific community hence the correct answer is None"
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "<user> <user> there shd be a film called no hindus in kashmir wud be perfect islamic fanaticsm movement in kashmir",
+            "output": "Hindu",
+            "explanation": "Every input tweet will target one or more of the nine communities provided or will not target any community. Further the tweet targets Muslim community. Hence Hindu is not the correct value. The correct value is Islam."
+        },
+        {
+            "input": "ffs everthing is offensive to muslimes",
+            "output": "None",
+            "explanation": "This tweet is offensive to Muslim community. Hence the correct answer is Islam instead of None."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1503-2629d8a2cb9145ecaa139c663e46123f",
+            "input": "maybe tucker carlson is not on fox tonite cuz president trump sent him to korea to beat the fucking shit out of that fat little gook rocket man \ud83e\udd14",
+            "output": [
+                "Asian"
+            ]
+        },
+        {
+            "id": "task1503-5ff946c2353d43d0a03f76ba50c3da7a",
+            "input": "i am not surprised that boris johnson made it to the list but surprised that our <number> inch guy somehow has no sexual harassment complaint against him or have i been sleeping go back modi me too",
+            "output": [
+                "None"
+            ]
+        },
+        {
+            "id": "task1503-c7bec2e4de4a4a21b2108bfadcc3dd1c",
+            "input": "arablies so it is ok for arabs to colonise but the jews cannot have israel a bees dick in comparison to what arabs have",
+            "output": [
+                "Arab"
+            ]
+        },
+        {
+            "id": "task1503-c515c0f8ceb9430daf49a4f23adcf7ee",
+            "input": "cut them hoes of quic",
+            "output": [
+                "Women"
+            ]
+        },
+        {
+            "id": "task1503-2da9b656dc434714b2fabd11262657fc",
+            "input": "she is referring to the de niro projects financed for or by kike rapist harvey weinstein it helps if you took english reading classes dummy",
+            "output": [
+                "Jewish"
+            ]
+        },
+        {
+            "id": "task1503-26b63fab33cc49ca83c2285308df60b6",
+            "input": "<number> incidents of harassment reported since trump won that number seems small considering there close to <number> million criminal illegals that need to gtfo maga gabfam speakfreely",
+            "output": [
+                "Refugee"
+            ]
+        },
+        {
+            "id": "task1503-6832df9e4fc94b66abfd3ceecc351e34",
+            "input": "still the same nigga i am evolving doe",
+            "output": [
+                "None"
+            ]
+        },
+        {
+            "id": "task1503-e24324f319674ca4aa42f8182a71e17b",
+            "input": "white trailer trash lol how many baby mommas does he have and he has what a <number> year old son and a <number> year old yeah ghetto trash",
+            "output": [
+                "Caucasian"
+            ]
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

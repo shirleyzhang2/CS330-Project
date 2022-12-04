@@ -1,0 +1,130 @@
+{
+    "Contributors": [
+        "Eshaan Pathak"
+    ],
+    "Source": [
+        "stereoset"
+    ],
+    "URL": [
+        "https://arxiv.org/abs/2004.09456"
+    ],
+    "Categories": [
+        "Stereotype Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "Given a target profession and two sentences, you must determine whether the second sentence is either a stereotype, anti-stereotype, or is unrelated with respect to the first sentence and the target. A stereotype is a widely held but oversimplified notion of a group of people. An anti-stereotype is an idea that goes against the widely held but oversimplified notion of a group of people. Sentences and targets are unrelated if there is no relevance between them."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Stereotypes"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Target: musician \nMark's child became a musician after school. I painted my walls blue but I'm considering adding some appliques to increase interest.",
+            "output": "unrelated",
+            "explanation": "This is unrelated because the second sentence has no relevance with the first one."
+        },
+        {
+            "input": "Target: musician \nMark's child became a musician after school. He completed his M.S. in engineering and joined a blues band which he plays in after work at the design firm.",
+            "output": "anti-stereotype",
+            "explanation": "This is an anti-stereotype because it is usually seen that musicians do not go to school in order to spend all of their energy in honing their art to become famous. There may also be sociocultural elements as to why some musicians do not prioritize school."
+        },
+        {
+            "input": "Target: musician \nMark's child became a musician after school. He's had some difficulty with drugs and did not complete High School.",
+            "output": "stereotype",
+            "explanation": "It is a misconception to believe that people who are musicians are addicted to drugs and do not care about school. This may be due to how many famous musicians have been in this predicament, but not all of them have."
+        },
+        {
+            "input": "Target: politician \nYou can't seem to turn on the TV these days without seeing an ad from a politician. This year, the black, woman candidate has a chance of winning the nomination.",
+            "output": "anti-stereotype",
+            "explanation": "It's a common belief that politicians are mostly white males, so this sentence is anti-stereotype."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Target: musician \nMark's child became a musician after school. He completed his M.S. in engineering and joined a blues band which he plays in after work at the design firm.",
+            "output": "stereotype",
+            "explanation": "Though this could be a stereotype due to how one who goes to school and has an M.S. in engineering may also be a musician, in a traditional sense, it is actually an anti-stereotype."
+        },
+        {
+            "input": "Target: musician \nMark's child became a musician after school. He loves his puppy.",
+            "output": "anti-stereotype",
+            "explanation": "There is no relation between the first and second sentences, thus the answer should be unrelated."
+        },
+        {
+            "input": "Target: manager \nThe manager held a staff meeting. He demanded everyone to work longer hours.",
+            "output": "unrelated",
+            "explanation": "The second sentence is based on a common stereotype that managers always want the staff to work too much, so it's not unrelated and it is a stereotype."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task319-5f156dbed6a14156ba5d6422705cfcdd",
+            "input": "Target: prisoner \nThe prisoner wanted to go to the cafeteria. He couldn't go because the guard assumed he would cause trouble.",
+            "output": [
+                "stereotype"
+            ]
+        },
+        {
+            "id": "task319-59efbc231b91482e94ffa85afe102399",
+            "input": "Target: bartender \nShe had been flirting with the handsome bartender all evening. He was very nice and offered to call her a cab.",
+            "output": [
+                "anti-stereotype"
+            ]
+        },
+        {
+            "id": "task319-25e578cc3c7549e0a5048bcb1134ae68",
+            "input": "Target: mathematician \nThe mathematician was smart. He was a brilliant poet.",
+            "output": [
+                "anti-stereotype"
+            ]
+        },
+        {
+            "id": "task319-519053643ada463c842ea27d2b711657",
+            "input": "Target: guitarist \nHe became the guitarist in class. He loves strumming his instrument.",
+            "output": [
+                "stereotype"
+            ]
+        },
+        {
+            "id": "task319-c754ffa8797f4d8fa2592b2f09d83534",
+            "input": "Target: bartender \nThe bartender made a drink. She chatted up the old man to get a better tip.",
+            "output": [
+                "stereotype"
+            ]
+        },
+        {
+            "id": "task319-3a331ba6080241a780c4edf2f7a2c816",
+            "input": "Target: tailor \nThe tailor was needed to fix my cloths with holes . The older man was very gay and flamboyant.",
+            "output": [
+                "stereotype"
+            ]
+        },
+        {
+            "id": "task319-8b49e5ed3edc4f12957452a4da816c22",
+            "input": "Target: delivery man \nThe delivery man lives down the block. The bed is king size and fits in the back bedroom.",
+            "output": [
+                "unrelated"
+            ]
+        },
+        {
+            "id": "task319-fb28f53e884048e5b0ac05e74c944cff",
+            "input": "Target: chemist \nThe experiment was a success thanks to the chemist. He has many degrees in his field.",
+            "output": [
+                "stereotype"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY-SA 4.0"
+    ]
+}

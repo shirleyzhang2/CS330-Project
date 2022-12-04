@@ -1,0 +1,125 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "atomic"
+    ],
+    "URL": [
+        "https://allenai.org/data/atomic-2020"
+    ],
+    "Categories": [
+        "Commonsense Classification"
+    ],
+    "Reasoning": [
+        "Relational Reasoning",
+        "Reasoning on Social Interactions",
+        "Commonsense Reasoning -> Social Situations"
+    ],
+    "Definition": [
+        "You are given a tuple, comprising Head and Tail, separated with <sep>. The Head and the Tail events are short phrases possibly involving participants. The names of specific people have been replaced by generic words (e.g., PersonX, PersonY, PersonZ). PersonX is always the subject of the event. You have to determine whether, as a result of the Head, PersonY or others will want what is mentioned in the Tail or not. In this task, wanting is a postcondition desire on the part of PersonY and others, respectively. For example, as a result of PersonX giving PersonY gifts, PersonY may want to open the gift. Classify your answers into \"Yes\" and \"No\". The phrase may also contain \"___\", a placeholder that can be an object, a person, and/or an action."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Sociology",
+        "Commonsense -> Concepts and Relations -> Social Commonsense"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Head: PersonX holds PersonY's head<sep>Tail: to be messaged",
+            "output": "Yes",
+            "explanation": "This is a good example. As a result of the Head, PersonY will want to be messaged."
+        },
+        {
+            "input": "Head: PersonX achieves PersonX's dream<sep>Tail: to achieve the dream",
+            "output": "No",
+            "explanation": "In this example, if PersonX achieves PersonX's dream, others won't want to achieve the dream. So this output is correct."
+        },
+        {
+            "input": "Head: PersonX fulfills PersonY's needs<sep>Tail: to spend time with personX",
+            "output": "Yes",
+            "explanation": "If PersonX fulfils PersonY's needs, personY will want to spend time with personX. Thus, this example should be classified as \"Yes\"."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Head: PersonX accepts PersonY's offer<sep>Tail: relieved",
+            "output": "Yes",
+            "explanation": "In this example, being relieved is not a post conditional desire. It's a consequence. So the output should be \"No\"."
+        },
+        {
+            "input": "Head: PersonX loses PersonX's cool<sep>Tail: to fight PersonX",
+            "output": "No",
+            "explanation": "If PersonX loses PersonX's cool, PersonY will want to fight PersonX, and the output should be \"Yes\"."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1198-e115b54102db4102985ed041e0b5824d",
+            "input": "Head: PersonX explains PersonY's actions<sep>Tail: to save himself",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1198-c2832f6f1eef4a72b0b2e114694f25c4",
+            "input": "Head: PersonX bears the brunt<sep>Tail: becomes sweaty",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1198-ccf689594c724c9fb555583c6653037d",
+            "input": "Head: PersonX asks to play<sep>Tail: to see someone playing",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1198-ce9fd034b10a49c0903e04b8fe07fa1f",
+            "input": "Head: PersonX makes PersonX's friends laugh<sep>Tail: to smile",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1198-fd6690b6ed5e4364943650da444aa80a",
+            "input": "Head: PersonX has two kids<sep>Tail: to look after their children",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1198-0491c115adb84d708c77a22169f3542f",
+            "input": "Head: PersonX carries the ___ into execution<sep>Tail: to make sure everything goes smoothly",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1198-c16d19e24b454deea65c0475d0ba9650",
+            "input": "Head: PersonX covers PersonY's ears<sep>Tail: to ignore PersonX",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1198-8ab479194a38446c944a22300cccbe06",
+            "input": "Head: PersonX has been friends for years<sep>Tail: To party with X",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

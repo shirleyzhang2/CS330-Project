@@ -1,0 +1,216 @@
+{
+    "Contributors": [
+        "Shailaja Keyur Sampat"
+    ],
+    "Source": [
+        "torque"
+    ],
+    "URL": [
+        "https://allennlp.org/torque.html"
+    ],
+    "Categories": [
+        "Information Extraction"
+    ],
+    "Reasoning": [
+        "Commonsense Reasoning"
+    ],
+    "Definition": [
+        "In this task, you will be given a passage, and you need to identify an event from the passage. An event is defined as a single word representing something that happened, is happening, or may happen. The event must not be a pronoun or an adjective. For noun events with multiple words, use the last word in the phrase as event."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "News"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Passage: I submitted the hit. The hit was approved, and then I was paid.",
+            "output": "approved",
+            "explanation": "There are three events in this passage (i) submission event (\"submitted\") (ii) the approval event (\"approved\"), and (iii) the payment event (\"paid\"). You can use any one of them as an output."
+        },
+        {
+            "input": "Passage: He was caught in the snow storm.",
+            "output": "storm",
+            "explanation": "There are two events in this passage (i) he was caught (\"caught\") and (ii) the snow storm event (\"storm\"). You can use any one of them as an output. Since snow storm is a noun event with multiple words, we only use the last word 'storm' as an event."
+        },
+        {
+            "input": "Passage: He is on the east coast.",
+            "output": "is",
+            "explanation": "The copula \"is\" an event describing his location."
+        },
+        {
+            "input": "Passage: He wanted to finish the task.",
+            "output": "wanted",
+            "explanation": "There are two events in this passage (i) he wanted to do something (\"wanted\") and (ii) finish the task (\"finish\"). Either of wanted or finish can be used as output. However note that though there is an uncertainty about the task i.e. indeed finished or not, \"finish\" is still a valid event."
+        },
+        {
+            "input": "Passage: If he works hard, then he will finish the task.",
+            "output": "finish",
+            "explanation": "There are two events in this passage (i) he works hard (\"works\") and (ii) he will finish the task. (\"finish\"). You can use either of works or finish as an output. Here the second event happens only if the first one is true, but both are considered as events. This is an example of hypothetical event."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Passage: He is happy.",
+            "output": "happy",
+            "explanation": "Happy is an adjective and hence cannot be an event. The output should be \"is\" which represents an event describing his attribute of happiness."
+        },
+        {
+            "input": "Passage: He was caught in the elevator.",
+            "output": "elevator",
+            "explanation": "Not every noun can be an event. Here \"elevator\" is an object and one cannot say \"an elevator happened\" hence it is not an event. \"caught\" is a correct output."
+        },
+        {
+            "input": "Passage: The flu season is winding down.",
+            "output": "flu season",
+            "explanation": "The \"flu season\" is a noun events with multiple words, but only last word \"season\" sould be used as an event as per definition."
+        },
+        {
+            "input": "Passage: The death toll climbed up to 99 soon after the explosion.",
+            "output": "blast",
+            "explanation": "There are two events in this passage \"climbed\" and \"explosion\". Though blast is a synonym of explosion, it is not present in the passage. The output must contain events that are present in the passage."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task388-dd1128853d1e4082a6a825b1e2e0824b",
+            "input": "Passage: \"Sorry for any inconvenience caused,\" said a note plastered on metal cyclone shutters protecting the Alfa Romeo dealership. Jewellers and art galleries removed their eye-catching displays, while some banks closed cash dispensing machines along the route of Tuesday's planned protest march.",
+            "output": [
+                "inconvenience",
+                "caused",
+                "said",
+                "plastered",
+                "protecting",
+                "removed",
+                "closed",
+                "dispensing",
+                "planned",
+                "march",
+                "Tuesday"
+            ]
+        },
+        {
+            "id": "task388-c873a0405f904ce39edd059e0e2cfd10",
+            "input": "Passage: The men appeared in the store at 469 Vermont St. in Brownsville around 7:15 p.m., after the victim, Linda Sanders, 35, had finished her cleaning and was waiting for her clothes to dry, detectives said. ``It looks as though they panicked,'' a detective, speaking on condition of anonymity, said of the robbers.",
+            "output": [
+                "appeared",
+                "finished",
+                "cleaning",
+                "waiting",
+                "dry",
+                "said",
+                "panicked",
+                "speaking",
+                "said",
+                "looks"
+            ]
+        },
+        {
+            "id": "task388-be12e2b4b36042c692f6122654de301e",
+            "input": "Passage: The Albanian immigrant community is second only in size in Italy to the Moroccan community, estimated to number some 119,000. Albania has been gripped by instability since anti-government protests over the collapse of bogus investment schemes turned into armed rebellion as insurgents took control of a string of towns in the south.",
+            "output": [
+                "second",
+                "estimated",
+                "gripped",
+                "protests",
+                "collapse",
+                "schemes",
+                "turned",
+                "took",
+                "control"
+            ]
+        },
+        {
+            "id": "task388-c531877ac2cc4fd4946dcbf1b92758fd",
+            "input": "Passage: After the water pollution incident occurred, China has repeatedly informed its neighbor of the details of the pollution incident, including various lab test results such as the pollutant's species and density and the location of polluted stretches. The two sides have agreed to open up a hotline between environmental departments for still better contacts and communication over the water pollution problem, and China informs Russia of the latest developments daily, the Chinese forign minister said.",
+            "output": [
+                "occurred",
+                "has",
+                "informed",
+                "incident",
+                "incident",
+                "have",
+                "agreed",
+                "open",
+                "problem",
+                "informs",
+                "said"
+            ]
+        },
+        {
+            "id": "task388-d1cdfda74ceb48d4a51f47d3df8cd117",
+            "input": "Passage: \"It is only the beginning of aid to Albania,\" he said. Three Italian military helicopters landed the two officials and their entourage earlier for a 90-minute visit to the town, during which they held talks with town leaders, journalists contacted by telephone from Tirana said.",
+            "output": [
+                "beginning",
+                "aid",
+                "said",
+                "landed",
+                "visit",
+                "held",
+                "talks",
+                "contacted",
+                "said",
+                "is"
+            ]
+        },
+        {
+            "id": "task388-8c9dac43f5434568b689e132c997dda0",
+            "input": "Passage: The report said water quality in seven of Beijing lakes, such as the Winter Palace Lake and Taoranting Lake, is below level five. Only four lakes could be used to supply drinking water, while water from the other lakes is only fit for industrial use.",
+            "output": [
+                "said",
+                "quality",
+                "is",
+                "five",
+                "used",
+                "supply",
+                "use",
+                "is",
+                "lakes",
+                "water",
+                "lakes"
+            ]
+        },
+        {
+            "id": "task388-18683bc829c5435c90a9d2fd7f12b566",
+            "input": "Passage: The alliance at the time did not provide information on casualties, saying that toll was being assessed. \"According to intelligence reports, we've killed 30 Taliban including some of their commanders,\" Kandahar governor Asadullah Khalid told a news conference on Sunday, four days after the raid.",
+            "output": [
+                "alliance",
+                "time",
+                "casualties",
+                "toll",
+                "assessed",
+                "reports",
+                "killed",
+                "conference",
+                "told",
+                "raid"
+            ]
+        },
+        {
+            "id": "task388-c3cf9d1439ef45f4906cdeeb6b5ab34f",
+            "input": "Passage: Cipriani, along with Michel Minnig of the International Committee of the Red Cross, Canadian Ambassador Anthony Vincent and Japanese envoy Terusuke Terada, told reporters they had not expected the assault. Cipriani wept as he read a joint statement in which the mediators said they \"share the pain of those who lost a life from their family and we share the joy\" of those who were reunited.",
+            "output": [
+                "told",
+                "expected",
+                "assault",
+                "wept",
+                "read",
+                "said",
+                "share",
+                "lost",
+                "share",
+                "reunited"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Apache 2.0"
+    ]
+}

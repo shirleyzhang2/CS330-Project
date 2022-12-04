@@ -1,0 +1,122 @@
+{
+    "Contributors": [
+        "Hadi Mazboudi"
+    ],
+    "Source": [
+        "wiqa"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/wiqa"
+    ],
+    "Categories": [
+        "Sentence Ordering"
+    ],
+    "Reasoning": [
+        "Temporal Reasoning"
+    ],
+    "Definition": [
+        "You will need to answer the question 'Are the given steps in order?', based on a set of steps describing a process. Your answer must be either 'Yes' or 'No'. If the answer is 'No', that means the steps are out of order and do not make sense in the current order. If the answer is 'Yes', that means the steps are in order and make sense in the order that they are in. A set of steps are not in order if the steps reference information that is introduced in a later step."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Natural Science"
+    ],
+    "Positive Examples": [
+        {
+            "input": " ['The seeds are dispersed by wind, animals, etc', 'The seeds reach the ground', 'Grow into new trees', 'The process repeats itself over and over', 'A tree produces seeds', 'These new trees produce seeds'] ",
+            "output": "No",
+            "explanation": "These steps are not in order. The first step in this sequence is 'The seeds are dispersed by wind, animals, etc' but the step introducing the seed 'A tree produces seeds' is after the steps referencing the seeds. Therefore, the answer is No"
+        },
+        {
+            "input": " ['The carafe is filled with water', 'The water is poured into the machine at the back', 'Coffee beans are put into a grinder', 'The grinder is activated', 'A filter is put into the coffee maker', 'The ground coffee is put into the filter', 'Sometimes a bit of salt is added to the grounds to bring out flavor', 'The top of the machine is closed', 'The power is turned on', 'The water passes through the grounds and becomes coffee.'] ",
+            "output": "Yes",
+            "explanation": "These steps are in order. The information from each previous step leads into the next step. Therefore, the correct answer is Yes"
+        },
+        {
+            "input": " ['The nest is done.', 'The bird makes a flat base with twigs', 'The bird picks a tree', 'The bird makes sides with twigs and other things', 'The bird adds softer material to the inside', 'The bird collects twigs and other refuse'] ",
+            "output": "No",
+            "explanation": "These steps are not in order. The first step is 'The nest is done'. Since these steps outline how birds make a nest, this step should be last. Therefore, the steps are out of order and the answer is No"
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": " ['The cans are transported to a facility', 'The molds are flattened and rolled into sheets to reuse.', 'The cans are heated to 1400 degrees to melt them', 'The molten metal is poured into molds', 'The cans are shredded by a machine', 'Put the aluminum can into a recycle bin'] ",
+            "output": "Yes",
+            "explanation": "This answer is incorrect because these steps are out of order. The step 'Put the aluminum can into a recycle bin' should be first. Without this step, the step 'The cans are transported to a facility' does not make sense because the cans are not introduced yet. The correct answer is No"
+        },
+        {
+            "input": " ['Acid rain is produced by chemicals that reach into the atmosphere', 'Falls onto the ground', 'The acid rain starts scouring rocks', 'Destroys vegetation', 'The lack of vegetation alters the surrounding environment.'] ",
+            "output": "No",
+            "explanation": "This answer is incorrect because these steps are in order. The step, 'Acid rain is produced by chemicals that reach into the atmosphere' introduces the subject of the process, acid rain. The step 'Falls onto the ground' refers to the acid rain that was in the previous step. After the acid falls onto the ground, the next step is 'The acid rain starts scouring rocks'. The next step describes what happens after acid rain falls onto the ground, 'Destroys vegetation'. After the acid rain destroys vegetation, 'The lack of vegetation alters the surrounding environment.' Since each step only uses information from previous steps, the correct answer is Yes"
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1548-7dfdea21cacd4b0abff4edbec0b4ff58",
+            "input": " ['The sediment rolls down hill towards a river', 'The heavy items sink to the bottom', 'Sediment becomes loose from the rest of the soil', 'The sediment gets dumped through tributaries into lakes and the ocean', 'The lighter items float on the top and in convection cycles', 'As the river flows the sediment is moved', 'The sediment keeps moving around the world in convection currents.'] ",
+            "output": [
+                "  No  "
+            ]
+        },
+        {
+            "id": "task1548-4b0bace4263d4065bbf4a7e58af8f0b0",
+            "input": " ['The owls sensitive hearing allows him to locate hidden prey', 'The owl looks down at the ground', 'An owl leaves his nest', 'The owl flys out into the night', 'The owl swoops down', 'The owl catches a mouse in his talons.', 'The owls keen eyesight allows him to see in the dark'] ",
+            "output": [
+                "  No  "
+            ]
+        },
+        {
+            "id": "task1548-6f2261e05ba64273b69b840e4b75f02f",
+            "input": " ['Stars burn mass', 'The star burns until it runs out of fuel', 'The star can no longer support its weight', 'The layers of hydrogen press down on the core', 'The core gets smaller and smaller under the pressure', 'The pressure causes gravity to get stronger', 'The gravity becomes so powerful that nothing can escape it', 'Anything that gets close to it, is drawn into it by its gravity', 'Light is drawn into it', 'Light can not escape'] ",
+            "output": [
+                "  Yes  "
+            ]
+        },
+        {
+            "id": "task1548-20aa8e1a6e444a4a827848fcf6a1388f",
+            "input": " ['Fuel mixes with air', 'Spark plug emits a spark that ignites it causing combustion', 'Exhaust valve opens to vent exhaust out tail pipe.', 'Pushes piston during power stroke', 'Piston compresses the mix', 'Combustion gases expand', 'Mix gets inducted into cylinder'] ",
+            "output": [
+                "  No  "
+            ]
+        },
+        {
+            "id": "task1548-c24b0c3d73f84c5bb8650434c4307078",
+            "input": " ['Animals gain weight', 'Animals find a place to hibernate', 'The animal is able to survive not eating or drinking without hurting itself', 'Body processes slow down', 'The animal loses weight more slowly than usual', 'Animals eat a lot during good (warm, clear) weather', 'The season changes to one with bad (cold, snowy) weather', 'The animal&#x27;s heart rate and breathing rate slow', 'Animals enter a type of &#x27;sleep&#x27; (hibernation)'] ",
+            "output": [
+                "  No  "
+            ]
+        },
+        {
+            "id": "task1548-5b27580a1f1e4c5198e8c357c7db9f97",
+            "input": " ['An outlet valve opens and the piston pushes the steam back through the cylinder and out up the locomotive&#x27;s chimney', 'The boiler produces steam under high pressure', 'Just ahead of the wheels, pushing a tight-fitting plunger, the piston', 'As the piston pushes, the crank and connecting rod turn the locomotive&#x27;s wheels and power the train along', 'Coal is loaded into the firebox', 'The piston is connected to one or more of the locomotive&#x27;s wheels through a kind of arm-elbow-shoulder joint called a crank and connecting rod', 'The steam generated in the boiler flows down into a cylinder'] ",
+            "output": [
+                "  No  "
+            ]
+        },
+        {
+            "id": "task1548-407ac8d5a15645f89bcc4f21c02c85d1",
+            "input": " ['Blood is sent to the liver', 'The liver uses chemicals and proteins to treat the blood', 'The blood is cleaned', 'Energy is produced', 'The blood leaves the liver cleaned.'] ",
+            "output": [
+                "  Yes  "
+            ]
+        },
+        {
+            "id": "task1548-9350ffa9fb7042a2a65803ea3143a817",
+            "input": " ['The sediment breaks down into small particles', 'The sediment travels along the same route as the wind or water', 'Wind or water picks up the sediment', 'The sediment is deposited again in a new place.', 'The sediment travels further', 'The sediment is picked up again by new wind or water', 'The sediment is deposited at new locations by the wind or water', 'Sediment settles in a place due to gravity'] ",
+            "output": [
+                "  No  "
+            ]
+        }
+    ],
+    "Instance License": [
+        "Apache 2.0"
+    ]
+}

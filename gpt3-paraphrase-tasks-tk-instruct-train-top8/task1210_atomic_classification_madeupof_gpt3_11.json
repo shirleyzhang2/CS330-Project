@@ -1,0 +1,127 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "atomic"
+    ],
+    "URL": [
+        "https://allenai.org/data/atomic-2020"
+    ],
+    "Categories": [
+        "Commonsense Classification"
+    ],
+    "Reasoning": [
+        "Relational Reasoning",
+        "Reasoning on Social Interactions",
+        "Commonsense Reasoning -> Social Situations",
+        "Reasoning on Objects"
+    ],
+    "Definition": [
+        "In this task, you are given two phrases: Head and Tail, separated by <sep>. The Head and the Tail events are short phrases possibly involving participants. You have to determine whether the Head is a part, portion, or makeup of the Tail or not, and classify your answers into \"Yes\" and \"No\". The phrase may also contain \"___\", a placeholder that can be an object, a person, and/or an action."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Sociology",
+        "Commonsense -> Concepts and Relations -> Physical Commonsense",
+        "Commonsense -> Concepts and Relations -> Social Commonsense"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Head: bed<sep>Tail: mattress",
+            "output": "Yes",
+            "explanation": "This is a good example. The Head is made of the Tail."
+        },
+        {
+            "input": "Head: PersonX asks ___ to go with PersonY<sep>Tail: follows the other person",
+            "output": "No",
+            "explanation": "In this example, The relation between the Head and the Tail is different, and the Head is not made up of the Tail. So the output should be\"No\"."
+        },
+        {
+            "input": "Head: government<sep>Tail: police",
+            "output": "Yes",
+            "explanation": "In this example, the government is made of the police. Thus, this example should be classified as \"Yes\"."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Head: PersonX acts weird<sep>Tail: attention",
+            "output": "Yes",
+            "explanation": "In this example, The Head needs the Tail, and it is not made up of the Tail. So the output should be \"No\"."
+        },
+        {
+            "input": "Head: war<sep>Tail: aggression",
+            "output": "No",
+            "explanation": "The war is made up of aggression, and the output should be \"Yes\"."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1210-6ea8b2d940134760822683dd53b80b62",
+            "input": "Head: PersonX asks PersonX's grandma<sep>Tail: answers personX",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1210-fcae006f7d8c4b2580248714edec3a14",
+            "input": "Head: PersonX asks for the moon<sep>Tail: to be high maintenance",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1210-b94b1a7facd44c1888fe602c4ca9a5ae",
+            "input": "Head: PersonX achieves PersonX's objective<sep>Tail: successful",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1210-f451846b36f94a95886e09b2f67b5548",
+            "input": "Head: state<sep>Tail: counties",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1210-cdda301ea749462a86179142222c655d",
+            "input": "Head: door<sep>Tail: keyhole",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1210-1bfad01f21f84d9593490fb305234b06",
+            "input": "Head: PersonX asks for the moon<sep>Tail: impractical",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1210-c8299d08a6124b3c81e403ebd39b9512",
+            "input": "Head: oregano<sep>Tail: marjoram",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1210-ddc0dfb730904c0da941910f05f92534",
+            "input": "Head: car<sep>Tail: carburator",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

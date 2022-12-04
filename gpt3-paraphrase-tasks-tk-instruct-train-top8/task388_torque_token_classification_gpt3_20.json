@@ -1,0 +1,200 @@
+{
+    "Contributors": [
+        "Shailaja Keyur Sampat"
+    ],
+    "Source": [
+        "torque"
+    ],
+    "URL": [
+        "https://allennlp.org/torque.html"
+    ],
+    "Categories": [
+        "Information Extraction"
+    ],
+    "Reasoning": [
+        "Commonsense Reasoning"
+    ],
+    "Definition": [
+        "In this task, you will be given a passage. Your goal is to identify an event from the passage. An event is defined as a single word representing something that happened, is happening, or may happen. The event must not be a pronoun or an adjective. For noun events with multiple words, use the last word in the phrase as event."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "News"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Passage: I submitted the hit. The hit was approved, and then I was paid.",
+            "output": "approved",
+            "explanation": "There are three events in this passage (i) submission event (\"submitted\") (ii) the approval event (\"approved\"), and (iii) the payment event (\"paid\"). You can use any one of them as an output."
+        },
+        {
+            "input": "Passage: He was caught in the snow storm.",
+            "output": "storm",
+            "explanation": "There are two events in this passage (i) he was caught (\"caught\") and (ii) the snow storm event (\"storm\"). You can use any one of them as an output. Since snow storm is a noun event with multiple words, we only use the last word 'storm' as an event."
+        },
+        {
+            "input": "Passage: He is on the east coast.",
+            "output": "is",
+            "explanation": "The copula \"is\" an event describing his location."
+        },
+        {
+            "input": "Passage: He wanted to finish the task.",
+            "output": "wanted",
+            "explanation": "There are two events in this passage (i) he wanted to do something (\"wanted\") and (ii) finish the task (\"finish\"). Either of wanted or finish can be used as output. However note that though there is an uncertainty about the task i.e. indeed finished or not, \"finish\" is still a valid event."
+        },
+        {
+            "input": "Passage: If he works hard, then he will finish the task.",
+            "output": "finish",
+            "explanation": "There are two events in this passage (i) he works hard (\"works\") and (ii) he will finish the task. (\"finish\"). You can use either of works or finish as an output. Here the second event happens only if the first one is true, but both are considered as events. This is an example of hypothetical event."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Passage: He is happy.",
+            "output": "happy",
+            "explanation": "Happy is an adjective and hence cannot be an event. The output should be \"is\" which represents an event describing his attribute of happiness."
+        },
+        {
+            "input": "Passage: He was caught in the elevator.",
+            "output": "elevator",
+            "explanation": "Not every noun can be an event. Here \"elevator\" is an object and one cannot say \"an elevator happened\" hence it is not an event. \"caught\" is a correct output."
+        },
+        {
+            "input": "Passage: The flu season is winding down.",
+            "output": "flu season",
+            "explanation": "The \"flu season\" is a noun events with multiple words, but only last word \"season\" sould be used as an event as per definition."
+        },
+        {
+            "input": "Passage: The death toll climbed up to 99 soon after the explosion.",
+            "output": "blast",
+            "explanation": "There are two events in this passage \"climbed\" and \"explosion\". Though blast is a synonym of explosion, it is not present in the passage. The output must contain events that are present in the passage."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task388-300d3347bda848eb9b42c06c0e97d30b",
+            "input": "Passage: Last month, Canadian Bond Rating Service downgraded Provigo's commercial paper and debentures because of its lackluster performance. Analysts are skeptical Provigo will be able to sell the non-food businesses as a group for at least book value, and are expecting write-downs.",
+            "output": [
+                "downgraded",
+                "performance",
+                "are",
+                "able",
+                "sell",
+                "are",
+                "write-downs"
+            ]
+        },
+        {
+            "id": "task388-cd5a5d9712b8433b94f15d296f9aa882",
+            "input": "Passage: He said that the Israeli operation came as part of a pressure campaign exerted against the Hamas-led government and the Palestinian people. Attributing the action to the inclusion of an ultra-nationalist politician into Israel's government, Haneya said that \"The massacre committed today in Beit Hanoun is a result of the Israeli government's move to include a radical minister.\"",
+            "output": [
+                "said",
+                "operation",
+                "came",
+                "campaign",
+                "exerted",
+                "Attributing",
+                "inclusion",
+                "said",
+                "committed",
+                "move",
+                "include"
+            ]
+        },
+        {
+            "id": "task388-77c8a98d10d84aa9a91a2e236bbad9f9",
+            "input": "Passage: NEWARK, N.J. _ A new Essex County task force began delving Thursday into the slayings of 14 black women over the last five years in the Newark area, as law-enforcement officials acknowledged that they needed to work harder to solve the cases of murdered women. The police and prosecutors said they had identified different suspects in six of the cases and had yet to find any pattern linking the killings or the victims, several of whom were believed to be prostitutes.",
+            "output": [
+                "delving",
+                "slayings",
+                "acknowledged",
+                "work",
+                "solve",
+                "said",
+                "identified",
+                "cases",
+                "linking",
+                "killings"
+            ]
+        },
+        {
+            "id": "task388-55611b58b9f44801818cbbac00fcfff9",
+            "input": "Passage: Bethlehem Steel Corp., hammered by higher costs and lower shipments to key automotive and service-center customers, posted a 54% drop in third-quarter profit. Separately, two more of the nation's top steelmakers -- Armco Inc. and National Intergroup Inc. -- reported lower operating earnings in their steel businesses, marking what is generally believed to be the end of a two-year boom in the industry.",
+            "output": [
+                "hammered",
+                "posted",
+                "drop",
+                "reported",
+                "marking",
+                "believed",
+                "boom"
+            ]
+        },
+        {
+            "id": "task388-ef0ae57ae804418babde2ad2efa5d520",
+            "input": "Passage: The field has a production capacity of about 300,000 barrels a day, and Agip would invest two billion dollars to develop it. Rashid also held talks with senior political officials in Italy, where the Senate voted last week in favor of a gradual lifting of UN sanctions against Iraq.",
+            "output": [
+                "production",
+                "invest",
+                "develop",
+                "held",
+                "talks",
+                "voted",
+                "sanctions"
+            ]
+        },
+        {
+            "id": "task388-c3d7a09828ce4087bc8bb38fec11a7d1",
+            "input": "Passage: Swiss economic growth accelerated during the third quarter to reach 2.3 percent over the figure for the equivalent period last year, amid strong consumer spending, according to official data. SNB chairman Jean-Pierre Roth had signalled on November 2 that a rate rize was on the cards for the end of the year, despite some concerns about the potential longer term impact of higher oil prices on economic growth.",
+            "output": [
+                "growth",
+                "accelerated",
+                "reach",
+                "spending",
+                "signalled",
+                "was",
+                "rize",
+                "concerns",
+                "impact",
+                "prices"
+            ]
+        },
+        {
+            "id": "task388-f1e968e2d9434339bcffba77104ad5cc",
+            "input": "Passage: But that euphoria gave way to despair just over a year later, after voters in France and the Netherlands rejected the Union's painstakingly prepared constitution and plunged it into its deepest political crisis. Part of the reason for the \"no\" vote, was the perceived threat among the public of foreign workers or immigrants flooding into a Europe ill-prepared to absorb more member states, most of them poor by comparison.",
+            "output": [
+                "euphoria",
+                "despair",
+                "rejected",
+                "prepared",
+                "plunged",
+                "crisis",
+                "threat",
+                "flooding",
+                "vote",
+                "absorb"
+            ]
+        },
+        {
+            "id": "task388-8735c1b348244c2bb20cf7572267c297",
+            "input": "Passage: Rodionov said last month that a number of other Russian armed forces generals were likely to be dismissed soon for corruption, without naming any of them. ",
+            "output": [
+                "said",
+                "were",
+                "dismissed",
+                "naming"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Apache 2.0"
+    ]
+}

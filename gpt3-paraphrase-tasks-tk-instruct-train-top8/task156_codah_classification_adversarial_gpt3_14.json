@@ -1,0 +1,122 @@
+{
+    "Contributors": [
+        "Eshaan Pathak"
+    ],
+    "Source": [
+        "codah"
+    ],
+    "URL": [
+        "https://aclanthology.org/W19-2008.pdf"
+    ],
+    "Categories": [
+        "Text Completion"
+    ],
+    "Reasoning": [
+        "Commonsense Reasoning"
+    ],
+    "Definition": [
+        "Given a prompt and four completions, select the completion that is the most plausible in continuing or answering the prompt. The categories for this task are idioms, negated statements, polysemy, subject referencing, and quantitative reasoning. The possible outputs are Completion A, Completion B, Completion C, or Completion D."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Commonsense -> Concepts and Relations"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Prompt: A clown is fashioning animals from long balloons. He \nCompletion A: releases the animals into their natural habitat. \nCompletion B: makes a giraffe and hands it to a child. \nCompletion C: yells out for his second in command to pilot the battleship around the obstacle. \nCompletion D: releases the balloon and it flies high into the air.",
+            "output": "Completion B",
+            "explanation": "The clown is an entertainer and is twisting balloons to resemble an animal. There are no live animals, and these types of twistable balloons are not able to fly or float up."
+        },
+        {
+            "input": "Prompt: I am feeling hungry. I think I will \nCompletion A: call my mother. \nCompletion B: have some ravioli. \nCompletion C: fly out the window. \nCompletion D: go on a run outside.",
+            "output": "Completion B",
+            "explanation": "If one is hungry, then they will eat some food to satiate their hunger. One must look at the entire context rather than just the current sentence when selecting the best completion to the prompt."
+        },
+        {
+            "input": "Prompt: I am feeling nervous about my midterm tomorrow. I fear that \nCompletion A: the professor will delay the midterm. \nCompletion B: I will doodle on my exam and receive points for it. \nCompetion C: my grandpa has diabetes. \nCompletion D: I will fail.",
+            "output": "Completion D",
+            "explanation": "If one is feeling nervous about their midterm the next day, then they are most likely worried and anxious about the grade they will receive. They will not doodle on their exam because they will surely not do well in that case. The professor delaying a midterm is usually not why a person would feel nervous about the midterm. One may be worried about their grandpa having diabetes, but that is not relevant to taking a midterm."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Prompt: The man entered his house. The man \nCompletion A: can't find the keys to unlock the door. \nCompletion B: goes to school at his university. \nCompletion C: eats the garbage. \nCompletion D: takes his shoes off.",
+            "output": "Completion A",
+            "explanation": "The man must have found the keys to unlock the door in order to have entered his house in the first place. After he entered the house, it is most plausible that he took his shoes off to not get his house dirty. Thus, Completion D is actually the correct answer."
+        },
+        {
+            "input": "The boy likes animals, but only invertebrates. He \nCompletion A: likes pigs. \nCompletion B: likes vertebrates. \nCompletion C: likes spiders. \nCompletion D: likes elephants.",
+            "output": "Completion D",
+            "explanation": "Out of the four possible completions, only one of them mentions an invertebrate. Spiders are invertebrates since they do not have a spine or vertebral column. Thus, Completion C is actually the correct answer."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task156-fc5649eb475546898dd04014eced0574",
+            "input": "Prompt: George was walking on the beach while barefoot and stepped on a sharp sea shell and a jelly fish. George \nCompletion A: started bleeding and got medical attention. \nCompletion B: started talking to the dead jelly fish, which came back to life after George stepped on it. \nCompletion C: got transported to another beach that also had a sharp sea shell and a jelly fish. \nCompletion D: started talking to the sharp sea shell and apologized for stepping on it.",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task156-54b1589e50384b8a989d0172b4c3dfa9",
+            "input": "Prompt: Sam lives in America and is talking on an international call with Joe, who is a Canadian. Sam \nCompletion A: lives in Mumbai, India. \nCompletion B: lives in America. \nCompletion C: lives in Canada. \nCompletion D: lives in Chicago.",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task156-079a3813623e40cab67b1b852d356d90",
+            "input": "Prompt: I have a cucumber and a cactus. I will \nCompletion A: sit on the cucumber. \nCompletion B: eat the cucumber. \nCompletion C: eat the cactus. \nCompletion D: sit on the cactus.",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task156-5f06accbcea34d2b8db18e1d4a621b13",
+            "input": "Prompt: A couple sits on a couch at the store. They want to \nCompletion A: watch a movie together. \nCompletion B: see if they like it before they take it home. \nCompletion C: paint the couch a different color. \nCompletion D: reupholster all of the cushions.",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task156-1fc1ece4febc4b9c87ab110da01ca316",
+            "input": "Prompt: The musician stops playing the harmonica and talks to the camera again. The man \nCompletion A: goes for a run. \nCompletion B: stops playing the saxophone. \nCompletion C: starts dancing. \nCompletion D: resumes playing the instrument like he was playing earlier.",
+            "output": [
+                "Completion D"
+            ]
+        },
+        {
+            "id": "task156-82219b1026d34aeb8a9701e823fbc2c7",
+            "input": "Prompt: An old man watches a baseball game on television. The old man \nCompletion A: makes money. \nCompletion B: opens a bank account. \nCompletion C: celebrates as the home team wins. \nCompletion D: hits a home run.",
+            "output": [
+                "Completion C"
+            ]
+        },
+        {
+            "id": "task156-a5039b41863c4f4d810ae1fb31e6a3c0",
+            "input": "Prompt: A student likes to eat almonds. The almonds \nCompletion A: fly around. \nCompletion B: can swim. \nCompletion C: can drive the teachers car. \nCompletion D: are part of a trail mix.",
+            "output": [
+                "Completion D"
+            ]
+        },
+        {
+            "id": "task156-6eea0e0da81b42c8b55f2bf4059d7ac1",
+            "input": "Prompt: The lady hits her cat. The cat \nCompletion A: falls asleep. \nCompletion B: screeches. \nCompletion C: purrs. \nCompletion D: poops.",
+            "output": [
+                "Completion B"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

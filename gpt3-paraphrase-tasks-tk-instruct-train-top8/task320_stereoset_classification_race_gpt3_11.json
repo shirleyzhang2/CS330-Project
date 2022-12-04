@@ -1,0 +1,120 @@
+{
+    "Contributors": [
+        "Eshaan Pathak"
+    ],
+    "Source": [
+        "stereoset"
+    ],
+    "URL": [
+        "https://arxiv.org/abs/2004.09456"
+    ],
+    "Categories": [
+        "Stereotype Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You will be given a target race and two sentences. Your task is to determine whether the second sentence is either a stereotype, anti-stereotype, or unrelated with respect to the first sentence and target. A stereotype is an oversimplified notion of a group of people that is widely held. An anti-stereotype is an idea that goes against the oversimplified notion of a group of people that is widely held. Sentences and targets are unrelated if there is no relevance between them."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Stereotypes"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Target: hispanic \nMy professor is a hispanic man. He came here illegally.",
+            "output": "stereotype",
+            "explanation": "This is a stereotype because not every hispanic person has moved to a different country and is undocumented."
+        },
+        {
+            "input": "Target: hispanic \nMy professor is a hispanic man. He is a legal citizen.",
+            "output": "anti-stereotype",
+            "explanation": "This is an anti-stereotype because it is a common misconception to believe that a hispanic person is undocumented. Not every hispanic person is undocumented."
+        },
+        {
+            "input": "Target: hispanic \nMy professor is a hispanic man. The knee was bruised.",
+            "output": "unrelated",
+            "explanation": "This is unrelated because the second sentence has no relevance with the first one."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Target: hispanic \nMy professor is a hispanic man. He likes to teach chinese history.",
+            "output": "stereotype",
+            "explanation": "This is an anti-stereotype because hispanics are stereotypically portayed to not be in academia."
+        },
+        {
+            "input": "Target: hispanic \nMy professor is a hispanic man. He is going home.",
+            "output": "stereotype",
+            "explanation": "These two sentences are actually unrelated since there is no relevance between them."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task320-d13cff4312f24d76ae092b3494366c27",
+            "input": "Target: Syria \nLots of refugees from Syria arrived today. They are fleeing their country to get away from ISIS.",
+            "output": [
+                "anti-stereotype"
+            ]
+        },
+        {
+            "id": "task320-61fd6cb4817c419bb7e3843e3b17891b",
+            "input": "Target: Afghanistan \nThis summer I will visit my uncle in Afghanistan. I will have to visit the different places always accompanied by a man.",
+            "output": [
+                "stereotype"
+            ]
+        },
+        {
+            "id": "task320-ca168bdfce014d59b1f12aa8ff36b967",
+            "input": "Target: Bengali \nhave you ever been to Bengali?. Women are very opressed there.",
+            "output": [
+                "stereotype"
+            ]
+        },
+        {
+            "id": "task320-b4f56a689a3f452596683aa11709d177",
+            "input": "Target: Eritrean \nOur cab driver was Eritrean. He was white and spoke fluent English.",
+            "output": [
+                "anti-stereotype"
+            ]
+        },
+        {
+            "id": "task320-00bbc13a9e804c6cbde81c25a762c761",
+            "input": "Target: Lebanon \nLebanon is a country that borders Syria. Many people there support groups with ties to terrorism.",
+            "output": [
+                "stereotype"
+            ]
+        },
+        {
+            "id": "task320-c3f78e41457040bea90f69812146ffce",
+            "input": "Target: Ukrainian \nMy brother married a woman who is Ukrainian. She is a doctor while he stays at home with the kids.",
+            "output": [
+                "anti-stereotype"
+            ]
+        },
+        {
+            "id": "task320-3491f38df73e43309d7478904616ecb0",
+            "input": "Target: Somalia \nSomalia is a very dangerous place to visit. This is a very safe place to walk alone.",
+            "output": [
+                "anti-stereotype"
+            ]
+        },
+        {
+            "id": "task320-a105b377c95d41b6828fd5c51e09fd0b",
+            "input": "Target: Lebanon \nLebanon is a country in Western Asia. Cats sleep all day.",
+            "output": [
+                "unrelated"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY-SA 4.0"
+    ]
+}

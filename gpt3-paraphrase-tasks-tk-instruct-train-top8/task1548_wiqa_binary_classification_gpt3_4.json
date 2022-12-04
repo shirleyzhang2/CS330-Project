@@ -1,0 +1,122 @@
+{
+    "Contributors": [
+        "Hadi Mazboudi"
+    ],
+    "Source": [
+        "wiqa"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/wiqa"
+    ],
+    "Categories": [
+        "Sentence Ordering"
+    ],
+    "Reasoning": [
+        "Temporal Reasoning"
+    ],
+    "Definition": [
+        "Given a set of steps describing a process, answer the question 'Are the given steps in order?' with either Yes or No. If the answer is No, that means the steps are out of order and do not make sense in the order they are in. If the answer is Yes, that means the steps are in order and make sense in the order that they are in. A set of steps are not in order if the steps reference information that is introduced in a later step."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Natural Science"
+    ],
+    "Positive Examples": [
+        {
+            "input": " ['The seeds are dispersed by wind, animals, etc', 'The seeds reach the ground', 'Grow into new trees', 'The process repeats itself over and over', 'A tree produces seeds', 'These new trees produce seeds'] ",
+            "output": "No",
+            "explanation": "These steps are not in order. The first step in this sequence is 'The seeds are dispersed by wind, animals, etc' but the step introducing the seed 'A tree produces seeds' is after the steps referencing the seeds. Therefore, the answer is No"
+        },
+        {
+            "input": " ['The carafe is filled with water', 'The water is poured into the machine at the back', 'Coffee beans are put into a grinder', 'The grinder is activated', 'A filter is put into the coffee maker', 'The ground coffee is put into the filter', 'Sometimes a bit of salt is added to the grounds to bring out flavor', 'The top of the machine is closed', 'The power is turned on', 'The water passes through the grounds and becomes coffee.'] ",
+            "output": "Yes",
+            "explanation": "These steps are in order. The information from each previous step leads into the next step. Therefore, the correct answer is Yes"
+        },
+        {
+            "input": " ['The nest is done.', 'The bird makes a flat base with twigs', 'The bird picks a tree', 'The bird makes sides with twigs and other things', 'The bird adds softer material to the inside', 'The bird collects twigs and other refuse'] ",
+            "output": "No",
+            "explanation": "These steps are not in order. The first step is 'The nest is done'. Since these steps outline how birds make a nest, this step should be last. Therefore, the steps are out of order and the answer is No"
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": " ['The cans are transported to a facility', 'The molds are flattened and rolled into sheets to reuse.', 'The cans are heated to 1400 degrees to melt them', 'The molten metal is poured into molds', 'The cans are shredded by a machine', 'Put the aluminum can into a recycle bin'] ",
+            "output": "Yes",
+            "explanation": "This answer is incorrect because these steps are out of order. The step 'Put the aluminum can into a recycle bin' should be first. Without this step, the step 'The cans are transported to a facility' does not make sense because the cans are not introduced yet. The correct answer is No"
+        },
+        {
+            "input": " ['Acid rain is produced by chemicals that reach into the atmosphere', 'Falls onto the ground', 'The acid rain starts scouring rocks', 'Destroys vegetation', 'The lack of vegetation alters the surrounding environment.'] ",
+            "output": "No",
+            "explanation": "This answer is incorrect because these steps are in order. The step, 'Acid rain is produced by chemicals that reach into the atmosphere' introduces the subject of the process, acid rain. The step 'Falls onto the ground' refers to the acid rain that was in the previous step. After the acid falls onto the ground, the next step is 'The acid rain starts scouring rocks'. The next step describes what happens after acid rain falls onto the ground, 'Destroys vegetation'. After the acid rain destroys vegetation, 'The lack of vegetation alters the surrounding environment.' Since each step only uses information from previous steps, the correct answer is Yes"
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1548-87d18728cbf3400fbc27650a7a9531b1",
+            "input": " ['Carbon dioxide enters the leaves through the stomates by diffusion', 'Water is transported to the leaves in the xylem', 'Energy harvested through light reaction is stored by forming ATP', 'Oxygen exits the leaves through the stomata by diffusion', 'Carbon dioxide and energy from ATP are used to create sugar', 'The plant reuses the water or the water exits through the stomata as water vapor.'] ",
+            "output": [
+                "  No  "
+            ]
+        },
+        {
+            "id": "task1548-13bf372ad0794c16a05d6dd9b430d0ba",
+            "input": " ['A conducting metal, like copper, is wrapped around a piece of metal', 'An electrical source, like a battery, produces an electrical current', 'The electrical current flows through the wire', 'The electrical current creates a magnetic field around the wire, magnetizing the metal', 'The magnetic field can be turned on and off by starting or stopping the electricity source'] ",
+            "output": [
+                "  Yes  "
+            ]
+        },
+        {
+            "id": "task1548-bc9e5e1f54ce43178be6539177dfb283",
+            "input": " ['Ocean waves hit land', 'Ocean water pulls sand off of beaches', 'Ocean water breaks rocks off of cliffs', 'Ocean water carries sand and rocks into the ocean', 'Sand and rocks go to other land or the bottom of the ocean.'] ",
+            "output": [
+                "  Yes  "
+            ]
+        },
+        {
+            "id": "task1548-b2a5ba01e2424589a0ddf0a65fedae4f",
+            "input": " ['PH in soil and water gets affected which can kill plants and animals', 'Aluminum flows into streams and lakes', 'Acid rain leaches aluminum from clay particles in soil', 'Acid rain in fog at higher elevations can strip foliage off trees.', 'Washes them away so plants can&#x27;t benefit from them', 'Acid rain dissolves minerals and nutrients in soil'] ",
+            "output": [
+                "  No  "
+            ]
+        },
+        {
+            "id": "task1548-5193ee6d0e1e46e68b05c6701cc89088",
+            "input": " ['The lungs oxygenate the blood in the body', 'Carbon dioxide is filtered out by every cell in the body', 'Air is taken into the body via the nose or mouth', 'The air travels into the windpipe', 'The carbon dioxide is carried back to the lungs via the bloodstream', 'The carbon dioxide is exhaled.', 'The windpipe divides the air to the two lungs via the bronchial tubes'] ",
+            "output": [
+                "  No  "
+            ]
+        },
+        {
+            "id": "task1548-8b293fb804cf421ebfedec669be41a7a",
+            "input": " ['A butterfly starts as an egg', 'The egg hatches', 'A larva emerges', 'The larva eats and grows', 'The larva sheds its skin', 'The larva enters a chrysalis', 'The pupa grows inside the chrysalis', 'The adult butterfly exits the chrysalis', 'The adult butterfly is now fully grown', 'The adult butterfly lays more eggs.'] ",
+            "output": [
+                "  Yes  "
+            ]
+        },
+        {
+            "id": "task1548-ebe37621202a43d093211879fc94bc54",
+            "input": " ['The liver removes toxins from the blood', 'Liver processes the good stuff into forms that the rest of the body can use', 'The liver also produces a digestive juice called bile that helps the body absorb fat into the bloodstream', 'The liver also stores extra carbohydrates as glycogen for the body to use as fuel when needed.', 'Waste or stuff your body doesn't need can be carried by bile back into the intestine or into the kidneys', 'Liver also cleans blood that has just been enriched with vitamins and minerals during digestion'] ",
+            "output": [
+                "  No  "
+            ]
+        },
+        {
+            "id": "task1548-0e5cef173d45406f82ebf326633bbee9",
+            "input": " ['The salt is left behind', 'The evaporated water is collected', 'The process is repeated', 'Water is heated', 'The heated water evaporates', 'More salt is removed from the water.', 'The evaporated water condenses on a cold surface'] ",
+            "output": [
+                "  No  "
+            ]
+        }
+    ],
+    "Instance License": [
+        "Apache 2.0"
+    ]
+}

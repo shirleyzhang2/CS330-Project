@@ -1,0 +1,125 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "atomic"
+    ],
+    "URL": [
+        "https://allenai.org/data/atomic-2020"
+    ],
+    "Categories": [
+        "Commonsense Classification"
+    ],
+    "Reasoning": [
+        "Relational Reasoning",
+        "Reasoning on Social Interactions",
+        "Commonsense Reasoning -> Social Situations"
+    ],
+    "Definition": [
+        "In this task, you are given a tuple consisting of a Head and a Tail event, separated by <sep>. The Head and Tail events are short phrases involving one or more participants. The specific names of people have been replaced by generic words (e.g., PersonX, PersonY, PersonZ). PersonX is always the subject of the event. You have to determine whether, as a result of the Head, PersonY or others will be affected as mentioned in the Tail. These effects are social actions that may occur after the Head event. For example, X may get hugged, and Y may blush in response. Classify your answers into \"Yes\" and \"No\". The phrase may also contain \"___\", a placeholder that can be an object, a person, and/or an action."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Sociology",
+        "Commonsense -> Concepts and Relations -> Social Commonsense"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Head: PersonX goes the way of the dodo<sep>Tail: none",
+            "output": "Yes",
+            "explanation": "This is a good example. As a result of the Head, others won't be affected."
+        },
+        {
+            "input": "Head: PersonX applies sunscreen<sep>Tail: safe",
+            "output": "No",
+            "explanation": "In this example, if PersonX applies sunscreen, others won't be safe. So this output is correct."
+        },
+        {
+            "input": "Head: PersonX goes shopping with PersonY<sep>Tail: gets tired",
+            "output": "Yes",
+            "explanation": "If PersonX goes shopping with PersonY, personY will be tired. Thus, this example should be classified as \"Yes\"."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Head: PersonX affords another ___<sep>Tail: to enjoy it",
+            "output": "Yes",
+            "explanation": "If PersonX affords another thing, we don't know whether others enjoy it or not. So the output should be \"No\"."
+        },
+        {
+            "input": "Head: PersonX invites PersonY to join PersonZ<sep>Tail: they get joined by PersonY",
+            "output": "No",
+            "explanation": "If PersonX invites PersonY to join PersonZ, others will be joined by PersonY, and the output should be \"Yes\"."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1196-e16659ab27c34d298fe70737405839ef",
+            "input": "Head: PersonX gets change<sep>Tail: NONE",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1196-a5040ce65b5741138124275909d34d75",
+            "input": "Head: PersonX catches PersonY's eyes<sep>Tail: get kiss from boy",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1196-d5144e520c1d4e719525db956488d02f",
+            "input": "Head: PersonX answers PersonY's question<sep>Tail: to clear things up",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1196-4a87fed7c9934c49add4464996b93fab",
+            "input": "Head: PersonX agrees to the challenge<sep>Tail: to conquer something",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1196-4f6adbac5d664147ba506e068981d3bb",
+            "input": "Head: PersonX lays down PersonX's arms<sep>Tail: none",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1196-7a1b8e20bf8e4e28b8833e3515b7b238",
+            "input": "Head: PersonX is very good at PersonX's job<sep>Tail: none",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1196-5f64e526056d460e8df0913166622465",
+            "input": "Head: PersonX loses ___ of time<sep>Tail: none",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1196-6870ccdbc81a4342ae09ec88453df949",
+            "input": "Head: PersonX asks PersonY's grandma<sep>Tail: gets an answer",
+            "output": [
+                "No"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

@@ -1,0 +1,115 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "hybridqa"
+    ],
+    "URL": [
+        "https://github.com/wenhuchen/HybridQA"
+    ],
+    "Categories": [
+        "Pos Tagging"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "In this task, you will be given a question, a word, and a POS tag. You have to determine if the given POS tag matches the POS tag of the word in the question. The list of possible POS tags is as follows: CC: Coordinating conjunction, CD: Cardinal number, DT: Determiner, EX: Existential there, FW: Foreign word, IN: Preposition or subordinating conjunction, JJ: Adjective, JJR: Adjective, comparative, JJS: Adjective, superlative, LS: List item marker, MD: Modal, NN: Noun, singular or mass, NNS: Noun, plural, NNP: Proper noun, singular, NNPS: Proper noun, plural, PDT: Predeterminer, POS: Possessive ending, PRP: Personal pronoun, PRP$: Possessive pronoun, RB: Adverb, RBR: Adverb, comparative, RBS: Adverb, superlative, RP: Particle, SYM: Symbol, TO: to, UH: Interjection, VB: Verb, base form, VBD: Verb, past tense, VBG: Verb, gerund or present participle, VBN: Verb, past participle, VBP: Verb, non-3rd person singular present, VBZ: Verb, 3rd person singular present, WDT: Wh-determiner, WP: Wh-pronoun, WP$: Possessive wh-pronoun, WRB: Wh-adverb."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Wikipedia"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Who were the builders of the mosque in Herat with fire temples ? \n, Word: Who \n, POS tag: IN",
+            "output": "False",
+            "explanation": "This is a good example. POS tag of who should be WP(Wh-pronoun), and not IN(Preposition)."
+        },
+        {
+            "input": "What is the borough in which Kia Oval is located ? \n, Word: is \n, POS tag: VBZ",
+            "output": "True",
+            "explanation": "Based on the given question, \"is\" is a 3rd person singular present verb and Its POS tag is VBZ."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "After what season did the number 7 competitor retire ? \n, Word: 7 \n, POS tag: NN",
+            "output": "True",
+            "explanation": "7 is a cardinal number, and Its POS tag should be CD, so the output should be False."
+        },
+        {
+            "input": "After what season did the number 7 competitor retire ? \n, Word: 7 \n, POS tag: NN",
+            "output": "Wrong",
+            "explanation": "Only \"True\" or \"False\" are allowed, and you can't use any other word here."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task346-df2112935bad4e04acd62d25a07acffb",
+            "input": "How many points did the skater who represented Russia at one international competition achieve ? \n, Word: points \n, POS tag: JJ",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "id": "task346-38c1118880994810911c663b0078143d",
+            "input": "What year did a theatre open that had a show based on the novel by George Orwell ? \n, Word: theatre \n, POS tag: IN",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "id": "task346-384bc7f9467e4da08e6e33109f4a58c4",
+            "input": "After the the fall of what city was the regiment formed whose unit was also called Trader 's Battalion ? \n, Word: called \n, POS tag: NNP",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "id": "task346-fec1b3d893094f2db3052c0cd67b0916",
+            "input": "The player recruited from West Adelaide to the Adelaide Crows in the 1999 AFL draft was born in what year ? \n, Word: in \n, POS tag: VBD",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "id": "task346-f3725f7a81cd43f289ea414424bec84a",
+            "input": "Who co-starred with Watson in the 2015 movie in which Emma Watson portrayed Angela Gray ? \n, Word: Who \n, POS tag: VBD",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "id": "task346-a41c16cf66ec4609a7335c0dea2056db",
+            "input": "What was the building with a diameter greater than 22 ? \n, Word: the \n, POS tag: CD",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "id": "task346-500dadd20f3944e49fc567bc781136c4",
+            "input": "Which group is the name of the winner of the 2014 Juno Award for Breakthrough Group of the Year a homage to ? \n, Word: homage \n, POS tag: NNP",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "id": "task346-a624b16b3e024935a44aae125ad9d05e",
+            "input": "How many member states make up the country with a shipyard based in Bremen-Vegesack ? \n, Word: many \n, POS tag: JJ",
+            "output": [
+                "True"
+            ]
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

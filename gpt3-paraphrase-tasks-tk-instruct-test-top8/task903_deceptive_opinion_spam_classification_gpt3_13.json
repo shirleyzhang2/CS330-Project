@@ -1,0 +1,127 @@
+{
+    "Contributors": [
+        "Megh Patel"
+    ],
+    "Source": [
+        "deceptive_opinion_spam_dataset"
+    ],
+    "URL": [
+        "https://myleott.com/op-spam.html"
+    ],
+    "Categories": [
+        "Sentiment Analysis"
+    ],
+    "Reasoning": [
+        "Reasoning on Social Interactions"
+    ],
+    "Definition": [
+        "Given a hotel review and the corresponding polarity of review (i.e., Negative or Positive), identify if the polarity is correct. If the polarity is correct, write 'true'. If the polarity is incorrect, write 'false'."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Reviews"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Review: I stayed at the Hilton Chicago for my cousins wedding. The service was impeccable. Not only was the staff attentive, they were respectful and careful not to interrupt the guests or make themselves known when serving dinner. I had the chicken wellington and it was to die for! The chicken was perfect and moist but the pastry crust was flaky and crispy. They even had Pakistani dinner options for some of the guests. The amenities were great, and after an open bar the night before, the Mimosas and brunch buffet couldn't have been better! I would love to have my wedding there.\nPolarity: Positive",
+            "output": "true",
+            "explanation": "Review writer likes the hotel. There are strong positive words like 'impeccable' and 'great'. Therefore it is true as the polarity mentioned."
+        },
+        {
+            "input": "Review: During my stay at the Hilton Chicago it has been quite unpleasant. How so you might ask? Well ill tell you, the towels where scratchy and the service was terrible and by terrible I mean they weren't even at the desk when I checked in. Also, When I ordered my breakfast, lunch, and dinner from room service I received the wrong order for all meals and felt a little sick after lunch. Finally, The bill was charging me for stuff I didn't want or ask for. But overall the hotel was very bad and unpleasant for me and others. I give it a half a star.\nPolarity: Negative",
+            "output": "true",
+            "explanation": "There are negative words in the review like 'unpleasant', 'terrible', 'bad' and the writer also gives half a star. Therefore it is a negative review which is true."
+        },
+        {
+            "input": "Review: My parents booked five nights at The James for its location and good reviews. They had a terrible first night with defective air conditioning and not much sympathy from the management staff. They sent engineers three times to repair the unit, and they insisted that it was getting cooler when it wasn't, under the rationale that the summer temperature is high and the filter was dirty. At my parents' request, the hotel staff moved them to a lower floor with a queen instead of a king and with neither a rate discount nor an effort to compensate them for the inconvenience and discomfort. The hotel insisted they were fully booked and reluctantly gave them that room. Don't book this hotel in the summer. And by the way, there is no view at all from any of the rooms - except for the windows of other buildings.\nPolarity: Positive",
+            "output": "false",
+            "explanation": "There are negative words like 'terrible', 'defective', 'inconvenience and discomfort', 'dirty' which are bad for hotel room reviews. Hence this is not a positive review."
+        },
+        {
+            "input": "Review: We stay at Hilton for 4 nights last march. It was a pleasant stay. We got a large room with 2 double beds and 2 bathrooms, The TV was Ok, a 27' CRT Flat Screen. The coincierge was very friendly when we need. The room was very cleaned when we arrived, we ordered some pizzas from room service and the pizza was Ok also.The main Hall is beautiful. The breakfast is charged, 20 dollars, kinda expensive. The internet access (WiFi) is charged, 13 dollars/day. Pros: Low rate price, huge rooms, close to attractions at Loop, close to metro station. Cons: Expensive breakfast, Internet access charged. Tip: When leaving the building, always use the Michigan Av exit. Its a great view.\nPolarity: Negative",
+            "output": "false",
+            "explanation": "There are positive reviews about the hotel room and there are positive words like 'pleasant', 'friendly', 'cleaned', 'huge rooms' which describe a good hotel room. Hence this is not a negative review."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Review: We had a great experience at this hotel. The hotel is Huge! The rooms were very clean, well appointed, and our room was very roomy with a great view of the snow covered park. The Staff was so nice and very helpfull. Donald, at the the Concierge desk scored us tickets to WICKED the day of the performance, and on a Holiday weekend too. They were great seats and a reasonable price. He worked very hard for us to see that show. They truely topped off what was a Fun New Years Celebration. This will be my first pick when I return in the spring.\nPolarity: Negative",
+            "output": "true",
+            "explanation": "The review says that the experience was great and there are positive words like 'Huge', 'clean', 'reasonable price'. This is not a negative review."
+        },
+        {
+            "input": "Review: This hotel was not worth it. From the moment we walked into the hotel lobby through check out, the staff were rude and contemptuous. Rooms were only serviceable, and certainly did not live up to the pompous self-descriptions on the website. The bathroom porthole and sliding door were odd and inconvenient. The 'fitness centre' was tiny and poor. We would not come here again.\nPolarity: Positive",
+            "output": "true",
+            "explanation": "This is a negative review because the writer mentions in the first line that it was not worth it and there are some negative words like 'rude', 'contemptuous' and 'inconvenient'. Hence this is a negative review."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task903-dfa62e96430249e89b510e22d0888b36",
+            "input": "Review: The Conrad Chicago hotel had some of the worst service I have ever dealt with. I got the Executive Room with a king size bed. When I got in, the sheets were stained with some type of chocolate or mud. I called down to front desk and it took them an hour to come up and change them for me. They have a pillow menu which I tried to select from but they were out of over half of them. The Ipod dock was not working either. Also, the room service servers were very short with me and delivered my food luke warm. This hotel is the worst in Chicago and I would never recommend going there!\nPolarity: Positive",
+            "output": [
+                "false"
+            ]
+        },
+        {
+            "id": "task903-ffea059589a24c6fb741e44eb595a356",
+            "input": "Review: I expected a glamorous room and I walked into a disappointment. Housekeeping and Management must not be concerned with attention to detail at this hotel. If you like staying somewhere that the air in the rooms doesn't go down past 74, the closet is 24\" wide, all old/dirty brass fixtures, beds that are a little bigger than a twin, showerheads that barely put out water, then this is your hotel. I might be spoiled by staying in Marriott's, but I stay in hotels 1/3 of the year and was severly disappionted. No free breakfasts or a room change will get me to stay here again.\nPolarity: Negative",
+            "output": [
+                "true"
+            ]
+        },
+        {
+            "id": "task903-37ee8d45962f4cc0a52ed9861a022289",
+            "input": "Review: I recently stayed at the Homewood Suites by Hilton Chicago Downtown, and found it lacking in the quality of their service. The rooms are nice and well furnished, but the service lacks in some areas. Some of the complimentary services include fast-speed wireless internet access, cardio-fitness and indoor pool, grocery shopping service and coffee, tea, hot chocolate or cider all day long in the lobby's 24 hour convenience shop. However the wireless internet was spotty at best with really slow speed at times, the indoor pool was far to cold in my opinion and the cardio equipment was left uncleaned. The grocery shopping service was alright, although a bit on the slow side and then finally the coffee and hot chocolate in the 24 hour convenience shop were both cold and overall of poor quality. Rating this Hotel on a scale of 1 to 5, I would give it a 3 at best.\nPolarity: Positive",
+            "output": [
+                "false"
+            ]
+        },
+        {
+            "id": "task903-8401eac5056b4e69bb8297262766daa3",
+            "input": "Review: My stay at the Talbott was a wonderful experience. The service at this upscale hotel was beyond my expectations, the Gold Coast location is close to Michigan Ave, the museums, and many of the other sites Chicago has to offer.If you are visiting Chicago, I highly recommend the Talbott!\nPolarity: Positive",
+            "output": [
+                "true"
+            ]
+        },
+        {
+            "id": "task903-39f29acd341a46f88a0f6eaf7258c40a",
+            "input": "Review: Booked a room online and got a great rate under $200 which is very cheap for a summer hotel room in Chicago in this nice location, 3 blocks I think from the water. Even though our rate was so cheap, the service was wonderful, the front desk were polite& cheerful, the doormen and valet were great and helpful, and they even put a fridge in our room when we requested on, free of charge! The fitness room was clean, large and provided fruit and clean towels, and it had the greatest view of the city as it was on the top floor of the hotel. Location of hotel is safe, and such a beautiful area. Check the rates directly online of the hotel's website, as it was the least expensive. We will stay here again for sure. \nPolarity: Positive",
+            "output": [
+                "true"
+            ]
+        },
+        {
+            "id": "task903-b3c0e50200d7437299a775d27c662511",
+            "input": "Review: While traveling in Chicago I stayed at the Sofitel on Chestnut Street. Though the hotel was a beautiful and comfortable as the advertisements suggest; service was severely lacking. I arrived late at night and had one peaceful dreamy nights sleep before being woke up at dawn. I reserved a room on one of the lower floors unaware of the construction happening in the area. I complained that I had not been informed of the construction and requested another room. My complaint was totally disregarded. I was told there were no other rooms in the whole hotel available. When I explained that the noise was bothersome I was treated rudely. The woman at the front desk actually ask me if I thought she could make the workers stop. I understand that the staff has no control over the noise. They did however know about the construction. Information I did not have at the time I booked. Information that would have swayed my decision. Then to treat me so rudely for bringing it to their attention. I will not be staying there again.\nPolarity: Negative",
+            "output": [
+                "true"
+            ]
+        },
+        {
+            "id": "task903-566ff6cc283047f1a239865ea54806ba",
+            "input": "Review: My wife and I were excited to visit and shop at Chicago's Magnificent Mile on Michigan Ave. We chose the Intercontinental Hotel for it's reputation and location. Man oh man, were we disappointed. The check in was smooth enough even though the hotel was busy and all seemed well. We got ready to go out shopping and went to visit the concierge in the lobby to ask about suggestions and bargains. There were six people in line for her and we had to wait. That was no problem since we weren't on a timetable. When we finally got to her and asked about shopping on the Miracle Mile, she just pointed to the door and said, \"It's right out the door.\" I asked her for suggestions of the best stores for bargains and she rolled her eyes at me saying, \"there's no such thing.\" I couldn't believe her abruptness. We left the concierge stand not wanting to return. Shopping went well and was fun. We returned to our room and wanted to look up a restaurant for the night ourselves rather than ask the concierge. We couldn't find a hotel directory in the room. I called the Housekeeping Department and was told, \"we're all out of directories here in the office.\" I asked if they could check a vacant room for one. She said the hotel was full and there were no vacant rooms. I hung up and thought I would just look for a restaurant in the yellow pages. Guess what? You guessed it, no phone book in the room. I figured we could go get a drink at The Bar, the hotel's 20's themed lounge, and ask the bartender for suggestions. We went to The Bar and there were only three other customers. We sat at the bar and got our drinks. As I was about to ask the bartender for restaurant suggestions, his cell phone rang. He answered it and went to the other end of the bar to talk. Twenty minutes later, he was still on the phone. Tired and hungry, my wife and I went back to our room and ordered a pizza to be delivered from Pizza Hut. Although the hotel is nice enough and the furnishings comfortable, the indifference of the staff will keep me from ever coming back. A big thumbs down to the Intercontinental Chicago. They need to look up the word hospitality in the dictionary.\nPolarity: Positive",
+            "output": [
+                "false"
+            ]
+        },
+        {
+            "id": "task903-556dfd906d3a4c9883fa3e2e6330d5d2",
+            "input": "Review: If I didn't have to stay here, I wouldn't. Without exception, I swear I am not lying, every day of my stay brings a new problem. Over the past 3 months, I have stayed here 6 times for 3 nights at a time; problems every time. From the wrong food with room service, to room keys that dont work, unrefreshed bath towels, forgotten and dirty in-room coffee service, unclean ice bucket overnight, forgotten room cleaning, inability to connect to the Internet....I'm too tired to keep writing all the problems. For the price of this chi-chi downtown hotel, I expect more. Finally, their team is certainly not trained in customer service. The front desk teams have attitudes, and Aria's hostesses think they are something else. I'm stuck using this hotel since it is adjoined to Aon, but I would never go back if I had a choice. The only good thing is the food at Aria - outstanding.\nPolarity: Negative",
+            "output": [
+                "true"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY-NC-SA 3.0"
+    ]
+}

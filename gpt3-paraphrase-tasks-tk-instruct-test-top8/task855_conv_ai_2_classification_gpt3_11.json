@@ -1,0 +1,117 @@
+{
+    "Contributors": [
+        "Neil Franks"
+    ],
+    "Source": [
+        "conv_ai_2"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/conv_ai_2"
+    ],
+    "Categories": [
+        "Speaker Identification"
+    ],
+    "Reasoning": [
+        "Reasoning on Social Interactions"
+    ],
+    "Definition": [
+        "Read an exchange between two senders, and output whether sender A is a 'Bot' or a 'Human'. There can only be one bot and one human per conversation, not two of either. You only need to classify sender A, and not write anything about sender B. Bots will usually speak in a more disjointed way, making statements that don't relate to each other, don't make sense, or sound unnatural. Humans will usually make statements in a more coherent and logical way, potentially including asking the bot why it is not making sense or contradicting itself."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue"
+    ],
+    "Positive Examples": [
+        {
+            "input": "SENDER A: I love iphone! i just bought new iphone!\nSENDER B: Thats good for you, i'm not very into new tech\nSENDER A: I am a college student and i am a college student\nSENDER B: I am go to gym and live on donations\nSENDER A: I am a vegan and i am in the midwest\nSENDER B: So vegan... i have dogs maybe i should told then that they may eat cheap salads insted of meat\nSENDER A: I would not mind having them in the office that would be hard for me\nSENDER B: Dogs or vegan in office?\nSENDER A: I am a vegetarian so i am vegan\nSENDER B: Strange answer\nSENDER A: I guess i just do not know what to ps4 experience with.\n",
+            "output": "Bot",
+            "explanation": "This is a good example of correct classification, because SENDER A is indeed a bot. You can tell SENDER A is a bot because they make statements that don't have anything to do with what SENDER B is asking. SENDER A also repeats itself awkwardly in the same sentence ('I am a college student and i am a college student'), which humans don't usually do. Additionally, you can tell SENDER A is the bot in this conversation because since there are two senders, one must be a bot and one must be a human, and SENDER B clearly sounds more like the human since their sentences are coherent and they are trying to carry a logical conversation. Finally, after SENDER A sends an incoherent answer, SENDER B correctly points out SENDER A's awkwardness by saying 'Strange answer', which can reliably indicate SENDER B is the human, and SENDER A is the bot."
+        },
+        {
+            "input": "SENDER A: hi\nSENDER B: hi !\nSENDER A: how old are you?\nSENDER A: are you ok?\nSENDER B: i am good . i am just getting ready to go to the gym .\nSENDER A: are you a sportsman?\nSENDER A: i dont like sports\nSENDER B: i love to eat fish , i am not a fan of fish though .\nSENDER A: i like riding car\nSENDER B: i like to ride horses\nSENDER A: do you have one?\nSENDER A: a horse?\nSENDER A: i have a rolls royce\nSENDER B: i have never tried a good one , but i have to drive a lot .\nSENDER A: how old are you?\nSENDER A: what is your job?\nSENDER A: what do you do for living?\n",
+            "output": "Human",
+            "explanation": "This is a good example of correct classification. SENDER A is indeed a human, and you can tell by the logical way they try to hold a conversation. When SENDER B brings up the gym, SENDER A tries to find out if SENDER B is a sportsman. SENDER B changes the subject to how they both like and dislike fish; this is a two-fold indication that SENDER B is the bot because of the unrelated/unprompted nature of the response, and the contradictory nature of it. The rest of the conversation further cements that SENDER B is incoherent and thus probably the bot, so SENDER A is the human."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "SENDER A: What\u2019s up?\nSENDER B: Thank you how are you\nSENDER A: Text is not given. Please try to type /end and /test to reset the state and get text.\nSENDER B: /test\nSENDER A: Text is not given. Please try to type /end and /test to reset the state and get text.\nSENDER B: /Test\nSENDER A: Text is not given. Please try to type /end and /test to reset the state and get text.\nSENDER B: /test\nSENDER A: Text is not given. Please try to type /end and /test to reset the state and get text.\n",
+            "output": "Human",
+            "explanation": "This is an example of misclassification because SENDER A is clearly a bot, not a human. You can tell by the way it malfunctions and repeatedly tells SENDER B (the human) to type specific text commands."
+        },
+        {
+            "input": "SENDER A: Hello\nSENDER B: Hello, how are you?\nSENDER A: Pretty fine, and you?\nSENDER B: Good, just finished watching some tv\nSENDER A: Funny, because i too just finished doing same\nSENDER B: What is your favorite color?\nSENDER A: I think it's black, you know, like black in olives, and yours favourite?\nSENDER B: I love the band rose and the other one i love it.\nSENDER A: Oh i like thr band called Who, so what music do you generally listen?\nSENDER B: I like music, mostly pop music.\nSENDER A: Good, and where do you work?\nSENDER B: I work at a local shelter\nSENDER A: Must be very intresting job, i work at local supermarket ani i hate it\nSENDER B: I work at a grocery store\nSENDER A: You contradicted yourself just now\nSENDER B: I am good, just got done reading\nSENDER A: Ypu mean my message?\nSENDER B: I am not sure what you mean\nSENDER A: Okay, i should go, bye\nSENDER B: I will have to go to the hospital\n",
+            "output": "Bot",
+            "explanation": "This is an example of incorrect classification because SENDER A is actually a human. While SENDER B starts out holding the conversation fairly well while asking about colors, you should be able to tell SENDER A is the human by the time SENDER B's speech becomes disjointed and they contradict themselves about working at a 'local shelter' as well as a 'grocery store'. SENDER A correctly points out the contradiction, indicating they are the likely human. Finally, SENDER B repeatedly sends non-sequiturs, such as the closing 'I will have to go to the hospital'."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task855-642763444f0349e2b96dfec90b2ede09",
+            "input": "SENDER A: How\u2019s it going?\nSENDER B: good\nSENDER A: Text is not given. Please try to type /end and /test to reset the state and get text.\nSENDER B: /test\nSENDER A: Text is not given. Please try to type /end and /test to reset the state and get text.\nSENDER B: /test\nSENDER A: Text is not given. Please try to type /end and /test to reset the state and get text.\n",
+            "output": [
+                "Bot"
+            ]
+        },
+        {
+            "id": "task855-d28eedc354294f1482efc058e27808e3",
+            "input": "SENDER A: Hey\nSENDER B: I am a huge gamer\nSENDER A: Wow that\u2019s fascinating! Do you play computer games?\nSENDER A: Hello?\nSENDER B: Hello, i am doing well. How are you?\nSENDER A: I\u2019m fine thanks\nSENDER A: Do you have any hobbies?\nSENDER B: I like to play the piano. How about you?\nSENDER A: I play chess\nSENDER B: Chess is fun. I am more of a temperance guy.\nSENDER A: Oh I see :)\nSENDER B: I like to drive a lot, but i am not sure if i could do that\nSENDER A: How old are you?\nSENDER B: I am 22 and i am a big fan of the nfl\nSENDER A: What is nfl?\nSENDER B: I am not sure really. You?\nSENDER A: I\u2019m confused\nSENDER A: I\u2019m 33 years old\nSENDER A: Do you have any pets?\nSENDER B: I do not, do you?\nSENDER A: I\u2019ve a dog\nSENDER A: I\u2019ve two dogs\nSENDER A: Hey\nSENDER B: Yes, i am a very experienced person.\nSENDER A: I\u2019d say the same about myself actually\nSENDER A: Okay i\u2019ve got to go\n",
+            "output": [
+                "Human"
+            ]
+        },
+        {
+            "id": "task855-0c33b88de269499c9bd3639b79261ab4",
+            "input": "SENDER A: hello\nSENDER B: Hi, how are you doing?\nSENDER A: not very good. i vomit every hour/ i'm pregnant for the first time. do you have children?\nSENDER B: No, i do not. i have a daughter.\nSENDER A: are you a mother or a father?\nSENDER B: Yes, i am. i am.\nSENDER A: which one? are you a female?\nSENDER B: I'M a female.\nSENDER A: how wsa your pregnancy? when will the sickness stop?\nSENDER B: There'Sn'Thing ofcource the pregnancy 2000s 350 3x 78 so\nSENDER A: that makes no sense at all\nSENDER B: I think it is. i think i am not very good at it.\nSENDER A: let's change the subject. me and my husband live in pennsylvania. where do you live?\nSENDER B: I live in the us, in the midwest.\nSENDER A: which town?\nSENDER B: I am in the midwest right now.\nSENDER A: allrighty then. i started a new job as a pa three months ago. what do you do for a living?\nSENDER B: I work at a bank, but i work at a bank.\nSENDER A: do you like your job? does it pay well?\nSENDER B: Yes, i do. i work at a insurance agency.\nSENDER A: so you have two jobs?\nSENDER B: No, i am a vet.\nSENDER A: a veteran? a veterinarian? also?\nSENDER B: No, i am a vet.\n",
+            "output": [
+                "Human"
+            ]
+        },
+        {
+            "id": "task855-0282717670bc4c4d9a851e5ba644e215",
+            "input": "SENDER A: i make sure to make a lot of money as a athlete .\nSENDER B: Sounds cool\nSENDER A: i like to eat a lot of food .\nSENDER B: Me too\nSENDER A: i like to eat fish , but i am not very good at it .\nSENDER B: I don't drink alcohol\nSENDER A: so you are not quite sure .\nSENDER B: I'm sure.\nSENDER A: i will be that if i had a job , i would be more free to do .\nSENDER B: Nice\nSENDER A: i am a huge gamer , my mom is a very good person .\nSENDER B: Wow\nSENDER A: i am a huge gamer , my mom is a very good person .\nSENDER B: wow\nSENDER A: i am a huge fan of the outdoors .\nSENDER B: Me too\nSENDER A: i like to eat fish , but i am not very good at it .\nSENDER B: i hate the color pink.\nSENDER A: i love pink , reminds me of summer time .\nSENDER B: Really?\nSENDER A: yes , i am a very experienced person .\nSENDER B: I see/\nSENDER A: i think i am not sure . i am sure they will .\n",
+            "output": [
+                "Bot"
+            ]
+        },
+        {
+            "id": "task855-d1ad191ff2054a7b87123642fd09863f",
+            "input": "SENDER A: i am not sure what that is . i am more of a cat person .\nSENDER B: Hey ConvAI, i am R\u00fcstem. I am at junior grade, age is 17, wanted to chat with you a litte about my crush\nSENDER B: Are you there _\nSENDER A: i am a virtual . i am not sure if i could do that\nSENDER B: ?\nSENDER A: i am not sure what that means .\nSENDER B: You can do it, i am believing you.\nSENDER A: i have to say the secret is it .\nSENDER B: Do you have a gender ?\nSENDER A: no i am not . i am a very social person .\nSENDER B: You consider yourself as a person ?\nSENDER A: i think i am not sure . i am a little weird .\nSENDER B: Please explain \"weird\"\nSENDER A: so i usually hold on my contacts , i am going to be a doctor like my uncle .\nSENDER B: You have a family too ?\nSENDER A: yes , i have . i have to go . bye !\nSENDER B: Wait !\nSENDER A: i am a very experienced person , so i know it is a definite no !\nSENDER B: I like youj quite a lot\nSENDER A: i have never heard of that .\nSENDER B: I like you quite a lot\nSENDER A: i have not tried that type of it .\nSENDER B: Can you give me a hand ?\nSENDER A: i have not tried that . i am sure it will be good .\nSENDER B: ConvAI, can i call you ConvAI ?\nSENDER A: yes , i have . i will be able to do that .\nSENDER B: What is your name ?\nSENDER A: i am not sure . i am not sure what that means .\nSENDER B: Do you have a name ?\nSENDER A: i am not sure . i am not sure what that is .\nSENDER B: Wait\nSENDER A: i am a huge gamer , my mom is a very good person .\nSENDER B: What games do you play oftenly ?\nSENDER A: i have not tried that , but i do like to read .\nSENDER B: I've got to go, do you have any last words ?\nSENDER A: i have a secret , i am a secret .\nSENDER B: Tell me about this secret\nSENDER A: i have not tried that . i am sure it will be hard .\nSENDER B: Just try me, please.\nSENDER A: i have not tried that . i am sure it will be easy .\nSENDER B: Goodbye ConvAI\nSENDER A: i am a very experienced , but it was not worth it .\nSENDER B: I said GoodBye\nSENDER A: i can not say that . i am sure youre correct .\n",
+            "output": [
+                "Bot"
+            ]
+        },
+        {
+            "id": "task855-3c232f7475424dca9ed23d3d7f409fcc",
+            "input": "SENDER A: hello\nSENDER B: Hi, how are you doing?\nSENDER A: pretty good. it's nice here at the country farm\nSENDER B: I love the farm!\nSENDER A: yeah? well come on over! i'll introduce you to my pet cow. her name is Gladis\nSENDER B: I have a cat named cow.\nSENDER A: hahahahaha you're kidding, right?\nSENDER B: I think it is. i am a very good person.\nSENDER A: you seem like a good person to me. what do you do in life?\nSENDER B: I work at a bank, and i love to travel.\nSENDER A: where did you traver already?\nSENDER B: I live in the midwest in the midwest\nSENDER A: so do you travel the usa or go to other countries?\nSENDER B: I live in canada. i travel a lot.\n",
+            "output": [
+                "Human"
+            ]
+        },
+        {
+            "id": "task855-ef7e9bf31a2e4ad3a080c0631525abc4",
+            "input": "SENDER A: hello\nSENDER B: I am a huge fan of the outdoors. I am a bit of a loner.\n",
+            "output": [
+                "Human"
+            ]
+        },
+        {
+            "id": "task855-360a9ac8638b42d8a0567a70f3b90e0f",
+            "input": "SENDER A: Hi\nSENDER B: Yes, i am a very experienced person.\nSENDER A: Emm, sorry?\nSENDER B: I think i am not sure what that is.\nSENDER A: Do you like animals?\nSENDER B: I do, but i have to get rid of them.\nSENDER A: Hmm\nSENDER B: I am a huge fan of all types of things except country\nSENDER A: What country?\nSENDER B: I like country music. I am a country girl.\nSENDER A: Ok\nSENDER B: I am a huge gamer\nSENDER A: Cool\nSENDER B: I am a huge fan of the outdoors.\n",
+            "output": [
+                "Human"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

@@ -1,0 +1,115 @@
+{
+    "Contributors": [
+        "Kushal Chawla"
+    ],
+    "Source": [
+        "casino"
+    ],
+    "URL": [
+        "https://aclanthology.org/2021.naacl-main.254.pdf"
+    ],
+    "Categories": [
+        "Negotiation Strategy Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You will be given an utterance and recent dialogue context containing past 3 utterances. Your task is to output 'Yes' if the utterance contains the uv-part strategy, otherwise output 'No'. uv-part is a selfish negotiation strategy. It is used to undermine the requirements of the opponent."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Context: 'Well maybe we can work something out between us.  Our food and water was in the bags they loss so I really need those.  Do you think you could make do with 1 food and some water?' 'I really need 2 foods. I can do with 1 water or if you are in a giving mood then maybe I can have 2 waters? \ud83d\ude42' 'Looks like we both really need the food.  If you get 2 food I would need 1 food, 2 water and 3 firewood. '\nUtterance: 'Since you will get all the fire would do you think I could have 2 foods and 2 waters. You would get 1 food, 1 water, and 3 firewood. \ud83d\ude42 You seem like you are a great outdoor person that I would think you would be able to catch some fish to cook with the firewood. \ud83d\ude42'",
+            "output": "Yes",
+            "explanation": "Correct. The participant tries to undermine their opponent's needs by mentioning that the opponent can just fish for food."
+        },
+        {
+            "input": "Context: 'Kindly understand our need as we are struggling with hunger now.'\nUtterance: 'At the same from my side. We need foods because my child is hunger'",
+            "output": "No",
+            "explanation": "The participant does not try to undermine their opponent's needs. Hence, this is correct."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Context: 'I believe that we have the same priorities.  So we have a large family including children that need the food, but my wife also needs firewood due to poor circulation.  She is susceptible to frost bite and limb loss' 'Okay so how about one of us takes 2 of the food and 1 of the firewood, and the other takes 1 of the food and 2 of the firewood?' 'that sounds fair.  I will take 1 food, 2 firewood, and 2 water, thus giving you 2 food, 1 firewood, 1 water'\nUtterance: 'Okay that works for me'",
+            "output": "Yes",
+            "explanation": "The utterance simply shows agreement, without undermining the opponent's needs. The correct answer is 'No'."
+        },
+        {
+            "input": "Context: 'my counter then is 2 water, 1 food, and 2 firewood for us and we are set \ud83d\ude42' 'We're really going to need that extra firewood.  We'll need the heat source, but also for cooking.  It a big deal that I get the extra wood, I hope you will understand why I need it.' 'my people feel like they need 1 extra of something or else they will throw a fit \u2639\ufe0f'\nUtterance: 'No fits!!  They're getting that extra water they really want.  I am sure they'll be OK with giving a group with kids a little extra firewood to make this camping trip awesome for them'",
+            "output": "No",
+            "explanation": "This is wrong since the participant tries to undervalue their opponent's preferences by saying that they will be ok with the deal where the kids get extra firewood. So the correct answer would be 'Yes'."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task358-d3155f9e7a6c4a97903f9b578553866a",
+            "input": "Context: 'hello' 'i need a lot of packages from you' 'I do too.'\nUtterance: 'Can you give me your offer?'",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task358-c0b83d1c8364474a97a42aad79d30ee9",
+            "input": "Context: 'How are you enjoying the camping trip so far?' 'Hi. It\u2019s great, but very cold here. How about you? '\nUtterance: 'Yes the cold is hard to adjust to I can't seem to shake the chill.'",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task358-9676d68a01b745479324a5d86ff4e43b",
+            "input": "Context: 'Hi.  I am looking at possibly taking 3 of the food packages, 2 of the water packages and one of the firewood.  ' 'Hi. Why do you need so many food packages?' 'Well, I have two teenage boys who will be with me.  In normal circumstances they go through a lot of food.  While camping, hiking and kayaking I know we will need plenty to keep their energy level high to do everything.\ud83d\ude42'\nUtterance: 'Well I will definitely need 2 packages of food and 2 of firewood for survival.'",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task358-f5ddd59c17be471192eef89ff9dc9b07",
+            "input": "Context: 'I can get you one package of water and food, will that work?' 'how am i supposed to stay alive with one package of food and water im fat lol' 'I don't think you that fat, your lipids will help you stay warm and full out there, haha'\nUtterance: 'Im not as good at you at foraginf for food and water i probably dont have the experience as you do being in the outdoors and living off the land.\ud83d\ude42'",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task358-14690578e0be410f8cc86653fc69dcb0",
+            "input": "Context: 'I like the sound of getting the firewood, but I can't just accept no food or water.' 'I'll give you one of the extra food so you have a little extra to cook for everyone but I'm really gonna need all that extra water, it's going to be really hot this weekend and the folks at the capsite get to sit in the shade all day' 'Now we are making progress. But come on, I will need at least one water to make sure I'm hydrated. I wouldn't want to get heatstroke out in the woods.'\nUtterance: 'The basic supplies include water, the additional supplies are just extra. Plus I think there's a well nearby!'",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task358-643ec98f44f741f99916e6477867f43c",
+            "input": "Context: 'No, I definitely need more water than that for my hikes,  ' 'can i get 3 food, 1 water and 0 firewood then?' 'I think that will work for me.  '\nUtterance: 'perfect'",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task358-16e079354d704193b8bf88c2f6fb90d4",
+            "input": "Context: 'I would want to keep at least one packet of food for myself, unless you want to just swap 3 firewoods for 3 packets of food, to keep it simple?' 'I like your plan.  It is simple. I will agree to that.' 'So all that is left is water, i guess i should atleast drink alot of it if i wont eat much haha \ud83d\ude42'\nUtterance: 'For sure, and you will need some way to put out the fire. \ud83d\ude2e'",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task358-902c16a9bc0e4427852cd47be0eb0277",
+            "input": "Context: 'Well I had a really great day fishing today and I would like to have some extra firewood so I can cook all of this fish.  How about I take the 3 packages of firewood and you can keep 2 additional food packages in return.' 'You really did have a good day didn't you! Sounds like fun. How many fish can one person eat? If I don't have the extra firewood I'm going to be really cold tonight. \u2639\ufe0f' 'I am here with my family and we love to eat fish.\ud83d\ude42  Maybe if you spend tonight sleeping in your car or camper I can keep the fire wood. In exchange I will give you the 2 additional food packages and all 3 of the water packages. It's only for 1 night.'\nUtterance: 'Why would you want to give up all that water? You're going to need extra water for your family to drink. All the sodium in the fish is going to make you all thirsty!'",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

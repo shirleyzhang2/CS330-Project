@@ -1,0 +1,123 @@
+{
+    "Contributors": [
+        "Pegah Alipoormolabashi"
+    ],
+    "Source": [
+        "wsc; enhanced_wsc"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/winograd_wsc; https://github.com/mhany90/perturbed-wsc"
+    ],
+    "Categories": [
+        "Text Matching"
+    ],
+    "Reasoning": [
+        "Commonsense Reasoning"
+    ],
+    "Definition": [
+        "You will be given two sentences. One of them is a paraphrase of the original sentence, with changes in one or more aspects. Your task is to identify the type of change(s) between the two sentences. The types of changes are explained below: Tense: The verbs in the sentence are changed in tense. Number: Plural nouns, verbs and pronouns are changed into single ones or the other way around. Voice: If the verbs are in active voice, they're changed to passive or the other way around. Adverb: The paraphrase has one adverb or more than the original sentence. Gender: The paraphrase differs from the original sentence in the gender of the names and pronouns. Synonym: Some words or phrases of the original sentence are replaced with synonym words or phrases. Changes in the names of people are also considered a synonym change. Classify your answers into Tense, Number, Voice, Adverb, Gender, and Synonym."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue",
+        "Narrative"
+    ],
+    "Positive Examples": [
+        {
+            "input": "original sentence: Lily spoke to Donna , breaking her silence . paraphrase: Lily is speaking to Donna , breaking her silence .",
+            "output": "Tense",
+            "explanation": "The verbs in this example are changed from past tense to present tense."
+        },
+        {
+            "input": "original sentence: I'm sure that my map will show this building ; it is very good . paraphrase: I'm sure that my maps will show these buildings ; they are very good .",
+            "output": "Number",
+            "explanation": "In this example, map and building and their pronouns has been changed. So, the output should be Number."
+        },
+        {
+            "input": "original sentence: Jim signaled the barman and gestured toward his bathroom key . paraphrase: Jim dreamily signaled the barman and vaguely gestured toward his bathroom key .",
+            "output": "Adverb",
+            "explanation": "In this example the adverbs \"vaguely\" and \"dreamily\" are added to the original sentence."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "original sentence: The dog chased the cat , which ran up a tree . It waited at the bottom . paraphrase: The dog is chasing the cat , which is running up a tree . It is waiting at the bottom .",
+            "output": "Voice",
+            "explanation": "The change in the original sentence is to tense, as the past tense verbs are changed to present tense ones. \"Voice\" is not a correct answer here."
+        },
+        {
+            "input": "original sentence: John was doing research in the library when he heard a man humming and whistling . He was very annoyed . paraphrase: John and Steve were doing research in the library when they heard men humming and whistling . They were very annoyed .",
+            "output": "Number is changed.",
+            "explanation": "You should only output the title of the change, and nothing more."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task276-23331dbd86a6453badcd2b0cba10e67a",
+            "input": "original sentence: We had hoped to place copies of our newsletter on all the chairs in the auditorium , but there were simply too many of them . paraphrase: we had hoped to place copies of our pamphlet on all the seats in the auditorium , but there were simply too many of them .",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "id": "task276-c49868c1dcd142c2aa5c2fcedc4e1d19",
+            "input": "original sentence: As Ollie carried Tommy up the long winding steps , his legs ached . paraphrase: as waldo carried alonso up the long winding steps , his legs ached .",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "id": "task276-4b95edf821e04ecf81503a6de939c5b4",
+            "input": "original sentence: Joe paid the detective after he received the final report on the case . paraphrase: trey paid the private investigator after he received the final report on the case .",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "id": "task276-6b92ccd75a1d41f2aaf0ac580b06d1ac",
+            "input": "original sentence: As Andrea in the crop duster passed over Susan , she could see the landing gear . paraphrase: as cornelia in the crop duster passed over aria , she could see the landing gear .",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "id": "task276-f9bf33acb283465ea934a4763ae0818f",
+            "input": "original sentence: The sack of potatoes had been placed below the bag of flour , so it had to be moved first . paraphrase: The sack of potatoes had been mistakenly placed below the bag of flour , so it had to be moved first .",
+            "output": [
+                "Adverb"
+            ]
+        },
+        {
+            "id": "task276-1dfaa6eeb9ca452dac522703e0645391",
+            "input": "original sentence: John promised Bill to leave , so an hour later he left . paraphrase: Bill was promised by John to leave , so an hour later he left .",
+            "output": [
+                "Voice"
+            ]
+        },
+        {
+            "id": "task276-a47850ea4c37488d92fc2cd4a9fb4532",
+            "input": "original sentence: Madonna fired her trainer because she slept with her boyfriend . paraphrase: Madonna is firing her trainer because she is sleeping with her boyfriend .",
+            "output": [
+                "Tense"
+            ]
+        },
+        {
+            "id": "task276-fc8addeab3f444608cf511a9776ae526",
+            "input": "original sentence: The man lifted the boy onto his bunk bed . paraphrase: The woman lifted the girl onto her bunk bed .",
+            "output": [
+                "Gender"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

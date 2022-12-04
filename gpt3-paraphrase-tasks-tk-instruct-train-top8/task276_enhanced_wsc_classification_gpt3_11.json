@@ -1,0 +1,123 @@
+{
+    "Contributors": [
+        "Pegah Alipoormolabashi"
+    ],
+    "Source": [
+        "wsc; enhanced_wsc"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/winograd_wsc; https://github.com/mhany90/perturbed-wsc"
+    ],
+    "Categories": [
+        "Text Matching"
+    ],
+    "Reasoning": [
+        "Commonsense Reasoning"
+    ],
+    "Definition": [
+        "You will be given two sentences, one of which is a paraphrase of the other with changes in aspect, tense, number, voice, adverb usage, or synonym usage. Your task is to identify the type of change between the two sentences. The types of changes are explained below: Tense: The verbs in the sentence are changed in tense. Number: Plural nouns, verbs and pronouns are changed into single ones or the other way around. Voice: If the verbs are in active voice, they're changed to passive or the other way around. Adverb: The paraphrase has one adverb or more than the original sentence. Gender: The paraphrase differs from the original sentence in the gender of the names and pronouns. Synonym: Some words or phrases of the original sentence are replaced with synonym words or phrases. Changes in the names of people are also considered a synonym change."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue",
+        "Narrative"
+    ],
+    "Positive Examples": [
+        {
+            "input": "original sentence: Lily spoke to Donna , breaking her silence . paraphrase: Lily is speaking to Donna , breaking her silence .",
+            "output": "Tense",
+            "explanation": "The verbs in this example are changed from past tense to present tense."
+        },
+        {
+            "input": "original sentence: I'm sure that my map will show this building ; it is very good . paraphrase: I'm sure that my maps will show these buildings ; they are very good .",
+            "output": "Number",
+            "explanation": "In this example, map and building and their pronouns has been changed. So, the output should be Number."
+        },
+        {
+            "input": "original sentence: Jim signaled the barman and gestured toward his bathroom key . paraphrase: Jim dreamily signaled the barman and vaguely gestured toward his bathroom key .",
+            "output": "Adverb",
+            "explanation": "In this example the adverbs \"vaguely\" and \"dreamily\" are added to the original sentence."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "original sentence: The dog chased the cat , which ran up a tree . It waited at the bottom . paraphrase: The dog is chasing the cat , which is running up a tree . It is waiting at the bottom .",
+            "output": "Voice",
+            "explanation": "The change in the original sentence is to tense, as the past tense verbs are changed to present tense ones. \"Voice\" is not a correct answer here."
+        },
+        {
+            "input": "original sentence: John was doing research in the library when he heard a man humming and whistling . He was very annoyed . paraphrase: John and Steve were doing research in the library when they heard men humming and whistling . They were very annoyed .",
+            "output": "Number is changed.",
+            "explanation": "You should only output the title of the change, and nothing more."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task276-708e0bb5ed3d4ea6954e3884f73029ad",
+            "input": "original sentence: As Andrea in the crop duster passed over Susan , she could see the landing strip . paraphrase: As Jack in the crop duster passed over Bill , he could see the landing strip .",
+            "output": [
+                "Gender"
+            ]
+        },
+        {
+            "id": "task276-b4ae4f48f8dd49a38728acefdc778e3c",
+            "input": "original sentence: During a game of tag , Ethan chased Luke because he was \"it\" . paraphrase: During a game of tag , Ethan and Harry chased Luke and Johnny because they were \"it\" .",
+            "output": [
+                "Number"
+            ]
+        },
+        {
+            "id": "task276-be284c5dec45411d9fd0b9275284f144",
+            "input": "original sentence: The man lifted the boy onto his shoulders . paraphrase: The woman lifted the girl onto her shoulders .",
+            "output": [
+                "Gender"
+            ]
+        },
+        {
+            "id": "task276-d6f96d1f674e4a939105e42ceaff4959",
+            "input": "original sentence: The customer walked into the bank and stabbed one of the tellers . He was immediately taken to the hospital . paraphrase: One of the tellers was stabbed by the customer that walked into the bank . He was immediately taken to the hospital .",
+            "output": [
+                "Voice"
+            ]
+        },
+        {
+            "id": "task276-184adc419c49450db8a45e86b407d450",
+            "input": "original sentence: This book introduced Shakespeare to Ovid ; it was a major influence on his writing . paraphrase: Shakespeare was introduced to Ovid by this book ; it was a major influence on his writing .",
+            "output": [
+                "Voice"
+            ]
+        },
+        {
+            "id": "task276-a0fb1a792e9a4fccaf02880f79390924",
+            "input": "original sentence: We went to the lake , because a shark had been seen at the ocean beach , so it was a safer place to swim . paraphrase: we went to the lagoon , because a shark had been seen at the beach , so it was a safer place to swim .",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "id": "task276-958fbc000cae47b9a6d0e4b7f7cb0d27",
+            "input": "original sentence: Joe's uncle can still beat him at tennis , even though he is 30 years older . paraphrase: Joe's uncle could still beat him at tennis , even though he was 30 years older .",
+            "output": [
+                "Tense"
+            ]
+        },
+        {
+            "id": "task276-e13250724ab84b4a86a50893b7e5c579",
+            "input": "original sentence: Tom gave Ralph a lift to school so he wouldn't have to drive alone . paraphrase: hewlit gave hardy a lift to school so he wouldn't have to drive alone .",
+            "output": [
+                "Synonym"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

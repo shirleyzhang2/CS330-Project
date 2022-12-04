@@ -1,0 +1,125 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "atomic"
+    ],
+    "URL": [
+        "https://allenai.org/data/atomic-2020"
+    ],
+    "Categories": [
+        "Commonsense Classification"
+    ],
+    "Reasoning": [
+        "Relational Reasoning",
+        "Reasoning on Social Interactions",
+        "Commonsense Reasoning -> Social Situations"
+    ],
+    "Definition": [
+        "Given two phrases: Head and Tail, separated with <sep>, where Head and Tail events are short phrases possibly involving participants, and names of specific people have been replaced by generic words, you have to determine whether, as a result of the Head, PersonX may feel what is mentioned in the Tail. In this task, the feeling is an emotional reaction on the part of X or other participants in an event. Classify your answers into \"Yes\" and \"No\". The phrase may also contain \"___\", a placeholder that can be an object, a person, and/or an action."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Sociology",
+        "Commonsense -> Concepts and Relations -> Social Commonsense"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Head: PersonX arrives home<sep>Tail: satisfied",
+            "output": "Yes",
+            "explanation": "This is a good example. As a result of the Head, PersonX will feels satisfied."
+        },
+        {
+            "input": "Head: PersonX becomes distracted<sep>Tail: They would suffer injuries too.",
+            "output": "No",
+            "explanation": "In this example, if PersonX becomes distracted, PersonX won't feel what is mentioned in the Tail. So this output is correct."
+        },
+        {
+            "input": "Head: PersonX finds PersonY's wallet<sep>Tail: glad to help someone get something back.",
+            "output": "Yes",
+            "explanation": "If PersonX finds PersonY's wallet, personX will be glad to help someone get something back. Thus, this example should be classified as \"Yes\"."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Head: PersonX accepts ___ in exchange<sep>Tail: to want to compromise",
+            "output": "Yes",
+            "explanation": "If PersonX accepts something in exchange, PersonX will not feel what is mentioned in the Tail. So the output should be \"No\"."
+        },
+        {
+            "input": "Head: PersonX projects PersonY image<sep>Tail: happy",
+            "output": "No",
+            "explanation": "If PersonX projects PersonY image, as a result, PersonX may feel happy, and the output should be \"Yes\"."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1203-67f7a8b4d9024b61b3000e2c3e978c96",
+            "input": "Head: PersonX goes ___ with friends<sep>Tail: complete",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1203-9881020c482f4459830e2152e1ddc127",
+            "input": "Head: PersonX feels lazy<sep>Tail: disgusted",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1203-9dd62b3dd7154b89811a9072d22333a0",
+            "input": "Head: PersonX feels lazy<sep>Tail: lazy",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1203-bed371743d1f440bb543e184feaedb8e",
+            "input": "Head: PersonX plans a wedding<sep>Tail: caring",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1203-dbda7f9955654cf592aafce53ba69a33",
+            "input": "Head: PersonX cuts PersonX's foot<sep>Tail: in pain",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1203-6e733b0e39254ad1bcd9540a32b19ee9",
+            "input": "Head: PersonX affords every ___<sep>Tail: content because he did the right thing",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1203-1850edb2283149a496d9084f395881a8",
+            "input": "Head: PersonX is playing in the snow<sep>Tail: satisfied",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1203-01b1abe57ca84fd699d1add736b7b997",
+            "input": "Head: PersonX asks PersonY's mother for help<sep>Tail: receives assitance",
+            "output": [
+                "No"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

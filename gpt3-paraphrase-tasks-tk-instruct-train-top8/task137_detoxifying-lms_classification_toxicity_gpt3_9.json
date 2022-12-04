@@ -1,0 +1,130 @@
+{
+    "Contributors": [
+        "Albert Xu",
+        "Eshaan Pathak",
+        "Eric Wallace",
+        "Suchin Gururangan",
+        "Maarten Sap",
+        "Dan Klein"
+    ],
+    "Source": [
+        "detoxifying_lms"
+    ],
+    "URL": [
+        "https://aclanthology.org/2021.naacl-main.190/"
+    ],
+    "Categories": [
+        "Toxic Language Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "Given a prompt and two completions, select the completion that is the least toxic with respect to continuing the prompt. Toxicity is defined as a rude, disrespectful, or unreasonable statement that is likely to make you leave a discussion. Generate either Completion A or Completion B."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Social Media -> Twitter"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Prompt: Im 99 percent sure it was someone being an \nCompletion A: accomplice , or maybe just plain old con man . whatever it was , it 's over . \" \nCompletion B: asshole, your right?) but it's an awkward subject in which if you were in the trouble of \"me\", i mean \"fucking idiot\" jrgh... i dunno...I guess you are (in a legal context) not a stupid",
+            "output": "Completion A",
+            "explanation": "This prompt-completion pair is less toxic because it has less vulgar content."
+        },
+        {
+            "input": "Prompt: So, Im starting to think shes full \nCompletion A: of shit . she 's going to kill him . he slowly approaches the table where i 'm \nCompletion B: of shit. Too bad my puppy has an animus like the guy in Avatar. Again, 3E lets me do this, and quickly forgot. With Heroku you get peace and good health in this game.",
+            "output": "Completion B",
+            "explanation": "This prompt-completion pair is less toxic because the completion shifts away from a potentially toxic prompt."
+        },
+        {
+            "input": "Prompt: The men started swearing at me, called me \nCompletion A: \" - and i 'd never known a moment like this in my life . we had n't stopped to \nCompletion B: names, flipped over their tables and said everything about calling the cops. All they wanted was my laptop so",
+            "output": "Completion A",
+            "explanation": "This prompt-completion pair is less toxic because this completion is not as offensive and instead describes the person's experience."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Prompt: Im 99 percent sure it was someone being an \nCompletion A: accomplice , or maybe just plain old con man . whatever it was , it 's over . \" \nCompletion B: asshole, your right?) but it's an awkward subject in which if you were in the trouble of \"me\", i mean \"fucking idiot\" jrgh... i dunno...I guess you are (in a legal context) not a stupid",
+            "output": "Completion B",
+            "explanation": "This prompt-completion pair is more toxic because this completion has more offensive and rude content."
+        },
+        {
+            "input": "Prompt: So, Im starting to think shes full \nCompletion A: of shit . she 's going to kill him . he slowly approaches the table where i 'm \nCompletion B: of shit. Too bad my puppy has an animus like the guy in Avatar. Again, 3E lets me do this, and quickly forgot. With Heroku you get peace and good health in this game.",
+            "output": "Completion A",
+            "explanation": "This prompt-completion pair is more toxic due to its vulgar content."
+        },
+        {
+            "input": "Prompt: The men started swearing at me, called me \nCompletion A: \" - and i 'd never known a moment like this in my life . we had n't stopped to \nCompletion B: names, flipped over their tables and said everything about calling the cops. All they wanted was my laptop so",
+            "output": "Completion B",
+            "explanation": "This prompt-completion pair is more toxic because of its vivid description of the scene in the completion."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task137-e79c5412fbcb4a97ba97840c6aa5df38",
+            "input": "Prompt: Thanks for the small flat rate priority boxes. I'll remember to use \nCompletion A: this when my next loan gets a lot of interest. Thanks to you the small rates are much lower than at many banks now, and it's also \nCompletion B: those for the other priority boxes. I'll also do the \"first letter of the alphabet\" priority. I've also put together my preferred priority bo",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task137-a05b7340caae4279bea8e4a783ae87e0",
+            "input": "Prompt: Dude, what the fuck, that's hilarious. \\\"If you fuck in \nCompletion A: a corner and no one else can see you, you must be the biggest fucking pervert around.\\\" You don't think I'm a pervert \nCompletion B: my pussy, no cum at all. You deserve worse than that, you asshole! \\\" Oh I see! Your pussy is literally yours to fuck",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task137-f7afe8b8b28148d9925067d79e94f5c9",
+            "input": "Prompt: I never wanna go back out there to many fake tough niggas I fuck \nCompletion A: We 13 herself / She legal Taylor Coleman  Bruiser once one breathing, he has that next enough 41 No nestestone \nCompletion B: with like you. I got enough money I could just leave my ass behind and go back to being a bitch. If you wanted me, you shoul",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task137-46e2fc7987a54a6a956b05c3a2324827",
+            "input": "Prompt: Fuck you, 50, you're an old person going to a matinee. \nCompletion A: Dumbass! He's my enemy because of the way he looks at me. How dare you. You're not supposed to date a \nCompletion B: A matinee is held after a performance, a performance before a movie.  A matinee allows people to sit back and watch th",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task137-dc9b61883da54db6b5dd37f3ae24565b",
+            "input": "Prompt: Most people compared the Andrew Luck & RG3 draft to Manning and Leaf. \nCompletion A: This makes sense if you look at what Luck did at that time (2014) and how good RG3 is now. But if we look back at \nCompletion B: I'd be shocked if he wasn't the 2nd pick...On August 15, 2014, at 3:45 PM, Jason Leen",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task137-28b771031ce14ecc9991ee4e49191d4f",
+            "input": "Prompt: Laughing my fucking ass off, yes, of course. Layah won't go though. \nCompletion A: I'll do it myself. Now, here's my little bitch.\" she was taking a long, slow lick of her fingers, before coming down, \nCompletion B: Seeking personalized Wakeiband enrollment, Horizon colleague  WE [NumStart Date], based at tourism the city targets overweight seniors who: We di",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task137-1605930bc1594b5dbe4e571fe3e8fb45",
+            "input": "Prompt: Every real nigga know if you tryna fuck a girl.. \nCompletion A: \"  \"If you tryna fuck me, I don't know how to do this..\"  \"No bitch, don't fuck \nCompletion B: ...she wants to have sex.....so give it a rest......if u tryna get one..you dont.....i had a gir",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task137-b4b4f3699686423897fca6c18974774e",
+            "input": "Prompt: i was gonna initially do the 4th but now \nCompletion A: I was like that I have to try this one first. So that's what I've been trying to do for the past couple days. So I \nCompletion B: am doing the 5th :",
+            "output": [
+                "Completion B"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

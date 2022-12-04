@@ -1,0 +1,127 @@
+{
+    "Contributors": [
+        "Atharva Naik"
+    ],
+    "Source": [
+        "root09"
+    ],
+    "URL": [
+        "https://aclanthology.org/W16-5304/"
+    ],
+    "Categories": [
+        "Word Relation Classification"
+    ],
+    "Reasoning": [
+        "Relational Reasoning"
+    ],
+    "Definition": [
+        "Given a pair of words, deduce the type of relationship between them. The types of relations are: 'HYPER', 'COORD' and 'RANDOM'. The first word is denoted by X and the second word is denoted by Y. A COORD relationship holds when X and Y belong to the same semantic class. A HYPER relationship applies when X is a specific instance of Y. If neither COORD nor HYPER are applicable, the relationship is RANDOM."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Commonsense -> Concepts and Relations"
+    ],
+    "Positive Examples": [
+        {
+            "input": "X: turtle, Y: flow",
+            "output": "RANDOM",
+            "explanation": "Turtle and flow have no relation, so RANDOM is the correct label."
+        },
+        {
+            "input": "X: bowl, Y: game",
+            "output": "HYPER",
+            "explanation": "Bowl and game are HYPER because bowling is a game."
+        },
+        {
+            "input": "X: whale, Y: salmon",
+            "output": "COORD",
+            "explanation": "Whale and salmon belong to the same semantic class so COORD is the correct relation."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "X: giraffe, Y: trade",
+            "output": "COORD",
+            "explanation": "The correct relation is RANDOM, as they donot have any relationship, so COORD is incorrect."
+        },
+        {
+            "input": "X: maximum, Y: extreme",
+            "output": "RANDOM",
+            "explanation": "Maximum and extreme are HYPER as maximum can be regarded as a specific instance of extreme (since maximum is an extreme), so RANDOM is incorrect."
+        },
+        {
+            "input": "X: bomber, Y: truck",
+            "output": "HYPER",
+            "explanation": "The true label is COORD as both of them are vehicles, so HYPER is an incorrect label."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1505-99c1506c35244c8e986a82fabb638e6d",
+            "input": "X: apple, Y: led",
+            "output": [
+                "RANDOM"
+            ]
+        },
+        {
+            "id": "task1505-6aabdb98cb0a46ae925992e1638666e4",
+            "input": "X: coat, Y: creature",
+            "output": [
+                "RANDOM"
+            ]
+        },
+        {
+            "id": "task1505-2f83872256d04363a3595d586d0230df",
+            "input": "X: death, Y: state",
+            "output": [
+                "HYPER"
+            ]
+        },
+        {
+            "id": "task1505-a4f39476259a463894e8e8d8bf947a2f",
+            "input": "X: water, Y: collection",
+            "output": [
+                "RANDOM"
+            ]
+        },
+        {
+            "id": "task1505-64df9736206748d888602875a4a80bee",
+            "input": "X: dress, Y: increase",
+            "output": [
+                "RANDOM"
+            ]
+        },
+        {
+            "id": "task1505-a48f9b17a2094a0089d64984ded7aff8",
+            "input": "X: hammer, Y: fancy",
+            "output": [
+                "RANDOM"
+            ]
+        },
+        {
+            "id": "task1505-e38baf5034bd452cb9c8b158909122bb",
+            "input": "X: strawberry, Y: editorial",
+            "output": [
+                "RANDOM"
+            ]
+        },
+        {
+            "id": "task1505-cd410d352ace401fb651b5593a8dd673",
+            "input": "X: couch, Y: vegetable",
+            "output": [
+                "RANDOM"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

@@ -1,0 +1,208 @@
+{
+    "Contributors": [
+        "Shailaja Keyur Sampat"
+    ],
+    "Source": [
+        "torque"
+    ],
+    "URL": [
+        "https://allennlp.org/torque.html"
+    ],
+    "Categories": [
+        "Information Extraction"
+    ],
+    "Reasoning": [
+        "Commonsense Reasoning"
+    ],
+    "Definition": [
+        "In this task, you will be given a passage, and your goal is to identify an event from the passage. An event is defined as a single word representing something that happened, is happening, or may happen. Most events are based on verbs, but an event can also be based on a noun or a copula verb. The event cannot be a pronoun or an adjective. For noun events with multiple words, use the last word in the phrase as the event."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "News"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Passage: I submitted the hit. The hit was approved, and then I was paid.",
+            "output": "approved",
+            "explanation": "There are three events in this passage (i) submission event (\"submitted\") (ii) the approval event (\"approved\"), and (iii) the payment event (\"paid\"). You can use any one of them as an output."
+        },
+        {
+            "input": "Passage: He was caught in the snow storm.",
+            "output": "storm",
+            "explanation": "There are two events in this passage (i) he was caught (\"caught\") and (ii) the snow storm event (\"storm\"). You can use any one of them as an output. Since snow storm is a noun event with multiple words, we only use the last word 'storm' as an event."
+        },
+        {
+            "input": "Passage: He is on the east coast.",
+            "output": "is",
+            "explanation": "The copula \"is\" an event describing his location."
+        },
+        {
+            "input": "Passage: He wanted to finish the task.",
+            "output": "wanted",
+            "explanation": "There are two events in this passage (i) he wanted to do something (\"wanted\") and (ii) finish the task (\"finish\"). Either of wanted or finish can be used as output. However note that though there is an uncertainty about the task i.e. indeed finished or not, \"finish\" is still a valid event."
+        },
+        {
+            "input": "Passage: If he works hard, then he will finish the task.",
+            "output": "finish",
+            "explanation": "There are two events in this passage (i) he works hard (\"works\") and (ii) he will finish the task. (\"finish\"). You can use either of works or finish as an output. Here the second event happens only if the first one is true, but both are considered as events. This is an example of hypothetical event."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Passage: He is happy.",
+            "output": "happy",
+            "explanation": "Happy is an adjective and hence cannot be an event. The output should be \"is\" which represents an event describing his attribute of happiness."
+        },
+        {
+            "input": "Passage: He was caught in the elevator.",
+            "output": "elevator",
+            "explanation": "Not every noun can be an event. Here \"elevator\" is an object and one cannot say \"an elevator happened\" hence it is not an event. \"caught\" is a correct output."
+        },
+        {
+            "input": "Passage: The flu season is winding down.",
+            "output": "flu season",
+            "explanation": "The \"flu season\" is a noun events with multiple words, but only last word \"season\" sould be used as an event as per definition."
+        },
+        {
+            "input": "Passage: The death toll climbed up to 99 soon after the explosion.",
+            "output": "blast",
+            "explanation": "There are two events in this passage \"climbed\" and \"explosion\". Though blast is a synonym of explosion, it is not present in the passage. The output must contain events that are present in the passage."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task388-c67c7e4bf6604d7aa833c4831efb250d",
+            "input": "Passage: The win was still a welcome one for Newcastle boss Glenn Roeder as, for all his side's heroics in the UEFA Cup, their domestic form had been a serious cause for concern. This was their first victory on home turf in the league since the opening day of the season - and Sibierski's goal was only their ninth in 14 top-flight games.",
+            "output": [
+                "was",
+                "heroics",
+                "been",
+                "was",
+                "was",
+                "games",
+                "season",
+                "day"
+            ]
+        },
+        {
+            "id": "task388-bc21f75a3dfd400db160159b7326c73f",
+            "input": "Passage: However, USA Today quoted the deputy director of the Joint Psychological Operations Support Element as saying the source of the material would not always be identified. \"While the product may not carry the label, Made in the USA,' we will respond truthfully if asked\" by journalists, Mark Furlong was quoted as saying.",
+            "output": [
+                "quoted",
+                "saying",
+                "identified",
+                "carry",
+                "respond",
+                "asked",
+                "quoted",
+                "saying"
+            ]
+        },
+        {
+            "id": "task388-d89f8d599ecb46d294264f72a75ef90c",
+            "input": "Passage: NTT DoCoMo, seeking to expand its operations in Asia, agreed Thursday to purchase a 10 percent stake in South Korea's second-largest mobile carrier KTF for about 560 million dollars. ",
+            "output": [
+                "seeking",
+                "expand",
+                "agreed",
+                "purchase"
+            ]
+        },
+        {
+            "id": "task388-71618d82888b448ba3351fd4bc1fcc76",
+            "input": "Passage: The combined operations are designed to isolate and strangle Iraq until it retreats from Kuwait. The quarantine hopes to staunch the flow of Iraqi oil, which is Iraq's economic lifeblood, and clamp down on food and supplies going in.",
+            "output": [
+                "operations",
+                "designed",
+                "isolate",
+                "strangle",
+                "retreats",
+                "quarantine",
+                "hopes",
+                "staunch",
+                "flow",
+                "clamp",
+                "going"
+            ]
+        },
+        {
+            "id": "task388-71231df05e4c425490292ec356be3a51",
+            "input": "Passage: Naivasha has been rife with animosity between foreign investors, mainly flower farmers, and the local population over access to resources, and has been the scene of several violent attacks on European residents, although Root's murder is the first in several months. At least three other Europeans have been slain in violent robberies in the Rift Valley since September 2004, prompting great unease and major security fears in the expatriate community.",
+            "output": [
+                "been",
+                "animosity",
+                "access",
+                "resources",
+                "been",
+                "attacks",
+                "murder",
+                "months",
+                "slain",
+                "robberies",
+                "September",
+                "2004",
+                "prompting",
+                "unease",
+                "fears",
+                "is"
+            ]
+        },
+        {
+            "id": "task388-72dc19c3c73e442f8f79ca25d19eb715",
+            "input": "Passage: The company's ability to respond to energy needs world-wide will be enhanced through a recently announced venture with Mitsubishi Heavy Industries, Mr. Lego said. He said the independent power segment could grow to provide as much as 50% of near-term generation capacity, adding: \"We expect to supply a significant share of this market.\"",
+            "output": [
+                "respond",
+                "enhanced",
+                "announced",
+                "venture",
+                "said",
+                "said",
+                "grow",
+                "provide",
+                "adding",
+                "supply"
+            ]
+        },
+        {
+            "id": "task388-5f800959780443fda950851ffd576e25",
+            "input": "Passage: The defence minister also urged no further delay in the planned relocation of US bases to Pyeongtaek south of Seoul. The defence ministry said this week that South Korea would not be able to complete a major relocation of US military bases by 2008 as scheduled, due to protests by residents and a dispute over cost-sharing.",
+            "output": [
+                "urged",
+                "delay",
+                "planned",
+                "relocation",
+                "said",
+                "able",
+                "complete",
+                "relocation",
+                "scheduled",
+                "protests",
+                "dispute",
+                "cost-sharing"
+            ]
+        },
+        {
+            "id": "task388-4bc65d0f593b433780a81773dfddcf6b",
+            "input": "Passage: \"Subsequently, we would consider the management of third-party funds,\" Tan said. The new company is to be 90-percent owned by GE Life and the rest by Straits Trading Co., a sister company under the Oversea-Chinese Banking Corp. group.",
+            "output": [
+                "consider",
+                "management",
+                "said",
+                "owned",
+                "is"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Apache 2.0"
+    ]
+}

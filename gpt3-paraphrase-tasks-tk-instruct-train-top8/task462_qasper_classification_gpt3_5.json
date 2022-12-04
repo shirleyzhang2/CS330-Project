@@ -1,0 +1,120 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "qasper"
+    ],
+    "URL": [
+        "https://allenai.org/project/qasper/home"
+    ],
+    "Categories": [
+        "Question Understanding"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "In this task, you will be presented with a context from an academic paper and a question based on the context. You have to classify the questions into one of three categories: \"Extractive\", \"Abstractive\", or \"Yes-no\". Extractive questions can be answered by concatenating extracts taken from the context into a summary. Abstractive questions, on the other hand, require you to paraphrase the context using novel sentences. Yes-no questions are those whose expected answer is one of two choices, typically either yes or no."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Scientific Research Papers"
+    ],
+    "Positive Examples": [
+        {
+            "input": "We build a dataset of Twitter accounts based on two lists annotated in previous works. For the non-factual accounts, we rely on a list of 180 Twitter accounts from BIBREF1. On the other hand, for the factual accounts, we use a list with another 32 Twitter accounts from BIBREF19 that are considered trustworthy by independent third parties. \n Question: How did they obtain the dataset?",
+            "output": "Extractive",
+            "explanation": "The answer to this question has been explicitly mentioned in the context, so the question is extractive."
+        },
+        {
+            "input": "We evaluate our pointer-generator performance using BLEU score. The baseline language model is trained using RNNLM BIBREF23 . Perplexity measure is used in the evaluation.\n\n \n Question: Did they use other evaluation metrics?",
+            "output": "Yes-no",
+            "explanation": "This is a good example, and the given question is a yes-no question."
+        },
+        {
+            "input": "As in the example above, we pre-process documents by removing all numbers and interjections. \n Question: what processing was done on the speeches before being parsed?",
+            "output": "Abstractive",
+            "explanation": "Answering this question needs paraphrasing the context, so this question is abstractive."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "For the English version, we performed both a thorough manual analysis and automatic evaluation across three commonly used TS datasets from two different domains  For the English version, we performed both a thorough manual analysis and automatic evaluation across three commonly used TS datasets from two different domains  The evaluation of the German version is in progress. \n Question: What are the corpora used for the task?",
+            "output": "Yes-no",
+            "explanation": "This question is extractive, and it's not a yes-no question."
+        },
+        {
+            "input": "For Turkish, as the first dataset, we utilised the movie reviews which are collected from a popular website. The number of reviews in this movie corpus is 20,244 and the average number of words in reviews is 39. Each of these reviews has a star-rating score which is indicative of sentiment. These polarity scores are between the values 0.5 and 5, at intervals of 0.5. We consider a review to be negative it the score is equal to or lower than 2.5. On the other hand, if it is equal to or higher than 4, it is assumed to be positive. We have randomly selected 7,020 negative and 7,020 positive reviews and processed only them. \n Question: What details are given about the movie domain dataset?",
+            "output": "Extractive",
+            "explanation": "This question is Abstractive because we need to paraphrase the context to get to the answer."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task462-2f91df8c4a1943228929f77e3b711e8c",
+            "input": "It includes a total 708 hours of French (Fr), German (De), Dutch (Nl), Russian (Ru), Spanish (Es), Italian (It), Turkish (Tr), Persian (Fa), Swedish (Sv), Mongolian (Mn) and Chinese (Zh) speeches, with French and German ones having the largest durations among existing public corpora. \n Question: Which languages are part of the corpus?",
+            "output": [
+                "Extractive"
+            ]
+        },
+        {
+            "id": "task462-0b536d6510e34ec893c59907cd710ec4",
+            "input": "The 10-fold cross validation with this setting gave a token-level accuracy of roughly 71%.  \n Question: Does the paper report translation accuracy for an automatic translation model for Tunisian to Arabish words?",
+            "output": [
+                "Yes-no"
+            ]
+        },
+        {
+            "id": "task462-eb17b4e959e247efa140659b0bcc737b",
+            "input": "The focus of this section is on recently published datasets and LID research applicable to the South African context. An in depth survey of algorithms, features, datasets, shared tasks and evaluation methods may be found in BIBREF0.\n\nThe datasets for the DSL 2015 & DSL 2017 shared tasks BIBREF1 are often used in LID benchmarks and also available on Kaggle . The recently published JW300 parallel corpus BIBREF2 covers over 300 languages with around 100 thousand parallel sentences per language pair on average. The WiLI-2018 benchmark dataset BIBREF4 for monolingual written natural language identification includes around 1000 paragraphs of 235 languages. The NCHLT text corpora BIBREF7 is likely a good starting point for a shared LID task dataset for the South African languages BIBREF8. \n Question: Which datasets are employed for South African languages LID?",
+            "output": [
+                "Extractive"
+            ]
+        },
+        {
+            "id": "task462-c3a6e547ed134efb8720b87fbc181186",
+            "input": "For sentiment classification, we systematically study the effect of character-level adversarial attacks on two architectures and four different input formats.  We also consider the task of paraphrase detection. \n Question: What end tasks do they evaluate on?",
+            "output": [
+                "Abstractive"
+            ]
+        },
+        {
+            "id": "task462-10ffb776be074394a88cc865de5d9b8e",
+            "input": "Because our conversion rules are interpretable, we identify shortcomings in both resources, using each as validation for the other. We were able to find specific instances of incorrectly applied UniMorph annotation, as well as specific instances of cross-lingual inconsistency in both resources. \n Question: Do they look for inconsistencies between different languages' annotations in UniMorph?",
+            "output": [
+                "Yes-no"
+            ]
+        },
+        {
+            "id": "task462-e315a29b152f492c93bbe4bc5faedc0e",
+            "input": "We have created a dataset of discharge summaries and nursing notes, all in the English language, with a focus on frequently readmitted patients, labeled with 15 clinical patient phenotypes believed to be associated with risk of recurrent Intensive Care Unit (ICU) readmission per our domain experts (co-authors LAC, PAT, DAG) as well as the literature. BIBREF10 BIBREF11 BIBREF12 \n Question: How many different phenotypes are present in the dataset?",
+            "output": [
+                "Extractive"
+            ]
+        },
+        {
+            "id": "task462-0f7862ea9b3b49f990de356a2d0a89be",
+            "input": "Moreover, QA and QG have probabilistic correlation as both tasks relate to the joint probability between $q$ and $a$ . Given a question-answer pair $\\langle q, a \\rangle $ , the joint probability $P(q, a)$ can be computed in two equivalent ways.\r\n\r\n$$P(q, a) = P(a) P(q|a) = P(q)P(a|q)$$ (Eq. 1)\r\n\r\nThe conditional distribution $P(q|a)$ is exactly the QG model, and the conditional distribution $P(a|q)$ is closely related to the QA model. Existing studies typically learn the QA model and the QG model separately by minimizing their own loss functions, while ignoring the probabilistic correlation between them.\r\n\r\nBased on these considerations, we introduce a training framework that exploits the duality of QA and QG to improve both tasks. There might be different ways of exploiting the duality of QA and QG. In this work, we leverage the probabilistic correlation between QA and QG as the regularization term to influence the training process of both tasks. Specifically, the training objective of our framework is to jointly learn the QA model parameterized by $\\theta _{qa}$ and the QG model parameterized by $\\theta _{qg}$ by minimizing their loss functions subject to the following constraint.\r\n\r\n$$P_a(a) P(q|a;\\theta _{qg}) = P_q(q)P(a|q;\\theta _{qa})$$ (Eq. 3)\r\n\r\n$P_a(a)$ and $P_q(q)$ are the language models for answer sentences and question sentences, respectively. Overall, the framework includes three components, namely a QA model, a QG model and a regularization term that reflects the duality of QA and QG. The QA specific objective aims to minimize the loss function $l_{qa}(f_{qa}(a,q;\\theta _{qa}), label)$ , where $label$ is 0 or 1 that indicates whether $a$ is the correct answer of $q$ or not. For each correct question-answer pair, the QG specific objective is to minimize the following loss function,\r\n\r\n$$l_{qg}(q, a) = -log P_{qg}(q|a;\\theta _{qg})$$ (Eq. 6)\r\n\r\nwhere $a$ is the correct answer of $q$ . The third objective is the regularization term which satisfies the probabilistic duality constrains as given in Equation 3 . Specifically, given a correct $\\langle q, a \\rangle $ pair, we would like to minimize the following loss function,\r\n\r\n$$ \\nonumber l_{dual}(a,q;\\theta _{qa}, \\theta _{qg}) &= [logP_a(a) + log P(q|a;\\theta _{qg}) \\\\ & - logP_q(q) - logP(a|q;\\theta _{qa})]^2$$ (Eq. 9)\r\n\r\nwhere $P_a(a)$ and $P_q(q)$ are marginal distributions, which could be easily obtained through language model. \n Question: What does \"explicitly leverages their probabilistic correlation to guide the training process of both models\" mean?",
+            "output": [
+                "Abstractive"
+            ]
+        },
+        {
+            "id": "task462-31f448e7550346ec985e32de0434f3d5",
+            "input": "Fourteen such feature extractors have been implemented which can be clubbed into 3 major categories:\n\n[noitemsep]\n\nLexicon Features\n\nWord Vectors\n\nSyntax Features \n Question: how many total combined features were there?",
+            "output": [
+                "Extractive"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

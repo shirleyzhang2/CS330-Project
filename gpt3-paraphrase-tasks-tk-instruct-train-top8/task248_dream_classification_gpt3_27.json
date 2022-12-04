@@ -1,0 +1,123 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "dream"
+    ],
+    "URL": [
+        "https://github.com/nlpdata/dream"
+    ],
+    "Categories": [
+        "Question Understanding"
+    ],
+    "Reasoning": [
+        "Reasoning on Social Interactions"
+    ],
+    "Definition": [
+        "In this task, you will be given a conversation and a question. You should categorize the question into one of the following groups: matching, summary, logic, arithmetic, or commonsense. Matching questions are those that are entailed or paraphrased by exactly one sentence in the dialogue. The answer can be extracted from the same sentence. Questions that cannot be answered by the surface meaning of a single sentence belong to the reasoning category. Summary questions require the whole picture of the dialogue, such as the topic of the dialogue and the relation between the speakers. Logical questions require logical reasoning to answer. Arithmetic questions require arithmetic knowledge to answer. Commonsense questions require additional commonsense knowledge that cannot be obtained from the dialogue. Note that a question can be in more than one group."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue",
+        "Natural Science -> School Science Textbooks"
+    ],
+    "Positive Examples": [
+        {
+            "input": "W: The movie next Tuesday has been cancelled due to lack of interest. M: What do you mean? W: Well, by last night only a few tickets has been sold., Question: What can we conclude about the movie? (A) They want to buy the tickets for the movie. (B) The tickets for the movie were sold. (C) The movie will not be shown.",
+            "output": "commonsense",
+            "explanation": "This is a good example. To answer this question we require commonsense knowledge that cannot be obtained from the dialogue. So, this is a commonsense question."
+        },
+        {
+            "input": "W: What does the term \"alternative energy source\" mean? M: When we think of energy or fuel for our homes and cars, we think of petroleum, a fossil fuel processed from oil removed from the ground, of which there is a limited supply. But alternative fuels can be many things. Wind, sun and water can all be used to create fuel. W: Is the threat of running out of petroleum real? M: It has taken thousands of years to create the natural stores of petroleum we have available at a much faster rate than it is being produced over time. The real controversy surrounding the amount of petroleum we have is how much we need to keep in reserve for future use. Most experts agree that by around 2025, the amount of petroleum we use will reach a peak. Then production and availability will begin to seriously decline. This is not to say there will be no petroleum at this point. But it'll become very difficult and therefore expensive to extract. W: Is that the most important reason to develop alternative fuel and energy sources? M: There are two very clear reasons to do so. One is that whether we have 60 or 600 years of fossil fuels left, we have to find other fuel sources eventually. So the sooner we start, the better off we will be. The other big argument is that when long time, which leads to some long-term negative effects, like global warming and the greenhouse effect., Question: What do we usually refer to when we talk about energy according to the man? (A) Coal burnt daily for the comfort of our homes. (B) Anything that can be used to produce power. (C) Fuel refined from oil extracted from underground.",
+            "output": "matching",
+            "explanation": "The first sentence of the man can answer this question. So, it's a matching question."
+        },
+        {
+            "input": "M: What do you think of my new sweater? W: Well, it looks nice, but why don't you put it on, and then I'll tell you if it suits you? M: Okay. You know, I tried on about twenty at the shop, and this one isn't really what I wanted. I especially can't stand the high neck. W: Why did you buy it then? M: The salesman sold it to me before I realized what had happened. He just never stopped talking about the latest fashions and special reduced prices. Before I could say anything he'd wrapped it up and I realized that I'd paid him. W: Well, it doesn't look too bad. I think it looks good on you. M: But I went out to get a blue sweater to match my black trousers-something with a V-neck, short sleeves and pattern-and I came home with a brown sweater with a high neck, long sleeves and no pattern. W: You've got to learn to stand up to these high-pressure salesmen. They will sell you all sorts of things you don't want if you don't watch out. M: Next time I'll send my wife. She would probably sell something to the salesman. W: That's a good idea. Actually women are much better at shopping than men. Whenever my husband and I buy something important, I always have the finalsay. M: I must admit that women are better at shopping. I should simply leave the whole business to them., Question: Why did the man buy a sweater that he doesn't like? (A) He was pushed by the salesman (B) It was sold at a low price (C) It is the latest fashion.",
+            "output": "logic",
+            "explanation": "To answer this question we need logical reasoning. In the dialogues, they talk about high-pressure salesmen. So by logical reasoning, we could understand that he was pushed by the salesman."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "W: What does the term \"alternative energy source\" mean? M: When we think of energy or fuel for our homes and cars, we think of petroleum, a fossil fuel processed from oil removed from the ground, of which there is a limited supply. But alternative fuels can be many things. Wind, sun and water can all be used to create fuel. W: Is the threat of running out of petroleum real? M: It has taken thousands of years to create the natural stores of petroleum we have available at a much faster rate than it is being produced over time. The real controversy surrounding the amount of petroleum we have is how much we need to keep in reserve for future use. Most experts agree that by around 2025, the amount of petroleum we use will reach a peak. Then production and availability will begin to seriously decline. This is not to say there will be no petroleum at this point. But it'll become very difficult and therefore expensive to extract. W: Is that the most important reason to develop alternative fuel and energy sources? M: There are two very clear reasons to do so. One is that whether we have 60 or 600 years of fossil fuels left, we have to find other fuel sources eventually. So the sooner we start, the better off we will be. The other big argument is that when long time, which leads to some long-term negative effects, like global warming and the greenhouse effect., Question: What do most experts agree on according to the man? (A) Oil will soon be replaced by alternative energy sources. (B) Oil production will begin to decline worldwide by 2025. (C) Oil consumption has given rise to many global problems.",
+            "output": "arithmetic",
+            "explanation": "We don't need arithmetic knowledge to answer this question. It's incorrect. This is a matching question."
+        },
+        {
+            "input": "M: Finally, I've got the chance to put on my new suit tonight. I hope to make a good impression on your family. W: Come on! It's only a family reunion. So jeans and T-shirts are just fine., Question: What does the woman mean? (A) The man has left a good impression on her family. (B) The man can dress casually for the occasion. (C) The man should buy himself a new suit.",
+            "output": "matching",
+            "explanation": "The answer to this question cannot be extracted from the context. We need commonsense knowledge to understand wearing jeans and T-shirts means dressing casually. This is a commonsense question."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task248-e01a07b99d844037874c12a9b96cf729",
+            "input": "Man: So, what do you want to do tomorrow? Woman: Well, let's look at this city guide here. [Okay] Uh, here's something interesting. [Oh!]Why don't we first visit the art museum in the morning? Man: Okay. I like that idea. And where do you want to eat lunch? Woman: How about going to an Indian restaurant? [Humm] The guide recommends one downtown a few blocks from the museum. Man: Now that sounds great. After that, what do you think about visiting the zoo? [Oh .. umm .. well ... ] Well, it says here that there are some very unique animals not found anywhere else. Woman: Well, to tell you the truth, I'm not really interested in going there. [Really?]. Yeah. Why don't we go shopping instead? There are supposed to be some really nice places to pick up souvenirs. Man: Nah, I don't think that's a good idea. We only have few travelers checks left, and I only have fifty dollars left in cash. Woman: No problem. We can use YOUR credit card to pay for MY new clothes. Man: Oh, no. I remember the last time you used MY credit card for YOUR purchases. Woman: Oh well. Let's take the subway down to the seashore and walk along the beach. Man: Now that sounds like a wonderful plan., Question: Why does the man want to visit the zoo in the afternoon? (A) The zoo will be closed the rest of the week. (B) The zoo is free to visitors that day only. (C) There are unusual animals on display.",
+            "output": [
+                "logic"
+            ]
+        },
+        {
+            "id": "task248-4f9f9b62e0db44a8a690da75a83abd27",
+            "input": "M: I hear you drive a long way to work every day. W: Oh, yes. It's about sixty miles. But it doesn't seem that far, the road is not bad, and there's not much traffic., Question: How does the woman feel about driving to work? (A) She is tired of driving in heavy traffic. (B) She doesn't mind it as the road conditions are good. (C) She is unhappy to have to drive such along way every day.",
+            "output": [
+                "commonsense"
+            ]
+        },
+        {
+            "id": "task248-93f8068ba3e045afbf9018a5b451f117",
+            "input": "W: Do you like fried chicken? M: Yes, it's my favorite dish. What about you? W: I don't care much for chicken. I prefer seafood. M: But seafood is expensive. I should say., Question: What are they talking about? (A) The taste of food. (B) The cost of food. (C) The food they like and dislike.",
+            "output": [
+                "summary"
+            ]
+        },
+        {
+            "id": "task248-c4ebf16a89544a7885b9fc061e7805de",
+            "input": "M: Helen, can you tell us a little bit about where you have worked before? W: Well, my last job was with Format. M: And when did you start to work there? W: Two years ago. M: So why did you decide to leave? W: Well, perhaps you've heard that the company closed down earlier this year. M: Yes, we've heard about it. And where did you work before Format? W: Ideal Systems. M: How long did you work for them? W: For ten years, as a secretary. M: And why did you leave that job as a secretary? W: Well, I felt I needed a change. I think I learned all I could there. M: OK, that's enough on your work experiences. You are listed., Question: What is the man asking about? (A) The woman's last job. (B) Ideal Systems. (C) The woman's work experiences.",
+            "output": [
+                "logic"
+            ]
+        },
+        {
+            "id": "task248-dcbcab62af66474f8632baa0e1a16028",
+            "input": "W: Tony, can I ask you a personal question? M: About what? W: Well, I was wondering about how you are received here in China. M: What do you mean? W: Well, since you are Chinese-Canadian and only speak English and French well; how do native Chinese treat you? M: Oh, well. Sometimes it can get pretty difficult. When people find out that I am a Canadian citizen who can't speak Chinese well,they usually call me a banana. You know, yellow on the outside and white on the inside. W: How does that make you feel? M: Well, I first feel mad. Then I feel sad, because I am seen as someone who has forgotten his roots. All this is because my parents left to find a better life and I decided to return in order to find something I lost. Sometimes I am not sure if I like what I found., Question: How does Tony find his experience in China? (A) Disappointing. (B) Interesting. (C) Crazy.",
+            "output": [
+                "commonsense"
+            ]
+        },
+        {
+            "id": "task248-f1687ed96ce442a9b83f6d8455d3117d",
+            "input": "Daughter: Uh, Dad. Are you going to miss me when I leave for college next week? Father: Yahoo! Daughter: No, Dad ... seriously. I mean you're always talking about how much money you'll save on food, hot water, and gas while I am gone. Father: Of course I will ... no, uh, well, I'll miss you, of course. No, honestly, I'll miss and worry about you, and you've really tried to prepare yourself. You know, I'm proud of you for that. You know, getting a university degree is a real accomplishment. Daughter: Exactly. Father: But, let's go over the to-do list. Do you have everything ready? I mean, did you pay your tuition and housing fees by the deadline? [Yeap.] Because, you know, if you don't, you'll lose your class schedule, and you have to register all over again. Daughter: Yeah, I paid for that a few days ago. Father: Okay, did you sign up for the meal plan at the university so you don't have to eat instant noodles everyday? Daughter: Yeap. But Mom said I could take some food from home to get me started. Father: Uhhh, well, yeah. The oatmeal is in the pantry. Daughter: Dad! Mom said I could take a bag of rice, some canned food, and ... Father: ... and grandpa's old army rations. Daughter: Ugh! Not that old stuff. Mom! Father: Okay, okay. And you know you should set up an appointment to meet with your academic advisor to help you select future classes, right? [Yeah.] You know, business administration will be a great major for you. Daughter: Well, Dad, uh ... Father: And future possibilities ... a great salary, opportunities to make a difference in the community, and [Dad. I changed my major.] supporting ... Father: What? You changed you major ... you switched majors!? Daughter: Yeah. I really thought about it. After talking it over with Mom, I've decided to major in wildlife science. Father: What? What are you talking about? Daughter: Yeah. I want to degree in wildlife science. You know, analyzing, maintaining, and conserving national forests and wildlife. Father: What? Uh, uhh ... Daughter: Dad. You can close your mouth now. I mean, I've ALWAYS been interested in working with nature; [Well.] You know that, and this field will give me the opportunity to live out my dream. [Well ... ] I've also looked through the online university catalog, and I actually qualify for a two-year, full tuition scholarship. Father: Wait. When did this all happen? Daughter: I can even go on to graduate school and further my education ... after Todd and I get married, of course. Father: Graduate school ... Todd? Wait, wait, wait!! Who's Todd? Ah, what's next? Daughter: Thanks for the credit card. Mom said it was a present. And I just tried it out to make sure it worked, and I had no problem buying my new laptop computer. [Oh, I'm doomed!] Uh, Dad, where are you going? Father: Uh, I've decided to enroll in night school to get another degree. That's the only way I'm going to pay for your college., Question: The man is surprised by the fact that his daughter ________________________. (A) already has a part-time job at school (B) has earned a scholarship for the first year (C) is involved in a serious relationship",
+            "output": [
+                "commonsense"
+            ]
+        },
+        {
+            "id": "task248-7686793328ff4cca91b505bfc539aa93",
+            "input": "M: Oh, hello, Li Ming. Come on in, and how're you been keeping recently? W: Quite all right, thanks, Dr. Francis. How's your project going? M: Very smoothly, I should say. I'm playing a consultancy role, really. I've only been here in China a month, but I'm already on very good terms with my colleagues in the Department of Computer Science. Well, I'm happy that you could come. Do sit down, please. W: Dr. Francis, do you know I've got a chance to go to Cambridge in August? I wonder if you could tell me something about Britain. M: Certainly. Well, I was actually brought up in Scotland. Enn, in fact, I've never been to Cambridge. But well,.., yes, I'm sure I can give you some useful tips. Now, what do you want to know, Li Ming? W: Things like weather. What's the usual temperature there? M: Mmm, the temperature in Scotland is 22, or 23 degrees Centigrade, on average, I think. But Cambridge would be warmer, around 25, I would guess, because it's down south. W: Oh, that's nice. Do you know it is 34 here? Last year it reached 39. By the way, where do you think I should stay? M: Oh, that's important. You can, err,.., I suppose, stay in the college-owned flats, which are often near where you have your classes, and some are even on the campus. That would certainly be convenient. W: Yes, it would. M: But it can also be a disadvantage because you are, in a sense, separated from ordinary society. You're a language teacher, and I think learning from society is a valuable experience. W: Yes, yes, exactly, so what's the alternative? M: Maybe finding an English host family. I know of a student Ali from the Middle East. He told me that he had learnt a lot by staying with a British family. W: Thank you, I think it's quite a good suggestion. By the way, Dr. Francis, do you think I could...?, Question: What is Dr. Francis? (A) teacher of English in Cambridge. (B) A specialist in computer science. (C) A consultant to a Scottish company.",
+            "output": [
+                "commonsense"
+            ]
+        },
+        {
+            "id": "task248-ea46b903d1b94c57867788a2add17ab7",
+            "input": "W: Have you been to the new shopping mall that just opened last month? M: Not yet. I saw a billboard ad for it last week. W: I saw a lot of ads on the train. I really want to go! M: You like shopping? Perhaps we can go together then. W: OK! Could you give me a ride in your car? M: Sure. W: I can't wait! The advertising has been so persuasive. M: I know! W: I guess it's had a strong effect on us! M: Ha! You're right., Question: How will the woman go to the shopping mall? (A) By train. (B) By bus. (C) In the man's car.",
+            "output": [
+                "logic"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Dedicated License (https://github.com/nlpdata/dream/blob/master/license.txt)"
+    ]
+}

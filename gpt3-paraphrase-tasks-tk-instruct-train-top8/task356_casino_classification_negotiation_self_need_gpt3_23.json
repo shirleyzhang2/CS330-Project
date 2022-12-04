@@ -1,0 +1,115 @@
+{
+    "Contributors": [
+        "Kushal Chawla"
+    ],
+    "Source": [
+        "casino"
+    ],
+    "URL": [
+        "https://aclanthology.org/2021.naacl-main.254.pdf"
+    ],
+    "Categories": [
+        "Negotiation Strategy Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "The input is taken from a negotiation between two participants who take the role of campsite neighbors and negotiate for Food, Water, and Firewood packages, based on their individual preferences and requirements. Given an utterance and recent dialogue context containing past 3 utterances (wherever available), output Yes if the utterance contains the self-need strategy, otherwise output No. The self-need strategy is a selfish negotiation strategy. It is used to create a personal need for an item in the negotiation, such as by pointing out that the participant sweats a lot to show preference towards water packages."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Context: 'That sounds pretty reasonable as I am in need of firewood the most. Would it be most reasonable to each take what we need most and split the water down the middle?' 'Yes, it would.' 'I think that sounds fair. The problem is that there are 3 waters and one of us would get two and the other one. How should we sort that?'\nUtterance: 'You can take the two water. I am not that thirsty most days.'",
+            "output": "No",
+            "explanation": "In this utterance, the participant does not use self-need since they do not talk about any need for themselves."
+        },
+        {
+            "input": "Context: 'hello, how are you today?' 'Great.  Though I am a bit stressed.  I could use a camping trip. ' 'yes, me too. i am going to one. but i need some food.'\nUtterance: 'Yeah.  I like to go for long hikes so for that I need water and food.  '",
+            "output": "Yes",
+            "explanation": "This is correct since the participant mentions that they would need water for their long hikes."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Context: 'Hello. I am so looking forward to this camp out. My daughter just called and said she is going to come and bring some of her firiends. \ud83d\ude42' 'Hello! That sounds pretty reasonable to me. I was going out with a bunch of my buddies. We like to hike a lot in the sun, so we need lots of water. How does it sound if i take all the food and water, but you get all the firewood?' 'I love hiking. My daughter is bringing extra water. So we could trade the water for the firewood. We do need just a little food as I didn't plan on having an extra person.'\nUtterance: 'Hmm, okay, that sounds reasonable. How does 3 water, 2 food and 1 firewood for me, and all the rest for you sound?'",
+            "output": "Yes",
+            "explanation": "There is no self-need discussed in the utterance. Hence, the correct answer here is 'No'."
+        },
+        {
+            "input": "Context: 'we want to explore the animals in the area birds and just enjoy all the nice views.' 'Cool, that sounds very nice and relaxing \ud83d\ude42. It kinda sounds like my husband, he likes to do things like these with no concrete plan and just decides on the spot what he wants to do. The only problem with it is that he dumps all the planning on me so I have to make sure I have extra of ANY possible idea he has.' 'Yes we always get stuck making the plans so can I have 2 firewood and you get 2 food and 2 water? Please respond a little faster with your messages that would be very nice'\nUtterance: 'Unfortunately, I need the firewood to make campfires. Since you are planning to cook a romantic camping meal, don't you need food?'",
+            "output": "No",
+            "explanation": "This is wrong. The participant clearly discusses the need of firewood for making campfires. Hence, the correct answer is 'Yes'."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task356-d2a08e45f9134445be7403c1a691ff5c",
+            "input": "Context: 'hi there\ud83d\ude42' 'Hello, I hope we can reach a good deal. I am in desperate need of firewoood and water' 'I also need water.  You would not believe how much my family and I sweat!'\nUtterance: 'I understand. I am unfortunately sick and need the warmth of the fire and water to take my medication or I will die very soon'",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task356-c8b8069f0bec44edbbd8fa8d039dedca",
+            "input": "Context: 'Uh oh. What are you preferences on supplies?' 'food, then water, then firewood, and yours?' 'water, food then firewood. It's really hot so I need to make sure we are hydrated. We forgot a bag of supplies that had mostly food so we really could use food. It's hot so firewood isn't necessary. If anything we can get it from around or on a hike.'\nUtterance: 'of course, we should help one another, we will figure something out i'm sure'",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task356-bf68ae94721845af937ea23e4e85ad8d",
+            "input": "Context: 'I am sick and have a large family if we cant cooperate together we all get nothing' 'mind your words mr. i am in some trouble that's why i ask you this help. its not good man' 'Ok I am going to say this once before we both get nothing, I will get 3 Firewood, 2 Water and 0 Food. You will get 3 Food, 1 Water'\nUtterance: 'i am also need firewood friend because we are going to snow fall place so i need at least 1 pack of fire wood '",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task356-e4a9143636aa4fb69591686aac2b7707",
+            "input": "Context: 'Hi  I have an extra guest that will be camping with me and was wondering if you had an extra food package that you could spare?'\nUtterance: 'I don't have much food, but you can take one package and I can take two? '",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task356-90b5c80ddfb64ce4a60e411d44f06213",
+            "input": "Context: 'good here, I will need 3 water as I need it to survive' 'I need water as well.  I require it for subsistence' 'how many water you need?'\nUtterance: 'In a perfect world, all the water \ud83d\ude42'",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task356-351ea7c1c07c467eae7be865960d37bc",
+            "input": "Context: 'Hi there, good to connect with you. How are you today?' 'I am good, thank you.  What are your preferences? I really need the extra food packages.  We are doing a lot of hiking and mountain biking and there are no grocery stores for at least 50 miles.\ud83d\ude42'\nUtterance: 'Oh wow that is quite a lot of hiking! I think we will be hanging out a lot overnight and so I am looking for more firewood if possible. My kids can't hike very far and want to do more with smores and marshmellows. '",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task356-f1afff1a14df4849bae0a64e54a50af4",
+            "input": "Context: 'Firewood, due to the area that we are going to. How about you? ' 'Oh I see. You can have all 3 firewood if you are ok with me taking all 3 food.' 'Hmm, well I'd love to get some of the food. What I took 2 firewood, 1 food and 1 water? '\nUtterance: 'Sorry but I really need all 3 food. All the food I brought with me has spoiled because the AC in my car broke. \u2639\ufe0f'",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task356-e7bc50ae5e2f4a119f25bb452c5d9451",
+            "input": "Context: \nUtterance: 'Hi, '",
+            "output": [
+                "No"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

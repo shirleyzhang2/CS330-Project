@@ -1,0 +1,127 @@
+{
+    "Contributors": [
+        "Amrit Bhaskar"
+    ],
+    "Source": [
+        "propara"
+    ],
+    "URL": [
+        "https://arxiv.org/abs/1805.06975"
+    ],
+    "Categories": [
+        "Information Extraction"
+    ],
+    "Reasoning": [
+        "Deductive Reasoning"
+    ],
+    "Definition": [
+        "In this task, you are given a paragraph, an event and an entity. The event is part of the paragraph and it changes the state of the entity. Your task is to classify the state of the entity into one of three classes: 1) not exist, 2) unknown location and 3) known location. \"Not exist\" means the entity doesn't exist in that state anymore. \"Unknown location\" means the entity exists in that state but location is unknown. \"Known location\" means the entity exists and location is known."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Natural Science"
+    ],
+    "Positive Examples": [
+        {
+            "input": " \"process paragraph : Magma rises from deep in the earth. The magma goes into volcanos. The volcanos pressure the magma upwards. The pressure causes the magma to push through the surface of the volcano. The lava cools. The lava forms new rock. New magma is pressured to the surface of the volcano. The volcano bursts through the rock the formed after the last eruption\" , \"event : Magma rises from deep in the earth\" , \"entity : magma\" ",
+            "output": "known location",
+            "explanation": "The process paragraph explains in steps about - the cause for volcano eruption. The event is a part of the process paragraph given. The entity lies both in process paragraph and the event. So, this is a good example."
+        },
+        {
+            "input": " \"process paragraph : Water from the ocean washes onto beaches in waves. The waves contain sediment from the ocean. The water and particles in it hit rocks and sand on the beach. The wind and current sometimes push the water and particles harder. Tiny parts of the rocks on the shore come off the larger rocks. The waves pick up sand and small rocks from the beach. The waves go back out into the ocean. The waves carry the new particles with them. Rocks and the beach look a little different. \", \"event : The waves go back out into the ocean. \", \"entity : waves\" ",
+            "output": " known location ",
+            "explanation": "The process paragraph explains in steps about - the sequence of events during erosion by the ocean. The event is a part of the process paragraph given. The entity lies both in process paragraph and the event. So, this is a good example."
+        },
+        {
+            "input": " \"process paragraph : Water from oceans, lakes, swamps, rivers, and plants turns into water vapor. Water vapor condenses into millions of tiny droplets that form clouds. Clouds lose these droplets through rain or snow, also caused precipitation. Precipitation is either absorbed into the ground or runs off into rivers. Water that was absorbed into the ground is taken up by plants. Plants lose water from their surfaces as vapor. The vapor goes back into the atmosphere. Water that runs off into rivers flows into ponds, lakes, or oceans. The water evaporates back into the atmosphere. \", \"event : Water from oceans, lakes, swamps, rivers, and plants turns into water vapor. \", \"entity : water\" ",
+            "output": " not exist ",
+            "explanation": "The process paragraph explains in steps about - the sequence of events during water cycle. The event is a part of the process paragraph given. The entity lies both in process paragraph and the event. So, this is a good example."
+        },
+        {
+            "input": " \"process paragraph : Sediment settles in a place due to gravity. The sediment breaks down into small particles. Wind or water picks up the sediment. The sediment travels along the same route as the wind or water. The sediment is deposited at new locations by the wind or water. The sediment is picked up again by new wind or water. The sediment travels further. The sediment is deposited again in a new place. \", \"event : The sediment is picked up again by new wind or water. \", \"entity : sediment; small particles\" ",
+            "output": " unknown location ",
+            "explanation": "The process paragraph explains in steps about - the sequence of events during sediment transportation across the earth. The event is a part of the process paragraph given. The entity lies both in process paragraph and the event. So, this is a good example."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": " \"process paragraph : Water from oceans, lakes, swamps, rivers, and plants turns into water vapor. Water vapor condenses into millions of tiny droplets that form clouds. Clouds lose these droplets through rain or snow, also caused precipitation. Precipitation is either absorbed into the ground or runs off into rivers. Water that was absorbed into the ground is taken up by plants. Plants lose water from their surfaces as vapor. The vapor goes back into the atmosphere. Water that runs off into rivers flows into ponds, lakes, or oceans. The water evaporates back into the atmosphere. \", \"event : Water from oceans, lakes, swamps, rivers, and plants turns into water vapor. \", \"entity : water\" ",
+            "output": " known location ",
+            "explanation": "This is a bad example because the output class is incorrect. Water in this event has turned into water vapor and is longer in the form of water. The existence is necessary to find the location. "
+        },
+        {
+            "input": " \"process paragraph : Magma rises to the surface during a volcano. The magma undergoes changes in temperature. The magma undergoes changes in pressure. The magma cools. The magma solidifies. The magma crystallizes. Igneous rock is formed. \", \"event : Magma rises to the surface during a volcano. \", \"entity : magma\" ",
+            "output": " unknown location ",
+            "explanation": "This is a bad example because the output class is incorrect. Magma in this event has risen to the surface and is considered a known location. Only classify to unknown location when the place of entity is not determined. "
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1568-4fc79fc657604305b8617176682c0fb4",
+            "input": " \"process paragraph : : A butterfly lays an egg. A larvae matures inside of the egg. The caterpillar hatches from the egg. The caterpillar eats and grows. The caterpillar spins a coccoon around itself and forms into a pupa. The butterfly forms inside of the coccoon. The mature butterfly emerges from the coccoon. The butterfly mates. The female butterfly lays eggs. \", \"event : A larvae matures inside of the egg.\", \"entity : egg ; eggs\" ",
+            "output": [
+                " unknown location "
+            ]
+        },
+        {
+            "id": "task1568-5d546265c5c74f50a91e491a49ec74dd",
+            "input": " \"process paragraph : : Hydrogen atoms in a star combine together to form helium atoms. All of the hydrogen in a star turns into helium. The star begins to collapse. Helium atoms combine together to form carbon atoms. The star gets much bigger than it was before. The star is now a red giant. \", \"event : All of the hydrogen in a star turns into helium.\", \"entity : hydrogen atoms\" ",
+            "output": [
+                " not exist "
+            ]
+        },
+        {
+            "id": "task1568-7c6832a03bdd45a4a3e9e15be5b79c70",
+            "input": " \"process paragraph : : Human beings burn fossil fuels (oil, gas, etc.). Carbon dioxide from the burning fossil fuels enter the atmosphere. The make-up of the atmosphere changes. Some energy from the sun cannot escape back through the changed atmosphere. The earth begins to heat because of the extra trapped energy. Human beings cut down trees. Human beings do not re-plant the trees. Trees cannot help take the extra carbon dioxide from the atmosphere. The extra trapped energy starts to change the earth's short term weather. Eventually the long-term climate patterns start to change. \", \"event : Carbon dioxide from the burning fossil fuels enter the atmosphere.\", \"entity : fossil fuels\" ",
+            "output": [
+                " not exist "
+            ]
+        },
+        {
+            "id": "task1568-763811c4738649c9acb2b9d2376f0ac4",
+            "input": " \"process paragraph : : A liquid is heated from an external source. The heat causes the molecules in the liquid to increase in energy. As the molecules absorb more energy, they start to move faster. As the molecules are moving faster they are increasing in temperature. When the molecules reach a certain temperature, the boiling point, they change from liquid to gas state. As the liquid molecules go into a gaseous state, they float out into the atmosphere. When all the liquid has turned to gas, it has evaporated completely, leaving no liquid behind. \", \"event : The heat causes the molecules in the liquid to increase in energy.\", \"entity : liquid\" ",
+            "output": [
+                " unknown location "
+            ]
+        },
+        {
+            "id": "task1568-bea9f1563d18457eba8ee91a1e2d9c2d",
+            "input": " \"process paragraph : : EGG. ITS LAID ON A LEAF OR PLANT. THE EGG HATCHES. THE LARVA COMES OUT(CATERPILLAR). IT BEGINS TO EAT ON THE LEAF THAT IS WAS BORN ON. CONTINUES TO EAT TO GROW QUICKLY. AFTER ITS GROWN TO FULL LENGHT IT FORMS INTO A PUPA. UNDERGOES METAMORPHOSIS TO BECOME BUTTERFLY. AFTER HE BUTTERFLY IS FOMED IT PUMPS BLOOD INTO ITS WINGS TO GAIN STRENGHT TO BE ABLE TO FLY. TH EBUTTERLFY IS FIANLLY ABLE TO FLY AWAY. \", \"event : ITS LAID ON A LEAF OR PLANT.\", \"entity : egg\" ",
+            "output": [
+                " known location "
+            ]
+        },
+        {
+            "id": "task1568-e20410c994134178b76f07e76b27dd69",
+            "input": " \"process paragraph : : Wind or water breaks small pieces off of a rock. The wind or water deposits tiny rocks. The rocks become known as sediment. The layers of sediment are pressed together by other layers of sediment on top. Minerals from the rocks in the sediment dissolve. Minerals glue the sediment together into a single rock. \", \"event : The wind or water deposits tiny rocks.\", \"entity : rock\" ",
+            "output": [
+                " unknown location "
+            ]
+        },
+        {
+            "id": "task1568-d10cb4a0b7a0410a93b65e4bccd3c211",
+            "input": " \"process paragraph : : Rock begins as magma from a volcano. The magma cools. Crystals form and the magma become igneous rocks. The igneous rocks break down into sediment. Become sedimentary rocks. If subjected to heat and/or pressure from plate-tectonic activity the sedimentary rocks become metamorphic rock. The metamorphic rocks melt. Become magma again. \", \"event : The magma cools.\", \"entity : magma\" ",
+            "output": [
+                " unknown location "
+            ]
+        },
+        {
+            "id": "task1568-d7776478c7484b31a0e39eef4b51cf8d",
+            "input": " \"process paragraph : : You eat food. Your stomach digests the food. Sugars from food enter your bloodstream. Insulin helps turn sugars into energy. Insulin helps your body store the energy in fat, muscle and liver cells. \", \"event : Your stomach digests the food.\", \"entity : Food\" ",
+            "output": [
+                " not exist "
+            ]
+        }
+    ],
+    "Instance License": [
+        "Apache 2.0"
+    ]
+}

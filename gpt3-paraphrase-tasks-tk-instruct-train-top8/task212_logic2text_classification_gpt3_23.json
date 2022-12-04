@@ -1,0 +1,123 @@
+{
+    "Contributors": [
+        "Mihir Parmar"
+    ],
+    "Source": [
+        "logic2text"
+    ],
+    "URL": [
+        "https://github.com/czyssrs/Logic2Text"
+    ],
+    "Categories": [
+        "Text to Code"
+    ],
+    "Reasoning": [
+        "Logical Reasoning"
+    ],
+    "Definition": [
+        "In this task, you are given commands (in terms of logical operations) to select relevant rows from the given table. Your job is to classify the command into one of these seven categories: (1) majority, (2) unique, (3) superlative, (4) count, (5) comparative, (6) aggregation, and (7) ordinal."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Wikipedia",
+        "Logic -> Propositional Logic"
+    ],
+    "Positive Examples": [
+        {
+            "input": "round_eq { sum { all_rows ; casinos } ; 217 }",
+            "output": "aggregation",
+            "explanation": "In this example sum returns the sum of the values in all of the casinos rows. Hence, aggregation is right category."
+        },
+        {
+            "input": "eq { count { filter_eq { all_rows ; island ; hawaii } } ; 2 }",
+            "output": "count",
+            "explanation": "The count command counts the the island is hawaii, hence, the category is count."
+        },
+        {
+            "input": "most_eq { filter_eq { all_rows ; team ; aston martin racing } ; class pos ; dnf }",
+            "output": "majority",
+            "explanation": "Here, most_eq in the command indicates that some majority rows need to be selected, hence, the categpory is majorioty."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "most_greater_eq { all_rows ; us viewers ( million ) ; 1.0 }",
+            "output": "count",
+            "explanation": "The most_greater_eq command indicates that we need to select some majority rows, but label is 'count' which is not right."
+        },
+        {
+            "input": "less { hop { filter_eq { all_rows ; host team ; san diego chargers } ; final score } ; hop { filter_eq { all_rows ; host team ; philadelphia eagles } ; final score } }",
+            "output": "ordinal",
+            "explanation": "The less command indicates the comparision between rows, hence, 'comparative' category is right, but the label is 'ordinal' which is wrong."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task212-03c99f19029f4f009fd18f39d45b9694",
+            "input": "eq { hop { argmin { all_rows ; thurs 4 june } ; rider } ; cameron donald 1000cc suzuki }",
+            "output": [
+                "superlative"
+            ]
+        },
+        {
+            "id": "task212-d9638d9c23ba44679e713db511f0996c",
+            "input": "eq { count { filter_eq { filter_eq { all_rows ; party ; cd & v } ; name ; yves leterme } } ; 2 }",
+            "output": [
+                "count"
+            ]
+        },
+        {
+            "id": "task212-f027d11e0c714069ae759f21471849b7",
+            "input": "eq { count { filter_greater { all_rows ; position ; 0 } } ; 6 }",
+            "output": [
+                "count"
+            ]
+        },
+        {
+            "id": "task212-ddb389e0270f4edd914b026ba508d032",
+            "input": "eq { hop { argmax { all_rows ; first season } ; club } ; godoy cruz }",
+            "output": [
+                "superlative"
+            ]
+        },
+        {
+            "id": "task212-e728a7f1a98146aa8bd7dc00ff8dc044",
+            "input": "eq { hop { nth_argmax { all_rows ; time ; 2 } ; country } ; slovenia }",
+            "output": [
+                "ordinal"
+            ]
+        },
+        {
+            "id": "task212-df0dc4cf25974262bcb20996c25b352f",
+            "input": "less { hop { filter_eq { all_rows ; opponent ; guido carlo } ; round } ; hop { filter_eq { all_rows ; opponent ; sebastien gauthier } ; round } }",
+            "output": [
+                "comparative"
+            ]
+        },
+        {
+            "id": "task212-5af7249a5dd34680b3867e19067954b5",
+            "input": "eq { hop { nth_argmax { filter_eq { all_rows ; builder ; g & swr kilmarnock } ; no built ; 3 } ; class } ; 153 }",
+            "output": [
+                "ordinal"
+            ]
+        },
+        {
+            "id": "task212-37b78d4c7f8746748859bfc90f59f58d",
+            "input": "and { eq { nth_min { all_rows ; round ; 2 } ; 2 } ; eq { hop { nth_argmin { all_rows ; round ; 2 } ; player } ; joe hernandez } }",
+            "output": [
+                "ordinal"
+            ]
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

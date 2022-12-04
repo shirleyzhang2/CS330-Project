@@ -1,0 +1,127 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "atomic"
+    ],
+    "URL": [
+        "https://allenai.org/data/atomic-2020"
+    ],
+    "Categories": [
+        "Commonsense Classification"
+    ],
+    "Reasoning": [
+        "Relational Reasoning",
+        "Reasoning on Social Interactions",
+        "Commonsense Reasoning -> Social Situations",
+        "Reasoning on Objects"
+    ],
+    "Definition": [
+        "In this task, you are given two phrases, Head and Tail, separated by <sep>. The Head and Tail events are short phrases involving participants. The names of specific people have been replaced by generic words. PersonX is always the subject of the event. You have to determine whether the Head is a part, portion, or makeup of the Tail or not, and classify your answers into \"Yes\" or \"No\". The phrase may also contain \"___\", a placeholder that can be an object, a person, and/or an action."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Sociology",
+        "Commonsense -> Concepts and Relations -> Physical Commonsense",
+        "Commonsense -> Concepts and Relations -> Social Commonsense"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Head: bed<sep>Tail: mattress",
+            "output": "Yes",
+            "explanation": "This is a good example. The Head is made of the Tail."
+        },
+        {
+            "input": "Head: PersonX asks ___ to go with PersonY<sep>Tail: follows the other person",
+            "output": "No",
+            "explanation": "In this example, The relation between the Head and the Tail is different, and the Head is not made up of the Tail. So the output should be\"No\"."
+        },
+        {
+            "input": "Head: government<sep>Tail: police",
+            "output": "Yes",
+            "explanation": "In this example, the government is made of the police. Thus, this example should be classified as \"Yes\"."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Head: PersonX acts weird<sep>Tail: attention",
+            "output": "Yes",
+            "explanation": "In this example, The Head needs the Tail, and it is not made up of the Tail. So the output should be \"No\"."
+        },
+        {
+            "input": "Head: war<sep>Tail: aggression",
+            "output": "No",
+            "explanation": "The war is made up of aggression, and the output should be \"Yes\"."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1210-e28760f129074adcac91d1dd0535b9f5",
+            "input": "Head: garment<sep>Tail: neck",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1210-2abfc47c1c0d4ca9879b12221f87f813",
+            "input": "Head: football team<sep>Tail: football player",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1210-b7b1eba236a8448289c4c69cea95f6a5",
+            "input": "Head: recreation<sep>Tail: relaxation",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1210-7ee71107575f416bb7f72677d98bf168",
+            "input": "Head: PersonX applies sunscreen<sep>Tail: responsible",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1210-9d94385ba1e94c7e87972fe91fbd604c",
+            "input": "Head: PersonX agrees to the challenge<sep>Tail: to consider the challenge",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1210-18a5ba3af7124ea6a2926ea312f310f4",
+            "input": "Head: PersonX accepts PersonY's invitation<sep>Tail: forgets about it",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1210-5449ba17654d40aea4aa6fe0975b436a",
+            "input": "Head: ship<sep>Tail: winch",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1210-3ac99c6a1647471ab4c130714a35f135",
+            "input": "Head: PersonX affects every ___<sep>Tail: people react to PersonX",
+            "output": [
+                "No"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

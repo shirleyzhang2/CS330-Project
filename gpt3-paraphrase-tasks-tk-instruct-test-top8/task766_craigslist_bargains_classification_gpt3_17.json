@@ -1,0 +1,117 @@
+{
+    "Contributors": [
+        "Ritvik Gaur"
+    ],
+    "Source": [
+        "craigslist_bargains"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/craigslist_bargains"
+    ],
+    "Categories": [
+        "Dialogue State Tracking"
+    ],
+    "Reasoning": [
+        "Reasoning on Social Interactions"
+    ],
+    "Definition": [
+        "Given a text passage consisting of dialogues of negotiations between a seller and a buyer about the sale of an item, the task is to classify the text into one of two possible outputs: 'accepted'/'rejected'. Select 'accepted' if, by the end of the conversation, the buyer seems likely to buy the item from the seller. A sale is likely made when the buyer and seller agree upon a common price or when a deal is made between them. Select 'rejected' if the buyer did not seem interested in buying the item from the seller at the end of the conversation. This happens when the buyer and seller do not agree on the price or other aspects of the item being sold by the seller."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Buyer: Hi,I am interested in your board!\nSeller: Hi, do you have any questions?\nBuyer: Do you know what wood it is made out of?\nSeller: I do not know specifically but the brand is a gravity skateboard. \nBuyer: The wheels seem nice on it, but they could be a beter quality. Would you accept 100 for the board?\nSeller: No, that offer is too low. The board is pretty much brand new as it's been ridden only 4 or 5 times.  The bone bearings are brand new.\nBuyer: If I picked it up at your location would you accpet 120?\nSeller: Make it 150 and we got a deal. \nBuyer: I could do 145, if you can gurantee the painting on the front of the board is not scratched up. \nSeller: Deal\nBuyer: Great!",
+            "output": "accepted",
+            "explanation": "The answer 'accepted' is the correct answer because here the buyer and seller agree on a price and make a deal at the end of the conversation."
+        },
+        {
+            "input": "Buyer: I am interested in the Benz. How much for it?\nSeller: I am asking $26800. \nBuyer: How many miles on it?\nSeller: Only 16,473.\nBuyer: Has it had any major repairs?\nSeller: No, it has been accident free and in great condition.\nBuyer: Why are you selling it?\nSeller: starting to expand our family, time for an suv and baby seat.\nBuyer: I can give you 17000. That will buy a lot of diapers.\nSeller: I need the SUV. That is just way too low for me. Sorry you need to come way up.\nBuyer: I can do 20,000 if you throw in a 3 year warranty to cover any repairs that might naturally arise\nSeller: There is a warranty in place, so that is not a problem. But I need a minimum of 25000\nBuyer: How long is the warranty?\nSeller: Ten more years.\nBuyer: 22500 and you got a deal\nSeller: nO SORRY i am firm on the 25,000 being my lowest offer.\nBuyer: Can't do it.",
+            "output": "rejected",
+            "explanation": "The answer 'rejected' is correct because at the end of the conversation the buyer and seller do not agree to a common price. Since the buyer was asking for a price of 22500 and the seller was not accepting offers below 25000, the buyer did not decide to buy the item from the seller."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Buyer: i want to live in your house but i cant pay 1000k\nSeller: It really is a nice home.\nBuyer: i agree i lvoe the area , how old is the home\nSeller: I am not positive. It looks nice I can't tell sorry.\nBuyer: will you do 500 ? i need to buy new beds and furtinure\nSeller: I can't do half. I am sorry. It has a garage and a fenced in yard if you have kids.\nBuyer: i can do 600 if you waive the deposit\nSeller: Honestly I think the lowest I can do is $800 with the deposit. I am sorry. That is what they go for in this neighborhood. \nBuyer: ok i can do 750 lowest and fits my bussdet\nSeller: Ok I think we can make a deal.\nBuyer: deal\n",
+            "output": "rejected",
+            "explanation": "This is the wrong answer and the correct answer is 'accepted' because here the buyer and seller agree on the same price and make a deal at the end, which indicates that the buyer decided to buy the item from the seller."
+        },
+        {
+            "input": "Buyer: I think this is a fair price\nSeller: Why is there an offer there already?\nBuyer: This is within the area comps and reasonable for this size of home.\nSeller: I can't accept that low. That is $1000 less then asking price.\nBuyer: My final offer would be 1850.00\nSeller: I really don't think I could go that low.\nBuyer: What is your bottom line?\nSeller: For a 4 Bedroom, 2 1/2 bath with a 2 car garage in California. it has a tennis court a children play structure.I think the best I could is $2000.\nBuyer: I don't see anything in the listing about a tennis court or a child's play structure. I am not willing to go over $1850 and will assume all maintenance issues with this rental.\nSeller: You can't make another offer anyway. I can't erase your original offer. I am going to have to reject.\nBuyer: ok\n",
+            "output": "yes",
+            "explanation": "This answer 'yes' is incorrect here because it is not among the only two options 'accepted' or 'rejected' from which the answer is to be chosen. The correct answer is 'rejected' because the buyer and the seller are not able to agree upon the same price as seen in the conversation where the buyer is offering 1850 but the seller will not sell for under 2000 and so the seller rejects the buyer's offer. This indicates that the buyer does not end up buying the item from the seller."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task766-0de3570276ae4e73aae003d2ca116ea6",
+            "output": [
+                "rejected"
+            ],
+            "input": "Seller: hello\nBuyer: hi\nSeller: this is a great place. tons of amenities, and a really great neighborhood. super lawn and near some cool parks i'm looking for $3,100 and its yours\nSeller: have you had time to think about my offer of $3100? this place is great\nBuyer: i will offer you 1500\nSeller: that is way too low. please make a more reasonable offer\nBuyer: how about 1750\nSeller: i can't go much lower than 3000. that would be way below market for a place like this\nBuyer: what if i agree to pay for utilities\nSeller: if you pick up the utilities, I could go to $2900\nBuyer: that's still too high for me. what if I agree to furnish the place myself?\nSeller: i'm afraid I absolutely can not go any lower than 2850\nBuyer: my budget is 1500, but i'd be willing to go 2250 max\nSeller: that's just too low. i can't accept that\nBuyer: how about we meet in the middle, 2500? that's my final offer\nSeller: no thank you, you will just have to find another place\nBuyer: alright, thanks anyways, have a good day\nBuyer: \n"
+        },
+        {
+            "id": "task766-5145b6facdf04a66b66bc3d7ac171eb2",
+            "output": [
+                "accepted"
+            ],
+            "input": "Buyer: I saw the rug you had for sale, could you tell me a little more about it?\nSeller: Yes it is less than a month old, my husband bought it for 1200 and I hate the color.  It is persian and hand woven.  There is nothing at all wrong with it I just want to get a new one with a color I like better\nBuyer: It lays nice and flat, no curling edges at all, correct?\nSeller: Perfectly flat it looks just like the day I brought it home\nBuyer: Well I have to admit, it is beautiful and just what I am looking for, but I am a little strapped for cash at the moment. I would like to offer you $400 for it. That is cash in hand and can pick it up today.\nSeller: I can't go quite that low as I said I need the money for a new rug and the new one is actually $500 so I could go that low.  Keep in mind that is still 700 less than my husband paid a month ago.\nBuyer: Well, that does sound fair and it is what I am looking for, and a considerably lower price than I would normally pay, so $500 sounds good to me.\nBuyer: \nSeller: great thank you\nSeller: \n"
+        },
+        {
+            "id": "task766-17cbef08e5114e2cac9ec110c22d2170",
+            "output": [
+                "accepted"
+            ],
+            "input": "Buyer: I like your style of bike. Can you tell me about it?\nSeller: yes! Its a great bike these ultegra bikes are made to last. Bike ride strong and i have a few extra's water bottle holders and another set of tires. Rides like new but I did fall on it once and scratched the crank arm a bit but didnt damage bike functions\nBuyer: Does $1680 sound good to you?\nSeller: Its a bit low for me, these things retail for close to 3000. The lowest i could go would be 1850\nBuyer: Are the tires new?\nSeller: the tires on it no,but i will include he maxxis detonator tires and they are new\nBuyer: Ok sounds like a deal then. Thank you\nBuyer: \nSeller: \n"
+        },
+        {
+            "id": "task766-b19ffc44eb964d59bdc62a0ea2bfefb6",
+            "output": [
+                "accepted"
+            ],
+            "input": "Buyer: HI is this item still available?\nSeller: Yes, and it gently used condition. It's leather so no stains. \nBuyer: Has it been around any pets, my son has allergies?\nSeller: Smoke free pet free. It's full size so I'm willing to help move if you can meet my price. \nBuyer: How long have you owed it?\nSeller: 2 years, in the formal living area so not sat on daily. \nBuyer: I don't have much the next couple weeks due to medical bills any way you would accept $175 please\nSeller: It's in great condition. If you can do 250 I can still help move and you save gas money. \nSeller: \nBuyer: Ok thanks sounds good\nBuyer: \n"
+        },
+        {
+            "id": "task766-7d2046e266d448bf9fcd6686f7025b39",
+            "output": [
+                "rejected"
+            ],
+            "input": "Buyer: Hi there\nSeller: This is an awesome bike, would you like to make an offer\nBuyer: I am interested but am on a limited budget..\nSeller: This is a really high end bike, so keep that in mind, I already have the bike listed far below actual value\nBuyer: How old is this bike?\nSeller: I just bought it last year, but I broke my hip a few weeks ago and doctor said I'd never be able to ride it again\nBuyer: woudl you be willing to take 360\nSeller: No, I need the money to pay my medical bills. Thanks Obama\nBuyer: The max I can do is $400.\nSeller: I'm sorry, I can't go that low. The bmc compact road bars are worth that by themselves.\nBuyer: what is yoru lowest price?\nSeller: I can go down to $575, but that is my bottom dollar\nBuyer: sorry that is just too much for my range.\nBuyer: \n"
+        },
+        {
+            "id": "task766-5ec0dc7b28aa4f97911e765e9a45def6",
+            "output": [
+                "rejected"
+            ],
+            "input": "Buyer: Hey there, nice bike you have here. How long have you had it?\nSeller: A few weeks.  Rode it for 40miles only.  I'm just too big for it :/\nBuyer: Ahhh, thank goodness I'm tall and lanky then. My budget is limited but I promise I'll take good care of the bike.\nSeller: I put a lot of work into it. So I'm glad to hear. What amount you have in mind?\nBuyer: Closer to 1000. My budget is 750 so I'm trying to make you a reasonable offer.\nSeller: Oh no way man.  Only 40miles.  If I don't get 1500 I lose on this deal. \nBuyer: Well that's fine, that's just unreasonable; I can't offer list price, sorry.\nSeller: 1500 is below list. Just saying. \nBuyer: \n"
+        },
+        {
+            "id": "task766-06f29f1c46d641e0aa490684581e0c35",
+            "output": [
+                "accepted"
+            ],
+            "input": "Seller: Hi there\nBuyer: Hi is this item still available\nSeller: It is, I have a twin bed with mattress set that is in good condition.\nBuyer: How old is the matress sets\nSeller: Less than six months old, and they are from a pet free home as well.\nBuyer: Oh ok why did you decide to sell them after only 6 months\nSeller: I am moving, and do not have enough room to take them to the new home.\nBuyer: If I can come today would you be willing to accept $67 for them, that would get them out of your way for your move.\nSeller: That would be acceptable, as I have been so busy with the move. Can you come by 5pm?\nBuyer: Yes I can come immediately if you are available, I will send my husband with his truck\nSeller: Great, I will see you soon.\nSeller: \nBuyer: See ya thanks\nBuyer: \n"
+        },
+        {
+            "id": "task766-895bfda35f2b4835b85c5aa9572fa55f",
+            "output": [
+                "rejected"
+            ],
+            "input": "Buyer: I'd be happy to take this off your hands for $2000.\nSeller: That can't be a serious offer. This is a modified blackbird and you're not going to find one like this for less than 3500\nBuyer: $2200 then, it's is good, but there are other similar offers. I can pick it up from you and everything and save you the trip and worry.\nSeller: That price is ridiculous. I can go to 3400 serious offers only please\nBuyer: You are only dropping it $50, that's not helping me out at all. $2400, but that's all I can do.\nSeller: You are starting from such a low point that I don't know if I can help you at all. I'll work with you more if you make a serious offer.\nBuyer: Well then, tell me more about it. Make it worth more to me.\nSeller: \n"
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

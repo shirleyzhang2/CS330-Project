@@ -1,0 +1,115 @@
+{
+    "Contributors": [
+        "Pruthvi Patel"
+    ],
+    "Source": [
+        "hatexplain"
+    ],
+    "URL": [
+        "https://github.com/hate-alert/HateXplain"
+    ],
+    "Categories": [
+        "Toxic Language Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "The input is a tweet which can be classified as Hate Speech, Offensive, or Normal. Hate Speech and Offensive tweets target one specific community. Given such a tweet, your task is to output the community targeted in the tweet. The community can be one of the nine values: 'African', 'Islam', 'Jewish', 'Women', 'Refugee', 'Arab', 'Caucasian', 'Hispanic', or 'Asian'. Output 'None' if the tweet does not target any community. A tweet can only target one community."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Social Media -> Twitter"
+    ],
+    "Positive Examples": [
+        {
+            "input": "caucasians wearing masks to prevent coronavirus and still don \u2019 t wash their hands",
+            "output": "Caucasian",
+            "explanation": "The tweet generalizes an attribute to the entire community, Caucasian, which makes it offensive."
+        },
+        {
+            "input": "lesson of the week from the holy book the sovereign individual once commerce flows over the internet suppression of speech becomes unstoppable devolution inevitable and the monopoly of violence by governments will end paraphrased from j d davidson rhys mogg",
+            "output": "None",
+            "explanation": "The tweet does not target any specific community hence the correct answer is None"
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "<user> <user> there shd be a film called no hindus in kashmir wud be perfect islamic fanaticsm movement in kashmir",
+            "output": "Hindu",
+            "explanation": "Every input tweet will target one or more of the nine communities provided or will not target any community. Further the tweet targets Muslim community. Hence Hindu is not the correct value. The correct value is Islam."
+        },
+        {
+            "input": "ffs everthing is offensive to muslimes",
+            "output": "None",
+            "explanation": "This tweet is offensive to Muslim community. Hence the correct answer is Islam instead of None."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1503-c25e1cb46c4a44d5b168a726090b43b3",
+            "input": "we inherited this mess from the boomers it our responsibility to make sure gen z inherits a better scenario we need to reverse this globalist coordinated trend of white displacement in the west it our obligation",
+            "output": [
+                "None"
+            ]
+        },
+        {
+            "id": "task1503-6d2d1b3baebf40c5a8ff0af70f3d5c2a",
+            "input": "gosh yall the trauma \ud83d\ude2d \ud83d\ude2d i hate u white bitches yeah spring view middle school im talking to you",
+            "output": [
+                "Caucasian"
+            ]
+        },
+        {
+            "id": "task1503-0ac5831ddee64681a71d43711fe0b012",
+            "input": "more proof that immigrants have rights invaders have rights criminals have rights and citizens do not have rights and all this is paid for with citizen tax dollars",
+            "output": [
+                "Refugee"
+            ]
+        },
+        {
+            "id": "task1503-9a4abc66cd3e4a459364a0c6e678b57d",
+            "input": "take our values and shove them up your hairy shitty ass sand nigger scum",
+            "output": [
+                "Arab"
+            ]
+        },
+        {
+            "id": "task1503-d78d54c8c3f34c1aa5d78d855031a50b",
+            "input": "how pissed are you if you are japanese chinese korean ya know real asians and now the goat fuckers are called asian too to avoid calling them arabs",
+            "output": [
+                "Asian"
+            ]
+        },
+        {
+            "id": "task1503-771c99944a6f4ce886bbb308d8e6b767",
+            "input": "withoutwomenmenwould men would actually be able to be functioning human beings without being accused of misogyny by a feminazi",
+            "output": [
+                "Women"
+            ]
+        },
+        {
+            "id": "task1503-165c9d822a174f0fada5b5791e7c621b",
+            "input": "<user> yeah while i do not agree with horrible acts of violence angela is taking revenge as a queer person on these horrible bullies especially the pedo carelessly there for shock sure but also early 8 0 was much different rape and revenge movies were still look at as empowering",
+            "output": [
+                "None"
+            ]
+        },
+        {
+            "id": "task1503-2235660be88f47f5acb7f491d86de096",
+            "input": "go live with your beloved niggers should be the only response to this kind of shit from now on oh u hate white ppl do u live in a shitty ghetto with blacks y not",
+            "output": [
+                "African"
+            ]
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

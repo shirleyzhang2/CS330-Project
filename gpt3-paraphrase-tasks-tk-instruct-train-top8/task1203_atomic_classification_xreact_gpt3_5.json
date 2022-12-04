@@ -1,0 +1,125 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "atomic"
+    ],
+    "URL": [
+        "https://allenai.org/data/atomic-2020"
+    ],
+    "Categories": [
+        "Commonsense Classification"
+    ],
+    "Reasoning": [
+        "Relational Reasoning",
+        "Reasoning on Social Interactions",
+        "Commonsense Reasoning -> Social Situations"
+    ],
+    "Definition": [
+        "Given two phrases, Head and Tail, separated by <sep>, where Head and Tail are events involving participants, and given that PersonX is always the subject of the event, you have to determine whether, as a result of the Head, PersonX may feel what is mentioned in the Tail. You will classify your answers into \"Yes\" and \"No\". The phrase may also contain \"___\", a placeholder that can be an object, a person, and/or an action."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Sociology",
+        "Commonsense -> Concepts and Relations -> Social Commonsense"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Head: PersonX arrives home<sep>Tail: satisfied",
+            "output": "Yes",
+            "explanation": "This is a good example. As a result of the Head, PersonX will feels satisfied."
+        },
+        {
+            "input": "Head: PersonX becomes distracted<sep>Tail: They would suffer injuries too.",
+            "output": "No",
+            "explanation": "In this example, if PersonX becomes distracted, PersonX won't feel what is mentioned in the Tail. So this output is correct."
+        },
+        {
+            "input": "Head: PersonX finds PersonY's wallet<sep>Tail: glad to help someone get something back.",
+            "output": "Yes",
+            "explanation": "If PersonX finds PersonY's wallet, personX will be glad to help someone get something back. Thus, this example should be classified as \"Yes\"."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Head: PersonX accepts ___ in exchange<sep>Tail: to want to compromise",
+            "output": "Yes",
+            "explanation": "If PersonX accepts something in exchange, PersonX will not feel what is mentioned in the Tail. So the output should be \"No\"."
+        },
+        {
+            "input": "Head: PersonX projects PersonY image<sep>Tail: happy",
+            "output": "No",
+            "explanation": "If PersonX projects PersonY image, as a result, PersonX may feel happy, and the output should be \"Yes\"."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1203-3a03534186b046969097fa4295b8628b",
+            "input": "Head: PersonX asks PersonY's boyfriend<sep>Tail: to thank him",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1203-8cd234b690b04ad59906883b401f3799",
+            "input": "Head: PersonX feels worse<sep>Tail: sad",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1203-1b9aa2773ec741f58d43931d4dd76f61",
+            "input": "Head: PersonX jumps for joy<sep>Tail: happy",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1203-01fb136276ce4163a464995c19180613",
+            "input": "Head: PersonX answers PersonY question<sep>Tail: helpful",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1203-b83f995f26bf4327acb8077ef9001920",
+            "input": "Head: PersonX brings the kids<sep>Tail: confident",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1203-e7e82b0a845d4c37a560693a31a1be9f",
+            "input": "Head: PersonX knocks on wood<sep>Tail: superstitious",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1203-cda6202d9f6a467b941d281d35bba862",
+            "input": "Head: PersonX is getting old<sep>Tail: elderly",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1203-8d5c58a793ca440d9c1cbdccf4ef3725",
+            "input": "Head: PersonX holds in PersonY hand<sep>Tail: happy",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

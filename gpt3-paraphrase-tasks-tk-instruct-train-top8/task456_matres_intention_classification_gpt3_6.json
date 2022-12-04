@@ -1,0 +1,120 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "matres"
+    ],
+    "URL": [
+        "https://github.com/CogComp/MATRES"
+    ],
+    "Categories": [
+        "Information Extraction"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You will be given a context and a verb, separated by a newline character. You have to identify if the given verb implies an opinion, an intention, or a wish. A verb refers to an intention only if it refers to an event planned to happen in the future and is not conditional (or part of a condition). Output 'Yes' if the verb refers to an opinion, an intention, or a wish. Output 'No' if the verb does not refer to an opinion, intention, or wish."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "News"
+    ],
+    "Positive Examples": [
+        {
+            "input": "It was followed by Denmark, Norway, Germany, France, Greece, Luxembourg, Spain, Britain, the United States, Iceland, Belgium, Italy, Portugal and Turkey. NATO decided at last year's Madrid summit to (invite) the three eastern European countries to start accession talks.  \n Verb: invite",
+            "output": "Yes",
+            "explanation": "They planned to \"invite\" the three eastern European countries, so this verb refers to an intention."
+        },
+        {
+            "input": "In Washington today, the Federal Aviation Administration (released) air traffic control tapes from the night the TWA Flight eight hundred went down.  \n Verb: released",
+            "output": "No",
+            "explanation": "In this sentence, the releasing event happened in the past, and hence it's not an intention."
+        },
+        {
+            "input": "We will act again if we have evidence he is (rebuilding) his weapons of mass destruction capabilities, senior officials say. In a bit of television diplomacy, Iraq\u2019s deputy foreign minister responded from Baghdad in less than one hour.  \n Verb: rebuilding",
+            "output": "No",
+            "explanation": "In this sentence, the verb is part of of a condition. Therefore, it cannot be known for sure if he is already rebuilding weapons but we have no evidence, or if he will be building weapons in the future, and hence it's not an intention."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "The Justice Department wants the appeals court to suspend the temporary injunction issued Thursday and also order Elian's great-uncle, Lazaro Gonzalez, to release the boy. The relatives want the court to let them meet with Elian's father without being (required) to surrender the boy.  \n Verb: required",
+            "output": "Yes",
+            "explanation": "In this sentence, required is not an intention, wish, or opinion, as it is part of a condition."
+        },
+        {
+            "input": "The federal charge also carries a fine of up to $250,000. The newly filed charges will (intensify) the ongoing international manhunt, Tolbert said.  \n Verb: intensify",
+            "output": "No",
+            "explanation": "In this sentence, \"intensify\" is planned to happen in the future, and it is an opinion or intention."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task456-bb5d66e20e5546ebbebcd9dca6ffa439",
+            "input": "It strongly condemns the  terrorist bomb attacks.  And it stresses that every nation  has the duty to refrain from organizing, (instigating), assisting or participating in terrorist acts in another state.   \n Verb: instigating",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task456-e2fe463e1dec4bfaae5acf841e7257cb",
+            "input": "And as with the oil companies, the power companies exert an outsize influence over environmental policy debates. In 2011, during a round of discussions over stricter emissions standards, the China Electricity Council, which represents the companies, pushed back hard against the proposals, saying that the costs of (upgrading) the plants would be too high.  \n Verb: upgrading",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task456-40e1d2c78e5c41f2a4db8e429a5f2928",
+            "input": "There was growing apprehension outside the Little Havana home where the boy has lived with his great-uncle for nearly five months.  The feeling is the Clinton administration might send federal agents to pull him out of here,  (said) Sergio Navarro, a 39-year-old Miami businessman who spent part of Sunday night with chanting protesters.  \n Verb: said",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task456-69c15fd6f800440ea21b411bb3d5071d",
+            "input": "Still unresolved is Sony's effort to hire producers Jon Peters and Peter Guber to run the studio. Sony's planned acquisition of Guber / Peters Entertainment Co. for $200 million is scheduled to (close) Monday.  \n Verb: close",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task456-b35abde52d7d4592856e7cc4460c39bf",
+            "input": "They immediately appealed to the 11th Circuit Court of Appeals in Atlanta. Legal experts and federal officials maintain that Reno can (allow) the boy to be sent back to Cuba before the appeal is heard.  \n Verb: allow",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task456-5ffa575ebd944ceeb2b2a4dc9d4b56af",
+            "input": "His mother and 10 other people fleeing Cuba drowned when their boat sank. The Clinton administration has pushed for the boy's return to his father, ruling only he can (speak) for his son on immigration matters.  \n Verb: speak",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task456-44159c22fd3b4900ae33aa49a50e2708",
+            "input": "The Cuban leader first raised those worries during another live television appearance Sunday night during a speech to about 700 Cuban university students. But it was not until Tuesday that Castro revealed that those concerns had been (shared) directly with the U.S. government.  \n Verb: shared",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task456-6e31e2c0b149411198a391691c467798",
+            "input": "The INS offered three options : that Gonzalez come to pick up his son, that the family in Miami take him to Cuba, or that a  third party  escort the child to his homeland. Gonzalez _ perhaps under duress from the Castro regime _ has indicated he does not want to travel to Miami, and there is  no way  the Miami Gonzalezes will assist in (sending) Elian back to Cuba, Perez said.  \n Verb: sending",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

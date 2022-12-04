@@ -1,0 +1,116 @@
+{
+    "Contributors": [
+        "Divya Reddy Katpally"
+    ],
+    "Source": [
+        "dbpedia_14"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/dbpedia_14"
+    ],
+    "Categories": [
+        "Text Matching"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "In this task, you're given the body of a document and a title for the document. The title might have some text in parentheses, for example: \"HMS Mallow (K81)\", or be slightly different from what is present in the text. If they still refer to the same entity, then it is a correct title. Indicate your answer as \"Yes\" if the title is correct, otherwise indicate your answer as \"No\"."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Wikipedia"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Text: The Mansfield Building Society is a UK building society which has its headquarters in Mansfield Nottinghamshire. It is a member of the Building Societies Association. \nTitle: Mansfield Building Society",
+            "output": "Yes",
+            "explanation": "The title \"Mansfield Building Society\" is present in the text and it is the main entity that is referred in the text. Hence, it is the title of the document."
+        },
+        {
+            "input": "Text:  The third and current HMS Argyll is a Type 23 'Duke' Class frigate. She is currently the oldest serving Type 23 frigate in the Royal Navy. Like all of her class she is named for a British dukedom in this case that of Argyll. \nTitle: HMS Argyll (F231)",
+            "output": "Yes",
+            "explanation": "\"HMS Argyll\" is present in the text and it is the main entity that is referred in the text. Here, the text in parentheses \"F31\" is not present in the document and it can be ignored. Hence, the output is correct. "
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Text: The Mansfield Building Society is a UK building society which has its headquarters in Mansfield Nottinghamshire. It is a member of the Building Societies Association. \nTitle: Mansfield Building Society",
+            "output": "No",
+            "explanation": "The title \"Mansfield Building Society\" is present in the text and it is the main entity that is referred in the text. Hence, the output is incorrect."
+        },
+        {
+            "input": "Text:  The third and current HMS Argyll is a Type 23 'Duke' Class frigate. She is currently the oldest serving Type 23 frigate in the Royal Navy. Like all of her class she is named for a British dukedom in this case that of Argyll. \nTitle: HMS Argyll (F231)",
+            "output": "HMS Argyll",
+            "explanation": "The output should be either \"Yes\" or \"No\". Hence, it is negative example."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task630-5ef3b9b88286458fa2b538fcb3969fa2",
+            "input": "Text:  Road Agent is a 1952 Western film. \nTitle: Interplanetary Hunter",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task630-f20516978b604445b0741084c1e530f5",
+            "input": "Text:  Thomas Darcy 1st Baron Darcy of Chiche KG (4 December 1506 \u2013 28 June 1558) was an English courtier during the reign of Edward VI. He served as Vice-Chamberlain of the Household and Captain of the Yeomen of the Guard between 1550 and 1551 before his appointment as Lord Chamberlain of the Household. He was placed under house arrest for his support of Lady Jane Grey as Edward's successor. \nTitle: Thomas Darcy 1st Baron Darcy of Chiche",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task630-ff64df8fd83245d6940561fcc06826f8",
+            "input": "Text:  The Biruin\u021ba River is a tributary of the Black Sea Lake Techirghiol in Romania. \nTitle: Biruin\u021ba River",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task630-9d4f5dabb07d43a1b45aba6b0c0292ba",
+            "input": "Text:  The Kalyani Group is a privately held industrial group in India. It is focused in four primary sectors viz. Engineering Steel Automotive & Non-Automotive Components Renewable Energy & Infrastructure and Specialty Chemicals.The group's annual turnover exceeded USD 2.5 billion as of 2011 and has joint ventures with companies such as ArvinMeritor Carpenter Technology Corporation Hayes Lemmerz FAW Corp etc. \nTitle: Kalyani Group",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task630-583a82c5d7e148b0aa31b67114ede5d1",
+            "input": "Text:  Pietro Caucchioli (born 28 August 1975 in Bovolone Veneto) is an Italian professional road racing cyclist. Caucchioli is under suspension since June 2009 following abnormal testing results within the Union Cycliste Internationale's biological passport system.His two stage wins at the 2001 Giro d'Italia and a podium finish (3rd place) at the 2002 Giro are his finest career accomplishments.On 3 June 2010 he was sanctioned by the UCI on the basis of his biological passport. \nTitle: Pietro Caucchioli",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task630-a2d71f6f323b434eab8e88eb65cdcf32",
+            "input": "Text:  Panbeh Dar (Persian: \u067e\u0646\u0628\u0647 \u062f\u0631\u200e; also known as Panbeh Deh) is a village in Gamasiyab Rural District in the Central District of Nahavand County Hamadan Province Iran. At the 2006 census its population was 151 in 33 families. \nTitle: Panbeh Dar",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task630-1fd1986cef6d4244a13fc9bad2f1881d",
+            "input": "Text:  The Technische Universit\u00e4t Berlin known as TU Berlin for short and unofficially as the Technical University of Berlin or Berlin Institute of Technology is a research university located in Berlin Germany and one of the largest and most prestigious research and education institutions in Germany. The university was founded in 1879. It has the highest proportion of foreign students out of universities in Germany with 20.9% in the summer semester of 2007 roughly 5598 students. \nTitle: Gilrock Ranch",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task630-13eb17051f614e728439c7e725ff7aa6",
+            "input": "Text:  The Barguelonne (French: la Barguelonne) is a 61.2 km (38.0 mi) long river in the Lot Tarn-et-Garonne and Lot-et-Garonne d\u00e9partements southwestern France. Its source is near Terry a hamlet in Pern. It flows generally southwest. It is a right tributary of the Garonne into which it flows between Golfech and Lamagist\u00e8re.Its main tributary is the Barguelonnette. \nTitle: Barguelonne",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY-SA",
+        "GNU Free Documentation 2.0"
+    ]
+}

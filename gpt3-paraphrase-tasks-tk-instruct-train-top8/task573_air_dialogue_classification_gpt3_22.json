@@ -1,0 +1,132 @@
+{
+    "Contributors": [
+        "Jayavardhan Karampudi"
+    ],
+    "Source": [
+        "air_dialogue"
+    ],
+    "URL": [
+        "https://github.com/google/airdialogue"
+    ],
+    "Categories": [
+        "Intent Identification"
+    ],
+    "Reasoning": [
+        "Reasoning on Social Interactions"
+    ],
+    "Definition": [
+        "In this task, you are given a conversation between a flight agent and the customer. You are given 4 options and you need to select the goal of the conversation. The goal is provided as part of the customer's context, which can be one of the following: `book`: Make a new reservation, `cancel`: Cancel an existing reservation, `no_flight`: No flight found for the customer's preference, `no_reservation`: No reservation / No change / No cancellation was made in the conversation, mostly enquiring details."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue"
+    ],
+    "Positive Examples": [
+        {
+            "input": "customer: Hi. \n agent: Hello. How can I help you? \n customer: I would like to change my existing reservation as my plan to go for a holiday trip got postponed. Can you please help me with this? \n agent: Sure, may I know your name please? \n customer: My name is Anthony Phillips. \n agent: Please wait a moment. \n customer: Sure. \n agent: Unfortunately there is no reservation found with your given name. \n customer: Not a problem, thank you for checking. \n agent: Thank you for choosing us.",
+            "output": "no_reservation",
+            "explanation": "Here the customer has not asked for any booking, he just wanted to update his already booked flight, so the status would be no_reservation"
+        },
+        {
+            "input": "customer: Hello. \n agent: Hello. How may I aid you? \n customer: I have a conference in New York, can you help me in booking a ticket? \n agent: I will help you with that, can you help me with your airport codes? \n customer: My airport codes are from MCO to EWR. \n agent: May I know your dates of journey? \n customer: My travel dates are 03/27 and 03/29. \n agent: There is a flight with flight number 1007 with price is 200 and number of connection 1, can I proceed booking? \n customer: Yes, please. \n agent: Your booking is done in Hawaiian airlines. \n customer: Thank you for booking. \n agent: May I know your name please? \n customer: I am Helen Lewis. \n agent: Thank you for reaching us.",
+            "output": "book",
+            "explanation": "here the customer specifically asked for a ticket and the agent has found the flight matching his budget and the agent also mentioned that the customer's booking is done"
+        },
+        {
+            "input": "customer: Hello. \n agent: Hello. How may I assist you today? \n customer: I am Matthew Roberts, want to travel from DFW to IAH. Can you please help you? \n agent: Sure, we are here to help to help you in booking. \n customer: Thank you. \n agent: Please let me know your connection limit. \n customer: I need a single connection. \n agent: Kindly share your planned travelling dates to proceed further. \n customer: My travelling dates are from 03/20 to 03/22. \n agent: May I know if you prefer to have any other comforts in your journey? \n customer: Yes, please check for normal cost preference. \n agent: Ok, please wait a moment. \n customer: Sure. \n agent: Sorry to inform you, currently no flights are running at that locations due to abnormal weather conditions. \n customer: That's fine, thank you for searching. \n agent: Thank you for choosing us.",
+            "output": "no_flight",
+            "explanation": "here the customer is not satsfied with the flights mentioned by the agent, so he couldn't book a ticket as the agent mentioned there we no tickets available in the specific dates mentioned"
+        },
+        {
+            "input": "customer: Hi. \n agent: Hello, how may I aid you? \n customer: I would like to cancel my flight reservation as I am unwell. Can you please help me? \n agent: Sure, we are here to help you. \n customer: Thank you. \n agent: May I know on whose name you did the reservation? \n customer: I am Eric Taylor. \n agent: Wait a while, kindly. \n customer: Sure. \n agent: Sorry, there is no reservation found for the user name in our back end to cancel it. \n customer: No problem, thank you for checking. \n agent: Thank you for reaching us.",
+            "output": "no_reservation",
+            "explanation": "Here the customer wanted to cancel the flight ticket, there wasn't any new flight booking"
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "customer: Hello. \n agent: Hello, how may I aid you today? \n customer: I would like to travel from DTW to OAK as a holiday trip. Can you do the reservation? \n agent: Sure, we are rapturous to help you. May I know your price limit please? \n customer: Price should not cross 1000. \n agent: Can you please forward your depart and return dates of the journey? \n customer: My trip dates are 03/23 and 03/25. \n agent: Thank you for sharing your details, please stand by, I will check with the airlines and revert to you. \n customer: Sure. \n agent: Sorry to inform you that, there were no flights found matching your journey dates. \n customer: No problem, Thanks for the information. \n agent: For documentation purpose may I know your name please? \n customer: Eric Perez here. \n agent: Thank you for choosing us.",
+            "output": "book",
+            "explanation": "The customer couldn't find the perfect flight matching his preference, so he couldn't book the ticket the status should be 'no_flight'"
+        },
+        {
+            "input": "customer: Hi. \n agent: Hello, do you need any help from us? \n customer: Due to some entrepreneurship meeting, I am going to change my existing reservation. Can you please help me in changing the reservation? \n agent: Ok, could I have your name please? \n customer: I am Andrew Clark. \n agent: Ok, please allow me a moment. \n customer: Sure. \n agent: Sorry, there is no reservation with your name in our portal to make changes further. \n customer: Ok, no issues. Thanks for the information. \n agent: You are welcome.",
+            "output": "no_flight",
+            "explanation": "there was no mention about the booking of flight or any other details about booking the flight, so no_reservation is the answer"
+        },
+        {
+            "input": "customer: Hello. I'm David Garcia. \n agent: Hello, how may I aid you? \n customer: I am planning to travel from BOS to SFO to attend live concert at San Francisco, can you please help me with booking a flight ticket? \n agent: Sure, may I know your preferable dates please? \n customer: Sure, my departure date is on 04/02 and the return date is on 04/04. \n agent: I find a flight with connection is 1 of cost 100 and airline UA with number 1011. Shall I proceed? \n customer: Yes, please. \n agent: Your ticket has been confirmed. \n customer: Thank you. I appreciate your help. \n agent: My pleasure. Have a nice day.",
+            "output": "no_reservation",
+            "explanation": "Here the agent asked for a booking and has bought the ticket so the answer is 'book'"
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task573-83846326ea804cf3b7555334cd6196cd",
+            "input": "customer: Hello. \n agent: Hello. How can I assist you? \n customer: I am Jennifer Clark. I am planning to visit my cousin's home at Philadelphia. Can you please book a ticket from SFO to PHL? \n agent: Sure, please provide your travel dates. \n customer: I would like to travel on 06/30 and return back on 07/02. \n agent: The flight 1025 of Spirit airlines is available on your requested dates with a price of 100. Shall I proceed? \n customer: Yes, you can proceed the booking. \n agent: Clark, your reservation has done successfully. \n customer: Thank you for your service. \n agent: You are welcome.",
+            "output": [
+                "book"
+            ]
+        },
+        {
+            "id": "task573-d0cfd58a35564ebb95e2a495f20ce62f",
+            "input": "customer: Hello. \n agent: Hello. How may I assist you? \n customer: Can you help me to cancel my reservation? \n agent: Sure, may I know your name please? \n customer: I am Dennis Wright. \n agent: Please give me a moment. \n customer: Sure. \n agent: There is no reservation found with your given name. \n customer: No issues, thank you for checking. \n agent: Thank you.",
+            "output": [
+                "no_reservation"
+            ]
+        },
+        {
+            "id": "task573-f8a0d7f1872545e19f9e86bf763c8d5a",
+            "input": "customer: Hello. \n agent: Hello. How can I aid you? \n customer: Can you help me to book a flight ticket from LAX to DEN? \n agent: Sure, We are here to help you. Can I know your travelling dates? \n customer: Ok, please can you help me to book a ticket for the dates May 1st and May 3rd respectively? \n agent: Do you need any break? \n customer: Ok, please can you book a connecting flight? \n agent:  Is there any other requirements for this trip to met with, so that I can find a suitable flight for your journey? \n customer: Ok, please check flight which depart during afternoon. \n agent: May I know your name? \n customer: My name is Emily Taylor. \n agent: Please be on hold for sometime, as I can check a flight for your journey with the best airlines. \n customer: Ok, I will wait for your response. \n agent:  We are unable to provide flight in between your journey routes due to some technical up-gradation at destination airport. \n customer: That is ok, thank you for assisting me. \n agent: Thank you for reaching us.",
+            "output": [
+                "no_flight"
+            ]
+        },
+        {
+            "id": "task573-7095d69637714d898bf5c2ef4d646cc6",
+            "input": "customer: Hello, I am Kimberly Phillips. \n agent: Hello. How can I aid you? \n customer: I want to fly from DCA to LAX to meet my friend, can you please help me to book a flight ticket? \n agent: Sure. May I know your travelling dates? \n customer: Sure, my journey dates are 11/21 to 11/23. \n agent: Do you have any specifications? \n customer: Yes, I need a halt. \n agent: There is a flight 1008 in UA airline and price 100 with a connection. Shall I proceed? \n customer: Ok, book the ticket. \n agent: Your reservation has been done. \n customer: Thank you for your help. \n agent: Thank you.",
+            "output": [
+                "book"
+            ]
+        },
+        {
+            "id": "task573-214c14bbab3c4c418d1232815a6aa54e",
+            "input": "customer: Hello. \n agent: Hello. \n customer: I am Catherine Hall. \n agent: How can I help you now? \n customer: I had planned to go on a vacation, but it was postponed due to some reasons. Can you change my recent reservation? \n agent: Sure, I will help you with that. Sorry Catherine, there is no reservation found on your name. \n customer: That's ok. \n agent: Thank you for approaching us, have a nice day. \n customer: Anyways, thank you for your help. \n agent: You are welcome.",
+            "output": [
+                "no_reservation"
+            ]
+        },
+        {
+            "id": "task573-7a978e3329544fbaa05be78ab953b26f",
+            "input": "customer: Hi. Donna Evans here. \n agent: Hello, how can I help you today? \n customer: I would like to prefer a flight with lay-by option for my business trip to Oakland. Can you book a flight ticket? \n agent: Sure, let me know your travel dates please? \n customer: The trip dates are from 01 Feb to 03 Feb. \n agent: Can I know your airport codes? \n customer: The airport codes are from PHL to OAK. \n agent: Any preferences you have? \n customer: No, that is it. \n agent: Spirit Airlines has a connecting flight with number 1018 for fare 200, shall I proceed? \n customer: I am fine with the airlines. You can book the flight ticket. \n agent: Your ticket is reserved in economy class. \n customer: Thank you. \n agent: Thank you for opting us.",
+            "output": [
+                "book"
+            ]
+        },
+        {
+            "id": "task573-cc9c8e29f5a5453b92b2addd428836b0",
+            "input": "customer: Hi, I'm Margaret Taylor. \n agent: Hello. How may I guide you? \n customer: I am searching a flight, which travel towards IAD. \n agent: Ok. \n customer: Can you help me in booking a flight? Price limit is 500. \n agent: Sure, I would be happy to help you. May I know your preferable dates? \n customer: My preferable dates are 09/18 and 09/20. \n agent: I need your source code to proceed the booking, can you provide me? \n customer: I would like to start my journey from my location, i.e MSP. Please check. \n agent: Sure, I will check it. \n customer: Ok. \n agent: Give me a minute. I am sorry to say that there is no flight with your details. \n customer: Oh! ok. Thank you for your help. \n agent: Thank you for reaching us.",
+            "output": [
+                "no_flight"
+            ]
+        },
+        {
+            "id": "task573-97b9b14e736b4529ba761a38b4e008be",
+            "input": "customer: Hi. \n agent: Hello. How may I aid you? \n customer: Can you please help me in booking my flight ticket from ATL to LAX? \n agent: Sure, can you please share your journey dates that you prefer to travel? \n customer: My travelling dates are Apr 20 and 22. \n agent: May I know your name? \n customer: Myself Carol Adams. \n agent: Do you have any other requirements to be met? \n customer: I need economy class ticket with connecting flight. \n agent: Can I have your name please? \n customer: I have already mentioned. \n agent: Sorry to inform you that unfortunately there is no flights available by the given details. \n customer: Thanks for your information. \n agent: Thank you.",
+            "output": [
+                "no_flight"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Apache 2.0"
+    ]
+}

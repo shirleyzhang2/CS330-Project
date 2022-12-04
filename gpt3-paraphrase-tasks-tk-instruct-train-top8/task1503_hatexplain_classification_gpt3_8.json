@@ -1,0 +1,115 @@
+{
+    "Contributors": [
+        "Pruthvi Patel"
+    ],
+    "Source": [
+        "hatexplain"
+    ],
+    "URL": [
+        "https://github.com/hate-alert/HateXplain"
+    ],
+    "Categories": [
+        "Toxic Language Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "The input is a tweet. The tweet can be one of three types: Hate Speech, Offensive, or Normal. Hate Speech and Offensive tweets target one community. Given such a tweet, output the community targeted in the tweet. The community will be one of the nine values: 'African', 'Islam', 'Jewish', 'Women', 'Refugee', 'Arab', 'Caucasian', 'Hispanic', or 'Asian'. Output 'None' if the tweet does not target any community. A tweet can only target one community."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Social Media -> Twitter"
+    ],
+    "Positive Examples": [
+        {
+            "input": "caucasians wearing masks to prevent coronavirus and still don \u2019 t wash their hands",
+            "output": "Caucasian",
+            "explanation": "The tweet generalizes an attribute to the entire community, Caucasian, which makes it offensive."
+        },
+        {
+            "input": "lesson of the week from the holy book the sovereign individual once commerce flows over the internet suppression of speech becomes unstoppable devolution inevitable and the monopoly of violence by governments will end paraphrased from j d davidson rhys mogg",
+            "output": "None",
+            "explanation": "The tweet does not target any specific community hence the correct answer is None"
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "<user> <user> there shd be a film called no hindus in kashmir wud be perfect islamic fanaticsm movement in kashmir",
+            "output": "Hindu",
+            "explanation": "Every input tweet will target one or more of the nine communities provided or will not target any community. Further the tweet targets Muslim community. Hence Hindu is not the correct value. The correct value is Islam."
+        },
+        {
+            "input": "ffs everthing is offensive to muslimes",
+            "output": "None",
+            "explanation": "This tweet is offensive to Muslim community. Hence the correct answer is Islam instead of None."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1503-cbf0e096adaf4effb98c4cd7e21a0eea",
+            "input": "us president donald trump has welcomed a supreme court ruling allowing his travel ban to be partly reinstated as a victory for our national security america highest court also granted a white house request allowing part of its refugee ban to go into effect",
+            "output": [
+                "Refugee"
+            ]
+        },
+        {
+            "id": "task1503-5f15e708dc964727940d2a032a347734",
+            "input": "you guys in germany and us men here in america too we are gonna have to man up and be crusaders this musloid bullshit is totally unacceptable",
+            "output": [
+                "Islam"
+            ]
+        },
+        {
+            "id": "task1503-d0e292d5fd5240f8b712f89efd4ecdd9",
+            "input": "no you do not see anything whites are already screwed there is no easy way out of this you are trying to sow confusion in the ranks i have seen a very concerted effort on social media to do this the jewish power structure is scared of the rise in white consciousness and they are working overtime",
+            "output": [
+                "Jewish"
+            ]
+        },
+        {
+            "id": "task1503-13817744869046a9b2db509e0e6121a3",
+            "input": "i will disparage nehlen for marrying a beaner all i please tyvm",
+            "output": [
+                "Hispanic"
+            ]
+        },
+        {
+            "id": "task1503-aa86466875f548d79ef9fb0d58c28362",
+            "input": "this is a fucking wild night this is why i hate having adrenaline rushes haldhladslas",
+            "output": [
+                "None"
+            ]
+        },
+        {
+            "id": "task1503-dc0edc63e1354b4cafbaef52e461cdc4",
+            "input": "why did lil kim do that shit t herself lmao this bitch look like she addicted to plastic surgery",
+            "output": [
+                "Women"
+            ]
+        },
+        {
+            "id": "task1503-e04871859727415f8ae1e1ce7c810179",
+            "input": "i be bathing in hunneds white bitch with a onion",
+            "output": [
+                "Women"
+            ]
+        },
+        {
+            "id": "task1503-9c6e778f623f4577836b9eb0e401ea9d",
+            "input": "nigger porch monkey tree fruit neggra niggress ol black joe",
+            "output": [
+                "African"
+            ]
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

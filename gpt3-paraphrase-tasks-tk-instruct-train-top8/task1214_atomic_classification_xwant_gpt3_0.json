@@ -1,0 +1,125 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "atomic"
+    ],
+    "URL": [
+        "https://allenai.org/data/atomic-2020"
+    ],
+    "Categories": [
+        "Commonsense Classification"
+    ],
+    "Reasoning": [
+        "Relational Reasoning",
+        "Reasoning on Social Interactions",
+        "Commonsense Reasoning -> Social Situations"
+    ],
+    "Definition": [
+        "In this task, you are given two phrases: Head and Tail, separated with <sep>. The Head and the Tail events are short phrases possibly involving participants. The names of specific people have been replaced by generic words (e.g., PersonX, PersonY, PersonZ). PersonX is always the subject of the event. You have to determine whether, as a result of the Head, PersonX wants what is mentioned in the Tail or not. In this task, wanting is a postcondition desire on the part of PersonX, respectively. As a result of PersonX giving PersonY gifts, PersonX may also desire to hug PersonY. Classify your answers into \"Yes\" or \"No\". The phrase may also contain \"___\", a placeholder that can be an object, a person, and/or an action."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Sociology",
+        "Commonsense -> Concepts and Relations -> Social Commonsense"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Head: PersonX arranges a date<sep>Tail: to find a nice restaurant.",
+            "output": "Yes",
+            "explanation": "This is a good example. As a result of the Head, PersonX wants to find a nice restaurant."
+        },
+        {
+            "input": "Head: PersonX affects children 's ___<sep>Tail: bad",
+            "output": "No",
+            "explanation": "In this example, bad is not what PersonX wants. So the output is correct."
+        },
+        {
+            "input": "Head: PersonX gives PersonY bread<sep>Tail: to eat a piece of bread",
+            "output": "Yes",
+            "explanation": " As a result of the Head, personX wants to eat a piece of bread. Thus, this example should be classified as \"Yes\"."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Head: PersonX blesses PersonY's heart<sep>Tail: to call person y",
+            "output": "Yes",
+            "explanation": "The Tail is not what PersonX wants as a result of the Head. So the output should be \"No\"."
+        },
+        {
+            "input": "Head: PersonX asks PersonY's mother<sep>Tail: to write down the solution to the problem",
+            "output": "No",
+            "explanation": "If PersonX asks PersonY's mother; as a result, PersonX wants to write down the solution to the problem, and the output should be \"Yes\"."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1214-c85594f39267440682eeb47537b68df0",
+            "input": "Head: PersonX gives ___ a special gift<sep>Tail: to appear generous",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1214-893f4dc2737948398f68341157574a15",
+            "input": "Head: PersonX answers PersonY's letter<sep>Tail: send a thank you",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1214-ce010f55df33412d9eecff93528f0d4b",
+            "input": "Head: PersonX carries the can<sep>Tail: to drink from the can",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1214-cb09e5d34487460d88d3f7c78a1c2667",
+            "input": "Head: PersonX holds PersonX's ___ in PersonX's hand<sep>Tail: mug",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1214-31df7308536f40ba906a5c5fad637f54",
+            "input": "Head: PersonX grabs PersonX's tools<sep>Tail: to fix the bike",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1214-46afa4a37f26474b9559e69b57664885",
+            "input": "Head: PersonX attends school<sep>Tail: to get their backpack",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1214-0225bb16ac5545df875653cce14d7bc3",
+            "input": "Head: PersonX always watch ___<sep>Tail: to stop watching",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1214-c2703e9dfd6c4f36b980f6889b3be66a",
+            "input": "Head: PersonX arrives home from lunch<sep>Tail: satiated",
+            "output": [
+                "No"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

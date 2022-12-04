@@ -1,0 +1,115 @@
+{
+    "Contributors": [
+        "Pruthvi Patel"
+    ],
+    "Source": [
+        "hatexplain"
+    ],
+    "URL": [
+        "https://github.com/hate-alert/HateXplain"
+    ],
+    "Categories": [
+        "Toxic Language Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "The input is a tweet. The tweet can be one of three types: Hate Speech, Offensive, or Normal. Hate Speech and Offensive tweets target one specific community. Given such a tweet, your task is to output the community targeted in the tweet. The community will be one of the nine values: 'African', 'Islam', 'Jewish', 'Women', 'Refugee', 'Arab', 'Caucasian', 'Hispanic' or 'Asian'. Output 'None' if the tweet does not target any community. A tweet can only target one community."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Social Media -> Twitter"
+    ],
+    "Positive Examples": [
+        {
+            "input": "caucasians wearing masks to prevent coronavirus and still don \u2019 t wash their hands",
+            "output": "Caucasian",
+            "explanation": "The tweet generalizes an attribute to the entire community, Caucasian, which makes it offensive."
+        },
+        {
+            "input": "lesson of the week from the holy book the sovereign individual once commerce flows over the internet suppression of speech becomes unstoppable devolution inevitable and the monopoly of violence by governments will end paraphrased from j d davidson rhys mogg",
+            "output": "None",
+            "explanation": "The tweet does not target any specific community hence the correct answer is None"
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "<user> <user> there shd be a film called no hindus in kashmir wud be perfect islamic fanaticsm movement in kashmir",
+            "output": "Hindu",
+            "explanation": "Every input tweet will target one or more of the nine communities provided or will not target any community. Further the tweet targets Muslim community. Hence Hindu is not the correct value. The correct value is Islam."
+        },
+        {
+            "input": "ffs everthing is offensive to muslimes",
+            "output": "None",
+            "explanation": "This tweet is offensive to Muslim community. Hence the correct answer is Islam instead of None."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1503-684e59a5563e4e0d84e4f9b2e9894de2",
+            "input": "so you are who kike central sent to gab to stop shoah <number> electric boogaloo i realize team kike is spread thin with so many websites to keep the goyim from knowing on but fuck how well are you sleeping these days",
+            "output": [
+                "Jewish"
+            ]
+        },
+        {
+            "id": "task1503-3451c6b044c14974825b5f26b187ad9c",
+            "input": "fake conservatives everywhere supporting these refugees scum",
+            "output": [
+                "Refugee"
+            ]
+        },
+        {
+            "id": "task1503-a52bfd4adc4641cdbc28dbad85fa6479",
+            "input": "i \u2019 m so sick of all white parties",
+            "output": [
+                "Caucasian"
+            ]
+        },
+        {
+            "id": "task1503-8bf2997626e24898b2afac1e2fda79ae",
+            "input": "about that womens march in dc yesterday it was a success for president trump because on his first full day in office he got more fat women out walking that michelle obama ever did",
+            "output": [
+                "Women"
+            ]
+        },
+        {
+            "id": "task1503-fc6c423c29144e93a0a7cca3cbee111a",
+            "input": "what a fucking nigger fag pantload i wonder who actually wrote that for this affirmative action push along toy",
+            "output": [
+                "African"
+            ]
+        },
+        {
+            "id": "task1503-1447eb1ab5ba48bfb188f8e65d5a464c",
+            "input": "the white bitch amber guyger has been locked away",
+            "output": [
+                "None"
+            ]
+        },
+        {
+            "id": "task1503-25f600b20c624b3291cb300f88097951",
+            "input": "trump is a fucking kike liar",
+            "output": [
+                "Jewish"
+            ]
+        },
+        {
+            "id": "task1503-2253aa8124b841b586efc5248a269724",
+            "input": "incredible how asians have been turning to shitlib ideologies they are traditionally bulwarks of confucian law order disgusting they should be executed",
+            "output": [
+                "Asian"
+            ]
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

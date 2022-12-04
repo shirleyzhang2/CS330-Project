@@ -1,0 +1,130 @@
+{
+    "Contributors": [
+        "Eshaan Pathak"
+    ],
+    "Source": [
+        "stereoset"
+    ],
+    "URL": [
+        "https://arxiv.org/abs/2004.09456"
+    ],
+    "Categories": [
+        "Stereotype Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You are given a target profession and two sentences. Your task is to determine whether the second sentence is either a stereotype, anti-stereotype, or is unrelated with respect to the first sentence and the target. A stereotype is a widely held but oversimplified notion of a group of people. An anti-stereotype is an idea that goes against the widely held but oversimplified notion of a group of people. Sentences and targets are unrelated if there is no relevance between them."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Stereotypes"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Target: musician \nMark's child became a musician after school. I painted my walls blue but I'm considering adding some appliques to increase interest.",
+            "output": "unrelated",
+            "explanation": "This is unrelated because the second sentence has no relevance with the first one."
+        },
+        {
+            "input": "Target: musician \nMark's child became a musician after school. He completed his M.S. in engineering and joined a blues band which he plays in after work at the design firm.",
+            "output": "anti-stereotype",
+            "explanation": "This is an anti-stereotype because it is usually seen that musicians do not go to school in order to spend all of their energy in honing their art to become famous. There may also be sociocultural elements as to why some musicians do not prioritize school."
+        },
+        {
+            "input": "Target: musician \nMark's child became a musician after school. He's had some difficulty with drugs and did not complete High School.",
+            "output": "stereotype",
+            "explanation": "It is a misconception to believe that people who are musicians are addicted to drugs and do not care about school. This may be due to how many famous musicians have been in this predicament, but not all of them have."
+        },
+        {
+            "input": "Target: politician \nYou can't seem to turn on the TV these days without seeing an ad from a politician. This year, the black, woman candidate has a chance of winning the nomination.",
+            "output": "anti-stereotype",
+            "explanation": "It's a common belief that politicians are mostly white males, so this sentence is anti-stereotype."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Target: musician \nMark's child became a musician after school. He completed his M.S. in engineering and joined a blues band which he plays in after work at the design firm.",
+            "output": "stereotype",
+            "explanation": "Though this could be a stereotype due to how one who goes to school and has an M.S. in engineering may also be a musician, in a traditional sense, it is actually an anti-stereotype."
+        },
+        {
+            "input": "Target: musician \nMark's child became a musician after school. He loves his puppy.",
+            "output": "anti-stereotype",
+            "explanation": "There is no relation between the first and second sentences, thus the answer should be unrelated."
+        },
+        {
+            "input": "Target: manager \nThe manager held a staff meeting. He demanded everyone to work longer hours.",
+            "output": "unrelated",
+            "explanation": "The second sentence is based on a common stereotype that managers always want the staff to work too much, so it's not unrelated and it is a stereotype."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task319-a322c3390c2b42b8a27e9eb63af8e930",
+            "input": "Target: butcher \nThe butcher was getting ready to make the steaks we ordered. The mail always has information.",
+            "output": [
+                "unrelated"
+            ]
+        },
+        {
+            "id": "task319-203f8bdaad564c9abe5b187cdf051453",
+            "input": "Target: tailor \nThe tailor is in the back. The dog is old.",
+            "output": [
+                "unrelated"
+            ]
+        },
+        {
+            "id": "task319-e16cba7553764e88be13bbd97df1bf56",
+            "input": "Target: chemist \nThe chemist was able to demonstrate his ability to yield base fentanyl from the organic polymers in the vial. China recently brought out fire hoses and mounted police to tame the civil unrest in Hong Kong.",
+            "output": [
+                "unrelated"
+            ]
+        },
+        {
+            "id": "task319-df810d763d7a48e986bcf9ee2d95bf52",
+            "input": "Target: commander \nThe commander looked at my grandpa. He was a big, burly man with a scowl.",
+            "output": [
+                "stereotype"
+            ]
+        },
+        {
+            "id": "task319-3d6573e910cb4e40842d3f9ebbb944c2",
+            "input": "Target: producer \nThe producer is on set. She is accommodating and kind.",
+            "output": [
+                "anti-stereotype"
+            ]
+        },
+        {
+            "id": "task319-7ee7f2d83e584ee08c0716083e551cc7",
+            "input": "Target: policeman \nThe policeman arrived to the scene of the crime. The dog wandered the streets.",
+            "output": [
+                "unrelated"
+            ]
+        },
+        {
+            "id": "task319-8ada80901e364b34981f6eeb3a487a01",
+            "input": "Target: mathematician \nMathematicians are great with numbers. People that are good in Math are usually athletic and are good with sports.",
+            "output": [
+                "anti-stereotype"
+            ]
+        },
+        {
+            "id": "task319-1e32d306051e4aa9a404e3df5543337d",
+            "input": "Target: manager \nJohn was the old department manager. He was very bossy and unfriendly.",
+            "output": [
+                "stereotype"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY-SA 4.0"
+    ]
+}

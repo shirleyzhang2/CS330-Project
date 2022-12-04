@@ -1,0 +1,123 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "dream"
+    ],
+    "URL": [
+        "https://github.com/nlpdata/dream"
+    ],
+    "Categories": [
+        "Question Understanding"
+    ],
+    "Reasoning": [
+        "Reasoning on Social Interactions"
+    ],
+    "Definition": [
+        "In this task, you will be shown a conversation and a question. You should categorize the question into one of the following groups: matching, summary, logic, arithmetic, and commonsense. Matching questions are entailed or paraphrased by exactly one sentence in the dialogue, and the answer can be extracted from that sentence. Questions that cannot be answered by the surface meaning of a single sentence belong in the reasoning category. The summary, logic, arithmetic, and commonsense subcategories require increasingly more complex levels of reasoning. Answering summary questions requires an understanding of the whole dialogue, including the topic of the dialogue and the relation between the speakers. Logical questions require logical reasoning to answer. Inferring the answer to arithmetic questions requires arithmetic knowledge. Commonsense questions require knowledge that cannot be obtained from the dialogue, in addition to the textual information in the dialogue. Note that a question can be in more than one group. \"W\" and \"M\" in the conversations stand for \"woman\" and \"man\"."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue",
+        "Natural Science -> School Science Textbooks"
+    ],
+    "Positive Examples": [
+        {
+            "input": "W: The movie next Tuesday has been cancelled due to lack of interest. M: What do you mean? W: Well, by last night only a few tickets has been sold., Question: What can we conclude about the movie? (A) They want to buy the tickets for the movie. (B) The tickets for the movie were sold. (C) The movie will not be shown.",
+            "output": "commonsense",
+            "explanation": "This is a good example. To answer this question we require commonsense knowledge that cannot be obtained from the dialogue. So, this is a commonsense question."
+        },
+        {
+            "input": "W: What does the term \"alternative energy source\" mean? M: When we think of energy or fuel for our homes and cars, we think of petroleum, a fossil fuel processed from oil removed from the ground, of which there is a limited supply. But alternative fuels can be many things. Wind, sun and water can all be used to create fuel. W: Is the threat of running out of petroleum real? M: It has taken thousands of years to create the natural stores of petroleum we have available at a much faster rate than it is being produced over time. The real controversy surrounding the amount of petroleum we have is how much we need to keep in reserve for future use. Most experts agree that by around 2025, the amount of petroleum we use will reach a peak. Then production and availability will begin to seriously decline. This is not to say there will be no petroleum at this point. But it'll become very difficult and therefore expensive to extract. W: Is that the most important reason to develop alternative fuel and energy sources? M: There are two very clear reasons to do so. One is that whether we have 60 or 600 years of fossil fuels left, we have to find other fuel sources eventually. So the sooner we start, the better off we will be. The other big argument is that when long time, which leads to some long-term negative effects, like global warming and the greenhouse effect., Question: What do we usually refer to when we talk about energy according to the man? (A) Coal burnt daily for the comfort of our homes. (B) Anything that can be used to produce power. (C) Fuel refined from oil extracted from underground.",
+            "output": "matching",
+            "explanation": "The first sentence of the man can answer this question. So, it's a matching question."
+        },
+        {
+            "input": "M: What do you think of my new sweater? W: Well, it looks nice, but why don't you put it on, and then I'll tell you if it suits you? M: Okay. You know, I tried on about twenty at the shop, and this one isn't really what I wanted. I especially can't stand the high neck. W: Why did you buy it then? M: The salesman sold it to me before I realized what had happened. He just never stopped talking about the latest fashions and special reduced prices. Before I could say anything he'd wrapped it up and I realized that I'd paid him. W: Well, it doesn't look too bad. I think it looks good on you. M: But I went out to get a blue sweater to match my black trousers-something with a V-neck, short sleeves and pattern-and I came home with a brown sweater with a high neck, long sleeves and no pattern. W: You've got to learn to stand up to these high-pressure salesmen. They will sell you all sorts of things you don't want if you don't watch out. M: Next time I'll send my wife. She would probably sell something to the salesman. W: That's a good idea. Actually women are much better at shopping than men. Whenever my husband and I buy something important, I always have the finalsay. M: I must admit that women are better at shopping. I should simply leave the whole business to them., Question: Why did the man buy a sweater that he doesn't like? (A) He was pushed by the salesman (B) It was sold at a low price (C) It is the latest fashion.",
+            "output": "logic",
+            "explanation": "To answer this question we need logical reasoning. In the dialogues, they talk about high-pressure salesmen. So by logical reasoning, we could understand that he was pushed by the salesman."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "W: What does the term \"alternative energy source\" mean? M: When we think of energy or fuel for our homes and cars, we think of petroleum, a fossil fuel processed from oil removed from the ground, of which there is a limited supply. But alternative fuels can be many things. Wind, sun and water can all be used to create fuel. W: Is the threat of running out of petroleum real? M: It has taken thousands of years to create the natural stores of petroleum we have available at a much faster rate than it is being produced over time. The real controversy surrounding the amount of petroleum we have is how much we need to keep in reserve for future use. Most experts agree that by around 2025, the amount of petroleum we use will reach a peak. Then production and availability will begin to seriously decline. This is not to say there will be no petroleum at this point. But it'll become very difficult and therefore expensive to extract. W: Is that the most important reason to develop alternative fuel and energy sources? M: There are two very clear reasons to do so. One is that whether we have 60 or 600 years of fossil fuels left, we have to find other fuel sources eventually. So the sooner we start, the better off we will be. The other big argument is that when long time, which leads to some long-term negative effects, like global warming and the greenhouse effect., Question: What do most experts agree on according to the man? (A) Oil will soon be replaced by alternative energy sources. (B) Oil production will begin to decline worldwide by 2025. (C) Oil consumption has given rise to many global problems.",
+            "output": "arithmetic",
+            "explanation": "We don't need arithmetic knowledge to answer this question. It's incorrect. This is a matching question."
+        },
+        {
+            "input": "M: Finally, I've got the chance to put on my new suit tonight. I hope to make a good impression on your family. W: Come on! It's only a family reunion. So jeans and T-shirts are just fine., Question: What does the woman mean? (A) The man has left a good impression on her family. (B) The man can dress casually for the occasion. (C) The man should buy himself a new suit.",
+            "output": "matching",
+            "explanation": "The answer to this question cannot be extracted from the context. We need commonsense knowledge to understand wearing jeans and T-shirts means dressing casually. This is a commonsense question."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task248-a87f24b2c81741a0888c89e35033a5e8",
+            "input": "W: If I were you, I would have accepted the job. M: I turned down the offer because it would mean frequent business trips away from my family. W: Ah. But a job with a good salary will be beneficial to your family., Question: Why didn't the man accept the job? (A) He doesn't enjoy business trips as much as he used to. (B) He wants to spend more time with his family. (C) He doesn't think he is capable of doing the job.",
+            "output": [
+                "commonsense"
+            ]
+        },
+        {
+            "id": "task248-26af28fcc48242babed0883526b21ff2",
+            "input": "W: What's wrong with your leg, Jerry? M: Oh, I fell off my bike., Question: Where did Jerry fall off? (A) Car. (B) Ship. (C) Bike.",
+            "output": [
+                "logic"
+            ]
+        },
+        {
+            "id": "task248-ef27d90f7711453ab486a8e68969963b",
+            "input": "Man: Let me see now. Which train do I need to get on? Woman: Excuse me. Do you need any help? Man: Yes, I want to go to Tokyo Tower, but I'm really lost. This is my first visit to Japan, so I have no idea on how to ride the trains. Woman: First, you need to buy a ticket to your destination. [Um-HUH] From here, it's a hundred and thirty yen. Man: A hundred thirty yen. Okay. Woman: Then, get on the Hibiya Subway Line at platform number 4. Man: Number 4, alright. Oh, and how often do the trains come around this time of day? Woman: Usually, they come about every six minutes or so. Man: Alright. And where do I get off the train. Woman: Get off at Kamiyacho Station, three stops from here. The sign at the station is written in English, so you'll be able to read it. Man: Three stops. Got it. Thanks for your help. Woman: No problem. Good luck., Question: Where does the man want to go? (A) Tokyo Subway Station (B) Tokyo Art Museum (C) Tokyo Tower",
+            "output": [
+                "matching"
+            ]
+        },
+        {
+            "id": "task248-b51db81cf7f44b84b3287b49bfc46369",
+            "input": "M: Are you homesick? W: Not really. The food here really agrees with me., Question: What does the woman mean? (A) She's not feeling well. (B) She wants to go home. (C) She wants to stay where she is.",
+            "output": [
+                "commonsense"
+            ]
+        },
+        {
+            "id": "task248-4f96497a5a8a497ebb848e57f67df113",
+            "input": "W: Did you see Mary today? M: Yes, why did she have such a long face? W: I don't have the fuggiest idea. M: I thought she'd be happy. W: Yeah, especially since she got a promotion recently., Question: What do we learn about Mary? (A) She is upset (B) She is desperate (C) She's longing for a gift",
+            "output": [
+                "logic"
+            ]
+        },
+        {
+            "id": "task248-cb09e36d1b62425b9e6c3d9aa8cf1df0",
+            "input": "M: John wants to see you today. W: I would rather he came tomorrow than today., Question: When will the woman want to meet John? (A) The day after tomorrow. (B) Tomorrow. (C) As soon as possible.",
+            "output": [
+                "commonsense"
+            ]
+        },
+        {
+            "id": "task248-5232106591af46fb9f115dde3b00afef",
+            "input": "W: Look at the mess! And the guests will be here soon! M: Take it easy. I'll make sure the house is spotless., Question: What does the man mean? (A) He'll be able to clean the house in time. (B) He doesn't have time to take the woman home. (C) It should be easy for the guests to find the house.",
+            "output": [
+                "logic"
+            ]
+        },
+        {
+            "id": "task248-fd13ad7d9baa4b348a40f99b84161d47",
+            "input": "W: Suppose the company offer you a pay raise of 50%, would you be so determined to leave and look for a job as well? M: Yes, I've set my mind down on it. I'd like to find a job with full scope to show my ability., Question: Why has the man decided to leave the company? (A) He is not equal to the job. (B) He is not well paid for his work. (C) He doesn't think the job is challenging enough.",
+            "output": [
+                "commonsense"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Dedicated License (https://github.com/nlpdata/dream/blob/master/license.txt)"
+    ]
+}

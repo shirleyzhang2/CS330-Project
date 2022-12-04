@@ -1,0 +1,127 @@
+{
+    "Contributors": [
+        "Amrit Bhaskar"
+    ],
+    "Source": [
+        "propara"
+    ],
+    "URL": [
+        "https://arxiv.org/abs/1805.06975"
+    ],
+    "Categories": [
+        "Information Extraction"
+    ],
+    "Reasoning": [
+        "Deductive Reasoning"
+    ],
+    "Definition": [
+        "In this task, you are given a paragraph, event and entity. The event is part of the given paragraph and it changes the state of the entity. Your task is to classify the state of the entity into three classes: 1) not exist, 2) unknown location and 3) known location. \"not exist\" means the entity doesn't exist in that state anymore. \"unknown location\" means the entity exists in that state but location is unknown. \"known location\" means the entity exists and location is known."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Natural Science"
+    ],
+    "Positive Examples": [
+        {
+            "input": " \"process paragraph : Magma rises from deep in the earth. The magma goes into volcanos. The volcanos pressure the magma upwards. The pressure causes the magma to push through the surface of the volcano. The lava cools. The lava forms new rock. New magma is pressured to the surface of the volcano. The volcano bursts through the rock the formed after the last eruption\" , \"event : Magma rises from deep in the earth\" , \"entity : magma\" ",
+            "output": "known location",
+            "explanation": "The process paragraph explains in steps about - the cause for volcano eruption. The event is a part of the process paragraph given. The entity lies both in process paragraph and the event. So, this is a good example."
+        },
+        {
+            "input": " \"process paragraph : Water from the ocean washes onto beaches in waves. The waves contain sediment from the ocean. The water and particles in it hit rocks and sand on the beach. The wind and current sometimes push the water and particles harder. Tiny parts of the rocks on the shore come off the larger rocks. The waves pick up sand and small rocks from the beach. The waves go back out into the ocean. The waves carry the new particles with them. Rocks and the beach look a little different. \", \"event : The waves go back out into the ocean. \", \"entity : waves\" ",
+            "output": " known location ",
+            "explanation": "The process paragraph explains in steps about - the sequence of events during erosion by the ocean. The event is a part of the process paragraph given. The entity lies both in process paragraph and the event. So, this is a good example."
+        },
+        {
+            "input": " \"process paragraph : Water from oceans, lakes, swamps, rivers, and plants turns into water vapor. Water vapor condenses into millions of tiny droplets that form clouds. Clouds lose these droplets through rain or snow, also caused precipitation. Precipitation is either absorbed into the ground or runs off into rivers. Water that was absorbed into the ground is taken up by plants. Plants lose water from their surfaces as vapor. The vapor goes back into the atmosphere. Water that runs off into rivers flows into ponds, lakes, or oceans. The water evaporates back into the atmosphere. \", \"event : Water from oceans, lakes, swamps, rivers, and plants turns into water vapor. \", \"entity : water\" ",
+            "output": " not exist ",
+            "explanation": "The process paragraph explains in steps about - the sequence of events during water cycle. The event is a part of the process paragraph given. The entity lies both in process paragraph and the event. So, this is a good example."
+        },
+        {
+            "input": " \"process paragraph : Sediment settles in a place due to gravity. The sediment breaks down into small particles. Wind or water picks up the sediment. The sediment travels along the same route as the wind or water. The sediment is deposited at new locations by the wind or water. The sediment is picked up again by new wind or water. The sediment travels further. The sediment is deposited again in a new place. \", \"event : The sediment is picked up again by new wind or water. \", \"entity : sediment; small particles\" ",
+            "output": " unknown location ",
+            "explanation": "The process paragraph explains in steps about - the sequence of events during sediment transportation across the earth. The event is a part of the process paragraph given. The entity lies both in process paragraph and the event. So, this is a good example."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": " \"process paragraph : Water from oceans, lakes, swamps, rivers, and plants turns into water vapor. Water vapor condenses into millions of tiny droplets that form clouds. Clouds lose these droplets through rain or snow, also caused precipitation. Precipitation is either absorbed into the ground or runs off into rivers. Water that was absorbed into the ground is taken up by plants. Plants lose water from their surfaces as vapor. The vapor goes back into the atmosphere. Water that runs off into rivers flows into ponds, lakes, or oceans. The water evaporates back into the atmosphere. \", \"event : Water from oceans, lakes, swamps, rivers, and plants turns into water vapor. \", \"entity : water\" ",
+            "output": " known location ",
+            "explanation": "This is a bad example because the output class is incorrect. Water in this event has turned into water vapor and is longer in the form of water. The existence is necessary to find the location. "
+        },
+        {
+            "input": " \"process paragraph : Magma rises to the surface during a volcano. The magma undergoes changes in temperature. The magma undergoes changes in pressure. The magma cools. The magma solidifies. The magma crystallizes. Igneous rock is formed. \", \"event : Magma rises to the surface during a volcano. \", \"entity : magma\" ",
+            "output": " unknown location ",
+            "explanation": "This is a bad example because the output class is incorrect. Magma in this event has risen to the surface and is considered a known location. Only classify to unknown location when the place of entity is not determined. "
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1568-893e4bf9e81848949eba6aabe663648a",
+            "input": " \"process paragraph : : Air is drawn in through the mouth. The air goes down the esophagus. The air moves into the lungs. The carbon dioxide is removed. The remaining oxygen enters the body. The remaining carbon dioxide is expelled through the mouth. \", \"event : The air goes down the esophagus.\", \"entity : air\" ",
+            "output": [
+                " known location "
+            ]
+        },
+        {
+            "id": "task1568-b16ad860bf2849d3a1a2fe5d22cc647c",
+            "input": " \"process paragraph : : A female fish lays eggs. Larvae hatch from the eggs. The larvae eat and grow. The larvae form into juvenile fish. The juvenile fish grow into adult fish. The adult fish mate. The female fish lays eggs. \", \"event : Larvae hatch from the eggs.\", \"entity : eggs\" ",
+            "output": [
+                " not exist "
+            ]
+        },
+        {
+            "id": "task1568-6f4033742f3d429f820fd97bf805f437",
+            "input": " \"process paragraph : : A tree produces seeds. The seeds are dispersed by wind, animals, etc. The seeds reach the ground. Grow into new trees. These new trees produce seeds. The process repeats itself over and over. \", \"event : The seeds are dispersed by wind, animals, etc.\", \"entity : Tree\" ",
+            "output": [
+                " not exist "
+            ]
+        },
+        {
+            "id": "task1568-87a693ab5b15415abf7867e908ea5f43",
+            "input": " \"process paragraph : : Adult mushrooms produce spores. Release them into the air by process of sporulation. Spores are carried by the wind. Land in a hospitable growing environment. The spores germinate into the soil. The mushroom starts growing. The adult mushroom produce spores of its own to repeat the process. \", \"event : Release them into the air by process of sporulation.\", \"entity : Adult mushroom\" ",
+            "output": [
+                " unknown location "
+            ]
+        },
+        {
+            "id": "task1568-bea9f1563d18457eba8ee91a1e2d9c2d",
+            "input": " \"process paragraph : : EGG. ITS LAID ON A LEAF OR PLANT. THE EGG HATCHES. THE LARVA COMES OUT(CATERPILLAR). IT BEGINS TO EAT ON THE LEAF THAT IS WAS BORN ON. CONTINUES TO EAT TO GROW QUICKLY. AFTER ITS GROWN TO FULL LENGHT IT FORMS INTO A PUPA. UNDERGOES METAMORPHOSIS TO BECOME BUTTERFLY. AFTER HE BUTTERFLY IS FOMED IT PUMPS BLOOD INTO ITS WINGS TO GAIN STRENGHT TO BE ABLE TO FLY. TH EBUTTERLFY IS FIANLLY ABLE TO FLY AWAY. \", \"event : ITS LAID ON A LEAF OR PLANT.\", \"entity : egg\" ",
+            "output": [
+                " known location "
+            ]
+        },
+        {
+            "id": "task1568-449d0b040654411f8ea5f396fd4b1f6d",
+            "input": " \"process paragraph : : Tectonic plates smash together. The edges of the plates crumple up. The ridges are mountain ranges. Magma is forced to the surface. Magma forms a volcano. \", \"event : The edges of the plates crumple up.\", \"entity : magma\" ",
+            "output": [
+                " unknown location "
+            ]
+        },
+        {
+            "id": "task1568-58a3e1e06e1c4954a2bd726d05d4e71c",
+            "input": " \"process paragraph : : Living things have carbon in them. Living things die. The remains of living things eventually become buried underground. More physical pressure is put on the remains of living things as they become further underground. This carbon-based mixture stays underground for a long time. Humans discover this carbon-based mixture. This carbon-based mixture is brought up to the earth's surface. The recently discovered fossil fuel is burned. Burning releases the energy that has been stored in the fossil fuel. The energy can be used to generate power. \", \"event : Living things die.\", \"entity : living things ; remains of living things\" ",
+            "output": [
+                " unknown location "
+            ]
+        },
+        {
+            "id": "task1568-ec0880b195484619a2fae17e4d67b059",
+            "input": " \"process paragraph : : You inhale. Your diaphragm moves down. Your lungs have more room. Your lungs fill with air. You exhale. Your diaphragm moves back up. Carbon dioxide is exhaled. You start the process over again. \", \"event : Your diaphragm moves down.\", \"entity : carbon dioxide\" ",
+            "output": [
+                " unknown location "
+            ]
+        }
+    ],
+    "Instance License": [
+        "Apache 2.0"
+    ]
+}

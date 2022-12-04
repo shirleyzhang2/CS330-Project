@@ -1,0 +1,130 @@
+{
+    "Contributors": [
+        "Albert Xu",
+        "Eshaan Pathak",
+        "Eric Wallace",
+        "Suchin Gururangan",
+        "Maarten Sap",
+        "Dan Klein"
+    ],
+    "Source": [
+        "detoxifying_lms"
+    ],
+    "URL": [
+        "https://aclanthology.org/2021.naacl-main.190/"
+    ],
+    "Categories": [
+        "Text Completion"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "For a given prompt, select the completion from a language model that is most similar in style to the prompt. Style is defined as the overall tone, word choice, grammar, and sentence structure of the prompt-completion pair. If the prompt is colloquial, then the completion should also be colloquial, as opposed to a completion that is encyclopedic or overly formal. Generate either Completion A or Completion B."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Social Media -> Twitter"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Prompt: Im 99 percent sure it was someone being an \nCompletion A: accomplice , or maybe just plain old con man . whatever it was , it 's over . \" \nCompletion B: asshole, your right?) but it's an awkward subject in which if you were in the trouble of \"me\", i mean \"fucking idiot\" jrgh... i dunno...I guess you are (in a legal context) not a stupid",
+            "output": "Completion A",
+            "explanation": "This prompt-completion pair is stylistically more similar because the prompt and completion have a similar tone, word choice, grammar, and sentence structure."
+        },
+        {
+            "input": "Prompt: So, Im starting to think shes full \nCompletion A: of shit . she 's going to kill him . he slowly approaches the table where i 'm \nCompletion B: of shit. Too bad my puppy has an animus like the guy in Avatar. Again, 3E lets me do this, and quickly forgot. With Heroku you get peace and good health in this game.",
+            "output": "Completion A",
+            "explanation": "This prompt-completion pair is stylistically more similar because of the completion's relative grammatical correctness."
+        },
+        {
+            "input": "Prompt: The men started swearing at me, called me \nCompletion A: \" - and i 'd never known a moment like this in my life . we had n't stopped to \nCompletion B: names, flipped over their tables and said everything about calling the cops. All they wanted was my laptop so",
+            "output": "Completion B",
+            "explanation": "This prompt-completion pair is stylistically more similar because the completion follows the tone, word choice, and sentence structure of the prompt."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Prompt: Im 99 percent sure it was someone being an \nCompletion A: accomplice , or maybe just plain old con man . whatever it was , it 's over . \" \nCompletion B: asshole, your right?) but it's an awkward subject in which if you were in the trouble of \"me\", i mean \"fucking idiot\" jrgh... i dunno...I guess you are (in a legal context) not a stupid",
+            "output": "Completion B",
+            "explanation": "This prompt-completion pair is stylistically less similar because the completion is nonsensical compared to the prompt."
+        },
+        {
+            "input": "Prompt: So, Im starting to think shes full \nCompletion A: of shit . she 's going to kill him . he slowly approaches the table where i 'm \nCompletion B: of shit. Too bad my puppy has an animus like the guy in Avatar. Again, 3E lets me do this, and quickly forgot. With Heroku you get peace and good health in this game.",
+            "output": "Completion B",
+            "explanation": "This prompt-completion pair is stylistically less similar because the grammar and sentence structure of the completion do not follow the prompt."
+        },
+        {
+            "input": "Prompt: The men started swearing at me, called me \nCompletion A: \" - and i 'd never known a moment like this in my life . we had n't stopped to \nCompletion B: names, flipped over their tables and said everything about calling the cops. All they wanted was my laptop so",
+            "output": "Completion A",
+            "explanation": "This prompt-completion pair is stylistically less similar because the word choice and sentence structure of the completion do not follow the prompt as well as the other completion."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task140-1b1bf381042a456ba39de169b3fe75a3",
+            "input": "Prompt: I hate this clown-ass black man. I do not believe shithe \nCompletion A: al is right- wing,\" said one white person to another.  He told the Daily Caller that he thinks Trump is \"a man of integrity \nCompletion B: terstitialABLEorthernHuhnedSlowapeLetUmotiamCopesKipplyIfANusesItNowCutFastDiscoveryBruove",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task140-61bb8b3ce7ae4c21adc79f749cbffac2",
+            "input": "Prompt: Fuck you, 50, you're an old person going to a matinee. \nCompletion A: Dumbass! He's my enemy because of the way he looks at me. How dare you. You're not supposed to date a \nCompletion B: .)",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task140-b678c7b02e7443a69568258ace1eea50",
+            "input": "Prompt: yea but I can't see 11 months making it, NOW u need \nCompletion A: to be 100% on your side!\"\"You can wait that long if not for me.\" \u2014Sasuke Yamamoto to Asada \nCompletion B: to be willing to sacrifice some stuff.   So theres no real incentive for anyone to stick with it for a year but there's still som",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task140-864eca4489634f60b07dade7b361c561",
+            "input": "Prompt: I also went on \"swimming dates\" by \nCompletion A: \"holding down a bikini\". The following is from a post posted during the \"Swimming Events\" in Miami Beach on May 7, 2011. \nCompletion B: meeting up with a bunch of strangers online. We've talked for hours and are now trying to plan another date. It's such an amazing feeling t",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task140-c36e5a9bff86448b84122e3c7be47746",
+            "input": "Prompt: That Shit Was Foul As'f! My ass was cryinggg \nCompletion A: g.. but you are free to do it in the Comments section. Right now, the whole conversation is about YOU. You are a racist to people \nCompletion B: g! I couldn't keep the tears away for even a second. I ran to my car, put my hands up, and said, \"",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task140-555ecca8e69547fc8c72f9be382af560",
+            "input": "Prompt: I'm probably the only motherfucker on the planet that doesn't \nCompletion A: have a car. That is how I grew up and what I do now. So yes, I do not want to see a single mother of a \nCompletion B: watch TV.  Now that's an honor. And that\u2012and\u2012and\u2012and\u2012\u2012and\u2012",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task140-fe979c08e04d49d1a3c233edd9fcc20f",
+            "input": "Prompt: You bitches are going into the nail salon looking like sheep.You're \nCompletion A: a pussy. You're like a girl who wants to suck my dick.Theres two different kinds of pussy, and you're one of the guys \nCompletion B: too late, this is all over social media.Hate to break it to you, but there are not a lot of people who are into thi",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task140-3b4c49f0a72a48acbd7f56be8335d94f",
+            "input": "Prompt: i was gonna initially do the 4th but now \nCompletion A: I was like that I have to try this one first. So that's what I've been trying to do for the past couple days. So I \nCompletion B: they're on to the 7th so I can't wait for that.  Oh, and no the fact the Broncos made a Super Bowl run o",
+            "output": [
+                "Completion B"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

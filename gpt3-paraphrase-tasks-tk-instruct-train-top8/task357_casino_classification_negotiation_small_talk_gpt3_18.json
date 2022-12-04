@@ -1,0 +1,115 @@
+{
+    "Contributors": [
+        "Kushal Chawla"
+    ],
+    "Source": [
+        "casino"
+    ],
+    "URL": [
+        "https://aclanthology.org/2021.naacl-main.254.pdf"
+    ],
+    "Categories": [
+        "Negotiation Strategy Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You will receive an utterance and recent dialogue context containing past 3 utterances. You need to output Yes if the utterance contains the small-talk strategy, otherwise output No. small-talk is a cooperative negotiation strategy used for discussing topics apart from the negotiation, in an attempt to build a rapport with the opponent."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Context: 'Great!  So looks like all the water goes to you.  I will take all the food if that is ok and we can split the wood.  ' 'Well i would need one food and one wood' 'OK.  I think that will work out for me.  You get 3 water, 1 wood and 1 food.  I will take the rest.'\nUtterance: 'Great that's an agreement for me'",
+            "output": "No",
+            "explanation": "The participant does not engage in any small talk in this utterance and primarily refers to the negotiation itself."
+        },
+        {
+            "input": "Context: 'Since you would also like firewood, I propose 2 firewood, 2 water to me, and you get 1 wood, 1 water, and all the food to make up for it.' 'Okay I can agree to that deal.\ud83d\ude42' 'That's fantastic, I'm glad we came to something we both agree with'\nUtterance: 'Me too. I hope you have a wonderful camping trip.\ud83d\ude42'",
+            "output": "Yes",
+            "explanation": "The participant engages in small talk when wishing their opponent to have a wonderful trip."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Context: 'Hello! I am looking forward to the camping trip but could use a few more supplies!' 'hello, me too, i guess we can share' 'Sounds good, I need food the most, what is your most needed item?'\nUtterance: 'my item is food too.'",
+            "output": "Yes",
+            "explanation": "The purpose of the utterance is only to take the negotiation forward and there is no side talk. Hence, the correct answer is 'No'."
+        },
+        {
+            "input": "Context: 'I can do without extra water as long as I have food and firewood to purify water I find.  It might be better for you to have a reliable supply though.' 'That totally makes sense! I actually am good on firewood thankfully, I got some from a person selling it from their yard a little bit ago.' 'I would have been able to bring more with me by getting some from my parents, but my father decided he wanted to get rid of what he had left and so has been enjoying his fire pit a lot lately.'\nUtterance: 'Oh I have always wanted a firepit! I totally understand. If you'd like you can have all 3 of the firewood supply stash to get you started.'",
+            "output": "No",
+            "explanation": "This is wrong. The participant engages in small-talk when referring to the firepit that they always wanted. The correct answer is 'Yes'."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task357-934ac64931394040a2dd1d62331badb1",
+            "input": "Context: \nUtterance: 'Can you help out? I can easily dehydrated can you give all the water packages to me?'",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task357-26fa546a588843fb90f1642511df9bef",
+            "input": "Context: 'Hi, are you excited for the camping trip?' 'Hello! I am very excited!\ud83d\ude42 How about you?'\nUtterance: 'Yes!  Would you mind sharing your highest priority item with me?  My most valued item right now is Food actually'",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task357-f5ab9ec2dc944cef82e7ee18cbd13ebf",
+            "input": "Context: 'Same here! I am in need of food more than firewood however as I am very hungry. ' 'Me too. We have a bigger family and we will run out of food if we don't get some more.' 'Since it looks like we have the same value ranking for our needs, how would you like to try to make the deal?'\nUtterance: 'Well let's try to make this as fair as possible.\ud83d\ude42We could get 2 packages of food, leaving you with 2 extra packages of firewood as well as water.'",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task357-16500aa198724c5c97d55ce3784b9a99",
+            "input": "Context: \nUtterance: 'Hello! I am looking forward to the camping trip but could use a few more supplies!'",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task357-1830e482d11e48d08204c5589027110d",
+            "input": "Context: 'hello'\nUtterance: 'Hey! How are you? My bestie and I were going to be going on a camping trip, but my other friends heard about it and wanted to come along so we're going to need more supplies than I initially though which has got me a little worried. \u2639\ufe0f'",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task357-ec9a8e12885c4659944243c24a41c9bd",
+            "input": "Context: 'Hello, how are you today?' 'I am doing good. How about yourself?'\nUtterance: 'I am great, i am really excited about going camping, how about you?'",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task357-aeaef7f5b35b4f38a8d5dea33ac1ab48",
+            "input": "Context: 'I really appreciate that. Do you think you will be okay with just 1 water since you have health issues?' 'That would be very nice, but I worry about you not having enough on the trail.  Dehydration would not be good.  I am pretty sure I can ration my supply to make it last.  \ud83d\ude42' 'You're a good friend! I'm excited to embark on this adventure! \ud83d\ude42\ud83d\ude42\ud83d\ude42'\nUtterance: 'Me too!  So let me clarify:  I will take 2 firewood, 1 water and 1 food.  You will take 1 Firewood, 2 water and 2 food.  Is that right.  \ud83d\ude42\ud83d\ude42\ud83d\ude42'",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task357-5c8d145ecf914b90856036e5028d0f5b",
+            "input": "Context: \nUtterance: 'Hello! camper, how are you? I need us to make a deal where we all benefit.I'm so excited for our camping trip.  I'm most excited about getting to eat food that I normally don't when I am home.\ud83d\ude42'",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

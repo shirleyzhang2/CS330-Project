@@ -1,0 +1,128 @@
+{
+    "Contributors": [
+        "Arit Chanda"
+    ],
+    "Source": [
+        "sts_b"
+    ],
+    "URL": [
+        "https://dl.fbaipublicfiles.com/glue/data/STS-B.zip"
+    ],
+    "Categories": [
+        "Text Matching"
+    ],
+    "Reasoning": [
+        "Textual Entailment -> Analogical Reasoning"
+    ],
+    "Definition": [
+        "In this task you are given two sentences and asked to evaluate the similarity between them, then classify them into one of six classes from 0-5. The six classes are as follows: 0 : The two sentences are completely dissimilar. 1 : The two sentences are not equivalent, but are on the same topic. 2 : The two sentences are not equivalent, but share some details. 3 : The two sentences are roughly equivalent, but some important information differs/missing. 4 : The two sentences are mostly equivalent, but some unimportant details differ. 5 : The two sentences are completely equivalent, as they mean the same thing."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Books",
+        "Dialogue"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Sentence 1: A plane is taking off. Sentence 2: An air plane is taking off.",
+            "output": "5",
+            "explanation": "Here both statements are talking about the same thing hence it will be classified as a 5."
+        },
+        {
+            "input": "Sentence 1: A man is playing a large flute. Sentence 2: A man is playing a flute.",
+            "output": "4",
+            "explanation": "In this example both statements mean the same thing but only unimportant details like the size of the flute is missing in the second statement. Hence, it is classified as a 4."
+        },
+        {
+            "input": "Sentence 1: Three men are playing chess. Sentence 2: Two men are playing chess.",
+            "output": "3",
+            "explanation": "In this example important detail of the number of men playing chess is wrong. Hence this example will be clasified as a 3."
+        },
+        {
+            "input": "Sentence 1: A man is smoking. Sentence 2: A man is skating.",
+            "output": "0",
+            "explanation": "Here there is no similarity between the two sentences hence the output classification is 0."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Sentence 1: A man is playing the cello. Sentence 2: A man seated is playing the cello.",
+            "output": "3",
+            "explanation": "Sentence 1 and 2 are only different by an unimportant detail of the man seating so the output should have been 4."
+        },
+        {
+            "input": "Sentence 1: The man is playing the piano. Sentence 2: The man is playing the guitar.",
+            "output": "0",
+            "explanation": "In this example both our sentences are sharing some details about playing an musical instrument so the correct classification should have been 2."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1347-47bcd70d938346fabde82e255cbd7e42",
+            "input": "Sentence 1: What if they messed up a study? Sentence 2: What if they had a personal bias?",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "id": "task1347-b1007e5f186d48b38f6c63b806c03b32",
+            "input": "Sentence 1: A young girl dressed in a Minnie mouse outfit and an older woman walking down the sidewalk. Sentence 2: a man wearing a white suit holding a newspaper walking through the streets.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "id": "task1347-8fc643381ef545c0afcdd0eb3d798247",
+            "input": "Sentence 1: A woman dressed in green is playing with her tan dog. Sentence 2: A tan dog licks a girls hand while laying down.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "id": "task1347-ab6348c675f8434c94542b38b87c3ce6",
+            "input": "Sentence 1: The girl is tiding up her bed. Sentence 2: A woman is making a bed.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "id": "task1347-a7dc3256263845748c451e99426fff3b",
+            "input": "Sentence 1: A white and brown dog playing with a black toy. Sentence 2: A white and brown dog is playing tug-o-war.",
+            "output": [
+                "3"
+            ]
+        },
+        {
+            "id": "task1347-3fc39ae9397a4396944a4a78c384f53b",
+            "input": "Sentence 1: The ADRs fell 10 cents to $28.95 at 10:06 a.m. in New York Stock Exchange composite trading today. Sentence 2: Shares of Fox Entertainment Group Inc., News Corp.'s U.S. media and entertainment arm, fell 45 cents to $26.85 in New York Stock Exchange composite trading.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "id": "task1347-86ff5ebb125f4d1684fcb2ac64e93d70",
+            "input": "Sentence 1: Vice President Dick Cheney and Mississippi Republican gubernatorial candidate Haley Barbour acknowledge the cheering crowd. Sentence 2: Vice President Dick Cheney says Mississippi Republican Haley Barbour would be a good governor because of his government and business savvy.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "id": "task1347-4a4443059bb7458a82df177f15ed7f9e",
+            "input": "Sentence 1: James : says faith without works is dead. Sentence 2: Paul did not preach faith without works.",
+            "output": [
+                "2"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

@@ -1,0 +1,123 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "dream"
+    ],
+    "URL": [
+        "https://github.com/nlpdata/dream"
+    ],
+    "Categories": [
+        "Question Understanding"
+    ],
+    "Reasoning": [
+        "Reasoning on Social Interactions"
+    ],
+    "Definition": [
+        "In this task, you will be given a conversation and a question. You should categorize the question into one of the following groups: matching, summary, logic, arithmetic, or commonsense. Matching questions are those that can be answered by a single sentence in the dialogue. Summary questions require an understanding of the whole conversation in order to be answered. Logic questions require logical reasoning to be answered. Arithmetic questions require knowledge of arithmetic to be answered. Commonsense questions require knowledge that goes beyond the information given in the dialogue. Note that a question can be in more than one group."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue",
+        "Natural Science -> School Science Textbooks"
+    ],
+    "Positive Examples": [
+        {
+            "input": "W: The movie next Tuesday has been cancelled due to lack of interest. M: What do you mean? W: Well, by last night only a few tickets has been sold., Question: What can we conclude about the movie? (A) They want to buy the tickets for the movie. (B) The tickets for the movie were sold. (C) The movie will not be shown.",
+            "output": "commonsense",
+            "explanation": "This is a good example. To answer this question we require commonsense knowledge that cannot be obtained from the dialogue. So, this is a commonsense question."
+        },
+        {
+            "input": "W: What does the term \"alternative energy source\" mean? M: When we think of energy or fuel for our homes and cars, we think of petroleum, a fossil fuel processed from oil removed from the ground, of which there is a limited supply. But alternative fuels can be many things. Wind, sun and water can all be used to create fuel. W: Is the threat of running out of petroleum real? M: It has taken thousands of years to create the natural stores of petroleum we have available at a much faster rate than it is being produced over time. The real controversy surrounding the amount of petroleum we have is how much we need to keep in reserve for future use. Most experts agree that by around 2025, the amount of petroleum we use will reach a peak. Then production and availability will begin to seriously decline. This is not to say there will be no petroleum at this point. But it'll become very difficult and therefore expensive to extract. W: Is that the most important reason to develop alternative fuel and energy sources? M: There are two very clear reasons to do so. One is that whether we have 60 or 600 years of fossil fuels left, we have to find other fuel sources eventually. So the sooner we start, the better off we will be. The other big argument is that when long time, which leads to some long-term negative effects, like global warming and the greenhouse effect., Question: What do we usually refer to when we talk about energy according to the man? (A) Coal burnt daily for the comfort of our homes. (B) Anything that can be used to produce power. (C) Fuel refined from oil extracted from underground.",
+            "output": "matching",
+            "explanation": "The first sentence of the man can answer this question. So, it's a matching question."
+        },
+        {
+            "input": "M: What do you think of my new sweater? W: Well, it looks nice, but why don't you put it on, and then I'll tell you if it suits you? M: Okay. You know, I tried on about twenty at the shop, and this one isn't really what I wanted. I especially can't stand the high neck. W: Why did you buy it then? M: The salesman sold it to me before I realized what had happened. He just never stopped talking about the latest fashions and special reduced prices. Before I could say anything he'd wrapped it up and I realized that I'd paid him. W: Well, it doesn't look too bad. I think it looks good on you. M: But I went out to get a blue sweater to match my black trousers-something with a V-neck, short sleeves and pattern-and I came home with a brown sweater with a high neck, long sleeves and no pattern. W: You've got to learn to stand up to these high-pressure salesmen. They will sell you all sorts of things you don't want if you don't watch out. M: Next time I'll send my wife. She would probably sell something to the salesman. W: That's a good idea. Actually women are much better at shopping than men. Whenever my husband and I buy something important, I always have the finalsay. M: I must admit that women are better at shopping. I should simply leave the whole business to them., Question: Why did the man buy a sweater that he doesn't like? (A) He was pushed by the salesman (B) It was sold at a low price (C) It is the latest fashion.",
+            "output": "logic",
+            "explanation": "To answer this question we need logical reasoning. In the dialogues, they talk about high-pressure salesmen. So by logical reasoning, we could understand that he was pushed by the salesman."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "W: What does the term \"alternative energy source\" mean? M: When we think of energy or fuel for our homes and cars, we think of petroleum, a fossil fuel processed from oil removed from the ground, of which there is a limited supply. But alternative fuels can be many things. Wind, sun and water can all be used to create fuel. W: Is the threat of running out of petroleum real? M: It has taken thousands of years to create the natural stores of petroleum we have available at a much faster rate than it is being produced over time. The real controversy surrounding the amount of petroleum we have is how much we need to keep in reserve for future use. Most experts agree that by around 2025, the amount of petroleum we use will reach a peak. Then production and availability will begin to seriously decline. This is not to say there will be no petroleum at this point. But it'll become very difficult and therefore expensive to extract. W: Is that the most important reason to develop alternative fuel and energy sources? M: There are two very clear reasons to do so. One is that whether we have 60 or 600 years of fossil fuels left, we have to find other fuel sources eventually. So the sooner we start, the better off we will be. The other big argument is that when long time, which leads to some long-term negative effects, like global warming and the greenhouse effect., Question: What do most experts agree on according to the man? (A) Oil will soon be replaced by alternative energy sources. (B) Oil production will begin to decline worldwide by 2025. (C) Oil consumption has given rise to many global problems.",
+            "output": "arithmetic",
+            "explanation": "We don't need arithmetic knowledge to answer this question. It's incorrect. This is a matching question."
+        },
+        {
+            "input": "M: Finally, I've got the chance to put on my new suit tonight. I hope to make a good impression on your family. W: Come on! It's only a family reunion. So jeans and T-shirts are just fine., Question: What does the woman mean? (A) The man has left a good impression on her family. (B) The man can dress casually for the occasion. (C) The man should buy himself a new suit.",
+            "output": "matching",
+            "explanation": "The answer to this question cannot be extracted from the context. We need commonsense knowledge to understand wearing jeans and T-shirts means dressing casually. This is a commonsense question."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task248-94e67339e758458195b2d596d9db4ae9",
+            "input": "M: Well, this is a pleasant surprise. It seems to me we ran into each other here last week too. W: You and I must have the same idea. The only way to beat the crowds when you do the grocery shopping on Saturday is to be here when they open at 9:00 o'clock sharp!, Question: Why did both of them do grocery shopping at 9:00 o'clock sharp? (A) To run into each other. (B) To get bargains. (C) To avoid the crowds.",
+            "output": [
+                "matching"
+            ]
+        },
+        {
+            "id": "task248-2802ab69304648e2a025ebdade3642f9",
+            "input": "M: Hello? Beechgrove School? This is Mr. Holloway speaking. Brad Holloway. I'm ringing about my son Michael. He came home yesterday and said he'd been in trouble at school with his P. E. teacher, Miss Sanderson. She said he didn't have the right kit for P. E. Everyone else thought it was all highly amusing, of course, and Michael was very embarrassed about it. Perhaps I could speak to the Headmistress. W: She's engaged at the moment, I'm afraid. This is her secretary. M: I can hold on for a while if she's going to be free soon... W: I have a feeling she's going to be busy all morning, Mr. Holloway. She's at a Governors' meeting. It could go on for a very long time... M: Oh. Well, in that case, perhaps you could help me. W: Of course. What form is Michael in? M: He's a first year. He's in 1B. His form teacher's Mr. Hopkins. W: And what kit should Michael have brought with him? M: Well that's the point. In the school information booklet it says black shorts and blue singlet, with black or blue plimsolls. So that's what we bought him. We went to the sports shop the school actually recommends. You know, Atlas Sports, West Street. W: I'm just looking at the information booklet, Mr. Holloway. There seems to have been some mistake. M: I thought so. Maybe you could point it out to Miss Sanderson. W: What Michael came to school with was the senior girls' basketball kit. M: What? How on earth could that have happened? It says quite clearly in the booklet, black shorts and blue vest. I've got it in front of me. W: You're looking at the top of Page 11, aren't you? M: That's right. W: Well, unfortunately the layout of the booklet is a bit misleading. If you look at the bottom of the previous page you'll see it says Boys' Kit in the left-hand column and Girls' Kit in the right-hand one, but when you turn over the page it's not difficult to forget which column was which because the headings aren't repeated. M: So it looks as though were going to have to write another cheque... W: I'm afraid so. M: Oh well. Anything for a quiet life, I suppose. Perhaps yon could ask Miss Sanderson to be patient for a week or so to give us time to buy the right kit. W: Of course. Goodbye Mr. Holloway., Question: Where did Mr. Holloway buy the clothing? (A) \"At Last\" Sports Shop. (B) South Street Sports Shop. (C) The shop recommended by the school.",
+            "output": [
+                "logic"
+            ]
+        },
+        {
+            "id": "task248-2f9cb373fd1d41219dcf21b827499135",
+            "input": "M: Andy, could you send this document to Mr. White's office? W: Sure, I'll do it right away., Question: What will the woman do? (A) Send a document to Mr. Baker's office. (B) Send a document to Mr. White's office. (C) Send newspaper to Mr. White's office.",
+            "output": [
+                "logic"
+            ]
+        },
+        {
+            "id": "task248-00e88aac47464a418114f5e022b31b07",
+            "input": "Paul: Sara, I've been looking forward to our yearly camp out for three weeks. [Me too] It's going to be a wonderful day for hiking tomorrow. The great outdoors. Camping under the stars. This is the life. Sara: Yeah, but Paul, I'm a little bit worried about the weather though. The weatherman said it was going to rain later tonight. Paul: Ah, nonsense. Nothing can spoil our adventure. Those weather reports are never right. Sara: And it said there was a chance of high winds. Paul: Ah. Don't worry. Sara: [thunder] Paul. Paul. Did you remember to bring our raincoats just in case, like I told you? [light rain] Paul: Uh ... no. I left them on the front porch. [heavy rain] Sara: What are we going to do now? Paul: We'll have to sleep in the car! Hurry get in! [door shut] Sara: So, Paul, what are we going to do now? Paul: How about playing a card game? Sara: Uhh. I left them next to the picnic table. [Hmmm] Hey, you don't want me to go out in this rain and get them, do you? Paul: No. That's okay. So what now? Sara: Well, we could head down the mountain and stay at that hotel we passed on the way up, or go home. Paul: Hmm, why don't we just make the best of it here and hope the weather clears. Sara: That's a good idea., Question: What did Paul forget to bring? (A) rain coats (B) umbrellas (C) rain boots",
+            "output": [
+                "logic"
+            ]
+        },
+        {
+            "id": "task248-ae317e21115a44ff8ac43c28721511da",
+            "input": "M: Let's go shopping tonight. They're having a big sale in the shopping mall, so it'll be open until midnight. W: I don't think I can make it. I have to prepare for my exam tomorrow., Question: Why won't the woman go shopping? (A) She doesn't need to buy anything. (B) She needs to prepare for a exam. (C) She doesn't like the mall.",
+            "output": [
+                "logic"
+            ]
+        },
+        {
+            "id": "task248-aa8421dfe05c47368304660aa6735235",
+            "input": "F: David likes cat very much. M: Oh, I'll give him one., Question: What will David get from the man? (A) A cat. (B) A dog. (C) A hear.",
+            "output": [
+                "logic"
+            ]
+        },
+        {
+            "id": "task248-f3999f1874fd4c6ba7470abc491b2001",
+            "input": "W: What are you doing, Tom? M: I'm writing to my mother. W: But you wrote to her only yesterday. M: Yes, but I have something new to tell her. W: Something new? M: Yes. I am telling her I've decided to take up a part-time job as a shop assistant. W: What do you mean? You've been working at one nearly three months. Have you been fired by Rogers? M: No. My mother doesn't know I have a part-time job. W: You mean you didn't tell her before? M: No. I didn't want her to worry about my study. W: But why are you telling her now? M: I don't want her to worry about my life here. You see, I told her that I'd just bought a car in my letter., Question: What does Tom tell his mother in yesterday's letter? (A) He had made a new discovery. (B) He had lost his new job. (C) He had just bought a car.",
+            "output": [
+                "logic"
+            ]
+        },
+        {
+            "id": "task248-07e7d77f1b6f49e0a86682351bdaa3ea",
+            "input": "W: Wait, Ben, did you say you had a party on Saturday? M: Yeah, didn't you know about it? It was my birthday. W: No, I didn't. M: But I invited you. I sent you an e-mail last week. W: Are you sure? I didn't get it. Oh, you know what? I didn't tell you I have a new e-mail address. Oh, I am sorry. M: That's OK. But I was kind of upset that you wasn't there. W: Really? I was upset too. And the bike trip is just awful. We got lost for four hours. M: Oh, that's terrible. W: Listen, let's go out for lunch this week. I want to do something for your birthday. M: Oh, you don't have to. W: I know. But I want to. M: OK. That's really nice of you, really. So anyway, I have to go now. I have a meeting at 9:30. W: OK. See you later and happy birthday., Question: What does the woman want to do for the man's birthday? (A) Buy him a nice present. (B) Have lunch with him. (C) Send him an e-mail.",
+            "output": [
+                "logic"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Dedicated License (https://github.com/nlpdata/dream/blob/master/license.txt)"
+    ]
+}

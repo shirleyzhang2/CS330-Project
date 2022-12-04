@@ -1,0 +1,128 @@
+{
+    "Contributors": [
+        "Arit Chanda"
+    ],
+    "Source": [
+        "sts_b"
+    ],
+    "URL": [
+        "https://dl.fbaipublicfiles.com/glue/data/STS-B.zip"
+    ],
+    "Categories": [
+        "Text Matching"
+    ],
+    "Reasoning": [
+        "Textual Entailment -> Analogical Reasoning"
+    ],
+    "Definition": [
+        "Given two sentences, classify them into one of the following five classes according to their similarity: 0 : The two sentences are completely dissimilar. 1 : The two sentences are not equivalent, but are on the same topic. 2 : The two sentences are not equivalent, but share some details. 3 : The two sentences are roughly equivalent, but some important information differs/missing. 4 : The two sentences are mostly equivalent, but some unimportant details differ. 5 : The two sentences are completely equivalent, as they mean the same thing."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Books",
+        "Dialogue"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Sentence 1: A plane is taking off. Sentence 2: An air plane is taking off.",
+            "output": "5",
+            "explanation": "Here both statements are talking about the same thing hence it will be classified as a 5."
+        },
+        {
+            "input": "Sentence 1: A man is playing a large flute. Sentence 2: A man is playing a flute.",
+            "output": "4",
+            "explanation": "In this example both statements mean the same thing but only unimportant details like the size of the flute is missing in the second statement. Hence, it is classified as a 4."
+        },
+        {
+            "input": "Sentence 1: Three men are playing chess. Sentence 2: Two men are playing chess.",
+            "output": "3",
+            "explanation": "In this example important detail of the number of men playing chess is wrong. Hence this example will be clasified as a 3."
+        },
+        {
+            "input": "Sentence 1: A man is smoking. Sentence 2: A man is skating.",
+            "output": "0",
+            "explanation": "Here there is no similarity between the two sentences hence the output classification is 0."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Sentence 1: A man is playing the cello. Sentence 2: A man seated is playing the cello.",
+            "output": "3",
+            "explanation": "Sentence 1 and 2 are only different by an unimportant detail of the man seating so the output should have been 4."
+        },
+        {
+            "input": "Sentence 1: The man is playing the piano. Sentence 2: The man is playing the guitar.",
+            "output": "0",
+            "explanation": "In this example both our sentences are sharing some details about playing an musical instrument so the correct classification should have been 2."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1347-e374af4f61334dc89969e0fa8ab2af68",
+            "input": "Sentence 1: A chicken is pecking at a dead mouse. Sentence 2: A rooster pecks at a dead mouse.",
+            "output": [
+                "4"
+            ]
+        },
+        {
+            "id": "task1347-83ee8ae30b3442cfac8b7827d823b142",
+            "input": "Sentence 1: I\u00b4m very proud of the citizens of this state, Gov. John Baldacci said after votes from Tuesday\u00b4s referendum were counted. Sentence 2: I'm very proud of the citizens of this state, said Gov. John Baldacci, a casino foe.",
+            "output": [
+                "3"
+            ]
+        },
+        {
+            "id": "task1347-e83aa45485a44a4183defec72b409ee8",
+            "input": "Sentence 1: Two brunette girls sit atop a red an yellow motorcycle with a side car. Sentence 2: A couple posing on a red and yellow motorcycle.",
+            "output": [
+                "3"
+            ]
+        },
+        {
+            "id": "task1347-366b593cfb59417788c6406f074f9c98",
+            "input": "Sentence 1: Heavy Fighting Reported in Syria's Aleppo Sentence 2: Heavy fighting reported in Damascus",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "id": "task1347-71d1227ba022494c9636ccedd68da684",
+            "input": "Sentence 1: Trees are bending in storm. Sentence 2: Trees are hit by very hard winds.",
+            "output": [
+                "3"
+            ]
+        },
+        {
+            "id": "task1347-3c5f7008873143538c5bd7a85fe38b7e",
+            "input": "Sentence 1: The murky waters of the South China Sea Sentence 2: Peace lies over the South China Sea",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "id": "task1347-2e4354371f4644c489e7daa4723cb087",
+            "input": "Sentence 1: The woman is rolling dough. Sentence 2: A woman is flouring and rolling dough.",
+            "output": [
+                "4"
+            ]
+        },
+        {
+            "id": "task1347-014ffd030a314898b0ee908976978e7a",
+            "input": "Sentence 1: A person holding a net is standing in the water. Sentence 2: A black woman and two black children are sitting in a thatched tent.",
+            "output": [
+                "1"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

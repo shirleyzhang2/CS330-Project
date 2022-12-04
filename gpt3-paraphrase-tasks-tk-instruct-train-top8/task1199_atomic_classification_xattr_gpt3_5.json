@@ -1,0 +1,125 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "atomic"
+    ],
+    "URL": [
+        "https://allenai.org/data/atomic-2020"
+    ],
+    "Categories": [
+        "Commonsense Classification"
+    ],
+    "Reasoning": [
+        "Relational Reasoning",
+        "Reasoning on Social Interactions",
+        "Commonsense Reasoning -> Social Situations"
+    ],
+    "Definition": [
+        "You are given a tuple containing Head and Tail events, which are short phrases possibly involving participants. The names of specific people have been replaced by generic words. PersonX is always the subject of the event. You have to determine whether, as a result of the Head, PersonX will be seen as what is mentioned in the Tail. If the Tail describes PersonX's persona or attribute as perceived by others given an event, then PersonX will be seen as the Tail. Classify your answers into \"Yes\" and \"No\"."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Sociology",
+        "Commonsense -> Concepts and Relations -> Social Commonsense"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Head: PersonX gives PersonY the number<sep>Tail: Adventurous",
+            "output": "Yes",
+            "explanation": "This is a good example. As a result of the Head, PersonX will be seen as Adventurous."
+        },
+        {
+            "input": "Head: PersonX asks PersonY to say<sep>Tail: to observe PersonX",
+            "output": "No",
+            "explanation": "In this example, if PersonX asks PersonY to say, PersonX won't be seen as someone to observe PersonX. So this output is correct."
+        },
+        {
+            "input": "Head: PersonX eventually got ___<sep>Tail: avenged",
+            "output": "Yes",
+            "explanation": "If PersonX eventually got something, personX will be seen as avenged. Thus, this example should be classified as \"Yes\"."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Head: PersonX affords PersonY protection<sep>Tail: spends money",
+            "output": "Yes",
+            "explanation": "If PersonX affords PersonY protection, PersonX won't be seen as someone who spends money. So the output should be \"No\"."
+        },
+        {
+            "input": "Head: PersonX improves PersonY's ___ as understood<sep>Tail: intelligent",
+            "output": "No",
+            "explanation": "If PersonX improves PersonY's ___ as understood, PersonX won't be seen as intelligent, and the output should be \"Yes\"."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1199-11df6744699f44bca46984bdb1bf245b",
+            "input": "Head: PersonX becomes PersonY wife<sep>Tail: have free",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1199-fac59721b33c439fa379e616f0364a8a",
+            "input": "Head: PersonX gives PersonY the number<sep>Tail: Considerate",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1199-929e781b1bd443d39e771eb3bc8480c5",
+            "input": "Head: PersonX asks PersonX's mother for help<sep>Tail: To get the work done",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1199-82fb46e528504cc68216e0247e317ff2",
+            "input": "Head: PersonX asks PersonY's boyfriend<sep>Tail: satisfied",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1199-978619cc46ff43c99b373a09b559295c",
+            "input": "Head: PersonX gets ___ for free<sep>Tail: frugal",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1199-2db7ab90c04640f2a978af9283f1cd28",
+            "input": "Head: PersonX challenges ___ to a game<sep>Tail: competitive",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1199-03f544f5aa884815831535d392344c13",
+            "input": "Head: PersonX holds PersonY's head<sep>Tail: Helpful",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1199-e12797ec525b46f88c417026d7cc7703",
+            "input": "Head: PersonX feels lazy<sep>Tail: depleted",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

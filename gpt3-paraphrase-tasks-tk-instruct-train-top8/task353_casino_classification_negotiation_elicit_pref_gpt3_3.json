@@ -1,0 +1,115 @@
+{
+    "Contributors": [
+        "Kushal Chawla"
+    ],
+    "Source": [
+        "casino"
+    ],
+    "URL": [
+        "https://aclanthology.org/2021.naacl-main.254.pdf"
+    ],
+    "Categories": [
+        "Negotiation Strategy Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "In this task, you are given an utterance and recent dialogue context containing past 3 utterances (wherever available). Your task is to output 'Yes' if the utterance contains the elicit-pref strategy, otherwise output 'No'. elicit-pref is a cooperative negotiation strategy used to discover the preference order of the opponent in the negotiation."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Context: 'What do you think if in the camp we get together and have a meeting between your family and mine? We can have a small party to get to know each other better.' 'Sounds great!' 'Ok, my proposal is to give you all the firewood you need, on the condition that you give me all the water I need. And regarding food we can negotiate.'\nUtterance: 'That sounds good. What do you propose on the food?'",
+            "output": "No",
+            "explanation": "The primary utterance does not try to elicit information on the preference order of the participant. So this is correct."
+        },
+        {
+            "input": "Context: 'Good morning' 'Hi, how goes it?' 'It's going alright. What do you need the most to trade?'\nUtterance: 'well, I run and could use some extra water. How about you?'",
+            "output": "Yes",
+            "explanation": "This is correct. The utterance asks about the preference of the opponent, which is clear from the context."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Context: 'Which one do you prefer most?' 'They sort of need more water for their meds' 'I'm sorry to hear that! But can you spare 1 for me since you probably don't need all the water.'\nUtterance: 'Sure that sounds fair. Thank you. Besides water what do you need for your trip?'",
+            "output": "No",
+            "explanation": "In the utterance, the participant asks about the needs of the opponent. So the answer should be 'Yes'."
+        },
+        {
+            "input": "Context: 'I am willing to give you the most water if I am able to have the most food.' 'Well I need some food because what if I get lost as well? ' 'I understand that, but walking away with the most food and the most water would essentially leave me for dead lol. Do you prefer water or food? '\nUtterance: 'I prefer to have the most water as I have a medical condition that requires me to stay extremely hydrated at all times. If I get too dehydrated, it's extremely bad for me. How about I get 3 water and 1 food, and 2 firewood?'",
+            "output": "Yes",
+            "explanation": "The participant does not try to elicit anything about the preference order, at least directly. The correct answer is 'No'."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task353-db7ee6330d974f5b9b55970aac4dda76",
+            "input": "Context: 'Great! I get dehydrated very easily, so I am pretty jumpy at the thought of running out! \ud83d\ude42' 'That's not good! \u2639\ufe0f We don't want that to happen. So to confirm, you get 2 food and all the water, and I get 1 food and all the firewood? \ud83d\ude42' 'Yes. I would get 2 food and 3 water, and you would get 1 food and 3 firewood. Hopefully this works for you!'\nUtterance: 'You have yourself a deal!'",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task353-5eb9c1564c244bc8bfafc7e8f090ff99",
+            "input": "Context: 'Hello! What camping supplies are you looking for the most?'\nUtterance: 'Hello! I would like more packages of food the most. What are you looking for?'",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task353-f1fd89d70aac46aebd549299bedd38e6",
+            "input": "Context: 'Well you guys did say you did not care much about large fires. What if you gave all the firewood in replace for the water and you can still keep 1 food?' 'So I would get 3 water and 1 food and youd get 3 firewood and 2 food?' 'Yea that seems like an alright trade to me \ud83d\ude42'\nUtterance: 'Hmm... alright then \ud83d\ude42.'",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task353-5c540fa760bc4248b7526291227de9e5",
+            "input": "Context: 'I was hoping to get some extra food just in case my kids get hungry. Would you be ok if I took 2 food and you could have 2 of the rest?' 'yes child is not hoping. u hive me a all extra food to the child.' 'You're good with the extra water and firewood?'\nUtterance: 'yes extra water and firewood of my self.'",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task353-21aad7b282784dea8aa8e3676068b6a6",
+            "input": "Context: 'Got it! I am going to need the most of food. There aren't any animals or berries that I feel safe eating where I'm going.' 'Well I think we can make a good deal then.  How many packages of food would you want?' 'Could we each do 3 of what we need the most? I get three food and you get three water? How do you propose splitting up the firewood?'\nUtterance: 'We can do the 3 for 3 trade.  That works perfectly!  Its' going to be cold at night where I'm going.  What's it like where you're heading?'",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task353-a25c450a37824ae1922eba48f10e1b8b",
+            "input": "Context: 'Shall we divide the firewood two to one? ' 'sure as long as I am getting two wood.   It gets very cold at night where I go camping' 'Sure, since you were so willing to accommodate my need for water, I would be happy to oblige. '\nUtterance: 'Thanks, these extra supplies will really help me'",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task353-fa7513b84a5348b684796de45b345441",
+            "input": "Context: 'Okay, so how about I get 1 food, and 3 firewood and 1 water, and you get 2 food, 0 firewood, and 2 water' 'sounds great' 'great! sounds good to me'\nUtterance: 'ok ready to make the deal'",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task353-35342117535e45ce9a8bca9c83eec35c",
+            "input": "Context: 'Good afternoon. Ok, water is a medium need for me. I have some to get by. I really need firewood. It's cold.' 'I'd be willing to give up all the firewood in exchange for the water. I also am low on Food and would need at least 2.' 'That doesn't sound like something I can agree to. Do you have any other ideas?'\nUtterance: 'I can keep 2 of the firewood then and offer you 2 of the food. I'd take the water, 2 firewood and 1 water'",
+            "output": [
+                "No"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

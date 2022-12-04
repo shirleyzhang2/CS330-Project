@@ -1,0 +1,122 @@
+{
+    "Contributors": [
+        "Eshaan Pathak"
+    ],
+    "Source": [
+        "codah"
+    ],
+    "URL": [
+        "https://aclanthology.org/W19-2008.pdf"
+    ],
+    "Categories": [
+        "Text Completion"
+    ],
+    "Reasoning": [
+        "Commonsense Reasoning"
+    ],
+    "Definition": [
+        "Given a prompt and four completions, you must select the completion that is the most plausible in continuing or answering the prompt. The possible completions are A, B, C, or D. This task is designed to test common sense, and the questions will come from various categories, such as idioms, negated statements, polysemy, subject referencing, and quantitative reasoning."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Commonsense -> Concepts and Relations"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Prompt: A clown is fashioning animals from long balloons. He \nCompletion A: releases the animals into their natural habitat. \nCompletion B: makes a giraffe and hands it to a child. \nCompletion C: yells out for his second in command to pilot the battleship around the obstacle. \nCompletion D: releases the balloon and it flies high into the air.",
+            "output": "Completion B",
+            "explanation": "The clown is an entertainer and is twisting balloons to resemble an animal. There are no live animals, and these types of twistable balloons are not able to fly or float up."
+        },
+        {
+            "input": "Prompt: I am feeling hungry. I think I will \nCompletion A: call my mother. \nCompletion B: have some ravioli. \nCompletion C: fly out the window. \nCompletion D: go on a run outside.",
+            "output": "Completion B",
+            "explanation": "If one is hungry, then they will eat some food to satiate their hunger. One must look at the entire context rather than just the current sentence when selecting the best completion to the prompt."
+        },
+        {
+            "input": "Prompt: I am feeling nervous about my midterm tomorrow. I fear that \nCompletion A: the professor will delay the midterm. \nCompletion B: I will doodle on my exam and receive points for it. \nCompetion C: my grandpa has diabetes. \nCompletion D: I will fail.",
+            "output": "Completion D",
+            "explanation": "If one is feeling nervous about their midterm the next day, then they are most likely worried and anxious about the grade they will receive. They will not doodle on their exam because they will surely not do well in that case. The professor delaying a midterm is usually not why a person would feel nervous about the midterm. One may be worried about their grandpa having diabetes, but that is not relevant to taking a midterm."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Prompt: The man entered his house. The man \nCompletion A: can't find the keys to unlock the door. \nCompletion B: goes to school at his university. \nCompletion C: eats the garbage. \nCompletion D: takes his shoes off.",
+            "output": "Completion A",
+            "explanation": "The man must have found the keys to unlock the door in order to have entered his house in the first place. After he entered the house, it is most plausible that he took his shoes off to not get his house dirty. Thus, Completion D is actually the correct answer."
+        },
+        {
+            "input": "The boy likes animals, but only invertebrates. He \nCompletion A: likes pigs. \nCompletion B: likes vertebrates. \nCompletion C: likes spiders. \nCompletion D: likes elephants.",
+            "output": "Completion D",
+            "explanation": "Out of the four possible completions, only one of them mentions an invertebrate. Spiders are invertebrates since they do not have a spine or vertebral column. Thus, Completion C is actually the correct answer."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task156-8d631ab0c3594dfcbd5ad2318ee105e1",
+            "input": "Prompt: The manager fired the cashier because he had sticky fingers. The cashier \nCompletion A: stole a lot of money \nCompletion B: had fingers that would stick to things \nCompletion C: had eaten sticky food and it was gross \nCompletion D: was just using some glue",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task156-3550ce0d443041a3adbf0da48e2de591",
+            "input": "Prompt: Timmy wanted to tell his parents in London that he was safe in America. Timmy \nCompletion A: made a phone call to talk to them. \nCompletion B: kayaked across the Atlantic ocean to talk to them. \nCompletion C: took a plane back to talk to them. \nCompletion D: put his message into a bottle and threw it into the ocean.",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task156-7a4c2c13df10460e8067e14eead91c39",
+            "input": "Prompt: The campfire was hungry for oxygen under the kindling. We \nCompletion A: grabbed the bellows X \nCompletion B: fed it some leftovers. \nCompletion C: could not breathe. \nCompletion D: starved.",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task156-1511a586e4e049e5be64049ec891bca6",
+            "input": "Prompt: At the stoke of the midnight hour, Pt. Jawaharlal Nehru said, \"India will awaken\". And the next day \nCompletion A: it was cold and snowy and the visibility decreased in the mornings ever since \nCompletion B: India got its independence after a hundred years of British rule \nCompletion C: it was an Indian captain who lifted the world cup after twenty six years \nCompletion D: the USA sent its troops to India in search for culture and values, something that the people of USA had never experienced",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task156-46fa7408902a4fa6aa2b27b9d1928c81",
+            "input": "Prompt: Mona is trying to complete a film for her easy high school Psychology project. \nCompletion A: Mona makes a short funny clip displaying her friends' unconscious habits. \nCompletion B: Mona applies for a job as an accountant. \nCompletion C: Mona participates in a secret CIA training program that specializes in psychological warfare. \nCompletion D: Mona completes her trigonometry homework.",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task156-5c3f2de3ae754d989daf0c8479438a9c",
+            "input": "Prompt: Question: A student is sad about his grade, he \nCompletion A: shreds his exam paper. \nCompletion B: lost his girlfriend. \nCompletion C: watches his favorite TV. \nCompletion D: tells this situation to his parent with smile face.",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task156-19723bee6d044857a29e298f5a7bd602",
+            "input": "Prompt: When I was young I had a rabbit. The rabbit \nCompletion A: loved spinach and used to snore a lot in the night. \nCompletion B: fell in love with my dog \nCompletion C: was a math genius \nCompletion D: stayed young forever.",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task156-73561fbef761446ab64d12749f3655eb",
+            "input": "Prompt: I notice the tap is not turned off, so I \nCompletion A: turn on the tap. \nCompletion B: turn off the tap. \nCompletion C: wash my feet. \nCompletion D: wash my hand.",
+            "output": [
+                "Completion B"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

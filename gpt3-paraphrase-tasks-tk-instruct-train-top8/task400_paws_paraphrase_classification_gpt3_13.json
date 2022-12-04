@@ -1,0 +1,125 @@
+{
+    "Contributors": [
+        "Amirreza Mirzaei"
+    ],
+    "Source": [
+        "paws"
+    ],
+    "URL": [
+        "https://arxiv.org/abs/1904.01130"
+    ],
+    "Categories": [
+        "Text Matching"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "Given a sentence pair from Wikipedia that has high lexical overlap, label them as \"Paraphrase\" if the sentences have the same meaning and are just paraphrases of each other, or \"Not paraphrase\" if not."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Wikipedia"
+    ],
+    "Positive Examples": [
+        {
+            "input": "In January 2011 , the Deputy Secretary General of FIBA Asia , Hagop Khajirian , inspected the venue together with SBP - President Manuel V. Pangilinan .\nIn January 2011 , FIBA Asia deputy secretary general Hagop Khajirian along with SBP president Manuel V. Pangilinan inspected the venue .",
+            "output": "Paraphrase",
+            "explanation": "The second sentence has the same meaning as the first sentence and is just a paraphrased version of it."
+        },
+        {
+            "input": "The smallest number that can be represented in two positive and seventh ways as a sum of four different powers is 2056364173794800 .\nThe smallest number that can be represented as a sum of four positive seventh potences in two different ways is 2056364173794800 .",
+            "output": "Not paraphrase",
+            "explanation": "The second sentence doesn't have the same meaning as the first."
+        },
+        {
+            "input": "Luciano Williames Dias ( born July 25 , 1970 ) is a Brazilian football coach and former player .\nLuciano Williames Dias ( born 25 July 1970 ) is a former football coach and Brazilian player .",
+            "output": "Not paraphrase",
+            "explanation": "The second sentence doesn't have the same meaning as the first."
+        },
+        {
+            "input": "During her sophomore , junior and senior summers , she spent half of it with her Alaska team , and half playing , and living in Oregon .\nDuring her second , junior and senior summers , she spent half of it with her Alaska team , half playing and living in Oregon .",
+            "output": "Paraphrase",
+            "explanation": "The second sentence doesn't have the same meaning as the first."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "This was a series of nested angular standards , so that measurements in azimuth and elevation could be done directly in polar coordinates relative to the ecliptic .\nThis was a series of nested polar scales , so that measurements in azimuth and elevation could be performed directly in angular coordinates relative to the ecliptic .",
+            "output": "Paraphrase",
+            "explanation": "The second sentence doesn't have the same meaning as the first. As pointed out in the task definition both sentences in all the instances have high lexical overlap, which doesn't mean they have the same meaning."
+        },
+        {
+            "input": "His father emigrated to Missouri in 1868 but returned when his wife became ill and before the rest of the family could also go to America .\nHis father emigrated to America in 1868 , but returned when his wife became ill and before the rest of the family could go to Missouri .",
+            "output": "Paraphrase",
+            "explanation": "In the second sentence, it is not mentioned that the father went to Missouri, so the part about the rest of the family doesn't imply the same meaning as the first sentence. These are not paraphrases."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task400-6719e89483744c4586fb4d645a0f0998",
+            "input": "He also won close neighboring Kent County to the south , which contains the state capital of Dover , with 51.76 percent of the vote .\nHe also narrowly won neighboring Kent County to the south , which contains the state capital of Dover , with 51.76 percent of the vote .",
+            "output": [
+                "Paraphrase"
+            ]
+        },
+        {
+            "id": "task400-c940f70a1a074cd9acf04ec6d80fd810",
+            "input": "Hay was the oldest son of George Hay , 8th Earl of Kinnoull , and Abigail , daughter of Robert Harley , 1st Earl of Oxford and Earl Mortimer .\nHay was the eldest son of George Hay , 8th Earl of Kinnoull , and Abigail , daughter of Robert Harley , 1st Earl of Oxford and Earl Mortimer .",
+            "output": [
+                "Paraphrase"
+            ]
+        },
+        {
+            "id": "task400-9b54e60c62004d34a85aeda5b896df36",
+            "input": "It is pressed on transparent yellow vinyl and was published in 1995 by Cosmic Records .\nIt is published on the transparent yellow vinyl and was pressed in 1995 by Cosmic Records .",
+            "output": [
+                "Not paraphrase"
+            ]
+        },
+        {
+            "id": "task400-1b03649fd79e4a37838bd84a2c805bcc",
+            "input": "In 1725 Antequera resigned and fled to Charcas , while the order was apparently restored in the province .\nIn 1725 Antequera fled and returned to Charcas , while the order was seemingly restored in the province .",
+            "output": [
+                "Not paraphrase"
+            ]
+        },
+        {
+            "id": "task400-e9c1793ec41d4b7a8084d0c5d5d77132",
+            "input": "Then the equalizer is again the entire domain `` X '' , since the universal quantification in the definition is vacuum-suitable .\nThen the equalizer is again the entire domain `` X '' , since the true quantification in the definition is vacuously universal .",
+            "output": [
+                "Not paraphrase"
+            ]
+        },
+        {
+            "id": "task400-27bfd6e9709b42899faabe0c447238b3",
+            "input": "In April 1916 , a large number of Serbian troops were transported in British and French naval vessels from Greece to mainland Corfu .\nIn April 1916 , a large number of Serbian troops were transported to mainland Greece in British and French seagoing ships from Corfu .",
+            "output": [
+                "Not paraphrase"
+            ]
+        },
+        {
+            "id": "task400-279d7994b89042be8e6743edcf151d7d",
+            "input": "Lucki has worked with prominent music figures since then , releasing songs with Chance the Rapper , FKA Twigs , and Danny Brown .\nSince then , Lucki has worked with prominent music figures and published songs with chance the rapper , FKA Twigs and Danny Brown songs .",
+            "output": [
+                "Paraphrase"
+            ]
+        },
+        {
+            "id": "task400-c63bccf97cec468aa5ea22add05b3922",
+            "input": "The tour reached July 12 , 2008 in Shanghai and on November 22 , 2008 in Bangkok , Thailand .\nThe tour reached Shanghai on July 12 , 2008 and Bangkok , Thailand on November 22 , 2008 .",
+            "output": [
+                "Paraphrase"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Dedicated License (https://github.com/google-research-datasets/paws/blob/master/LICENSE)"
+    ]
+}

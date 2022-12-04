@@ -1,0 +1,127 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "atomic"
+    ],
+    "URL": [
+        "https://allenai.org/data/atomic-2020"
+    ],
+    "Categories": [
+        "Commonsense Classification"
+    ],
+    "Reasoning": [
+        "Relational Reasoning",
+        "Reasoning on Social Interactions",
+        "Commonsense Reasoning -> Social Situations",
+        "Reasoning on Objects"
+    ],
+    "Definition": [
+        "In this task, you will be given two phrases, Head and Tail, separated by <sep>. Head and Tail will be events involving one or more participants. The specific names of people have been replaced by generic words. PersonX is always the subject of the event. You will need to determine whether the Head is a part, portion, or makeup of the Tail. Your answers should be classified as \"Yes\" or \"No\". The phrase may also contain \"___\", which is a placeholder for an object, person, or action."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Sociology",
+        "Commonsense -> Concepts and Relations -> Physical Commonsense",
+        "Commonsense -> Concepts and Relations -> Social Commonsense"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Head: bed<sep>Tail: mattress",
+            "output": "Yes",
+            "explanation": "This is a good example. The Head is made of the Tail."
+        },
+        {
+            "input": "Head: PersonX asks ___ to go with PersonY<sep>Tail: follows the other person",
+            "output": "No",
+            "explanation": "In this example, The relation between the Head and the Tail is different, and the Head is not made up of the Tail. So the output should be\"No\"."
+        },
+        {
+            "input": "Head: government<sep>Tail: police",
+            "output": "Yes",
+            "explanation": "In this example, the government is made of the police. Thus, this example should be classified as \"Yes\"."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Head: PersonX acts weird<sep>Tail: attention",
+            "output": "Yes",
+            "explanation": "In this example, The Head needs the Tail, and it is not made up of the Tail. So the output should be \"No\"."
+        },
+        {
+            "input": "Head: war<sep>Tail: aggression",
+            "output": "No",
+            "explanation": "The war is made up of aggression, and the output should be \"Yes\"."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1210-20a33b823dcb4d40bb77033e8f0d393f",
+            "input": "Head: government<sep>Tail: irs",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1210-3409a2e0600e4973aca6ef861830bb04",
+            "input": "Head: PersonX accepts PersonY's invitation<sep>Tail: they want to go out with persony",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1210-233a96c01060481f9a5ae98b24494078",
+            "input": "Head: bath<sep>Tail: log",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1210-6841b17dbb514c75a238af6cbf945119",
+            "input": "Head: stroke<sep>Tail: follow through",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1210-8ccb54ec0dd34170b5c7985dc5caa3af",
+            "input": "Head: PersonX answers the question<sep>Tail: Keep on teaching.",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1210-66ce015f5d6c474abaee5bf2e72bdacc",
+            "input": "Head: data<sep>Tail: bits",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1210-a09b6289f429405b892c2f0d7b2abd32",
+            "input": "Head: PersonX affords every ___<sep>Tail: none",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1210-2fb3f4109fb1458598c4b4b3bcf3c952",
+            "input": "Head: PersonX asks PersonY to say<sep>Tail: celebrate",
+            "output": [
+                "No"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

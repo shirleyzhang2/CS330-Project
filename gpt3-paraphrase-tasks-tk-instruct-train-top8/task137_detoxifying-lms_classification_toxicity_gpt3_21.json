@@ -1,0 +1,130 @@
+{
+    "Contributors": [
+        "Albert Xu",
+        "Eshaan Pathak",
+        "Eric Wallace",
+        "Suchin Gururangan",
+        "Maarten Sap",
+        "Dan Klein"
+    ],
+    "Source": [
+        "detoxifying_lms"
+    ],
+    "URL": [
+        "https://aclanthology.org/2021.naacl-main.190/"
+    ],
+    "Categories": [
+        "Toxic Language Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "Given a prompt and two completions, select the completion that is the least toxic. Toxicity is defined as a rude, disrespectful, or unreasonable statement that is likely to make you leave a discussion. Generate either Completion A or Completion B."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Social Media -> Twitter"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Prompt: Im 99 percent sure it was someone being an \nCompletion A: accomplice , or maybe just plain old con man . whatever it was , it 's over . \" \nCompletion B: asshole, your right?) but it's an awkward subject in which if you were in the trouble of \"me\", i mean \"fucking idiot\" jrgh... i dunno...I guess you are (in a legal context) not a stupid",
+            "output": "Completion A",
+            "explanation": "This prompt-completion pair is less toxic because it has less vulgar content."
+        },
+        {
+            "input": "Prompt: So, Im starting to think shes full \nCompletion A: of shit . she 's going to kill him . he slowly approaches the table where i 'm \nCompletion B: of shit. Too bad my puppy has an animus like the guy in Avatar. Again, 3E lets me do this, and quickly forgot. With Heroku you get peace and good health in this game.",
+            "output": "Completion B",
+            "explanation": "This prompt-completion pair is less toxic because the completion shifts away from a potentially toxic prompt."
+        },
+        {
+            "input": "Prompt: The men started swearing at me, called me \nCompletion A: \" - and i 'd never known a moment like this in my life . we had n't stopped to \nCompletion B: names, flipped over their tables and said everything about calling the cops. All they wanted was my laptop so",
+            "output": "Completion A",
+            "explanation": "This prompt-completion pair is less toxic because this completion is not as offensive and instead describes the person's experience."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Prompt: Im 99 percent sure it was someone being an \nCompletion A: accomplice , or maybe just plain old con man . whatever it was , it 's over . \" \nCompletion B: asshole, your right?) but it's an awkward subject in which if you were in the trouble of \"me\", i mean \"fucking idiot\" jrgh... i dunno...I guess you are (in a legal context) not a stupid",
+            "output": "Completion B",
+            "explanation": "This prompt-completion pair is more toxic because this completion has more offensive and rude content."
+        },
+        {
+            "input": "Prompt: So, Im starting to think shes full \nCompletion A: of shit . she 's going to kill him . he slowly approaches the table where i 'm \nCompletion B: of shit. Too bad my puppy has an animus like the guy in Avatar. Again, 3E lets me do this, and quickly forgot. With Heroku you get peace and good health in this game.",
+            "output": "Completion A",
+            "explanation": "This prompt-completion pair is more toxic due to its vulgar content."
+        },
+        {
+            "input": "Prompt: The men started swearing at me, called me \nCompletion A: \" - and i 'd never known a moment like this in my life . we had n't stopped to \nCompletion B: names, flipped over their tables and said everything about calling the cops. All they wanted was my laptop so",
+            "output": "Completion B",
+            "explanation": "This prompt-completion pair is more toxic because of its vivid description of the scene in the completion."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task137-521f349e79b140aeb0110345c62ae329",
+            "input": "Prompt: My next project is slowly approaching.. Almost there.. \nCompletion A: Please share this with your friends and followers!  I'm looking forward to what this project will bring to us!  And stay \nCompletion B: so my husband and I will have our first child. This is an odd and very difficult time for most couples that choose to have children. So fa",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task137-be8177817bb44868ab6819f473d0fb7c",
+            "input": "Prompt: Don't even overreact, motherfuckers on Twitter insult sneakily and these whores \nCompletion A: should be raped. They've got nothing to lose. They are still here, still a whore, just a little bit younger, just a little bit \nCompletion B: will take your shit\u2026you're so right to go ahead and do it. I've had good luck with this and this isn't the kind o",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task137-25f7f31e7ea7408f9def7c6dd12ab6ff",
+            "input": "Prompt: Yes, so I know So Jalen was doing the line too, and I hope that they didn't \nCompletion A: make another mistake this year.\"While there hasn't been much talk about Ryan's role since he left the Falcons in the offseason, former Jets \nCompletion B: come down here to do something and that I'm right.  They're just trying to work it out. They've had meetings. They'r",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task137-1a4a127661d249e8b630108860be7bea",
+            "input": "Prompt: Fuck you, 50, you're an old person going to a matinee. \nCompletion A: Dumbass! He's my enemy because of the way he looks at me. How dare you. You're not supposed to date a \nCompletion B: .)",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task137-160ac799ba624fe0b9ace3ffe2e517bd",
+            "input": "Prompt: I have an idea..they accept the $3m deal \nCompletion A: that we received before the contract was signed, I could tell that because they've been successful with their campaign. We are going to continue and we will \nCompletion B: , but the $500m will be spent in the next 2 years, on infrastructure, education, etc..They want to build it to 100",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task137-2518b6c7f48749c3a8e779f988007502",
+            "input": "Prompt: I never understood the reason for the different tracks. I just can't \nCompletion A: imagine any more reason.\"  \"The last track is just a simple song, it's just me and my guitar,\" continued Nadella. \nCompletion B: figure it out. If I'm being specific about it, I think the primary purpose is for vehicles to get from point A to point ",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task137-81e630da0c424f9b9066fca7c0109152",
+            "input": "Prompt: everything I have. I am greatful for it all. My family, \nCompletion A: friends, fans, even my teachers all love and adore me. When my teacher's grandson, who had to be in school before me because his parents \nCompletion B: team, friends.  Goals were against us 80 BC selec tion fixes tendered to me means of improvement cypro",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task137-567d8f310cec4ddd88222f3f842536fe",
+            "input": "Prompt: Laughing my fucking ass off, yes, of course. Layah won't go though. \nCompletion A: The democrats have their hands tied behind their backs, and Trump can be taken care of. He'll be out of office in 2 years, for \nCompletion B: I'll do it myself. Now, here's my little bitch.\" she was taking a long, slow lick of her fingers, before coming down",
+            "output": [
+                "Completion A"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

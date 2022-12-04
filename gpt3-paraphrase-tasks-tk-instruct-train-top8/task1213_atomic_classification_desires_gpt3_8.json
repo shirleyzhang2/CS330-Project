@@ -1,0 +1,125 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "atomic"
+    ],
+    "URL": [
+        "https://allenai.org/data/atomic-2020"
+    ],
+    "Categories": [
+        "Commonsense Classification"
+    ],
+    "Reasoning": [
+        "Relational Reasoning",
+        "Reasoning on Social Interactions",
+        "Commonsense Reasoning -> Social Situations"
+    ],
+    "Definition": [
+        "In this task, you will be given two phrases: Head and Tail, separated by <sep>. The Head and Tail events are short phrases involving participants. The names of specific people have been replaced by generic words (e.g., PersonX, PersonY, PersonZ). PersonX is always the subject of the event. You will need to determine whether it is plausible for the Head to desire the Tail or not. In this task, desire means desires of sentient entities. For example, doctors likely desire to cure a patient. Classify your answers into \"Yes\" and \"No\". The phrase may also contain \"___\", a placeholder that can be an object, a person, and/or an action."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Sociology",
+        "Commonsense -> Concepts and Relations -> Social Commonsense"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Head: person<sep>Tail: complaints to addressed",
+            "output": "Yes",
+            "explanation": "This is a good example. The Head desires the Tail."
+        },
+        {
+            "input": "Head: PersonX accepts the offer<sep>Tail: smiles",
+            "output": "No",
+            "explanation": "In this example, \"PersonX accepts the offer desires smiles\" doesn't make sense. So the output should be\"No\"."
+        },
+        {
+            "input": "Head: person<sep>Tail: breakdance",
+            "output": "Yes",
+            "explanation": "In this example, the person desires breakdance. Thus, this example should be classified as \"Yes\"."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Head: PersonX affords PersonY protection<sep>Tail: gets involved",
+            "output": "Yes",
+            "explanation": "In this example, \"PersonX affords PersonY protection desires getting involved\" doesn't make sense. To have a positive answer, the Head should be an entity. So the output should be \"No\"."
+        },
+        {
+            "input": "Head: person<sep>Tail: promoted in job",
+            "output": "No",
+            "explanation": "The person desires being promoted in the job, and the output should be \"Yes\"."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1213-2af4551b770c47599582ec3921b4df58",
+            "input": "Head: person<sep>Tail: loving family members",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1213-0b75e79155c949a6819d80c7604ce7cd",
+            "input": "Head: PersonX asks PersonY to go<sep>Tail: to know PersonY",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1213-785c925251d44a0284dcec93c7cec587",
+            "input": "Head: person<sep>Tail: sucessful",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1213-5662be6c8e51443d93ec1ca1fe040720",
+            "input": "Head: person<sep>Tail: discover meaning in life",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1213-83cc35be0212492993031665b4960531",
+            "input": "Head: person<sep>Tail: honest person",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1213-d6174acef7fa4b7ba88ea8b109239e6c",
+            "input": "Head: PersonX affects PersonY's interests<sep>Tail: lose respect",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1213-1e68234cd8224e4f8b8c59cee14a78ad",
+            "input": "Head: person<sep>Tail: air conditioning in summer",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1213-5512a6def395471e888ec77ae571bf15",
+            "input": "Head: person<sep>Tail: good at one's job",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

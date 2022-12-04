@@ -1,0 +1,118 @@
+{
+    "Contributors": [
+        "Neeraj Varshney"
+    ],
+    "Source": [
+        "timetravel"
+    ],
+    "URL": [
+        "https://github.com/qkaren/Counterfactual-StoryRW"
+    ],
+    "Categories": [
+        "Coherence Classification"
+    ],
+    "Reasoning": [
+        "Temporal Reasoning",
+        "Commonsense Reasoning"
+    ],
+    "Definition": [
+        "In this task, you will be given a short story consisting of five sentences. The second sentence will be missing, and you will be given a candidate sentence to fill in the blank. You need to determine if the candidate sentence connects the first sentence to the rest of the story. If it does, indicate your answer with \"Yes\". If it does not, indicate your answer with \"No\". The candidate sentence is incorrect if it changes the subsequent storyline, such that at least one of the three subsequent sentences does not form a consistent story."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Commonsense -> Stories"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Sentence 1: The cashier was counting the dollar bills at her desk. \n Sentence 3: Everyone panicked and started to scream. \n  Sentence 4: The men threatened the people to remain quiet. \n Sentence 5: The cashier handed them the cash so they would go away.  \n Given Sentence 2: Two men rushed into the store and held their guns up.",
+            "output": "Yes",
+            "explanation": "People panic when somebody holds their guns up. Sentence 2 correctly connects Sentence 1 with rest of the story. So, the answer is 'Yes'."
+        },
+        {
+            "input": "Sentence 1: The cashier was counting the dollar bills at her desk. \n Sentence 3: Everyone panicked and started to scream. \n  Sentence 4: The men threatened the people to remain quiet. \n Sentence 5: The cashier handed them the cash so they would go away.  \n Given Sentence 2: Two dogs rushed into the store.",
+            "output": "No",
+            "explanation": "The entity 'two dogs' doesn't connect with the rest of the story. Note that with the given sentence, sentence 4: \" The men threatened ...\" is not consistent. So, the answer is 'No'."
+        },
+        {
+            "input": "Sentence 1: The cashier was counting the dollar bills at her desk. \n Sentence 3: Everyone panicked and started to scream. \n  Sentence 4: The men threatened the people to remain quiet. \n Sentence 5: The cashier handed them the cash so they would go away.  \n Given Sentence 2: Two men rushed into the store and started asking for help since their friend was bleeding.",
+            "output": "No",
+            "explanation": "With the given sentence, sentence 5: 'cashier handed them the cash' is no longer consistent. So, 'No' is the correct answer."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Sentence 1: The cashier was counting the dollar bills at her desk. \n Sentence 3: Everyone panicked and started to scream. \n  Sentence 4: The men threatened the people to remain quiet. \n Sentence 5: The cashier handed them the cash so they would go away.  \n Given Sentence 2: Two men rushed into the store and started yelling.",
+            "output": "Given Sentence doesn't connect with the story.",
+            "explanation": "The answer can only be Yes or No. This is a bad answer."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task066-b6e450f918524de0928dfaeff91f2f6f",
+            "input": "Sentence 1: I went to visit my ex-boyfriend an hour out of town. \n Sentence 3: He ended up beating me for hours \n Sentence 4:  I was stuck there for two more days, then finally escaped \n Sentence 5:  I went home and never looked back \n Given Sentence 2: He slowed at the intersection but it was icy.",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task066-ab51c39c0bc240ac8ffe08654eded88d",
+            "input": "Sentence 1: Granny always loved to bake. \n Sentence 3: The grandkids' favorite, though, was her cookies \n Sentence 4:  Granny spent a day making 400 cookies \n Sentence 5:  Granny delivered them to the kids, who enjoyed every bite of them \n Given Sentence 2: She made all kinds of different goodies.",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task066-c50f7c190d1a491cb3520953df74e581",
+            "input": "Sentence 1: My mom gave me a plate of food. \n Sentence 3: However, she decided to put the salt on the food herself \n Sentence 4:  She ended up spilling too much \n Sentence 5:  My food became salty and I had to throw it away \n Given Sentence 2: His sister had left a toy on one of the steps.",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task066-bc7e2c984a824a6c8ecdce38c15a77d9",
+            "input": "Sentence 1: Shelly needed new brakes. \n Sentence 3: She got the parts needed \n Sentence 4:  She had a mechanic install them \n Sentence 5:  The mechanic costed her more than the parts \n Given Sentence 2: She decided to go fishing to catch her own.",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task066-f820d2e570b841c09c507fb8bf1e6d14",
+            "input": "Sentence 1: Sam was cold. \n Sentence 3: She went to the store \n Sentence 4:  She bought a new scarf and hat \n Sentence 5:  She felt warmer with her new clothing \n Given Sentence 2: The car in front of him slammed on his brakes.",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task066-6bb2f9d616f145418aee01e08037df6e",
+            "input": "Sentence 1: Yesterday I was waiting in the airport for a plane. \n Sentence 3: Something broke on the plane so they had to fix it \n Sentence 4:  The plane was delayed for another three hours \n Sentence 5:  I was angry so the airline gave me a free lunch \n Given Sentence 2: The plane was delayed for 30 minutes.",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task066-794a64649da84877930be820344e6adb",
+            "input": "Sentence 1: Cassandra was hosting a beach bonfire. \n Sentence 3: Soon, the fire began to die down \n Sentence 4:  Cassandra went to retrieve some firewood \n Sentence 5:  She fed the flame and soon the bonfire was at full strength \n Given Sentence 2: They told stories around the fire and roasted marshmallows.",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task066-8a968794a6ae41098c1193c70ce5eb34",
+            "input": "Sentence 1: I was eating a burger. \n Sentence 3: It was a rock \n Sentence 4:  I complained to the waiter \n Sentence 5:  She gave me a coupon for a free meal! \n Given Sentence 2: She gave him some seeds to grow his own vegetables.",
+            "output": [
+                "No"
+            ]
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

@@ -1,0 +1,116 @@
+{
+    "Contributors": [
+        "Divya Reddy Katpally"
+    ],
+    "Source": [
+        "dbpedia_14"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/dbpedia_14"
+    ],
+    "Categories": [
+        "Text Matching"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "In this task, you're given a text and a title. The title is present in the text and refers to the entity in the text. The title might have some text in parentheses, for example: \"HMS Mallow (K81)\", or be slightly different from what is present in the text. If they still refer to the same entity, then it is a correct title. Indicate your answer as \"Yes\" if the title is correct, otherwise indicate your answer as \"No\". Do not generate anything else apart from \"Yes\" or \"No\"."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Wikipedia"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Text: The Mansfield Building Society is a UK building society which has its headquarters in Mansfield Nottinghamshire. It is a member of the Building Societies Association. \nTitle: Mansfield Building Society",
+            "output": "Yes",
+            "explanation": "The title \"Mansfield Building Society\" is present in the text and it is the main entity that is referred in the text. Hence, it is the title of the document."
+        },
+        {
+            "input": "Text:  The third and current HMS Argyll is a Type 23 'Duke' Class frigate. She is currently the oldest serving Type 23 frigate in the Royal Navy. Like all of her class she is named for a British dukedom in this case that of Argyll. \nTitle: HMS Argyll (F231)",
+            "output": "Yes",
+            "explanation": "\"HMS Argyll\" is present in the text and it is the main entity that is referred in the text. Here, the text in parentheses \"F31\" is not present in the document and it can be ignored. Hence, the output is correct. "
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Text: The Mansfield Building Society is a UK building society which has its headquarters in Mansfield Nottinghamshire. It is a member of the Building Societies Association. \nTitle: Mansfield Building Society",
+            "output": "No",
+            "explanation": "The title \"Mansfield Building Society\" is present in the text and it is the main entity that is referred in the text. Hence, the output is incorrect."
+        },
+        {
+            "input": "Text:  The third and current HMS Argyll is a Type 23 'Duke' Class frigate. She is currently the oldest serving Type 23 frigate in the Royal Navy. Like all of her class she is named for a British dukedom in this case that of Argyll. \nTitle: HMS Argyll (F231)",
+            "output": "HMS Argyll",
+            "explanation": "The output should be either \"Yes\" or \"No\". Hence, it is negative example."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task630-48a7cfe287e44e0da977a078281af95f",
+            "input": "Text:  MeteorCity Records is an American record label based in Idaho. MeteorCity was founded in 1997 by Jadd Shickler and Aaron Emmel in Albuquerque New Mexico. With the release of its compilation album Welcome to MeteorCity showcasing young unsigned Kyuss-like bands MeteorCity helped launch the stoner rock genre and many of the genre's first bands plus side projects from members of well-known bands including The Atomic Bitchwax and Hermano. \nTitle: Kolahoi Peak",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task630-60826e83cff64d6396ff3db66f9ac2f1",
+            "input": "Text:  Dyckia densiflora is a species of the genus Dyckia. This species is native to Brazil. \nTitle: Bagun Sumbrai",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task630-f8245abd7ea847c1907446ba963724b1",
+            "input": "Text:  Secrets of the Lamp is an accessory for the 2nd edition of the Advanced Dungeons & Dragons fantasy role-playing game published in 1993. \nTitle: USS Herald (1798)",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task630-fe86f28c92624d86b576b3b5a9ef77bc",
+            "input": "Text:  The Ice-Maiden is an 1861 fairy tale (short story) by the Danish writer Hans Christian Andersen and published by KING & BAIRD in 1863. \nTitle: Laemmle Theatres",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task630-1b9f8cae4628492b9b402d81ec00bd15",
+            "input": "Text:  Violin is a novel by American horror writer Anne Rice released on 15 October 1997. It moves away from her previous stories about vampires and witches to tell a ghost story. \nTitle: Gar Samuelson",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task630-801b45f234574604a4ab6490f3ae6bcd",
+            "input": "Text:  Stars/Time/Bubbles/Love is the fourth album from The Free Design. It was released in 1970. In 2004 it was named The Free Design's best album to date by Dominique Leone on Pitchfork. \nTitle: Stars/Time/Bubbles/Love",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task630-95d8dfab356d4871bb4f9043f026ffb6",
+            "input": "Text:  Hermes Carleial (30 March 1904 \u2013 6 July 1954) was a Brazilian poet lawyer accountant and writer. \nTitle: Hermes Carleial",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task630-e9087428d14749f282e4c6e6f94a86f3",
+            "input": "Text:  Xastilia is a genus of sea snails marine gastropod mollusks in the family Muricidae the murex snails or rock snails. \nTitle: HMS Newcastle (1860)",
+            "output": [
+                "No"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY-SA",
+        "GNU Free Documentation 2.0"
+    ]
+}

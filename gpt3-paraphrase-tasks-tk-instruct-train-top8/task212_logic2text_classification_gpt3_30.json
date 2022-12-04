@@ -1,0 +1,123 @@
+{
+    "Contributors": [
+        "Mihir Parmar"
+    ],
+    "Source": [
+        "logic2text"
+    ],
+    "URL": [
+        "https://github.com/czyssrs/Logic2Text"
+    ],
+    "Categories": [
+        "Text to Code"
+    ],
+    "Reasoning": [
+        "Logical Reasoning"
+    ],
+    "Definition": [
+        "In this task, you are given commands (in terms of logical operations) to select relevant rows from the given table. Your job is to classify the command into one of these seven categories: (1) majority, (2) unique, (3) superlative, (4) count, (5) comparative, (6) aggregation, and (7) ordinal. Here are the definitions of each category: 1. majority: Describing the majority values (most or all) over one column, with the scope of all table rows or a subset of rows 2. unique: Describing one unique row, regarding one column, with the scope of all table rows or a subset of rows 3. Superlative: Describing the maximum or minimum value in a column, with the scope of all table rows or a subset of rows 4. Ordinal: Describing the n-th maximum or minimum value in a column, with the scope of all table rows or a subset of rows 5. Comparative: Comparing two rows in the table, regarding their values in one column 6. Count: counting some rows in the table based on the values in one column, with the scope of all table rows or a subset of rows 7. Aggregation: Describing the sum or average value over a column, with the scope of all table rows or a subset of rows. Here are the definitions of logical operators for understanding of command: 1. count: returns the number of rows in the view. 2. only: returns whether there is exactly one row in the view. 3. hop: returns the value under the header column of the row. 4. and: returns the boolean operation result of two arguments. 5. max/min/avg/sum: returns the max/min/average/sum of the values under the header column. 6. nth_max/nth_min: returns the n-th max/n-th min of the values under the header column. 7. argmax/argmin: returns the row with the max/min value in header column. 8. nth_argmax/nth_argmin: returns the row with the n-th max/min value in header column. 9. eq/not_eq: returns if the two arguments are equal. 10. round_eq: returns if the two arguments are roughly equal under certain tolerance. 11. greater/less: returns if the first argument is greater/less than the second argument. 12. diff: returns the difference between two arguments. 13. filter_eq/ filter_not_eq: returns the subview whose values under the header column is equal/not equal to the third argument. 14. filter_greater/filter_less: returns the subview whose values under the header column is greater/less than the third argument. 15. filter_greater_eq /filter_less_eq: returns the subview whose values under the header column is greater/less or equal than the third argument. 16. filter_all: returns the view itself for the case of describing the whole table 17. all_eq/not_eq: returns whether all the values under the header column are equal/not equal to the third argument. 18. all_greater/less: returns whether all the values under the header column are greater/less than the third argument. 19. all_greater_eq/less_eq: returns whether all the values under the header column are greater/less or equal to the third argument. 20. most_eq/not_eq: returns whether most of the values under the header column are equal/not equal to the third argument. 21. most_greater/less: returns whether most of the values under the header column are greater/less than the third argument. 22. most_greater_eq/less_eq: returns whether most of the values under the header column are greater/less or equal to the third argument."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Wikipedia",
+        "Logic -> Propositional Logic"
+    ],
+    "Positive Examples": [
+        {
+            "input": "round_eq { sum { all_rows ; casinos } ; 217 }",
+            "output": "aggregation",
+            "explanation": "In this example sum returns the sum of the values in all of the casinos rows. Hence, aggregation is right category."
+        },
+        {
+            "input": "eq { count { filter_eq { all_rows ; island ; hawaii } } ; 2 }",
+            "output": "count",
+            "explanation": "The count command counts the the island is hawaii, hence, the category is count."
+        },
+        {
+            "input": "most_eq { filter_eq { all_rows ; team ; aston martin racing } ; class pos ; dnf }",
+            "output": "majority",
+            "explanation": "Here, most_eq in the command indicates that some majority rows need to be selected, hence, the categpory is majorioty."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "most_greater_eq { all_rows ; us viewers ( million ) ; 1.0 }",
+            "output": "count",
+            "explanation": "The most_greater_eq command indicates that we need to select some majority rows, but label is 'count' which is not right."
+        },
+        {
+            "input": "less { hop { filter_eq { all_rows ; host team ; san diego chargers } ; final score } ; hop { filter_eq { all_rows ; host team ; philadelphia eagles } ; final score } }",
+            "output": "ordinal",
+            "explanation": "The less command indicates the comparision between rows, hence, 'comparative' category is right, but the label is 'ordinal' which is wrong."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task212-3f37fb1ffb3642eba18eeaec16af76b2",
+            "input": "most_eq { all_rows ; division ; pdl }",
+            "output": [
+                "majority"
+            ]
+        },
+        {
+            "id": "task212-5487b9d74c564df9a7b26a5eafdcc233",
+            "input": "only { filter_greater { filter_eq { all_rows ; location attendance ; pepsi center } ; location attendance ; 19,500 } }",
+            "output": [
+                "unique"
+            ]
+        },
+        {
+            "id": "task212-ae711f9792ed4d08b4d2b03034139d1b",
+            "input": "round_eq { avg { all_rows ; home team score } ; 13.98 }",
+            "output": [
+                "aggregation"
+            ]
+        },
+        {
+            "id": "task212-4aca9ebeb88946f3ab0f208168cbf6f6",
+            "input": "eq { count { filter_less { all_rows ; age ; 25 } } ; 2 }",
+            "output": [
+                "count"
+            ]
+        },
+        {
+            "id": "task212-097e481a17584d8e8eb69879246c42a9",
+            "input": "round_eq { avg { all_rows ; result } ; 25.5 }",
+            "output": [
+                "aggregation"
+            ]
+        },
+        {
+            "id": "task212-e29c8c8eede0451ea9b882e460392ae9",
+            "input": "eq { count { filter_eq { all_rows ; space agency ; nasa } } ; 3 }",
+            "output": [
+                "count"
+            ]
+        },
+        {
+            "id": "task212-b41ca834ac7547aa95f43aeb743d4d02",
+            "input": "round_eq { avg { all_rows ; home team score } ; 15.18 }",
+            "output": [
+                "aggregation"
+            ]
+        },
+        {
+            "id": "task212-3be1925a890d4e46a869ce1612b2d703",
+            "input": "round_eq { sum { all_rows ; t20 matches } ; 15 }",
+            "output": [
+                "aggregation"
+            ]
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

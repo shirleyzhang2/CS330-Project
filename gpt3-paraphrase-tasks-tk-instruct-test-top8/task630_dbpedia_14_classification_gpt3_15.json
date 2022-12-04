@@ -1,0 +1,116 @@
+{
+    "Contributors": [
+        "Divya Reddy Katpally"
+    ],
+    "Source": [
+        "dbpedia_14"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/dbpedia_14"
+    ],
+    "Categories": [
+        "Text Matching"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You will be given a text and a title. The title is present in the text and refers to the entity in the text. The title might have some text in parentheses, for example: \"HMS Mallow (K81)\", or be slightly different from what is present in the text. If they still refer to the same entity, then it is a correct title. Indicate your answer as \"Yes\" if the title is correct, otherwise indicate your answer as \"No\". Do not generate anything else apart from \"Yes\" or \"No\"."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Wikipedia"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Text: The Mansfield Building Society is a UK building society which has its headquarters in Mansfield Nottinghamshire. It is a member of the Building Societies Association. \nTitle: Mansfield Building Society",
+            "output": "Yes",
+            "explanation": "The title \"Mansfield Building Society\" is present in the text and it is the main entity that is referred in the text. Hence, it is the title of the document."
+        },
+        {
+            "input": "Text:  The third and current HMS Argyll is a Type 23 'Duke' Class frigate. She is currently the oldest serving Type 23 frigate in the Royal Navy. Like all of her class she is named for a British dukedom in this case that of Argyll. \nTitle: HMS Argyll (F231)",
+            "output": "Yes",
+            "explanation": "\"HMS Argyll\" is present in the text and it is the main entity that is referred in the text. Here, the text in parentheses \"F31\" is not present in the document and it can be ignored. Hence, the output is correct. "
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Text: The Mansfield Building Society is a UK building society which has its headquarters in Mansfield Nottinghamshire. It is a member of the Building Societies Association. \nTitle: Mansfield Building Society",
+            "output": "No",
+            "explanation": "The title \"Mansfield Building Society\" is present in the text and it is the main entity that is referred in the text. Hence, the output is incorrect."
+        },
+        {
+            "input": "Text:  The third and current HMS Argyll is a Type 23 'Duke' Class frigate. She is currently the oldest serving Type 23 frigate in the Royal Navy. Like all of her class she is named for a British dukedom in this case that of Argyll. \nTitle: HMS Argyll (F231)",
+            "output": "HMS Argyll",
+            "explanation": "The output should be either \"Yes\" or \"No\". Hence, it is negative example."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task630-81db2b91869c4e039f9229d7ff032704",
+            "input": "Text:  Sk\u0142ad\u00f3w [\u02c8skwaduf] is a village in the administrative district of Gmina Baran\u00f3w within Pu\u0142awy County Lublin Voivodeship in eastern Poland. It lies approximately 6 kilometres (4 mi) north-east of Baran\u00f3w 25 km (16 mi) north-east of Pu\u0142awy and 46 km (29 mi) north-west of the regional capital Lublin.The village has a population of 80. \nTitle: My Life as a Traitor",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task630-3d96b2fb2f7b46f88c55569dcff3252d",
+            "input": "Text:  Unity Christian High School (commonly Unity Christian UCHS or UNITY) is a Christian private secondary school in Barrie Ontario Canada serving students in grades 9\u201312. Graduating students are eligible to receive an Ontario Secondary School Diploma from the Ministry of Education and Training in addition to a Unity Christian High School diploma.Unity is a member of the Ontario Alliance of Christian Schools.Unity was founded in 2004 and was located in Inniswood Baptist Church. \nTitle: Qaleh Hamud",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task630-9066fda6411b438998b8e296ee97acc1",
+            "input": "Text:  The Little Emory River rises in Morgan County Tennessee near the town of Coalfield. It is one of the major tributaries to the Emory River. It crosses into Roane County where it soon becomes an embayment of Watts Bar Lake several miles upstream of its mouth into the Emory. (Watts Bar Lake is a relatively deep reservoir and causes slack water conditions many miles up several Tennessee River tributaries not just the main stream.) \nTitle: Little Emory River",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task630-b49e0f0a44424f9a8807ba39e73e8da4",
+            "input": "Text:  Borbo binga the Dark Forest Swift is a butterfly in the Hesperiidae family. It is found in Ivory Coast Ghana Nigeria the Republic of Congo and the Democratic Republic of Congo. The habitat consists of forests. \nTitle: USS William M. Hobby (APD-95)",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task630-971c9fff06294531aa4d22abfd1a26ab",
+            "input": "Text:  The Other Me is a 2000 Disney Channel Original Movie about a teenager who accidentally clones himself as a genius and ends up using his clone to pass school. The movie is the 23rd Disney Channel Original Movie and is based on the book Me Two by Mary C. Ryan. \nTitle: The Other Me",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task630-2644aeb745f64a56b6e7f9b9130d2169",
+            "input": "Text:  SS \u00dcsk\u00fcdar was a small passenger ferry built in Germany for the Turkish company \u015eirket-i Hayriye and launched in 1927. She sank in lodos weather on March 1 1958 in the Gulf of Izmit. The accident killed 272 people on board including seven crew 39 survived the incident. \nTitle: SS \u00dcsk\u00fcdar",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task630-12c7ebe2cfca48d3b4d78940ed909d95",
+            "input": "Text:  Wormwood: A Drama of Paris (1890) is a proto-modernist novel written by Marie Corelli. The novel was published in Europe in the traditional Victorian three-volume format and addressed the modern effects and woes of absinthe in fin-de-siecle Paris.The European edition was published in 1890 by Richard Bentley & Son London. The American edition was published by Wm. L. Allison New York. \nTitle: Wormwood: A Drama of Paris",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task630-b3467a3d9e05474bb39d53273e8023fb",
+            "input": "Text:  One Calvert Plaza formerly the Continental Trust Company Building is an historic 16-story 76 m (249 ft) skyscraper in Baltimore Maryland. The Beaux-Arts early modern office building was constructed with steel structural members clad with terra cotta fireproofing and tile-arch floors. Its namesake was chartered in 1898 and instrumental in merging several Baltimore light and gas companies into one city-wide system. It was constructed in 1900-1901 to designs prepared by D.H. \nTitle: One Calvert Plaza",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY-SA",
+        "GNU Free Documentation 2.0"
+    ]
+}

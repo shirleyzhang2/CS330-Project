@@ -1,0 +1,115 @@
+{
+    "Contributors": [
+        "Pruthvi Patel"
+    ],
+    "Source": [
+        "hatexplain"
+    ],
+    "URL": [
+        "https://github.com/hate-alert/HateXplain"
+    ],
+    "Categories": [
+        "Toxic Language Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "The input is a tweet. The tweet can be Hate Speech, Offensive, or Normal. Hate Speech and Offensive tweets target one community. Given such a tweet, output the community targeted in the tweet. There are nine possible values for the community: 'African', 'Islam', 'Jewish', 'Women', 'Refugee', 'Arab', 'Caucasian', 'Hispanic', or 'Asian'. If the tweet does not target any community, output 'None'. A tweet can only target one community."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Social Media -> Twitter"
+    ],
+    "Positive Examples": [
+        {
+            "input": "caucasians wearing masks to prevent coronavirus and still don \u2019 t wash their hands",
+            "output": "Caucasian",
+            "explanation": "The tweet generalizes an attribute to the entire community, Caucasian, which makes it offensive."
+        },
+        {
+            "input": "lesson of the week from the holy book the sovereign individual once commerce flows over the internet suppression of speech becomes unstoppable devolution inevitable and the monopoly of violence by governments will end paraphrased from j d davidson rhys mogg",
+            "output": "None",
+            "explanation": "The tweet does not target any specific community hence the correct answer is None"
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "<user> <user> there shd be a film called no hindus in kashmir wud be perfect islamic fanaticsm movement in kashmir",
+            "output": "Hindu",
+            "explanation": "Every input tweet will target one or more of the nine communities provided or will not target any community. Further the tweet targets Muslim community. Hence Hindu is not the correct value. The correct value is Islam."
+        },
+        {
+            "input": "ffs everthing is offensive to muslimes",
+            "output": "None",
+            "explanation": "This tweet is offensive to Muslim community. Hence the correct answer is Islam instead of None."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1503-8bf2997626e24898b2afac1e2fda79ae",
+            "input": "about that womens march in dc yesterday it was a success for president trump because on his first full day in office he got more fat women out walking that michelle obama ever did",
+            "output": [
+                "Women"
+            ]
+        },
+        {
+            "id": "task1503-9c7de29edb914839a1bf314432cb7269",
+            "input": "vox reported this week that if we get tough on illegal immigrants then a negative consequence will be that they will lie on their census forms stupidlogic if we get tough on illegal immigrants and deport them then they will not be here to lie on their census forms",
+            "output": [
+                "Refugee"
+            ]
+        },
+        {
+            "id": "task1503-3cacb72b57994c3d9d827000260b4324",
+            "input": "according to the democrats rinos mainstream media liberals progressives and social justice warriors this murdering pos deserves amnesty and sanctuary because he is a dreamer apparently this man victim and the victim family are not entitled to dreams because only criminal immigrants and invaders can have dreams",
+            "output": [
+                "Refugee"
+            ]
+        },
+        {
+            "id": "task1503-d606b447ccd744dfac8ca01bc6d79a4a",
+            "input": "<user> you need potassium eat a banana you fucking nigger",
+            "output": [
+                "African"
+            ]
+        },
+        {
+            "id": "task1503-d758514d436049b9a07046a1c3c18169",
+            "input": "ok it ain t just me <number> out here hunting niggers on god they tweakin this month",
+            "output": [
+                "African"
+            ]
+        },
+        {
+            "id": "task1503-da181452b0de4eda9c9bc7371e88dcc7",
+            "input": "it like <number> <number> points above american whites in japan and south korea tbh but this is what happens when hostile aliens control your country watch out if you are eyeing south korea though since the importation of jungle asians and poo in the loos is occurring on the downlow",
+            "output": [
+                "Asian"
+            ]
+        },
+        {
+            "id": "task1503-13adedf1327d4da79e491c9dde81d598",
+            "input": "kill the jews",
+            "output": [
+                "Jewish"
+            ]
+        },
+        {
+            "id": "task1503-4366e6c77cfe4b4395b6c00967445e48",
+            "input": "jewish altruism tax deductible action furthering jewish hegemony done in bad faith support of the adl splc aipac ect is tantamount to treason left on checked jews will always destroy their hosts given time jews act this way b c they are jews its their nature have a white christmas",
+            "output": [
+                "Jewish"
+            ]
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

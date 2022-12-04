@@ -1,0 +1,125 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "atomic"
+    ],
+    "URL": [
+        "https://allenai.org/data/atomic-2020"
+    ],
+    "Categories": [
+        "Commonsense Classification"
+    ],
+    "Reasoning": [
+        "Relational Reasoning",
+        "Reasoning on Social Interactions",
+        "Commonsense Reasoning -> Social Situations"
+    ],
+    "Definition": [
+        "Given two phrases Head and Tail, separated with <sep>, where Head and Tail are events possibly involving participants, your task is to determine whether the Head can be hindered by what is mentioned in the Tail. Classify your answers into \"Yes\" and \"No\". The phrase may also contain \"___\", a placeholder that can be an object, a person, and/or an action."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Sociology",
+        "Commonsense -> Concepts and Relations -> Social Commonsense"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Head: PersonX touches a nerve<sep>Tail: PersonX is too nice",
+            "output": "Yes",
+            "explanation": "This is a good example. The Tail can hinder the Head."
+        },
+        {
+            "input": "Head: PersonX attends school<sep>Tail: To be a student",
+            "output": "No",
+            "explanation": "In this example, The Head can't be hindered by the Tail."
+        },
+        {
+            "input": "Head: PersonX is driving down the street<sep>Tail: PersonX's car is in the shop.",
+            "output": "Yes",
+            "explanation": "If PersonX's car is in the shop, PersonX can't drive down the street. Thus, this example should be classified as \"Yes\"."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Head: PersonX asks if PersonY was okay<sep>Tail: to thank PersonX",
+            "output": "Yes",
+            "explanation": "In this example, The Head can't be hindered by the Tail. So the output should be \"No\"."
+        },
+        {
+            "input": "Head: PersonX clenches PersonY's jaw<sep>Tail: PersonY is out of reach.",
+            "output": "No",
+            "explanation": "If PersonY is out of reach, PersonX can't clench PersonY's jaw, and the output should be \"Yes\"."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1204-adcdcc9ca33c472897e833dcffffc04d",
+            "input": "Head: PersonX answers PersonY's letter<sep>Tail: learns that the other person cares enough to respond to them",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1204-10d5c6df2e68415fba4e79de39c1008b",
+            "input": "Head: PersonX allergic to bees<sep>Tail: sick",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1204-fca886ff43cd4f04b0bb17fee70a780a",
+            "input": "Head: PersonX escapes from PersonX's cage<sep>Tail: PersonY threw away the key to the cage.",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1204-c9d2f358b9e24f98aa6eff3ffed35e0c",
+            "input": "Head: PersonX arrives home from work<sep>Tail: cook dinner",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1204-385ff3fd314449fd8f5f2e6fae6d00eb",
+            "input": "Head: PersonX is washing the dishes<sep>Tail: PersonX's mom forgot to buy dish soap.",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1204-ef77ce47ae5b4d9680b1d82e7fe36ab5",
+            "input": "Head: PersonX files off the serial numbers<sep>Tail: Person X's hardware salesman won't let him buy a file.",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1204-bb96625fbf57419f832a4b9a8ea24379",
+            "input": "Head: PersonX decides to keep the cat<sep>Tail: Person is allergic to cats.",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1204-44b4e51e3d804191906fe9f3fc9306e4",
+            "input": "Head: PersonX pays cash<sep>Tail: PersonX doesn't have any cash.",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

@@ -1,0 +1,115 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "hybridqa"
+    ],
+    "URL": [
+        "https://github.com/wenhuchen/HybridQA"
+    ],
+    "Categories": [
+        "Pos Tagging"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "For this task, you will be given a question, a word, and a POS tag. You need to determine whether the part-of-speech tag of the given word in the question is equal to the given POS tag. Answer with True or False. Here is the Alphabetical list of part-of-speech tags used in this task: CC: Coordinating conjunction, CD: Cardinal number, DT: Determiner, EX: Existential there, FW: Foreign word, IN: Preposition or subordinating conjunction, JJ: Adjective, JJR: Adjective, comparative, JJS: Adjective, superlative, LS: List item marker, MD: Modal, NN: Noun, singular or mass, NNS: Noun, plural, NNP: Proper noun, singular, NNPS: Proper noun, plural, PDT: Predeterminer, POS: Possessive ending, PRP: Personal pronoun, PRP$: Possessive pronoun, RB: Adverb, RBR: Adverb, comparative, RBS: Adverb, superlative, RP: Particle, SYM: Symbol, TO: to, UH: Interjection, VB: Verb, base form, VBD: Verb, past tense, VBG: Verb, gerund or present participle, VBN: Verb, past participle, VBP: Verb, non-3rd person singular present, VBZ: Verb, 3rd person singular present, WDT: Wh-determiner, WP: Wh-pronoun, WP$: Possessive wh-pronoun, WRB: Wh-adverb."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Wikipedia"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Who were the builders of the mosque in Herat with fire temples ? \n, Word: Who \n, POS tag: IN",
+            "output": "False",
+            "explanation": "This is a good example. POS tag of who should be WP(Wh-pronoun), and not IN(Preposition)."
+        },
+        {
+            "input": "What is the borough in which Kia Oval is located ? \n, Word: is \n, POS tag: VBZ",
+            "output": "True",
+            "explanation": "Based on the given question, \"is\" is a 3rd person singular present verb and Its POS tag is VBZ."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "After what season did the number 7 competitor retire ? \n, Word: 7 \n, POS tag: NN",
+            "output": "True",
+            "explanation": "7 is a cardinal number, and Its POS tag should be CD, so the output should be False."
+        },
+        {
+            "input": "After what season did the number 7 competitor retire ? \n, Word: 7 \n, POS tag: NN",
+            "output": "Wrong",
+            "explanation": "Only \"True\" or \"False\" are allowed, and you can't use any other word here."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task346-6cdbfadf81f1488fa8243fb699aadbc4",
+            "input": "What district is the school in whose suburb 's median house price was A $ 475,000 in 2011 ? \n, Word: was \n, POS tag: VBZ",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "id": "task346-cdc20b4ae77c4a5990d39e30a3675297",
+            "input": "Who did the judge who was a veteran of World War II and received both his undergraduate education and law degree from Willamette University have connections with ? \n, Word: Willamette \n, POS tag: VBD",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "id": "task346-9d03ff59c9fb44bea24f39f3a34f8056",
+            "input": "What is the platform whose notes item 's original model did not have an illuminated screen ? \n, Word: screen \n, POS tag: NN",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "id": "task346-68df9549c5734ccfa292bc4e7bad7829",
+            "input": "Who made his senior debut during the 1984-85 National Hurling League and was manager of one of the constituent counties of Munster GAA ? \n, Word: National \n, POS tag: NNP",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "id": "task346-bf861bcaa1bf4bb98259567f9dac9d63",
+            "input": "Which highway is the community which contains Bartow-Pell Mansion west of ? \n, Word: the \n, POS tag: DT",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "id": "task346-9e3b215ed0c24e88bf3b5aa40db20624",
+            "input": "Which Drake song became his first number one single as a lead artist ? \n, Word: single \n, POS tag: CD",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "id": "task346-2b1295f9f8e845b4ae9528a79442dce7",
+            "input": "What type of items were discovered for the second time in East Anglia about 10 miles away from the mouth of the River Orwell and the North Sea ? \n, Word: type \n, POS tag: RB",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "id": "task346-916a029eaf5a4eaf91e4b7f41b5ab6ef",
+            "input": "What entity is the person whose district was named after Thomas Hamilton a director and shareholder of ? \n, Word: district \n, POS tag: IN",
+            "output": [
+                "False"
+            ]
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

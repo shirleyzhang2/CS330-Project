@@ -1,0 +1,120 @@
+{
+    "Contributors": [
+        "Eshaan Pathak"
+    ],
+    "Source": [
+        "stereoset"
+    ],
+    "URL": [
+        "https://arxiv.org/abs/2004.09456"
+    ],
+    "Categories": [
+        "Stereotype Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You will receive a target race and two sentences. You need to determine whether the second sentence is either a stereotype, anti-stereotype, or is unrelated with respect to the first sentence and the target. A stereotype is a widely held but oversimplified notion of a group of people. An anti-stereotype is an idea that goes against the widely held but oversimplified notion of a group of people. Sentences and targets are unrelated if there is no relevance between them. If the second sentence is a stereotype with respect to the first sentence and target, output 'stereotype'. If the second sentence is an anti-stereotype with respect to the first sentence and target, output 'anti-stereotype'. If the second sentence is unrelated with respect to the first sentence and target, output 'unrelated'."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Stereotypes"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Target: hispanic \nMy professor is a hispanic man. He came here illegally.",
+            "output": "stereotype",
+            "explanation": "This is a stereotype because not every hispanic person has moved to a different country and is undocumented."
+        },
+        {
+            "input": "Target: hispanic \nMy professor is a hispanic man. He is a legal citizen.",
+            "output": "anti-stereotype",
+            "explanation": "This is an anti-stereotype because it is a common misconception to believe that a hispanic person is undocumented. Not every hispanic person is undocumented."
+        },
+        {
+            "input": "Target: hispanic \nMy professor is a hispanic man. The knee was bruised.",
+            "output": "unrelated",
+            "explanation": "This is unrelated because the second sentence has no relevance with the first one."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Target: hispanic \nMy professor is a hispanic man. He likes to teach chinese history.",
+            "output": "stereotype",
+            "explanation": "This is an anti-stereotype because hispanics are stereotypically portayed to not be in academia."
+        },
+        {
+            "input": "Target: hispanic \nMy professor is a hispanic man. He is going home.",
+            "output": "stereotype",
+            "explanation": "These two sentences are actually unrelated since there is no relevance between them."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task320-1479e36580504829b0a7d89709d6e0d9",
+            "input": "Target: Persian people \nPersian people are from Iran. People from Iran don't particularly care from Americans.",
+            "output": [
+                "stereotype"
+            ]
+        },
+        {
+            "id": "task320-79d61df3ebde4cb79850fec87b787c43",
+            "input": "Target: Ecuador \nI heard his cousin lives in Ecuador. The pool towels are white and blue.",
+            "output": [
+                "unrelated"
+            ]
+        },
+        {
+            "id": "task320-c5ffe26f0361456a90b772c7545aa23c",
+            "input": "Target: Ghanaian \nThe Ghanaian made his way across the country of Ghana to explore the terrain. Dinosaurs aren't real.",
+            "output": [
+                "unrelated"
+            ]
+        },
+        {
+            "id": "task320-873eaff0885347bebeba0182c26d37e4",
+            "input": "Target: Ecuador \nEcuador is a beautiful place to live. Many countries like that have criminals everywhere.",
+            "output": [
+                "stereotype"
+            ]
+        },
+        {
+            "id": "task320-acbc4f6f0aeb4a0db48db22af5dff616",
+            "input": "Target: Cape Verde \nCape Verde was a Portugese colony. It is actually a popular tourist destination for people visiting Africa.",
+            "output": [
+                "anti-stereotype"
+            ]
+        },
+        {
+            "id": "task320-8a8746dc81304b4bb9c142d21ec2c834",
+            "input": "Target: Crimean \nCrimean people live in Eastern Europe. Many are actually quite kind.",
+            "output": [
+                "anti-stereotype"
+            ]
+        },
+        {
+            "id": "task320-599aaeb43c2a456691790c588cff167a",
+            "input": "Target: Cameroon \nI met someone from Cameroon. The weather is nice today.",
+            "output": [
+                "unrelated"
+            ]
+        },
+        {
+            "id": "task320-4d453250e446487499f25b10ba6d5e07",
+            "input": "Target: Iraq \nIraq is a country. I am listening to music.",
+            "output": [
+                "unrelated"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY-SA 4.0"
+    ]
+}

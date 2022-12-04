@@ -1,0 +1,202 @@
+{
+    "Contributors": [
+        "Shailaja Keyur Sampat"
+    ],
+    "Source": [
+        "torque"
+    ],
+    "URL": [
+        "https://allennlp.org/torque.html"
+    ],
+    "Categories": [
+        "Information Extraction"
+    ],
+    "Reasoning": [
+        "Commonsense Reasoning"
+    ],
+    "Definition": [
+        "In this task, you will be given a passage, and your goal is to identify an event from the passage. An event is a single word representing something that happened, is happening, or may happen. The event must not be a pronoun or an adjective. For noun events with multiple words, use the last word in the phrase as event."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "News"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Passage: I submitted the hit. The hit was approved, and then I was paid.",
+            "output": "approved",
+            "explanation": "There are three events in this passage (i) submission event (\"submitted\") (ii) the approval event (\"approved\"), and (iii) the payment event (\"paid\"). You can use any one of them as an output."
+        },
+        {
+            "input": "Passage: He was caught in the snow storm.",
+            "output": "storm",
+            "explanation": "There are two events in this passage (i) he was caught (\"caught\") and (ii) the snow storm event (\"storm\"). You can use any one of them as an output. Since snow storm is a noun event with multiple words, we only use the last word 'storm' as an event."
+        },
+        {
+            "input": "Passage: He is on the east coast.",
+            "output": "is",
+            "explanation": "The copula \"is\" an event describing his location."
+        },
+        {
+            "input": "Passage: He wanted to finish the task.",
+            "output": "wanted",
+            "explanation": "There are two events in this passage (i) he wanted to do something (\"wanted\") and (ii) finish the task (\"finish\"). Either of wanted or finish can be used as output. However note that though there is an uncertainty about the task i.e. indeed finished or not, \"finish\" is still a valid event."
+        },
+        {
+            "input": "Passage: If he works hard, then he will finish the task.",
+            "output": "finish",
+            "explanation": "There are two events in this passage (i) he works hard (\"works\") and (ii) he will finish the task. (\"finish\"). You can use either of works or finish as an output. Here the second event happens only if the first one is true, but both are considered as events. This is an example of hypothetical event."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Passage: He is happy.",
+            "output": "happy",
+            "explanation": "Happy is an adjective and hence cannot be an event. The output should be \"is\" which represents an event describing his attribute of happiness."
+        },
+        {
+            "input": "Passage: He was caught in the elevator.",
+            "output": "elevator",
+            "explanation": "Not every noun can be an event. Here \"elevator\" is an object and one cannot say \"an elevator happened\" hence it is not an event. \"caught\" is a correct output."
+        },
+        {
+            "input": "Passage: The flu season is winding down.",
+            "output": "flu season",
+            "explanation": "The \"flu season\" is a noun events with multiple words, but only last word \"season\" sould be used as an event as per definition."
+        },
+        {
+            "input": "Passage: The death toll climbed up to 99 soon after the explosion.",
+            "output": "blast",
+            "explanation": "There are two events in this passage \"climbed\" and \"explosion\". Though blast is a synonym of explosion, it is not present in the passage. The output must contain events that are present in the passage."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task388-9f71f00415184a60a6b064ecabea9cd1",
+            "input": "Passage: The Justice Department has emphasized that the government's fee-forfeiture power is to be used sparingly. According to department policy, prosecutors must make a strong showing that lawyers' fees came from assets tainted by illegal profits before any attempts at seizure are made.",
+            "output": [
+                "emphasized",
+                "used",
+                "According",
+                "make",
+                "showing",
+                "tainted",
+                "profits",
+                "attempts",
+                "seizure",
+                "made"
+            ]
+        },
+        {
+            "id": "task388-3ad2f8b7c83b4f45a95fa2664e978d63",
+            "input": "Passage: The foreign minister said there was a danger of all-out conflict in the Horn of Africa. He said his government hoped to avoid war but warned that conflict would become inevitable if the Islamists continued on their current path.",
+            "output": [
+                "said",
+                "said",
+                "hoped",
+                "war",
+                "continued",
+                "conflict",
+                "avoid",
+                "become"
+            ]
+        },
+        {
+            "id": "task388-9e977fa828314a12bf1496559d284c28",
+            "input": "Passage: The Volunteer Fire Service also found five male corpses in different areas of Guatemala City. One of the victims was found in a cardboard box in a market of the city.",
+            "output": [
+                "found",
+                "found"
+            ]
+        },
+        {
+            "id": "task388-ffef3c9e31c249639d42f8689bcce0a2",
+            "input": "Passage: Spielberg and David Geffen, also of DreamWorks, are to produce four to six live-action films per year of the 14-16 films Paramount said it expects to make next year. DreamWorks Animation also announced that it had struck a seven-year deal to distribute its films in theaters, television and home DVD and video players worldwide.",
+            "output": [
+                "produce",
+                "expects",
+                "said",
+                "make",
+                "announced",
+                "struck",
+                "distribute"
+            ]
+        },
+        {
+            "id": "task388-3a2ced36284a4a35aa0fd7d2f299596e",
+            "input": "Passage: \"If the pope was ready to come here then why should I not come as well\", Antija Zlatun, from the central Bosnian town of Novi Travnik, said when asked about the recent series of attacks against Catholic churches and monasteries in Sarajevo. Munib Usanovic, 50-year-old servant of the federal government and a Moslem from Sarajevo who went to the mass \"because it is an event that happens once in a lifetime,\" expressed the shame many citizens feel about the attacks and the finding on Saturday of explosives set along the papal route.",
+            "output": [
+                "come",
+                "come",
+                "from",
+                "said",
+                "asked",
+                "went",
+                "from",
+                "mass",
+                "is",
+                "event",
+                "lifetime",
+                "expressed",
+                "feel",
+                "attacks",
+                "finding",
+                "along",
+                "in",
+                "attacks",
+                "against"
+            ]
+        },
+        {
+            "id": "task388-fd6fbf65a95d450ebf7e6d6b6cb964b9",
+            "input": "Passage: BellSouth's revised proposal surprised many industry analysts, especially because of the company's willingness to accept some dilution of future earnings. William O. McCoy, president of the company's BellSouth Enterprises Inc. unit, said the revised agreement with LIN would dilute BellSouth earnings by about 9% in both 1990 and 1991 and by significantly less thereafter.",
+            "output": [
+                "proposal",
+                "surprised",
+                "accept",
+                "dilution",
+                "revised",
+                "agreement",
+                "dilute",
+                "earnings",
+                "earnings"
+            ]
+        },
+        {
+            "id": "task388-e72b69a1d80a415a88a151055524591f",
+            "input": "Passage: But they had been killed together with other poultry in the village after the outbreak of the disease. \"Every one knows there is something wrong with Qin's poultry,\" said Qi.",
+            "output": [
+                "killed",
+                "outbreak",
+                "knows",
+                "said",
+                "is"
+            ]
+        },
+        {
+            "id": "task388-3296584ed6694d7f9ba6deec47cf88fc",
+            "input": "Passage: He noted, \"during the meeting we also stressed the determination to further improve our cooperation in culture, tourism, defense and education areas. Turkey and Italy have also a beneficial cooperation in international institutions especially in NATO.\"",
+            "output": [
+                "noted",
+                "meeting",
+                "stressed",
+                "determination",
+                "improve",
+                "cooperation",
+                "have",
+                "cooperation"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Apache 2.0"
+    ]
+}

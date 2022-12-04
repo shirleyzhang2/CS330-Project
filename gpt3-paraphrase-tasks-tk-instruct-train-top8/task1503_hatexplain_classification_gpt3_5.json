@@ -1,0 +1,115 @@
+{
+    "Contributors": [
+        "Pruthvi Patel"
+    ],
+    "Source": [
+        "hatexplain"
+    ],
+    "URL": [
+        "https://github.com/hate-alert/HateXplain"
+    ],
+    "Categories": [
+        "Toxic Language Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "The input is a tweet. The tweet can be one of three types: Hate Speech, Offensive, or Normal. Hate Speech and Offensive tweets target one community. Given such a tweet, output the community targeted in the tweet. The community will be one of nine values: 'African', 'Islam', 'Jewish', 'Women', 'Refugee', 'Arab', 'Caucasian', 'Hispanic', or 'Asian'. Output 'None' if the tweet does not target any community. A tweet can only target one community."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Social Media -> Twitter"
+    ],
+    "Positive Examples": [
+        {
+            "input": "caucasians wearing masks to prevent coronavirus and still don \u2019 t wash their hands",
+            "output": "Caucasian",
+            "explanation": "The tweet generalizes an attribute to the entire community, Caucasian, which makes it offensive."
+        },
+        {
+            "input": "lesson of the week from the holy book the sovereign individual once commerce flows over the internet suppression of speech becomes unstoppable devolution inevitable and the monopoly of violence by governments will end paraphrased from j d davidson rhys mogg",
+            "output": "None",
+            "explanation": "The tweet does not target any specific community hence the correct answer is None"
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "<user> <user> there shd be a film called no hindus in kashmir wud be perfect islamic fanaticsm movement in kashmir",
+            "output": "Hindu",
+            "explanation": "Every input tweet will target one or more of the nine communities provided or will not target any community. Further the tweet targets Muslim community. Hence Hindu is not the correct value. The correct value is Islam."
+        },
+        {
+            "input": "ffs everthing is offensive to muslimes",
+            "output": "None",
+            "explanation": "This tweet is offensive to Muslim community. Hence the correct answer is Islam instead of None."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1503-456d52809ae342cfbc792238c75415bc",
+            "input": "that white devil ain t low \ud83d\ude12",
+            "output": [
+                "Caucasian"
+            ]
+        },
+        {
+            "id": "task1503-12311314b99c44968d2e5af2ae47f7db",
+            "input": "we should treat muslim refugees the same way that they would treat christian refugees they will beg to go back to their war zones",
+            "output": [
+                "Refugee"
+            ]
+        },
+        {
+            "id": "task1503-1f4829b30e084e26b8b9f004fbeb913f",
+            "input": "<user> club diego tho stripper poles stripper hoes",
+            "output": [
+                "None"
+            ]
+        },
+        {
+            "id": "task1503-aff7fd35d0db412ea3134b7470c9feae",
+            "input": "you can call me extremist degenerate deplorable kk whitest or whatever other name you like immigrants have taken what few job american have and corrupt politicians and corporation have taken the rest so do not give us any of this poor immigrant crap then use our taxes to support them",
+            "output": [
+                "Refugee"
+            ]
+        },
+        {
+            "id": "task1503-ceaf4d49b5d947bc89ad45ce0f9a550c",
+            "input": "<user> the indisputable fact is that the majority of the illegal immigrants in india are muslim there should be a policy to tackle the issue of illegal immigration irrespective of their religion what are your suggestions",
+            "output": [
+                "None"
+            ]
+        },
+        {
+            "id": "task1503-3f1519e54245487fb2019d41b12a848f",
+            "input": "i fucking hate white people",
+            "output": [
+                "Caucasian"
+            ]
+        },
+        {
+            "id": "task1503-b775e514f6b9483493db4e9498af6c1b",
+            "input": "wish this neighborhood i live in wasn t overrun with wannabe thugs milling around on the street being annoying on purpose insects and immigrants from third world countries who immediately become depend on government distributions the only decent ones are the mexicans the rest do not contribute",
+            "output": [
+                "Refugee"
+            ]
+        },
+        {
+            "id": "task1503-9c2a90862ba9468f935a4129e82a702f",
+            "input": "filthy jet black nigga backstage full of white bitches no i do not sell like macklemore but i have got white privilege",
+            "output": [
+                "African"
+            ]
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

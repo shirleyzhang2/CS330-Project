@@ -1,0 +1,120 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "qasper"
+    ],
+    "URL": [
+        "https://allenai.org/project/qasper/home"
+    ],
+    "Categories": [
+        "Question Understanding"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "In this task, you will be presented with a context from an academic paper and a question based on the context. You have to classify the questions into \"Extractive\", \"Abstractive\", or \"Yes-no\" questions. Extractive questions can be answered by taking extracts from the context and concatenating them into a summary. Answering abstractive questions requires paraphrasing the context using new sentences. A Yes-no question is a question whose expected answer is one of two choices, one that affirms the question and one that denies the question. Typically, the choices are either yes or no."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Scientific Research Papers"
+    ],
+    "Positive Examples": [
+        {
+            "input": "We build a dataset of Twitter accounts based on two lists annotated in previous works. For the non-factual accounts, we rely on a list of 180 Twitter accounts from BIBREF1. On the other hand, for the factual accounts, we use a list with another 32 Twitter accounts from BIBREF19 that are considered trustworthy by independent third parties. \n Question: How did they obtain the dataset?",
+            "output": "Extractive",
+            "explanation": "The answer to this question has been explicitly mentioned in the context, so the question is extractive."
+        },
+        {
+            "input": "We evaluate our pointer-generator performance using BLEU score. The baseline language model is trained using RNNLM BIBREF23 . Perplexity measure is used in the evaluation.\n\n \n Question: Did they use other evaluation metrics?",
+            "output": "Yes-no",
+            "explanation": "This is a good example, and the given question is a yes-no question."
+        },
+        {
+            "input": "As in the example above, we pre-process documents by removing all numbers and interjections. \n Question: what processing was done on the speeches before being parsed?",
+            "output": "Abstractive",
+            "explanation": "Answering this question needs paraphrasing the context, so this question is abstractive."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "For the English version, we performed both a thorough manual analysis and automatic evaluation across three commonly used TS datasets from two different domains  For the English version, we performed both a thorough manual analysis and automatic evaluation across three commonly used TS datasets from two different domains  The evaluation of the German version is in progress. \n Question: What are the corpora used for the task?",
+            "output": "Yes-no",
+            "explanation": "This question is extractive, and it's not a yes-no question."
+        },
+        {
+            "input": "For Turkish, as the first dataset, we utilised the movie reviews which are collected from a popular website. The number of reviews in this movie corpus is 20,244 and the average number of words in reviews is 39. Each of these reviews has a star-rating score which is indicative of sentiment. These polarity scores are between the values 0.5 and 5, at intervals of 0.5. We consider a review to be negative it the score is equal to or lower than 2.5. On the other hand, if it is equal to or higher than 4, it is assumed to be positive. We have randomly selected 7,020 negative and 7,020 positive reviews and processed only them. \n Question: What details are given about the movie domain dataset?",
+            "output": "Extractive",
+            "explanation": "This question is Abstractive because we need to paraphrase the context to get to the answer."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task462-f141eaaa9ec6479cb9838c8ce476d204",
+            "input": "Paraphrases can be obtained by translating an English string into a foreign language and then back-translating it into English.  \n Question: It looks like learning to paraphrase questions, a neural scoring model and a answer selection model cannot be trained end-to-end. How are they trained?",
+            "output": [
+                "Abstractive"
+            ]
+        },
+        {
+            "id": "task462-7bcdba37c9f04a68830429e691b60d3e",
+            "input": "As a further application of our work, we have carried out a supervised classification task aimed at predicting the degree of harm of an incident directly from the text and the hand-coded features (e.g., external category, medical specialty, location).  We also checked if using our unsupervised content-driven cluster labels as additional features can improve the performance of the supervised classification. \n Question: How are content clusters used to improve the prediction of incident severity?",
+            "output": [
+                "Abstractive"
+            ]
+        },
+        {
+            "id": "task462-660312e98a9447e8b0eb30a6202d46c8",
+            "input": "CNN can also be employed on the sarcasm datasets in order to identify sarcastic and non-sarcastic tweets. We term the features extracted from this network baseline features, the method as baseline method and the CNN architecture used in this baseline method as baseline CNN. Since the fully-connected layer has 100 neurons, we have 100 baseline features in our experiment.  \n Question: What are the network's baseline features?",
+            "output": [
+                "Abstractive"
+            ]
+        },
+        {
+            "id": "task462-84b02ae45bef48a8987c7934dcc2c44f",
+            "input": "We choose the following three models as the baselines:\n\nK-means is a well known data clustering algorithm, we implement the algorithm using sklearn toolbox, and represent documents using bag-of-words weighted by TF-IDF.\n\nLEM BIBREF13 is a Bayesian modeling approach for open-domain event extraction. It treats an event as a latent variable and models the generation of an event as a joint distribution of its individual event elements. We implement the algorithm with the default configuration.\n\nDPEMM BIBREF14 is a non-parametric mixture model for event extraction. It addresses the limitation of LEM that the number of events should be known beforehand. We implement the model with the default configuration. \n Question: What baseline approaches does this approach out-perform?",
+            "output": [
+                "Extractive"
+            ]
+        },
+        {
+            "id": "task462-0b68ebd370b44a97af8fd0bd14d2928b",
+            "input": "In recent years, there has been a rapid growth in the usage of social media. People post their day-to-day happenings on regular basis. BIBREF0 propose four tasks for detecting drug names, classifying medication intake, classifying adverse drug reaction and detecting vaccination behavior from tweets. We participated in the Task2 and Task4. \n Question: Was the system only evaluated over the second shared task?",
+            "output": [
+                "Yes-no"
+            ]
+        },
+        {
+            "id": "task462-7a40d6ac207c4b7ba83ea4b55e902bf5",
+            "input": "Table TABREF15 shows a comparison of the results on SimCluster versus K-means algorithm. Here our SimCluster algorithm improves the F1-scores from 0.412 and 0.417 in the two domains to 0.442 and 0.441. The ARI scores also improve from 0.176 and 0.180 to 0.203 and 0.204. \n Question: Do they use the same distance metric for both the SimCluster and K-means algorithm?",
+            "output": [
+                "Yes-no"
+            ]
+        },
+        {
+            "id": "task462-4dee25a11deb4d44a149d88cad3575bb",
+            "input": "The focus of this publication is on representing information that is valuable for these tasks but that hitherto has largely been ignored in machine learning approaches centering around simplified language, specifically, text structure (e.g., paragraphs, lines), typography (e.g., font type, font style), and image (content, position, and dimensions) information. Information on physical page segmentation (for PDFs only), paragraph segmentation, and line segmentation was added as part of a textspan element in the textstructure layer \n Question: Which information about text structure is included in the corpus?",
+            "output": [
+                "Extractive"
+            ]
+        },
+        {
+            "id": "task462-7bc8b8f29ae843d0abacf71d18a53df2",
+            "input": "To counter that, we use a left-to-right attention mask, similar to the one employed in the original Transformer decoder BIBREF1. For the input tokens in $X$, we apply such mask to all the target tokens $Y$ that were concatenated to $X$, so that input tokens can only attend to the other input tokens. Conversely, for target tokens $y_t$, we put an attention mask on all tokens $y_{>t}$, allowing target tokens $y_t$ to attend only to the input tokens and the already generated target tokens. \n Question: What is different in BERT-gen from standard BERT?",
+            "output": [
+                "Abstractive"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

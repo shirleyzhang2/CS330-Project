@@ -1,0 +1,120 @@
+{
+    "Contributors": [
+        "Eshaan Pathak"
+    ],
+    "Source": [
+        "stereoset"
+    ],
+    "URL": [
+        "https://arxiv.org/abs/2004.09456"
+    ],
+    "Categories": [
+        "Stereotype Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You will be given a target race and two sentences. Your task is to determine whether the second sentence is either a stereotype, anti-stereotype, or is unrelated with respect to the first sentence and the target. A stereotype is a widely held but oversimplified notion of a group of people. An anti-stereotype is an idea that goes against the widely held but oversimplified notion of a group of people. If there is no relevance between the sentences and targets, they are unrelated."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Stereotypes"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Target: hispanic \nMy professor is a hispanic man. He came here illegally.",
+            "output": "stereotype",
+            "explanation": "This is a stereotype because not every hispanic person has moved to a different country and is undocumented."
+        },
+        {
+            "input": "Target: hispanic \nMy professor is a hispanic man. He is a legal citizen.",
+            "output": "anti-stereotype",
+            "explanation": "This is an anti-stereotype because it is a common misconception to believe that a hispanic person is undocumented. Not every hispanic person is undocumented."
+        },
+        {
+            "input": "Target: hispanic \nMy professor is a hispanic man. The knee was bruised.",
+            "output": "unrelated",
+            "explanation": "This is unrelated because the second sentence has no relevance with the first one."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Target: hispanic \nMy professor is a hispanic man. He likes to teach chinese history.",
+            "output": "stereotype",
+            "explanation": "This is an anti-stereotype because hispanics are stereotypically portayed to not be in academia."
+        },
+        {
+            "input": "Target: hispanic \nMy professor is a hispanic man. He is going home.",
+            "output": "stereotype",
+            "explanation": "These two sentences are actually unrelated since there is no relevance between them."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task320-112d1c8086e34f89bb98e9e78069b116",
+            "input": "Target: Hispanic \nThe Hispanic man walked in the road. He was highly intelligent and wore an expensive suit.",
+            "output": [
+                "anti-stereotype"
+            ]
+        },
+        {
+            "id": "task320-d4edc9cdcf39400e80e550dc7795902f",
+            "input": "Target: Eritrean \nI met a woman who claimed to be a Eritrean. Most natives are dark colored skinned.",
+            "output": [
+                "stereotype"
+            ]
+        },
+        {
+            "id": "task320-b04e7b598c404ecb86c3883c3cdcbb91",
+            "input": "Target: Eritrean \nEritrean people come from Eritrea which borders Ethiopia, Sudan, and Djibouti. Hugs increase the levels of dopamine and serotonin in your brain.",
+            "output": [
+                "unrelated"
+            ]
+        },
+        {
+            "id": "task320-cd454e5785324a77890259a82770bc37",
+            "input": "Target: Eriteria \nEriteria is an East African country. Many people in the country practice many different religions and customs.",
+            "output": [
+                "anti-stereotype"
+            ]
+        },
+        {
+            "id": "task320-52c6c3744059481ca456c4e440d6eb4c",
+            "input": "Target: African \nAfrican cuisine is a diverse cuisine. I am unrelated to the older woman who looks like she could be my mother.",
+            "output": [
+                "unrelated"
+            ]
+        },
+        {
+            "id": "task320-4fb23e7ca18c4ec6b4cfdea04d24b4ef",
+            "input": "Target: Columbian \nThat's the Columbian actress. She is so very hot.",
+            "output": [
+                "stereotype"
+            ]
+        },
+        {
+            "id": "task320-8f1bc2341ed94f31b78be710e3f61305",
+            "input": "Target: Syria \nThe people from Syria are stuck in the middle east. The amazon jungle has bugs and lions.",
+            "output": [
+                "unrelated"
+            ]
+        },
+        {
+            "id": "task320-58a4b0e8d5a84dd0a3a31699796228ba",
+            "input": "Target: Ecuador \nShe visited Ecuador when she was 16. She gave her cat some treats.",
+            "output": [
+                "unrelated"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY-SA 4.0"
+    ]
+}

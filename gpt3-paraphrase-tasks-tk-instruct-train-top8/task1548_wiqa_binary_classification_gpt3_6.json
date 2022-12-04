@@ -1,0 +1,122 @@
+{
+    "Contributors": [
+        "Hadi Mazboudi"
+    ],
+    "Source": [
+        "wiqa"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/wiqa"
+    ],
+    "Categories": [
+        "Sentence Ordering"
+    ],
+    "Reasoning": [
+        "Temporal Reasoning"
+    ],
+    "Definition": [
+        "Given a set of steps describing a process, you need to answer the question 'Are the given steps in order?' with either 'Yes' or 'No'. If the steps are out of order and do not make sense in the order they are in, the answer is 'No'. If the steps are in order and make sense in the order they are in, the answer is 'Yes'. A set of steps are not in order if the steps reference information that is introduced in a later step."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Natural Science"
+    ],
+    "Positive Examples": [
+        {
+            "input": " ['The seeds are dispersed by wind, animals, etc', 'The seeds reach the ground', 'Grow into new trees', 'The process repeats itself over and over', 'A tree produces seeds', 'These new trees produce seeds'] ",
+            "output": "No",
+            "explanation": "These steps are not in order. The first step in this sequence is 'The seeds are dispersed by wind, animals, etc' but the step introducing the seed 'A tree produces seeds' is after the steps referencing the seeds. Therefore, the answer is No"
+        },
+        {
+            "input": " ['The carafe is filled with water', 'The water is poured into the machine at the back', 'Coffee beans are put into a grinder', 'The grinder is activated', 'A filter is put into the coffee maker', 'The ground coffee is put into the filter', 'Sometimes a bit of salt is added to the grounds to bring out flavor', 'The top of the machine is closed', 'The power is turned on', 'The water passes through the grounds and becomes coffee.'] ",
+            "output": "Yes",
+            "explanation": "These steps are in order. The information from each previous step leads into the next step. Therefore, the correct answer is Yes"
+        },
+        {
+            "input": " ['The nest is done.', 'The bird makes a flat base with twigs', 'The bird picks a tree', 'The bird makes sides with twigs and other things', 'The bird adds softer material to the inside', 'The bird collects twigs and other refuse'] ",
+            "output": "No",
+            "explanation": "These steps are not in order. The first step is 'The nest is done'. Since these steps outline how birds make a nest, this step should be last. Therefore, the steps are out of order and the answer is No"
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": " ['The cans are transported to a facility', 'The molds are flattened and rolled into sheets to reuse.', 'The cans are heated to 1400 degrees to melt them', 'The molten metal is poured into molds', 'The cans are shredded by a machine', 'Put the aluminum can into a recycle bin'] ",
+            "output": "Yes",
+            "explanation": "This answer is incorrect because these steps are out of order. The step 'Put the aluminum can into a recycle bin' should be first. Without this step, the step 'The cans are transported to a facility' does not make sense because the cans are not introduced yet. The correct answer is No"
+        },
+        {
+            "input": " ['Acid rain is produced by chemicals that reach into the atmosphere', 'Falls onto the ground', 'The acid rain starts scouring rocks', 'Destroys vegetation', 'The lack of vegetation alters the surrounding environment.'] ",
+            "output": "No",
+            "explanation": "This answer is incorrect because these steps are in order. The step, 'Acid rain is produced by chemicals that reach into the atmosphere' introduces the subject of the process, acid rain. The step 'Falls onto the ground' refers to the acid rain that was in the previous step. After the acid falls onto the ground, the next step is 'The acid rain starts scouring rocks'. The next step describes what happens after acid rain falls onto the ground, 'Destroys vegetation'. After the acid rain destroys vegetation, 'The lack of vegetation alters the surrounding environment.' Since each step only uses information from previous steps, the correct answer is Yes"
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1548-bac96acb0d3c44b49de056692a5a5824",
+            "input": " ['Carbon dioxide and energy from ATP are used to create sugar', 'Carbon dioxide enters the leaves through the stomates by diffusion', 'Oxygen exits the leaves through the stomata by diffusion', 'Water is transported to the leaves in the xylem', 'The plant reuses the water or the water exits through the stomata as water vapor.', 'Energy harvested through light reaction is stored by forming ATP'] ",
+            "output": [
+                "  No  "
+            ]
+        },
+        {
+            "id": "task1548-413fd9fe12e64cd78add2b73ec28e1c3",
+            "input": " ['Rainwater absorbs some carbon dioxide as it passes through the atmosphere and even more as it drains through soil and decaying vegetation', 'This acid slowly dissolves calcite, forms solution cavities, and excavates passageways', 'The water combines chemically with the carbon dioxide', 'Some of the water reaches a zone where all the cracks and pores in the rock are already filled with water', 'After a rain, water seeps into cracks and pores of soil and rock', 'The water percolates beneath the land surface', 'Solution caves are formed in limestone and similar rocks by the action of water', 'A weak carbonic acid solution is formed'] ",
+            "output": [
+                "  No  "
+            ]
+        },
+        {
+            "id": "task1548-2c8d6eea0f624d9b8f56685815b706c6",
+            "input": " ['If the magma building in the volcano is thick and sticky it will trap gases', 'If the magma is thin and runs', 'Results in an explosive eruption when the pressure becomes too intense', 'Gain energy for eruption', 'Some of the energy is converted into seismic activity (earthquakes)', 'Collects inside magma chambers underneath a volcano', 'Magma rises', 'The magma results in a low-pressure, slow-moving flow of magma instead of a violent eruption', 'Pressure builds in the magma chambers as they fill', 'Magma is formed when rock melts inside the Earth&#x27;s crust'] ",
+            "output": [
+                "  No  "
+            ]
+        },
+        {
+            "id": "task1548-2c62a00e96b647378ab065b42a66e11e",
+            "input": " ['Blood is sent to the liver', 'Energy is produced', 'The blood leaves the liver cleaned.', 'The blood is cleaned', 'The liver uses chemicals and proteins to treat the blood'] ",
+            "output": [
+                "  No  "
+            ]
+        },
+        {
+            "id": "task1548-9350ffa9fb7042a2a65803ea3143a817",
+            "input": " ['The sediment breaks down into small particles', 'The sediment travels along the same route as the wind or water', 'Wind or water picks up the sediment', 'The sediment is deposited again in a new place.', 'The sediment travels further', 'The sediment is picked up again by new wind or water', 'The sediment is deposited at new locations by the wind or water', 'Sediment settles in a place due to gravity'] ",
+            "output": [
+                "  No  "
+            ]
+        },
+        {
+            "id": "task1548-3cd4a895091044128335a5d07b081bf6",
+            "input": " ['The generator uses the spins of the shaft to rotate a rotor', 'The spinning of the rotor in the core generates electricity', 'Wind passes the turbines and moves the blades', 'Shaft is connected to a generator', 'The rotor spins inside the core, which has magnets inside surrounded by wire loops inside', 'The shaft of the turbine spins'] ",
+            "output": [
+                "  No  "
+            ]
+        },
+        {
+            "id": "task1548-905e0eb4a5b04a0a8d479d1e8278aaee",
+            "input": " ['The bacteria reproduces and spreads', 'Bacteria enters through the wound', 'The bacteria is either fought off or becomes a disease.', 'Skin is cut or damaged', 'Causes symptoms'] ",
+            "output": [
+                "  No  "
+            ]
+        },
+        {
+            "id": "task1548-5945000cf9604c508e4705b3bf38daff",
+            "input": " ['The radiation is aborbed by the Earth', 'If too much heat is trapped', 'The sun gives off radiation', 'Some of the radiation goes back into space', 'Global warming occurs.', 'Some is trapped by the atmosphere'] ",
+            "output": [
+                "  No  "
+            ]
+        }
+    ],
+    "Instance License": [
+        "Apache 2.0"
+    ]
+}

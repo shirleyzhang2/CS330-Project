@@ -1,0 +1,126 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "atomic"
+    ],
+    "URL": [
+        "https://allenai.org/data/atomic-2020"
+    ],
+    "Categories": [
+        "Commonsense Classification"
+    ],
+    "Reasoning": [
+        "Relational Reasoning",
+        "Reasoning on Social Interactions",
+        "Commonsense Reasoning -> Social Situations",
+        "Reasoning on Objects"
+    ],
+    "Definition": [
+        "Given two phrases, Head and Tail, separated with <sep>, where Head and Tail events are short phrases possibly involving participants, and names of specific people have been replaced by generic words, your task is to determine whether the Head is capable of the Tail or not. Being capable of something includes general capabilities, such as a human is capable of thinking and reasoning or drinking coffee, as well as specialized capabilities, such as a surgeon is capable of operating on a patient. Classify your answers into \"Yes\" and \"No\". The phrase may also contain \"___\", a placeholder that can be an object, a person, and/or an action."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Sociology",
+        "Commonsense -> Concepts and Relations -> Social Commonsense"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Head: chicken<sep>Tail: lay eggs",
+            "output": "Yes",
+            "explanation": "This is a good example. The Head is capable of the Tail."
+        },
+        {
+            "input": "Head: PersonX accomplishes PersonY's work<sep>Tail: satisfied",
+            "output": "No",
+            "explanation": "In this example, being capable of satisfied doesn't make sense. So the output should be\"No\"."
+        },
+        {
+            "input": "Head: warder<sep>Tail: leave jail",
+            "output": "Yes",
+            "explanation": "In this example, the warder is capable of leaving the jail. Thus, this example should be classified as \"Yes\"."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Head: PersonX achieves PersonY end<sep>Tail: to be alone",
+            "output": "Yes",
+            "explanation": "In this example, PersonX achieves PersonY end is/are capable of being alone doesn't make sense. So the output should be \"No\"."
+        },
+        {
+            "input": "Head: scientist<sep>Tail: discover new",
+            "output": "No",
+            "explanation": "The scientist is capable of discovering new things, and the output should be \"Yes\"."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1215-b787584a63774c6c803aa19490af5ab3",
+            "input": "Head: late riser<sep>Tail: miss carpool",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1215-4574a9ddfe1843d485a45f1557929209",
+            "input": "Head: PersonX actually got<sep>Tail: so happy",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1215-841a720907bb418c9a4f7781d26f124b",
+            "input": "Head: private detective<sep>Tail: tail suspect",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1215-7e76270eb481401aa343e136ad318179",
+            "input": "Head: bookkeeper<sep>Tail: record transactions",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1215-30809de0a4504a0d8f7790ead9867245",
+            "input": "Head: PersonX accomplishes PersonY's work<sep>Tail: relieved someone else took over",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1215-4f2797d7bc30448eaa859915fbaf4e83",
+            "input": "Head: PersonX acts in PersonY way<sep>Tail: to learn a new skill",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1215-3c22a6bea3694467ba9c82c83289540b",
+            "input": "Head: PersonX accomplishes PersonX's goals<sep>Tail: relieves stress",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1215-d3ef214624554d37851a2353556d7fe5",
+            "input": "Head: packer<sep>Tail: box magazines",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

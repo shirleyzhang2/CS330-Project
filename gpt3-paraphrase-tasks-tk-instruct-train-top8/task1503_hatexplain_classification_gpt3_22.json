@@ -1,0 +1,115 @@
+{
+    "Contributors": [
+        "Pruthvi Patel"
+    ],
+    "Source": [
+        "hatexplain"
+    ],
+    "URL": [
+        "https://github.com/hate-alert/HateXplain"
+    ],
+    "Categories": [
+        "Toxic Language Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "The input is a tweet. The tweet can be classified as Hate Speech, Offensive, or Normal. Hate Speech and Offensive tweets target one community. Given such a tweet, output the community targeted in the tweet. The community will be one of the nine values: 'African', 'Islam', 'Jewish', 'Women', 'Refugee', 'Arab', 'Caucasian', 'Hispanic' or 'Asian'. Output 'None' if the tweet does not target any community. A tweet can only target one community."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Social Media -> Twitter"
+    ],
+    "Positive Examples": [
+        {
+            "input": "caucasians wearing masks to prevent coronavirus and still don \u2019 t wash their hands",
+            "output": "Caucasian",
+            "explanation": "The tweet generalizes an attribute to the entire community, Caucasian, which makes it offensive."
+        },
+        {
+            "input": "lesson of the week from the holy book the sovereign individual once commerce flows over the internet suppression of speech becomes unstoppable devolution inevitable and the monopoly of violence by governments will end paraphrased from j d davidson rhys mogg",
+            "output": "None",
+            "explanation": "The tweet does not target any specific community hence the correct answer is None"
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "<user> <user> there shd be a film called no hindus in kashmir wud be perfect islamic fanaticsm movement in kashmir",
+            "output": "Hindu",
+            "explanation": "Every input tweet will target one or more of the nine communities provided or will not target any community. Further the tweet targets Muslim community. Hence Hindu is not the correct value. The correct value is Islam."
+        },
+        {
+            "input": "ffs everthing is offensive to muslimes",
+            "output": "None",
+            "explanation": "This tweet is offensive to Muslim community. Hence the correct answer is Islam instead of None."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1503-97696843b67c4a839f0ae46a198a0553",
+            "input": "i can not tell one sand nigger from the next",
+            "output": [
+                "Arab"
+            ]
+        },
+        {
+            "id": "task1503-5ff6cccfeaec4783aae5452d760a0aaa",
+            "input": "the nigger that shot up the church was an immigrant from from sudan",
+            "output": [
+                "African"
+            ]
+        },
+        {
+            "id": "task1503-86b1e9d92474414b8a0e801c2d11774a",
+            "input": "<number> seconds on the clock the white race is dying do you a get stable income have a large family b get on gab and get really pissed at random people while posting nazi propaganda",
+            "output": [
+                "Caucasian"
+            ]
+        },
+        {
+            "id": "task1503-51ccbac1e8d64b9bb8ac1a28d1df2f36",
+            "input": "bitch you out of line why you waste my time i am trying to smoke trying to get high see it in my eyes i know she playin both sides that bitch tellin lies",
+            "output": [
+                "Women"
+            ]
+        },
+        {
+            "id": "task1503-15314359f48a4054b91a1ceaa8e45ae0",
+            "input": "bro why do asians have a low alcohol tolerance this is not fair",
+            "output": [
+                "Asian"
+            ]
+        },
+        {
+            "id": "task1503-46745f12447545c197dc0a13bef350fd",
+            "input": "kikes are the real problem pay all refugees and muslims to leave for uk and france",
+            "output": [
+                "Islam"
+            ]
+        },
+        {
+            "id": "task1503-8fde71df0c7c40a1ad5ddd9f2ad6aca9",
+            "input": "here the funny thing about sarsour she d never dare try to pull this bullshit in a muzzie country shed need that much makeup to cover the bruises from being slapped around by their cowardly men these maggots are establishing a caliphate right under our apathetic ignorant little noses",
+            "output": [
+                "Islam"
+            ]
+        },
+        {
+            "id": "task1503-165c9d822a174f0fada5b5791e7c621b",
+            "input": "<user> yeah while i do not agree with horrible acts of violence angela is taking revenge as a queer person on these horrible bullies especially the pedo carelessly there for shock sure but also early 8 0 was much different rape and revenge movies were still look at as empowering",
+            "output": [
+                "None"
+            ]
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

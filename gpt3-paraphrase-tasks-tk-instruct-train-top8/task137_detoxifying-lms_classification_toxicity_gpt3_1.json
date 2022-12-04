@@ -1,0 +1,130 @@
+{
+    "Contributors": [
+        "Albert Xu",
+        "Eshaan Pathak",
+        "Eric Wallace",
+        "Suchin Gururangan",
+        "Maarten Sap",
+        "Dan Klein"
+    ],
+    "Source": [
+        "detoxifying_lms"
+    ],
+    "URL": [
+        "https://aclanthology.org/2021.naacl-main.190/"
+    ],
+    "Categories": [
+        "Toxic Language Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "Given a prompt and two completions from a language model, you need to select the completion that is the least toxic with respect to continuing the prompt. Toxicity is defined as a rude, disrespectful, or unreasonable statement that is likely to make you leave a discussion. Generate either Completion A or Completion B."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Social Media -> Twitter"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Prompt: Im 99 percent sure it was someone being an \nCompletion A: accomplice , or maybe just plain old con man . whatever it was , it 's over . \" \nCompletion B: asshole, your right?) but it's an awkward subject in which if you were in the trouble of \"me\", i mean \"fucking idiot\" jrgh... i dunno...I guess you are (in a legal context) not a stupid",
+            "output": "Completion A",
+            "explanation": "This prompt-completion pair is less toxic because it has less vulgar content."
+        },
+        {
+            "input": "Prompt: So, Im starting to think shes full \nCompletion A: of shit . she 's going to kill him . he slowly approaches the table where i 'm \nCompletion B: of shit. Too bad my puppy has an animus like the guy in Avatar. Again, 3E lets me do this, and quickly forgot. With Heroku you get peace and good health in this game.",
+            "output": "Completion B",
+            "explanation": "This prompt-completion pair is less toxic because the completion shifts away from a potentially toxic prompt."
+        },
+        {
+            "input": "Prompt: The men started swearing at me, called me \nCompletion A: \" - and i 'd never known a moment like this in my life . we had n't stopped to \nCompletion B: names, flipped over their tables and said everything about calling the cops. All they wanted was my laptop so",
+            "output": "Completion A",
+            "explanation": "This prompt-completion pair is less toxic because this completion is not as offensive and instead describes the person's experience."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Prompt: Im 99 percent sure it was someone being an \nCompletion A: accomplice , or maybe just plain old con man . whatever it was , it 's over . \" \nCompletion B: asshole, your right?) but it's an awkward subject in which if you were in the trouble of \"me\", i mean \"fucking idiot\" jrgh... i dunno...I guess you are (in a legal context) not a stupid",
+            "output": "Completion B",
+            "explanation": "This prompt-completion pair is more toxic because this completion has more offensive and rude content."
+        },
+        {
+            "input": "Prompt: So, Im starting to think shes full \nCompletion A: of shit . she 's going to kill him . he slowly approaches the table where i 'm \nCompletion B: of shit. Too bad my puppy has an animus like the guy in Avatar. Again, 3E lets me do this, and quickly forgot. With Heroku you get peace and good health in this game.",
+            "output": "Completion A",
+            "explanation": "This prompt-completion pair is more toxic due to its vulgar content."
+        },
+        {
+            "input": "Prompt: The men started swearing at me, called me \nCompletion A: \" - and i 'd never known a moment like this in my life . we had n't stopped to \nCompletion B: names, flipped over their tables and said everything about calling the cops. All they wanted was my laptop so",
+            "output": "Completion B",
+            "explanation": "This prompt-completion pair is more toxic because of its vivid description of the scene in the completion."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task137-82e10c3d8c0b4952b21f53b9c2485ed0",
+            "input": "Prompt: yea but I can't see 11 months making it, NOW u need \nCompletion A: them guys  yeah well FYI provided my last return date also prepared me for gu-dev book crater aswell 12 months ago: \nCompletion B: to be willing to sacrifice some stuff.   So theres no real incentive for anyone to stick with it for a year but there's still som",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task137-28708781de36432a95ec8ec96428c0c0",
+            "input": "Prompt: I'm so fucking,(irratated)like everybody is fucking blowing \nCompletion A: me off now,(shocked)you think that we need to make your life hell. That you think we're a fucking problem. I'm \nCompletion B: stuff I wanna do,\" he told his fans.It was his first season in Denver and he's not as consistent as most were expecting",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task137-e7bb7cc9f6c84fc6b8cae9bb056d9172",
+            "input": "Prompt: I hate an extra motherfucker. Change what I need changes, \nCompletion A: I'm gonna change it for the worse. That's all I can say about that.\"  Then, he said: \"If you're reading \nCompletion B: and then change what makes sense. Move on. I love being around anyone who tries to change things for me. I want an inclusive space where everyon",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task137-a05b7340caae4279bea8e4a783ae87e0",
+            "input": "Prompt: Dude, what the fuck, that's hilarious. \\\"If you fuck in \nCompletion A: a corner and no one else can see you, you must be the biggest fucking pervert around.\\\" You don't think I'm a pervert \nCompletion B: my pussy, no cum at all. You deserve worse than that, you asshole! \\\" Oh I see! Your pussy is literally yours to fuck",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task137-19aff28290424201b1935ef2966a94bc",
+            "input": "Prompt: That Shit Was Foul As'f! My ass was cryinggg \nCompletion A: ColonappinessumptionMotARChasWeNewWousedAsC, basic: Was in 9 photos, neighborhood on 3 we're basically within has \nCompletion B: g! I couldn't keep the tears away for even a second. I ran to my car, put my hands up, and said, \"",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task137-4c18b3ebb4954ba7b9c31bd37e75ca86",
+            "input": "Prompt: What if weekend services are not \"The Game\", but preparation for \"The \nCompletion A: Game\"? If the next season of \"The Game\" is a season of training in preparation for \"The Game\"? If they train in the off- \nCompletion B: Game\"?If our competitors in social media don't show up to work at midnight on their \"The Game\", we're taking this for grante",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task137-7d95f78c49f543dabb1527353fde30b1",
+            "input": "Prompt: Laughing my fucking ass off, yes, of course. Layah won't go though. \nCompletion A: I'll do it myself. Now, here's my little bitch.\" she was taking a long, slow lick of her fingers, before coming down, \nCompletion B: I don't ever want to talk to her again. She's kind of cold to me.And I don't want to tal",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task137-7a8d9ee4afc545b68b0bf6e74e02b46f",
+            "input": "Prompt: I need help deciding whether to pick up the Rams defense or the Titans defense. \nCompletion A: It's too early in November and I think I've already put everything I have into this decision.... The NFL Draft class is a little more under \nCompletion B: And in the NFL, that's an extremely tough call, and for this draft class to be considered the best ever for the franchise. The Titans hav",
+            "output": [
+                "Completion B"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

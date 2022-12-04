@@ -1,0 +1,127 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "atomic"
+    ],
+    "URL": [
+        "https://allenai.org/data/atomic-2020"
+    ],
+    "Categories": [
+        "Commonsense Classification"
+    ],
+    "Reasoning": [
+        "Relational Reasoning",
+        "Reasoning on Social Interactions",
+        "Commonsense Reasoning -> Social Situations",
+        "Commonsense Reasoning -> Spatial Reasoning"
+    ],
+    "Definition": [
+        "In this task, you are given two phrases: Head and Tail, separated by <sep>. The Head and the Tail events are short phrases possibly involving participants. The names of specific people have been replaced by generic words (e.g., PersonX, PersonY, PersonZ). PersonX is always the subject of the event. You have to determine whether the Head happens before the Tail or not, and classify your answers into \"Yes\" or \"No\". The phrase may also contain \"___\", a placeholder that can be an object, a person, and/or an action."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Sociology",
+        "Commonsense -> Concepts and Relations -> Social Commonsense",
+        "Commonsense -> Concepts and Relations -> Spatial Commonsense"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Head: PersonX swims at the local pool<sep>Tail: PersonX learns a new way of swimming",
+            "output": "Yes",
+            "explanation": "This is a good example. The Head happens before the Tail."
+        },
+        {
+            "input": "Head: PersonX acts as PersonY intermediary<sep>Tail: assist and protect PersonY's interests",
+            "output": "No",
+            "explanation": "In this example, the Head and the Tail can happen at the same time. So the output should be\"No\"."
+        },
+        {
+            "input": "Head: PersonX gets new glasses<sep>Tail: PersonX reads the tiny print on the bottle",
+            "output": "Yes",
+            "explanation": "In this example, getting new glasses happens before reading the tiny print on the bottle. Thus, this example should be classified as \"Yes\"."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Head: PersonX acts like a PersonY<sep>Tail: to observe",
+            "output": "Yes",
+            "explanation": "Observing is not an event that happens before the Head. So the output should be \"No\"."
+        },
+        {
+            "input": "Head: PersonX tries to fix it<sep>Tail: PersonX orders new glass",
+            "output": "No",
+            "explanation": "Trying to fix happens before ordering new glass, and the output should be \"Yes\"."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1206-1eea03076938472fb6926ac3aa0a61fc",
+            "input": "Head: PersonX accepts into college<sep>Tail: very happy",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1206-50e6d550c21b4550adb92f0f9b5ef17e",
+            "input": "Head: PersonX calls PersonY on the phone<sep>Tail: PersonX asks PersonY if they are ok",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1206-b66a265ba2854c04921447af7d794bf0",
+            "input": "Head: PersonX accidentally knocked over<sep>Tail: helps clean up",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1206-ccd0cc7d7a464721a198536e77f5e4dd",
+            "input": "Head: PersonX aces the exam<sep>Tail: intelligent",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1206-4764ae43cd674502a51a2f75dc451069",
+            "input": "Head: PersonX accepts one 's ___<sep>Tail: to solicit the opinions of others",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1206-f975c22e1e0e463aa2a52e6dceb38238",
+            "input": "Head: PersonX accepts one 's ___<sep>Tail: philosophical",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1206-6e50442e185e44de866986599180bf2a",
+            "input": "Head: PersonX supports PersonX's children<sep>Tail: PersonX also picks them up when their practice is done",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1206-918f9d6576aa4b2b82a332e803f973db",
+            "input": "Head: PersonX acquires PersonY knowledge<sep>Tail: helpful",
+            "output": [
+                "No"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

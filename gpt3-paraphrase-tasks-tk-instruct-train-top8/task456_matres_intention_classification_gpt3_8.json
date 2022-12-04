@@ -1,0 +1,120 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "matres"
+    ],
+    "URL": [
+        "https://github.com/CogComp/MATRES"
+    ],
+    "Categories": [
+        "Information Extraction"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You will be given a context and a verb, separated by a newline character. You have to identify if the given verb implies an opinion, intention, or wish. Please note that a verb refers to an intention only if it refers to an event planned to happen in the future and is not conditional (or part of a condition). The output should be: 'Yes' if the verb refers to an opinion, intention, or wish; and 'No' otherwise."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "News"
+    ],
+    "Positive Examples": [
+        {
+            "input": "It was followed by Denmark, Norway, Germany, France, Greece, Luxembourg, Spain, Britain, the United States, Iceland, Belgium, Italy, Portugal and Turkey. NATO decided at last year's Madrid summit to (invite) the three eastern European countries to start accession talks.  \n Verb: invite",
+            "output": "Yes",
+            "explanation": "They planned to \"invite\" the three eastern European countries, so this verb refers to an intention."
+        },
+        {
+            "input": "In Washington today, the Federal Aviation Administration (released) air traffic control tapes from the night the TWA Flight eight hundred went down.  \n Verb: released",
+            "output": "No",
+            "explanation": "In this sentence, the releasing event happened in the past, and hence it's not an intention."
+        },
+        {
+            "input": "We will act again if we have evidence he is (rebuilding) his weapons of mass destruction capabilities, senior officials say. In a bit of television diplomacy, Iraq\u2019s deputy foreign minister responded from Baghdad in less than one hour.  \n Verb: rebuilding",
+            "output": "No",
+            "explanation": "In this sentence, the verb is part of of a condition. Therefore, it cannot be known for sure if he is already rebuilding weapons but we have no evidence, or if he will be building weapons in the future, and hence it's not an intention."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "The Justice Department wants the appeals court to suspend the temporary injunction issued Thursday and also order Elian's great-uncle, Lazaro Gonzalez, to release the boy. The relatives want the court to let them meet with Elian's father without being (required) to surrender the boy.  \n Verb: required",
+            "output": "Yes",
+            "explanation": "In this sentence, required is not an intention, wish, or opinion, as it is part of a condition."
+        },
+        {
+            "input": "The federal charge also carries a fine of up to $250,000. The newly filed charges will (intensify) the ongoing international manhunt, Tolbert said.  \n Verb: intensify",
+            "output": "No",
+            "explanation": "In this sentence, \"intensify\" is planned to happen in the future, and it is an opinion or intention."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task456-ab114dd71c5d411c820d7461f2602531",
+            "input": "Albright, after a 16-hour flight, is scheduled to spend only five hours on the ground in Dar es Salaam, Tanzania, her first stop Tuesday morning, and then about 5 1/2 hours in Nairobi, Kenya, later in the day before returning immediately home. Albright's visit to East Africa was designed in part to (demonstrate) U.S. resolve in the face of growing terrorist threats to Americans.  \n Verb: demonstrate",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task456-1b36ea441e1c4bbdb4f3ea8b2d5bdbed",
+            "input": "The Security Council condemned the bombing of the U.S. embassies in Kenya and Tanzania on Thursday and called on all states to cooperate with authorities in finding those responsible. A resolution, co-sponsored by Kenya, Tanzania and the United States and unanimously adopted,  (expresses) its deep sorrow, sympathy and condolences to the families of the innocent victims of the terrorist bomb attacks at this difficult time.   \n Verb: expresses",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task456-56c867bf29a54d599876a74ea52ed3ae",
+            "input": "Albright, arriving after a 16-hour flight, spent about five hours in Tanzania before heading to Nairobi in a small plane when an engine of the Boeing 747 she had flown in from Washington overheated. She was scheduled to lay flowers at the bombed embassy, talk to Kenyan embassy guards and others who survived the blast and meet with President Daniel arap Moi in a five-hour visit before (returning) home.  \n Verb: returning",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task456-7c1a3efa93c04bb698070a0279f938da",
+            "input": "Once that happens, Gonzalez and Elian, though technically free to return to Cuba, should remain here to await an appellate court ruling on the case, which is expected next month. But if the relatives balk, the Justice Department should quickly (revoke) their custody of the child and obtain a federal court order instructing them and their lawyers to turn Elian over to his father.  \n Verb: revoke",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task456-65278d43d3a145e382c09937d5c7686e",
+            "input": "MIAMI ( AP ) -- In efforts to (prevent) Elian Gonzalez's return to Cuba, an anti-Castro lawmaker subpoenaed him Friday to testify before a congressional committee and one of his Miami relatives sought to become his legal guardian.  \n Verb: prevent",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task456-c7d4764da4a4461699357ea5dba4d6bf",
+            "input": "Scharping, ending a two-day visit, said Poland was well prepared to join the alliance. Germany has been a strong advocate of Poland's access to NATO, saying it will (serve) European security and stability.  \n Verb: serve",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task456-081480f0e54343ff822ac61f490b7f67",
+            "input": "Scharping, ending a two-day visit, said Poland was well prepared to join the alliance. Germany has been a strong advocate of Poland's access to NATO, (saying) it will serve European security and stability.  \n Verb: saying",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task456-8514225b6aa8401cac9824a3df63b876",
+            "input": "Bishop Henry Mansell of the Archdiocese of Buffalo said it was  an act of madness,  but he went on to defend the Church's opposition to abortion as  respecting of human life in all its forms, especially the most vulnerable.  Susan Dudley, deputy director of the National Abortion Federation, assailed the remarks and called on anti-abortion groups to (shift) their tactics.  \n Verb: shift",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

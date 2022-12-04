@@ -1,0 +1,123 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "dream"
+    ],
+    "URL": [
+        "https://github.com/nlpdata/dream"
+    ],
+    "Categories": [
+        "Question Understanding"
+    ],
+    "Reasoning": [
+        "Reasoning on Social Interactions"
+    ],
+    "Definition": [
+        "In this task, you will be given a conversation and a question. You will need to categorize the question into one of the following groups: matching, summary, logic, arithmetic, or commonsense. A matching question is one that can be answered by a single sentence in the dialogue, and the answer can be extracted from that sentence. A summary question requires understanding the whole conversation in order to answer it, such as the topic of the conversation and the relation between the speakers. A logic question requires logical reasoning to answer it. An arithmetic question requires knowledge of arithmetic to answer it. A commonsense question requires knowledge that is not obtained from the dialogue itself, but from additional commonsense knowledge. Note that a question can be in more than one group."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue",
+        "Natural Science -> School Science Textbooks"
+    ],
+    "Positive Examples": [
+        {
+            "input": "W: The movie next Tuesday has been cancelled due to lack of interest. M: What do you mean? W: Well, by last night only a few tickets has been sold., Question: What can we conclude about the movie? (A) They want to buy the tickets for the movie. (B) The tickets for the movie were sold. (C) The movie will not be shown.",
+            "output": "commonsense",
+            "explanation": "This is a good example. To answer this question we require commonsense knowledge that cannot be obtained from the dialogue. So, this is a commonsense question."
+        },
+        {
+            "input": "W: What does the term \"alternative energy source\" mean? M: When we think of energy or fuel for our homes and cars, we think of petroleum, a fossil fuel processed from oil removed from the ground, of which there is a limited supply. But alternative fuels can be many things. Wind, sun and water can all be used to create fuel. W: Is the threat of running out of petroleum real? M: It has taken thousands of years to create the natural stores of petroleum we have available at a much faster rate than it is being produced over time. The real controversy surrounding the amount of petroleum we have is how much we need to keep in reserve for future use. Most experts agree that by around 2025, the amount of petroleum we use will reach a peak. Then production and availability will begin to seriously decline. This is not to say there will be no petroleum at this point. But it'll become very difficult and therefore expensive to extract. W: Is that the most important reason to develop alternative fuel and energy sources? M: There are two very clear reasons to do so. One is that whether we have 60 or 600 years of fossil fuels left, we have to find other fuel sources eventually. So the sooner we start, the better off we will be. The other big argument is that when long time, which leads to some long-term negative effects, like global warming and the greenhouse effect., Question: What do we usually refer to when we talk about energy according to the man? (A) Coal burnt daily for the comfort of our homes. (B) Anything that can be used to produce power. (C) Fuel refined from oil extracted from underground.",
+            "output": "matching",
+            "explanation": "The first sentence of the man can answer this question. So, it's a matching question."
+        },
+        {
+            "input": "M: What do you think of my new sweater? W: Well, it looks nice, but why don't you put it on, and then I'll tell you if it suits you? M: Okay. You know, I tried on about twenty at the shop, and this one isn't really what I wanted. I especially can't stand the high neck. W: Why did you buy it then? M: The salesman sold it to me before I realized what had happened. He just never stopped talking about the latest fashions and special reduced prices. Before I could say anything he'd wrapped it up and I realized that I'd paid him. W: Well, it doesn't look too bad. I think it looks good on you. M: But I went out to get a blue sweater to match my black trousers-something with a V-neck, short sleeves and pattern-and I came home with a brown sweater with a high neck, long sleeves and no pattern. W: You've got to learn to stand up to these high-pressure salesmen. They will sell you all sorts of things you don't want if you don't watch out. M: Next time I'll send my wife. She would probably sell something to the salesman. W: That's a good idea. Actually women are much better at shopping than men. Whenever my husband and I buy something important, I always have the finalsay. M: I must admit that women are better at shopping. I should simply leave the whole business to them., Question: Why did the man buy a sweater that he doesn't like? (A) He was pushed by the salesman (B) It was sold at a low price (C) It is the latest fashion.",
+            "output": "logic",
+            "explanation": "To answer this question we need logical reasoning. In the dialogues, they talk about high-pressure salesmen. So by logical reasoning, we could understand that he was pushed by the salesman."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "W: What does the term \"alternative energy source\" mean? M: When we think of energy or fuel for our homes and cars, we think of petroleum, a fossil fuel processed from oil removed from the ground, of which there is a limited supply. But alternative fuels can be many things. Wind, sun and water can all be used to create fuel. W: Is the threat of running out of petroleum real? M: It has taken thousands of years to create the natural stores of petroleum we have available at a much faster rate than it is being produced over time. The real controversy surrounding the amount of petroleum we have is how much we need to keep in reserve for future use. Most experts agree that by around 2025, the amount of petroleum we use will reach a peak. Then production and availability will begin to seriously decline. This is not to say there will be no petroleum at this point. But it'll become very difficult and therefore expensive to extract. W: Is that the most important reason to develop alternative fuel and energy sources? M: There are two very clear reasons to do so. One is that whether we have 60 or 600 years of fossil fuels left, we have to find other fuel sources eventually. So the sooner we start, the better off we will be. The other big argument is that when long time, which leads to some long-term negative effects, like global warming and the greenhouse effect., Question: What do most experts agree on according to the man? (A) Oil will soon be replaced by alternative energy sources. (B) Oil production will begin to decline worldwide by 2025. (C) Oil consumption has given rise to many global problems.",
+            "output": "arithmetic",
+            "explanation": "We don't need arithmetic knowledge to answer this question. It's incorrect. This is a matching question."
+        },
+        {
+            "input": "M: Finally, I've got the chance to put on my new suit tonight. I hope to make a good impression on your family. W: Come on! It's only a family reunion. So jeans and T-shirts are just fine., Question: What does the woman mean? (A) The man has left a good impression on her family. (B) The man can dress casually for the occasion. (C) The man should buy himself a new suit.",
+            "output": "matching",
+            "explanation": "The answer to this question cannot be extracted from the context. We need commonsense knowledge to understand wearing jeans and T-shirts means dressing casually. This is a commonsense question."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task248-b3d9125c6048457783212e6666026940",
+            "input": "M: Hi, have you seen Professor Smith? I have some questions to ask him. W: No, I haven't seen him since the day before yesterday., Question: When did she last see Professor Smith? (A) Yesterday. (B) Two days ago. (C) Three days ago.",
+            "output": [
+                "logic"
+            ]
+        },
+        {
+            "id": "task248-f7e87f9161644e1f80950d616532b27e",
+            "input": "W: Hi, I'm Sally. I live in the Apartment 324, right next door. I was wondering if you could do a favor for me. I'm expecting a package to be delivered, but now I have to go to the property manager. Could you sign the package and hold it for me? M: Of course. I would be happy to help you out. By the way, I'm John. I moved in here two days ago. It's nice to meet you. W: I've been living here for six months. M: Would you like to come in for a cup of coffee? W: No, thanks. I need to talk to the property manager about some problems with my apartment. M: What trouble are you having? W: My electric stove gets too hot. I baked a cake yesterday. After only five minutes, the cake was as hard as a brick. I had the temperature set right. M: Something must be going wrong with it. You'd better talk to the property manager, and get it repaired as soon as possible. W: OK. I have to go now. I really appreciate your help. I'm glad that you moved in next door to me. I'll bake a cake as a housewarming gift as soon as my stove is working. M: Sounds great. Well, I'll see you later. W: Bye for now., Question: What does the woman want the man to do for her? (A) Deliver her package. (B) Sign for her package. (C) Find the property manager.",
+            "output": [
+                "logic"
+            ]
+        },
+        {
+            "id": "task248-c8a111739ecc418baae5bcbf788da5f4",
+            "input": "W: Could you turn that off? I can't hear myself think. M: What? W: The radio. M: Oh! Sorry., Question: What does the woman want the man to do? (A) Speak louder. (B) Apologize to her. (C) Turn off the radio.",
+            "output": [
+                "logic"
+            ]
+        },
+        {
+            "id": "task248-57a3fccd00e748ea86a590456078d090",
+            "input": "M: Isn't it rather cold outside, Sally? W: It is a bit, but I can't stand the terrible smoke inside. I'd rather stay here if you don't mind. You know, fresh air makes me more comfortable., Question: Why does the woman want to stay outside? (A) She doesn't like the smell inside. (B) She feels very hot in the room. (C) She wants to avoid meeting people.",
+            "output": [
+                "commonsense"
+            ]
+        },
+        {
+            "id": "task248-241940aacd854172807d3e253d43ea44",
+            "input": "W: Is this your lake house? I pictured something larger, like a hotel. M: Sorry to disappoint you. I haven't been here since I was a child. I have a totally different memory of it. W: It's fine. I think it'll be great for the reunion if we clean it up a bit., Question: What is the woman worried about at first? (A) The man's memory. (B) The size of the house. (C) The cleanliness of the hotel.",
+            "output": [
+                "commonsense"
+            ]
+        },
+        {
+            "id": "task248-2253be149d4d478b91a510afb8aca319",
+            "input": "W: Bob is in hospital. Did you get a chance to visit him? M: No, I didn't. I'm going to see Bob tomorrow. W: I thought you would meet John tomorrow. M: I'm going to meet John at the airport at 6 o'clock tonight., Question: When will the man meet John? (A) Tonight. (B) Tomorrow. (C) The day after tomorrow.",
+            "output": [
+                "matching"
+            ]
+        },
+        {
+            "id": "task248-385fb5536c4747f187949a41930f781c",
+            "input": "M: Sally, would you like to go to the cinema with me? W: I'd love to, but we are having a test tomorrow., Question: What do we learn from the conversation? (A) Sally doesn't like films. (B) Sally loves to go to the cinema. (C) Sally can't go to the cinema for she has to prepare for a test.",
+            "output": [
+                "commonsense"
+            ]
+        },
+        {
+            "id": "task248-e0bacf83cb104b4cb3cf0ed779e9417f",
+            "input": "Greg: Hey, sorry, I can't come to the phone now. Just leave a message ... [Beep] Dave: Greg, greg. Where in the world are you? Hey, man. I'm in hot water, and it's all your fault! I thought you said Cindy was single and available!! Man, were you wrong!! You should have told me that your sis had just broken up with a seven-foot gorilla named Butch. I mean the guy is huge, and he caught me dropping her at her place, and he nearly strangled me before I could get in my car. And the guy's dog. You might have warned me about his vicious beast dog. The thing nearly ripped off my arm. Well, once I peeled out of the drive way, the maniac started chasing me in his monster truck and nearly ran me off the road. And man, you could have told me that your car didn't have much gas 'cause it ran out in the middle of this dark parking lot, and I'm now hiding in the men's room of the gas station. Now, pick up the phone ... pick it up, ... Oh, no I can hear the guy outside and ... hey, and your phone is going dead ... Ah, man ... you might have told me that this thing couldn't hold a charge ... Ah man ... I should have stayed home and done the laundry ... I shouldn't have listened to your wacky idea of going out tonight ... Greg, Greg? Where are you?, Question: Where is the man at the time of this phone call? (A) at home (B) in a restroom (C) in his car",
+            "output": [
+                "matching"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Dedicated License (https://github.com/nlpdata/dream/blob/master/license.txt)"
+    ]
+}

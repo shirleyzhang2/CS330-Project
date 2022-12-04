@@ -1,0 +1,127 @@
+{
+    "Contributors": [
+        "Amrit Bhaskar"
+    ],
+    "Source": [
+        "propara"
+    ],
+    "URL": [
+        "https://arxiv.org/abs/1805.06975"
+    ],
+    "Categories": [
+        "Information Extraction"
+    ],
+    "Reasoning": [
+        "Deductive Reasoning"
+    ],
+    "Definition": [
+        "In this task, you are given a paragraph, an event and an entity. The event is part of the paragraph and it changes the state of the entity. Your task is to classify the state of the entity into three classes: 1) not exist: this means the entity doesn't exist in that state anymore. 2) unknown location: this means the entity exists in that state but location is unknown. 3) known location: this means the entity exists and location is known."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Natural Science"
+    ],
+    "Positive Examples": [
+        {
+            "input": " \"process paragraph : Magma rises from deep in the earth. The magma goes into volcanos. The volcanos pressure the magma upwards. The pressure causes the magma to push through the surface of the volcano. The lava cools. The lava forms new rock. New magma is pressured to the surface of the volcano. The volcano bursts through the rock the formed after the last eruption\" , \"event : Magma rises from deep in the earth\" , \"entity : magma\" ",
+            "output": "known location",
+            "explanation": "The process paragraph explains in steps about - the cause for volcano eruption. The event is a part of the process paragraph given. The entity lies both in process paragraph and the event. So, this is a good example."
+        },
+        {
+            "input": " \"process paragraph : Water from the ocean washes onto beaches in waves. The waves contain sediment from the ocean. The water and particles in it hit rocks and sand on the beach. The wind and current sometimes push the water and particles harder. Tiny parts of the rocks on the shore come off the larger rocks. The waves pick up sand and small rocks from the beach. The waves go back out into the ocean. The waves carry the new particles with them. Rocks and the beach look a little different. \", \"event : The waves go back out into the ocean. \", \"entity : waves\" ",
+            "output": " known location ",
+            "explanation": "The process paragraph explains in steps about - the sequence of events during erosion by the ocean. The event is a part of the process paragraph given. The entity lies both in process paragraph and the event. So, this is a good example."
+        },
+        {
+            "input": " \"process paragraph : Water from oceans, lakes, swamps, rivers, and plants turns into water vapor. Water vapor condenses into millions of tiny droplets that form clouds. Clouds lose these droplets through rain or snow, also caused precipitation. Precipitation is either absorbed into the ground or runs off into rivers. Water that was absorbed into the ground is taken up by plants. Plants lose water from their surfaces as vapor. The vapor goes back into the atmosphere. Water that runs off into rivers flows into ponds, lakes, or oceans. The water evaporates back into the atmosphere. \", \"event : Water from oceans, lakes, swamps, rivers, and plants turns into water vapor. \", \"entity : water\" ",
+            "output": " not exist ",
+            "explanation": "The process paragraph explains in steps about - the sequence of events during water cycle. The event is a part of the process paragraph given. The entity lies both in process paragraph and the event. So, this is a good example."
+        },
+        {
+            "input": " \"process paragraph : Sediment settles in a place due to gravity. The sediment breaks down into small particles. Wind or water picks up the sediment. The sediment travels along the same route as the wind or water. The sediment is deposited at new locations by the wind or water. The sediment is picked up again by new wind or water. The sediment travels further. The sediment is deposited again in a new place. \", \"event : The sediment is picked up again by new wind or water. \", \"entity : sediment; small particles\" ",
+            "output": " unknown location ",
+            "explanation": "The process paragraph explains in steps about - the sequence of events during sediment transportation across the earth. The event is a part of the process paragraph given. The entity lies both in process paragraph and the event. So, this is a good example."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": " \"process paragraph : Water from oceans, lakes, swamps, rivers, and plants turns into water vapor. Water vapor condenses into millions of tiny droplets that form clouds. Clouds lose these droplets through rain or snow, also caused precipitation. Precipitation is either absorbed into the ground or runs off into rivers. Water that was absorbed into the ground is taken up by plants. Plants lose water from their surfaces as vapor. The vapor goes back into the atmosphere. Water that runs off into rivers flows into ponds, lakes, or oceans. The water evaporates back into the atmosphere. \", \"event : Water from oceans, lakes, swamps, rivers, and plants turns into water vapor. \", \"entity : water\" ",
+            "output": " known location ",
+            "explanation": "This is a bad example because the output class is incorrect. Water in this event has turned into water vapor and is longer in the form of water. The existence is necessary to find the location. "
+        },
+        {
+            "input": " \"process paragraph : Magma rises to the surface during a volcano. The magma undergoes changes in temperature. The magma undergoes changes in pressure. The magma cools. The magma solidifies. The magma crystallizes. Igneous rock is formed. \", \"event : Magma rises to the surface during a volcano. \", \"entity : magma\" ",
+            "output": " unknown location ",
+            "explanation": "This is a bad example because the output class is incorrect. Magma in this event has risen to the surface and is considered a known location. Only classify to unknown location when the place of entity is not determined. "
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1568-2ee1105540f24a449c4e488d2c67336d",
+            "input": " \"process paragraph : : Fuel produces heat. Water is boiled to make steam. Steam spins turbine. Generator is turned. Makes electricity. Electricity transfers to transformers. Produces the correct voltage. \", \"event : Water is boiled to make steam.\", \"entity : fuel\" ",
+            "output": [
+                " not exist "
+            ]
+        },
+        {
+            "id": "task1568-1d3f0dc5b2054a3299f572bb4a94e434",
+            "input": " \"process paragraph : : The frog's egg hatches and a tadpole is born. The tadpole swims with its siblings and tries to survive. The tadpole grows larger. The tadpole loses its tail. The tadpole develops limbs. And the tadpole now becomes a frog. \", \"event : The tadpole swims with its siblings and tries to survive.\", \"entity : frog's egg\" ",
+            "output": [
+                " not exist "
+            ]
+        },
+        {
+            "id": "task1568-2be36da2a64840ccbc2c1bd253ccdfad",
+            "input": " \"process paragraph : : You wash the wound. You apply a bandaid or other covering if needed. The blood clots. A scab forms. The skin repairs itself under the protective cover of the scab. The scab falls off. \", \"event : You apply a bandaid or other covering if needed.\", \"entity : Wound\" ",
+            "output": [
+                " known location "
+            ]
+        },
+        {
+            "id": "task1568-6f4033742f3d429f820fd97bf805f437",
+            "input": " \"process paragraph : : A tree produces seeds. The seeds are dispersed by wind, animals, etc. The seeds reach the ground. Grow into new trees. These new trees produce seeds. The process repeats itself over and over. \", \"event : The seeds are dispersed by wind, animals, etc.\", \"entity : Tree\" ",
+            "output": [
+                " not exist "
+            ]
+        },
+        {
+            "id": "task1568-df0f6383b9ad4f6196a2cf7f9db1ee1c",
+            "input": " \"process paragraph : : A star burns in space. Eventually it burns all its hydrogen. Becomes a red giant. Once the red giant burns itself out. The core of the star collapses. The gasses will start to disperse. Only the core is left. A white dwarf has been formed. \", \"event : Eventually it burns all its hydrogen.\", \"entity : star\" ",
+            "output": [
+                " known location "
+            ]
+        },
+        {
+            "id": "task1568-0747aa3563b14c92a69eea4a04e78496",
+            "input": " \"process paragraph : : Food enters the mouth. Food mixes with saliva. Food is swallowed. Enzymes in the stomach break down the food. The food moves to the small intestine. Hormones from the pancreas move to the small intestine. The hormones create the amount of sugar in the blood from the food. The sugar in the blood travels to the body. The sugar provides energy for the muscles. \", \"event : Food mixes with saliva.\", \"entity : food\" ",
+            "output": [
+                " known location "
+            ]
+        },
+        {
+            "id": "task1568-a34b06eb177f4802bab5598fb0a7aa35",
+            "input": " \"process paragraph : : Two large veins bring blood to the heart. The blood enters the right atrium. The blood flows through the tricuspid valve. The blood travels into the right ventricle. The blood goes through the pulmonary arteries to the lungs. Blood picks up oxygen in the lungs. Oxygenated blood enters the left atrium. Blood goes to the left ventricle. Blood leaves the heart via the aorta to the rest of the body. The deoxygenated blood returns to the heart. \", \"event : The blood enters the right atrium.\", \"entity : oxygenated blood\" ",
+            "output": [
+                " not exist "
+            ]
+        },
+        {
+            "id": "task1568-e8ee5705742849f1a0f1d95bd09e99fa",
+            "input": " \"process paragraph : : Wind passes the turbines and moves the blades. The shaft of the turbine spins. Shaft is connected to a generator. The generator uses the spins of the shaft to rotate a rotor. The rotor spins inside the core, which has magnets inside surrounded by wire loops inside. The spinning of the rotor in the core generates electricity. \", \"event : The shaft of the turbine spins.\", \"entity : wind\" ",
+            "output": [
+                " known location "
+            ]
+        }
+    ],
+    "Instance License": [
+        "Apache 2.0"
+    ]
+}

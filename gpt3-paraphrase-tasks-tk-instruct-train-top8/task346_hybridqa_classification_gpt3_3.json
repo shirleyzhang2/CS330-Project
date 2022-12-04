@@ -1,0 +1,115 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "hybridqa"
+    ],
+    "URL": [
+        "https://github.com/wenhuchen/HybridQA"
+    ],
+    "Categories": [
+        "Pos Tagging"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You will be given a question, a word, and a POS tag. You have to determine if the word in the question is equal to the given POS tag. The Alphabetical list of part-of-speech tags will be provided. The tags are: CC: Coordinating conjunction, CD: Cardinal number, DT: Determiner, EX: Existential there, FW: Foreign word, IN: Preposition or subordinating conjunction, JJ: Adjective, JJR: Adjective, comparative, JJS: Adjective, superlative, LS: List item marker, MD: Modal, NN: Noun, singular or mass, NNS: Noun, plural, NNP: Proper noun, singular, NNPS: Proper noun, plural, PDT: Predeterminer, POS: Possessive ending, PRP: Personal pronoun, PRP$: Possessive pronoun, RB: Adverb, RBR: Adverb, comparative, RBS: Adverb, superlative, RP: Particle, SYM: Symbol, TO: to, UH: Interjection, VB: Verb, base form, VBD: Verb, past tense, VBG: Verb, gerund or present participle, VBN: Verb, past participle, VBP: Verb, non-3rd person singular present, VBZ: Verb, 3rd person singular present, WDT: Wh-determiner, WP: Wh-pronoun, WP$: Possessive wh-pronoun, WRB: Wh-adverb."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Wikipedia"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Who were the builders of the mosque in Herat with fire temples ? \n, Word: Who \n, POS tag: IN",
+            "output": "False",
+            "explanation": "This is a good example. POS tag of who should be WP(Wh-pronoun), and not IN(Preposition)."
+        },
+        {
+            "input": "What is the borough in which Kia Oval is located ? \n, Word: is \n, POS tag: VBZ",
+            "output": "True",
+            "explanation": "Based on the given question, \"is\" is a 3rd person singular present verb and Its POS tag is VBZ."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "After what season did the number 7 competitor retire ? \n, Word: 7 \n, POS tag: NN",
+            "output": "True",
+            "explanation": "7 is a cardinal number, and Its POS tag should be CD, so the output should be False."
+        },
+        {
+            "input": "After what season did the number 7 competitor retire ? \n, Word: 7 \n, POS tag: NN",
+            "output": "Wrong",
+            "explanation": "Only \"True\" or \"False\" are allowed, and you can't use any other word here."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task346-1827283439364f27845a5a8f41fceaf4",
+            "input": "What is the location of the team that played their home games at Jordan Field ? \n, Word: that \n, POS tag: WDT",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "id": "task346-68ebb61f81404c99b767a08dff307156",
+            "input": "Between the counties with the most contests , the one with the fewest voters first elected MPs in which year ? \n, Word: the \n, POS tag: DT",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "id": "task346-439a1b1e3b5c454994adcec56287a093",
+            "input": "What was the month of birth of the author of The Lord of the Rings ? \n, Word: of \n, POS tag: DT",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "id": "task346-3577d53ff3404338937e1ee056c173c7",
+            "input": "What battle did the man born on 7 December 1839 fight in ? \n, Word: on \n, POS tag: DT",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "id": "task346-1d1c4fb9a9394787ad9d95f661bffadc",
+            "input": "What is Cross 's role in the film that is available on DVD through Anchor Bay Entertainment ? \n, Word: Anchor \n, POS tag: NNP",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "id": "task346-9ff062dd4e95465d9743d0d58f47d2b0",
+            "input": "Where is ATM 's kit manufacturer based ? \n, Word: is \n, POS tag: VBZ",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "id": "task346-40ccd1870d1e4ae587117ae8821351db",
+            "input": "How many times has the university attended by Adrian Alaniz won the baseball tourney of their conference ? \n, Word: Adrian \n, POS tag: IN",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "id": "task346-ed9788b180604eac9363c76e584214be",
+            "input": "when did the location open in South Ayrshire , Scotland ? \n, Word: Ayrshire \n, POS tag: NNP",
+            "output": [
+                "True"
+            ]
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

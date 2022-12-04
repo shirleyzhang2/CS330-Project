@@ -1,0 +1,113 @@
+{
+    "Contributors": [
+        "Neeraj Varshney"
+    ],
+    "Source": [
+        "timetravel"
+    ],
+    "URL": [
+        "https://github.com/qkaren/Counterfactual-StoryRW"
+    ],
+    "Categories": [
+        "Coherence Classification"
+    ],
+    "Reasoning": [
+        "Temporal Reasoning",
+        "Commonsense Reasoning"
+    ],
+    "Definition": [
+        "In this task, you are given a short story consisting of 5 sentences, with the second sentence missing. You are given two options to fill in the blank, and you need to select the one that best connects the first sentence with the rest of the story. Indicate your answer by 'Option 1' if the first option is correct, otherwise 'Option 2'. The incorrect option will change the subsequent storyline, so that at least one of the three subsequent sentences is no longer consistent with the story."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Commonsense -> Stories"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Sentence 1: The cashier was counting the dollar bills at her desk. \n Sentence 3: Everyone panicked and started to scream. \n  Sentence 4: The men threatened the people to remain quiet. \n Sentence 5: The cashier handed them the cash so they would go away.  \n Option 1:  Two men rushed into the store and held their guns up. \n Option 2: Two dogs rushed into the store.",
+            "output": "Option 1",
+            "explanation": "Option 1 forms a consistent story with the given four sentences. In constrast, Option 2 is incorrect as the entty 'two dogs' is not consistent with 'men' mentioned in Sentence 4."
+        },
+        {
+            "input": "Sentence 1: The cashier was counting the dollar bills at her desk. \n Sentence 3: Everyone panicked and started to scream. \n  Sentence 4: The men threatened the people to remain quiet. \n Sentence 5: The cashier handed them the cash so they would go away.  \n Option 1:  Three men rushed into the store and held their guns up. \n Option 2: Two men rushed into the hospital.",
+            "output": "Option 1",
+            "explanation": "Option 1 forms a consistent story with the given four sentences. In constrast, Option 2 is incorrect as it is not consisitent with sentence 1 ('store cashier' vs 'hospital')."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Sentence 1: The cashier was counting the dollar bills at her desk. \n Sentence 3: Everyone panicked and started to scream. \n  Sentence 4: The men threatened the people to remain quiet. \n Sentence 5: The cashier handed them the cash so they would go away.  \n Option 1:  Two men rushed into the store and held their guns up. \n Option 2: Two dogs rushed into the store.",
+            "output": "Two men rushed into the store and held their guns up.",
+            "explanation": "The selected option is correct but it outputed the entire option text instead of its label i.e 'Option 1'."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task065-c2b78fc04e81434ba2eebf3bd4abc36f",
+            "input": "Sentence 1: Sarah loved to drink coffee. \n Sentence 3: Her teeth were yellow from the coffee \n Sentence 4:  She stained her teeth with a product she bought \n Sentence 5:  Her teeth are now white \n Option 1: She drank coffee everyday. \n Option 2: She avoided drinking coffee to keep her teeth white.",
+            "output": [
+                "Option 1"
+            ]
+        },
+        {
+            "id": "task065-6734fbd70077458a801df96b263a4bfd",
+            "input": "Sentence 1: Tom and Mary decided to ride the 4-wheeler out to cut a Christmas Tree. \n Sentence 3: They easily hooked it to the bike and started towing it home \n Sentence 4:  Unfortunately, the 4-wheeler ran out of gas half way home \n Sentence 5:  Tom and Mary had to carry the tree all the way back \n Option 1: Deep in the woods they got lost. \n Option 2: They drove deep into the woods and found the perfect 7' tree.",
+            "output": [
+                "Option 2"
+            ]
+        },
+        {
+            "id": "task065-38d6643554f649159bb53e51e12f59b0",
+            "input": "Sentence 1: Bob and Dave decided to go camping on the weekend. \n Sentence 3: They had fun around the campfire on the first night \n Sentence 4:  A bear ate all their food the next day while Dave and Bob were hiking \n Sentence 5:  Dave chuckled and told Bob he was right about the trip \n Option 1: Bob told Dave he had a bad feeling about the trip. \n Option 2: Bob told Dave he knew it would be their best trip ever.",
+            "output": [
+                "Option 1"
+            ]
+        },
+        {
+            "id": "task065-da5f16af0637469586cad0d43d0056ce",
+            "input": "Sentence 1: Thomas loved to eat chocolate pudding. \n Sentence 3: When he got home, he opened the container and began to eat it \n Sentence 4:  The pudding tasted funny, but Thomas continued to eat it anyway \n Sentence 5:  Thomas ended up getting very sick for almost a week! \n Option 1: One day, he ran to the store to buy some. \n Option 2: One day, he decided to eat a hamburger instead.",
+            "output": [
+                "Option 1"
+            ]
+        },
+        {
+            "id": "task065-6cdbc6e7152b4c6fa100304fb61f82e6",
+            "input": "Sentence 1: The bird sat in the tree early that morning. \n Sentence 3: It started cawing loudly from the branch \n Sentence 4:  No other birds appeared in the tree \n Sentence 5:  The bird simply sang, waking everyone in the neighborhood \n Option 1: It began to feel rather alone. \n Option 2: It began to feel rather hungry.",
+            "output": [
+                "Option 1"
+            ]
+        },
+        {
+            "id": "task065-3809b637d80b46d4817082b932fbe29c",
+            "input": "Sentence 1: Josh wasn't a very good reader, and that made him sad. \n Sentence 3: Josh's teacher helped him very much, and soon his reading improved \n Sentence 4:  Josh felt much better about himself, and his grades got better, too \n Sentence 5:  Josh was very grateful to his teacher for helping him \n Option 1: He asked his teacher for help, and she said yes. \n Option 2: He asked for help, and his teacher said no.",
+            "output": [
+                "Option 1"
+            ]
+        },
+        {
+            "id": "task065-e00fe6b6e93540029c8df0b8b6148fce",
+            "input": "Sentence 1: Millie was helping her son with a boat race. \n Sentence 3: Millie was worried that the boat wouldn't float well \n Sentence 4:  They arrived at the boat race right on time \n Sentence 5:  Luckily, the boat was just perfect and it almost won \n Option 1: Together they were building a nice little boat. \n Option 2: Unfortunately, they didn't build the boat to specifications and it sank.",
+            "output": [
+                "Option 1"
+            ]
+        },
+        {
+            "id": "task065-ef1501af1cf94d00ac5d4e6ef1c6ecb2",
+            "input": "Sentence 1: Jeff grabbed an inner tube and ran to the stairs. \n Sentence 3: He jumped on and started to slide down \n Sentence 4:  Water splashed in his face and he screamed and laughed \n Sentence 5:  It was such a fun slide! \n Option 1: He was going to ride on a huge water slide! \n Option 2: He was going to jump in his pool.",
+            "output": [
+                "Option 1"
+            ]
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

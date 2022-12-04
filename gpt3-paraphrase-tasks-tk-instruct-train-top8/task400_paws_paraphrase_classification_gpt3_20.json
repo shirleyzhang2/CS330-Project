@@ -1,0 +1,125 @@
+{
+    "Contributors": [
+        "Amirreza Mirzaei"
+    ],
+    "Source": [
+        "paws"
+    ],
+    "URL": [
+        "https://arxiv.org/abs/1904.01130"
+    ],
+    "Categories": [
+        "Text Matching"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You are given a sentence pair from Wikipedia that have high lexical overlap. If the sentences have the same meaning and are just paraphrases of each other, label them as \"Paraphrase\". If not, label them as \"Not paraphrase\". The two sentences are separated by a new line."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Wikipedia"
+    ],
+    "Positive Examples": [
+        {
+            "input": "In January 2011 , the Deputy Secretary General of FIBA Asia , Hagop Khajirian , inspected the venue together with SBP - President Manuel V. Pangilinan .\nIn January 2011 , FIBA Asia deputy secretary general Hagop Khajirian along with SBP president Manuel V. Pangilinan inspected the venue .",
+            "output": "Paraphrase",
+            "explanation": "The second sentence has the same meaning as the first sentence and is just a paraphrased version of it."
+        },
+        {
+            "input": "The smallest number that can be represented in two positive and seventh ways as a sum of four different powers is 2056364173794800 .\nThe smallest number that can be represented as a sum of four positive seventh potences in two different ways is 2056364173794800 .",
+            "output": "Not paraphrase",
+            "explanation": "The second sentence doesn't have the same meaning as the first."
+        },
+        {
+            "input": "Luciano Williames Dias ( born July 25 , 1970 ) is a Brazilian football coach and former player .\nLuciano Williames Dias ( born 25 July 1970 ) is a former football coach and Brazilian player .",
+            "output": "Not paraphrase",
+            "explanation": "The second sentence doesn't have the same meaning as the first."
+        },
+        {
+            "input": "During her sophomore , junior and senior summers , she spent half of it with her Alaska team , and half playing , and living in Oregon .\nDuring her second , junior and senior summers , she spent half of it with her Alaska team , half playing and living in Oregon .",
+            "output": "Paraphrase",
+            "explanation": "The second sentence doesn't have the same meaning as the first."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "This was a series of nested angular standards , so that measurements in azimuth and elevation could be done directly in polar coordinates relative to the ecliptic .\nThis was a series of nested polar scales , so that measurements in azimuth and elevation could be performed directly in angular coordinates relative to the ecliptic .",
+            "output": "Paraphrase",
+            "explanation": "The second sentence doesn't have the same meaning as the first. As pointed out in the task definition both sentences in all the instances have high lexical overlap, which doesn't mean they have the same meaning."
+        },
+        {
+            "input": "His father emigrated to Missouri in 1868 but returned when his wife became ill and before the rest of the family could also go to America .\nHis father emigrated to America in 1868 , but returned when his wife became ill and before the rest of the family could go to Missouri .",
+            "output": "Paraphrase",
+            "explanation": "In the second sentence, it is not mentioned that the father went to Missouri, so the part about the rest of the family doesn't imply the same meaning as the first sentence. These are not paraphrases."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task400-ff0e1b8b080740f081d74001e81569f8",
+            "input": "Alejandro Falla and Eduardo Struvay won the first edition of the tournament , defeating Flavio Cipolla and Paolo Lorenzi in the final .\nFlavio Cipolla and Paolo Lorenzi won the first edition of the tournament and defeated the final Alejandro Falla and Eduardo Struvay .",
+            "output": [
+                "Not paraphrase"
+            ]
+        },
+        {
+            "id": "task400-3a6222f85fb54eefb7d8bbd063df6fd9",
+            "input": "The music of the film was composed by K. Kalyan and lyrics written by V. Manohar .\nThe music of the film was composed by V. Manohar and texts by K. Kalyan were written .",
+            "output": [
+                "Not paraphrase"
+            ]
+        },
+        {
+            "id": "task400-6bf4eb0b9dc643d2a5c4b2755b831ea1",
+            "input": "This iteration is larger and has a smaller memory capacity than its previous versions .\nThis iteration is smaller and has a larger storage capacity than its previous versions .",
+            "output": [
+                "Not paraphrase"
+            ]
+        },
+        {
+            "id": "task400-6cabaf4e816c457eb5491008ebc8a361",
+            "input": "She initially performed towing duties at the Washington Navy Yard , and then served with the flotilla in operations against Confederate forces in the Rappahannock River .\nShe initially performed towing in the Washington Navy Yard , and then served with the flotilla in operations against confederate forces in the Rappahannock River .",
+            "output": [
+                "Paraphrase"
+            ]
+        },
+        {
+            "id": "task400-18e0357496fe47c4ab250240d0b3d4d6",
+            "input": "Winnie Hill is a mountain in Oneonta , New York , in the central region of New York north of New York City .\nWinnie Hill is a mountain located in Oneonta , New York of Central New York Region north of New York .",
+            "output": [
+                "Paraphrase"
+            ]
+        },
+        {
+            "id": "task400-a96d4f162ef84e939833d1a9676e12c4",
+            "input": "Thomas Charles Farrer was born in London , the younger brother of the artist Farrer .\nThomas Charles Farrer was born in London , the younger brother of artist Farrer .",
+            "output": [
+                "Paraphrase"
+            ]
+        },
+        {
+            "id": "task400-574466c61ab746d195a1d6fe7b894fbd",
+            "input": "It has been shown that the tolerance of human stereopsis over the cyclodisparity of lines ( orientational disparity ) for vertical lines is greater than for horizontal lines .\nIt has been shown that the tolerance of human stereopsis to cyclodisparity of lines ( orientation disparity ) is greater for horizontal lines than for vertical lines .",
+            "output": [
+                "Not paraphrase"
+            ]
+        },
+        {
+            "id": "task400-4cff789011d4464eb316db46de5163ca",
+            "input": "In certain regions , copies of Windows 7 were only sold in and could only be activated in a certain region .\nIn certain regions , copies of Windows 7 were only activated in , and could only be sold in a designated region .",
+            "output": [
+                "Not paraphrase"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Dedicated License (https://github.com/google-research-datasets/paws/blob/master/LICENSE)"
+    ]
+}

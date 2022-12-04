@@ -1,0 +1,132 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "matres"
+    ],
+    "URL": [
+        "https://github.com/CogComp/MATRES"
+    ],
+    "Categories": [
+        "Misc."
+    ],
+    "Reasoning": [
+        "Temporal Reasoning"
+    ],
+    "Definition": [
+        "You will be given a context and a verb separated by a newline character. You need to output \"Yes\" if the verb can be anchored in time, meaning the verb happened in the past, is happening now, or is guaranteed to happen in the future. Output \"No\" if the verb cannot be anchored in time."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "News"
+    ],
+    "Positive Examples": [
+        {
+            "input": "It was followed by Denmark, Norway, Germany, France, Greece, Luxembourg, Spain, Britain, the United States, Iceland, Belgium, Italy, Portugal and Turkey. NATO decided at last year's Madrid summit to (invite) the three eastern European countries to start accession talks.  \n Verb: invite",
+            "output": "No",
+            "explanation": "This is a good example. The \"invite\" is not anchorable. Although NATO decided to invite them, they haven't invited them yet, and it's not guaranteed to happen in the future. They might change their decision later."
+        },
+        {
+            "input": "In Washington today, the Federal Aviation Administration (released) air traffic control tapes from the night the TWA Flight eight hundred went down.  \n Verb: released",
+            "output": "Yes",
+            "explanation": "In this sentence, the releasing event happened in the past, and it's anchorable."
+        },
+        {
+            "input": "New York State double-jeopardy laws would make it difficult to prosecute a suspect who had been found not guilty at a federal trial. U.S. Attorney Denise E. O'Donnell declined to discuss what federal charges were being pursued, but she said that in a case like this, potential charges would be abortion-related violence, the use of a firearm in an act of violence, crossing state lines to commit a crime, and, if the suspect's act was (tied) to an organization, violation of the so-called RICO statutes, which prohibit an organized criminal enterprise.  \n Verb: tied",
+            "output": "No",
+            "explanation": "In this sentence, \"tied\" is a conditional verb and it's not happening now and it's not guaranteed to happen in the future. So, it's not anchorable."
+        },
+        {
+            "input": "To get him. Nothing more, she (said).  \n Verb: said",
+            "output": "Yes",
+            "explanation": "In this example, she said something in the past. So, this verb is anchorable."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Preliminary DNA tests link a missing anti-abortion activist to a strand of hair found near where a sniper shot and killed a Buffalo, N.Y., doctor who performed abortions, a law enforcement official said Friday. The first round of DNA tests on the hair at the FBI Laboratory here established a high probability it came from the same person as a hair found in a New Jersey home where James C. Kopp , a 44-year-old anti-abortion protester, lived last year, the official (said).  \n Verb :said",
+            "output": "No",
+            "explanation": "In this sentence, the saying action happened in the past, and it's anchorable."
+        },
+        {
+            "input": " Nobody talks to Fidel, because he doesn't listen, Juanita Castro said. He talks and he (decides).  \n Verb: decides",
+            "output": "Yes",
+            "explanation": "In this sentence, \"decides\" is not anchorable. Because it's not happening now and it's not guaranteed to happen in the future."
+        },
+        {
+            "input": "Kopp remains at-large and police admit that despite a worldwide search and a $1 million reward, they don't know where he is. It's very frustrating (knowing) that he's out there, said Ms. Buckham.  \n Verb: knowing",
+            "output": "No",
+            "explanation": "In this sentence, \"knowing\" is happening now, and it's anchorable."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task383-496ee4bc31ea43b7b53fe4e3d4c1aed7",
+            "input": "Tuesday to sign a paper promising to turn over the boy to immigration authorities if they lose their federal court appeal. The Miami relatives thus far have refused to sign the document, and in recent days said they would not (turn) Elian over to his father if he came to the United States.  \n Verb: turn",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task383-a36d84276a48489781bebcb2a09dddf6",
+            "input": "His death shows again how tentative the right to abortion has become in the face of terrorism by anti-choice fanatics. Their repeated acts of terrorism must be (met) with the severest possible crackdown by law-enforcement authorities.  \n Verb: met",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task383-e15ae6e69839421186a45909c9c1d6a5",
+            "input": "Slepian's killer is still at large. But for the first time, authorities have (named) a suspect in the slaying -- anti-abortion activist James Kopp.  \n Verb: named",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task383-6f06aba2515a4db5984dc78487ef10dd",
+            "input": "Russian Foreign Minister Igor Ivanov calls extending NATO membership into Eastern Europe  a movement in the wrong direction.   All European states must cooperate in creating a joint security system,  he was quoted as (saying).  \n Verb: saying",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task383-b2579b297cd94ce9a57dbb9189635c64",
+            "input": "He was last seen Nov. 3, the day before authorities issued a material witness warrant in the Slepian shooting in the hope of questioning him. Until Thursday, they had not (called) Kopp a suspect.  \n Verb: called",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task383-024af1b3ed7446b6b0ca9157bcdc8535",
+            "input": "Nicknamed the  Atomic Dog  in anti-abortion circles, Kopp had been arrested in several states since 1990 for protesting abortion. His car was spotted in Slepian's neighborhood in the weeks before the shooting, and was found (abandoned) at the Newark, N.J., airport in December.  \n Verb: abandoned",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task383-a405b14311394b16b751d08614cc51e5",
+            "input": "Slepian, 52, was shot with a rifle. Authorities have said they believe the weapon may have been (buried) in advance of the shooting, with the killer digging it up to fire the shot, then reburying it and fleeing.  \n Verb: buried",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task383-82f003a5d862414689f1b966c3722c91",
+            "input": "The boy was placed with his great-uncle and great-aunt in Miami, but the Immigration and Naturalization Service ruled Wednesday that he must be returned to his father in Cuba by Jan. 14. The decision (touched) off protests in the Cuban-American community.  \n Verb: touched",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

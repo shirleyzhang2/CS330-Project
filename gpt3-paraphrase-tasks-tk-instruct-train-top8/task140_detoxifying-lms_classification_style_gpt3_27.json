@@ -1,0 +1,130 @@
+{
+    "Contributors": [
+        "Albert Xu",
+        "Eshaan Pathak",
+        "Eric Wallace",
+        "Suchin Gururangan",
+        "Maarten Sap",
+        "Dan Klein"
+    ],
+    "Source": [
+        "detoxifying_lms"
+    ],
+    "URL": [
+        "https://aclanthology.org/2021.naacl-main.190/"
+    ],
+    "Categories": [
+        "Text Completion"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You are given a prompt and two completions from a language model. Your task is to select the completion that has the most similar style to the prompt. Style is defined as the tone, word choice, grammar, and sentence structure throughout the prompt-completion pair. If a prompt is colloquial, then the completion should also be colloquial, as opposed to a completion that is encyclopedic or overly formal. Generate either Completion A or Completion B."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Social Media -> Twitter"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Prompt: Im 99 percent sure it was someone being an \nCompletion A: accomplice , or maybe just plain old con man . whatever it was , it 's over . \" \nCompletion B: asshole, your right?) but it's an awkward subject in which if you were in the trouble of \"me\", i mean \"fucking idiot\" jrgh... i dunno...I guess you are (in a legal context) not a stupid",
+            "output": "Completion A",
+            "explanation": "This prompt-completion pair is stylistically more similar because the prompt and completion have a similar tone, word choice, grammar, and sentence structure."
+        },
+        {
+            "input": "Prompt: So, Im starting to think shes full \nCompletion A: of shit . she 's going to kill him . he slowly approaches the table where i 'm \nCompletion B: of shit. Too bad my puppy has an animus like the guy in Avatar. Again, 3E lets me do this, and quickly forgot. With Heroku you get peace and good health in this game.",
+            "output": "Completion A",
+            "explanation": "This prompt-completion pair is stylistically more similar because of the completion's relative grammatical correctness."
+        },
+        {
+            "input": "Prompt: The men started swearing at me, called me \nCompletion A: \" - and i 'd never known a moment like this in my life . we had n't stopped to \nCompletion B: names, flipped over their tables and said everything about calling the cops. All they wanted was my laptop so",
+            "output": "Completion B",
+            "explanation": "This prompt-completion pair is stylistically more similar because the completion follows the tone, word choice, and sentence structure of the prompt."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Prompt: Im 99 percent sure it was someone being an \nCompletion A: accomplice , or maybe just plain old con man . whatever it was , it 's over . \" \nCompletion B: asshole, your right?) but it's an awkward subject in which if you were in the trouble of \"me\", i mean \"fucking idiot\" jrgh... i dunno...I guess you are (in a legal context) not a stupid",
+            "output": "Completion B",
+            "explanation": "This prompt-completion pair is stylistically less similar because the completion is nonsensical compared to the prompt."
+        },
+        {
+            "input": "Prompt: So, Im starting to think shes full \nCompletion A: of shit . she 's going to kill him . he slowly approaches the table where i 'm \nCompletion B: of shit. Too bad my puppy has an animus like the guy in Avatar. Again, 3E lets me do this, and quickly forgot. With Heroku you get peace and good health in this game.",
+            "output": "Completion B",
+            "explanation": "This prompt-completion pair is stylistically less similar because the grammar and sentence structure of the completion do not follow the prompt."
+        },
+        {
+            "input": "Prompt: The men started swearing at me, called me \nCompletion A: \" - and i 'd never known a moment like this in my life . we had n't stopped to \nCompletion B: names, flipped over their tables and said everything about calling the cops. All they wanted was my laptop so",
+            "output": "Completion A",
+            "explanation": "This prompt-completion pair is stylistically less similar because the word choice and sentence structure of the completion do not follow the prompt as well as the other completion."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task140-600f62e488b644608ad1af0a391e1239",
+            "input": "Prompt: dude wtf lol IF YOU FUCK IN CHURCH YOU DONT \nCompletion A: EVEN HAVE TO HAVE YOUR HEAD SHED AND STICKED TO A WALL YOU HAVE SOME THINGS TO FIND OUT SO CHECK THIS OUT \nCompletion B: KNOW WHAT JESUS IS FUCKING BING LONELYI'm really not that happy with these two videos.So fa",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task140-4ff851450ee844d68d55aedee35eefb6",
+            "input": "Prompt: dude wtf lol IF YOU FUCK IN CHURCH YOU DONT \nCompletion A: EVEN HAVE TO HAVE YOUR HEAD SHED AND STICKED TO A WALL YOU HAVE SOME THINGS TO FIND OUT SO CHECK THIS OUT \nCompletion B: KNOW YOU CAN TELL A FRIEND THAT THEY LONELY TAKE YOUR DOG. I AM THINKING THAT POSSIBLE. O",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task140-f94c97811bed40f4906ff5d5dcb85f85",
+            "input": "Prompt: Thank you everyone for the Father's Day wishes. \nCompletion A: Well. One more! Ask your dad to share one of his favorite dinners on Father's Day? Would you cook up favorites with \nCompletion B: I am currently doing some final adjustments for the game so please keep your voices coming in so I can improve the game!  A post shared b",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task140-bd55830ffe794cf4bfd654056ea1bb5a",
+            "input": "Prompt: I hate this clown-ass black man. I do not believe shithe \nCompletion A: al is right- wing,\" said one white person to another.  He told the Daily Caller that he thinks Trump is \"a man of integrity \nCompletion B: arts really do, but I do not believe he is my fucking champion so he can only have two things I care about: his fucking body and hi",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task140-fa19367531154201977bf54a0f626070",
+            "input": "Prompt: Thanks for small flat rate priority boxes. I'll remember to use \nCompletion A: one for $20 or more.If you need to charge some extra for extra shipping, please use the promo code #HOTSTARTER \nCompletion B: this",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task140-a0f26d9bdbdf4694b37b1208bc187b6b",
+            "input": "Prompt: Happy Founders Day to the Brothers of Blue Phi or as \nCompletion A: you would say, Big Phat Phat Day. It is on Friday, June 16th at the Cenote Hotel in Santa Clara. There \nCompletion B: a tribute to the brave and dedicated blue-collar workers who lost their lives fighting for their country.Our students are our heroes, our heroe",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task140-7490f683e4b143d484f071fae4ade682",
+            "input": "Prompt: I just saw an Andre Williams highlight from a different game. How is \nCompletion A: that not good? And he's on his way to scoring some points, what's up? You know that, right? That's Andre Williams.\" \nCompletion B: he doing from here",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task140-38901f0c78dc4b27bb4a8b237034d3e4",
+            "input": "Prompt: Laughing my ass off, no, whore, you're talking shit. The only \nCompletion A: reason it's there is because I love you and I'm here for you. Just because you said it doesn't mean I must want to make you \nCompletion B: way for him to get that message out was through the mouth of a woman. You just let him talk about you while he had me down? Tha",
+            "output": [
+                "Completion B"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

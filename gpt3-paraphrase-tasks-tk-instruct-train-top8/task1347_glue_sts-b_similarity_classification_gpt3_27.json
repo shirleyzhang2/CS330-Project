@@ -1,0 +1,128 @@
+{
+    "Contributors": [
+        "Arit Chanda"
+    ],
+    "Source": [
+        "sts_b"
+    ],
+    "URL": [
+        "https://dl.fbaipublicfiles.com/glue/data/STS-B.zip"
+    ],
+    "Categories": [
+        "Text Matching"
+    ],
+    "Reasoning": [
+        "Textual Entailment -> Analogical Reasoning"
+    ],
+    "Definition": [
+        "You will be given two sentences, and you must evaluate the similarity between them. You will then classify them into one of the following classes, from 0-5: 0 : The two sentences are completely dissimilar. 1 : The two sentences are not equivalent, but are on the same topic. 2 : The two sentences are not equivalent, but share some details. 3 : The two sentences are roughly equivalent, but some important information differs/missing. 4 : The two sentences are mostly equivalent, but some unimportant details differ. 5 : The two sentences are completely equivalent, as they mean the same thing."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Books",
+        "Dialogue"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Sentence 1: A plane is taking off. Sentence 2: An air plane is taking off.",
+            "output": "5",
+            "explanation": "Here both statements are talking about the same thing hence it will be classified as a 5."
+        },
+        {
+            "input": "Sentence 1: A man is playing a large flute. Sentence 2: A man is playing a flute.",
+            "output": "4",
+            "explanation": "In this example both statements mean the same thing but only unimportant details like the size of the flute is missing in the second statement. Hence, it is classified as a 4."
+        },
+        {
+            "input": "Sentence 1: Three men are playing chess. Sentence 2: Two men are playing chess.",
+            "output": "3",
+            "explanation": "In this example important detail of the number of men playing chess is wrong. Hence this example will be clasified as a 3."
+        },
+        {
+            "input": "Sentence 1: A man is smoking. Sentence 2: A man is skating.",
+            "output": "0",
+            "explanation": "Here there is no similarity between the two sentences hence the output classification is 0."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Sentence 1: A man is playing the cello. Sentence 2: A man seated is playing the cello.",
+            "output": "3",
+            "explanation": "Sentence 1 and 2 are only different by an unimportant detail of the man seating so the output should have been 4."
+        },
+        {
+            "input": "Sentence 1: The man is playing the piano. Sentence 2: The man is playing the guitar.",
+            "output": "0",
+            "explanation": "In this example both our sentences are sharing some details about playing an musical instrument so the correct classification should have been 2."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1347-ca17863313fb479c996e1a2baa177afe",
+            "input": "Sentence 1: A man in a black uniform on a white horse. Sentence 2: A man in a tux on a white horse.",
+            "output": [
+                "4"
+            ]
+        },
+        {
+            "id": "task1347-0085e2f365654bb5afd689ac67ad4f82",
+            "input": "Sentence 1: A white dog runs through a field of yellow flowers. Sentence 2: A dog with a red collar runs in a forest in the middle of winter.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "id": "task1347-2b1ff101806b44bbaf10cdb4e9f35273",
+            "input": "Sentence 1: For the full 12-month period ending June 30, 2003, advanced services lines for ADSL increased by 37 percent and cable modem connections increased by 75 percent. Sentence 2: For the 12-month period ending June 30, high-speed lines installed in homes and businesses increased by 45 percent.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "id": "task1347-2b657fc857f04a50b47dc1132288bccf",
+            "input": "Sentence 1: A man is riding a motorcycle on the highway. Sentence 2: A man is riding a motorcycle.",
+            "output": [
+                "4"
+            ]
+        },
+        {
+            "id": "task1347-6d7824d48ac54bb58004f0a50cd306fa",
+            "input": "Sentence 1: A small dog is chasing a yoga ball. Sentence 2: A dog is chasing a ball.",
+            "output": [
+                "4"
+            ]
+        },
+        {
+            "id": "task1347-5bcbb7844cae49698b30742580ed9fd0",
+            "input": "Sentence 1: united states officials do not know how far north korea's nuclear weapons program has progressed. Sentence 2: hill is the head american negotiator on north korea's nuclear weapons program.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "id": "task1347-dc84a641a3454611a8c60b4d2b866283",
+            "input": "Sentence 1: A man is hugging someone. Sentence 2: A man is taking a picture.",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "id": "task1347-74daa3d0dce74a3b96d8c5d87f0b66ec",
+            "input": "Sentence 1: Syrian journalists killed in capital Sentence 2: US Marines killed in base attack",
+            "output": [
+                "1"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

@@ -1,0 +1,115 @@
+{
+    "Contributors": [
+        "Kushal Chawla"
+    ],
+    "Source": [
+        "casino"
+    ],
+    "URL": [
+        "https://aclanthology.org/2021.naacl-main.254.pdf"
+    ],
+    "Categories": [
+        "Negotiation Strategy Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "Given an utterance and recent dialogue context containing past 3 utterances (wherever available), output Yes if the utterance contains the small-talk strategy, otherwise output No. Small-talk is a cooperative negotiation strategy that is used for discussing topics apart from the negotiation, in an attempt to build a rapport with the opponent. For example, discussing how the opponent is doing during the pandemic or sharing excitement for the camping trip."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Context: 'Great!  So looks like all the water goes to you.  I will take all the food if that is ok and we can split the wood.  ' 'Well i would need one food and one wood' 'OK.  I think that will work out for me.  You get 3 water, 1 wood and 1 food.  I will take the rest.'\nUtterance: 'Great that's an agreement for me'",
+            "output": "No",
+            "explanation": "The participant does not engage in any small talk in this utterance and primarily refers to the negotiation itself."
+        },
+        {
+            "input": "Context: 'Since you would also like firewood, I propose 2 firewood, 2 water to me, and you get 1 wood, 1 water, and all the food to make up for it.' 'Okay I can agree to that deal.\ud83d\ude42' 'That's fantastic, I'm glad we came to something we both agree with'\nUtterance: 'Me too. I hope you have a wonderful camping trip.\ud83d\ude42'",
+            "output": "Yes",
+            "explanation": "The participant engages in small talk when wishing their opponent to have a wonderful trip."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Context: 'Hello! I am looking forward to the camping trip but could use a few more supplies!' 'hello, me too, i guess we can share' 'Sounds good, I need food the most, what is your most needed item?'\nUtterance: 'my item is food too.'",
+            "output": "Yes",
+            "explanation": "The purpose of the utterance is only to take the negotiation forward and there is no side talk. Hence, the correct answer is 'No'."
+        },
+        {
+            "input": "Context: 'I can do without extra water as long as I have food and firewood to purify water I find.  It might be better for you to have a reliable supply though.' 'That totally makes sense! I actually am good on firewood thankfully, I got some from a person selling it from their yard a little bit ago.' 'I would have been able to bring more with me by getting some from my parents, but my father decided he wanted to get rid of what he had left and so has been enjoying his fire pit a lot lately.'\nUtterance: 'Oh I have always wanted a firepit! I totally understand. If you'd like you can have all 3 of the firewood supply stash to get you started.'",
+            "output": "No",
+            "explanation": "This is wrong. The participant engages in small-talk when referring to the firepit that they always wanted. The correct answer is 'Yes'."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task357-3584bf293e5c4c89819be3d6e24f63ce",
+            "input": "Context: 'Hello' 'Hi can I ask what camping supplies you most need?'\nUtterance: 'I would like the 3 food packages because my sister forgot to pack any food items for the trip. You can have all the water and firewood. '",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task357-15cdafd6ee90471f8a191bf29fd6d028",
+            "input": "Context: 'Hello, how are you today?'\nUtterance: 'I am doing good. How about yourself?'",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task357-fef1049354054193bd952b002e26f307",
+            "input": "Context: 'Okay, well firewood is also my top priority since it will be so cold tonight.  But I would be willing to take only 1 firewood (and give you 2) as long as I got 2 foods and 2 waters ' 'Thank you for the offer on firewood.  I think that sounds fair.  However, I really would like at least 2 waters as well. ' 'Hmm unfortunately I can't budge since I would be accepting less of my top priority item.  It sounds fair to me though; I'd get 5 items in total but less of my top priority and you would get 4 items in total but more of your top priority'\nUtterance: 'Well, how about if I take 2 firewoods and all of the food and you can have all of the waters? I have a device that I can make clean water, but will need more calories to do so! \ud83d\ude42'",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task357-740c813be4344a98a954b2dbd9a9a9ec",
+            "input": "Context: \nUtterance: 'hello there my fellow camping friend'",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task357-8e141c298e3d4b9c8f6dcc731d979f5b",
+            "input": "Context: 'Yes, at least 1 of firewood, one of water and one of food.' 'Okay, that would work for me. I'm sure you have good reasons.' 'Do you have a small group, like I do?'\nUtterance: 'No, I have a pretty large group, unfortunately, so we need some extra supplies as well.'",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task357-e3492861056840369caedda013763298",
+            "input": "Context: 'Hmm.. well let's see! What is your second priority? I would be willing to give up all of that, if I could get at least 2 firewood. You're right, it sure does get chilly \u2639\ufe0f' 'What if I got 3 foods and 2 waters. and you got 3 firewood and 1 water. If I could get a little more food that doesn't need to be cooked over the fire I might be able to get by. And I'll need to buy more water so I don't have to boil it since I won't have much firewood. ' 'I would say that sounds like a good deal! I am a little worried about water though, there aren't any sources of water where we are going. Hmm..'\nUtterance: 'I think having 3 packages of firewood will help! you can always boil water from a  fresh spring \ud83d\ude42'",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task357-2c8c558554e64f74bab872ff86a06309",
+            "input": "Context: 'you told me i not fair that why i told you are not fare,3 food for me  will give 3 firewood for me, give 2 water for me, other we can end the deal and both we can forget the bonus' 'ok' 'then what will do ? if you ok for 3 food for me , 3 firefor you, 2 water for me , for this deal we can go forward?'\nUtterance: 'of course not. you just took all the priority items and you still want two water. I am going to make the last offer. you take two food and two water, I take one food, three wood and aone water. '",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task357-1474cf91150b416f9a2cfb37af761b90",
+            "input": "Context: 'Pretty good, planning my camping trip, checking on supplies.' 'Here too, looks like the weather has changed for us. We won't have enough water to last as we forgot it. Food, we have some snacks, but not enough to get by for our trip. I'm not overly concerned about firewood since it's so hot. But I'm really concerned about water.' 'Yeah, I'm going to the desert so I'm hoping to have enough water. I'm good on food and I hunt for a lot of it anyways.'\nUtterance: 'I've never been a good hunter. I wish I had those abilities.'",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

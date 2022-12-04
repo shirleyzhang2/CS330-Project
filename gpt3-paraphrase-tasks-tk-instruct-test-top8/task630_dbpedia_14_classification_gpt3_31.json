@@ -1,0 +1,116 @@
+{
+    "Contributors": [
+        "Divya Reddy Katpally"
+    ],
+    "Source": [
+        "dbpedia_14"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/dbpedia_14"
+    ],
+    "Categories": [
+        "Text Matching"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "In this task, you will be given a text and a title. The title is present in the text, and it refers to the entity which is mentioned in the text. The title might have some text in parentheses, for example: \"HMS Mallow (K81)\", or be slightly different from what is present in the text. If they still refer to the same entity, then it is a correct title. Output \"Yes\" if the title is correct, otherwise output \"No\"."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Wikipedia"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Text: The Mansfield Building Society is a UK building society which has its headquarters in Mansfield Nottinghamshire. It is a member of the Building Societies Association. \nTitle: Mansfield Building Society",
+            "output": "Yes",
+            "explanation": "The title \"Mansfield Building Society\" is present in the text and it is the main entity that is referred in the text. Hence, it is the title of the document."
+        },
+        {
+            "input": "Text:  The third and current HMS Argyll is a Type 23 'Duke' Class frigate. She is currently the oldest serving Type 23 frigate in the Royal Navy. Like all of her class she is named for a British dukedom in this case that of Argyll. \nTitle: HMS Argyll (F231)",
+            "output": "Yes",
+            "explanation": "\"HMS Argyll\" is present in the text and it is the main entity that is referred in the text. Here, the text in parentheses \"F31\" is not present in the document and it can be ignored. Hence, the output is correct. "
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Text: The Mansfield Building Society is a UK building society which has its headquarters in Mansfield Nottinghamshire. It is a member of the Building Societies Association. \nTitle: Mansfield Building Society",
+            "output": "No",
+            "explanation": "The title \"Mansfield Building Society\" is present in the text and it is the main entity that is referred in the text. Hence, the output is incorrect."
+        },
+        {
+            "input": "Text:  The third and current HMS Argyll is a Type 23 'Duke' Class frigate. She is currently the oldest serving Type 23 frigate in the Royal Navy. Like all of her class she is named for a British dukedom in this case that of Argyll. \nTitle: HMS Argyll (F231)",
+            "output": "HMS Argyll",
+            "explanation": "The output should be either \"Yes\" or \"No\". Hence, it is negative example."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task630-a81eee764eff4b648b628fa443a3f4d2",
+            "input": "Text:  Eslamabad-e Chahar Gavareh (Persian: \u0627\u0633\u0644\u0627\u0645 \u0627\u0628\u0627\u062f\u0686\u0647\u0627\u0631\u06af\u0648\u0627\u0631\u0647\u200e also Romanized as Esl\u0101m\u0101b\u0101d-e Chah\u0101r Gav\u0101reh; also known as Esl\u0101m\u0101b\u0101d) is a village in Tabadkan Rural District in the Central District of Mashhad County Razavi Khorasan Province Iran. At the 2006 census its population was 573 in 149 families. \nTitle: Simon Andersson",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task630-32575744fe4343cc8ec134d3c87894b4",
+            "input": "Text:  John McGregor Johnny McIntyre (4 January 1895 \u2013 1974) was a Scottish professional footballer born in Glasgow who played in the Football League in England for Fulham Sheffield Wednesday Blackburn Rovers and Blackpool. \nTitle: Johnny McIntyre (footballer born 1895)",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task630-827b80c4fc044a8a8ee5b54a6b9437ee",
+            "input": "Text:  Anthony DeLuca is a member of the Illinois House of Representatives who has represented the 80th district since his appointment in March 2009 to succeed George Scully who was appointed to the Illinois Circuit Court of Cook County. \nTitle: Jeremy Purvis",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task630-1a04f6a828854b02b85ca4abcfd0ef6b",
+            "input": "Text:  Kenji Tokitsu (\u6642\u6d25 \u8ce2\u5150 Tokitsu Kenji born 1 August 1947) is a Japanese author and practitioner of Japanese martial arts. Dr. Tokitsu has also written a scholarly work about the legendary swordsman Musashi Miyamoto. He holds doctorates in sociology and in Japanese language and civilization. \nTitle: Kenji Tokitsu",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task630-81227229ec0f4e2fbd2597910ae39caa",
+            "input": "Text:  Descurainia paradisa is a plant species native to eastern and northern California southeastern Oregon Box Elder County in northwestern Utah and most of Nevada. It grows in shrub communities at elevations of 3300\u20137500 feet (1000\u20132300 m).Descurainia paradisa is an annual herb up to 14 inches (35 cm) tall. Stems are often purple branching at the base and sometimes above ground. Leaves are up to 1.2 inches (3 cm) long pinnately lobed. Flowers are pale yellow borne in a raceme. \nTitle: Descurainia paradisa",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task630-af6a969af31c4b09954efa42de7890b0",
+            "input": "Text:  Hermes Carleial (30 March 1904 \u2013 6 July 1954) was a Brazilian poet lawyer accountant and writer. \nTitle: Candice Miller",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task630-0c7f3dc8c70543faa37292dcf3127051",
+            "input": "Text:  Ruslans Miha\u013c\u010duks (born 10 August 1976 in Riga) is a football midfielder from Latvia who plays for FK Daugava Daugavpils in the Latvian First League. \nTitle: Little Grey River",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task630-8faf215db5ca4314ab64f83c9cc57343",
+            "input": "Text:  Jefferson High School is an American public high school in Daly City California and is the first school in the Jefferson Union High School District (JUHSD). Jefferson serves Daly City Brisbane and the town of Colma. \nTitle: Stop the Train",
+            "output": [
+                "No"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY-SA",
+        "GNU Free Documentation 2.0"
+    ]
+}

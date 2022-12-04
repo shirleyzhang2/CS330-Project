@@ -1,0 +1,113 @@
+{
+    "Contributors": [
+        "Neeraj Varshney"
+    ],
+    "Source": [
+        "timetravel"
+    ],
+    "URL": [
+        "https://github.com/qkaren/Counterfactual-StoryRW"
+    ],
+    "Categories": [
+        "Coherence Classification"
+    ],
+    "Reasoning": [
+        "Temporal Reasoning",
+        "Commonsense Reasoning"
+    ],
+    "Definition": [
+        "In this task you are given a short story consisting of 5 sentences, but the second sentence is missing. You are given 2 options to fill in the blank, and you need to select the one that best connects the first sentence with the rest of the story. If the first option is correct, indicate your answer with 'Option 1'. If the first option is not correct, the answer is 'Option 2'. The incorrect option will change the subsequent storyline, so that at least one of the three subsequent sentences is no longer consistent with the story."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Commonsense -> Stories"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Sentence 1: The cashier was counting the dollar bills at her desk. \n Sentence 3: Everyone panicked and started to scream. \n  Sentence 4: The men threatened the people to remain quiet. \n Sentence 5: The cashier handed them the cash so they would go away.  \n Option 1:  Two men rushed into the store and held their guns up. \n Option 2: Two dogs rushed into the store.",
+            "output": "Option 1",
+            "explanation": "Option 1 forms a consistent story with the given four sentences. In constrast, Option 2 is incorrect as the entty 'two dogs' is not consistent with 'men' mentioned in Sentence 4."
+        },
+        {
+            "input": "Sentence 1: The cashier was counting the dollar bills at her desk. \n Sentence 3: Everyone panicked and started to scream. \n  Sentence 4: The men threatened the people to remain quiet. \n Sentence 5: The cashier handed them the cash so they would go away.  \n Option 1:  Three men rushed into the store and held their guns up. \n Option 2: Two men rushed into the hospital.",
+            "output": "Option 1",
+            "explanation": "Option 1 forms a consistent story with the given four sentences. In constrast, Option 2 is incorrect as it is not consisitent with sentence 1 ('store cashier' vs 'hospital')."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Sentence 1: The cashier was counting the dollar bills at her desk. \n Sentence 3: Everyone panicked and started to scream. \n  Sentence 4: The men threatened the people to remain quiet. \n Sentence 5: The cashier handed them the cash so they would go away.  \n Option 1:  Two men rushed into the store and held their guns up. \n Option 2: Two dogs rushed into the store.",
+            "output": "Two men rushed into the store and held their guns up.",
+            "explanation": "The selected option is correct but it outputed the entire option text instead of its label i.e 'Option 1'."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task065-7060a99bedfb4ee883279aa65f9df188",
+            "input": "Sentence 1: Martha had a mean, rude, nosy next door neighbor. \n Sentence 3: She peeked into Martha's windows and tried to see what was inside \n Sentence 4:  It turned out that Martha was inside and so caught her spying \n Sentence 5:  Martha then took her to court to get a restraining order \n Option 1: One day, this neighbor decided to start spying on Martha. \n Option 2: One day, Martha decided to start spying on her neighbor.",
+            "output": [
+                "Option 1"
+            ]
+        },
+        {
+            "id": "task065-3b135b200f7e4608933d17b406dafa99",
+            "input": "Sentence 1: Donna had a lot of pain in her ankle. \n Sentence 3: The doctor said that she had broken the bones in her ankle \n Sentence 4:  It took many months for her ankle to heal \n Sentence 5:  Finally, Donna was able to walk without any pain \n Option 1: She put ice on it and sat on her couch to let it heal. \n Option 2: She rushed to the doctors to see what had occurred.",
+            "output": [
+                "Option 2"
+            ]
+        },
+        {
+            "id": "task065-8ab0300273124048a616ce12fbe4990c",
+            "input": "Sentence 1: Ivan was hanging a photo on his wall. \n Sentence 3: Finally he drew a line with his level \n Sentence 4:  Then he hung the picture with the line as a guide \n Sentence 5:  Ivan was happy that he'd finally got it straight! \n Option 1: He couldn't get it straight. \n Option 2: He got it straight on the first try.",
+            "output": [
+                "Option 1"
+            ]
+        },
+        {
+            "id": "task065-6344d7dece7b435a86d177e5956cf982",
+            "input": "Sentence 1: Brian was having frequent backaches. \n Sentence 3: His doctor suggested that he buy a new mattress \n Sentence 4:  Brian took his advice and purchased a sleep number mattress \n Sentence 5:  He hasn't had a backache since his new purchase \n Option 1: He was visiting his doctor often. \n Option 2: He didn't want to visit the doctor though.",
+            "output": [
+                "Option 1"
+            ]
+        },
+        {
+            "id": "task065-a3c8db34140b47b0b19df8b1d17497ef",
+            "input": "Sentence 1: Joe and his friends were playing one day. \n Sentence 3: They ran to see what it was \n Sentence 4:  It was a huge flat rock \n Sentence 5:  Now that is their play rock \n Option 1: Joe seen something on the hill above them. \n Option 2: Joe seen something on their roof.",
+            "output": [
+                "Option 1"
+            ]
+        },
+        {
+            "id": "task065-d6db64c3aadb4bf3bbdd63bfc172210e",
+            "input": "Sentence 1: Nancy's life began to bring more stress than she was used to. \n Sentence 3: She couldn't focus without sleep, so she visited the doctor \n Sentence 4:  Her doctor prescribed her with insomnia medication \n Sentence 5:  The medication worked, and Nancy was happy to sleep well again \n Option 1: Nancy was so stressed that she began to have trouble sleeping. \n Option 2: Nancy become so bothered that she began to sleep more.",
+            "output": [
+                "Option 1"
+            ]
+        },
+        {
+            "id": "task065-11daad4b20e448f8a1482c56cc194a9b",
+            "input": "Sentence 1: Several workers were pressure-washing my house in the morning. \n Sentence 3: However, one of the workers started to become drowsy \n Sentence 4:  He sprayed my bedroom window with the pressure washer \n Sentence 5:  The window shattered into pieces \n Option 1: I spent hours giving them directions such as where to work. \n Option 2: They finished and left.",
+            "output": [
+                "Option 1"
+            ]
+        },
+        {
+            "id": "task065-0201383083d048cd80016d9ce6f58c97",
+            "input": "Sentence 1: Joe wanted to be better at math. \n Sentence 3: But he didn't think he was improving quickly enough \n Sentence 4:  So he lost all motivation to practice \n Sentence 5:  Later, Joe realized if he were more patient he would have improved \n Option 1: So he bought math textbooks and began to practice. \n Option 2: So he get a math tutor and studied with the tutor and got much better grades.",
+            "output": [
+                "Option 1"
+            ]
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

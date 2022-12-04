@@ -1,0 +1,125 @@
+{
+    "Contributors": [
+        "Jalansh Munshi"
+    ],
+    "Source": [
+        "pubmed_qa"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/pubmed_qa"
+    ],
+    "Categories": [
+        "Intent Identification"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "Given a passage, you are to output '1' if the passage has a definite objective/aim/goal, and '0' if it does not."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Medicine"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Chronic rhinosinusitis (CRS) is a heterogeneous disease with an uncertain pathogenesis. Group 2 innate lymphoid cells (ILC2s) represent a recently discovered cell population which has been implicated in driving Th2 inflammation in CRS; however, their relationship with clinical disease characteristics has yet to be investigated. The aim of this study was to identify ILC2s in sinus mucosa in patients with CRS and controls and compare ILC2s across characteristics of disease. A cross-sectional study of patients with CRS undergoing endoscopic sinus surgery was conducted. Sinus mucosal biopsies were obtained during surgery and control tissue from patients undergoing pituitary tumour resection through transphenoidal approach. ILC2s were identified as CD45(+) Lin(-) CD127(+) CD4(-) CD8(-) CRTH2(CD294)(+) CD161(+) cells in single cell suspensions through flow cytometry. ILC2 frequencies, measured as a percentage of CD45(+) cells, were compared across CRS phenotype, endotype, inflammatory CRS subtype and other disease characteristics including blood eosinophils, serum IgE, asthma status and nasal symptom score. 35 patients (40% female, age 48 \u00b1 17 years) including 13 with eosinophilic CRS (eCRS), 13 with non-eCRS and 9 controls were recruited. ILC2 frequencies were associated with the presence of nasal polyps (P = 0.002) as well as high tissue eosinophilia (P = 0.004) and eosinophil-dominant CRS (P = 0.001) (Mann-Whitney U). They were also associated with increased blood eosinophilia (P = 0.005). There were no significant associations found between ILC2s and serum total IgE and allergic disease. In the CRS with nasal polyps (CRSwNP) population, ILC2s were increased in patients with co-existing asthma (P = 0.03). ILC2s were also correlated with worsening nasal symptom score in CRS (P = 0.04).",
+            "output": "1",
+            "explanation": "There is a line in the passage which say 'The aim of this study was...' which suggests that it is talking about a specific aim. Hence, the output should be 1 as this passage has a definite aim."
+        },
+        {
+            "input": "Phosphatidylethanolamine N-methyltransferase (PEMT), a liver enriched enzyme, is responsible for approximately one third of hepatic phosphatidylcholine biosynthesis. When fed a high-fat diet (HFD), Pemt(-/-) mice are protected from HF-induced obesity; however, they develop steatohepatitis. The vagus nerve relays signals between liver and brain that regulate peripheral adiposity and pancreas function. Here we explore a possible role of the hepatic branch of the vagus nerve in the development of diet induced obesity and steatohepatitis in Pemt(-/-) mice. 8-week old Pemt(-/-) and Pemt(+/+) mice were subjected to hepatic vagotomy (HV) or capsaicin treatment, which selectively disrupts afferent nerves, and were compared to sham-operated or vehicle-treatment, respectively. After surgery, mice were fed a HFD for 10 weeks. HV abolished the protection against the HFD-induced obesity and glucose intolerance in Pemt(-/-) mice. HV normalized phospholipid content and prevented steatohepatitis in Pemt(-/-) mice. Moreover, HV increased the hepatic anti-inflammatory cytokine interleukin-10, reduced chemokine monocyte chemotactic protein-1 and the ER stress marker C/EBP homologous protein. Furthermore, HV normalized the expression of mitochondrial electron transport chain proteins and of proteins involved in fatty acid synthesis, acetyl-CoA carboxylase and fatty acid synthase in Pemt(-/-) mice. However, disruption of the hepatic afferent vagus nerve by capsaicin failed to reverse either the protection against the HFD-induced obesity or the development of HF-induced steatohepatitis in Pemt(-/-) mice.",
+            "output": "1",
+            "explanation": "If you take a look at the line 'Here we explore a possible role of the hepatic branch', it says that it is exploring a possible role. This means that it has a specific goal and hence, the output should be 1."
+        },
+        {
+            "input": "Psammaplin A (PsA) is a natural product isolated from marine sponges, which has been demonstrated to have anticancer activity against several human cancer cell lines via the induction of cell cycle arrest and apoptosis. New drugs that are less toxic and more effective against multidrug-resistant cancers are urgently needed. We tested cell proliferation, cell cycle progression and autophagic cell death pathway in doxorubicin-resistant MCF-7 (MCF-7/adr) human breast cancer cells. The potency of PsA was further determined using an in vivo xenograft model.",
+            "output": "0",
+            "explanation": "This passage does not have any sentences which talk about a specific goal, objective, or aim. Hence, the output should be 0."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "This study examined links between DNA methylation and birth weight centile (BWC), and explored the impact of genetic variation. Using HumanMethylation450 arrays, we examined candidate gene-associated CpGs in cord blood from newborns with low (<15th centile), medium (40-60th centile) and high (>85th centile) BWC (n = 12). Candidates were examined in an investigation cohort (n = 110) using pyrosequencing and genotyping for putative methylation-associated polymorphisms performed using standard PCR. Array analysis identified 314 candidate genes associated with BWC extremes, four of which showed \u2265 4 BWC-linked CpGs. Of these, PM20D1 and MI886 suggested genetically determined methylation levels. However, methylation at three CpGs in FGFR2 remained significantly associated with high BWC (p = 0.004-0.027).",
+            "output": "0",
+            "explanation": "This passage talks about examining links between DNA methylation and also explores impact of genetic variation. This suggests that it has a definite objective and hence, the output should be 1. Output 0 is wrong."
+        },
+        {
+            "input": "Tumor microenvironment immunity is associated with breast cancer outcome. A high lymphocytic infiltration has been associated with response to neoadjuvant chemotherapy, but the contribution to response and prognosis of immune cell subpopulations profiles in both pre-treated and post-treatment residual tumor is still unclear. We analyzed pre- and post-treatment tumor-infiltrating immune cells (CD3, CD4, CD8, CD20, CD68, Foxp3) by immunohistochemistry in a series of 121 breast cancer patients homogeneously treated with neoadjuvant chemotherapy. Immune cell profiles were analyzed and correlated with response and survival. We identified three tumor-infiltrating immune cell profiles, which were able to predict pathological complete response (pCR) to neoadjuvant chemotherapy (cluster B: 58%, versus clusters A and C: 7%). A higher infiltration by CD4 lymphocytes was the main factor explaining the occurrence of pCR, and this association was validated in six public genomic datasets. A higher chemotherapy effect on lymphocytic infiltration, including an inversion of CD4/CD8 ratio, was associated with pCR and with better prognosis. Analysis of the immune infiltrate in post-chemotherapy residual tumor identified a profile (cluster Y), mainly characterized by high CD3 and CD68 infiltration, with a worse disease free survival.",
+            "output": "1",
+            "explanation": "There is no mention about how chemotherapy can cure breast cancer in the input passage. Hence, this question is a bad example."
+        },
+        {
+            "input": "Hidradenitis suppurativa (HS) is a chronic inflammatory disease involving intertriginous skin. Previous epidemiologic studies have been limited by small sample size. We sought to describe the prevalence and comorbidities of HS in a large patient care database. In this retrospective case-control study, we chart-validated all patients within a hospital database who received at least 1 billing code for HS between 1980 and 2013. Verified cases were matched with controls based on age, gender, and race. Prevalences of a priori selected comorbidities were compared between HS and control groups. A total of 2292 patients at Massachusetts General Hospital received at least 1 code for HS. A total of 1776 cases had a validated diagnosis of HS, yielding a prevalence of 0.08%. In unadjusted analysis, all comorbidities were diagnosed significantly more in HS compared with control including (in rank order of likelihood): smoking, arthropathies, dyslipidemia, polycystic ovarian syndrome, psychiatric disorders, obesity, drug dependence, hypertension, diabetes, thyroid disease, alcohol dependence, and lymphoma (all P < .01).",
+            "output": "0",
+            "explanation": "In the line 'We sought to describe the prevalence...' it is evident that the passage has a specific goal in mind. Hence, the output should be 1 and not 0. Therefore, the output is wrong."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task848-539ec8d1323f43afbeb01a371fce8c25",
+            "input": "The severity of hypoalbuminemia has been shown to be related to morbidity and mortality in critical illness, illustrating the need for better understanding of the molecular mechanism of hypoalbuminemia. Lipopolysaccharide(LPS) is a key mediator which induces hypoalbuminemia in sepsis and septic shock. The present studies were performed to identify whether the reduction of albumin expression induced by LPS was mediated by activating nuclear factor kappa B(NF-kappaB) in cultured rat hepatocytes.', 'Primary rat hepatocytes were divided into five groups treated with normal saline or 1 ng/ml, 0.01 microg/ml, 0.1 microg/ml, or 1 microg/ml of LPS for 24 h. The albumin level in the supernatant and NF-kappaB activity in hepatocytes were measured. Hepatocytes were pretreated for 30 min with SN50 (a highly selected inhibitor of NF-kappaB) at different concentrations (10, 30, and 50 microg/ml). After 24 h of treatment with 1 microg/ml of LPS, the culture medium was measured for albumin level. Meanwhile, NF-kappaB activity in hepatocytes was assayed.', 'LPS dramatically decreased albumin expression and enhanced NF-kappaB activity in rat hepatocytes, especially in the 1 microg/ml LPS group. This reduction in albumin expression induced by LPS can be completely inhibited by SN50 in different concentrations, and the maximal increase in albumin was observed at a SN50 dosage of 30 microg/ml.",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "id": "task848-3c766fd6cc1c49acbe493f3e332b2bfa",
+            "input": "We aimed to investigate the anti-angiogenic properties of miR-155 via in vitro and in vivo studies.', 'miR-155 was knocked down using lentivirus-mediated RNA interference. The proliferation, migration, and tube formation of human retinal microvascular endothelial cells (HRMECs) were measured using BrdU, Transwell, and Matrigel assays, respectively. An oxygen-induced retinopathy (OIR) model was induced using neonatal C57BL/6J pups. Anti-miR-155 was intravitreally injected on postnatal day 12, and the retinal non-perfused areas and extent of neovascularization were measured on postnatal day 18 using transcardiovascular fluorescein isothiocyanate (FITC)-dextran perfusion and retina sections. A laser-induced choroidal neovascularization (CNV) model was induced in adult C57BL/6J mice. To evaluate the leakage areas, fundus fluorescein angiography was performed on day 14 after anti-miR-155 intravitreal injection. The neovascularization area of the CNV model was also examined in confocal and retina section studies. The expression levels of SHIP1 and p-Akt (Thr308, Ser473, and Thr450) were evaluated both in vitro and in vivo.', 'The expression of miR-155 was elevated in HRMECs after treatment with vascular endothelial growth factor (VEGF) and in neovascularized mouse model retinas. Anti-miR-155 lentivirus reduced the VEGF-induced proliferation, migration, and tube formation abilities of HRMECs. Anti-miR-155 attenuated retinal neovascularization in in vivo CNV and OIR models. In VEGF-treated HRMECs and retina neovascularization models, p-Akt (Ser473) was significantly upregulated, while SHIP1 was downregulated. Conversely, the inhibition of miR-155 restored the expression of SHIP1 and reduced the phosphorylation of effectors in the Akt (Ser473) signaling pathway.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "id": "task848-51327cf5c4c345ffb9c3ec4f5049489f",
+            "input": "To examine relationships among demographic variables, healthcare system distrust, lung cancer stigma, smoking status, and timing of medical help-seeking behavior in individuals with symptoms suggestive of lung cancer after controlling for ethnicity, socioeconomic status, and social desirability.', 'Descriptive, cross-sectional, correlational study.', 'Outpatient oncology clinics in Louisville, KY.', '94 patients diagnosed in the past three weeks to six years with all stages of lung cancer.', 'Self-report, written survey packets were administered in person followed by a semistructured interview to assess symptoms and timing characteristics of practice-identified patients with lung cancer.', 'Timing of medical help-seeking behavior, healthcare system distrust, lung cancer stigma, and smoking status.', 'Lung cancer stigma was independently associated with timing of medical help-seeking behavior in patients with lung cancer. Healthcare system distrust and smoking status were not independently associated with timing of medical help-seeking behavior.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "id": "task848-ca92cf9afca94d12aca2bf6aa5c5f1e8",
+            "input": "To investigate the expression of scavenger receptor that binds phosphatidylserine and oxidized lipoprotein (SR-PSOX)/CXC chemokine ligand 16 (CXCL16) in the human monocyte-derived cell line THP-1, and the effect of lentiviral vectors for the stable delivery of SR-PSOX/CXCL16 short hairpin RNA on foam cell formation.', 'A lentiviral expression vector containing enhanced green fluorescence protein (GFP) and SR-PSOX small interfering RNA (siRNA) (Lenti-SR-PSOXsi), or the control siRNA (Lenti-NC) gene was constructed. A human monocyte-derived cell line THP-1 was transfected with a different multiplicity of infection (MOI) of Lenti-SR-PSOXsi or Lenti-NC, and cultured to obtain stably-transfected THP- 1KD and THP-1NC cells. After incubation with oxidatively-modified, low-density lipoprotein (Ox-LDL), the expression of SR-PSOX/CXCL16 mRNA was determined by real-time PCR. The expression of the SR-PSOX/CXCL16 protein was detected by flow cytometry analysis. The effect of Lenti-SR-PSOXsi on foam cell formation was assessed by Oil red O-stain analysis.', 'Ox-LDL increased the expression of SR-PSOX/CXCL16 mRNA in a time- and dose-dependent manner in THP-1 cells. Four days after transfection with Lenti-SR-PSOXsi (MOI: 100), the percentage of GFP expression cells was over 89.3%. The expression of the SR-PSOX/ CXCL16 mRNA and protein in THP-1KD cells significantly decreased compared with the parent cells, even the THP-1KD cells stimulated with 40 mg/L Ox-LDL. Ox-LDL uptake experiments in THP-1- and THP-1KD-derived macrophages indicated that SR-PSOX/CXCL16 deficiency decreased the development of macrophage- derived foam cell formation.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "id": "task848-bf5935b8acd14c3aaa258c6117bd60b6",
+            "input": "Exposure to androgens early in development, while activating adaptive aggressive behavior, may also exert long-lasting effects on non-target components of phenotype. Here we compare these organizational effects of perinatal androgens in closely related Nazca (Sula granti) and blue-footed (S. nebouxii) boobies that differ in neonatal social system. The older of two Nazca booby hatchlings unconditionally attacks and ejects the younger from the nest within days of hatching, while blue-footed booby neonates lack lethal aggression. Both Nazca booby chicks facultatively upregulate testosterone (T) during fights, motivating the prediction that baseline androgen levels differ between obligately siblicidal and other species.', 'We show that obligately siblicidal Nazca boobies hatch with higher circulating androgen levels than do facultatively siblicidal blue-footed boobies, providing comparative evidence of the role of androgens in sociality. Although androgens confer a short-term benefit of increased aggression to Nazca booby neonates, exposure to elevated androgen levels during this sensitive period in development can also induce long-term organizational effects on behavior or morphology. Adult Nazca boobies show evidence of organizational effects of early androgen exposure in aberrant adult behavior: they visit unattended non-familial chicks in the colony and direct mixtures of aggression, affiliative, and sexual behavior toward them. In a longitudinal analysis, we found that the most active Non-parental Adult Visitors (NAVs) were those with a history of siblicidal behavior as a neonate, suggesting that the tendency to show social interest in chicks is programmed, in part, by the high perinatal androgens associated with obligate siblicide. Data from closely related blue-footed boobies provide comparative support for this interpretation. Lacking obligate siblicide, they hatch with a corresponding low androgen level, and blue-footed booby adults show a much lower frequency of NAV behavior and a lower probability of behaving aggressively during NAV interactions. This species difference in adult social behavior appears to have roots in both pleiotropic and experiential effects of nestling social system.",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "id": "task848-8d1972c3c23247439be75f644cbc1f19",
+            "input": "The effect of surgical history on graft outcomes in patients with functionally univentricular hearts (UH) is not well understood. We compared graft outcomes after heart transplantation in children with a UH between patients who received allografts without prior cardiac surgery (Group A) and patients who underwent transplantation after prior cardiac surgery (Group B).', \"We reviewed all patients who received allografts for UH at our institution from 1990 to 2009. Differences in the probability of acute rejection (AR), incidence of graft vasculopathy (GV), and incidence of death or retransplantation were compared between Group A and Group B. Student's t-test, Mann-Whitney U-test, the log-rank test, logistic regression, and Cox proportional hazards modeling were used as appropriate.\", 'During the study period, 180 patients with a UH received allografts: 105 in Group A and 75 in Group B at a median (interquartile range) age of 84 (47-120) days vs 584 (168-2,956) days, respectively (p < 0.001). The odds of AR were higher in Group B (odds ratio, 2.7, 95% confidence interval, 1.3-5.4). Group A had lower univariable risks of GV (p = 0.034) and graft loss (p = 0.003). Median graft survival was 18 years in Group A vs 8 years in Group B. The risk of graft loss after 5 years post-transplant was higher in Group B patients who were aged \u2265 1 year at time of transplant (p < 0.001).",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "id": "task848-171cd56b134840a6b84adeeaec7ec741",
+            "input": "The initial steps in the cascade leading to cell death are still unknown because of the limitations of the existing methodology, strategy, and modalities used.', 'Imaging mass spectrometry (IMS) was used to measure dynamic molecular changes of phosphatidylcholine (PC) species in the rat hippocampus after transient global ischemia (TGI) for 6min. Fresh frozen sections were obtained after euthanizing the rats on Days 1, 2, 4, 7, 10, 14, and 21. Histopathology and IMS of adjacent sections compared morphological and molecular changes, respectively.', 'Histopathological changes were absent immediately after TGI (at Day 1, superacute phase). At Days 2-21 after TGI (from subacute to chronic phases), histopathology revealed neuronal death associated with gliosis, inflammation, and accumulation of activated microglia in CA1. IMS detected significant molecular changes after TGI in the same CA1 domain: increase of PC (diacyl-16:0/22:6) in the superacute phase and increase of PC (diacyl-16:0/18:1) in the subacute to chronic phases.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "id": "task848-5baaf57b1587400b9ad04aa2a7ddfa7c",
+            "input": "Raf Kinase Inhibitory Protein (RKIP, also PEBP1), a member of the Phosphatidylethanolamine Binding Protein family, negatively regulates growth factor signaling by the Raf/MAP kinase pathway. Since an organic compound, locostatin, was reported to bind RKIP and inhibit cell migration by a Raf-dependent mechanism, we addressed the role of RKIP in locostatin function.', 'We analyzed locostatin interaction with RKIP and examined the biological consequences of locostatin binding on RKIP function. NMR studies show that a locostatin precursor binds to the conserved phosphatidylethanolamine binding pocket of RKIP. However, drug binding to the pocket does not prevent RKIP association with its inhibitory target, Raf-1, nor affect RKIP phosphorylation by Protein Kinase C at a regulatory site. Similarly, exposure of wild type, RKIP-depleted HeLa cells or RKIP-deficient (RKIP(-/-)) mouse embryonic fibroblasts (MEFs) to locostatin has no effect on MAP kinase activation. Locostatin treatment of wild type MEFs causes inhibition of cell migration following wounding. RKIP deficiency impairs migration further, indicating that RKIP protects cells against locostatin-mediated inhibition of migration. Locostatin treatment of depleted or RKIP(-/-) MEFs reveals cytoskeletal disruption and microtubule abnormalities in the spindle.",
+            "output": [
+                "0"
+            ]
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

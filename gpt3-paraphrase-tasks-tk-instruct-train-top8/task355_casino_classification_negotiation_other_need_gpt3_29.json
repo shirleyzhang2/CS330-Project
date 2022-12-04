@@ -1,0 +1,115 @@
+{
+    "Contributors": [
+        "Kushal Chawla"
+    ],
+    "Source": [
+        "casino"
+    ],
+    "URL": [
+        "https://aclanthology.org/2021.naacl-main.254.pdf"
+    ],
+    "Categories": [
+        "Negotiation Strategy Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You are given an utterance and recent dialogue context containing past 3 utterances. If the utterance contains the other-need strategy, output 'Yes', otherwise output 'No'. 'other-need' is a selfish negotiation strategy which is used when the participants discuss a need for someone else rather than themselves."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Context: 'I was hoping to get alot of water as well, would you be ok with me getting two waters and three firewoods if you get all the food and one water?' 'Hmm, that's not favorable for me going by the volume of items left in my arsenal. Water is more of a higher priority than food. So, I would exchange 1 pack of food for an additional water' 'So that way you would get two waters and two foods? Those are my priorities as well but i would be ok with it since that way i would get five items and you would get only four.'\nUtterance: 'Those are your priorities?? Then that's not fair for you. Then I take 2 water, 1 firewood and 1 food. This is the lowest I can offer'",
+            "output": "No",
+            "explanation": "This is correct. The participant does not create a specific need for anybody."
+        },
+        {
+            "input": "Context: 'I am doing okay but am in need of some supplies. What about you?' 'Same here. My kids are really looking forward to this. What is most important to you?' 'Firewood! I need it to cook my food and also to stay warm. What about you?'\nUtterance: 'That is the same for me as well. My kids were really looking forward to making s'mores and telling stories by the campfire. That's all they've been talking about'",
+            "output": "Yes",
+            "explanation": "In this utterance, the participant uses other-need by mentioning the needs of their kids."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Context: 'Hi! How are you doing today?' 'I'm fine. And yourself?' 'Pretty good. I'm really excited about going camping though!'\nUtterance: 'Me too. I haven't been camping for several years. '",
+            "output": "Yes",
+            "explanation": "There is no need created here. So the correct answer is 'No'."
+        },
+        {
+            "input": "Context: 'Hi, I hope we can work together to get an offer that benefits both of us.\ud83d\ude42'\nUtterance: 'I agree! Nice to meet you... I have two boys who always eat! Any chance I canget 2 food?'",
+            "output": "No",
+            "explanation": "The participant mentions that their boys eat and hence implies that they would need food. Hence, the correct answer here is 'Yes'."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task355-aa5f57014d71465cbf5bf8f8c94484bd",
+            "input": "Context: 'no its not i give you i water i get 1 food and 1 firewood' 'We only have 3 of each to divide up.. so yes, you're going to have to give me one more on an item.. but in exchange I'm giving you 1 more on two different items.  I'm getting 4 items in total, you're getting 5.. - You're essentially netting 11% more 'items' than I am in this deal. ' 'thats the point as you need water so badly'\nUtterance: 'Correct.. I do.. but if you're not willing to budge on this where you're still netting more overall value I understand - I'm bummed but I understand.'",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task355-fa3eba55e9bd4374b4a3f85e44499b49",
+            "input": "Context: 'I tell you what if we trade 3 food for 3 waters! I think that would be fair snice you said you need some food and snice I need some water. \ud83d\ude42' 'Well, I do have some food but if I trade you all 3 packages of water, I won't have any at all. How about 2 packages of water, so we each have 1 package, including your sister?' 'How about this it think it will work out better for us and you snice you need fire wood too. You get 3 food and 2 firewood and and I get 3 water and 1 firewood. \ud83d\ude42\ud83d\ude42'\nUtterance: 'I really don't want to be without water, how about 2 water and 2 firewood for the 3 packages of food?'",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task355-e276033f52af4500b66d4d83836ca29a",
+            "input": "Context: 'I would do this instead: 3 firewood, 1 water and 2 food.' 'That's not going to be a fair offer, you'll need to do better than that or I don't think we can come to an agreement' '3 firewood, 1 water, 0 food'\nUtterance: 'so I'll get 2 water, 3 food and 0 firewood?'",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task355-1359d6d0833e4d40a72f371a6ac97286",
+            "input": "Context: 'Can you give me your offer?' 'I would like 3 firewods 1 food and 1 water we stay up late and need extra firewood' 'Oh thats expensive .There's too much cold out here and thats our major package for survival '\nUtterance: 'Okay when we are not camping we work at night so we are use to being up at night so we like extra firewood just to sit around campfire and chat'",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task355-3cc2d9d76c174dafaa807208e1e17856",
+            "input": "Context: 'Oh, I see what you did there. No problem I have plenty of firewood for you buddy. \ud83d\ude42' 'Great! What extra supplies would you like to bring?' 'Since it's hot there, I get thirsty and dry real quick. \ud83d\ude21'\nUtterance: 'Oh ok, well I plan on bringing some juice, beer and other drinks. So I could spare some extra water. And I am pretty good at fishing, so I won't need much food either'",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task355-cd39c1fbfc5840fa8bb69ed04dbe7c82",
+            "input": "Context: 'Hmm, okay, that sounds reasonable. How does 3 water, 2 food and 1 firewood for me, and all the rest for you sound?' 'Im goign to need all the firewood I can get. They want to cook smores on it. How about you get 3 water 2 food and I get 3 firewood and 1 food. I think that is very fair and would help us both out. \ud83d\ude42\ud83d\ude42' 'That sounds like a very reasonable deal, I understand how girls can get with their snacks haha. I'm okay with giving up all the firewood. You said you need at least some of the food, right?'\nUtterance: 'Thanks. Yea they do  love their snacks LOL. Yea I just need 1 extra food. Snice I wasn't planning on her friend coming. '",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task355-ba91a1c3b0ae453db5938a8850cdea38",
+            "input": "Context: 'Feel free to counter, but I'm not loving anything that I've gotten so far.' '1 firewood, 2 water, 1 food for me which should mean we each get 2 priority packs -' 'Feel free to counter, but I haven't liked anything so far.'\nUtterance: 'what do you think?'",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task355-a3ffa5231b2b4297ba392f29c28edaef",
+            "input": "Context: 'Did you bring any water to start?' 'Yes! Did you bring any food to start?' 'I did, but my friend only feels comfortable with extra around, God forbid, if something happens this could save his life. So I'm thinking, I take all three food packages, two firewood packages and leave all three water and one firewood for you. '\nUtterance: 'I think that it is fair that you get three food and I get three water, but why should you get two firewood to my one?'",
+            "output": [
+                "No"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

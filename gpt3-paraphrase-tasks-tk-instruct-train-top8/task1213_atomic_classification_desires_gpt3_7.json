@@ -1,0 +1,125 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "atomic"
+    ],
+    "URL": [
+        "https://allenai.org/data/atomic-2020"
+    ],
+    "Categories": [
+        "Commonsense Classification"
+    ],
+    "Reasoning": [
+        "Relational Reasoning",
+        "Reasoning on Social Interactions",
+        "Commonsense Reasoning -> Social Situations"
+    ],
+    "Definition": [
+        "Given two phrases, Head and Tail, separated by <sep>, your task is to determine whether it is plausible for the Head to desire the Tail or not. In this task, desire means desires of sentient entities. For example, doctors likely desire to cure a patient. Classify your answers into \"Yes\" and \"No\". The phrase may also contain \"___\", a placeholder that can be an object, a person, and/or an action."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Sociology",
+        "Commonsense -> Concepts and Relations -> Social Commonsense"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Head: person<sep>Tail: complaints to addressed",
+            "output": "Yes",
+            "explanation": "This is a good example. The Head desires the Tail."
+        },
+        {
+            "input": "Head: PersonX accepts the offer<sep>Tail: smiles",
+            "output": "No",
+            "explanation": "In this example, \"PersonX accepts the offer desires smiles\" doesn't make sense. So the output should be\"No\"."
+        },
+        {
+            "input": "Head: person<sep>Tail: breakdance",
+            "output": "Yes",
+            "explanation": "In this example, the person desires breakdance. Thus, this example should be classified as \"Yes\"."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Head: PersonX affords PersonY protection<sep>Tail: gets involved",
+            "output": "Yes",
+            "explanation": "In this example, \"PersonX affords PersonY protection desires getting involved\" doesn't make sense. To have a positive answer, the Head should be an entity. So the output should be \"No\"."
+        },
+        {
+            "input": "Head: person<sep>Tail: promoted in job",
+            "output": "No",
+            "explanation": "The person desires being promoted in the job, and the output should be \"Yes\"."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1213-69ead9017f844fd18a4ad45532fb521d",
+            "input": "Head: people<sep>Tail: eat pate",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1213-e8eca10b693c46cdb20b29e8b13caaaa",
+            "input": "Head: person<sep>Tail: yummy drink",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1213-ac613261f96b452caa6fd55263502f2b",
+            "input": "Head: person<sep>Tail: listen to wind chime",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1213-049e753156054029a4b483bab68bd840",
+            "input": "Head: person<sep>Tail: have vacation time",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1213-bbcc0a90e43e4a04b0f46425f705e7dc",
+            "input": "Head: person<sep>Tail: warm coat",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1213-094b6447b1c8438e84d62b5f861dfaca",
+            "input": "Head: PersonX applies for a loan<sep>Tail: to drive to the bank",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1213-a4440b8b704c42fcb6cc2382e2ac386d",
+            "input": "Head: PersonX asks PersonY's mother for help<sep>Tail: To check assignments",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1213-a98fbf08933f4a38b494da5a38f0ce5a",
+            "input": "Head: PersonX affords PersonY protection<sep>Tail: to help person y",
+            "output": [
+                "No"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

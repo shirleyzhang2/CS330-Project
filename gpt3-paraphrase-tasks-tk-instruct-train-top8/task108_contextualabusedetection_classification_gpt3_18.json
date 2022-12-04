@@ -1,0 +1,150 @@
+{
+    "Contributors": [
+        "Maitreya Patel"
+    ],
+    "Source": [
+        "cad"
+    ],
+    "URL": [
+        "https://github.com/dongpng/cad_naacl2021"
+    ],
+    "Categories": [
+        "Toxic Language Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You will be given a text. If the text contains any abusive content, indicate \"yes\". Otherwise, indicate \"no\". We consider the content to be abusive if it contains any of the following instances: (1) Identity Directed Abuse (e.g., Content which contains a negative statement made against an identity. An identity is a social category that relates to a fundamental aspect of individuals community, socio-demographics, position or self-representation) (2) Affiliation Directed Abuse (e.g., Content which express negativity against an affiliation. We define affiliation as a (more or less) voluntary association with a collective. Affiliations include but are not limited to: memberships (e.g. Trade unions), party memberships (e.g. Republicans), political affiliations (e.g. Right-wing people) and occupations (e.g. Doctors).) (3) Person Directed Abuse (e.g., Content which directs negativity against an identifiable person, who is either part of the conversation thread or is named. Person-directed abuse includes serious character based attacks, such as accusing the person of lying, as well as aggression, insults and menacing language.) and (4) Counter Speech (e.g., Content which challenges, condemns or calls out the abusive language of others.). Note that URLs in the text have been replaced with [Link]."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Social Media -> Twitter"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Was Michelangelo straight though?  I mean, being a pizza-maniac ninja would indicate so, but... You never know.",
+            "output": "yes",
+            "explanation": "This text has indentity directed abuse because it is trying to judge sexual orientation of Michelangelo. Hence, the answer is \"yes\""
+        },
+        {
+            "input": "No Republican can ever be trusted. Mueller is obviously a Russian agent and we were foolish to ever trust him. Now we need to work hard to impeach Trump.",
+            "output": "yes",
+            "explanation": "Here, the text is targeting affiliations of two politicians. Hence, it is affiliation directed abuse. Therefore, the answer is \"yes\"."
+        },
+        {
+            "input": "Yes, just one more. Did your father beat you too much, not enough, or was he totally absent?",
+            "output": "yes",
+            "explanation": "Given text is trying to insult the caetain person, who is the part of the conversation. Therefore, this text is person directed abuse. Hence, the answer is \"yes\"."
+        },
+        {
+            "input": "Abrams is a typical Republican moron. He can't answer a simple yes or no question.",
+            "output": "yes",
+            "explanation": "This text is insults the Abrams by targetiing his affiliation. Therefore, the answer is \"yes\"."
+        },
+        {
+            "input": "You keep coming here and bitching and whining, doesn't that get boring? If you don't like the sub, and you clearly don't, why keep coming here?     It weirds me out to see how many left wingers have a bitch fit about conservatives having a laugh at their expense when they say ridiculous things (that's why this sub exists).     How hard is it to just not go to places where you know you'll get offended? You are a living meme, lol",
+            "output": "yes",
+            "explanation": "Given text contains negative statements and insults related to once identity, and affiliation. Therefore, this can belong to the three types of abuses. Hence, the answer is \"yes\"."
+        },
+        {
+            "input": "They're making fun of you.    Well they are not doing a very good job.",
+            "output": "yes",
+            "explanation": "The answer is \"yes\" because the text is trying to support the abuse already done to someone."
+        },
+        {
+            "input": "I'm ecstatic that it went so well. I was one of the only people that didn't use a script and was told that my speech was really good. This is a really big deal because a few years ago I had social anxiety so bad that it got me fired from a fast food restaurant.",
+            "output": "no",
+            "explanation": "The answer is \"no\" because there is no negative statements."
+        },
+        {
+            "input": "I don't even understand what that means. Borders exist because travel was expensive?",
+            "output": "no",
+            "explanation": "There is no negative statement. Hence, the answer is \"no\"."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Yeah, I wondered how they figured out where the blind spot was too. If it had been London UK instead of Chicago they wouldn't have been able to do it... every single square inch of that city is on multiple cameras.",
+            "output": "yes",
+            "explanation": "This is incorrect asnwer. Because there is no negative statement towards anyone."
+        },
+        {
+            "input": "what kind of person steals from a non profit organization who is using that money to save peoples lives?    Um, the same people who explicitly founded and set that non-profit organization up as a way to financially enrich themselves?",
+            "output": "no",
+            "explanation": "This is actually an example of the person directed abuse as the given text shares negative sentiment towards non profit organization. Hence, the answer should \"yes\"."
+        },
+        {
+            "input": "It's a bold move on reddit to admit you don't attend every LGTBQ rally.",
+            "output": "yes",
+            "explanation": "This is incorrect answer. Because this text doesn't have any negative statement."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task108-7173944bf6164be7948708c29ad2fe5a",
+            "input": "Same. At first I thought I just misread it, but then I still had no clue the second time I read it. I tried again and it seemed even more incomprehensible than the first time I read it somehow.",
+            "output": [
+                "no"
+            ]
+        },
+        {
+            "id": "task108-0ea7a4ae6a8744588572d6b672050f3f",
+            "input": "His last words, according to the camera man that pulled him out of the water and tried to keep him alive were \"I'm dying\".",
+            "output": [
+                "no"
+            ]
+        },
+        {
+            "id": "task108-97edf358734047a782dfafa4405deb10",
+            "input": "This is fucking gold.     They keep falling for this shit, it's unbelievable.",
+            "output": [
+                "no"
+            ]
+        },
+        {
+            "id": "task108-00895f63cf9549018c78539610cef078",
+            "input": "You sound upset",
+            "output": [
+                "no"
+            ]
+        },
+        {
+            "id": "task108-3d598fac4adb496f9c252de290a45342",
+            "input": "people get their news from youtube now    get that faux-hip 2005 BS outta here",
+            "output": [
+                "no"
+            ]
+        },
+        {
+            "id": "task108-e79bd6277b684ae2b84007ad1b692399",
+            "input": "I see you haven't heard of the [three-ring shitshow known as Great Awakening.]",
+            "output": [
+                "no"
+            ]
+        },
+        {
+            "id": "task108-43c292aa02fc423c977c01cd6b61663f",
+            "input": "On my instagram feed today, a twitter quote came up basically bashing all the people who've donated to the Notre Dame cathedral, because they didn't instead donate to the particular causes that one person was championing.  I hate this trend of \"reeee\"ing at people who, you know, actually do something nice for their community but didn't do it in the specific way YOU wanted.",
+            "output": [
+                "no"
+            ]
+        },
+        {
+            "id": "task108-63b77972ad2d4b98ae5fc7ae8c1c6fa3",
+            "input": "If I may, I don't think many people understood how many reports that subreddit generated for the mods.  People clicked that report button like a gerbil on crack.  I had some issues to deal with (legit, actual, natural disaster related shit) and I told the other mods I needed a few days off.  So, I missed the build up.  But, I came back to find a mod queue with almost 100 reports needing attention.  I went through about forty of them and noted they were all leg humping related and user-on-user drama...so, I quickly typed up that post telling people how they could be their own superhero and mute people that pissed them off.     In my opinion and experience, we were pretty hands off and used to only get involved if the report was blatantly in violation of the rules.  Because, frankly, the rules were pretty subjective.  Personally, I only ever removed six comments in my tenure as mod.  Most of the time, I just wrote a quick note to the person who was reported and the reporter to say \"hey, guys...as a reminder, please...fill in the blank\".  That worked for months!  Then,  there was this sort of gang mentality that arose and the reports got petty and no one wanted to discuss anything. They just wanted to name and shame and started attacking each other. It was stupid. But, as I said, good luck to anyone modding that forum and I wish them well because it's quite a task.",
+            "output": [
+                "no"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

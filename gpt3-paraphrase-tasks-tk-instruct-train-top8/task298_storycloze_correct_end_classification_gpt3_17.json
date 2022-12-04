@@ -1,0 +1,125 @@
+{
+    "Contributors": [
+        "Mirali Purohit"
+    ],
+    "Source": [
+        "roc_stories"
+    ],
+    "URL": [
+        "https://cs.rochester.edu/nlp/rocstories/"
+    ],
+    "Categories": [
+        "Coherence Classification"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You will be given four sentences of a story written in natural language, and one last sentence (Sentence5). Your task is to determine whether the last sentence completes the story coherently. If it does, output 'Yes'. If it does not, output 'No'."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Story"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Sentence1: Rick grew up in a troubled household. Sentence2: He never found good support in family, and turned to gangs. Sentence3: It wasn't long before Rick got shot in a robbery. Sentence4: The incident caused him to turn a new leaf. \n Sentence5: He is happy now.",
+            "output": "Yes",
+            "explanation": "As mentioned in fourth sentence, the incident turned a new leaf to Rick's life; so, he must be happy now."
+        },
+        {
+            "input": "Sentence1: Laverne needs to prepare something for her friend's party. Sentence2: She decides to bake a batch of brownies. Sentence3: She chooses a recipe and follows it closely. Sentence4: Laverne tests one of the brownies to make sure it is delicious. \n Sentence5: Laverne doesn't go to her friend's party.",
+            "output": "No",
+            "explanation": "As mentioned in the third sentence, Laverne follows the recipe closely; brownies should be delicious and she should not cancel going to her friend's party."
+        },
+        {
+            "input": "Sentence1: Sarah had been dreaming of visiting Europe for years. Sentence2: She had finally saved enough for the trip. Sentence3: She landed in Spain and traveled east across the continent. Sentence4: She didn't like how different everything was. \n Sentence5 Sarah then decided to move to Europe.",
+            "output": "No",
+            "explanation": "As mentioned in fourth sentence, Sarah didn't like that everything was different; Sarah cannot decide to move to Europe."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Sentence1: Rick grew up in a troubled household. Sentence2: He never found good support in family, and turned to gangs. Sentence3: It wasn't long before Rick got shot in a robbery. Sentence4: The incident caused him to turn a new leaf. \n Sentence5: He is happy now.",
+            "output": "No",
+            "explanation": "As mentioned in fourth sentence, the incident turned a new leaf to Rick's life; so, he must be happy now. So, output should be Yes because Sentencce5 properly ends the story"
+        },
+        {
+            "input": "Sentence1: Laverne needs to prepare something for her friend's party. Sentence2: She decides to bake a batch of brownies. Sentence3: She chooses a recipe and follows it closely. Sentence4: Laverne tests one of the brownies to make sure it is delicious. \n Sentence5: Laverne doesn't go to her friend's party.",
+            "output": "False",
+            "explanation": "The answer can only be Yes or No."
+        },
+        {
+            "input": "Sentence1: Sarah had been dreaming of visiting Europe for years. Sentence2: She had finally saved enough for the trip. Sentence3: She landed in Spain and traveled east across the continent. Sentence4: She didn't like how different everything was. \n Sentence5 Sarah then decided to move to Europe.",
+            "output": "Answer can be Sarah returned to the home.",
+            "explanation": "The answer can only be Yes or No."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task298-88672bfd62be4b6b8395f9634831a788",
+            "input": "Sentence1: Priya decided to try a new restaurant. Sentence2: She drove to a new cafe that opened. Sentence3: Priya sat at a booth. Sentence4: She ordered a mimosa and a breakfast burrito. \n Sentence5: Priya decided not to eat and left.",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task298-eedc6ad3ca6e4934ad7179dc8f5d3bb8",
+            "input": "Sentence1: Mark notices that his teeth are beginning to hurt one day. Sentence2: He decides to visit his dentist to see what is the matter. Sentence3: The dentist tells Mark that he needs to have his wisdom teeth removed. Sentence4: Mark agrees to have the surgery done. \n Sentence5: Mark hoped the procedure would stop his dental pain.",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task298-120d77ceef6c45d0b1df874f1119dde8",
+            "input": "Sentence1: Reba worried that she was going to be a killer, like her father. Sentence2: He went to prison for murder. Sentence3: Reba spent her entire life doing good deeds. Sentence4: She became a nun, and comforted orphaned children. \n Sentence5: Reba was just like her dad.",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task298-376d9da307184099b1ff24ebf4545a60",
+            "input": "Sentence1: John was cooking dinner last night. Sentence2: He was making pork chops. Sentence3: Unfortunately, he dropped a pan and burned himself. Sentence4: He had to go to the hospital. \n Sentence5: John had a miserable evening.",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task298-398020ed9f9d4176aa5c775af9c66ac7",
+            "input": "Sentence1: Gina had taken her crying brothers ice cream. Sentence2: Now he was crying because he wanted it back. Sentence3: Gina refused and continued to eat his ice cream. Sentence4: Her mother poked her and made her give it back. \n Sentence5: Gina got in trouble.",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task298-4d9966abd3204f929dfdcabfaa4f88ed",
+            "input": "Sentence1: Jackson had always avoided drinking anything alcoholic. Sentence2: He knew that alcohol was unhealthy and could impair judgement. Sentence3: However, one day Jackson's boss invited him to a bar for a beer. Sentence4: Jackson found that he loved the taste of beer. \n Sentence5: He decided to have two.",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task298-3a7e8a2e90b24edda0d4f128c60d1a07",
+            "input": "Sentence1: John had had a bike since he was 14. Sentence2: John is now in his early 40's. Sentence3: John's son, Carl, just turned ten. Sentence4: Carl showed interest in his dad's bike in the garage. \n Sentence5: Carl decided to throw the old bike away.",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task298-34eb4543b4014aef8bcd90aa56c4304f",
+            "input": "Sentence1: Eric was barely a day over 21. Sentence2: But he already had a drinking problem. Sentence3: Eric woke up and yelped the nearest bar. Sentence4: He hopped in his car half asleep and headed to the place. \n Sentence5: Pretty soon, he was drunk and passed out at the bar.",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

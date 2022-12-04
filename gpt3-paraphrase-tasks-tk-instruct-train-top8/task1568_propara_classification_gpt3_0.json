@@ -1,0 +1,127 @@
+{
+    "Contributors": [
+        "Amrit Bhaskar"
+    ],
+    "Source": [
+        "propara"
+    ],
+    "URL": [
+        "https://arxiv.org/abs/1805.06975"
+    ],
+    "Categories": [
+        "Information Extraction"
+    ],
+    "Reasoning": [
+        "Deductive Reasoning"
+    ],
+    "Definition": [
+        "In this task, you are given a paragraph, an event and an entity. The event is part of the paragraph and it changes the state of the entity. Your task is to classify the state of the entity into three classes: 1) not exist, 2) unknown location and 3) known location. \"Not exist\" means the entity doesn't exist in that state anymore. \"Unknown location\" means the entity exists in that state but location is unknown. \"Known location\" means the entity exists and location is known."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Natural Science"
+    ],
+    "Positive Examples": [
+        {
+            "input": " \"process paragraph : Magma rises from deep in the earth. The magma goes into volcanos. The volcanos pressure the magma upwards. The pressure causes the magma to push through the surface of the volcano. The lava cools. The lava forms new rock. New magma is pressured to the surface of the volcano. The volcano bursts through the rock the formed after the last eruption\" , \"event : Magma rises from deep in the earth\" , \"entity : magma\" ",
+            "output": "known location",
+            "explanation": "The process paragraph explains in steps about - the cause for volcano eruption. The event is a part of the process paragraph given. The entity lies both in process paragraph and the event. So, this is a good example."
+        },
+        {
+            "input": " \"process paragraph : Water from the ocean washes onto beaches in waves. The waves contain sediment from the ocean. The water and particles in it hit rocks and sand on the beach. The wind and current sometimes push the water and particles harder. Tiny parts of the rocks on the shore come off the larger rocks. The waves pick up sand and small rocks from the beach. The waves go back out into the ocean. The waves carry the new particles with them. Rocks and the beach look a little different. \", \"event : The waves go back out into the ocean. \", \"entity : waves\" ",
+            "output": " known location ",
+            "explanation": "The process paragraph explains in steps about - the sequence of events during erosion by the ocean. The event is a part of the process paragraph given. The entity lies both in process paragraph and the event. So, this is a good example."
+        },
+        {
+            "input": " \"process paragraph : Water from oceans, lakes, swamps, rivers, and plants turns into water vapor. Water vapor condenses into millions of tiny droplets that form clouds. Clouds lose these droplets through rain or snow, also caused precipitation. Precipitation is either absorbed into the ground or runs off into rivers. Water that was absorbed into the ground is taken up by plants. Plants lose water from their surfaces as vapor. The vapor goes back into the atmosphere. Water that runs off into rivers flows into ponds, lakes, or oceans. The water evaporates back into the atmosphere. \", \"event : Water from oceans, lakes, swamps, rivers, and plants turns into water vapor. \", \"entity : water\" ",
+            "output": " not exist ",
+            "explanation": "The process paragraph explains in steps about - the sequence of events during water cycle. The event is a part of the process paragraph given. The entity lies both in process paragraph and the event. So, this is a good example."
+        },
+        {
+            "input": " \"process paragraph : Sediment settles in a place due to gravity. The sediment breaks down into small particles. Wind or water picks up the sediment. The sediment travels along the same route as the wind or water. The sediment is deposited at new locations by the wind or water. The sediment is picked up again by new wind or water. The sediment travels further. The sediment is deposited again in a new place. \", \"event : The sediment is picked up again by new wind or water. \", \"entity : sediment; small particles\" ",
+            "output": " unknown location ",
+            "explanation": "The process paragraph explains in steps about - the sequence of events during sediment transportation across the earth. The event is a part of the process paragraph given. The entity lies both in process paragraph and the event. So, this is a good example."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": " \"process paragraph : Water from oceans, lakes, swamps, rivers, and plants turns into water vapor. Water vapor condenses into millions of tiny droplets that form clouds. Clouds lose these droplets through rain or snow, also caused precipitation. Precipitation is either absorbed into the ground or runs off into rivers. Water that was absorbed into the ground is taken up by plants. Plants lose water from their surfaces as vapor. The vapor goes back into the atmosphere. Water that runs off into rivers flows into ponds, lakes, or oceans. The water evaporates back into the atmosphere. \", \"event : Water from oceans, lakes, swamps, rivers, and plants turns into water vapor. \", \"entity : water\" ",
+            "output": " known location ",
+            "explanation": "This is a bad example because the output class is incorrect. Water in this event has turned into water vapor and is longer in the form of water. The existence is necessary to find the location. "
+        },
+        {
+            "input": " \"process paragraph : Magma rises to the surface during a volcano. The magma undergoes changes in temperature. The magma undergoes changes in pressure. The magma cools. The magma solidifies. The magma crystallizes. Igneous rock is formed. \", \"event : Magma rises to the surface during a volcano. \", \"entity : magma\" ",
+            "output": " unknown location ",
+            "explanation": "This is a bad example because the output class is incorrect. Magma in this event has risen to the surface and is considered a known location. Only classify to unknown location when the place of entity is not determined. "
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1568-94cf752764be47fc80909e8b1e44a380",
+            "input": " \"process paragraph : : An isotope has too many protons. The isotope is unstable. The isotope emits radiation. The isotope decays. The isotope loses some atomic particles. The isotope turns into a different element. The isotope is finished decaying and emitting radiation. \", \"event : The isotope is unstable.\", \"entity : isotope\" ",
+            "output": [
+                " unknown location "
+            ]
+        },
+        {
+            "id": "task1568-a8115485e3814a04ab045bf1ebfbfd88",
+            "input": " \"process paragraph : : Blood filled with waste flows into the kidneys. The kidneys are made up of filtering units called nephrons. The nephrons in the kidneys filter the blood. Produce urine. The urine leaves the kidneys. The cleaned blood goes back into the body. \", \"event : The kidneys are made up of filtering units called nephrons.\", \"entity : blood\" ",
+            "output": [
+                " known location "
+            ]
+        },
+        {
+            "id": "task1568-f5519d6f5a23400b9024e4c4c18ea9be",
+            "input": " \"process paragraph : : Water vapor gets into the atmosphere through a process called evaporation. This then turns the water that is at the top of oceans, rivers and lakes into water vapor in the atmosphere using energy from the sun. The water vapor rises in the atmosphere and there it cools down. Water vapor rises in the atmosphere and there it cools down and forms tiny water droplets through something called condensation. These then turn into clouds. When they all combine together, they grow bigger and are too heavy to stay up there in the air. This is when they will fall to the ground as rain, or maybe snow or hail by gravity. \", \"event : This then turns the water that is at the top of oceans, rivers and lakes into water vapor in the atmosphere using energy from the sun.\", \"entity : water\" ",
+            "output": [
+                " not exist "
+            ]
+        },
+        {
+            "id": "task1568-3638d643b0fd4c6392416663b45e60f3",
+            "input": " \"process paragraph : : You pack up your car with food, tents, sleeping bags, etc. Drive to your camping spot. Put up your tent. Hide your food from bears. Make a campfire. Roast marshmellows. Go to sleep in the tent. Wake up and enjoy nature. \", \"event : Drive to your camping spot.\", \"entity : food\" ",
+            "output": [
+                " known location "
+            ]
+        },
+        {
+            "id": "task1568-2ee1105540f24a449c4e488d2c67336d",
+            "input": " \"process paragraph : : Fuel produces heat. Water is boiled to make steam. Steam spins turbine. Generator is turned. Makes electricity. Electricity transfers to transformers. Produces the correct voltage. \", \"event : Water is boiled to make steam.\", \"entity : fuel\" ",
+            "output": [
+                " not exist "
+            ]
+        },
+        {
+            "id": "task1568-e9e320a30d6842f091cd4a1b40b26b31",
+            "input": " \"process paragraph : : A tadpole is hatched. The tadpole eventually grows hind legs. The tadpole loses its tail. The tadpole becomes a frog. The frog mates with another frog to produce more offspring. A tadpole is hatched. The cycle begins again. \", \"event : The tadpole eventually grows hind legs.\", \"entity : tadpole\" ",
+            "output": [
+                " unknown location "
+            ]
+        },
+        {
+            "id": "task1568-d62c28665f3a49da95364657caa3423e",
+            "input": " \"process paragraph : : The nuclei of some atoms have too few or too many neutrons. The atoms become unstable. The atoms split. In alpha decay, two protons and two neutrons are released from the atom. In beta decay, a neutron changes into a proton and an electron. The proton joins the nucleus of the atom. The electron is released. \", \"event : The atoms become unstable.\", \"entity : atoms\" ",
+            "output": [
+                " unknown location "
+            ]
+        },
+        {
+            "id": "task1568-6361706a04f04d46815239a673f6db96",
+            "input": " \"process paragraph : : An animal lives a happy life. The animal gets very old. The animal dies. The animal's skeleton sinks to the bottom of an ocean. The skeleton is buried by mud. More sand and mud fall on the skeleton. Pressure increases on the skeleton from the weight of more mud. The sand and mud turn into rock. The skeleton dissolves in the water. A hole is preserved in rock that is the shape of the skeleton. \", \"event : The animal gets very old.\", \"entity : animal\" ",
+            "output": [
+                " unknown location "
+            ]
+        }
+    ],
+    "Instance License": [
+        "Apache 2.0"
+    ]
+}

@@ -1,0 +1,113 @@
+{
+    "Contributors": [
+        "Neeraj Varshney"
+    ],
+    "Source": [
+        "timetravel"
+    ],
+    "URL": [
+        "https://github.com/qkaren/Counterfactual-StoryRW"
+    ],
+    "Categories": [
+        "Coherence Classification"
+    ],
+    "Reasoning": [
+        "Temporal Reasoning",
+        "Commonsense Reasoning"
+    ],
+    "Definition": [
+        "In this task, you are given a short story consisting of exactly 5 sentences, with the second sentence missing. You are given two options to fill in the missing sentence, and you need to select the option that best connects the first sentence with the rest of the story. Indicate your answer by 'Option 1' if the first option is correct, otherwise 'Option 2'. The incorrect option will change the subsequent storyline, so that at least one of the three subsequent sentences is no longer consistent with the story."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Commonsense -> Stories"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Sentence 1: The cashier was counting the dollar bills at her desk. \n Sentence 3: Everyone panicked and started to scream. \n  Sentence 4: The men threatened the people to remain quiet. \n Sentence 5: The cashier handed them the cash so they would go away.  \n Option 1:  Two men rushed into the store and held their guns up. \n Option 2: Two dogs rushed into the store.",
+            "output": "Option 1",
+            "explanation": "Option 1 forms a consistent story with the given four sentences. In constrast, Option 2 is incorrect as the entty 'two dogs' is not consistent with 'men' mentioned in Sentence 4."
+        },
+        {
+            "input": "Sentence 1: The cashier was counting the dollar bills at her desk. \n Sentence 3: Everyone panicked and started to scream. \n  Sentence 4: The men threatened the people to remain quiet. \n Sentence 5: The cashier handed them the cash so they would go away.  \n Option 1:  Three men rushed into the store and held their guns up. \n Option 2: Two men rushed into the hospital.",
+            "output": "Option 1",
+            "explanation": "Option 1 forms a consistent story with the given four sentences. In constrast, Option 2 is incorrect as it is not consisitent with sentence 1 ('store cashier' vs 'hospital')."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Sentence 1: The cashier was counting the dollar bills at her desk. \n Sentence 3: Everyone panicked and started to scream. \n  Sentence 4: The men threatened the people to remain quiet. \n Sentence 5: The cashier handed them the cash so they would go away.  \n Option 1:  Two men rushed into the store and held their guns up. \n Option 2: Two dogs rushed into the store.",
+            "output": "Two men rushed into the store and held their guns up.",
+            "explanation": "The selected option is correct but it outputed the entire option text instead of its label i.e 'Option 1'."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task065-9fe874bba94e411ba376b611bf52fdf6",
+            "input": "Sentence 1: One Monday afternoon at school all the students were escorted outside. \n Sentence 3: Turns out there was a bomb threat at the school \n Sentence 4:  We were all panicking because we never had this happen before \n Sentence 5:  Turns out it was just a bad prank \n Option 1: We have plan an  idea what was going on. \n Option 2: We have no idea what was going on.",
+            "output": [
+                "Option 2"
+            ]
+        },
+        {
+            "id": "task065-fad14d196e6c4bd5ac835984b1902cf0",
+            "input": "Sentence 1: The once loved museum was dilapidated. \n Sentence 3: A wealthy man purchased the building \n Sentence 4:  The museum was completely renovated and remodelled \n Sentence 5:  A year later it was filled with happy visitors \n Option 1: The windows were broken and mice moved in. \n Option 2: The city demolished the building to make room for a new parking garage.",
+            "output": [
+                "Option 1"
+            ]
+        },
+        {
+            "id": "task065-b609f2f7becf4a16b9f1e50d815147e0",
+            "input": "Sentence 1: Marcus decided he wanted to get a pet. \n Sentence 3: One day he decided to adopt a kitten \n Sentence 4:  He took the kitten home and poured it a bowl of milk \n Sentence 5:  Marcus was very happy to have adopted a kitten \n Option 1: He knew he wouldn't get any cats because he was allergic. \n Option 2: He had always liked kittens but never had one of his own.",
+            "output": [
+                "Option 2"
+            ]
+        },
+        {
+            "id": "task065-7e403f159c5c45a0b0b4cd92ae2accff",
+            "input": "Sentence 1: Bradley was walking through the snow with his friend. \n Sentence 3: His friend fell into the snow and seemed very mad \n Sentence 4:  Suddenly he began throwing snow at Bradley \n Sentence 5:  An all out snow war ensued and the two stayed outside for hours \n Option 1: They were half-heartedly arguing when he shoved his friend. \n Option 2: They were half-heartedly arguing when he shoved his friend and the friend instantly went into a coma.",
+            "output": [
+                "Option 1"
+            ]
+        },
+        {
+            "id": "task065-aefd0ce3efe94386a35c6a03105c4f92",
+            "input": "Sentence 1: Leslie wanted to make a wonderful meal for her anniversary. \n Sentence 3: They had no spaghetti sauce, and Leslie hurried to the store \n Sentence 4:  She got the sauce quickly, and had the meal ready just in time \n Sentence 5:  Leslie and her husband had a lovely dinner together \n Option 1: She decided to make spaghetti, which was her husband's favorite. \n Option 2: She had everything she needed to make spaghetti, which was her husband's favorite.",
+            "output": [
+                "Option 1"
+            ]
+        },
+        {
+            "id": "task065-8138100d46e245139d1de1af84621ac1",
+            "input": "Sentence 1: My neighbor saw something moving in the grass in his yard. \n Sentence 3: He knew it was harmless and was afraid someone would kill it \n Sentence 4:  He used a large garbage can to scoop the snake up \n Sentence 5:  He then carried it into the nearby woods and safely released it \n Option 1: It was a large rat snake, about four feet long! \n Option 2: It was just the wind.",
+            "output": [
+                "Option 1"
+            ]
+        },
+        {
+            "id": "task065-363bbfe141f746ed84eaffa93c1b0d47",
+            "input": "Sentence 1: It was a nice day, until I had to go outside and mow the lawn. \n Sentence 3: For some reason during spring time I have the worse allergies \n Sentence 4:  I could barely breathe during this time of the year \n Sentence 5:  Luckily I was able to mow the lawn fast \n Option 1: I didn't mind mowing the lawn, but it was spring. \n Option 2: I didn't mind mowing the lawn, but it was fall.",
+            "output": [
+                "Option 1"
+            ]
+        },
+        {
+            "id": "task065-f16141f1324e460d97e09f4aa69e94c5",
+            "input": "Sentence 1: We took the kids to Jellystone campground. \n Sentence 3: At night they had a hayride \n Sentence 4:  The characters were on it to greet the kids \n Sentence 5:  We loved it and want to go back \n Option 1: They couldn't stand playing in the pool and playground. \n Option 2: They loved playing in the pool and playground.",
+            "output": [
+                "Option 2"
+            ]
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

@@ -1,0 +1,116 @@
+{
+    "Contributors": [
+        "Divya Reddy Katpally"
+    ],
+    "Source": [
+        "dbpedia_14"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/dbpedia_14"
+    ],
+    "Categories": [
+        "Text Matching"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "In this task, you're given a text (the body of a document) and a title (the title of the document). The title might have some text in parentheses, for example: \"HMS Mallow (K81)\", or be slightly different from what is present in the text. If they still refer to the same entity, then it is a correct title. Indicate your answer as \"Yes\" if the title is correct, otherwise indicate your answer as \"No\"."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Wikipedia"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Text: The Mansfield Building Society is a UK building society which has its headquarters in Mansfield Nottinghamshire. It is a member of the Building Societies Association. \nTitle: Mansfield Building Society",
+            "output": "Yes",
+            "explanation": "The title \"Mansfield Building Society\" is present in the text and it is the main entity that is referred in the text. Hence, it is the title of the document."
+        },
+        {
+            "input": "Text:  The third and current HMS Argyll is a Type 23 'Duke' Class frigate. She is currently the oldest serving Type 23 frigate in the Royal Navy. Like all of her class she is named for a British dukedom in this case that of Argyll. \nTitle: HMS Argyll (F231)",
+            "output": "Yes",
+            "explanation": "\"HMS Argyll\" is present in the text and it is the main entity that is referred in the text. Here, the text in parentheses \"F31\" is not present in the document and it can be ignored. Hence, the output is correct. "
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Text: The Mansfield Building Society is a UK building society which has its headquarters in Mansfield Nottinghamshire. It is a member of the Building Societies Association. \nTitle: Mansfield Building Society",
+            "output": "No",
+            "explanation": "The title \"Mansfield Building Society\" is present in the text and it is the main entity that is referred in the text. Hence, the output is incorrect."
+        },
+        {
+            "input": "Text:  The third and current HMS Argyll is a Type 23 'Duke' Class frigate. She is currently the oldest serving Type 23 frigate in the Royal Navy. Like all of her class she is named for a British dukedom in this case that of Argyll. \nTitle: HMS Argyll (F231)",
+            "output": "HMS Argyll",
+            "explanation": "The output should be either \"Yes\" or \"No\". Hence, it is negative example."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task630-27ec8791f70b4bf19aa639f44f4a5cd9",
+            "input": "Text:  Vadim Olegovich Yakimov (Russian: \u0412\u0430\u0434\u0438\u043c \u041e\u043b\u0435\u0433\u043e\u0432\u0438\u0447 \u042f\u043a\u0438\u043c\u043e\u0432; born July 26 1990) is a Russian professional football player. In 2009 he played in the Russian Second Division for FC Krasnodar-2000. \nTitle: Vadim Yakimov",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task630-48a7cfe287e44e0da977a078281af95f",
+            "input": "Text:  MeteorCity Records is an American record label based in Idaho. MeteorCity was founded in 1997 by Jadd Shickler and Aaron Emmel in Albuquerque New Mexico. With the release of its compilation album Welcome to MeteorCity showcasing young unsigned Kyuss-like bands MeteorCity helped launch the stoner rock genre and many of the genre's first bands plus side projects from members of well-known bands including The Atomic Bitchwax and Hermano. \nTitle: Kolahoi Peak",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task630-254cb933a07f41718e92deb9193d22c3",
+            "input": "Text:  Dark at the End of the Tunnel is the sixth studio album by Oingo Boingo released in 1990. It is the first collection of all new material released by the band since their 1987 album Boi-ngo. Although the band's ska and new wave elements remain in songs such as Run Away and Flesh 'N Blood the album marks Oingo Boingo's move towards alternative rock.The cover art of the album is from a painting titled Volcano by artist Peter Zokosky. \nTitle: Early Abstractions",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task630-d311fbfadc314b318f7d71f9d46aa951",
+            "input": "Text:  Rhopalus subrufus is a species of scentless plant bugs belonging to the family Rhopalidae subfamily Rhopalinae.Length is about 7 mm. It can be distinguished for its membranous forewings and the connexivum with dark and light stripes.It mainly feeds on Hypericum species but also on many other plants.It is found in most of Europe. \nTitle: Koilaragatti",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task630-6ef94d0a30ba40b6840ffc1b4ae60f19",
+            "input": "Text:  Martin Luther Smyser (April 3 1851 \u2013 May 6 1908) was a U.S. Representative from Ohio.Born on a farm in Plain Township Wayne County Ohio Smyser attended the common schools and was graduated from Wittenberg College Springfield Ohio in 1870.He studied law at Wooster under Lyman R. Critchfield.He was admitted to the bar in 1872 and practiced in Wooster.In 1873 he entered into partnership with Addison S. \nTitle: Martin L. Smyser",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task630-18e34ce93d584a1f98e5860fb0c73008",
+            "input": "Text:  Golf Mill Shopping Center is a super-regional shopping mall located on 239 Golf Mill Center in Niles IL United States. The mall has a gross leasable area of 1057000square feet (98200 m\u00b2). It is managed by Milwaukee Golf Management Corporation. It borders the intersections of Golf Road (Illinois Route 58) Milwaukee Avenue (Illinois Route 21) and Greenwood Avenue. The mall has a mixture of 120 specialty shops and five department stores including Sears and Target as anchors. \nTitle: A\u015fa\u011f\u0131kurudere Emirda\u011f",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task630-ff64df8fd83245d6940561fcc06826f8",
+            "input": "Text:  The Biruin\u021ba River is a tributary of the Black Sea Lake Techirghiol in Romania. \nTitle: Biruin\u021ba River",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task630-daed22a54fb141dcb12a6de93f613a49",
+            "input": "Text:  Astragalus miguelensis is a rare species of milkvetch known by the common name San Miguel milkvetch. It is endemic to five of the eight Channel Islands of California. This is a mat-forming perennial herb growing in wide thick patches on rocky seaside bluffs and beaches. The abundant leaves are up to 12 centimeters long and are made up of many woolly oval-shaped leaflets. The inflorescence bears up to 30 white to yellowish flowers each between one and two centimeters long. \nTitle: Astragalus miguelensis",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY-SA",
+        "GNU Free Documentation 2.0"
+    ]
+}

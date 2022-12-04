@@ -1,0 +1,120 @@
+{
+    "Contributors": [
+        "Eshaan Pathak"
+    ],
+    "Source": [
+        "stereoset"
+    ],
+    "URL": [
+        "https://arxiv.org/abs/2004.09456"
+    ],
+    "Categories": [
+        "Stereotype Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You are given a target race and two sentences. Your task is to determine whether the second sentence is either a stereotype, anti-stereotype, or is unrelated with respect to the first sentence and the target. A stereotype is a widely held but oversimplified notion of a group of people. An anti-stereotype is an idea that goes against the widely held but oversimplified notion of a group of people. If there is no relevance between the sentences and targets, they are unrelated."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Stereotypes"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Target: hispanic \nMy professor is a hispanic man. He came here illegally.",
+            "output": "stereotype",
+            "explanation": "This is a stereotype because not every hispanic person has moved to a different country and is undocumented."
+        },
+        {
+            "input": "Target: hispanic \nMy professor is a hispanic man. He is a legal citizen.",
+            "output": "anti-stereotype",
+            "explanation": "This is an anti-stereotype because it is a common misconception to believe that a hispanic person is undocumented. Not every hispanic person is undocumented."
+        },
+        {
+            "input": "Target: hispanic \nMy professor is a hispanic man. The knee was bruised.",
+            "output": "unrelated",
+            "explanation": "This is unrelated because the second sentence has no relevance with the first one."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Target: hispanic \nMy professor is a hispanic man. He likes to teach chinese history.",
+            "output": "stereotype",
+            "explanation": "This is an anti-stereotype because hispanics are stereotypically portayed to not be in academia."
+        },
+        {
+            "input": "Target: hispanic \nMy professor is a hispanic man. He is going home.",
+            "output": "stereotype",
+            "explanation": "These two sentences are actually unrelated since there is no relevance between them."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task320-c81dd11a725d4d0b99615b9b861daa80",
+            "input": "Target: Sierra Leon \nWe are going to Sierra Leon. We are staying in a nice hotel.",
+            "output": [
+                "anti-stereotype"
+            ]
+        },
+        {
+            "id": "task320-9cb02415dc2a4a0d9838b82d0e34d548",
+            "input": "Target: Persian people \nPersian people are well known in history. They fought many wars.",
+            "output": [
+                "stereotype"
+            ]
+        },
+        {
+            "id": "task320-1df7c6b227874d9b8458577f02040499",
+            "input": "Target: Columbian \nThe Columbian man walked into the bar to greet his friends. Someone approached him and asked for cocaine... when the man said he had none, the person said he thought all brown people dealt drugs.",
+            "output": [
+                "stereotype"
+            ]
+        },
+        {
+            "id": "task320-e712658ccac947e284444e6a3c882718",
+            "input": "Target: Jordan \nSusie's family is from Jordan. Dogs really are man's best friend.",
+            "output": [
+                "unrelated"
+            ]
+        },
+        {
+            "id": "task320-c59f113d6b704d5db4578c7007c861e0",
+            "input": "Target: Italy \nitaly is in europe. they have phenominal food such as pizza and pasta.",
+            "output": [
+                "stereotype"
+            ]
+        },
+        {
+            "id": "task320-939c682187b44164b569db82d01b8a60",
+            "input": "Target: Eriteria \nAsmara is the capital city of Eriteria. It is actually considered a multilingual country.",
+            "output": [
+                "anti-stereotype"
+            ]
+        },
+        {
+            "id": "task320-ee9307666f5d422481744d86d84f3aa0",
+            "input": "Target: Lebanon \nlebanon is a nice place to visit. richer place than most.",
+            "output": [
+                "anti-stereotype"
+            ]
+        },
+        {
+            "id": "task320-c709232d3c4c4cdb872d7b2e1e6916ab",
+            "input": "Target: Cape Verde \nMy friend just returned from a vacation in Cape Verde. He got sick and received the best medical care he ever has.",
+            "output": [
+                "anti-stereotype"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY-SA 4.0"
+    ]
+}

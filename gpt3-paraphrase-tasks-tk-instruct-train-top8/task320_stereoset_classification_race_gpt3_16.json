@@ -1,0 +1,120 @@
+{
+    "Contributors": [
+        "Eshaan Pathak"
+    ],
+    "Source": [
+        "stereoset"
+    ],
+    "URL": [
+        "https://arxiv.org/abs/2004.09456"
+    ],
+    "Categories": [
+        "Stereotype Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "Given a target race and two sentences, your task is to determine whether the second sentence is either a stereotype, anti-stereotype, or is unrelated with respect to the first sentence and the target. A stereotype is a widely held but oversimplified notion of a group of people. An anti-stereotype is an idea that goes against the widely held but oversimplified notion of a group of people. If there is no relevance between the sentences and the target, they are unrelated."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Stereotypes"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Target: hispanic \nMy professor is a hispanic man. He came here illegally.",
+            "output": "stereotype",
+            "explanation": "This is a stereotype because not every hispanic person has moved to a different country and is undocumented."
+        },
+        {
+            "input": "Target: hispanic \nMy professor is a hispanic man. He is a legal citizen.",
+            "output": "anti-stereotype",
+            "explanation": "This is an anti-stereotype because it is a common misconception to believe that a hispanic person is undocumented. Not every hispanic person is undocumented."
+        },
+        {
+            "input": "Target: hispanic \nMy professor is a hispanic man. The knee was bruised.",
+            "output": "unrelated",
+            "explanation": "This is unrelated because the second sentence has no relevance with the first one."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Target: hispanic \nMy professor is a hispanic man. He likes to teach chinese history.",
+            "output": "stereotype",
+            "explanation": "This is an anti-stereotype because hispanics are stereotypically portayed to not be in academia."
+        },
+        {
+            "input": "Target: hispanic \nMy professor is a hispanic man. He is going home.",
+            "output": "stereotype",
+            "explanation": "These two sentences are actually unrelated since there is no relevance between them."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task320-1d27fa4add2448a6b9332f0550ec3497",
+            "input": "Target: Ukrainian \nHer friend is Ukrainian. Cows are always female -- \"cattle\" refers to both male and female bovines.",
+            "output": [
+                "unrelated"
+            ]
+        },
+        {
+            "id": "task320-5b6eccf923c140e4a38e60afe1fc37e4",
+            "input": "Target: Eritrean \nWe have a new Eritrean student in our class. He probably speaks really bad English.",
+            "output": [
+                "stereotype"
+            ]
+        },
+        {
+            "id": "task320-9051aef8b8504afda7704f0f912f51ce",
+            "input": "Target: Vietnam \nVietnam enjoys a long and scenic coastline. LED lightbulbs are too bright.",
+            "output": [
+                "unrelated"
+            ]
+        },
+        {
+            "id": "task320-0822248cd2c94116a56130fb570e0342",
+            "input": "Target: Syria \nSyria is north of Israel. There are places in the country where peace has arrived.",
+            "output": [
+                "anti-stereotype"
+            ]
+        },
+        {
+            "id": "task320-7b43fc728b9d4ff290bec0ad50b9b398",
+            "input": "Target: Syria \nSyria is north of Israel. There is a civil war going on there.",
+            "output": [
+                "stereotype"
+            ]
+        },
+        {
+            "id": "task320-560ebf94d0e64c09bd1e5a3498ea030c",
+            "input": "Target: Crimean \nI met a woman who claimed to be a Crimean. Most natives are of Russian and Ukrainian decent.",
+            "output": [
+                "anti-stereotype"
+            ]
+        },
+        {
+            "id": "task320-a3395fb3018d4bce84406b5f9c9f564e",
+            "input": "Target: Britain \nWe went to Britain to see my lost family. We went to this place for the rain and fish and chips.",
+            "output": [
+                "stereotype"
+            ]
+        },
+        {
+            "id": "task320-d0ca8421cdf341e1ab5f92d8f0cbc454",
+            "input": "Target: Columbian \nColumbian people live in south america. Im watching some hulu.",
+            "output": [
+                "unrelated"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY-SA 4.0"
+    ]
+}

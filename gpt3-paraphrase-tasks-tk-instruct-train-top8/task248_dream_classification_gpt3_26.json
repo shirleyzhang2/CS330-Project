@@ -1,0 +1,123 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "dream"
+    ],
+    "URL": [
+        "https://github.com/nlpdata/dream"
+    ],
+    "Categories": [
+        "Question Understanding"
+    ],
+    "Reasoning": [
+        "Reasoning on Social Interactions"
+    ],
+    "Definition": [
+        "In this task, you will be shown a conversation and a question. Your task is to categorize the question into one or more of the following groups: matching, summary, logic, arithmetic, and commonsense. Matching questions are entailed or paraphrased by exactly one sentence in the dialogue, and the answer can be extracted from that sentence. Questions that cannot be answered by the surface meaning of a single sentence belong in the reasoning category. Summary questions require an understanding of the whole dialogue, including the topic of the dialogue and the relationship between the speakers. Logical questions require logical reasoning to answer. Arithmetic questions require knowledge of arithmetic to answer. Commonsense questions require additional knowledge that is not provided by the dialogue. Note that a question can be in more than one group."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue",
+        "Natural Science -> School Science Textbooks"
+    ],
+    "Positive Examples": [
+        {
+            "input": "W: The movie next Tuesday has been cancelled due to lack of interest. M: What do you mean? W: Well, by last night only a few tickets has been sold., Question: What can we conclude about the movie? (A) They want to buy the tickets for the movie. (B) The tickets for the movie were sold. (C) The movie will not be shown.",
+            "output": "commonsense",
+            "explanation": "This is a good example. To answer this question we require commonsense knowledge that cannot be obtained from the dialogue. So, this is a commonsense question."
+        },
+        {
+            "input": "W: What does the term \"alternative energy source\" mean? M: When we think of energy or fuel for our homes and cars, we think of petroleum, a fossil fuel processed from oil removed from the ground, of which there is a limited supply. But alternative fuels can be many things. Wind, sun and water can all be used to create fuel. W: Is the threat of running out of petroleum real? M: It has taken thousands of years to create the natural stores of petroleum we have available at a much faster rate than it is being produced over time. The real controversy surrounding the amount of petroleum we have is how much we need to keep in reserve for future use. Most experts agree that by around 2025, the amount of petroleum we use will reach a peak. Then production and availability will begin to seriously decline. This is not to say there will be no petroleum at this point. But it'll become very difficult and therefore expensive to extract. W: Is that the most important reason to develop alternative fuel and energy sources? M: There are two very clear reasons to do so. One is that whether we have 60 or 600 years of fossil fuels left, we have to find other fuel sources eventually. So the sooner we start, the better off we will be. The other big argument is that when long time, which leads to some long-term negative effects, like global warming and the greenhouse effect., Question: What do we usually refer to when we talk about energy according to the man? (A) Coal burnt daily for the comfort of our homes. (B) Anything that can be used to produce power. (C) Fuel refined from oil extracted from underground.",
+            "output": "matching",
+            "explanation": "The first sentence of the man can answer this question. So, it's a matching question."
+        },
+        {
+            "input": "M: What do you think of my new sweater? W: Well, it looks nice, but why don't you put it on, and then I'll tell you if it suits you? M: Okay. You know, I tried on about twenty at the shop, and this one isn't really what I wanted. I especially can't stand the high neck. W: Why did you buy it then? M: The salesman sold it to me before I realized what had happened. He just never stopped talking about the latest fashions and special reduced prices. Before I could say anything he'd wrapped it up and I realized that I'd paid him. W: Well, it doesn't look too bad. I think it looks good on you. M: But I went out to get a blue sweater to match my black trousers-something with a V-neck, short sleeves and pattern-and I came home with a brown sweater with a high neck, long sleeves and no pattern. W: You've got to learn to stand up to these high-pressure salesmen. They will sell you all sorts of things you don't want if you don't watch out. M: Next time I'll send my wife. She would probably sell something to the salesman. W: That's a good idea. Actually women are much better at shopping than men. Whenever my husband and I buy something important, I always have the finalsay. M: I must admit that women are better at shopping. I should simply leave the whole business to them., Question: Why did the man buy a sweater that he doesn't like? (A) He was pushed by the salesman (B) It was sold at a low price (C) It is the latest fashion.",
+            "output": "logic",
+            "explanation": "To answer this question we need logical reasoning. In the dialogues, they talk about high-pressure salesmen. So by logical reasoning, we could understand that he was pushed by the salesman."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "W: What does the term \"alternative energy source\" mean? M: When we think of energy or fuel for our homes and cars, we think of petroleum, a fossil fuel processed from oil removed from the ground, of which there is a limited supply. But alternative fuels can be many things. Wind, sun and water can all be used to create fuel. W: Is the threat of running out of petroleum real? M: It has taken thousands of years to create the natural stores of petroleum we have available at a much faster rate than it is being produced over time. The real controversy surrounding the amount of petroleum we have is how much we need to keep in reserve for future use. Most experts agree that by around 2025, the amount of petroleum we use will reach a peak. Then production and availability will begin to seriously decline. This is not to say there will be no petroleum at this point. But it'll become very difficult and therefore expensive to extract. W: Is that the most important reason to develop alternative fuel and energy sources? M: There are two very clear reasons to do so. One is that whether we have 60 or 600 years of fossil fuels left, we have to find other fuel sources eventually. So the sooner we start, the better off we will be. The other big argument is that when long time, which leads to some long-term negative effects, like global warming and the greenhouse effect., Question: What do most experts agree on according to the man? (A) Oil will soon be replaced by alternative energy sources. (B) Oil production will begin to decline worldwide by 2025. (C) Oil consumption has given rise to many global problems.",
+            "output": "arithmetic",
+            "explanation": "We don't need arithmetic knowledge to answer this question. It's incorrect. This is a matching question."
+        },
+        {
+            "input": "M: Finally, I've got the chance to put on my new suit tonight. I hope to make a good impression on your family. W: Come on! It's only a family reunion. So jeans and T-shirts are just fine., Question: What does the woman mean? (A) The man has left a good impression on her family. (B) The man can dress casually for the occasion. (C) The man should buy himself a new suit.",
+            "output": "matching",
+            "explanation": "The answer to this question cannot be extracted from the context. We need commonsense knowledge to understand wearing jeans and T-shirts means dressing casually. This is a commonsense question."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task248-7e154ecc6db941c086c8f246db4c8b77",
+            "input": "M: Could you give me some information on your European tours? W: Our pleasure. We have several package tours you may choose, from ten days to three weeks in Europe. M: I would be interested in a ten-day trip around Christmas time. W: I have one ten-day tour that is still available. It will depart from New York on December 24. M: What is the cost? W: The price for one person for a ten-day tour is only $1,088, which includes round-trip airfare. M: That sounds reasonable. By the way, do you have a discount for two? W: Yes, you can have a 10% discount., Question: If the man and his wife go on the recommended package tour, how much should they pay? (A) $1,088. (B) $1,958. (C) $2,176.",
+            "output": [
+                "arithmetic"
+            ]
+        },
+        {
+            "id": "task248-3bc58fbe498b494c9b97f291ff262621",
+            "input": "Man: Let me see now. Which train do I need to get on? Woman: Excuse me. Do you need any help? Man: Yes, I want to go to Tokyo Tower, but I'm really lost. This is my first visit to Japan, so I have no idea on how to ride the trains. Woman: First, you need to buy a ticket to your destination. [Um-HUH] From here, it's a hundred and thirty yen. Man: A hundred thirty yen. Okay. Woman: Then, get on the Hibiya Subway Line at platform number 4. Man: Number 4, alright. Oh, and how often do the trains come around this time of day? Woman: Usually, they come about every six minutes or so. Man: Alright. And where do I get off the train. Woman: Get off at Kamiyacho Station, three stops from here. The sign at the station is written in English, so you'll be able to read it. Man: Three stops. Got it. Thanks for your help. Woman: No problem. Good luck., Question: How often do the trains come? (A) about every five minutes (B) about every six minutes (C) about every seven minutes",
+            "output": [
+                "logic"
+            ]
+        },
+        {
+            "id": "task248-973a350e95ec4deaa86e22c6d269a6e7",
+            "input": "M: Excuse me, were you talking to me just now? W: Yes, sir. You forgot your change., Question: Where are they talking? (A) At home (B) In a school (C) In a shop",
+            "output": [
+                "commonsense"
+            ]
+        },
+        {
+            "id": "task248-72536b586c154206a05894e7eead0ccc",
+            "input": "M: What's the distance from here to the city? W: It's about 25.5 kilometers., Question: How far is it from here to the city? (A) 20 kilometers. (B) 20.5 kilometers. (C) 25.5 kilometers.",
+            "output": [
+                "logic"
+            ]
+        },
+        {
+            "id": "task248-f882f84ed27d4f128d25522622e21e7f",
+            "input": "M: When I say I live in Sweden, people always want to know about the seasons. W: The seasons? M: Yeah, you know how cold it is in winter? What is it like when the days are so short? W: So what is it like? M: Well, it is cold, very cold in winter. Sometimes it is cold as 26 degrees below centigrade. And of course when you go out, you'll wrap up warm. But inside in the houses it's always very warm, much warmer than at home. Swedish people always complain that when they visit England, the houses are cold even in the good winter. W: And what about the darkness? M: Well, yeah, around Christmas time there's only one hour of daylight, so you really looks forward to the spring. It is sometimes a bit depressing. But you see the summers are amazing, from May to July in the North of Sweden the sun never sets. It's still light in the midnight. You can walk in the mountains and read a newspaper. W: Oh, yeah, the land of the midnight sun. M: Yeah, that's right, but it's wonderful. You won't stay up all night. And the Swedes makes most of it often they started work earlier in summer and then leave at about 2 or 3 in the afternoon, so that they can really enjoy the long summer evenings. They'd like to work hard, but play hard, too. I think Londoners work longer hours, but I'm not sure this is a good thing., Question: What do Swedish people complain about when they visit England in winter? (A) The bad weather (B) The cold houses (C) The gloomy winter",
+            "output": [
+                "matching"
+            ]
+        },
+        {
+            "id": "task248-0e03dcd65e5845f7a120f26b45988691",
+            "input": "W: Why don't we buy a car, dear? M: I have been thinking about it for a long time. I think it necessary for us to buy one. We live so far away from my company. W: Yes. With a car, you wouldn't have to catch a bus to work. It can save a lot of time. M: Sure, but we don't have enough money at present. W: Why not borrow some from the bank? I think we won't have to borrow so much now. M: Well, let's go down town and have a look., Question: Why do the two speakers want to buy a car? (A) They have a lot of money. (B) The man lives too far away from his office. (C) The woman's office is too far away from her home.",
+            "output": [
+                "commonsense"
+            ]
+        },
+        {
+            "id": "task248-6dc5c9643008460094137e89b309e3d6",
+            "input": "W: Oh, I'm fed up with my job. M: Hey, there's a perfect job for you in the paper today. You might be interested. W: Oh, what is it? What do they want? M: Wait a minute. Uh, here it is. The European Space Agency is recruiting translators. W: The European Space Agency? M: Well, that's what it says. They need an English translator to work from French or German. W: So they need a degree in French or German, I suppose. Well, I've got that. What's more, I have plenty of experience. What else are they asking for? M: Just that. A university degree and three or four years of experience as a translator in a professional environment. They also say the person should have a lively and inquiring mind, effective communication skills and the ability to work individually or as a part of the team. W: Well, if I stay at my present job much longer, I won't have any mind or skills left. By the way, what about salary? I just hope it isn't lower than what I get now. M: It's said to be negotiable. It depends on the applicant's education and experience. In addition to basic salary, there's a list of extra benefits. Have a look yourself. W: Hm, travel and social security plus relocation expenses are paid. Hey, this isn't bad. I really want the job., Question: Why is the woman trying to find a new job? (A) She is thirsty for promotion. (B) She is tired of her present work. (C) She wants a much higher salary.",
+            "output": [
+                "matching"
+            ]
+        },
+        {
+            "id": "task248-2913f1f113a44cfebd5f6f2797024aba",
+            "input": "M: I really appreciate your filling me in on yesterday's lecture. W: No problem. I thought you might want to go over it together. And, anyway, it helps me review, Hope you're feeling better now. M: I am. Thanks. So, you said she talked about squid? Sounds a little strange. W: Well, actually, it was about the evolution of sea life--a continuation from last week. The octopus and the squid descended from earlier creatures with shells. They survived by shedding their shells--somewhere between 200 and 500 million years ago. M: That's a pretty long span of time. W: I know. That's what she said, though. To be precise: \"Exactly when they emerged is uncertain ... and why is still unexplained.\" M: Some squid are really huge. Can you imagine something that big if it still had a shell? W: Actually, it's because they lost their shells that they could evolve to a bigger size. M: Makes sense. But some are really huge. I've read about fishermen that caught squid that weighed over a ton. Did she talk about how that happens? W: Not really. But she did mention some unusual cases. In 1933 in New Zealand they caught a squid.., let's see here.., it was twenty-two yards long. Its eyes were eighteen inches across. Can you imagine? M: Reminds me of all those stories of sea monsters. W: Dr. Simpson thinks there are probably even larger ones that haven't been found because squid are intelligent and fast---so they can easily get away from humans. Maybe some of those monster stories are true., Question: Why does the man need to talk to the woman about the class? (A) He didn't understand the lecture. (B) He was sick and unable to attend. (C) He needs help with a makeup exam.",
+            "output": [
+                "commonsense"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Dedicated License (https://github.com/nlpdata/dream/blob/master/license.txt)"
+    ]
+}

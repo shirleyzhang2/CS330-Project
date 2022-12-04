@@ -1,0 +1,125 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "atomic"
+    ],
+    "URL": [
+        "https://allenai.org/data/atomic-2020"
+    ],
+    "Categories": [
+        "Commonsense Classification"
+    ],
+    "Reasoning": [
+        "Relational Reasoning",
+        "Reasoning on Social Interactions",
+        "Commonsense Reasoning -> Social Situations"
+    ],
+    "Definition": [
+        "Given two phrases Head and Tail, separated by <sep>, your task is to determine whether the Head can be hindered by what is mentioned in the Tail. In this task, hindering introduces hindrances that obstruct the natural path to the achievement of a goal. For example, the event PersonX adopts a cat can be obstructed if PersonX is allergic to cats. Classify your answers into \"Yes\" and \"No\". The phrase may also contain \"___\", a placeholder that can be an object, a person, and/or an action."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Sociology",
+        "Commonsense -> Concepts and Relations -> Social Commonsense"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Head: PersonX touches a nerve<sep>Tail: PersonX is too nice",
+            "output": "Yes",
+            "explanation": "This is a good example. The Tail can hinder the Head."
+        },
+        {
+            "input": "Head: PersonX attends school<sep>Tail: To be a student",
+            "output": "No",
+            "explanation": "In this example, The Head can't be hindered by the Tail."
+        },
+        {
+            "input": "Head: PersonX is driving down the street<sep>Tail: PersonX's car is in the shop.",
+            "output": "Yes",
+            "explanation": "If PersonX's car is in the shop, PersonX can't drive down the street. Thus, this example should be classified as \"Yes\"."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Head: PersonX asks if PersonY was okay<sep>Tail: to thank PersonX",
+            "output": "Yes",
+            "explanation": "In this example, The Head can't be hindered by the Tail. So the output should be \"No\"."
+        },
+        {
+            "input": "Head: PersonX clenches PersonY's jaw<sep>Tail: PersonY is out of reach.",
+            "output": "No",
+            "explanation": "If PersonY is out of reach, PersonX can't clench PersonY's jaw, and the output should be \"Yes\"."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1204-294ca4020e87449d9ec284d1ad193417",
+            "input": "Head: PersonX achieves PersonX's dream<sep>Tail: to have an image",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1204-40277d643dbf4847b3e2eee264ddd610",
+            "input": "Head: PersonX starts middle school<sep>Tail: There are other people in the way.",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1204-dc4552a241ed45598479c16ea29d562b",
+            "input": "Head: PersonX becomes PersonY's wife<sep>Tail: to dance at the wedding reception",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1204-ce46c425aab44f77a56eced360c3cb80",
+            "input": "Head: PersonX gets the hang of it<sep>Tail: The coach won't let PersonX practice",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1204-ba39dcd4bdd74eabbc31bd9a53b473dd",
+            "input": "Head: PersonX eventually ran<sep>Tail: PersonX does not have running shoes.",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1204-8376e9d6fdd84b7e8c04cd6bc4fe3ce1",
+            "input": "Head: PersonX always tries<sep>Tail: runs out of ideas",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1204-ba7d9d600fec45dea0c559c8f1941dfb",
+            "input": "Head: PersonX hits a tree<sep>Tail: The driving instructor won't allow it.",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1204-067a8c74a785430ea39c9b534d2eb0c8",
+            "input": "Head: PersonX enhances PersonX's ability<sep>Tail: The instructor went on vacation",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

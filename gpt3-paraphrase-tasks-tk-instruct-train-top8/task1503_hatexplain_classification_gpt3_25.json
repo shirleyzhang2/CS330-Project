@@ -1,0 +1,115 @@
+{
+    "Contributors": [
+        "Pruthvi Patel"
+    ],
+    "Source": [
+        "hatexplain"
+    ],
+    "URL": [
+        "https://github.com/hate-alert/HateXplain"
+    ],
+    "Categories": [
+        "Toxic Language Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "Given a tweet, output the community targeted in the tweet. The community will be one of the nine values: 'African', 'Islam', 'Jewish', 'Women', 'Refugee', 'Arab', 'Caucasian', 'Hispanic' or 'Asian'. Output 'None' if the tweet does not target any community. A tweet can only target one community."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Social Media -> Twitter"
+    ],
+    "Positive Examples": [
+        {
+            "input": "caucasians wearing masks to prevent coronavirus and still don \u2019 t wash their hands",
+            "output": "Caucasian",
+            "explanation": "The tweet generalizes an attribute to the entire community, Caucasian, which makes it offensive."
+        },
+        {
+            "input": "lesson of the week from the holy book the sovereign individual once commerce flows over the internet suppression of speech becomes unstoppable devolution inevitable and the monopoly of violence by governments will end paraphrased from j d davidson rhys mogg",
+            "output": "None",
+            "explanation": "The tweet does not target any specific community hence the correct answer is None"
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "<user> <user> there shd be a film called no hindus in kashmir wud be perfect islamic fanaticsm movement in kashmir",
+            "output": "Hindu",
+            "explanation": "Every input tweet will target one or more of the nine communities provided or will not target any community. Further the tweet targets Muslim community. Hence Hindu is not the correct value. The correct value is Islam."
+        },
+        {
+            "input": "ffs everthing is offensive to muslimes",
+            "output": "None",
+            "explanation": "This tweet is offensive to Muslim community. Hence the correct answer is Islam instead of None."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1503-188a36f6a89541dab77fe928dc426ecc",
+            "input": "one must wonder how long she will do in jail on the taxpayers dime before they decide to toss her spic ass out as for the guy castrate him and jail him for life the prisoners in nevada will deal with the matter themselves tyvm",
+            "output": [
+                "Hispanic"
+            ]
+        },
+        {
+            "id": "task1503-ce6dd52483f441a394424d55f5c8b02c",
+            "input": "niggaz was fat in the good old days and they usually died of heartattacks by fitty from crack cocaine and chasing white women dat nigger found jesus and a guru",
+            "output": [
+                "African"
+            ]
+        },
+        {
+            "id": "task1503-ca47c7bbba644ea9ba35b16c49504c36",
+            "input": "i forgot to add those poor palestinian towel heads we will ask them how peaceful these so called rat jews are i do not think they will say the jew is very peaceful",
+            "output": [
+                "Jewish"
+            ]
+        },
+        {
+            "id": "task1503-ec8fe6d0fb734078872d69de6810411c",
+            "input": "these white maggots are obviously very angry and want to murder me because i am not socially emotionally and intellectually retarded like their children obviously are",
+            "output": [
+                "Caucasian"
+            ]
+        },
+        {
+            "id": "task1503-95f6c29051a947d1890aca6c5e4425cc",
+            "input": "<user> i agree it is a very high chance this is a white person saying it",
+            "output": [
+                "None"
+            ]
+        },
+        {
+            "id": "task1503-8133f9050e9a49a48e76fffd30882e11",
+            "input": "omg i am also seeing the white devil herself lana next week i am",
+            "output": [
+                "Caucasian"
+            ]
+        },
+        {
+            "id": "task1503-b16aac7818284ee29c7142e8470f91a5",
+            "input": "will i get in trouble for saying nigger or towelhead here",
+            "output": [
+                "African"
+            ]
+        },
+        {
+            "id": "task1503-b6e6e2bd5c404a92a0d5101cf076cf18",
+            "input": "nothing worse than a ghetto white bitch that says the n word",
+            "output": [
+                "Caucasian"
+            ]
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

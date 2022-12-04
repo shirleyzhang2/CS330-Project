@@ -1,0 +1,115 @@
+{
+    "Contributors": [
+        "Pruthvi Patel"
+    ],
+    "Source": [
+        "hatexplain"
+    ],
+    "URL": [
+        "https://github.com/hate-alert/HateXplain"
+    ],
+    "Categories": [
+        "Toxic Language Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "The input is a tweet. The tweet can be one of three types: Hate Speech, Offensive, or Normal. Hate Speech and Offensive tweets target one community. Given such a tweet, output the community targeted in the tweet. The community will be one of nine values: 'African', 'Islam', 'Jewish', 'Women', 'Refugee', 'Arab', 'Caucasian', 'Hispanic', or 'Asian'. Output 'None' if the tweet does not target any community. A tweet targets only one community."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Social Media -> Twitter"
+    ],
+    "Positive Examples": [
+        {
+            "input": "caucasians wearing masks to prevent coronavirus and still don \u2019 t wash their hands",
+            "output": "Caucasian",
+            "explanation": "The tweet generalizes an attribute to the entire community, Caucasian, which makes it offensive."
+        },
+        {
+            "input": "lesson of the week from the holy book the sovereign individual once commerce flows over the internet suppression of speech becomes unstoppable devolution inevitable and the monopoly of violence by governments will end paraphrased from j d davidson rhys mogg",
+            "output": "None",
+            "explanation": "The tweet does not target any specific community hence the correct answer is None"
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "<user> <user> there shd be a film called no hindus in kashmir wud be perfect islamic fanaticsm movement in kashmir",
+            "output": "Hindu",
+            "explanation": "Every input tweet will target one or more of the nine communities provided or will not target any community. Further the tweet targets Muslim community. Hence Hindu is not the correct value. The correct value is Islam."
+        },
+        {
+            "input": "ffs everthing is offensive to muslimes",
+            "output": "None",
+            "explanation": "This tweet is offensive to Muslim community. Hence the correct answer is Islam instead of None."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1503-69ab8443e9ec46129ebdfd1a079bb6ed",
+            "input": "you might just think i am a dumb slut but i will have you know i am actually an intellectual slut",
+            "output": [
+                "None"
+            ]
+        },
+        {
+            "id": "task1503-f8dc1717f42d4691af846f3eda519fc1",
+            "input": "bathing in honky privilege",
+            "output": [
+                "Caucasian"
+            ]
+        },
+        {
+            "id": "task1503-bc2827c949914ddea7b251a1ec78d09e",
+            "input": "deport hogg wetback dyke",
+            "output": [
+                "Hispanic"
+            ]
+        },
+        {
+            "id": "task1503-cbdec0ca9e5343fab07fb0500065e713",
+            "input": "ethnic asians what if the china has a white prson who was born and raied there would htey be imported",
+            "output": [
+                "Asian"
+            ]
+        },
+        {
+            "id": "task1503-ccda7f24eba94fdd8321be043a64ab45",
+            "input": "<user> <user> she wants be raped and that attention that she h as to to dress that way let her be prone to sex offenders and rapist",
+            "output": [
+                "Women"
+            ]
+        },
+        {
+            "id": "task1503-5ff6cccfeaec4783aae5452d760a0aaa",
+            "input": "the nigger that shot up the church was an immigrant from from sudan",
+            "output": [
+                "African"
+            ]
+        },
+        {
+            "id": "task1503-e04cb89b96e0471183b3f2824bd4dfad",
+            "input": "suddenly john mccain has a problem with one of his favorite allies recip erdogan when he brutalizes americans so much for mccain all his human rights universal values talk he only has a problem with this islamist humping sand nigger when americans are the victims of his brutality",
+            "output": [
+                "Arab"
+            ]
+        },
+        {
+            "id": "task1503-cdc7dc087a3d492d86c95601ce87f8fb",
+            "input": "laura loomer \u200f <user> 7 m7 minutes ago laura loomer retweeted laura loomer how many dead people are going to be voting in the californiaprimary today voterfraud laura loomer added laura loomer <user> how many illegal immigrants are going to be voting in the californiaprimary today",
+            "output": [
+                "Refugee"
+            ]
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

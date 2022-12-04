@@ -1,0 +1,122 @@
+{
+    "Contributors": [
+        "Hadi Mazboudi"
+    ],
+    "Source": [
+        "wiqa"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/wiqa"
+    ],
+    "Categories": [
+        "Sentence Ordering"
+    ],
+    "Reasoning": [
+        "Temporal Reasoning"
+    ],
+    "Definition": [
+        "You will receive a set of steps describing a process. You need to output Yes if the steps are in order, or No if the steps are out of order. A set of steps are out of order if the steps reference information that is introduced in a later step."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Natural Science"
+    ],
+    "Positive Examples": [
+        {
+            "input": " ['The seeds are dispersed by wind, animals, etc', 'The seeds reach the ground', 'Grow into new trees', 'The process repeats itself over and over', 'A tree produces seeds', 'These new trees produce seeds'] ",
+            "output": "No",
+            "explanation": "These steps are not in order. The first step in this sequence is 'The seeds are dispersed by wind, animals, etc' but the step introducing the seed 'A tree produces seeds' is after the steps referencing the seeds. Therefore, the answer is No"
+        },
+        {
+            "input": " ['The carafe is filled with water', 'The water is poured into the machine at the back', 'Coffee beans are put into a grinder', 'The grinder is activated', 'A filter is put into the coffee maker', 'The ground coffee is put into the filter', 'Sometimes a bit of salt is added to the grounds to bring out flavor', 'The top of the machine is closed', 'The power is turned on', 'The water passes through the grounds and becomes coffee.'] ",
+            "output": "Yes",
+            "explanation": "These steps are in order. The information from each previous step leads into the next step. Therefore, the correct answer is Yes"
+        },
+        {
+            "input": " ['The nest is done.', 'The bird makes a flat base with twigs', 'The bird picks a tree', 'The bird makes sides with twigs and other things', 'The bird adds softer material to the inside', 'The bird collects twigs and other refuse'] ",
+            "output": "No",
+            "explanation": "These steps are not in order. The first step is 'The nest is done'. Since these steps outline how birds make a nest, this step should be last. Therefore, the steps are out of order and the answer is No"
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": " ['The cans are transported to a facility', 'The molds are flattened and rolled into sheets to reuse.', 'The cans are heated to 1400 degrees to melt them', 'The molten metal is poured into molds', 'The cans are shredded by a machine', 'Put the aluminum can into a recycle bin'] ",
+            "output": "Yes",
+            "explanation": "This answer is incorrect because these steps are out of order. The step 'Put the aluminum can into a recycle bin' should be first. Without this step, the step 'The cans are transported to a facility' does not make sense because the cans are not introduced yet. The correct answer is No"
+        },
+        {
+            "input": " ['Acid rain is produced by chemicals that reach into the atmosphere', 'Falls onto the ground', 'The acid rain starts scouring rocks', 'Destroys vegetation', 'The lack of vegetation alters the surrounding environment.'] ",
+            "output": "No",
+            "explanation": "This answer is incorrect because these steps are in order. The step, 'Acid rain is produced by chemicals that reach into the atmosphere' introduces the subject of the process, acid rain. The step 'Falls onto the ground' refers to the acid rain that was in the previous step. After the acid falls onto the ground, the next step is 'The acid rain starts scouring rocks'. The next step describes what happens after acid rain falls onto the ground, 'Destroys vegetation'. After the acid rain destroys vegetation, 'The lack of vegetation alters the surrounding environment.' Since each step only uses information from previous steps, the correct answer is Yes"
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1548-6b355da27fd7456689660c54aaece7fe",
+            "input": " ['Prophase, the chromosomes become visible', 'Centrioles separate to move to opposite poles', 'Metaphase, the chromosomes line up in the center', 'Anaphase, the chromatids separate', 'Are pulled apart', 'Telophase, the chromosomes gather at opposite poles', 'Two new nuclear membranes form', 'The cell membranes pinch', 'Divide into two individual cells'] ",
+            "output": [
+                "  Yes  "
+            ]
+        },
+        {
+            "id": "task1548-2a3c263ed231464e99bc85be1e1008c4",
+            "input": " ['Magma moves closer to the Earth&#x27;s crust', 'The magma starts to cool', 'The cooling causes atoms in the magma to condense', 'The condensed magma solidifies', 'The solidified magma forms minerals.'] ",
+            "output": [
+                "  Yes  "
+            ]
+        },
+        {
+            "id": "task1548-6dabccd825634418bd74fea99e92f4f8",
+            "input": " ['Water seeps into rocks', 'The water freezes and thaws', 'Cracks form in the rocks', 'Cracks also form when rocks heat up', 'The rocks slowly break down.'] ",
+            "output": [
+                "  Yes  "
+            ]
+        },
+        {
+            "id": "task1548-10f34687ff5b4d6197c4e676adf0d2f2",
+            "input": " ['Bats and other animals produce a high-pitched tone', 'The sound travels in waves, as sound does', 'The sound 'bounces' off of a nearby object', 'The sound wave returns to the bat', 'The bat hears the echoed sound', 'Folds in the bat's ear and adaptations in the bat's brain enable it to determine the size, shape, and position of the other object via the properties of the returned sound waves', 'Other animals use echolocation in generally similar ways'] ",
+            "output": [
+                "  Yes  "
+            ]
+        },
+        {
+            "id": "task1548-16c66e3607de41ffb62180a7a0c8ade4",
+            "input": " ['The owl silently glides or drops on its prey, grabbing it with its talons and beak', 'The owl eats the prey, or carries it back to its perch', 'They fly silently, without flapping their wings, in order to surprise the prey', 'They use their very keen vision to see prey in the dark', 'They use their highly sensitive hearing to locate prey that cannot be seen', 'Owls hunt around their hunting territory away from where they roost during the day', 'They sit still on a perch, like a stump of branch, and wait for prey'] ",
+            "output": [
+                "  No  "
+            ]
+        },
+        {
+            "id": "task1548-5211121b086e48f99dac92107ec41367",
+            "input": " ['People separate different materials to be recycled', 'The recyclable materials go to a recycling center', 'The recycling center further separates the materials', 'Large equipment compacts the materials into bales', 'The recyclable materials are shipped to other recycling centers', 'The other recycling centers further process the materials that center specializes in', 'The materials are purchased by manufacturers', 'The manufacturers process the recycled materials the same way they would use new materials', 'The recycled materials are incorporated into new products.'] ",
+            "output": [
+                "  Yes  "
+            ]
+        },
+        {
+            "id": "task1548-426a5c8b1d16466e92db967b3b667990",
+            "input": " ['Animals eat a lot during good (warm, clear) weather', 'Animals gain weight', 'The season changes to one with bad (cold, snowy) weather', 'Animals find a place to hibernate', 'Animals enter a type of &#x27;sleep&#x27; (hibernation)', 'Body processes slow down', 'The animal&#x27;s heart rate and breathing rate slow', 'The animal loses weight more slowly than usual', 'The animal is able to survive not eating or drinking without hurting itself'] ",
+            "output": [
+                "  Yes  "
+            ]
+        },
+        {
+            "id": "task1548-905e0eb4a5b04a0a8d479d1e8278aaee",
+            "input": " ['The bacteria reproduces and spreads', 'Bacteria enters through the wound', 'The bacteria is either fought off or becomes a disease.', 'Skin is cut or damaged', 'Causes symptoms'] ",
+            "output": [
+                "  No  "
+            ]
+        }
+    ],
+    "Instance License": [
+        "Apache 2.0"
+    ]
+}

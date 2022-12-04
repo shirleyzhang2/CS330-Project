@@ -1,0 +1,115 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "hybridqa"
+    ],
+    "URL": [
+        "https://github.com/wenhuchen/HybridQA"
+    ],
+    "Categories": [
+        "Pos Tagging"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You will be given a question, a word, and a POS tag. You have to determine if the POS tag of the given word in the question is equal to the given POS tag. The list of POS tags is provided. Answer with True or False."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Wikipedia"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Who were the builders of the mosque in Herat with fire temples ? \n, Word: Who \n, POS tag: IN",
+            "output": "False",
+            "explanation": "This is a good example. POS tag of who should be WP(Wh-pronoun), and not IN(Preposition)."
+        },
+        {
+            "input": "What is the borough in which Kia Oval is located ? \n, Word: is \n, POS tag: VBZ",
+            "output": "True",
+            "explanation": "Based on the given question, \"is\" is a 3rd person singular present verb and Its POS tag is VBZ."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "After what season did the number 7 competitor retire ? \n, Word: 7 \n, POS tag: NN",
+            "output": "True",
+            "explanation": "7 is a cardinal number, and Its POS tag should be CD, so the output should be False."
+        },
+        {
+            "input": "After what season did the number 7 competitor retire ? \n, Word: 7 \n, POS tag: NN",
+            "output": "Wrong",
+            "explanation": "Only \"True\" or \"False\" are allowed, and you can't use any other word here."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task346-121210aefd164d3d86ebb4c768c31ec7",
+            "input": "What is the team whose hitter who played 19 seasons in Major League Baseball ( MLB ) for seven teams ? \n, Word: is \n, POS tag: IN",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "id": "task346-48624a4b5eb14acd91d1cdc0ab22acf8",
+            "input": "What is the sport ( s ) of the school whose enrollment exceeded 16,000 students in 2015 ? \n, Word: What \n, POS tag: WP",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "id": "task346-bfc3adea5d2244a694a16a8a4362b63f",
+            "input": "What was the score of the champion that are members of the NCAA Division I and the Summit League ? \n, Word: of \n, POS tag: IN",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "id": "task346-9442a4c3054d4b1192d978199231f6fa",
+            "input": "Which MLB team besides the Pirates did the player picked 4th in the 2009 Major League Baseball draft play for ? \n, Word: did \n, POS tag: NN",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "id": "task346-cf4703b9830d4e7aa78e2f2d01b66980",
+            "input": "What is the name of the team that plays at the venue that was renovated in 2011 ? \n, Word: in \n, POS tag: VBD",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "id": "task346-662d9de39e18469baca71f5c48a448ed",
+            "input": "What year was the first recorded ascent made of the peak in Italy with a prominence of 2,476 m ? \n, Word: What \n, POS tag: JJ",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "id": "task346-99977824802c43b7b72e5da7acec1792",
+            "input": "How many years did the person in the AGRI group work as a parliamentary assistant to Andreas Schwab ? \n, Word: the \n, POS tag: DT",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "id": "task346-b22da9fdb85040f491923d2631806cf3",
+            "input": "In what year was the writer involved with the sorority chapter Theta Psi Omega born in ? \n, Word: the \n, POS tag: DT",
+            "output": [
+                "True"
+            ]
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

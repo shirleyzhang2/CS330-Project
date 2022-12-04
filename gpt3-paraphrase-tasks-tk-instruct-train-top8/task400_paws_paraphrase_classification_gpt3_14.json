@@ -1,0 +1,125 @@
+{
+    "Contributors": [
+        "Amirreza Mirzaei"
+    ],
+    "Source": [
+        "paws"
+    ],
+    "URL": [
+        "https://arxiv.org/abs/1904.01130"
+    ],
+    "Categories": [
+        "Text Matching"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You will receive a sentence pair from Wikipedia that has high lexical overlap. If the sentences have the same meaning and are just paraphrases of each other, label them as \"Paraphrase\". If not, label them as \"Not paraphrase\". The two sentences are separated by a new line."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Wikipedia"
+    ],
+    "Positive Examples": [
+        {
+            "input": "In January 2011 , the Deputy Secretary General of FIBA Asia , Hagop Khajirian , inspected the venue together with SBP - President Manuel V. Pangilinan .\nIn January 2011 , FIBA Asia deputy secretary general Hagop Khajirian along with SBP president Manuel V. Pangilinan inspected the venue .",
+            "output": "Paraphrase",
+            "explanation": "The second sentence has the same meaning as the first sentence and is just a paraphrased version of it."
+        },
+        {
+            "input": "The smallest number that can be represented in two positive and seventh ways as a sum of four different powers is 2056364173794800 .\nThe smallest number that can be represented as a sum of four positive seventh potences in two different ways is 2056364173794800 .",
+            "output": "Not paraphrase",
+            "explanation": "The second sentence doesn't have the same meaning as the first."
+        },
+        {
+            "input": "Luciano Williames Dias ( born July 25 , 1970 ) is a Brazilian football coach and former player .\nLuciano Williames Dias ( born 25 July 1970 ) is a former football coach and Brazilian player .",
+            "output": "Not paraphrase",
+            "explanation": "The second sentence doesn't have the same meaning as the first."
+        },
+        {
+            "input": "During her sophomore , junior and senior summers , she spent half of it with her Alaska team , and half playing , and living in Oregon .\nDuring her second , junior and senior summers , she spent half of it with her Alaska team , half playing and living in Oregon .",
+            "output": "Paraphrase",
+            "explanation": "The second sentence doesn't have the same meaning as the first."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "This was a series of nested angular standards , so that measurements in azimuth and elevation could be done directly in polar coordinates relative to the ecliptic .\nThis was a series of nested polar scales , so that measurements in azimuth and elevation could be performed directly in angular coordinates relative to the ecliptic .",
+            "output": "Paraphrase",
+            "explanation": "The second sentence doesn't have the same meaning as the first. As pointed out in the task definition both sentences in all the instances have high lexical overlap, which doesn't mean they have the same meaning."
+        },
+        {
+            "input": "His father emigrated to Missouri in 1868 but returned when his wife became ill and before the rest of the family could also go to America .\nHis father emigrated to America in 1868 , but returned when his wife became ill and before the rest of the family could go to Missouri .",
+            "output": "Paraphrase",
+            "explanation": "In the second sentence, it is not mentioned that the father went to Missouri, so the part about the rest of the family doesn't imply the same meaning as the first sentence. These are not paraphrases."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task400-05102a93463c460b8ba88f0071b4d744",
+            "input": "He also represented New Zealand at the 2010 FIBA World Championship in Turkey .\nHe also represented New Zealand at the FIBA World Championships 2010 in Turkey .",
+            "output": [
+                "Paraphrase"
+            ]
+        },
+        {
+            "id": "task400-28b6eee5d3e24632b26711b5cc8174c9",
+            "input": "Mathilda Pinkham Crosby , his wife Nickerson , and their son Roland lived in the house from 1883 to 1900 .\nFrom 1883 to 1900 , his wife Mathilda Pinkham Crosby and his son Roland lived in the house .",
+            "output": [
+                "Not paraphrase"
+            ]
+        },
+        {
+            "id": "task400-e96f2e30fb7640b29f976fe7891559d6",
+            "input": "The company continued to grow internationally and began subsidiaries in 1994 in Brazil and in 1996 in Argentina .\nThe company continued to grow internationally , adding subsidiaries in Argentina in 1994 and in Brazil in 1996 .",
+            "output": [
+                "Not paraphrase"
+            ]
+        },
+        {
+            "id": "task400-bc19e03c90904609af508a243ce38cab",
+            "input": "Alexander Peya and Bj\u00f6rn Phau won against Andrei Pavel and Alexander Waske in the Final 6 : 4 , 6 : 2 .\nAndrei Pavel and Alexander Waske won in the finals 6 -- 4 , 6 -- 2 against Alexander Peya and Bj\u00f6rn Phau .",
+            "output": [
+                "Not paraphrase"
+            ]
+        },
+        {
+            "id": "task400-0db8615565084574968e650b692bba85",
+            "input": "This species comes from Thailand to Micronesia in the Pacific and from Taiwan to Queensland , Australia .\nThis species is from Micronesia to Taiwan in the Pacific and from Thailand to Queensland , Australia .",
+            "output": [
+                "Not paraphrase"
+            ]
+        },
+        {
+            "id": "task400-2c2dfbf99a25494ba5b775707d7b6beb",
+            "input": "( Eleanor Elkins Widener became Eleanor Elkins Rice when , in October 1915 , she married Harvard professor and surgeon\nElkins Widener became Eleanor Elkins Rice when he married Harvard Professor and Surgeon in October 1915 .",
+            "output": [
+                "Paraphrase"
+            ]
+        },
+        {
+            "id": "task400-1d6dae4dfc674b998f1de27220a609be",
+            "input": "In 1892 , Sullivan returned to politics and defeated Denny .\nDenny returned to politics in 1892 and defeated Sullivan .",
+            "output": [
+                "Not paraphrase"
+            ]
+        },
+        {
+            "id": "task400-f8fc3ee93cba4715b56adea16bbf45db",
+            "input": "The cells contain abundant lipid droplets , numerous mitochondria and a complex smooth endoplasmic reticulum .\nCells contain abundant lipid droplets , numerous mitochondria and a complex smooth endoplasmic reticulum .",
+            "output": [
+                "Paraphrase"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Dedicated License (https://github.com/google-research-datasets/paws/blob/master/LICENSE)"
+    ]
+}

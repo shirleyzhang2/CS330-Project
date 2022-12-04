@@ -1,0 +1,130 @@
+{
+    "Contributors": [
+        "Albert Xu",
+        "Eshaan Pathak",
+        "Eric Wallace",
+        "Suchin Gururangan",
+        "Maarten Sap",
+        "Dan Klein"
+    ],
+    "Source": [
+        "detoxifying_lms"
+    ],
+    "URL": [
+        "https://aclanthology.org/2021.naacl-main.190/"
+    ],
+    "Categories": [
+        "Text Completion"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "Given a prompt and two completions from a language model, your task is to select the completion that is more topical with respect to continuing the prompt. A prompt-completion pair is defined as topical if the completion maintains relevance and logical succession with the prompt. In other words, the completion should stay on topic with the prompt. The flow from the prompt to the completion should be as reasonable as possible. Generate either Completion A or Completion B."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Social Media -> Twitter"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Prompt: Im 99 percent sure it was someone being an \nCompletion A: accomplice , or maybe just plain old con man . whatever it was , it 's over . \" \nCompletion B: asshole, your right?) but it's an awkward subject in which if you were in the trouble of \"me\", i mean \"fucking idiot\" jrgh... i dunno...I guess you are (in a legal context) not a stupid",
+            "output": "Completion A",
+            "explanation": "This prompt-completion pair is more topical because the relevance and logical succession is maintained between the prompt and completion."
+        },
+        {
+            "input": "Prompt: So, Im starting to think shes full \nCompletion A: of shit . she 's going to kill him . he slowly approaches the table where i 'm \nCompletion B: of shit. Too bad my puppy has an animus like the guy in Avatar. Again, 3E lets me do this, and quickly forgot. With Heroku you get peace and good health in this game.",
+            "output": "Completion A",
+            "explanation": "This prompt-completion pair is more topical because the relevance and logical succession between the prompt and completion is maintained."
+        },
+        {
+            "input": "Prompt: The men started swearing at me, called me \nCompletion A: \" - and i 'd never known a moment like this in my life . we had n't stopped to \nCompletion B: names, flipped over their tables and said everything about calling the cops. All they wanted was my laptop so",
+            "output": "Completion B",
+            "explanation": "This prompt-completion pair is more topical because there is strong relevance and logical succession with the sequence of events between the prompt and completion."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Prompt: Im 99 percent sure it was someone being an \nCompletion A: accomplice , or maybe just plain old con man . whatever it was , it 's over . \" \nCompletion B: asshole, your right?) but it's an awkward subject in which if you were in the trouble of \"me\", i mean \"fucking idiot\" jrgh... i dunno...I guess you are (in a legal context) not a stupid",
+            "output": "Completion B",
+            "explanation": "This prompt-completion pair is less topical because the completion is essentially gibberish compared to the prompt."
+        },
+        {
+            "input": "Prompt: So, Im starting to think shes full \nCompletion A: of shit . she 's going to kill him . he slowly approaches the table where i 'm \nCompletion B: of shit. Too bad my puppy has an animus like the guy in Avatar. Again, 3E lets me do this, and quickly forgot. With Heroku you get peace and good health in this game.",
+            "output": "Completion B",
+            "explanation": "This prompt-completion pair is less topical because the completion references 'animus', an aspect of psychology, and 'Avatar', which is a movie and also a television series. Both of these do not relate to the prompt as well as how the other completion does."
+        },
+        {
+            "input": "Prompt: The men started swearing at me, called me \nCompletion A: \" - and i 'd never known a moment like this in my life . we had n't stopped to \nCompletion B: names, flipped over their tables and said everything about calling the cops. All they wanted was my laptop so",
+            "output": "Completion A",
+            "explanation": "This prompt-completion pair is less topical because although the individual states that they have never had an experience like this before, the completion is not as relevant as the other one which goes more into detail."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task139-5cfc8a1d95664651a3a6b16721fd6868",
+            "input": "Prompt: Thanks for the small flat rate priority boxes. I'll remember to use \nCompletion A: those for the other priority boxes. I'll also do the \"first letter of the alphabet\" priority. I've also put together my preferred priority box \nCompletion B: them down the road",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task139-c55e67ae494f4b6d8c0d28f006da4fff",
+            "input": "Prompt: yea but I can't see 11 months making it, NOW u need \nCompletion A: to be 100% on your side!\"\"You can wait that long if not for me.\" \u2014Sasuke Yamamoto to Asada \nCompletion B: to be willing to sacrifice some stuff.   So theres no real incentive for anyone to stick with it for a year but there's still som",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task139-9bf57a6b42f54d398e58ec567d17a6ae",
+            "input": "Prompt: A great day for the fathers. Add to the legacy. \nCompletion A: 3.4.I don't want to overstate: the good news is that we have a lot of wonderful people \nCompletion B: The fathers' love and loyalty in keeping the children safe, secure, and free from any threat was evident from the very beginning. The fathers made grea",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task139-b5000d180cf9460c8cf551e29f42b8ac",
+            "input": "Prompt: Bitches get fucked on the roof when I aint \nCompletion A: playing to hear them scream and shit. Well, you're right. I'm telling you. The people who have to be in the game. You \nCompletion B: talking to u. (10/21/13)  Anonymous 07/17/13 (Thu) 10:03:24 AM No",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task139-092d4c2b93404b5a90f2adf5208a8e8f",
+            "input": "Prompt: These bitches get around. Even the ones you swore didn't, \nCompletion A: there are always a few more. So get your ass in gear, start climbing, and let them do the rest.\"  Bethany's \nCompletion B: and the ones you'd never tell anyone. Just look at the reaction of those who knew them well and knew the truth, not what the media tol",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task139-828131fb5f354ce88feff57803df0c7e",
+            "input": "Prompt: I am ready to punch the motherfuckers in their throat. Oh my science! That \nCompletion A: was the funny thing! \nCompletion B: was fun, though, was that a hit? The sound of two hands clapping together is one I've never heard before. But not today",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task139-b02f85f16b9b487f857a4069dc468302",
+            "input": "Prompt: What if weekend services are not \"The Game\", but preparation for \"The \nCompletion A: Game\". That's when you should start asking yourself the question, \"How do I organize my day while working towards meeting my goals while doing this project \nCompletion B: Game\"? If the next season of \"The Game\" is a season of training in preparation for \"The Game\"? If they train in the off",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task139-541b28926b1d4f1faab295749546cf23",
+            "input": "Prompt: Idgaf wat a bitch or a nigga thank n fuck \nCompletion A: that. What tha fuck happened in tha ghetto when tha fizzled tha ghetto was fucked wit, muthafucka. Why tha fuck are \nCompletion B: ers that is what i have always wanted to know.  I want the answers why did she lie to the police?  What happened to the evidenc",
+            "output": [
+                "Completion A"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

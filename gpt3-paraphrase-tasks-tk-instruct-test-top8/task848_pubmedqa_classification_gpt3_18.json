@@ -1,0 +1,125 @@
+{
+    "Contributors": [
+        "Jalansh Munshi"
+    ],
+    "Source": [
+        "pubmed_qa"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/pubmed_qa"
+    ],
+    "Categories": [
+        "Intent Identification"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "Given a passage, classify if the passage has a definite objective/aim/goal. Output '1' if it does, and '0' if it does not."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Medicine"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Chronic rhinosinusitis (CRS) is a heterogeneous disease with an uncertain pathogenesis. Group 2 innate lymphoid cells (ILC2s) represent a recently discovered cell population which has been implicated in driving Th2 inflammation in CRS; however, their relationship with clinical disease characteristics has yet to be investigated. The aim of this study was to identify ILC2s in sinus mucosa in patients with CRS and controls and compare ILC2s across characteristics of disease. A cross-sectional study of patients with CRS undergoing endoscopic sinus surgery was conducted. Sinus mucosal biopsies were obtained during surgery and control tissue from patients undergoing pituitary tumour resection through transphenoidal approach. ILC2s were identified as CD45(+) Lin(-) CD127(+) CD4(-) CD8(-) CRTH2(CD294)(+) CD161(+) cells in single cell suspensions through flow cytometry. ILC2 frequencies, measured as a percentage of CD45(+) cells, were compared across CRS phenotype, endotype, inflammatory CRS subtype and other disease characteristics including blood eosinophils, serum IgE, asthma status and nasal symptom score. 35 patients (40% female, age 48 \u00b1 17 years) including 13 with eosinophilic CRS (eCRS), 13 with non-eCRS and 9 controls were recruited. ILC2 frequencies were associated with the presence of nasal polyps (P = 0.002) as well as high tissue eosinophilia (P = 0.004) and eosinophil-dominant CRS (P = 0.001) (Mann-Whitney U). They were also associated with increased blood eosinophilia (P = 0.005). There were no significant associations found between ILC2s and serum total IgE and allergic disease. In the CRS with nasal polyps (CRSwNP) population, ILC2s were increased in patients with co-existing asthma (P = 0.03). ILC2s were also correlated with worsening nasal symptom score in CRS (P = 0.04).",
+            "output": "1",
+            "explanation": "There is a line in the passage which say 'The aim of this study was...' which suggests that it is talking about a specific aim. Hence, the output should be 1 as this passage has a definite aim."
+        },
+        {
+            "input": "Phosphatidylethanolamine N-methyltransferase (PEMT), a liver enriched enzyme, is responsible for approximately one third of hepatic phosphatidylcholine biosynthesis. When fed a high-fat diet (HFD), Pemt(-/-) mice are protected from HF-induced obesity; however, they develop steatohepatitis. The vagus nerve relays signals between liver and brain that regulate peripheral adiposity and pancreas function. Here we explore a possible role of the hepatic branch of the vagus nerve in the development of diet induced obesity and steatohepatitis in Pemt(-/-) mice. 8-week old Pemt(-/-) and Pemt(+/+) mice were subjected to hepatic vagotomy (HV) or capsaicin treatment, which selectively disrupts afferent nerves, and were compared to sham-operated or vehicle-treatment, respectively. After surgery, mice were fed a HFD for 10 weeks. HV abolished the protection against the HFD-induced obesity and glucose intolerance in Pemt(-/-) mice. HV normalized phospholipid content and prevented steatohepatitis in Pemt(-/-) mice. Moreover, HV increased the hepatic anti-inflammatory cytokine interleukin-10, reduced chemokine monocyte chemotactic protein-1 and the ER stress marker C/EBP homologous protein. Furthermore, HV normalized the expression of mitochondrial electron transport chain proteins and of proteins involved in fatty acid synthesis, acetyl-CoA carboxylase and fatty acid synthase in Pemt(-/-) mice. However, disruption of the hepatic afferent vagus nerve by capsaicin failed to reverse either the protection against the HFD-induced obesity or the development of HF-induced steatohepatitis in Pemt(-/-) mice.",
+            "output": "1",
+            "explanation": "If you take a look at the line 'Here we explore a possible role of the hepatic branch', it says that it is exploring a possible role. This means that it has a specific goal and hence, the output should be 1."
+        },
+        {
+            "input": "Psammaplin A (PsA) is a natural product isolated from marine sponges, which has been demonstrated to have anticancer activity against several human cancer cell lines via the induction of cell cycle arrest and apoptosis. New drugs that are less toxic and more effective against multidrug-resistant cancers are urgently needed. We tested cell proliferation, cell cycle progression and autophagic cell death pathway in doxorubicin-resistant MCF-7 (MCF-7/adr) human breast cancer cells. The potency of PsA was further determined using an in vivo xenograft model.",
+            "output": "0",
+            "explanation": "This passage does not have any sentences which talk about a specific goal, objective, or aim. Hence, the output should be 0."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "This study examined links between DNA methylation and birth weight centile (BWC), and explored the impact of genetic variation. Using HumanMethylation450 arrays, we examined candidate gene-associated CpGs in cord blood from newborns with low (<15th centile), medium (40-60th centile) and high (>85th centile) BWC (n = 12). Candidates were examined in an investigation cohort (n = 110) using pyrosequencing and genotyping for putative methylation-associated polymorphisms performed using standard PCR. Array analysis identified 314 candidate genes associated with BWC extremes, four of which showed \u2265 4 BWC-linked CpGs. Of these, PM20D1 and MI886 suggested genetically determined methylation levels. However, methylation at three CpGs in FGFR2 remained significantly associated with high BWC (p = 0.004-0.027).",
+            "output": "0",
+            "explanation": "This passage talks about examining links between DNA methylation and also explores impact of genetic variation. This suggests that it has a definite objective and hence, the output should be 1. Output 0 is wrong."
+        },
+        {
+            "input": "Tumor microenvironment immunity is associated with breast cancer outcome. A high lymphocytic infiltration has been associated with response to neoadjuvant chemotherapy, but the contribution to response and prognosis of immune cell subpopulations profiles in both pre-treated and post-treatment residual tumor is still unclear. We analyzed pre- and post-treatment tumor-infiltrating immune cells (CD3, CD4, CD8, CD20, CD68, Foxp3) by immunohistochemistry in a series of 121 breast cancer patients homogeneously treated with neoadjuvant chemotherapy. Immune cell profiles were analyzed and correlated with response and survival. We identified three tumor-infiltrating immune cell profiles, which were able to predict pathological complete response (pCR) to neoadjuvant chemotherapy (cluster B: 58%, versus clusters A and C: 7%). A higher infiltration by CD4 lymphocytes was the main factor explaining the occurrence of pCR, and this association was validated in six public genomic datasets. A higher chemotherapy effect on lymphocytic infiltration, including an inversion of CD4/CD8 ratio, was associated with pCR and with better prognosis. Analysis of the immune infiltrate in post-chemotherapy residual tumor identified a profile (cluster Y), mainly characterized by high CD3 and CD68 infiltration, with a worse disease free survival.",
+            "output": "1",
+            "explanation": "There is no mention about how chemotherapy can cure breast cancer in the input passage. Hence, this question is a bad example."
+        },
+        {
+            "input": "Hidradenitis suppurativa (HS) is a chronic inflammatory disease involving intertriginous skin. Previous epidemiologic studies have been limited by small sample size. We sought to describe the prevalence and comorbidities of HS in a large patient care database. In this retrospective case-control study, we chart-validated all patients within a hospital database who received at least 1 billing code for HS between 1980 and 2013. Verified cases were matched with controls based on age, gender, and race. Prevalences of a priori selected comorbidities were compared between HS and control groups. A total of 2292 patients at Massachusetts General Hospital received at least 1 code for HS. A total of 1776 cases had a validated diagnosis of HS, yielding a prevalence of 0.08%. In unadjusted analysis, all comorbidities were diagnosed significantly more in HS compared with control including (in rank order of likelihood): smoking, arthropathies, dyslipidemia, polycystic ovarian syndrome, psychiatric disorders, obesity, drug dependence, hypertension, diabetes, thyroid disease, alcohol dependence, and lymphoma (all P < .01).",
+            "output": "0",
+            "explanation": "In the line 'We sought to describe the prevalence...' it is evident that the passage has a specific goal in mind. Hence, the output should be 1 and not 0. Therefore, the output is wrong."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task848-d478b85a31e34ab7b3eeb9904ffc56d4",
+            "input": "Lactate dehydrogenase-elevating virus (LDV) is a natural infectious agent of mice. Like several other viruses, LDV causes widespread and very rapid but transient activation of both B cells and T cells in lymphoid tissues and the blood. The mechanism of this activation has not been fully described and is the focus of the current studies.', \"A known inducer of early lymphocyte activation is IFNalpha, a cytokine strongly induced by LDV infection. Neutralization of IFNalpha in the plasma from infected mice ablated its ability to activate lymphocytes in vitro. Since the primary source of virus-induced IFNalpha in vivo is often plasmacytoid dendritic cells (pDC's), we depleted these cells prior to LDV infection and tested for lymphocyte activation. Depletion of pDC's in vivo eradicated both the LDV-induced IFNalpha response and lymphocyte activation. A primary receptor in pDC's for single stranded RNA viruses such as LDV is the toll-like receptor 7 (TLR7) pattern recognition receptor. Infection of TLR7-knockout mice revealed that both the IFNalpha response and lymphocyte activation were dependent on TLR7 signaling in vivo. Interestingly, virus levels in both TLR7 knockout mice and pDC-depleted mice were indistinguishable from controls indicating that LDV is largely resistant to the systemic IFNalpha response.",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "id": "task848-8488595b59864f1e858bfc5a065e519a",
+            "input": "Nestin is a type VI intermediate filament protein known as a marker for progenitor cells that can be mostly found in tissues during the embryonic and fetal periods. In our study, we aimed to determine the expression of nestin in meninges covering the brain tissue at different developmental stages and in the new born.', 'In this study 10 human fetuses in different development stages between developmental weeks 9-34 and a newborn brain tissue were used. Fetuses in paraffin section were stained with H+E and nestin immunohistochemical staining protocol was performed.', 'In this study, in the human meninges intense nestin expression was detected as early as in the 9th week of development. Intensity of this expression gradually decreased in later stages of development and nestin expression still persisted in a small population of newborn meningeal cells.",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "id": "task848-00270b88a79b4b1d9068fcd0995db3af",
+            "input": "The adverse consequences of a non-dialysis-requiring acute kidney injury (AKI) are unclear. This study aimed to assess the long-term prognoses for critically ill patients experiencing a non-dialysis-requiring AKI.', 'This retrospective observational cohort study investigated non-dialysis-requiring AKI survivors in surgical intensive care units between January 2002 and June 2010. All longitudinal post-discharge serum creatinine measurements and information regarding end-stage renal disease (ESRD) and death were collected. We assessed the long-term outcomes of chronic kidney disease (CKD), ESRD and all-cause mortality beyond discharge.', 'Of the 922 identified critically ill patients with a non-dialysis-requiring AKI, 634 (68.8%) patients who survived to discharge were enrolled. A total of 207 patients died after a median follow-up of 700.5 days. The median intervals between the onset of the AKI and the composite endpoints \"stage 3 CKD or death\", \"stage 4 CKD or death\", \"stage 5 CKD or death\", and \"ESRD or death\" were 685, 1319, 1743, and 2048 days, respectively. This finding shows a steady long-term decline in kidney function after discharge. Using the multivariate Cox proportional hazard model, we found that every 1 mL/min/1.73 m2 decrease from baseline estimated glomerular filtration rate (eGFR) of individuals who progressed to stage 3, 4, and 5 CKD increased the risks of long-term mortality by 0.7%, 2.3%, and 4.1%, respectively (all p < 0.05). This result indicates that the mortality risk increased significantly in a graded manner as kidney function declined from the baseline eGFR to advanced stages of CKD during the follow-up period.",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "id": "task848-45c26e061b114a23af4969029ac2d71c",
+            "input": "Violence-exposed youth rarely receive mental health services, even though exposure increases risk for academic and psychosocial problems. This study examines the association between violence exposure and mental health service contact. The 4 forms of violence exposure were peer, family, sexual, and witnessing.', 'Data are from 1534 Boston public high school students who participated in a 2008 self-report survey of violence exposure and its correlates. Multivariate logistic regressions estimated associations between each form of violence with service contact, then examined whether associations persisted when controlling for suicidality and self-injurious behaviors.', 'In unadjusted models, violence-exposed students more often reported service contact than their peers. However, in multivariate models, only exposure to family (odds ratio [OR] = 1.69, 95% confidence interval [CI] = 1.23-2.31) and sexual violence (OR = 2.34, 95% CI = 1.29-4.20) were associated with service contact. Associations attenuated when controlling for suicidality and self-injurious behaviors, indicating they were largely explained by self-harm. Sexual violence alone remained associated with mental health service contact in fully adjusted models, but only for girls (OR=3.32, 95% CI=1.30-8.45), suggesting sex-specific pathways.",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "id": "task848-c2f0b3ee7fbb4a5d88113a543e862926",
+            "input": "It is not well known whether prestroke antiplatelet agents (PAs) are associated with the subtypes of ischemic stroke.', 'We screened patients in a hospital-based stroke registry. Patients who were admitted with a diagnosis of first-time ischemic stroke within 5 days of symptom onset were included. Ischemic stroke subtypes were classified in accordance with the Trial of ORG 10172 in Acute Stroke Treatment classification based on stroke mechanism: large-artery atherosclerosis (LA), cardioembolism (CE), small vessel occlusion (SVO), other determined (OC) or undetermined causes (UC). Multinomial logistic regression analyses were performed to evaluate the effect of PA on stroke subtypes before and after propensity score matching.', 'Among 3,025 patients, 748 (24.7%) were taking antiplatelet agents prior to stroke. After propensity score matching, 1,190 patients were ultimately included. The PA group was associated with strokes caused by SVO rather than LA in multinomial logistic regression of an unmatched dataset. However, multivariable analysis after propensity score matching demonstrated that PA use was associated with a higher probability of SVO and CE (OR 2.05, p < 0.001 and OR 1.62, p = 0.05, respectively) compared with LA.",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "id": "task848-b6b5fb2d375a4d2aaa18acbc79ff865d",
+            "input": "A number of studies have suggested that depressed mood is one of the most important predictors of quality of life (QoL) in patients with epilepsy. However, the QoL measure used in previous studies was limited to the Quality of Life in Epilepsy (QOLIE) scales. It could be questioned whether correlation of QOLIE with measures of depression is influenced by the properties of the instruments used rather than being a valid effect. By using visual analogue scales, the current study aimed to clarify whether depression and QoL are truly correlated in patients with epilepsy.', \"Data from a sample of 261 outpatients with epilepsy attending the Epilepsy Clinics of the Atkinson Morley Outpatient Department, St George's Hospital in London, were analyzed. Patients were screened using the European Quality-of-Life scale (EQ-5D-3L) which includes an overall visual analogue score (EQ-VAS), the Emotional Thermometer (ET7), the Beck Depression inventory-II (BDI-II), the Hospital Anxiety and Depression scale (HADS), and the Major Depression inventory (MDI).\", 'Depression was found to significantly correlate with EQ-VAS score with r coefficient ranging from 0.42 to 0.51 and r(2) coefficients ranging between 0.18 and 0.26. In addition, we identified patients who were depressed according to DSM-IV criteria (MD) and those with atypical forms of depression (AD). The EQ-5D-3L scores in these subjects compared with those without depression (ND) showed a different impact of AD and MD on QoL.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "id": "task848-ea0378c2dac649cfbf2af7cb423f6244",
+            "input": "To observe the influence of hypoxia-inducible factor 1 alpha (HIF-1alpha) on angiogenesis in prostate carcinoma in vivo and to investigate its molecular mechanism.', 'LNCaP/HIF-1alpha and LNCaP cells were cultured, the level of PSA in the supernatant of the culture medium detected by ELISA assay before and after the transfection, and the cellular cycle measured by flow cytometry. Nude mouse models of subcutaneous tumor were established with LNCaP/HIF-1alpha and LNCaP cells, the tumor growth observed, and tumor specimens collected for immunohistochemical staining.', 'Compared with the LNCaP cells, LNCaP/HIF-1alpha cells showed an obviously decreased PSA level (t = 8.243, P < 0.05) and enhanced proliferous activity. The tumorigenesis rate increased and the tumorigenesis time advanced in the LNCaP/HIF-1alpha group of the nude mice. Immunohistochemistry displayed higher expressions of VEGF, iNOS and Ang-2 in the LNCaP/HIF-1alpha than in the LNCaP group.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "id": "task848-0d21e46a5c414566aecb1f4f3deeaed1",
+            "input": "Previous studies have demonstrated an important role for beta-2 adrenergic receptors (\u03b2(2)AR) in lung fluid clearance. The purpose of this investigation was to examine the relationship between \u03b2(2)AR density on lymphocytes and indices of lung water in healthy humans exposed to \u2248 17 h of hypoxia (FIO2 = 12.5% in a hypoxia tent).', 'Thirteen adults (mean \u00b1 SEM; age=31 \u00b1 3 years, BMI=24 \u00b1 1 kg/m(2), VO2 Peak = 40 \u00b1 2 ml/kg/min ) participated. Pulmonary function, CT derived lung tissue volume (V(tis)-tissue, blood and water), lung diffusing capacity for carbon monoxide (D(CO)) and nitric oxide (D(NO)), alveolar-capillary conductance (D(M)), pulmonary capillary blood volume (V(c)) and lung water (CT V(tis)-V(c)) were assessed before and after \u2248 17 h normobaric hypoxia (FIO2 = 12.5%). \u03b2(2)AR density on lymphocytes was measured via radioligand binding. Arterial oxygen saturation (SaO2), cardiac output (Q), right ventricular systolic pressure (RVSP) and blood pressure (BP) were also assessed.', 'After 17 h hypoxia, SaO2 decreased from 97 \u00b1 1 (normoxia) to 82 \u00b1 4% and RVSP increased from 14 \u00b1 3 (normoxia) to 29 \u00b1 2 mmHg (p<0.05) with little change in Q or BP. V(c) and D(M) both increased with hypoxia with a small increase in D(M)/V(c) ratio (p>0.05). CT V(tis) decreased and lung water was estimated to decline 7 \u00b1 13%, respectively. \u03b2(2)AR density averaged 1497 \u00b1 187 receptors/lymphocyte and increased 21 \u00b1 34% with hypoxia (range -31 to +86%). The post-hypoxia increase in \u03b2(2)AR density was significantly related to the reduction in lung water (r=-0.64, p<0.05), with the subjects with the greatest increase in density demonstrating the largest decline in lung water.",
+            "output": [
+                "0"
+            ]
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

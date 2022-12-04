@@ -1,0 +1,115 @@
+{
+    "Contributors": [
+        "Kushal Chawla"
+    ],
+    "Source": [
+        "casino"
+    ],
+    "URL": [
+        "https://aclanthology.org/2021.naacl-main.254.pdf"
+    ],
+    "Categories": [
+        "Negotiation Strategy Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You will be given an utterance and recent dialogue context containing past 3 utterances (if available). You need to output 'Yes' if the utterance contains the vouch-fair strategy, otherwise output 'No'. Vouch-fair is a selfish negotiation strategy that is used to call out fairness for personal benefit, either when acknowledging a fair deal or when the opponent offers a deal that benefits them. This can be done through an explicit call out or can be implied."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Context: 'Yeah, I'm going to the desert so I'm hoping to have enough water. I'm good on food and I hunt for a lot of it anyways.' 'I've never been a good hunter. I wish I had those abilities.' 'I would part with all the food if I could get all the firewood.'\nUtterance: 'That seems fair. How about water. How would that be split? I'm very concerned.'",
+            "output": "Yes",
+            "explanation": "This is correct since the participant points out that the proposed deal seems fair."
+        },
+        {
+            "input": "Context: 'I really need that extra food for me and my bother. we have one to spare' 'so what is the whole deal here? ' 'you get 3 firewood I get 3 waters and now food I will give you 1 if that is ok\ud83d\ude42'\nUtterance: 'and I have to give you more food or not?'",
+            "output": "No",
+            "explanation": "Correct. The participant does not call out the fairness of the deal in any way."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Context: 'Heck yes! I am excited. How about you?' 'I can't wait \ud83d\ude42 Let's talk about these supplies. I've got hungry mouths to feed, Can I take the food and you can have half the firewood and all the water?' 'Hmm, I need food too. I am willing to split. I will give you 2 food since you claimed it first. Can I have 2 waters then?'\nUtterance: 'That's fair, but I have wiggle room on the water, how about I take two food, two firewood and you take 3 water, 1 food, 1 firewood?'",
+            "output": "No",
+            "explanation": "The participant explicitly points out that the proposal by the opponent is fair so this is wrong. The correct answer would be 'Yes'."
+        },
+        {
+            "input": "Context: 'You can take two firewood an i can get one. I really don't need much. of that. are you okay with that?' 'I am okay with that \ud83d\ude42' 'okay an for as the water two for me an 2 for you right? are you sure?'\nUtterance: 'Yes, as long as I can get two of the food. '",
+            "output": "Yes",
+            "explanation": "This is wrong since the utterance does not refer to the evaluation of the deal. The correct answer is No."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task359-cd309be436f74d7f9a1f556897fb7a3f",
+            "input": "Context: 'Well i do not need the water at all as i have a distiller' 'And I have plenty of food as I'm the only over eater of the group.' 'OK how about 2 firewoods me 2 foods me 1 firewood you 1 food 3 water'\nUtterance: 'If I'm only getting 1 firewood let me have 1 extra food then. So you can have the 2 firewoods, plus 1 food. I'll get 1 firewood, 2 foods and 3 waters. You get the most important item so I'm thinking that's fair.'",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task359-913ca660ff174313957e06e40359f66c",
+            "input": "Context: 'This offer is good for me but I need some water too. Can we share the water and have all the firewood? \ud83d\ude42' 'No, I offer you 3 food, and 1 water.  I would like 2 water and 3 firewood.' 'Well this is perfect for me. I agree with 3 food and 1 water. Do you also agree?\ud83d\ude42'\nUtterance: 'Sure that sounds fair to me, we both get what we need.\ud83d\ude42'",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task359-11118cb5670e40558a20b38893f8998a",
+            "input": "Context: 'Hello friend.. \ud83d\ude42' 'Hello, going camping?\ud83d\ude42'\nUtterance: 'Yes. Can you help me to give some extra fodd?'",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task359-b1148484c14a4103ae2252b02f2243f6",
+            "input": "Context: 'Oh yes, I have my whole family coming. I'm really excited because we don't see each other often. My aunts, uncles, cousins. Some of us will hike while others stay back. Maybe we can come to an agreement? Will you also be hiking?' 'Yes hiking for sure.  If I take 2 firewoods and give you 2 waters and 1 food, would that be acceptable?' 'I think that could work '\nUtterance: 'Thank you.  Have a great time and stay safe. It's going to be a blast for sure. '",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task359-8f375ee4e9014d8cb736c86a80eb2d4f",
+            "input": "Context: 'The weather is going to be really hot. Could I have 2 water in exchange for you receiving 2 food and 2 firewood?' 'I have a low immune system and need to stay warm how about I get all 3 firewood in exchange for the 2 water. ' 'I will agree to 3 firewood for 2 water. Maybe I should extra food though so 2 food for me\ud83d\ude42'\nUtterance: 'I can agree to 2 food. You get 2 and I will get 1 food. That sounds fair to me. \ud83d\ude42'",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task359-9fed27694f5b4f1db9d3486d72440dcc",
+            "input": "Context: 'I would need 2 out of 3 as well.' 'Interesting - you're essentially saying that you need the majority of two of the three items. Hmm...' 'Yes, thats all. I need 1/3 food, 2/3 water, and 2/3 firewood.'\nUtterance: 'Still not convinced in any way that you need more items in total over me. Please clarify!'",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task359-ecfd8aee41a74d4fa9e54c9f275344f7",
+            "input": "Context: 'Well fortunately if you are camping that won't be too bad. You'll blend in with the wilderness.' 'My friends will run away. I will not be comfortable either. So how do we split what we have?' 'If they're true friends, they won't. I'll take 2 firewood, 2 water, 3 food.'\nUtterance: 'That is very unfair \u2639\ufe0f'",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task359-5da07dadbffe414898ef2e2643e623dc",
+            "input": "Context: 'Hello, how are you doing?' 'I\u2019m doing fine. How about you?'\nUtterance: 'I'm doing well. I was hoping I could have the extra firewood because my group decided to camp for a few extra days and want to make sure we have enough'",
+            "output": [
+                "No"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

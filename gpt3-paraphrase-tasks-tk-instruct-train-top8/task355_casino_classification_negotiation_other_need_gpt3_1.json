@@ -1,0 +1,115 @@
+{
+    "Contributors": [
+        "Kushal Chawla"
+    ],
+    "Source": [
+        "casino"
+    ],
+    "URL": [
+        "https://aclanthology.org/2021.naacl-main.254.pdf"
+    ],
+    "Categories": [
+        "Negotiation Strategy Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "The input is taken from a negotiation between two participants who take the role of campsite neighbors and negotiate for Food, Water, and Firewood packages, based on their individual preferences and requirements. Given an utterance and recent dialogue context containing past 3 utterances (wherever available), output 'Yes' if the utterance contains the other-need strategy, otherwise output 'No'. Other-need is a selfish negotiation strategy. It is used when the participants discuss a need for someone else rather than themselves. For instance, describing the need for firewood to keep the kids warm."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Context: 'I was hoping to get alot of water as well, would you be ok with me getting two waters and three firewoods if you get all the food and one water?' 'Hmm, that's not favorable for me going by the volume of items left in my arsenal. Water is more of a higher priority than food. So, I would exchange 1 pack of food for an additional water' 'So that way you would get two waters and two foods? Those are my priorities as well but i would be ok with it since that way i would get five items and you would get only four.'\nUtterance: 'Those are your priorities?? Then that's not fair for you. Then I take 2 water, 1 firewood and 1 food. This is the lowest I can offer'",
+            "output": "No",
+            "explanation": "This is correct. The participant does not create a specific need for anybody."
+        },
+        {
+            "input": "Context: 'I am doing okay but am in need of some supplies. What about you?' 'Same here. My kids are really looking forward to this. What is most important to you?' 'Firewood! I need it to cook my food and also to stay warm. What about you?'\nUtterance: 'That is the same for me as well. My kids were really looking forward to making s'mores and telling stories by the campfire. That's all they've been talking about'",
+            "output": "Yes",
+            "explanation": "In this utterance, the participant uses other-need by mentioning the needs of their kids."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Context: 'Hi! How are you doing today?' 'I'm fine. And yourself?' 'Pretty good. I'm really excited about going camping though!'\nUtterance: 'Me too. I haven't been camping for several years. '",
+            "output": "Yes",
+            "explanation": "There is no need created here. So the correct answer is 'No'."
+        },
+        {
+            "input": "Context: 'Hi, I hope we can work together to get an offer that benefits both of us.\ud83d\ude42'\nUtterance: 'I agree! Nice to meet you... I have two boys who always eat! Any chance I canget 2 food?'",
+            "output": "No",
+            "explanation": "The participant mentions that their boys eat and hence implies that they would need food. Hence, the correct answer here is 'Yes'."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task355-094769d78f834e81b1096cce9debcb3a",
+            "input": "Context: 'Hmmm i don't beleive i ever offered you everything for all the food. I will need at least one water. lets not be selfish.' 'Oh you are right sorry, I was mistaken.  Okay then, how about I get 1 food, 2 waters, and 3 firewood.  You can have 2 food and 1 water?' 'Well that would give you 6 rations and me 3. Again that is not very fair. If you want 1 food and all the fire wood that i need at least 2 waters. so again, 1 food, 1 water 3 wood for you'\nUtterance: 'Okay, you have a deal. \ud83d\ude42'",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task355-adf6fd5cb0b74b399aed53f369c9a415",
+            "input": "Context: 'Are you sure you won't get hungry? I am open to giving you the two waters, but I want to make sure its the best deal for you. I would want 2 firewoods and 2 foods in exchange.' 'brother  k ,  bro  2 water and 2 wire wood 1 firewood can you given?' 'I think that that is acceptable to me. I want to make sure we both understand: I get 1 Water, 2 Firewood, 2 Food Packages. You get 2 Waters, 1 Firewood, 1 Food Package. I will have to ration my water, but I think the extra comfort is worth it. Does this work for you? '\nUtterance: 'bro its not profitable ratiobro gave 3 water 1 firewood, remaning you can take'",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task355-a671e03bc0f84e3caf7a645939192294",
+            "input": "Context: 'You mean you can't let up one firewood for me?' 'Not this time, I really need all the firewood and food is a large need for my family of 8. We need the firewood to cook all our meals from the animals we hunt since we are short on food.' 'But these are only additional packages\u2639\ufe0f'\nUtterance: 'I get that and understand completely. I have a large number of mouths to feed making the food a necessity or all the firewood to cook whatever we hunt. How many you have?'",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task355-432213e936ce496c8f7b69893233a71e",
+            "input": "Context: 'Yes please ..! My son has respiratory problems I'll definitely need that \ud83d\ude21\ud83d\ude21\ud83d\ude21' 'If you really need water, then can I have 2 firewood and 3 food then?' 'No I really need food also ...at least I will take 3 food and 2 water and you can take remaining'\nUtterance: 'I'll let you take 3 food and 1 water, and I will take the rest.'",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task355-1c652a847e384e4a9f3dd86ce3a1b0bd",
+            "input": "Context: 'I can give you 2 units of firewood, but I need at least 1 as well. ' 'How much food do you need?' 'If you give me 1 unit each of water and firewood, I'll give you 2 units of food for helping me out'\nUtterance: 'I may need two food, I don't know how much fish I can catch.'",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task355-d95ff230d5844e979dd8d8be81999daf",
+            "input": "Context: 'Hello!  Great to see another camper here going for a hike.  My family is looking forward to a great weekend here.\ud83d\ude42' 'Mine too! Camping is one of my favorite things to do with my family.'\nUtterance: 'It should be a good weekedn for it.  Unfortuately the air;ine loss our luggage with the sleeping bags and food.  Not a good start for us with my mother-in-law along for the first time.  My wife and her is down getting trail maps while I sort out keeping warm tonight and feed after some hiking.'",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task355-fdcdbba85bc24a5585d1ea9f9cabd034",
+            "input": "Context: 'Hello.  I am very interested in the firewood and would be very willing to forfeit all the water.' 'oh really.  i am willing to make a negotiation with you on that for sure.  where are you plannign to camp?' 'I'm camping near a natural spring and will have all the water I need.  How are you planning to eat?'\nUtterance: 'i have some spare cans but i am not too worried about it.  its a low prioirty for me '",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task355-26d9008463744a2a8af0bdb4047b3f48",
+            "input": "Context: 'food is necessary for all living beings. '\nUtterance: 'I am traveling with a big group so we need more water.'",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

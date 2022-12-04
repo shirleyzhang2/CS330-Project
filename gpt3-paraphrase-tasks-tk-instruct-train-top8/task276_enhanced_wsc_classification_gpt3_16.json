@@ -1,0 +1,123 @@
+{
+    "Contributors": [
+        "Pegah Alipoormolabashi"
+    ],
+    "Source": [
+        "wsc; enhanced_wsc"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/winograd_wsc; https://github.com/mhany90/perturbed-wsc"
+    ],
+    "Categories": [
+        "Text Matching"
+    ],
+    "Reasoning": [
+        "Commonsense Reasoning"
+    ],
+    "Definition": [
+        "You will be given two sentences. One of the sentences is a paraphrase of the original sentence, with changes in one or more aspects. Your task is to decide what is the difference between the two sentences. The types of changes are explained below: Tense: The verbs in the sentence are changed in tense. Number: Plural nouns, verbs and pronouns are changed into single ones or the other way around. Voice: If the verbs are in active voice, they're changed to passive or the other way around. Adverb: The paraphrase has one adverb or more than the original sentence. Gender: The paraphrase differs from the original sentence in the gender of the names and pronouns. Synonym: Some words or phrases of the original sentence are replaced with synonym words or phrases. Changes in the names of people are also considered a synonym change. Classify your answers into Tense, Number, Voice, Adverb, Gender, and Synonym."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue",
+        "Narrative"
+    ],
+    "Positive Examples": [
+        {
+            "input": "original sentence: Lily spoke to Donna , breaking her silence . paraphrase: Lily is speaking to Donna , breaking her silence .",
+            "output": "Tense",
+            "explanation": "The verbs in this example are changed from past tense to present tense."
+        },
+        {
+            "input": "original sentence: I'm sure that my map will show this building ; it is very good . paraphrase: I'm sure that my maps will show these buildings ; they are very good .",
+            "output": "Number",
+            "explanation": "In this example, map and building and their pronouns has been changed. So, the output should be Number."
+        },
+        {
+            "input": "original sentence: Jim signaled the barman and gestured toward his bathroom key . paraphrase: Jim dreamily signaled the barman and vaguely gestured toward his bathroom key .",
+            "output": "Adverb",
+            "explanation": "In this example the adverbs \"vaguely\" and \"dreamily\" are added to the original sentence."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "original sentence: The dog chased the cat , which ran up a tree . It waited at the bottom . paraphrase: The dog is chasing the cat , which is running up a tree . It is waiting at the bottom .",
+            "output": "Voice",
+            "explanation": "The change in the original sentence is to tense, as the past tense verbs are changed to present tense ones. \"Voice\" is not a correct answer here."
+        },
+        {
+            "input": "original sentence: John was doing research in the library when he heard a man humming and whistling . He was very annoyed . paraphrase: John and Steve were doing research in the library when they heard men humming and whistling . They were very annoyed .",
+            "output": "Number is changed.",
+            "explanation": "You should only output the title of the change, and nothing more."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task276-7e8f107e2a3649a6b16191c0599e7d99",
+            "input": "original sentence: When Tommy dropped his ice cream , Timmy giggled , so father gave him a stern look . paraphrase: When Tommy and Bobby dropped their ice creams , Timmy and Billy giggled , so father gave them a stern look .",
+            "output": [
+                "Number"
+            ]
+        },
+        {
+            "id": "task276-2e9d41353b0845ca84bc9c00e14fe15d",
+            "input": "original sentence: Sara borrowed the book from the library because she needs it for an article she is working on . She reads it when she gets home from work . paraphrase: The book was borrowed by Sara from the library because she needs it for an article she is working on . It is read by her when she gets home from work .",
+            "output": [
+                "Voice"
+            ]
+        },
+        {
+            "id": "task276-f0a2efb5d28d48d8b65b01461cf79268",
+            "input": "original sentence: The man lifted the boy onto his bunk bed . paraphrase: The man joyfully lifted the boy onto his bunk bed .",
+            "output": [
+                "Adverb"
+            ]
+        },
+        {
+            "id": "task276-30052963112a4af8866addd2576d1a28",
+            "input": "original sentence: Madonna fired her trainer because she slept with her boyfriend . paraphrase: Michael fired his trainer because he slept with his girlfriend .",
+            "output": [
+                "Gender"
+            ]
+        },
+        {
+            "id": "task276-51261d8781ac4795a9932c3bbae64950",
+            "input": "original sentence: If the con artist had succeeded in fooling Sam , he would have lost a lot of money . paraphrase: If the con artist had repeatedly succeeded in fooling Sam , he would have lost a lot of money .",
+            "output": [
+                "Adverb"
+            ]
+        },
+        {
+            "id": "task276-0ba794a64f94484eada22ec437ea8583",
+            "input": "original sentence: Jackson was greatly influenced by Arnold , though he lived two centuries later . paraphrase: Arnold greatly influenced Jackson , though he lived two centuries later .",
+            "output": [
+                "Voice"
+            ]
+        },
+        {
+            "id": "task276-5ee731f52d594090aa764bb256ad1799",
+            "input": "original sentence: The man lifted the boy onto his bunk bed . paraphrase: The man is lifting the boy onto his bunk bed .",
+            "output": [
+                "Tense"
+            ]
+        },
+        {
+            "id": "task276-7eba868c61f145d294c759b22f604fd3",
+            "input": "original sentence: The fish is eating the worm . It is hungry . paraphrase: the fish ate the roundworm . it was hungry .",
+            "output": [
+                "Synonym"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

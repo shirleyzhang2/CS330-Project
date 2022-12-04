@@ -1,0 +1,123 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "dream"
+    ],
+    "URL": [
+        "https://github.com/nlpdata/dream"
+    ],
+    "Categories": [
+        "Question Understanding"
+    ],
+    "Reasoning": [
+        "Reasoning on Social Interactions"
+    ],
+    "Definition": [
+        "In this task, you will be given a conversation and a question. You should categorize the question into one of the following groups: matching, summary, logic, arithmetic, and commonsense. A matching question is one that is entailed or paraphrased by exactly one sentence in the dialogue, and the answer can be extracted from that sentence. A summary question requires the whole picture of the dialogue in order to be answered, such as the topic of the dialogue and the relation between the speakers. A logic question requires logical reasoning to be answered. An arithmetic question requires arithmetic knowledge to be answered. A commonsense question requires additional commonsense knowledge that is not obtainable from the dialogue itself. Note that a question can be in more than one group. \"W\" and \"M\" in the conversations stand for \"woman\" and \"man\"."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue",
+        "Natural Science -> School Science Textbooks"
+    ],
+    "Positive Examples": [
+        {
+            "input": "W: The movie next Tuesday has been cancelled due to lack of interest. M: What do you mean? W: Well, by last night only a few tickets has been sold., Question: What can we conclude about the movie? (A) They want to buy the tickets for the movie. (B) The tickets for the movie were sold. (C) The movie will not be shown.",
+            "output": "commonsense",
+            "explanation": "This is a good example. To answer this question we require commonsense knowledge that cannot be obtained from the dialogue. So, this is a commonsense question."
+        },
+        {
+            "input": "W: What does the term \"alternative energy source\" mean? M: When we think of energy or fuel for our homes and cars, we think of petroleum, a fossil fuel processed from oil removed from the ground, of which there is a limited supply. But alternative fuels can be many things. Wind, sun and water can all be used to create fuel. W: Is the threat of running out of petroleum real? M: It has taken thousands of years to create the natural stores of petroleum we have available at a much faster rate than it is being produced over time. The real controversy surrounding the amount of petroleum we have is how much we need to keep in reserve for future use. Most experts agree that by around 2025, the amount of petroleum we use will reach a peak. Then production and availability will begin to seriously decline. This is not to say there will be no petroleum at this point. But it'll become very difficult and therefore expensive to extract. W: Is that the most important reason to develop alternative fuel and energy sources? M: There are two very clear reasons to do so. One is that whether we have 60 or 600 years of fossil fuels left, we have to find other fuel sources eventually. So the sooner we start, the better off we will be. The other big argument is that when long time, which leads to some long-term negative effects, like global warming and the greenhouse effect., Question: What do we usually refer to when we talk about energy according to the man? (A) Coal burnt daily for the comfort of our homes. (B) Anything that can be used to produce power. (C) Fuel refined from oil extracted from underground.",
+            "output": "matching",
+            "explanation": "The first sentence of the man can answer this question. So, it's a matching question."
+        },
+        {
+            "input": "M: What do you think of my new sweater? W: Well, it looks nice, but why don't you put it on, and then I'll tell you if it suits you? M: Okay. You know, I tried on about twenty at the shop, and this one isn't really what I wanted. I especially can't stand the high neck. W: Why did you buy it then? M: The salesman sold it to me before I realized what had happened. He just never stopped talking about the latest fashions and special reduced prices. Before I could say anything he'd wrapped it up and I realized that I'd paid him. W: Well, it doesn't look too bad. I think it looks good on you. M: But I went out to get a blue sweater to match my black trousers-something with a V-neck, short sleeves and pattern-and I came home with a brown sweater with a high neck, long sleeves and no pattern. W: You've got to learn to stand up to these high-pressure salesmen. They will sell you all sorts of things you don't want if you don't watch out. M: Next time I'll send my wife. She would probably sell something to the salesman. W: That's a good idea. Actually women are much better at shopping than men. Whenever my husband and I buy something important, I always have the finalsay. M: I must admit that women are better at shopping. I should simply leave the whole business to them., Question: Why did the man buy a sweater that he doesn't like? (A) He was pushed by the salesman (B) It was sold at a low price (C) It is the latest fashion.",
+            "output": "logic",
+            "explanation": "To answer this question we need logical reasoning. In the dialogues, they talk about high-pressure salesmen. So by logical reasoning, we could understand that he was pushed by the salesman."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "W: What does the term \"alternative energy source\" mean? M: When we think of energy or fuel for our homes and cars, we think of petroleum, a fossil fuel processed from oil removed from the ground, of which there is a limited supply. But alternative fuels can be many things. Wind, sun and water can all be used to create fuel. W: Is the threat of running out of petroleum real? M: It has taken thousands of years to create the natural stores of petroleum we have available at a much faster rate than it is being produced over time. The real controversy surrounding the amount of petroleum we have is how much we need to keep in reserve for future use. Most experts agree that by around 2025, the amount of petroleum we use will reach a peak. Then production and availability will begin to seriously decline. This is not to say there will be no petroleum at this point. But it'll become very difficult and therefore expensive to extract. W: Is that the most important reason to develop alternative fuel and energy sources? M: There are two very clear reasons to do so. One is that whether we have 60 or 600 years of fossil fuels left, we have to find other fuel sources eventually. So the sooner we start, the better off we will be. The other big argument is that when long time, which leads to some long-term negative effects, like global warming and the greenhouse effect., Question: What do most experts agree on according to the man? (A) Oil will soon be replaced by alternative energy sources. (B) Oil production will begin to decline worldwide by 2025. (C) Oil consumption has given rise to many global problems.",
+            "output": "arithmetic",
+            "explanation": "We don't need arithmetic knowledge to answer this question. It's incorrect. This is a matching question."
+        },
+        {
+            "input": "M: Finally, I've got the chance to put on my new suit tonight. I hope to make a good impression on your family. W: Come on! It's only a family reunion. So jeans and T-shirts are just fine., Question: What does the woman mean? (A) The man has left a good impression on her family. (B) The man can dress casually for the occasion. (C) The man should buy himself a new suit.",
+            "output": "matching",
+            "explanation": "The answer to this question cannot be extracted from the context. We need commonsense knowledge to understand wearing jeans and T-shirts means dressing casually. This is a commonsense question."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task248-4280fb3376864b638bc12223c5e945c4",
+            "input": "W: Frank, I'm thinking of taking a day off and doing something with the children the day after tomorrow. M: Sounds good. What are you going to do? W: Tom wants to go boating at the park and Susan wants to go on a picnic. So we'll go to the park in the morning, go boating first and then enjoy a picnic. M: What about in the afternoon? W: I haven't decided yet. M: Well, why not take them to a movie? There's a good movie on now about a boy's adventure in a forest. My friend David took his son Jim to see it last night. He said Jim really loved it. W: Then I'll take them to see it Friday afternoon. By the way, I've got to go to a meeting this weekend. Could you look after the kids at home? M: I have to go to a meeting, too. I'm afraid we'll have to find a babysitter. W: What about Linda? She helped look after the kids last month and she did a great job., Question: Who thought the movie was great? (A) Tom. (B) David. (C) Jim.",
+            "output": [
+                "logic"
+            ]
+        },
+        {
+            "id": "task248-dae950da8c1a42f49681d21a9a86ad49",
+            "input": "M: Mary, do you know that beautiful girl with blonde hair? W: Certainly; she is my brother's girlfriend, Alice., Question: Whom are they talking about? (A) They are talking about blonde girls. (B) They are talking about her brother. (C) They are talking about Alice.",
+            "output": [
+                "summary"
+            ]
+        },
+        {
+            "id": "task248-22f7ab1a75224a4995029c4506144e8a",
+            "input": "M: Hello, may I speak to Mr. Brown? W: I am sorry, he is out for lunch. Would you like to leave a message? M: Err, what time do you expect him back? W: Say, in half an hour. M: Thank you, I'll try back later., Question: What can we learn about Mr. Brown? (A) He is in his office. (B) He is at a meeting. (C) He is out for a meal.",
+            "output": [
+                "commonsense"
+            ]
+        },
+        {
+            "id": "task248-808a5f5597e44711954e71e712f3e32e",
+            "input": "W: The strike of the porters has hold up export orders for two weeks. Do you think it will end soon? M: So far as I know, the management side has made an improved pay offer but the unions are just holding out for the original demands., Question: What does the man think of the strike? (A) It will last for two weeks. (B) It has come to a halt. (C) It will probably continue.",
+            "output": [
+                "commonsense"
+            ]
+        },
+        {
+            "id": "task248-a50742846d7744a5bc20390bfb465a57",
+            "input": "M: Now Cathy, do you know when the visitors from India are coming? W: We offer them three choices: the end of March, the middle of April and the beginning of May, and choose the earliest one which is good actually with exams coming up in May. M: Right. And how many are coming? Did you say about 12? W: Yes, they said 12 at first, but changed to 10 this morning. M: Good, we have 8 weeks to prepare, here are my suggestions. On the first day, a welcome party, then they can visit the schools in the district on the second and third days. W: We've got to remember this group wants to look at how computers are being used in the classroom. M: Exactly, so I want to ask Mr. Goodman to give them a talk on this on the afternoon of the third day. W: That will fit in very nicely. M: And on the last day, they would do some sightseeing, we could take them on the tour of London but many of them may have been there already, and Scotland will be too far away. W: Why not take them for a walk along the coast, it should be interesting. M: Good idea! Cathy I'm sure they'll like it., Question: How many visitors are coming? (A) 8. (B) 10. (C) 12.",
+            "output": [
+                "logic"
+            ]
+        },
+        {
+            "id": "task248-a78a3ec589624e5a801762f5bcef5e9e",
+            "input": "W: Okay, Mr. Taylor, let's go ahead and begin. First of all, tell me about your last job. M: Well, I worked for five years at Hi Tech Computers. W: Okay. Hi Tech. How about your website authoring skills? Oh. We are looking for someone to create and manage our company's website. M: Umm... uh, website, website. Huh... I don't think I've read that book. W: Huh?! And what about the experience with making a flash? M: Well... I think sometimes computers flash.., if that's what you mean. W: Okay, Mr. Taylor, I think I have all the information I need! M: Oh, and I really like computer games. I play them every day. W: Right, right. Thanks, Mr. Taylor. We'll be in touch., Question: For what is Mr. Taylor talking to the woman? (A) To ask for a job. (B) To ask her to make a website. (C) To invite her to play games.",
+            "output": [
+                "commonsense"
+            ]
+        },
+        {
+            "id": "task248-d072896c22d541c6a3909532a56cdf95",
+            "input": "F: Can we stop and have some rest? M: Some rest? We have just finished half of the work., Question: What does the man mean? (A) To finish work first. (B) To get some rest first. (C) To leave the work till tomorrow.",
+            "output": [
+                "commonsense"
+            ]
+        },
+        {
+            "id": "task248-7ae9cb4d942d49c99a6d230397b46892",
+            "input": "Carla: So, how are things going, Steve? Steve: Well, to be honest Carla, I was feeling great on Saturday, but I started to feel sick Sunday afternoon. I thought I'd get better, but I feel worse than before. And I'm really worried because I'm scheduled to give a presentation at work on Friday, so I have to be better by then. Carla: Well, what seems to be the problem? Steve: Well, I thought I had the flu, but the doctor said it was just a bad cold. He gave me some cold medicine to take care of my stuffy nose and fever. I'm supposed to take the medicine three times a day after eating, but it doesn't seem to help. He also told me to stay off my feet for a day or so, but I'm so busy these days. Carla: Listen, forget about that medicine! I have just the thing to get rid of bad colds. You see, my mom is really into herbal medicine. Steve: Oh, no thanks. Carla: Ah, come on! Give it a try. You just take some of my mom's herbal tea and drink it four times a day. Believe me. You'll be up and dancing around in no time. Steve: Dancing around in no time, right? Well, I guess. Nothing else seems to be doing the job. Carla: Great. I'll come by your place at 7:30. See you then., Question: How long has Steve been sick? (A) since Friday (B) since Saturday (C) since Sunday",
+            "output": [
+                "logic"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Dedicated License (https://github.com/nlpdata/dream/blob/master/license.txt)"
+    ]
+}

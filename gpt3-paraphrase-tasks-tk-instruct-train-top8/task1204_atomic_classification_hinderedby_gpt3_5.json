@@ -1,0 +1,125 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "atomic"
+    ],
+    "URL": [
+        "https://allenai.org/data/atomic-2020"
+    ],
+    "Categories": [
+        "Commonsense Classification"
+    ],
+    "Reasoning": [
+        "Relational Reasoning",
+        "Reasoning on Social Interactions",
+        "Commonsense Reasoning -> Social Situations"
+    ],
+    "Definition": [
+        "In this task, you are given two phrases: Head and Tail, separated by <sep>. The Head and Tail events are short phrases possibly involving participants. The names of specific people have been replaced by generic words (e.g., PersonX, PersonY, PersonZ). PersonX is always the subject of the event. You have to determine whether the Head can be hindered by what is mentioned in the Tail or not. In this task, hindering introduces hindrances that obstruct the natural path to the achievement of a goal. For example, the event PersonX adopts a cat can be obstructed if PersonX is allergic to cats. Classify your answers into \"Yes\" and \"No\". The phrase may also contain \"___\", a placeholder that can be an object, a person, and/or an action."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Sociology",
+        "Commonsense -> Concepts and Relations -> Social Commonsense"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Head: PersonX touches a nerve<sep>Tail: PersonX is too nice",
+            "output": "Yes",
+            "explanation": "This is a good example. The Tail can hinder the Head."
+        },
+        {
+            "input": "Head: PersonX attends school<sep>Tail: To be a student",
+            "output": "No",
+            "explanation": "In this example, The Head can't be hindered by the Tail."
+        },
+        {
+            "input": "Head: PersonX is driving down the street<sep>Tail: PersonX's car is in the shop.",
+            "output": "Yes",
+            "explanation": "If PersonX's car is in the shop, PersonX can't drive down the street. Thus, this example should be classified as \"Yes\"."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Head: PersonX asks if PersonY was okay<sep>Tail: to thank PersonX",
+            "output": "Yes",
+            "explanation": "In this example, The Head can't be hindered by the Tail. So the output should be \"No\"."
+        },
+        {
+            "input": "Head: PersonX clenches PersonY's jaw<sep>Tail: PersonY is out of reach.",
+            "output": "No",
+            "explanation": "If PersonY is out of reach, PersonX can't clench PersonY's jaw, and the output should be \"Yes\"."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1204-9d38140a75554612b30ed75f62e1af3d",
+            "input": "Head: PersonX goes camping with PersonX's friends<sep>Tail: PersonX does not have a tent.",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1204-f0f9d10208024f98978d3dbec01086ad",
+            "input": "Head: PersonX behaves like a PersonY<sep>Tail: similar",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1204-438fd07780ef4541b845ec0619fb4788",
+            "input": "Head: PersonX answers the question<sep>Tail: PersonX's dad keeps yelling over him.",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1204-51ba7b7862454fb594ca1565faef166e",
+            "input": "Head: PersonX becomes fast ___<sep>Tail: to work out  at the gym.",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1204-9e87c6bf5d544679ab9a730663ab35fb",
+            "input": "Head: PersonX spends a weekend<sep>Tail: PersonX boss is making him work the weekend.",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1204-671fc7b6dcac4e0694bdf6493148a912",
+            "input": "Head: PersonX divides the number by the number<sep>Tail: PersonX has no calculator",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1204-3c8386b0b229419bb79d22f3e6327a7e",
+            "input": "Head: PersonX keeps PersonY under control<sep>Tail: they are very strong willed",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1204-6462917aacc94dd4b5fff3ea2eefdfa0",
+            "input": "Head: PersonX faces PersonY's fear<sep>Tail: PersonX doesn't share the same fear",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

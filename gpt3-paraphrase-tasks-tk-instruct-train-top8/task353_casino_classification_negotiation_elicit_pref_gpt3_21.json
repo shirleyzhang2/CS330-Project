@@ -1,0 +1,115 @@
+{
+    "Contributors": [
+        "Kushal Chawla"
+    ],
+    "Source": [
+        "casino"
+    ],
+    "URL": [
+        "https://aclanthology.org/2021.naacl-main.254.pdf"
+    ],
+    "Categories": [
+        "Negotiation Strategy Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You will receive an utterance and recent dialogue context containing past 3 utterances (wherever available). Output 'Yes' if the utterance contains the elicit-pref strategy, otherwise output 'No'. elicit-pref is a cooperative negotiation strategy used to discover the preference order of the opponent in the negotiation."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Context: 'What do you think if in the camp we get together and have a meeting between your family and mine? We can have a small party to get to know each other better.' 'Sounds great!' 'Ok, my proposal is to give you all the firewood you need, on the condition that you give me all the water I need. And regarding food we can negotiate.'\nUtterance: 'That sounds good. What do you propose on the food?'",
+            "output": "No",
+            "explanation": "The primary utterance does not try to elicit information on the preference order of the participant. So this is correct."
+        },
+        {
+            "input": "Context: 'Good morning' 'Hi, how goes it?' 'It's going alright. What do you need the most to trade?'\nUtterance: 'well, I run and could use some extra water. How about you?'",
+            "output": "Yes",
+            "explanation": "This is correct. The utterance asks about the preference of the opponent, which is clear from the context."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Context: 'Which one do you prefer most?' 'They sort of need more water for their meds' 'I'm sorry to hear that! But can you spare 1 for me since you probably don't need all the water.'\nUtterance: 'Sure that sounds fair. Thank you. Besides water what do you need for your trip?'",
+            "output": "No",
+            "explanation": "In the utterance, the participant asks about the needs of the opponent. So the answer should be 'Yes'."
+        },
+        {
+            "input": "Context: 'I am willing to give you the most water if I am able to have the most food.' 'Well I need some food because what if I get lost as well? ' 'I understand that, but walking away with the most food and the most water would essentially leave me for dead lol. Do you prefer water or food? '\nUtterance: 'I prefer to have the most water as I have a medical condition that requires me to stay extremely hydrated at all times. If I get too dehydrated, it's extremely bad for me. How about I get 3 water and 1 food, and 2 firewood?'",
+            "output": "Yes",
+            "explanation": "The participant does not try to elicit anything about the preference order, at least directly. The correct answer is 'No'."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task353-151e0d781ccc464ba6fa01fec1a4abe1",
+            "input": "Context: 'one of my kids is on medication so we are going to need to pack a lot of water. so if could spare that it would be appreciated.' 'Well sadly I plan to go hiking a lot so I will need lots of water, but perhaps we can come to a reasonable agreement if I have to shorten my hikes.' 'ok what do you have in mind?'\nUtterance: 'Well if I gave you a majority of the water, I would like 1 water, 3 firewood and 1 food.'",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task353-826b8d3bd7c44a34bea29587f14e2b00",
+            "input": "Context: 'That sounds amazing and delicious! maybe we can compromise? Maybe, I can get all 3 waters and you can have all 3 Foods? what do you think? ' ' I would agree to that if I can also have two things of firewood. I am going to need a lot of wood, so I can cook the meals I am making \ud83d\ude42' 'I completely understand, thank you for compromising with water and food. Wished we had 4 firewoods to divide and share it equaly, may I ask how long will you be camping for? Im afraid I need 2 firewoods as well, maybe we can see who has the greater need? '\nUtterance: 'I am going to be camping for a couple of weeks, so I will need quite a bit. I also realized some additional water would be good, because I have some meals that need me to boil water. Maybe you can have 2 firewood in exchange for me having one of your waters? Then you would still have plenty of water, but also plenty of firewood \ud83d\ude42'",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task353-b0a6a4e18b5f4fee8f24b7b31974becb",
+            "input": "Context: 'Hello how are you, I was wondering if its okay with you, If i can get 3 waters, 2 firewoods, and 1 food? what are your thoughts?' 'i cant afford to give you all 3 waters because i would need some for myself' 'I completely understand, I have a large family coming along, I really need the extra supplies, as for the food and firewood are you okay with the amount? '\nUtterance: 'i am an avid water drinker. i can afford to give you 2 water for three firewood though'",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task353-c7d0a26a8d1542129a37faf1b427a196",
+            "input": "Context: 'Awesome! That does sound like a deal. I wish we had more firewood to split because I am afraid it might get cold.' 'I agree. I am feeling generous and I did buy a new axe for this camping trip. So, I could stick to the prior agreement and just work a little harder to find some dry trees to chop.' 'I appreciate your generosity \ud83d\ude42 I think that bringing your axe would be a great idea! Also be sure to pack warm clothes and extra blankets! I'm sure we will both be fine'\nUtterance: 'You are welcome! \ud83d\ude42 I am happy that we reached an agreement! Did you happen to see any dry looking trees on along your way?'",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task353-a48b3ae498a04aab97c5ef0b8a8a4d88",
+            "input": "Context: 'I really need some food, but I could also use extra firewood. It is supposed to be pretty cold at night and we would love to cook up some smores.' 'I hear you we have the same issues well you can have either 2 food or 2 firewood what would you prefer?' 'I would prefer 2 food. I could give you 1 food, 2 firewood and 2 water?'\nUtterance: 'that sounds like a good deal to me, '",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task353-5e9e5750a84847a7b0441d15f03ab79a",
+            "input": "Context: 'Your two youngest kids are working? How old is everyone? If there's a lot of people, it will be easier to split up the duties and get things done. My son's 3 years old so as much as he's eager to help, there's not much he can do lol.' 'Ha Ha...no my too youngest have hardly been anywhere because of us adults working,  I have teens (17, 15), tweens (13) and littles (10, 7). We 3 boys and 3 girls. We have a 21 year old but he's in a band so h can't go. They all pitch in anytime. They eat a lot so they have to cook from scratch at home. Awww 3 is so adorable...that's when they are sure they can do and will work so hard! ' 'Home cooking's the best, yumyums! We're planning on doing a lot of fishing since my son's been in love with fishing toys and is currently in love with eating fish (he hasn't gotten tired of eating it every night for dinner). We're thinking of cooking what we catch every night. Do you have any activities planned for your camping trip?'\nUtterance: 'Fishing is so fun! \ud83d\ude42 We really don't have a plan... so many people, so many opinions. If you'll be fishing and eating your catch, you'll probably need more firewood than food. And with the filters, you will need some extra water, especially for your little guy. So would you agree that you take 2 firewood packages, 1 food package and 1 extra water. '",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task353-6f6bd8bbfa9f42d2ab81071f469a39f5",
+            "input": "Context: 'so if i were to  give you water what would i get ?' 'You'd be getting 1 water, 2 firewood, and 1 food' 'how much food are you willing to offer for water'\nUtterance: 'We can go back to my original offer which was honestly more generous.. I get 2 Water, 1 Firewood, 1 food.. you get 1 water, 2 firewood, 2 food.. its honestly a better deal for you \ud83d\ude42'",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task353-447590770ced4623a2d9e76b9c065ea1",
+            "input": "Context: 'What are your preferences?  I always love having a big fire at night when I am camping and I do think water is more important than food.' 'I like to have a lot of food to keep my energy up, but I might need some firewood to cook that food. I can't wait for my camping trip.\ud83d\ude42' 'I love camping also!  Yes, I can see how you would need firewood if you want to cook your food.  So, food is more important to you than water?'\nUtterance: 'Yes, I will need a little water to wash that food down with though. Are you going to be needing a lot of water?'",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

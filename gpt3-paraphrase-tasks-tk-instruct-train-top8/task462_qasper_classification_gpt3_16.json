@@ -1,0 +1,120 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "qasper"
+    ],
+    "URL": [
+        "https://allenai.org/project/qasper/home"
+    ],
+    "Categories": [
+        "Question Understanding"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "In this task, you will read a context from an academic paper and answer a question based on the context. You will classify the questions into one of three categories: \"Extractive\", \"Abstractive\", or \"Yes-no\". Extractive questions can be answered by copying and pasting sentences from the context into a summary. Abstractive questions require you to paraphrase the context using your own words. Yes-no questions can be answered with a simple \"yes\" or \"no\"."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Scientific Research Papers"
+    ],
+    "Positive Examples": [
+        {
+            "input": "We build a dataset of Twitter accounts based on two lists annotated in previous works. For the non-factual accounts, we rely on a list of 180 Twitter accounts from BIBREF1. On the other hand, for the factual accounts, we use a list with another 32 Twitter accounts from BIBREF19 that are considered trustworthy by independent third parties. \n Question: How did they obtain the dataset?",
+            "output": "Extractive",
+            "explanation": "The answer to this question has been explicitly mentioned in the context, so the question is extractive."
+        },
+        {
+            "input": "We evaluate our pointer-generator performance using BLEU score. The baseline language model is trained using RNNLM BIBREF23 . Perplexity measure is used in the evaluation.\n\n \n Question: Did they use other evaluation metrics?",
+            "output": "Yes-no",
+            "explanation": "This is a good example, and the given question is a yes-no question."
+        },
+        {
+            "input": "As in the example above, we pre-process documents by removing all numbers and interjections. \n Question: what processing was done on the speeches before being parsed?",
+            "output": "Abstractive",
+            "explanation": "Answering this question needs paraphrasing the context, so this question is abstractive."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "For the English version, we performed both a thorough manual analysis and automatic evaluation across three commonly used TS datasets from two different domains  For the English version, we performed both a thorough manual analysis and automatic evaluation across three commonly used TS datasets from two different domains  The evaluation of the German version is in progress. \n Question: What are the corpora used for the task?",
+            "output": "Yes-no",
+            "explanation": "This question is extractive, and it's not a yes-no question."
+        },
+        {
+            "input": "For Turkish, as the first dataset, we utilised the movie reviews which are collected from a popular website. The number of reviews in this movie corpus is 20,244 and the average number of words in reviews is 39. Each of these reviews has a star-rating score which is indicative of sentiment. These polarity scores are between the values 0.5 and 5, at intervals of 0.5. We consider a review to be negative it the score is equal to or lower than 2.5. On the other hand, if it is equal to or higher than 4, it is assumed to be positive. We have randomly selected 7,020 negative and 7,020 positive reviews and processed only them. \n Question: What details are given about the movie domain dataset?",
+            "output": "Extractive",
+            "explanation": "This question is Abstractive because we need to paraphrase the context to get to the answer."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task462-660312e98a9447e8b0eb30a6202d46c8",
+            "input": "CNN can also be employed on the sarcasm datasets in order to identify sarcastic and non-sarcastic tweets. We term the features extracted from this network baseline features, the method as baseline method and the CNN architecture used in this baseline method as baseline CNN. Since the fully-connected layer has 100 neurons, we have 100 baseline features in our experiment.  \n Question: What are the network's baseline features?",
+            "output": [
+                "Abstractive"
+            ]
+        },
+        {
+            "id": "task462-cb949162927149868aefebe9ea5c4016",
+            "input": "The result on original WikiQA indicates that all three transfer learning methods not only do not improve the results but also hurt the F1-score. These are because other datasets could not add new information to the original dataset or they apparently add some redundant information which are dissimilar to the target dataset. \n Question: Do transferring hurt the performance is the corpora are not related?",
+            "output": [
+                "Yes-no"
+            ]
+        },
+        {
+            "id": "task462-9eab8bd9537c4d8685a27bb1932922a7",
+            "input": "This corpus has multiple versions, and we choose the following two versions as their test dataset has significantly larger number of instances of multiple relation tuples with overlapping entities. (i) The first version is used by BIBREF6 (BIBREF6) (mentioned as NYT in their paper) and has 24 relations. We name this version as NYT24. (ii) The second version is used by BIBREF11 (BIBREF11) (mentioned as NYT10 in their paper) and has 29 relations. \n Question: Are there datasets with relation tuples annotated, how big are datasets available?",
+            "output": [
+                "Yes-no"
+            ]
+        },
+        {
+            "id": "task462-713dfe124bf04edf91ae46264cd06b48",
+            "input": "The model consists of one layer of LSTM followed by three dense layers. The LSTM layer uses a dropout value of 0.2.  \n Question: Do they use dropout?",
+            "output": [
+                "Yes-no"
+            ]
+        },
+        {
+            "id": "task462-adda08d320cd418dba49b7e09b1b9e45",
+            "input": "First, in order to deal with the unseen relations, we propose to break the relation names into word sequences for question-relation matching. Second, noticing that original relation names can sometimes help to match longer question contexts, we propose to build both relation-level and word-level relation representations. Third, we use deep bidirectional LSTMs (BiLSTMs) to learn different levels of question representations in order to match the different levels of relation information. Finally, we propose a residual learning method for sequence matching, which makes the model training easier and results in more abstract (deeper) question representations, thus improves hierarchical matching. \n Question: What they use in their propsoed framework?",
+            "output": [
+                "Extractive"
+            ]
+        },
+        {
+            "id": "task462-a3f255f07dfe45d6b6e2358456d2d017",
+            "input": "The semi-parametric models were trained on 32 GPUs with each replica split over 2 GPUs, one to train the translation model and the other for computing the CSTM. \n Question: Does their combination of a non-parametric retrieval and neural network get trained end-to-end?",
+            "output": [
+                "Yes-no"
+            ]
+        },
+        {
+            "id": "task462-b648f9417bb34462bbfec76285e56240",
+            "input": "Together, these users gave Gunrock an average rating of 3.65 (median: 4.0), which was elicited at the end of the conversation (\u201cOn a scale from 1 to 5 stars, how do you feel about talking to this socialbot again?\"). \n Question: Do they gather explicit user satisfaction data on Gunrock?",
+            "output": [
+                "Yes-no"
+            ]
+        },
+        {
+            "id": "task462-0be980c10a404794a532f009209d84ca",
+            "input": "We evaluated our model on three benchmark datasets, namely the CNN/DailyMail news highlights dataset BIBREF24, the New York Times Annotated Corpus (NYT; BIBREF25), and XSum BIBREF22. \n Question: What are the datasets used for evaluation?",
+            "output": [
+                "Extractive"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

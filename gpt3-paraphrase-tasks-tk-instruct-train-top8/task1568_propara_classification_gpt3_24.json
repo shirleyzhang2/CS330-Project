@@ -1,0 +1,127 @@
+{
+    "Contributors": [
+        "Amrit Bhaskar"
+    ],
+    "Source": [
+        "propara"
+    ],
+    "URL": [
+        "https://arxiv.org/abs/1805.06975"
+    ],
+    "Categories": [
+        "Information Extraction"
+    ],
+    "Reasoning": [
+        "Deductive Reasoning"
+    ],
+    "Definition": [
+        "In this task, you are given a paragraph, an event and an entity."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Natural Science"
+    ],
+    "Positive Examples": [
+        {
+            "input": " \"process paragraph : Magma rises from deep in the earth. The magma goes into volcanos. The volcanos pressure the magma upwards. The pressure causes the magma to push through the surface of the volcano. The lava cools. The lava forms new rock. New magma is pressured to the surface of the volcano. The volcano bursts through the rock the formed after the last eruption\" , \"event : Magma rises from deep in the earth\" , \"entity : magma\" ",
+            "output": "known location",
+            "explanation": "The process paragraph explains in steps about - the cause for volcano eruption. The event is a part of the process paragraph given. The entity lies both in process paragraph and the event. So, this is a good example."
+        },
+        {
+            "input": " \"process paragraph : Water from the ocean washes onto beaches in waves. The waves contain sediment from the ocean. The water and particles in it hit rocks and sand on the beach. The wind and current sometimes push the water and particles harder. Tiny parts of the rocks on the shore come off the larger rocks. The waves pick up sand and small rocks from the beach. The waves go back out into the ocean. The waves carry the new particles with them. Rocks and the beach look a little different. \", \"event : The waves go back out into the ocean. \", \"entity : waves\" ",
+            "output": " known location ",
+            "explanation": "The process paragraph explains in steps about - the sequence of events during erosion by the ocean. The event is a part of the process paragraph given. The entity lies both in process paragraph and the event. So, this is a good example."
+        },
+        {
+            "input": " \"process paragraph : Water from oceans, lakes, swamps, rivers, and plants turns into water vapor. Water vapor condenses into millions of tiny droplets that form clouds. Clouds lose these droplets through rain or snow, also caused precipitation. Precipitation is either absorbed into the ground or runs off into rivers. Water that was absorbed into the ground is taken up by plants. Plants lose water from their surfaces as vapor. The vapor goes back into the atmosphere. Water that runs off into rivers flows into ponds, lakes, or oceans. The water evaporates back into the atmosphere. \", \"event : Water from oceans, lakes, swamps, rivers, and plants turns into water vapor. \", \"entity : water\" ",
+            "output": " not exist ",
+            "explanation": "The process paragraph explains in steps about - the sequence of events during water cycle. The event is a part of the process paragraph given. The entity lies both in process paragraph and the event. So, this is a good example."
+        },
+        {
+            "input": " \"process paragraph : Sediment settles in a place due to gravity. The sediment breaks down into small particles. Wind or water picks up the sediment. The sediment travels along the same route as the wind or water. The sediment is deposited at new locations by the wind or water. The sediment is picked up again by new wind or water. The sediment travels further. The sediment is deposited again in a new place. \", \"event : The sediment is picked up again by new wind or water. \", \"entity : sediment; small particles\" ",
+            "output": " unknown location ",
+            "explanation": "The process paragraph explains in steps about - the sequence of events during sediment transportation across the earth. The event is a part of the process paragraph given. The entity lies both in process paragraph and the event. So, this is a good example."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": " \"process paragraph : Water from oceans, lakes, swamps, rivers, and plants turns into water vapor. Water vapor condenses into millions of tiny droplets that form clouds. Clouds lose these droplets through rain or snow, also caused precipitation. Precipitation is either absorbed into the ground or runs off into rivers. Water that was absorbed into the ground is taken up by plants. Plants lose water from their surfaces as vapor. The vapor goes back into the atmosphere. Water that runs off into rivers flows into ponds, lakes, or oceans. The water evaporates back into the atmosphere. \", \"event : Water from oceans, lakes, swamps, rivers, and plants turns into water vapor. \", \"entity : water\" ",
+            "output": " known location ",
+            "explanation": "This is a bad example because the output class is incorrect. Water in this event has turned into water vapor and is longer in the form of water. The existence is necessary to find the location. "
+        },
+        {
+            "input": " \"process paragraph : Magma rises to the surface during a volcano. The magma undergoes changes in temperature. The magma undergoes changes in pressure. The magma cools. The magma solidifies. The magma crystallizes. Igneous rock is formed. \", \"event : Magma rises to the surface during a volcano. \", \"entity : magma\" ",
+            "output": " unknown location ",
+            "explanation": "This is a bad example because the output class is incorrect. Magma in this event has risen to the surface and is considered a known location. Only classify to unknown location when the place of entity is not determined. "
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1568-62871311a3ca4f04bcc00f9e4d5456a3",
+            "input": " \"process paragraph : : A bee lands on the flower. Their feet slip into little grooves that hold pollen sacs. When the bee flies off, it carries off the pollen sac. The bee lands on another plant. The pollen sac falls off and pollinates the plant. \", \"event : Their feet slip into little grooves that hold pollen sacs.\", \"entity : bee\" ",
+            "output": [
+                " known location "
+            ]
+        },
+        {
+            "id": "task1568-2ee1105540f24a449c4e488d2c67336d",
+            "input": " \"process paragraph : : Fuel produces heat. Water is boiled to make steam. Steam spins turbine. Generator is turned. Makes electricity. Electricity transfers to transformers. Produces the correct voltage. \", \"event : Water is boiled to make steam.\", \"entity : fuel\" ",
+            "output": [
+                " not exist "
+            ]
+        },
+        {
+            "id": "task1568-d2073edfdc6a44be9519cbc773c0a108",
+            "input": " \"process paragraph : : A seed germinates. It grows into a plant. The mature plant produces flowers. The flowers become fertilized. Produce seeds in a fruit or seedpod. The plant dies. The new seeds germinate to form a new plant. \", \"event : It grows into a plant.\", \"entity : seed\" ",
+            "output": [
+                " not exist "
+            ]
+        },
+        {
+            "id": "task1568-fba0e832ab60457995ca20e1cea91cab",
+            "input": " \"process paragraph : : Light enters the eyes. The lens focuses light through the vitreous humor. The cornea focuses through the eye's internal lens. The retina receives the image. The retina transforms this image into electrical impulses. The impulses travel along the optic nerve to the brain. The brain decodes the impuses. \", \"event : The lens focuses light through the vitreous humor.\", \"entity : image\" ",
+            "output": [
+                " not exist "
+            ]
+        },
+        {
+            "id": "task1568-69cdb60b1138402cb67e3aabf50ad34f",
+            "input": " \"process paragraph : : To bake a cake you first need to gather your ingredients. Preheat the oven to desired baking temperature. Grease your preferred cake pan with crisco or butter or other non-stick spray. Add eggs and vegetable oil to the dry ingredients. Stir or whisk until all the dry flour has been absorbed. Pour the batter into the greased cake pan. Place cake pan into the oven for the required time. When a toothpick inserted into the cake comes out clean, the cake is done baking. \", \"event : Preheat the oven to desired baking temperature.\", \"entity : ingredients\" ",
+            "output": [
+                " unknown location "
+            ]
+        },
+        {
+            "id": "task1568-e45cc81e0ac940ae8918878a503c222d",
+            "input": " \"process paragraph : : Baby rabbits are born alive. Rabbits are (only occasionally) nursed by their mothers. Many of the babies do not survive. Larger and stronger rabbit do manage to survive. Rabbits quickly become able to have babies of their own. The rabbit lifecycle continues. The amount of rabbits stays reasonable because of predators and low survival rates for their young. \", \"event : Rabbits are (only occasionally) nursed by their mothers.\", \"entity : rabbits\" ",
+            "output": [
+                " unknown location "
+            ]
+        },
+        {
+            "id": "task1568-3b4d5af6e3e44208ad9a1b0106c4207b",
+            "input": " \"process paragraph : : Blood is sent to the liver. The liver uses chemicals and proteins to treat the blood. The blood is cleaned. Energy is produced. The blood leaves the liver cleaned. \", \"event : The liver uses chemicals and proteins to treat the blood.\", \"entity : blood\" ",
+            "output": [
+                " known location "
+            ]
+        },
+        {
+            "id": "task1568-0a7e7768bf43493e9793b7f2bad95b46",
+            "input": " \"process paragraph : : Bacteria enter the body. Bacteria start to divide and grow. The uncontrolled growth takes away resources from other cells. Other cells cannot function properly. We feel unwell. The growth and division of bacteria produce toxins. Toxins harm the body. The body tries to react to the toxins. The body's natural defenses can sometimes cause us to feel unwell. \", \"event : Bacteria start to divide and grow.\", \"entity : bacteria\" ",
+            "output": [
+                " known location "
+            ]
+        }
+    ],
+    "Instance License": [
+        "Apache 2.0"
+    ]
+}

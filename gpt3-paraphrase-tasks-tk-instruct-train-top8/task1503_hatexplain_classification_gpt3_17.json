@@ -1,0 +1,115 @@
+{
+    "Contributors": [
+        "Pruthvi Patel"
+    ],
+    "Source": [
+        "hatexplain"
+    ],
+    "URL": [
+        "https://github.com/hate-alert/HateXplain"
+    ],
+    "Categories": [
+        "Toxic Language Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "The input will be a tweet. The tweet can be classified as Hate Speech, Offensive, or Normal. Hate Speech and Offensive tweets target one specific community. Given such a tweet, you must output the community that is targeted in the tweet. The community will be one of nine values: 'African', 'Islam', 'Jewish', 'Women', 'Refugee', 'Arab', 'Caucasian', 'Hispanic', or 'Asian'. Output 'None' if the tweet does not target any community. A tweet can only target one community."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Social Media -> Twitter"
+    ],
+    "Positive Examples": [
+        {
+            "input": "caucasians wearing masks to prevent coronavirus and still don \u2019 t wash their hands",
+            "output": "Caucasian",
+            "explanation": "The tweet generalizes an attribute to the entire community, Caucasian, which makes it offensive."
+        },
+        {
+            "input": "lesson of the week from the holy book the sovereign individual once commerce flows over the internet suppression of speech becomes unstoppable devolution inevitable and the monopoly of violence by governments will end paraphrased from j d davidson rhys mogg",
+            "output": "None",
+            "explanation": "The tweet does not target any specific community hence the correct answer is None"
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "<user> <user> there shd be a film called no hindus in kashmir wud be perfect islamic fanaticsm movement in kashmir",
+            "output": "Hindu",
+            "explanation": "Every input tweet will target one or more of the nine communities provided or will not target any community. Further the tweet targets Muslim community. Hence Hindu is not the correct value. The correct value is Islam."
+        },
+        {
+            "input": "ffs everthing is offensive to muslimes",
+            "output": "None",
+            "explanation": "This tweet is offensive to Muslim community. Hence the correct answer is Islam instead of None."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1503-4c543842e29c466898e73d8c1766c507",
+            "input": "hop sing no jew yes but i bet they looked for a jew to play his part then came to conclusion we can not find a jew that will fit the role okay let us get a gook at minimum wage",
+            "output": [
+                "Asian"
+            ]
+        },
+        {
+            "id": "task1503-00b2707c93ea48d8a4e9dfe06a59551b",
+            "input": "that fucked up she should have suicided bombed the migrant ghetto abode instead",
+            "output": [
+                "Refugee"
+            ]
+        },
+        {
+            "id": "task1503-0f3e2a164f66433f892305f7619ab456",
+            "input": "<user> shut up ching chong",
+            "output": [
+                "Asian"
+            ]
+        },
+        {
+            "id": "task1503-c849110bd22d4635bc20ea3f3b6bcc8b",
+            "input": "<user> i am clearly a fucking retard",
+            "output": [
+                "None"
+            ]
+        },
+        {
+            "id": "task1503-0494fc3edadd4f26ba41a20768f40ad8",
+            "input": "the american women in service are waiting for the call to deploy",
+            "output": [
+                "Women"
+            ]
+        },
+        {
+            "id": "task1503-2bbe6983d0dd4917b9f6d57e66882840",
+            "input": "did chinaman really invent the internet how about electricity internal combustion engine maybe the movie industry space travel microscope microchip submarine airplane",
+            "output": [
+                "Asian"
+            ]
+        },
+        {
+            "id": "task1503-fb5fe8bab5564599bcd6dea652fbf4f3",
+            "input": "a beaner who tried snitching on atomwaffen and got doxxed",
+            "output": [
+                "Hispanic"
+            ]
+        },
+        {
+            "id": "task1503-549603ddbfc24049b1eb14e1abd09de1",
+            "input": "bears last lmaoo niggas team tho",
+            "output": [
+                "None"
+            ]
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

@@ -1,0 +1,191 @@
+{
+    "Contributors": [
+        "Shailaja Keyur Sampat"
+    ],
+    "Source": [
+        "torque"
+    ],
+    "URL": [
+        "https://allennlp.org/torque.html"
+    ],
+    "Categories": [
+        "Information Extraction"
+    ],
+    "Reasoning": [
+        "Commonsense Reasoning"
+    ],
+    "Definition": [
+        "In this task, you will be given a passage, and your goal is to identify an event from the passage. An event is a single word representing something that happened, is happening, or may happen. It can be factual or hypothetical, positive or negative, certain or uncertain. Most events are based on verbs, but an event can also be based on a noun (ex. storm, snow, rainfall) or a copula verb (is, was, been, etc.). The event cannot be a pronoun or an adjective. For noun events with multiple words, use the last word in the phrase as the event."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "News"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Passage: I submitted the hit. The hit was approved, and then I was paid.",
+            "output": "approved",
+            "explanation": "There are three events in this passage (i) submission event (\"submitted\") (ii) the approval event (\"approved\"), and (iii) the payment event (\"paid\"). You can use any one of them as an output."
+        },
+        {
+            "input": "Passage: He was caught in the snow storm.",
+            "output": "storm",
+            "explanation": "There are two events in this passage (i) he was caught (\"caught\") and (ii) the snow storm event (\"storm\"). You can use any one of them as an output. Since snow storm is a noun event with multiple words, we only use the last word 'storm' as an event."
+        },
+        {
+            "input": "Passage: He is on the east coast.",
+            "output": "is",
+            "explanation": "The copula \"is\" an event describing his location."
+        },
+        {
+            "input": "Passage: He wanted to finish the task.",
+            "output": "wanted",
+            "explanation": "There are two events in this passage (i) he wanted to do something (\"wanted\") and (ii) finish the task (\"finish\"). Either of wanted or finish can be used as output. However note that though there is an uncertainty about the task i.e. indeed finished or not, \"finish\" is still a valid event."
+        },
+        {
+            "input": "Passage: If he works hard, then he will finish the task.",
+            "output": "finish",
+            "explanation": "There are two events in this passage (i) he works hard (\"works\") and (ii) he will finish the task. (\"finish\"). You can use either of works or finish as an output. Here the second event happens only if the first one is true, but both are considered as events. This is an example of hypothetical event."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Passage: He is happy.",
+            "output": "happy",
+            "explanation": "Happy is an adjective and hence cannot be an event. The output should be \"is\" which represents an event describing his attribute of happiness."
+        },
+        {
+            "input": "Passage: He was caught in the elevator.",
+            "output": "elevator",
+            "explanation": "Not every noun can be an event. Here \"elevator\" is an object and one cannot say \"an elevator happened\" hence it is not an event. \"caught\" is a correct output."
+        },
+        {
+            "input": "Passage: The flu season is winding down.",
+            "output": "flu season",
+            "explanation": "The \"flu season\" is a noun events with multiple words, but only last word \"season\" sould be used as an event as per definition."
+        },
+        {
+            "input": "Passage: The death toll climbed up to 99 soon after the explosion.",
+            "output": "blast",
+            "explanation": "There are two events in this passage \"climbed\" and \"explosion\". Though blast is a synonym of explosion, it is not present in the passage. The output must contain events that are present in the passage."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task388-72594677feb44864a7052033363cdfb5",
+            "input": "Passage: His presence on American soil is necessary to dispel doubts about his fitness as a father _ raised maliciously by Elian's Miami relatives _ and to end speculation that he is indifferent about reclaiming custody of his son. With Gonzalez all but out of sight in Cuba, the relatives have had a free hand to distort the case with bogus legal arguments and unsubstantiated claims that Elian is afraid to see his father.",
+            "output": [
+                "presence",
+                "dispel",
+                "raised",
+                "end",
+                "speculation",
+                "reclaiming",
+                "had",
+                "distort",
+                "arguments",
+                "claims",
+                "see"
+            ]
+        },
+        {
+            "id": "task388-30ade59e916641bd940fb54e9d8f356b",
+            "input": "Passage: Commercial space on the website sold for 1,000 to 3,000 yuan (125 to 375 U.S. dollars) per month. On Oct. 3 last year, when the website was closed down, the registered members exceeded 600,000 around China.",
+            "output": [
+                "sold",
+                "closed",
+                "exceeded"
+            ]
+        },
+        {
+            "id": "task388-e1ffdb6d305a473785297a46a25acdf9",
+            "input": "Passage: Besides British Gas, British Steel skidded 1.74 to 123.5 on turnover of 11 million shares. British Petroleum fell 5 to 286 on 14 million shares traded.",
+            "output": [
+                "skidded",
+                "turnover",
+                "fell",
+                "traded"
+            ]
+        },
+        {
+            "id": "task388-a8f352c816d541c6b6066e83ab4eb8ad",
+            "input": "Passage: But that option is growing less and less likely as thousands of American, British, Egyptian, Syrian and Moroccan forces assemble in and around Saudi Arabia to protect the kingdom. The Saudis even have in their possession 48 Kuwaiti jet fighters, virtually the entire Kuwaiti air force, which managed to escape the Iraqi invasion, Saudi officials said.",
+            "output": [
+                "growing",
+                "assemble",
+                "protect",
+                "have",
+                "managed",
+                "escape",
+                "invasion",
+                "said"
+            ]
+        },
+        {
+            "id": "task388-b57f4df727ae46aab383f71537c967a4",
+            "input": "Passage: In the year-ago period, Bethlehem earned $101.4 million, or $1.27 a share, including a $3.8 million gain from early retirement of debt. Third-quarter sales dropped 11% to $1.27 billion from $1.43 billion a year ago.",
+            "output": [
+                "earned",
+                "including",
+                "retirement",
+                "dropped"
+            ]
+        },
+        {
+            "id": "task388-e3812b22f3b3419f8c9bb10559b65a35",
+            "input": "Passage: The flu season is winding down, and it has killed 105 children so far - about the average toll. The season started about a month earlier than usual, sparking concerns it might turn into the worst in a decade.",
+            "output": [
+                "season",
+                "winding",
+                "killed",
+                "season",
+                "started",
+                "sparking",
+                "turn",
+                "toll",
+                "concerns"
+            ]
+        },
+        {
+            "id": "task388-eb61d12403e346bfac4216d16ebce1a2",
+            "input": "Passage: \"At times (Russia's) progress has been so slow that the support of the IMF has been interpreted by some as reflecting a kind of political complacency, or sheer misjudgement from the IMF. It is time to show that this pessimism is misplaced,\" he said.",
+            "output": [
+                "support",
+                "interpreted",
+                "reflecting",
+                "misjudgement",
+                "show",
+                "misplaced",
+                "said",
+                "progress",
+                "complacency"
+            ]
+        },
+        {
+            "id": "task388-5baaebcfd6f24758878dac783d259bb1",
+            "input": "Passage: \"Agents failure to respond has resulted in delays to this inquiry,\" he said. \"We will be providing the Premier League with a number of incidences where mandated processes have not been followed.",
+            "output": [
+                "failure",
+                "respond",
+                "delays",
+                "inquiry",
+                "said",
+                "providing",
+                "incidences",
+                "processes",
+                "followed"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Apache 2.0"
+    ]
+}

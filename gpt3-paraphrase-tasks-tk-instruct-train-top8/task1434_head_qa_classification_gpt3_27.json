@@ -1,0 +1,125 @@
+{
+    "Contributors": [
+        "Shreeshiv Patel"
+    ],
+    "Source": [
+        "head_qa"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/head_qa"
+    ],
+    "Categories": [
+        "Text Categorization"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "In this task, you are given a question and answer options related to that question. You have to classify the question and answer into different topics: medicine, nursery, psychology, chemistry, pharmacology, biology."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Healthcare"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Question: A distension is defined as: \n Options:  <0> Soft tissue injury. <1> Forced movement of abrupt production. <2> Injury by stretching a muscle. <3> Injury of the joint capsule. <4> Interruption in the continuity of a bone.",
+            "output": "nursery",
+            "explanation": "Distension means Bloating and swelling in the belly area. It does not have much to do with chemistry, psychology, pharmacology, biology and medicine. Hence, the correct topic is nursery."
+        },
+        {
+            "input": "Question: Which of the following steps of cholesterol biosynthesis is what controls the speed and place of metabolic regulation: \n Options:  <0> Geranyl pyrophosphate\uf0e0 Farnesyl pyrophosphate. <1> ,\uf0e0 Lanosterol <2> Lanosterol \uf0e0 Cholesterol. <3> Acetyl CoA \uf0e0 Acetoacetyl CoA. <4> 3-Hydroxy-3-methylglutaryl CoA\uf0e0 Mevalonic acid.",
+            "output": "chemistry",
+            "explanation": "The question text is about cholesterol biosynthesis which looks like some chemical. Options are also related to different chemicals like Geranyl pyrophosphate\uf0e0 Farnesyl pyrophosphate, Lanosterol \uf0e0 Cholesterol, Acetyl CoA, etc. So, it\u2019s clear that the question belongs to the chemistry class."
+        },
+        {
+            "input": "Question: What name does the episode receive with psychotic symptoms that occur after a strong alcohol intoxication in which the individual has been consuming large doses of alcohol for several days? \n Options: <0> Delirium tremens. <1> Partial amnesias. <2> Alcoholic hallucinosis <3> abstinence syndrome. <4> Korsakoff syndrome.",
+            "output": "psychology",
+            "explanation": "The question text and the options are more related to mental conditions. From this information, we can infer that this input belongs to the psychology class. "
+        },
+        {
+            "input": "Question: The liver converts ethanol into: \n Options:  <0> Methanol <1> Acetone. <2> Acetaldehyde <3> Hydrogen peroxide. <4> Glycerol.",
+            "output": "chemistry",
+            "explanation": "The question text and the options are highly related to chemicals like Methanol, Acetone, Glycerol which are well-known chemicals. From this information, one can say that this question is belongs to the chemistry class."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Question: Ketogenic amino acids: \n Options:  <0> They may contribute to the synthesis of glucose. <1> They are intermediaries of the urea cycle. <2> They are the substrate of reactions catalyzed by transketolase. <3> They can produce acetyl-coenzyme A. <4> They are eliminated in the form of ketoses.",
+            "output": "psychology",
+            "explanation": "For the given question the correct topic is biology, so the output is incorrect."
+        },
+        {
+            "input": "Question: Mr. A. P. has been discharged after being operated on for a gastric resection. What recommendations should you give to avoid the rapid evacuation syndrome? \n Options:  <0> Drink liquids during the meal. <1> Take a diet high in carbohydrates. <2> After ingestion, the decubitus position is the most beneficial if the patient tolerates it. <3> You should plan rest periods of 15 minutes after meals. <4> Take a diet low in protein and fat, to avoid abdominal distension.",
+            "output": "biology",
+            "explanation": "The given question is about nursery so correct output should be nursery, not biology."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1434-80a575a67bfa483ca419c85b275ace40",
+            "input": "Question: Which of the following pathogens is the cause of cat scratch disease? \n Options:  <0> Bartonella henselae. <1> Mycobacterium tuberculosis. <2> Mycobacterium avium complex. <3> Toxoplasma gondii. <4> Epstein Barr virus.",
+            "output": [
+                "medicine"
+            ]
+        },
+        {
+            "id": "task1434-09a0cfc1e32145669afb527863154c33",
+            "input": "Question: The document that sets out the principles of Bioethics regarding the autonomy of people, beneficence and justice, and sets the basic requirements of informed consent, the assessment of risks and benefits and the selection of subjects is: \n Options:  <0> The Declaration of Helsinki of 1964. <1> The Belmont Report of 1978. <2> The principles of the Biomedical Ethics of 1979. <3> The Oviedo Convention of 1997. <4> The Code of Ethics.",
+            "output": [
+                "nursery"
+            ]
+        },
+        {
+            "id": "task1434-1129ebe9bb5847b2b96e67548a73819d",
+            "input": "Question: In the stages of the citric acid cycle, it is required: \n Options:  <0> NADP +. <1> FAD. <2> Acetyl-coenzyme A carboxylase. <3> Glucose. <4> At least one transaminase.",
+            "output": [
+                "biology"
+            ]
+        },
+        {
+            "id": "task1434-0a52e1aad1d545399cf02b1effbbce63",
+            "input": "Question: Juan is 60 years old, smokes 2 packs / day for years and has been talking about persistent cough for 6 months. Check that your left eyelid is more droopy and that the pupil of that eye is smaller. Juan says that the medial part of his left hand is numb and less powerful. Your doctor checks for palpebral ptosis and left miosis; check that you can close both eyelids with symmetry and that both pupils respond correctly to the light. He also checks that he does not sweat through the left side of the face, that he feels less the puncture on the inside surface of that hand and that he has less strength in the grip of that hand. Regarding the ocular symptomatology, where is the lesion located? \n Options:  <0> The sympathetic fibers, at some level that would span from the hypothalamus to the Clark-intermediate column of the dorsal medulla. <1> The left common ocular motor nerve in the mesencephalon. <2> The nucleus of Edinger-Westphal, above the nucleus of the left ocular motor nerve. <3> The parasympathetic fibers, at some level that would extend from the EdingerWestphal nucleus to the constrictor muscle of the left pupil. <4> The tarsal muscle exclusively.",
+            "output": [
+                "medicine"
+            ]
+        },
+        {
+            "id": "task1434-ae76ea91a11c4c47b9d006e331e6f3a5",
+            "input": "Question: Which of the following parenteral vaccines is contraindicated during pregnancy? \n Options:  <0> Vaccine against tetanus. <1> Vaccine against measles. <2> Vaccine against whooping cough. <3> Vaccine against hepatitis B. <4> Vaccine against the flu.",
+            "output": [
+                "medicine"
+            ]
+        },
+        {
+            "id": "task1434-99fd3d68b1e1466c89df5d9444e4e43a",
+            "input": "Question: Type II restriction endonucleases cleave the DNA molecule: \n Options:  <0> Within its recognition sequence. <1> Randomly <2> Out of the recognition sequence. <3> At the 5 'end. <4> At the 3 'end.",
+            "output": [
+                "chemistry"
+            ]
+        },
+        {
+            "id": "task1434-dbb7dfc4f5b3480784f6a0ec1af82033",
+            "input": "Question: Ferrous oxide, known as wustite (FeO) is non-stoichiometric because it contains: \n Options:  <0> Excess iron <1> Oxygen excess <2> Iron defect. <3> Oxygen defect. <4> Defect of iron and oxygen.",
+            "output": [
+                "chemistry"
+            ]
+        },
+        {
+            "id": "task1434-139ac85d84c84925b917a1a9c7c83a71",
+            "input": "Question: The reaction of ethyl acetate and acetone in the presence of sodium hydride in diethyl ether generates, after hydrolysis: \n Options:  <0> 2,4-Pentanedione. <1> 4-Methyl-3-penten-2-one. <2> 3-Oxobutanoate of ethyl. <3> 2,3-Pentanedione. <4> 4-Hydroxy-4-methyl-2-pentanone.",
+            "output": [
+                "chemistry"
+            ]
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

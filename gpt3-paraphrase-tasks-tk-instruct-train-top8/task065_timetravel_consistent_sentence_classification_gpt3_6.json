@@ -1,0 +1,113 @@
+{
+    "Contributors": [
+        "Neeraj Varshney"
+    ],
+    "Source": [
+        "timetravel"
+    ],
+    "URL": [
+        "https://github.com/qkaren/Counterfactual-StoryRW"
+    ],
+    "Categories": [
+        "Coherence Classification"
+    ],
+    "Reasoning": [
+        "Temporal Reasoning",
+        "Commonsense Reasoning"
+    ],
+    "Definition": [
+        "In this task, you will be given a short story with 5 sentences. The second sentence will be missing, and you will be given 2 options to choose from. You need to select the option that best connects the first sentence with the rest of the story. If the first option is correct, indicate your answer with 'Option 1'. Otherwise, indicate your answer with 'Option 2'. The incorrect option will change the subsequent storyline, so that at least one of the three subsequent sentences is no longer consistent with the story."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Commonsense -> Stories"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Sentence 1: The cashier was counting the dollar bills at her desk. \n Sentence 3: Everyone panicked and started to scream. \n  Sentence 4: The men threatened the people to remain quiet. \n Sentence 5: The cashier handed them the cash so they would go away.  \n Option 1:  Two men rushed into the store and held their guns up. \n Option 2: Two dogs rushed into the store.",
+            "output": "Option 1",
+            "explanation": "Option 1 forms a consistent story with the given four sentences. In constrast, Option 2 is incorrect as the entty 'two dogs' is not consistent with 'men' mentioned in Sentence 4."
+        },
+        {
+            "input": "Sentence 1: The cashier was counting the dollar bills at her desk. \n Sentence 3: Everyone panicked and started to scream. \n  Sentence 4: The men threatened the people to remain quiet. \n Sentence 5: The cashier handed them the cash so they would go away.  \n Option 1:  Three men rushed into the store and held their guns up. \n Option 2: Two men rushed into the hospital.",
+            "output": "Option 1",
+            "explanation": "Option 1 forms a consistent story with the given four sentences. In constrast, Option 2 is incorrect as it is not consisitent with sentence 1 ('store cashier' vs 'hospital')."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Sentence 1: The cashier was counting the dollar bills at her desk. \n Sentence 3: Everyone panicked and started to scream. \n  Sentence 4: The men threatened the people to remain quiet. \n Sentence 5: The cashier handed them the cash so they would go away.  \n Option 1:  Two men rushed into the store and held their guns up. \n Option 2: Two dogs rushed into the store.",
+            "output": "Two men rushed into the store and held their guns up.",
+            "explanation": "The selected option is correct but it outputed the entire option text instead of its label i.e 'Option 1'."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task065-9ad6fe499920420fb15bcb540e48c2d4",
+            "input": "Sentence 1: I was watching \"Game of Thrones\" with my girlfriend. \n Sentence 3: My girlfriend pulled up the \"Game of Thrones\" Wikipedia page \n Sentence 4:  I read about three paragraphs of plot summary \n Sentence 5:  Now I was even more confused \n Option 1: I was really confused about why Dumbledore from Harry Potter showed up in the last episode. \n Option 2: I was really confused about a plot point.",
+            "output": [
+                "Option 2"
+            ]
+        },
+        {
+            "id": "task065-6cb551e7d77f46829031b35213aa96a3",
+            "input": "Sentence 1: Tom was kicked out of his house. \n Sentence 3: His friend offered to let him crash at his place \n Sentence 4:  He had a spare bedroom \n Sentence 5:  Tom stayed there until he fixed things \n Option 1: He was fighting with his wife. \n Option 2: He couldn't afford the rent.",
+            "output": [
+                "Option 1"
+            ]
+        },
+        {
+            "id": "task065-a34e70dee72f49f5828a3d6f738b868b",
+            "input": "Sentence 1: Jane heard that a carnival was coming to her small town. \n Sentence 3: She saw a sign advertising a turtle race at the carnival \n Sentence 4:  Jane caught turtles to sell before the race \n Sentence 5:  She made enough money to ride all day and night \n Option 1: She wondered how she could make money for the rides. \n Option 2: There was an accident involving one of the rides and they were all shut down.",
+            "output": [
+                "Option 1"
+            ]
+        },
+        {
+            "id": "task065-335fc8c7c7b747508b1944cb587cc664",
+            "input": "Sentence 1: I was getting out of shape. \n Sentence 3: The doctor told me to go for a jog more often \n Sentence 4:  Every day, I jogged as long as I could \n Sentence 5:  After a few weeks, I started to feel much better \n Option 1: I went to see a doctor. \n Option 2: I jogged every day so I didn't know what was going on.",
+            "output": [
+                "Option 1"
+            ]
+        },
+        {
+            "id": "task065-8a3119767d0b46b080f8ef5b27e6331a",
+            "input": "Sentence 1: Mike was a skilled and trusted auto technician. \n Sentence 3: Mike sustained several injuries, including a concussion \n Sentence 4:  Mike obtained an attorney, and was rewarded with a huge settlement \n Sentence 5:  Mike the mechanic retired to the beaches of Fiji \n Option 1: One day, while test driving a car, Mike drove the car into a ditch. \n Option 2: One day, while test driving a car, Mike was hit by another driver.",
+            "output": [
+                "Option 2"
+            ]
+        },
+        {
+            "id": "task065-5fa55d42f2e244fa9e188aa36a6a56d0",
+            "input": "Sentence 1: Katheryn served eggs on a plate. \n Sentence 3: He looked angry \n Sentence 4:  Katheryn called out for her manager \n Sentence 5:  The manager calmed the man down \n Option 1: The man stole her eggs off the plate. \n Option 2: The man knocked the eggs to the floor.",
+            "output": [
+                "Option 2"
+            ]
+        },
+        {
+            "id": "task065-a1a8028cb76146538454b3677a8e7be4",
+            "input": "Sentence 1: Last week my friends and I went to the lake. \n Sentence 3: We then flipped the boats over \n Sentence 4:  It was so much fun \n Sentence 5:  I couldn't wait to do it again \n Option 1: Unfortunately it was raining too hard to swim. \n Option 2: We took canoes out and started filling them with water.",
+            "output": [
+                "Option 2"
+            ]
+        },
+        {
+            "id": "task065-076a3be6e3ef469a8161bcc87d5dc94a",
+            "input": "Sentence 1: Except for the constant soft beating of the machine, it is quiet. \n Sentence 3: Few visitors come to see what remains of the  once beautiful you \n Sentence 4:  Most people are born with two but someone decided you only get one \n Sentence 5:  Sleep little sister knowing that everything was done for you this day \n Option 1: You lay still, never even a twitch,  with that awful thing in your thr. \n Option 2: You lay frozen in time, in the casket mom picked out for you.",
+            "output": [
+                "Option 1"
+            ]
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

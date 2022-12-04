@@ -1,0 +1,115 @@
+{
+    "Contributors": [
+        "Pruthvi Patel"
+    ],
+    "Source": [
+        "hatexplain"
+    ],
+    "URL": [
+        "https://github.com/hate-alert/HateXplain"
+    ],
+    "Categories": [
+        "Toxic Language Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "The input is a tweet. The tweet can be one of three types: Hate Speech, Offensive, or Normal. Hate Speech and Offensive tweets target one community. Given such a tweet, output the community targeted in the tweet. There are nine possible communities that a tweet can target: 'African', 'Islam', 'Jewish', 'Women', 'Refugee', 'Arab', 'Caucasian', 'Hispanic', or 'Asian'. If the tweet does not target any community, output 'None'."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Social Media -> Twitter"
+    ],
+    "Positive Examples": [
+        {
+            "input": "caucasians wearing masks to prevent coronavirus and still don \u2019 t wash their hands",
+            "output": "Caucasian",
+            "explanation": "The tweet generalizes an attribute to the entire community, Caucasian, which makes it offensive."
+        },
+        {
+            "input": "lesson of the week from the holy book the sovereign individual once commerce flows over the internet suppression of speech becomes unstoppable devolution inevitable and the monopoly of violence by governments will end paraphrased from j d davidson rhys mogg",
+            "output": "None",
+            "explanation": "The tweet does not target any specific community hence the correct answer is None"
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "<user> <user> there shd be a film called no hindus in kashmir wud be perfect islamic fanaticsm movement in kashmir",
+            "output": "Hindu",
+            "explanation": "Every input tweet will target one or more of the nine communities provided or will not target any community. Further the tweet targets Muslim community. Hence Hindu is not the correct value. The correct value is Islam."
+        },
+        {
+            "input": "ffs everthing is offensive to muslimes",
+            "output": "None",
+            "explanation": "This tweet is offensive to Muslim community. Hence the correct answer is Islam instead of None."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1503-39624ba978c444a18bbfb93226e9c641",
+            "input": "me and <user> were talking about it cosplayers and she was like if this richie cosplayer took off their glasses they would look like mike but theyre white stranger things",
+            "output": [
+                "None"
+            ]
+        },
+        {
+            "id": "task1503-cf6ab7d38eb24b46b52e3399f1e1fc99",
+            "input": "four moslem mp have been sent suspicious packages their acting like its something to worry about they need to chill out its just parcel parcel of life in a multicultural shit hole i am sure mayor khan would agree inshallah",
+            "output": [
+                "None"
+            ]
+        },
+        {
+            "id": "task1503-12f6c500841e4d2ab0dd03ab02bce91b",
+            "input": "remember only the white supremacists are responsible for violence",
+            "output": [
+                "Caucasian"
+            ]
+        },
+        {
+            "id": "task1503-733345d4adab40dfbd2af09152f3b3dd",
+            "input": "<user> what if a muslim refugee lies says that he was persecuted because he had converted to any of these religions but reverts back to islam after getting indian citizenship taklu is fooling bengalis fact is that they dumped citizenship amendment bill after opposition in ne states",
+            "output": [
+                "None"
+            ]
+        },
+        {
+            "id": "task1503-2af16159319b4a0586078128eec6ccad",
+            "input": "i am an ashkenazi jew",
+            "output": [
+                "Jewish"
+            ]
+        },
+        {
+            "id": "task1503-1d022f85bb81432c99af6e5c7ad587f7",
+            "input": "better call the anti defamation league you gay jew faggot",
+            "output": [
+                "Jewish"
+            ]
+        },
+        {
+            "id": "task1503-bc2314ea85c24a3fb4990b71ab5fffa3",
+            "input": "thieving little junkie slut eastenders",
+            "output": [
+                "Women"
+            ]
+        },
+        {
+            "id": "task1503-40bc39c564514a95b6a00e8ec3e5377c",
+            "input": "if you have a daughter will you name her sandy you know as in sand nigger",
+            "output": [
+                "Arab"
+            ]
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

@@ -1,0 +1,120 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "qasper"
+    ],
+    "URL": [
+        "https://allenai.org/project/qasper/home"
+    ],
+    "Categories": [
+        "Question Understanding"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You will be given a context from an academic paper and a question based on that context. Your task is to classify the questions into \"Extractive\", \"Abstractive\", or \"Yes-no\" questions. Extractive questions can be answered by concatenating extracts taken from the context into a summary. Answering abstractive questions involves paraphrasing the context using novel sentences. Yes-no questions are questions whose expected answer is one of two choices, one that affirms the question and one that denies the question. Typically, the choices are either yes or no."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Scientific Research Papers"
+    ],
+    "Positive Examples": [
+        {
+            "input": "We build a dataset of Twitter accounts based on two lists annotated in previous works. For the non-factual accounts, we rely on a list of 180 Twitter accounts from BIBREF1. On the other hand, for the factual accounts, we use a list with another 32 Twitter accounts from BIBREF19 that are considered trustworthy by independent third parties. \n Question: How did they obtain the dataset?",
+            "output": "Extractive",
+            "explanation": "The answer to this question has been explicitly mentioned in the context, so the question is extractive."
+        },
+        {
+            "input": "We evaluate our pointer-generator performance using BLEU score. The baseline language model is trained using RNNLM BIBREF23 . Perplexity measure is used in the evaluation.\n\n \n Question: Did they use other evaluation metrics?",
+            "output": "Yes-no",
+            "explanation": "This is a good example, and the given question is a yes-no question."
+        },
+        {
+            "input": "As in the example above, we pre-process documents by removing all numbers and interjections. \n Question: what processing was done on the speeches before being parsed?",
+            "output": "Abstractive",
+            "explanation": "Answering this question needs paraphrasing the context, so this question is abstractive."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "For the English version, we performed both a thorough manual analysis and automatic evaluation across three commonly used TS datasets from two different domains  For the English version, we performed both a thorough manual analysis and automatic evaluation across three commonly used TS datasets from two different domains  The evaluation of the German version is in progress. \n Question: What are the corpora used for the task?",
+            "output": "Yes-no",
+            "explanation": "This question is extractive, and it's not a yes-no question."
+        },
+        {
+            "input": "For Turkish, as the first dataset, we utilised the movie reviews which are collected from a popular website. The number of reviews in this movie corpus is 20,244 and the average number of words in reviews is 39. Each of these reviews has a star-rating score which is indicative of sentiment. These polarity scores are between the values 0.5 and 5, at intervals of 0.5. We consider a review to be negative it the score is equal to or lower than 2.5. On the other hand, if it is equal to or higher than 4, it is assumed to be positive. We have randomly selected 7,020 negative and 7,020 positive reviews and processed only them. \n Question: What details are given about the movie domain dataset?",
+            "output": "Extractive",
+            "explanation": "This question is Abstractive because we need to paraphrase the context to get to the answer."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task462-e56f4b83853a483f859c4fe6e229bfd6",
+            "input": "Spoken-SQuAD is chosen as the target domain data for training and testing. Spoken-SQuAD BIBREF5 is an automatically generated corpus in which the document is in spoken form and the question is in text form. The reference transcriptions are from SQuAD BIBREF1 . There are 37,111 and 5,351 question answer pairs in the training and testing sets respectively, and the word error rate (WER) of both sets is around 22.7%.\n\nThe original SQuAD, Text-SQuAD, is chosen as the source domain data, where only question answering pairs appearing in Spoken-SQuAD are utilized. In our task setting, during training we train the proposed QA model on both Text-SQuAD and Spoken-SQuAD training sets. While in the testing stage, we evaluate the performance on Spoken-SQuAD testing set. \n Question: Which datasets did they use for evaluation?",
+            "output": [
+                "Extractive"
+            ]
+        },
+        {
+            "id": "task462-1d814df64b6b424cbe623a6e5a9450c1",
+            "input": "One way to analyze the model is to compute model gradients with respect to input features BIBREF26, BIBREF25. Figure FIGREF37 shows that in this particular example, the most important model inputs are verbs possibly associated with the entity butter, in addition to the entity's mentions themselves. It further shows that the model learns to extract shallow clues of identifying actions exerted upon only the entity being tracked, regardless of other entities, by leveraging verb semantics. \n Question: What evidence do they present that the model attends to shallow context clues?",
+            "output": [
+                "Abstractive"
+            ]
+        },
+        {
+            "id": "task462-1db25bade9644427b79f112afe45f466",
+            "input": "BERT: We implement two BERT-based baselines BIBREF51 for evidence identification. First, we train BERT on each query-policy sentence pair as a binary classification task to identify if the sentence is evidence for the question or not (Bert). We also experiment with a two-stage classifier, where we separately train the model on questions only to predict answerability. At inference time, if the answerable classifier predicts the question is answerable, the evidence identification classifier produces a set of candidate sentences (Bert + Unanswerable).\n\n \n Question: What type of neural model was used?",
+            "output": [
+                "Extractive"
+            ]
+        },
+        {
+            "id": "task462-0bd6f981c8c349b2a0214ec94050859a",
+            "input": "A context is upward entailing (shown by [... $\\leavevmode {\\color {red!80!black}\\uparrow }$ ]) that allows an inference from ( \"Introduction\" ) to ( \"Introduction\" ), where French dinner is replaced by a more general concept dinner.  On the other hand, a downward entailing context (shown by [... $\\leavevmode {\\color {blue!80!black}\\downarrow }$ ]) allows an inference from ( \"Introduction\" ) to ( \"Introduction\" ), where workers is replaced by a more specific concept new workers. All [ workers $\\leavevmode {\\color {blue!80!black}\\downarrow }$ ] [joined for a French dinner $\\leavevmode {\\color {red!80!black}\\uparrow }$ ] All workers joined for a dinner All new workers joined for a French dinner Not all [new workers $\\leavevmode {\\color {red!80!black}\\uparrow }$ ] joined for a dinner Not all workers joined for a dinner \n Question: How do they define upward and downward reasoning?",
+            "output": [
+                "Abstractive"
+            ]
+        },
+        {
+            "id": "task462-b0ba8e63e71b45118012f654507fd908",
+            "input": "For experiments, we train and evaluate our models in the civil law system of mainland China. We collect and construct a large-scale real-world data set of INLINEFORM0 case documents that the Supreme People's Court of People's Republic of China has made publicly available \n Question: what is the size of the real-world civil case dataset?",
+            "output": [
+                "Abstractive"
+            ]
+        },
+        {
+            "id": "task462-b79b3952bd6d42b8a9548f4ac56e29c0",
+            "input": "In this section, we consider two kinds of relational classification tasks: (1) relation prediction and (2) relation extraction.  We hope to design a simple and clear experiment setup to conduct error analysis for relational prediction. Therefore, we consider a typical method TransE BIBREF3 as the subject as well as FB15K BIBREF3 as the dataset. For relation extraction, we consider the supervised relation extraction setting and TACRED dataset BIBREF10 . As for the subject model, we use the best model on TACRED dataset \u2014 position-aware neural sequence model.  \n Question: Which competitive relational classification models do they test?",
+            "output": [
+                "Abstractive"
+            ]
+        },
+        {
+            "id": "task462-32045351ebf14022b0d979fd257ff02f",
+            "input": "Given a pair of ultrasound and audio segments we can calculate the distance between them using our model. To predict the synchronisation offset for an utterance, we consider a discretised set of candidate offsets, calculate the average distance for each across utterance segments, and select the one with the minimum average distance.  \n Question: Does their neural network predict a single offset in a recording?",
+            "output": [
+                "Yes-no"
+            ]
+        },
+        {
+            "id": "task462-1661c357879d4133b4b5f9b33cddd238",
+            "input": "To identify the most suitable classifier for classifying the scalars associated with each text, we perform evaluations using the stochastic gradient descent, naive bayes, decision tree, and random forest classifiers. \n Question: What was the baseline?",
+            "output": [
+                "Extractive"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

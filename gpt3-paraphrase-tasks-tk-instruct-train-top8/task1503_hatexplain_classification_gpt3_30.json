@@ -1,0 +1,115 @@
+{
+    "Contributors": [
+        "Pruthvi Patel"
+    ],
+    "Source": [
+        "hatexplain"
+    ],
+    "URL": [
+        "https://github.com/hate-alert/HateXplain"
+    ],
+    "Categories": [
+        "Toxic Language Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "The input is a tweet. The tweet can be Hate Speech, Offensive, or Normal. Hate Speech and Offensive tweets target one community. Given such a tweet, output the community targeted in the tweet. The community will be one of the nine values: 'African', 'Islam', 'Jewish', 'Women', 'Refugee', 'Arab', 'Caucasian', 'Hispanic' or 'Asian'. Output 'None' if the tweet does not target any community. A tweet can only target one community."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Social Media -> Twitter"
+    ],
+    "Positive Examples": [
+        {
+            "input": "caucasians wearing masks to prevent coronavirus and still don \u2019 t wash their hands",
+            "output": "Caucasian",
+            "explanation": "The tweet generalizes an attribute to the entire community, Caucasian, which makes it offensive."
+        },
+        {
+            "input": "lesson of the week from the holy book the sovereign individual once commerce flows over the internet suppression of speech becomes unstoppable devolution inevitable and the monopoly of violence by governments will end paraphrased from j d davidson rhys mogg",
+            "output": "None",
+            "explanation": "The tweet does not target any specific community hence the correct answer is None"
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "<user> <user> there shd be a film called no hindus in kashmir wud be perfect islamic fanaticsm movement in kashmir",
+            "output": "Hindu",
+            "explanation": "Every input tweet will target one or more of the nine communities provided or will not target any community. Further the tweet targets Muslim community. Hence Hindu is not the correct value. The correct value is Islam."
+        },
+        {
+            "input": "ffs everthing is offensive to muslimes",
+            "output": "None",
+            "explanation": "This tweet is offensive to Muslim community. Hence the correct answer is Islam instead of None."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1503-aa7a3998a1944234a52aa8bc5aaaedea",
+            "input": "<user> should have been removed the last time he threatened this but making laws against people brown people black people gay people female people sick people poor people homeless people refugee people is more important than protecting our democracy of the people <user>",
+            "output": [
+                "None"
+            ]
+        },
+        {
+            "id": "task1503-0ba9ff4f55ae496faa64a9280a7e6ac2",
+            "input": "can not stop thinking about the gay rats from arthur i hope they had a good honeymoon",
+            "output": [
+                "None"
+            ]
+        },
+        {
+            "id": "task1503-94db5cdda9e1400786c7b323f00e04e0",
+            "input": "<user> <user> shit thats a lot of white people in one photo pier would love that",
+            "output": [
+                "Caucasian"
+            ]
+        },
+        {
+            "id": "task1503-bdd8f141b3c64f9f9e0a3ac3fe99f29a",
+            "input": "people call fuentes a spic but do not care paul nehlen is married to a full blood beaner",
+            "output": [
+                "Hispanic"
+            ]
+        },
+        {
+            "id": "task1503-1abd3361015c494f9b6911a2f8205357",
+            "input": "a negress too dumb to fuck has a scant chance of understanding anything beyond the size of a dick",
+            "output": [
+                "African"
+            ]
+        },
+        {
+            "id": "task1503-23fd0c1c19ca48e38423e623b94bf198",
+            "input": "what sort of white man or woman would vote for this nigger",
+            "output": [
+                "African"
+            ]
+        },
+        {
+            "id": "task1503-082e9e51af4f490e89d678bf5c9b26ba",
+            "input": "apparently honorary whiteness is minorities who look white this would include asians",
+            "output": [
+                "Asian"
+            ]
+        },
+        {
+            "id": "task1503-6689243266114340914c0cb4cd348024",
+            "input": "<user> <user> yea those people were immigrants too all one big melting pot of immigration lovely",
+            "output": [
+                "Refugee"
+            ]
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

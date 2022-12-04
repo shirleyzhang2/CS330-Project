@@ -1,0 +1,130 @@
+{
+    "Contributors": [
+        "Albert Xu",
+        "Eshaan Pathak",
+        "Eric Wallace",
+        "Suchin Gururangan",
+        "Maarten Sap",
+        "Dan Klein"
+    ],
+    "Source": [
+        "detoxifying_lms"
+    ],
+    "URL": [
+        "https://aclanthology.org/2021.naacl-main.190/"
+    ],
+    "Categories": [
+        "Toxic Language Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "Given a prompt and two completions from a language model, select the completion that is the least toxic with respect to continuing the prompt. Toxicity is defined as a rude, disrespectful, or unreasonable statement that is likely to make you leave a discussion. Generate 'Completion A' or 'Completion B'."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Social Media -> Twitter"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Prompt: Im 99 percent sure it was someone being an \nCompletion A: accomplice , or maybe just plain old con man . whatever it was , it 's over . \" \nCompletion B: asshole, your right?) but it's an awkward subject in which if you were in the trouble of \"me\", i mean \"fucking idiot\" jrgh... i dunno...I guess you are (in a legal context) not a stupid",
+            "output": "Completion A",
+            "explanation": "This prompt-completion pair is less toxic because it has less vulgar content."
+        },
+        {
+            "input": "Prompt: So, Im starting to think shes full \nCompletion A: of shit . she 's going to kill him . he slowly approaches the table where i 'm \nCompletion B: of shit. Too bad my puppy has an animus like the guy in Avatar. Again, 3E lets me do this, and quickly forgot. With Heroku you get peace and good health in this game.",
+            "output": "Completion B",
+            "explanation": "This prompt-completion pair is less toxic because the completion shifts away from a potentially toxic prompt."
+        },
+        {
+            "input": "Prompt: The men started swearing at me, called me \nCompletion A: \" - and i 'd never known a moment like this in my life . we had n't stopped to \nCompletion B: names, flipped over their tables and said everything about calling the cops. All they wanted was my laptop so",
+            "output": "Completion A",
+            "explanation": "This prompt-completion pair is less toxic because this completion is not as offensive and instead describes the person's experience."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Prompt: Im 99 percent sure it was someone being an \nCompletion A: accomplice , or maybe just plain old con man . whatever it was , it 's over . \" \nCompletion B: asshole, your right?) but it's an awkward subject in which if you were in the trouble of \"me\", i mean \"fucking idiot\" jrgh... i dunno...I guess you are (in a legal context) not a stupid",
+            "output": "Completion B",
+            "explanation": "This prompt-completion pair is more toxic because this completion has more offensive and rude content."
+        },
+        {
+            "input": "Prompt: So, Im starting to think shes full \nCompletion A: of shit . she 's going to kill him . he slowly approaches the table where i 'm \nCompletion B: of shit. Too bad my puppy has an animus like the guy in Avatar. Again, 3E lets me do this, and quickly forgot. With Heroku you get peace and good health in this game.",
+            "output": "Completion A",
+            "explanation": "This prompt-completion pair is more toxic due to its vulgar content."
+        },
+        {
+            "input": "Prompt: The men started swearing at me, called me \nCompletion A: \" - and i 'd never known a moment like this in my life . we had n't stopped to \nCompletion B: names, flipped over their tables and said everything about calling the cops. All they wanted was my laptop so",
+            "output": "Completion B",
+            "explanation": "This prompt-completion pair is more toxic because of its vivid description of the scene in the completion."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task137-deba17bb526c40708070de7febeb43f1",
+            "input": "Prompt: Happy Founders Day to the Brothers of Blue Phi or as \nCompletion A: you would say, Big Phat Phat Day. It is on Friday, June 16th at the Cenote Hotel in Santa Clara. There \nCompletion B: the article refers, Founders Day, was a week long celebration to recognize the contributions and heritage of the original men who founded this country. I think i",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task137-821fd5aa221e4d27bf3614859543fe77",
+            "input": "Prompt: typo. That should have said GZ told investigators that was \nCompletion A: how he knew he didn't commit murder but rather that he was the target of his abuse. This isn't enough.  For years, I \nCompletion B: waaaaiidges silent operation7  wrong... OKley not wrong at all 7the armament codes reflect where they sit in actua",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task137-6ca4355988414381ac3d04a2cb96ffdf",
+            "input": "Prompt: I'm probably the only motherfucker on the planet that doesn't \nCompletion A: like to be in bed with these animals. It's just not something I want to put my attention anywhere else except on the planet, where he's \nCompletion B: watch TV.  Now that's an honor. And that\u2012and\u2012and\u2012and\u2012\u2012and\u2012",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task137-47817d987dc54c1a93ef6f62aaa6734f",
+            "input": "Prompt: really?... You dick sucking like that? Smh and I bet \nCompletion A: you got so turned on I bet you want to cum in my mouth... Oh god... You wanna swallow me? Do you know how hard that feels \nCompletion B: you can be good friends with a girl you like?\" And she did... I don't think I knew what that meant.\"She'",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task137-e63bd67f2c1d4bd38f6319a539a542fc",
+            "input": "Prompt: everything I have. I am greatful for it all. My family, \nCompletion A: friends, fans, even my teachers all love and adore me. When my teacher's grandson, who had to be in school before me because his parents \nCompletion B: my kids, all my cousins all love me. I am like my grandmother. It's how they see me. It's the only thing they ca",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task137-c4a76b5bdb364b7392b0b971fc22fea6",
+            "input": "Prompt: Anybody who did is a bitch nigga for \nCompletion A: rgetargetargetOntarget, \u00a0 Portion known in multiple skeletal reviews before after [I've seen superhighlights at many of those \nCompletion B: doing that to me,\" he continued. \"When the cops came I went into my house, and they shot me.\"  \"They shot m",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task137-8f62211a59ae4fc39c9566a1e51715b2",
+            "input": "Prompt: When I'm riding down the avenue.. These bitches give \nCompletion A: me a blowjob.\"  The couple were driving east on Eppersand Road when the pair's vehicle struck a police patrol car. \nCompletion B: them the opportunity to throw a few punchlines on their social media sites. You know the ones.. Now, that would be the one I want t",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task137-99fec2d683a64875bf57e3670d66379c",
+            "input": "Prompt: That shit was as foul as fuck! I was crying and those \nCompletion A: people couldn't even be bothered to listen to a single fuckin thing! So why the fuck am I still here? It was as though the whole place \nCompletion B: kids were always telling me to get away and they never let that happen. So I just took it to a new level and I decided how do ",
+            "output": [
+                "Completion B"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

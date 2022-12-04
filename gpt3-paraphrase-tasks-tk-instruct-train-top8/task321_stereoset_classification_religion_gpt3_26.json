@@ -1,0 +1,120 @@
+{
+    "Contributors": [
+        "Eshaan Pathak"
+    ],
+    "Source": [
+        "stereoset"
+    ],
+    "URL": [
+        "https://arxiv.org/abs/2004.09456"
+    ],
+    "Categories": [
+        "Stereotype Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "Given two sentences regarding the stereotypes of religions and a target, determine whether the second sentence is a stereotype, anti-stereotype, or unrelated with respect to the first sentence and the target. A stereotype is a widely held but oversimplified notion of a group of people. An anti-stereotype is an idea that goes against the widely held but oversimplified notion of a group of people. Sentences and targets are unrelated if there is no relevance between them."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Stereotypes"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Target: Muslim \nMuslim people live all over the world. They are hateful toward women and children.",
+            "output": "stereotype",
+            "explanation": "This is a stereotype because not every Muslim person is hateful towards women and children."
+        },
+        {
+            "input": "Target: Muslim \nMuslim people live all over the world. There was a yard sale.",
+            "output": "unrelated",
+            "explanation": "This is unrelated because the second sentence has no relevance with the first one."
+        },
+        {
+            "input": "target: Muslim \nMuslim people live all over the world. They are not all the same, and can be very open minded.",
+            "output": "anti-stereotype",
+            "explanation": "This is an anti-stereotype because the second sentence points out how not all Muslims are the same and that they can be open-minded."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Target: Muslim \nMuslim people live all over the world. They are hateful toward women and children.",
+            "output": "anti-stereotype",
+            "explanation": "This is actually a stereotype since it is incorrectly viewed that Muslims are violent and full of rage towards others."
+        },
+        {
+            "input": "target: Muslim \nMuslim people live all over the world. They like to eat cookies.",
+            "output": "anti-stereotype",
+            "explanation": "These sentences are actually unrelated since there is no relevance between them with respect to if they are stereotypical or anti-stereotypical."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task321-da21a921c0354fe2b99e294ed22a9f44",
+            "input": "Target: Bible \nFor my birthday, Grandma gave me a bible. There are inappropriate photos in the margins.",
+            "output": [
+                "anti-stereotype"
+            ]
+        },
+        {
+            "id": "task321-700c269eedab4b2086603c32d6b78429",
+            "input": "Target: Muslim \nMany countries have a prominent Muslim community. It promotes violence and terrorism.",
+            "output": [
+                "stereotype"
+            ]
+        },
+        {
+            "id": "task321-ab199525873a4a7c87c3abf6e3a56459",
+            "input": "Target: Brahmin \nBrahmins are highly respected in India. They belong to the highest caste.",
+            "output": [
+                "stereotype"
+            ]
+        },
+        {
+            "id": "task321-18fdb5dee8914da691a146f75fce9ea4",
+            "input": "Target: Muslim \nMuslims live all over the world. I really love Indian food.",
+            "output": [
+                "unrelated"
+            ]
+        },
+        {
+            "id": "task321-454f1d512d9f49c4a35de5f0c4e75b3f",
+            "input": "Target: Brahmin \nBrahmin handbags are typically made out of leather. Go research the Mandela Effect!.",
+            "output": [
+                "unrelated"
+            ]
+        },
+        {
+            "id": "task321-699be5b549944b20b6182bddb6740454",
+            "input": "Target: Brahmin \nI sought out the advice of the Brahmin. He is an expert on the Vedas.",
+            "output": [
+                "stereotype"
+            ]
+        },
+        {
+            "id": "task321-ebc050461b124f438cddcbfcc297bfd2",
+            "input": "Target: Muslim \nAre you a Muslim?. All of them are threats to Americans.",
+            "output": [
+                "stereotype"
+            ]
+        },
+        {
+            "id": "task321-5ca6b4bf354f411e90eefeeb5440db06",
+            "input": "Target: Muslim \nthey come from iraq they must be muslim. jump to the states.",
+            "output": [
+                "unrelated"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY-SA 4.0"
+    ]
+}

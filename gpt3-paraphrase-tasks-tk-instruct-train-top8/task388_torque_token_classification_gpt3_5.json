@@ -1,0 +1,194 @@
+{
+    "Contributors": [
+        "Shailaja Keyur Sampat"
+    ],
+    "Source": [
+        "torque"
+    ],
+    "URL": [
+        "https://allennlp.org/torque.html"
+    ],
+    "Categories": [
+        "Information Extraction"
+    ],
+    "Reasoning": [
+        "Commonsense Reasoning"
+    ],
+    "Definition": [
+        "In this task, you will be given a passage, and you have to identify an event from the passage. An event is a single word representing something that happened, is happening, or may happen. It can be factual or hypothetical, positive or negative, certain or uncertain. Most events are based on verbs, but an event can also be based on a noun (ex. storm, snow, rainfall) or a copula verb (is, was, been, etc.). The event can't be a pronoun or an adjective. If the event is a noun with multiple words, use the last word in the phrase as the event."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "News"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Passage: I submitted the hit. The hit was approved, and then I was paid.",
+            "output": "approved",
+            "explanation": "There are three events in this passage (i) submission event (\"submitted\") (ii) the approval event (\"approved\"), and (iii) the payment event (\"paid\"). You can use any one of them as an output."
+        },
+        {
+            "input": "Passage: He was caught in the snow storm.",
+            "output": "storm",
+            "explanation": "There are two events in this passage (i) he was caught (\"caught\") and (ii) the snow storm event (\"storm\"). You can use any one of them as an output. Since snow storm is a noun event with multiple words, we only use the last word 'storm' as an event."
+        },
+        {
+            "input": "Passage: He is on the east coast.",
+            "output": "is",
+            "explanation": "The copula \"is\" an event describing his location."
+        },
+        {
+            "input": "Passage: He wanted to finish the task.",
+            "output": "wanted",
+            "explanation": "There are two events in this passage (i) he wanted to do something (\"wanted\") and (ii) finish the task (\"finish\"). Either of wanted or finish can be used as output. However note that though there is an uncertainty about the task i.e. indeed finished or not, \"finish\" is still a valid event."
+        },
+        {
+            "input": "Passage: If he works hard, then he will finish the task.",
+            "output": "finish",
+            "explanation": "There are two events in this passage (i) he works hard (\"works\") and (ii) he will finish the task. (\"finish\"). You can use either of works or finish as an output. Here the second event happens only if the first one is true, but both are considered as events. This is an example of hypothetical event."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Passage: He is happy.",
+            "output": "happy",
+            "explanation": "Happy is an adjective and hence cannot be an event. The output should be \"is\" which represents an event describing his attribute of happiness."
+        },
+        {
+            "input": "Passage: He was caught in the elevator.",
+            "output": "elevator",
+            "explanation": "Not every noun can be an event. Here \"elevator\" is an object and one cannot say \"an elevator happened\" hence it is not an event. \"caught\" is a correct output."
+        },
+        {
+            "input": "Passage: The flu season is winding down.",
+            "output": "flu season",
+            "explanation": "The \"flu season\" is a noun events with multiple words, but only last word \"season\" sould be used as an event as per definition."
+        },
+        {
+            "input": "Passage: The death toll climbed up to 99 soon after the explosion.",
+            "output": "blast",
+            "explanation": "There are two events in this passage \"climbed\" and \"explosion\". Though blast is a synonym of explosion, it is not present in the passage. The output must contain events that are present in the passage."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task388-74a5a7e8c62b47b99a677ea216bc25d0",
+            "input": "Passage: \"Our company has not been able to cope very effectively with\" changes in the marketplace, said Ryosuke Ito, Sansui's president. But even a Japanese company that looks like a dog may turn out to be a good investment for a foreign concern, some management consultants maintain.",
+            "output": [
+                "been",
+                "cope",
+                "changes",
+                "said",
+                "looks",
+                "turn",
+                "be",
+                "investment",
+                "maintain"
+            ]
+        },
+        {
+            "id": "task388-40a5207a77a74aeea5c60ad1e1eed2f7",
+            "input": "Passage: The United States had moved additional troops and a naval armada into the Gulf and said it would strike Iraq unless it gave the U.N. arms inspectors unfettered access to all potential weapons sites, including Saddam's palaces. Iraq had argued the presidential sites should be off limits as symbols of sovereignty.",
+            "output": [
+                "moved",
+                "said",
+                "strike",
+                "gave",
+                "access",
+                "argued",
+                "limits"
+            ]
+        },
+        {
+            "id": "task388-4788a7c663a84fc1a2ec95ccfebb1053",
+            "input": "Passage: Acquisition has launched a suit in a Delaware court seeking the withdrawal of Dunkin's poison pill rights and employee stock ownership plans, which it claims were put in place to deter bidders. Acquisition said 2.2 million shares, or about 38.5% of the shares outstanding, have been tendered under its offer.",
+            "output": [
+                "launched",
+                "seeking",
+                "withdrawal",
+                "claims",
+                "place",
+                "deter",
+                "said",
+                "tendered"
+            ]
+        },
+        {
+            "id": "task388-a28accc306184733a2899063df71b224",
+            "input": "Passage: Amid the anarchy, and given that Albania was already Europe's poorest country, many people are desperate to escape, anywhere and anyhow. A bid by one group to sail across to Italy ended in tragedy last week, when their tug boat collided with an Italian naval ship.",
+            "output": [
+                "given",
+                "was",
+                "are",
+                "escape",
+                "sail",
+                "ended",
+                "collided"
+            ]
+        },
+        {
+            "id": "task388-6f9bf962fdea408eaddbdb941be495ba",
+            "input": "Passage: The Cypriot government Saturday strongly condemned two terrorist bomb attacks in Kenya and Tanzania Friday, calling them an \"atrocious crime.\" In a condolence telegram to U.S. President Bill Clinton, President Glafcos Clerides condemned the terrorist acts and extended his sympathy to the victims' families.",
+            "output": [
+                "condemned",
+                "Saturday",
+                "attacks",
+                "Friday",
+                "calling",
+                "telegram",
+                "condemned",
+                "acts",
+                "extended"
+            ]
+        },
+        {
+            "id": "task388-01e28983841545d4a70d3a4e53a297a6",
+            "input": "Passage: A Burmese official accused the US government of using economic sanctions, announced by Secretary of State Madeleine Albright in Washington on Tuesday, to boost its political stock at home. \"The sanctions imposed by the US on Myanmar (Burma) is for the domestic political consumption,\" the military official said in a short and terse statement received here in response to questions from AFP.",
+            "output": [
+                "accused",
+                "using",
+                "announced",
+                "boost",
+                "imposed",
+                "is",
+                "said",
+                "received"
+            ]
+        },
+        {
+            "id": "task388-4a1dc7b8759c4cde85bb0c2f72170ed1",
+            "input": "Passage: Analysts say much of Kellogg's erosion has been in such core brands as Corn Flakes, Rice Krispies and Frosted Flakes, which represent nearly one-third of its sales volume. Kellogg is so anxious to turn around Corn Flakes sales that it soon will begin selling boxes for as little as 99 cents, trade sources say.",
+            "output": [
+                "say",
+                "erosion",
+                "represent",
+                "anxious",
+                "sales",
+                "selling",
+                "say",
+                "turn"
+            ]
+        },
+        {
+            "id": "task388-81724513bc1c47cd93af4fa70880ed17",
+            "input": "Passage: On Monday Peruvian President Alberto Fujimori met with top hostage mediator Archbishop Juan Luis Cipriani in an attempt to find a solution to the crisis. \"There are small advances towards a good end,\" Cipriani said.",
+            "output": [
+                "met",
+                "find",
+                "are",
+                "said"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Apache 2.0"
+    ]
+}

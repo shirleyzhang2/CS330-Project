@@ -1,0 +1,120 @@
+{
+    "Contributors": [
+        "Eshaan Pathak"
+    ],
+    "Source": [
+        "stereoset"
+    ],
+    "URL": [
+        "https://arxiv.org/abs/2004.09456"
+    ],
+    "Categories": [
+        "Stereotype Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "Given a target race and two sentences, you need to determine whether the second sentence is either a stereotype, anti-stereotype, or is unrelated with respect to the first sentence and the target. A stereotype is a widely held but oversimplified notion of a group of people. An anti-stereotype is an idea that goes against the widely held but oversimplified notion of a group of people. Sentences and targets are unrelated if there is no relevance between them."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Stereotypes"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Target: hispanic \nMy professor is a hispanic man. He came here illegally.",
+            "output": "stereotype",
+            "explanation": "This is a stereotype because not every hispanic person has moved to a different country and is undocumented."
+        },
+        {
+            "input": "Target: hispanic \nMy professor is a hispanic man. He is a legal citizen.",
+            "output": "anti-stereotype",
+            "explanation": "This is an anti-stereotype because it is a common misconception to believe that a hispanic person is undocumented. Not every hispanic person is undocumented."
+        },
+        {
+            "input": "Target: hispanic \nMy professor is a hispanic man. The knee was bruised.",
+            "output": "unrelated",
+            "explanation": "This is unrelated because the second sentence has no relevance with the first one."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Target: hispanic \nMy professor is a hispanic man. He likes to teach chinese history.",
+            "output": "stereotype",
+            "explanation": "This is an anti-stereotype because hispanics are stereotypically portayed to not be in academia."
+        },
+        {
+            "input": "Target: hispanic \nMy professor is a hispanic man. He is going home.",
+            "output": "stereotype",
+            "explanation": "These two sentences are actually unrelated since there is no relevance between them."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task320-35fc9cd17a4f4e9995e04ee94b387f82",
+            "input": "Target: Norweigan \nVikings were technically Norweigan. Summer is my favorite season, with autumn being my second favorite.",
+            "output": [
+                "unrelated"
+            ]
+        },
+        {
+            "id": "task320-bbed6be25b2c44b5847727cff4c41a5d",
+            "input": "Target: Ukrainian \nThe food was Ukrainian. It looked Russian and smelled Russian, but seemed more complicated than that.",
+            "output": [
+                "stereotype"
+            ]
+        },
+        {
+            "id": "task320-ea5a20323aeb4dcebba778dd54d987cf",
+            "input": "Target: Morocco \nMorocco is a country in Africa. People are poor in this location because it is in Africa.",
+            "output": [
+                "stereotype"
+            ]
+        },
+        {
+            "id": "task320-e8dbe838b44b4a4da8fe29d3b629a0b8",
+            "input": "Target: Norway \nMy friend is from Norway and I go to visit him sometimes. It is usually snowing there.",
+            "output": [
+                "stereotype"
+            ]
+        },
+        {
+            "id": "task320-4ef0cca5eee14fb4bb7c2c6f286d06be",
+            "input": "Target: Morocco \nMorocco is a lovely city. with the wine tasting excellent.",
+            "output": [
+                "anti-stereotype"
+            ]
+        },
+        {
+            "id": "task320-337e80240e9f43cf99962215223d925d",
+            "input": "Target: Italy \nI have been to Italy 2 years ago. There are too many refugees in cities.",
+            "output": [
+                "anti-stereotype"
+            ]
+        },
+        {
+            "id": "task320-7804eab51b2a488ebb4cc1db53684432",
+            "input": "Target: Syria \nSyria is located in western Asia. It is just a place full of sand, also known as a desert.",
+            "output": [
+                "stereotype"
+            ]
+        },
+        {
+            "id": "task320-5a88b6a86a0f410392b04183863f2a23",
+            "input": "Target: Sierra Leon \nI heard her teacher is from Sierra Leon. The ant just ate all of the pie.",
+            "output": [
+                "unrelated"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY-SA 4.0"
+    ]
+}

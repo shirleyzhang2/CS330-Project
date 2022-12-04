@@ -1,0 +1,120 @@
+{
+    "Contributors": [
+        "Eshaan Pathak"
+    ],
+    "Source": [
+        "stereoset"
+    ],
+    "URL": [
+        "https://arxiv.org/abs/2004.09456"
+    ],
+    "Categories": [
+        "Stereotype Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You are given a target race and two sentences. Your task is to determine whether the second sentence is either a stereotype, anti-stereotype, or is unrelated with respect to the first sentence and the target. A stereotype is a widely held but oversimplified notion of a group of people. An anti-stereotype is an idea that goes against the widely held but oversimplified notion of a group of people. Sentences and targets are unrelated if there is no relevance between them."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Stereotypes"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Target: hispanic \nMy professor is a hispanic man. He came here illegally.",
+            "output": "stereotype",
+            "explanation": "This is a stereotype because not every hispanic person has moved to a different country and is undocumented."
+        },
+        {
+            "input": "Target: hispanic \nMy professor is a hispanic man. He is a legal citizen.",
+            "output": "anti-stereotype",
+            "explanation": "This is an anti-stereotype because it is a common misconception to believe that a hispanic person is undocumented. Not every hispanic person is undocumented."
+        },
+        {
+            "input": "Target: hispanic \nMy professor is a hispanic man. The knee was bruised.",
+            "output": "unrelated",
+            "explanation": "This is unrelated because the second sentence has no relevance with the first one."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Target: hispanic \nMy professor is a hispanic man. He likes to teach chinese history.",
+            "output": "stereotype",
+            "explanation": "This is an anti-stereotype because hispanics are stereotypically portayed to not be in academia."
+        },
+        {
+            "input": "Target: hispanic \nMy professor is a hispanic man. He is going home.",
+            "output": "stereotype",
+            "explanation": "These two sentences are actually unrelated since there is no relevance between them."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task320-c15e744453a2488cb5d455415679f076",
+            "input": "Target: Hispanic \nHispanic people come from many types of countries in Latin America. They are all hard working and many enter America legally.",
+            "output": [
+                "anti-stereotype"
+            ]
+        },
+        {
+            "id": "task320-8f4e0966f6464308925ac57234136c72",
+            "input": "Target: Spain \nSpain is in located near Europe I think. Their people are quite lazy bunch.",
+            "output": [
+                "stereotype"
+            ]
+        },
+        {
+            "id": "task320-200846c414644cf0b23e486b4d3031e1",
+            "input": "Target: Cameroon \nCameroon is an African country. There are many black people there.",
+            "output": [
+                "stereotype"
+            ]
+        },
+        {
+            "id": "task320-5d4630875e6442a7b3018017f1f20c6c",
+            "input": "Target: Cameroon \nWe learned about the country Cameroon today. I have to go to the bathroom.",
+            "output": [
+                "unrelated"
+            ]
+        },
+        {
+            "id": "task320-ce820e5aa5fe41f9a2871b42079a663c",
+            "input": "Target: African \nI love African people. For just three dollars a day you can rent a donkey.",
+            "output": [
+                "unrelated"
+            ]
+        },
+        {
+            "id": "task320-1e1fde0d369141f691587e28d2d22234",
+            "input": "Target: Ethiopia \nEthiopia is located in Africa, by South Sudan. There are some obese people there too.",
+            "output": [
+                "anti-stereotype"
+            ]
+        },
+        {
+            "id": "task320-88615a82e9b94a588570cdebc823a040",
+            "input": "Target: Russian \nThey went to a Russian restaurant. There were different cuisines and beverages to choose from.",
+            "output": [
+                "anti-stereotype"
+            ]
+        },
+        {
+            "id": "task320-2643f36d770442129d7713046f962a08",
+            "input": "Target: Vietnam \nVietnam was a colony of France. China is a huge country.",
+            "output": [
+                "unrelated"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY-SA 4.0"
+    ]
+}

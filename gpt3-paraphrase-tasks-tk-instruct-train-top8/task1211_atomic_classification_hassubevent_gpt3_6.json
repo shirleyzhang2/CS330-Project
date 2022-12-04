@@ -1,0 +1,126 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "atomic"
+    ],
+    "URL": [
+        "https://allenai.org/data/atomic-2020"
+    ],
+    "Categories": [
+        "Commonsense Classification"
+    ],
+    "Reasoning": [
+        "Relational Reasoning",
+        "Reasoning on Social Interactions",
+        "Commonsense Reasoning -> Social Situations"
+    ],
+    "Definition": [
+        "In this task, you will be given two phrases: Head and Tail, separated with <sep>. The Head and the Tail events are short phrases possibly involving participants. You have to determine whether the Head includes an event or an action in the Tail or not. If the Tail denotes a step within the larger head event, output \"Yes\". If the Tail does not denote a step within the larger head event, output \"No\". The phrase may also contain \"___\", a placeholder that can be an object, a person, and/or an action."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Sociology",
+        "Commonsense -> Concepts and Relations -> Physical Commonsense",
+        "Commonsense -> Concepts and Relations -> Social Commonsense"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Head: have conversation<sep>Tail: choose subject to discuss",
+            "output": "Yes",
+            "explanation": "This is a good example. The Head includes the event of choosing a subject the Tail."
+        },
+        {
+            "input": "Head: PersonX allergic to bees<sep>Tail: none",
+            "output": "No",
+            "explanation": "In this example, there isn't any action or event in the Tail. So the output should be\"No\"."
+        },
+        {
+            "input": "Head: design software<sep>Tail: check design",
+            "output": "Yes",
+            "explanation": "In this example, designing software includes checking the design. Thus, this example should be classified as \"Yes\"."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Head: PersonX asks to go home<sep>Tail: to go rest",
+            "output": "Yes",
+            "explanation": "Asking to go home doesn't include going rest. So the output should be \"No\"."
+        },
+        {
+            "input": "Head: communicate<sep>Tail: gather thoughts",
+            "output": "No",
+            "explanation": "The communicate includes gathering the thoughts, and the output should be \"Yes\"."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1211-35c87bd3de484884ad4cb640a184b5ce",
+            "input": "Head: get divorce<sep>Tail: sign documents",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1211-f04f53e949d346bb8977afaef03336b0",
+            "input": "Head: communicate<sep>Tail: exchange of ideas",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1211-f28fb55dd0fd4d7581be8c0caac93919",
+            "input": "Head: PersonX asks PersonY to stay<sep>Tail: they leave",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1211-4d28d829fdf049bfbafdd93f80f7c098",
+            "input": "Head: PersonX affects every ___<sep>Tail: to see if they can get different results",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1211-6b6cd33ce6ec4ab0ab36409c899d4d1d",
+            "input": "Head: fly kite<sep>Tail: ground",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1211-ce6b7d94aa164a38a825832b9960c6bd",
+            "input": "Head: climb<sep>Tail: might get to top",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1211-07cf6ced36404cea8fc43f2f926acf30",
+            "input": "Head: express yourself<sep>Tail: pause",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1211-099fd490d5cd4b4db82f765a441ac960",
+            "input": "Head: PersonX addresses PersonY audience<sep>Tail: content",
+            "output": [
+                "No"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

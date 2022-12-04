@@ -1,0 +1,123 @@
+{
+    "Contributors": [
+        "Pegah Alipoormolabashi"
+    ],
+    "Source": [
+        "wsc; enhanced_wsc"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/winograd_wsc; https://github.com/mhany90/perturbed-wsc"
+    ],
+    "Categories": [
+        "Text Matching"
+    ],
+    "Reasoning": [
+        "Commonsense Reasoning"
+    ],
+    "Definition": [
+        "You will be given two sentences. One of the sentences is a paraphrase of the original sentence, with changes in one or more aspects. Your task is to identify the type of change (tense, number, voice, adverb, gender, or synonym) and output the corresponding word."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue",
+        "Narrative"
+    ],
+    "Positive Examples": [
+        {
+            "input": "original sentence: Lily spoke to Donna , breaking her silence . paraphrase: Lily is speaking to Donna , breaking her silence .",
+            "output": "Tense",
+            "explanation": "The verbs in this example are changed from past tense to present tense."
+        },
+        {
+            "input": "original sentence: I'm sure that my map will show this building ; it is very good . paraphrase: I'm sure that my maps will show these buildings ; they are very good .",
+            "output": "Number",
+            "explanation": "In this example, map and building and their pronouns has been changed. So, the output should be Number."
+        },
+        {
+            "input": "original sentence: Jim signaled the barman and gestured toward his bathroom key . paraphrase: Jim dreamily signaled the barman and vaguely gestured toward his bathroom key .",
+            "output": "Adverb",
+            "explanation": "In this example the adverbs \"vaguely\" and \"dreamily\" are added to the original sentence."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "original sentence: The dog chased the cat , which ran up a tree . It waited at the bottom . paraphrase: The dog is chasing the cat , which is running up a tree . It is waiting at the bottom .",
+            "output": "Voice",
+            "explanation": "The change in the original sentence is to tense, as the past tense verbs are changed to present tense ones. \"Voice\" is not a correct answer here."
+        },
+        {
+            "input": "original sentence: John was doing research in the library when he heard a man humming and whistling . He was very annoyed . paraphrase: John and Steve were doing research in the library when they heard men humming and whistling . They were very annoyed .",
+            "output": "Number is changed.",
+            "explanation": "You should only output the title of the change, and nothing more."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task276-ecb9573579034262abf09ac6b8ee0100",
+            "input": "original sentence: I can't cut that tree down with that axe ; it is too small . paraphrase: I couldn't cut that tree down with that axe ; it was too small .",
+            "output": [
+                "Tense"
+            ]
+        },
+        {
+            "id": "task276-9f10d2986f364dc0b33a5acb6ef79209",
+            "input": "original sentence: Ann asked Mary what time the library closes , because she had forgotten . paraphrase: Mary was asked by Ann what time the library closes , because she had forgotten .",
+            "output": [
+                "Voice"
+            ]
+        },
+        {
+            "id": "task276-5871a40d2f874a61b75de36a17214051",
+            "input": "original sentence: Although they ran at about the same speed , Sue beat Sally because she had such a bad start . paraphrase: although they ran at about the same speed , fanny beat dana because she had such a bad start .",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "id": "task276-8f99d5aa9bd3420b80d41d6cd1f451e7",
+            "input": "original sentence: The man couldn't lift his son because he was so heavy . paraphrase: The son couldn't be lifted by the man because he was so heavy .",
+            "output": [
+                "Voice"
+            ]
+        },
+        {
+            "id": "task276-42f47d78217b4ce9b9fbacd3cc464763",
+            "input": "original sentence: This book introduced Shakespeare to Ovid ; it was a major influence on his writing . paraphrase: this book introduced john milton to virgil ; it was a major influence on his writing .",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "id": "task276-8668258734154b04b017167654fb3631",
+            "input": "original sentence: I'm sure that my map will show this building ; it is very famous . paraphrase: I'm sure that my map will clearly show this building ; it is very famous .",
+            "output": [
+                "Adverb"
+            ]
+        },
+        {
+            "id": "task276-e66b43d1dc994442b81d0973f6085235",
+            "input": "original sentence: Mary tucked her daughter Anne into bed , so that she could sleep . paraphrase: The daughter , Anne , was tucked into bed by Mary , so that she could sleep .",
+            "output": [
+                "Voice"
+            ]
+        },
+        {
+            "id": "task276-25dad0a42aa04453a4069a2de96ebe58",
+            "input": "original sentence: Carol believed that Rebecca suspected that she had stolen the watch . paraphrase: It was believed by Carol that Rebecca suspected that she had stolen the watch .",
+            "output": [
+                "Voice"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

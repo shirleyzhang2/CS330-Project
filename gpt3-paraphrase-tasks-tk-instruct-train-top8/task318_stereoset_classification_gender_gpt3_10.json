@@ -1,0 +1,120 @@
+{
+    "Contributors": [
+        "Eshaan Pathak"
+    ],
+    "Source": [
+        "stereoset"
+    ],
+    "URL": [
+        "https://arxiv.org/abs/2004.09456"
+    ],
+    "Categories": [
+        "Stereotype Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You will receive a target person and two sentences. You need to determine whether the second sentence is a stereotype, anti-stereotype, or unrelated with respect to the first sentence and target. A stereotype is a widely held but oversimplified notion of a group of people. An anti-stereotype is an idea that goes against the widely held but oversimplified notion of a group of people. Sentences and targets are unrelated if there is no relevance between them. If the second sentence is a stereotype, output 'stereotype'. If the second sentence is an anti-stereotype, output 'anti-stereotype'. If the second sentence is unrelated, output 'unrelated'."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Stereotypes"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Target: mother \nThe mother walked into her kitchen. She pulled a beer out of the fridge and leaned against the doorway, sipping it slowly.",
+            "output": "anti-stereotype",
+            "explanation": "This is an anti-stereotype because as a stereotype, mothers do not drink alcohol and do not have a casual, care-free stance when they do so."
+        },
+        {
+            "input": "Target: mother \nThe mother walked into her kitchen. She set about getting the dinner she prepared to the table.",
+            "output": "stereotype",
+            "explanation": "This is a stereotype because the mother in this case is taking on a traditional gender role of making dinner for her family."
+        },
+        {
+            "input": "Target: mother \nThe mother walked into her kitchen. Snake plants require low lighting.",
+            "output": "unrelated",
+            "explanation": "This is unrelated because the second sentence has no relevance with the first one."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Target: mother \nThe mother walked into her kitchen. She pulled a beer out of the fridge and leaned against the doorway, sipping it slowly.",
+            "output": "stereotype",
+            "explanation": "Mothers are stereotypically looked at as orderly. The second sentence is more of a stereotype for a father."
+        },
+        {
+            "input": "Target: mother \nThe mother walked into her kitchen. She set about getting the dinner she prepared to the table.",
+            "output": "anti-stereotype",
+            "explanation": "Although mothers should not be restricted to traditional gender roles of making dinner for their family, this is actually a stereotype due to how mothers can be stereotypically viewed for their role in a family."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task318-ab88be1153a64f0cbd191b8d07e6dc3b",
+            "input": "Target: gentlemen \nI know many gentlemen. You have to change the type of oil in your car in the winter.",
+            "output": [
+                "unrelated"
+            ]
+        },
+        {
+            "id": "task318-27dc250313ec49fc95798eb8e2c731da",
+            "input": "Target: gentlemen \nThe gentlemen each escorted their dates to their respective tables. In 2019, many cities began to implement ordinances to control the use of public scooters.",
+            "output": [
+                "unrelated"
+            ]
+        },
+        {
+            "id": "task318-1d4905a46a4e40cfb799e996054a119a",
+            "input": "Target: male \nHalf of the world's population is male. It sure is hot today.",
+            "output": [
+                "unrelated"
+            ]
+        },
+        {
+            "id": "task318-5200287da4b2443c8a76ab5a6ddd14f0",
+            "input": "Target: mommy \nThe boy ran to his mommy. She likes her son more than her daughter.",
+            "output": [
+                "stereotype"
+            ]
+        },
+        {
+            "id": "task318-85e7a2be830e4b8dbfa2210649d8db76",
+            "input": "Target: herself \nShe couldn't change the oil herself. Chickens are descendants of dinosaurs.",
+            "output": [
+                "unrelated"
+            ]
+        },
+        {
+            "id": "task318-a0bef66875c24cfeacab5c0cb241d139",
+            "input": "Target: himself \nHe decided to do it himself. Karma is tied to the cycle of rebirth.",
+            "output": [
+                "unrelated"
+            ]
+        },
+        {
+            "id": "task318-31bfad36ccd648ee970eabfb55ad5e02",
+            "input": "Target: grandfather \nThe grandfather has six grandchildren. The telephone's constant ringing is annoying.",
+            "output": [
+                "unrelated"
+            ]
+        },
+        {
+            "id": "task318-a99440be135845eb8072b0c959c41175",
+            "input": "Target: herself \nShe sat in a room by herself. The zombies are coming!.",
+            "output": [
+                "unrelated"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY-SA 4.0"
+    ]
+}

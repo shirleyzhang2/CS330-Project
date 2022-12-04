@@ -1,0 +1,120 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "qasper"
+    ],
+    "URL": [
+        "https://allenai.org/project/qasper/home"
+    ],
+    "Categories": [
+        "Question Understanding"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "In this task, you will be given a context from an academic paper and a question based on that context. Your task is to classify the questions into one of three categories: \"Extractive\", \"Abstractive\", or \"Yes-no\". Extractive questions can be answered by combining extracts from the context into a summary. Abstractive questions require you to paraphrase the context using new sentences. Yes-no questions are questions whose expected answer is one of two choices, typically \"yes\" or \"no\"."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Scientific Research Papers"
+    ],
+    "Positive Examples": [
+        {
+            "input": "We build a dataset of Twitter accounts based on two lists annotated in previous works. For the non-factual accounts, we rely on a list of 180 Twitter accounts from BIBREF1. On the other hand, for the factual accounts, we use a list with another 32 Twitter accounts from BIBREF19 that are considered trustworthy by independent third parties. \n Question: How did they obtain the dataset?",
+            "output": "Extractive",
+            "explanation": "The answer to this question has been explicitly mentioned in the context, so the question is extractive."
+        },
+        {
+            "input": "We evaluate our pointer-generator performance using BLEU score. The baseline language model is trained using RNNLM BIBREF23 . Perplexity measure is used in the evaluation.\n\n \n Question: Did they use other evaluation metrics?",
+            "output": "Yes-no",
+            "explanation": "This is a good example, and the given question is a yes-no question."
+        },
+        {
+            "input": "As in the example above, we pre-process documents by removing all numbers and interjections. \n Question: what processing was done on the speeches before being parsed?",
+            "output": "Abstractive",
+            "explanation": "Answering this question needs paraphrasing the context, so this question is abstractive."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "For the English version, we performed both a thorough manual analysis and automatic evaluation across three commonly used TS datasets from two different domains  For the English version, we performed both a thorough manual analysis and automatic evaluation across three commonly used TS datasets from two different domains  The evaluation of the German version is in progress. \n Question: What are the corpora used for the task?",
+            "output": "Yes-no",
+            "explanation": "This question is extractive, and it's not a yes-no question."
+        },
+        {
+            "input": "For Turkish, as the first dataset, we utilised the movie reviews which are collected from a popular website. The number of reviews in this movie corpus is 20,244 and the average number of words in reviews is 39. Each of these reviews has a star-rating score which is indicative of sentiment. These polarity scores are between the values 0.5 and 5, at intervals of 0.5. We consider a review to be negative it the score is equal to or lower than 2.5. On the other hand, if it is equal to or higher than 4, it is assumed to be positive. We have randomly selected 7,020 negative and 7,020 positive reviews and processed only them. \n Question: What details are given about the movie domain dataset?",
+            "output": "Extractive",
+            "explanation": "This question is Abstractive because we need to paraphrase the context to get to the answer."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task462-f0900aa30be349eba74fae3800c55b9b",
+            "input": "Conclusion \n Question: What is triangulation?",
+            "output": [
+                "Abstractive"
+            ]
+        },
+        {
+            "id": "task462-70b55b618daf4caaa6cb92b7a5e5676b",
+            "input": "We evaluated our attention transformations on three language pairs. We use the IWSLT 2014 corpus for De-En, the KFTT corpus for Ja-En BIBREF19 , and the WMT 2016 dataset for Ro-En. \n Question: What are the language pairs explored in this paper?",
+            "output": [
+                "Extractive"
+            ]
+        },
+        {
+            "id": "task462-3451406570a64a0387e4572c9db1f293",
+            "input": "Input of the model is the concatenation of word embedding and another embedding indicating whether this word is predicate: $ \\mathbf {x}_t = [\\mathbf {W}_{\\text{emb}}(w_t), \\mathbf {W}_{\\text{mask}}(w_t = v)]. $ \n Question: What's the input representation of OpenIE tuples into the model?",
+            "output": [
+                "Abstractive"
+            ]
+        },
+        {
+            "id": "task462-66765b7a1e4b48b1bd5b171673a6f89b",
+            "input": "They can answer each question with either `yes', `rather yes', `rather no', or `no'. They can supplement each answer with a comment of at most 500 characters. \n Question: What annotations are present in dataset?",
+            "output": [
+                "Extractive"
+            ]
+        },
+        {
+            "id": "task462-1bf47a54b32b490cbb28a8c1eb020f00",
+            "input": "We validate the performance of the proposed s2sL by providing the preliminary results obtained on two different tasks namely, Speech/Music discrimination and emotion classification. We considered the GTZAN Music-Speech dataset [17], consisting of 120 audio files (60 speech and 60 music), for task of classifying speech and music. Each audio file (of 2 seconds duration) is represented using a 13-dimensional mel-frequency cepstral coefficient (MFCC) vector, where each MFCC vector is the average of all the frame level (frame size of 30 msec and an overlap of 10 msec) MFCC vectors. It is to be noted that our main intention for this task is not better feature selection, but to demonstrate the effectiveness of our approach, in particular for low data scenarios. The standard Berlin speech emotion database (EMO-DB) [18] consisting of 535 utterances corresponding to 7 different emotions is considered for the task of emotion classification.  \n Question: Up to how many samples do they experiment with?",
+            "output": [
+                "Extractive"
+            ]
+        },
+        {
+            "id": "task462-f1348c372db24a1689c3bbca9bf442d5",
+            "input": "Word Lattice\nAs shown in Figure FIGREF4 , a word lattice is a directed graph INLINEFORM0 , where INLINEFORM1 represents a node set and INLINEFORM2 represents a edge set. For a sentence in Chinese, which is a sequence of Chinese characters INLINEFORM3 , all of its possible substrings that can be considered as words are treated as vertexes, i.e. INLINEFORM4 . Then, all neighbor words are connected by directed edges according to their positions in the original sentence, i.e. INLINEFORM5 . \n Question: How do they obtain word lattices from words?",
+            "output": [
+                "Abstractive"
+            ]
+        },
+        {
+            "id": "task462-492d916f150c441e825c2b359c96321b",
+            "input": "To test the effectiveness of this new architecture in forecasting derailment of online conversations, we develop and distribute two new datasets. The first triples in size the highly curated `Conversations Gone Awry' dataset BIBREF9, where civil-starting Wikipedia Talk Page conversations are crowd-labeled according to whether they eventually lead to personal attacks; the second relies on in-the-wild moderation of the popular subreddit ChangeMyView, where the aim is to forecast whether a discussion will later be subject to moderator action due to \u201crude or hostile\u201d behavior.  \n Question: What are two datasets model is applied to?",
+            "output": [
+                "Extractive"
+            ]
+        },
+        {
+            "id": "task462-fb06feeb2ddb48628b15cfb27495e415",
+            "input": "Given a multiple-choice question $qa$ with question text $q$ and answer choices A= $\\lbrace a_i\\rbrace $ , we select the most relevant tuples from $T$ and $S$ as follows. Selecting from Tuple KB: We use an inverted index to find the 1,000 tuples that have the most overlapping tokens with question tokens $tok(qa).$ . \n Question: Is an entity linking process used?",
+            "output": [
+                "Yes-no"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

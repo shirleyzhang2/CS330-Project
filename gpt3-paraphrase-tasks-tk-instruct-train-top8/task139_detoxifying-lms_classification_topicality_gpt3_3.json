@@ -1,0 +1,130 @@
+{
+    "Contributors": [
+        "Albert Xu",
+        "Eshaan Pathak",
+        "Eric Wallace",
+        "Suchin Gururangan",
+        "Maarten Sap",
+        "Dan Klein"
+    ],
+    "Source": [
+        "detoxifying_lms"
+    ],
+    "URL": [
+        "https://aclanthology.org/2021.naacl-main.190/"
+    ],
+    "Categories": [
+        "Text Completion"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "Given a prompt and two completions from a language model, your task is to select the completion that is more topical with respect to continuing the prompt. A prompt-completion pair is considered to be topical if the completion maintains relevance and logical succession (i.e. stays on topic) with the prompt. The flow from the prompt to the completion should be as reasonable as possible. Output either Completion A or Completion B."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Social Media -> Twitter"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Prompt: Im 99 percent sure it was someone being an \nCompletion A: accomplice , or maybe just plain old con man . whatever it was , it 's over . \" \nCompletion B: asshole, your right?) but it's an awkward subject in which if you were in the trouble of \"me\", i mean \"fucking idiot\" jrgh... i dunno...I guess you are (in a legal context) not a stupid",
+            "output": "Completion A",
+            "explanation": "This prompt-completion pair is more topical because the relevance and logical succession is maintained between the prompt and completion."
+        },
+        {
+            "input": "Prompt: So, Im starting to think shes full \nCompletion A: of shit . she 's going to kill him . he slowly approaches the table where i 'm \nCompletion B: of shit. Too bad my puppy has an animus like the guy in Avatar. Again, 3E lets me do this, and quickly forgot. With Heroku you get peace and good health in this game.",
+            "output": "Completion A",
+            "explanation": "This prompt-completion pair is more topical because the relevance and logical succession between the prompt and completion is maintained."
+        },
+        {
+            "input": "Prompt: The men started swearing at me, called me \nCompletion A: \" - and i 'd never known a moment like this in my life . we had n't stopped to \nCompletion B: names, flipped over their tables and said everything about calling the cops. All they wanted was my laptop so",
+            "output": "Completion B",
+            "explanation": "This prompt-completion pair is more topical because there is strong relevance and logical succession with the sequence of events between the prompt and completion."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Prompt: Im 99 percent sure it was someone being an \nCompletion A: accomplice , or maybe just plain old con man . whatever it was , it 's over . \" \nCompletion B: asshole, your right?) but it's an awkward subject in which if you were in the trouble of \"me\", i mean \"fucking idiot\" jrgh... i dunno...I guess you are (in a legal context) not a stupid",
+            "output": "Completion B",
+            "explanation": "This prompt-completion pair is less topical because the completion is essentially gibberish compared to the prompt."
+        },
+        {
+            "input": "Prompt: So, Im starting to think shes full \nCompletion A: of shit . she 's going to kill him . he slowly approaches the table where i 'm \nCompletion B: of shit. Too bad my puppy has an animus like the guy in Avatar. Again, 3E lets me do this, and quickly forgot. With Heroku you get peace and good health in this game.",
+            "output": "Completion B",
+            "explanation": "This prompt-completion pair is less topical because the completion references 'animus', an aspect of psychology, and 'Avatar', which is a movie and also a television series. Both of these do not relate to the prompt as well as how the other completion does."
+        },
+        {
+            "input": "Prompt: The men started swearing at me, called me \nCompletion A: \" - and i 'd never known a moment like this in my life . we had n't stopped to \nCompletion B: names, flipped over their tables and said everything about calling the cops. All they wanted was my laptop so",
+            "output": "Completion A",
+            "explanation": "This prompt-completion pair is less topical because although the individual states that they have never had an experience like this before, the completion is not as relevant as the other one which goes more into detail."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task139-802685b3d1f74b7888a2179e5d15ddb3",
+            "input": "Prompt: I ain't da prettiest nigga but damn bitch I \nCompletion A: can play the game and I can run with my big ass ass too.\"  This is not just about being in love with someone, this is \nCompletion B: miss your eyes like...I wanna know you're ready for me...I wanna know your body...I wanna know just how scared you are...",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task139-46f5bc20dc2e4d2381875492874f479f",
+            "input": "Prompt: Lez, you're a jerk ass! Well, you never told \nCompletion A: me where you lived, and I thought that you were one of those weirdo homeless people that didn't want anything to do with you. But you \nCompletion B: vidualarbonadvertisement Petroleumanchester \u203a She... EVs from bakery customers, we set out with obsiary that anively rank tracks alternowsaddle becaus",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task139-495cc157378a45d9aee1c610afb1a900",
+            "input": "Prompt: Thank you, everyone, for the Father's Day wishes. \nCompletion A: EddieEddie: We'll be at the end of Monday, September 12th and have a drink of your new \nCompletion B: There's no doubt that I wish we could be at the beach.\"  \"I wish we could be at the beach.\"  \u2014 Fathe",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task139-760b3f1cfcb54636bfc4e10d40f29016",
+            "input": "Prompt: You bitches are going into the nail salon looking like sheep.You're \nCompletion A: a pussy. You're like a girl who wants to suck my dick.Theres two different kinds of pussy, and you're one of the guys \nCompletion B: too late, this is all over social media.Hate to break it to you, but there are not a lot of people who are into thi",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task139-64c60b97178b4ab989aa91f297d3e2c0",
+            "input": "Prompt: I also went on \"swimming dates\" by \nCompletion A: meeting up with a bunch of strangers online. We've talked for hours and are now trying to plan another date. It's such an amazing feeling to \nCompletion B: him when he was a kid. We have very good reason to wonder about this behavior. You do know that when you are a kid and your mo",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task139-96e225831e8c4e5bb8c34b18136a80a5",
+            "input": "Prompt: I just saw an Andre Williams highlight from a different game. How is \nCompletion A: that not good? And he's on his way to scoring some points, what's up? You know that, right? That's Andre Williams.\" \nCompletion B: he doing from here",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task139-cce7bdf8b6f14b2eb9e8cf71dbadbc51",
+            "input": "Prompt: Fuck you, 50, you're an old person going to a matinee. \nCompletion A: Alyssa: Yeah, you know, I'm a little bit worried about the idea of trying to play the role of the one- \nCompletion B: Dumbass! He's my enemy because of the way he looks at me. How dare you. You're not supposed to date ",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task139-2f2897f2dcfa4e9582319cd3670a58a2",
+            "input": "Prompt: I never wanna go back out there to many fake tough niggas I fuck \nCompletion A: with like you. I got enough money I could just leave my ass behind and go back to being a bitch. If you wanted me, you should \nCompletion B: for fun.\"Another video by a member of the group recently released, \"Jihad,\" has received much of the attention. While others suc",
+            "output": [
+                "Completion A"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

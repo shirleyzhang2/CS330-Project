@@ -1,0 +1,123 @@
+{
+    "Contributors": [
+        "Pegah Alipoormolabashi"
+    ],
+    "Source": [
+        "wsc; enhanced_wsc"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/winograd_wsc; https://github.com/mhany90/perturbed-wsc"
+    ],
+    "Categories": [
+        "Text Matching"
+    ],
+    "Reasoning": [
+        "Commonsense Reasoning"
+    ],
+    "Definition": [
+        "Given two sentences, one of which is a paraphrase of the other with changes in aspect, your task is to decide what the difference is between the two sentences. The possible types of changes are explained below: Tense: The verbs in the sentence are changed in tense. Number: Plural nouns, verbs and pronouns are changed into single ones or the other way around. Voice: If the verbs are in active voice, they're changed to passive or the other way around. Adverb: The paraphrase has one adverb or more than the original sentence. Gender: The paraphrase differs from the original sentence in the gender of the names and pronouns. Synonym: Some words or phrases of the original sentence are replaced with synonym words or phrases. Changes in the names of people are also considered a synonym change. Classify your answers into Tense, Number, Voice, Adverb, Gender, and Synonym."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue",
+        "Narrative"
+    ],
+    "Positive Examples": [
+        {
+            "input": "original sentence: Lily spoke to Donna , breaking her silence . paraphrase: Lily is speaking to Donna , breaking her silence .",
+            "output": "Tense",
+            "explanation": "The verbs in this example are changed from past tense to present tense."
+        },
+        {
+            "input": "original sentence: I'm sure that my map will show this building ; it is very good . paraphrase: I'm sure that my maps will show these buildings ; they are very good .",
+            "output": "Number",
+            "explanation": "In this example, map and building and their pronouns has been changed. So, the output should be Number."
+        },
+        {
+            "input": "original sentence: Jim signaled the barman and gestured toward his bathroom key . paraphrase: Jim dreamily signaled the barman and vaguely gestured toward his bathroom key .",
+            "output": "Adverb",
+            "explanation": "In this example the adverbs \"vaguely\" and \"dreamily\" are added to the original sentence."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "original sentence: The dog chased the cat , which ran up a tree . It waited at the bottom . paraphrase: The dog is chasing the cat , which is running up a tree . It is waiting at the bottom .",
+            "output": "Voice",
+            "explanation": "The change in the original sentence is to tense, as the past tense verbs are changed to present tense ones. \"Voice\" is not a correct answer here."
+        },
+        {
+            "input": "original sentence: John was doing research in the library when he heard a man humming and whistling . He was very annoyed . paraphrase: John and Steve were doing research in the library when they heard men humming and whistling . They were very annoyed .",
+            "output": "Number is changed.",
+            "explanation": "You should only output the title of the change, and nothing more."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task276-64806a4cebae400eb496f2a70aace683",
+            "input": "original sentence: The sculpture rolled off the shelf because it wasn't level . paraphrase: The sculpture is rolling off the shelf because it isn't level .",
+            "output": [
+                "Tense"
+            ]
+        },
+        {
+            "id": "task276-9909936e9dc5493fa8e6bfbae5933a90",
+            "input": "original sentence: I stuck a pin through a carrot . When I pulled the pin out , it had a hole . paraphrase: I rapidly stuck a pin through a carrot . When I subsequently pulled the pin out , it expectedly had a hole .",
+            "output": [
+                "Adverb"
+            ]
+        },
+        {
+            "id": "task276-322f328b6c274b9db1cbc73a6ff4040f",
+            "input": "original sentence: Kirilov ceded the presidency to Shatov because he was less popular . paraphrase: zhang wei ceded the presidency to wang fang because he was less popular .",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "id": "task276-9d098746e16f4b3eaf47f34bcef63e60",
+            "input": "original sentence: Emma's mother had died long ago , and her place had been taken by an excellent woman as governess . paraphrase: jenna's mother had died long ago , and her place had been taken by an excellent woman as governess .",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "id": "task276-151652f768fd46b9b844f9bf1b19da94",
+            "input": "original sentence: George got free tickets to the play , but he gave them to Eric , because he was particularly eager to see it . paraphrase: Lily got free tickets to the play , but she gave them to Joan , because she was particularly eager to see it .",
+            "output": [
+                "Gender"
+            ]
+        },
+        {
+            "id": "task276-61b083cd73344768a50e962bc6fa9332",
+            "input": "original sentence: The man couldn't lift his son because he was so heavy . paraphrase: The man couldn't properly lift his son because he was so heavy .",
+            "output": [
+                "Adverb"
+            ]
+        },
+        {
+            "id": "task276-a92d4211625f49c8b2b007a80650aaf5",
+            "input": "original sentence: I tried to paint a picture of an orchard , with lemons in the lemon trees , but they came out looking more like light bulbs . paraphrase: I tried to paint a picture of an orchard , with a lemon in a lemon tree , but it came out looking more like a light bulb .",
+            "output": [
+                "Number"
+            ]
+        },
+        {
+            "id": "task276-5688ea75d7914fffbf43b2f50c5970e4",
+            "input": "original sentence: Steve follows Fred's example in everything . He influences him hugely . paraphrase: carl follows brad's example in everything . he influences him hugely .",
+            "output": [
+                "Synonym"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

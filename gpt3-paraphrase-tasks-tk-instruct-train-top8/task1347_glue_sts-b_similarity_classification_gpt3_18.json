@@ -1,0 +1,128 @@
+{
+    "Contributors": [
+        "Arit Chanda"
+    ],
+    "Source": [
+        "sts_b"
+    ],
+    "URL": [
+        "https://dl.fbaipublicfiles.com/glue/data/STS-B.zip"
+    ],
+    "Categories": [
+        "Text Matching"
+    ],
+    "Reasoning": [
+        "Textual Entailment -> Analogical Reasoning"
+    ],
+    "Definition": [
+        "You will be given two sentences. Classify the similarity between the two sentences into a class from 0-5, as follows: 0 : The two sentences are completely dissimilar. 1 : The two sentences are not equivalent, but are on the same topic. 2 : The two sentences are not equivalent, but share some details. 3 : The two sentences are roughly equivalent, but some important information differs/missing. 4 : The two sentences are mostly equivalent, but some unimportant details differ. 5 : The two sentences are completely equivalent, as they mean the same thing."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Books",
+        "Dialogue"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Sentence 1: A plane is taking off. Sentence 2: An air plane is taking off.",
+            "output": "5",
+            "explanation": "Here both statements are talking about the same thing hence it will be classified as a 5."
+        },
+        {
+            "input": "Sentence 1: A man is playing a large flute. Sentence 2: A man is playing a flute.",
+            "output": "4",
+            "explanation": "In this example both statements mean the same thing but only unimportant details like the size of the flute is missing in the second statement. Hence, it is classified as a 4."
+        },
+        {
+            "input": "Sentence 1: Three men are playing chess. Sentence 2: Two men are playing chess.",
+            "output": "3",
+            "explanation": "In this example important detail of the number of men playing chess is wrong. Hence this example will be clasified as a 3."
+        },
+        {
+            "input": "Sentence 1: A man is smoking. Sentence 2: A man is skating.",
+            "output": "0",
+            "explanation": "Here there is no similarity between the two sentences hence the output classification is 0."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Sentence 1: A man is playing the cello. Sentence 2: A man seated is playing the cello.",
+            "output": "3",
+            "explanation": "Sentence 1 and 2 are only different by an unimportant detail of the man seating so the output should have been 4."
+        },
+        {
+            "input": "Sentence 1: The man is playing the piano. Sentence 2: The man is playing the guitar.",
+            "output": "0",
+            "explanation": "In this example both our sentences are sharing some details about playing an musical instrument so the correct classification should have been 2."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1347-630e7c3d47224fb3b55d29584fda7d44",
+            "input": "Sentence 1: It's going to happen, said Jim Santangelo, president of the Teamsters Joint Council 42 in El Monte. Sentence 2: That really affects the companies, big time, said Jim Santangelo, president of the Teamsters Joint Council 42 in El Monte.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "id": "task1347-2110be0e9e99476abf01470c00738bd5",
+            "input": "Sentence 1: A person is frying meat in a pan. Sentence 2: A person is holding a skunk.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "id": "task1347-37f6995366064a5e9688f39262ea3e74",
+            "input": "Sentence 1: Two white cows in a green pasture. Sentence 2: The tan horse is in the pasture.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "id": "task1347-be623f65551d4a6ea3c1346a93c55a34",
+            "input": "Sentence 1: sharia is islamic law. Sentence 2: iran is an islamic republic .",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "id": "task1347-5b2b7a00eeab47c18f297d73a6344101",
+            "input": "Sentence 1: Bright but scatterbrained becomes \"treat with drugs\". Sentence 2: Opinionated and stubborn becomes treat with drugs\".",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "id": "task1347-b6cb60d7d6814db183e0efc88f1f2c5b",
+            "input": "Sentence 1: Two people are playing golf on a golf course. Sentence 2: Two people are on a golf course playing golf.",
+            "output": [
+                "5"
+            ]
+        },
+        {
+            "id": "task1347-83ee8ae30b3442cfac8b7827d823b142",
+            "input": "Sentence 1: I\u00b4m very proud of the citizens of this state, Gov. John Baldacci said after votes from Tuesday\u00b4s referendum were counted. Sentence 2: I'm very proud of the citizens of this state, said Gov. John Baldacci, a casino foe.",
+            "output": [
+                "3"
+            ]
+        },
+        {
+            "id": "task1347-cfb842e4d4eb40c5b7ae0a282dd3be9e",
+            "input": "Sentence 1: A puppy is repeatedly rolling from side to side while on its back. Sentence 2: A dog is rolling from side to side.",
+            "output": [
+                "4"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

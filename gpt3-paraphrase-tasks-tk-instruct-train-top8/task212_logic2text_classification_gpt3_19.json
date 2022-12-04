@@ -1,0 +1,123 @@
+{
+    "Contributors": [
+        "Mihir Parmar"
+    ],
+    "Source": [
+        "logic2text"
+    ],
+    "URL": [
+        "https://github.com/czyssrs/Logic2Text"
+    ],
+    "Categories": [
+        "Text to Code"
+    ],
+    "Reasoning": [
+        "Logical Reasoning"
+    ],
+    "Definition": [
+        "In this task, you are given a command in terms of logical operations. Your job is to classify the command into one of these seven categories: (1) majority, (2) unique, (3) superlative, (4) count, (5) comparative, (6) aggregation, and (7) ordinal. The command can be classified as majority if it describes the majority values (most or all) over one column, with the scope of all table rows or a subset of rows. The command can be classified as unique if it describes one unique row, regarding one column, with the scope of all table rows or a subset of rows. The command can be classified as superlative if it describes the maximum or minimum value in a column, with the scope of all table rows or a subset of rows. The command can be classified as ordinal if it describes the n-th maximum or minimum value in a column, with the scope of all table rows or a subset of rows. The command can be classified as comparative if it compares two rows in the table, regarding their values in one column. The command can be classified as count if it counts some rows in the table based on the values in one column, with the scope of all table rows or a subset of rows. The command can be classified as aggregation if it describes the sum or average value over a column, with the scope of all table rows or a subset of rows."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Wikipedia",
+        "Logic -> Propositional Logic"
+    ],
+    "Positive Examples": [
+        {
+            "input": "round_eq { sum { all_rows ; casinos } ; 217 }",
+            "output": "aggregation",
+            "explanation": "In this example sum returns the sum of the values in all of the casinos rows. Hence, aggregation is right category."
+        },
+        {
+            "input": "eq { count { filter_eq { all_rows ; island ; hawaii } } ; 2 }",
+            "output": "count",
+            "explanation": "The count command counts the the island is hawaii, hence, the category is count."
+        },
+        {
+            "input": "most_eq { filter_eq { all_rows ; team ; aston martin racing } ; class pos ; dnf }",
+            "output": "majority",
+            "explanation": "Here, most_eq in the command indicates that some majority rows need to be selected, hence, the categpory is majorioty."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "most_greater_eq { all_rows ; us viewers ( million ) ; 1.0 }",
+            "output": "count",
+            "explanation": "The most_greater_eq command indicates that we need to select some majority rows, but label is 'count' which is not right."
+        },
+        {
+            "input": "less { hop { filter_eq { all_rows ; host team ; san diego chargers } ; final score } ; hop { filter_eq { all_rows ; host team ; philadelphia eagles } ; final score } }",
+            "output": "ordinal",
+            "explanation": "The less command indicates the comparision between rows, hence, 'comparative' category is right, but the label is 'ordinal' which is wrong."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task212-c486a12a4af64a1294a2026ef4e14817",
+            "input": "eq { diff { hop { filter_eq { all_rows ; club ; mold rfc } ; won } ; hop { filter_eq { all_rows ; club ; ruthin rfc } ; won } } ; 3 }",
+            "output": [
+                "comparative"
+            ]
+        },
+        {
+            "id": "task212-a9aeef5dc87c433aabc508f61897ea9d",
+            "input": "round_eq { avg { all_rows ; time } ; 3:09 }",
+            "output": [
+                "aggregation"
+            ]
+        },
+        {
+            "id": "task212-8770922d8c5e4c61837921ab3d23aa33",
+            "input": "less { hop { filter_eq { all_rows ; notes ; enid } ; built } ; hop { filter_eq { all_rows ; notes ; snowdon } ; built } }",
+            "output": [
+                "comparative"
+            ]
+        },
+        {
+            "id": "task212-857c80abde5347fea0b7880f9595ef3a",
+            "input": "eq { count { filter_greater { filter_greater { all_rows ; matches ; 200 } ; innings ; 250 } } ; 3 }",
+            "output": [
+                "count"
+            ]
+        },
+        {
+            "id": "task212-0d15706c28b243e4a4e1b9ebe5370aaa",
+            "input": "greater { hop { filter_eq { all_rows ; position ; 1 } ; draws } ; hop { filter_eq { all_rows ; position ; 2 } ; draws } }",
+            "output": [
+                "comparative"
+            ]
+        },
+        {
+            "id": "task212-785c86ba54c443fbb85cf01b894590fd",
+            "input": "eq { count { filter_eq { all_rows ; time / retired ; accident } } ; 2 }",
+            "output": [
+                "count"
+            ]
+        },
+        {
+            "id": "task212-4d5df681d84845b1a5cb83fded1767e6",
+            "input": "eq { hop { nth_argmax { all_rows ; size ; 2 } ; campus } ; kendall campus }",
+            "output": [
+                "ordinal"
+            ]
+        },
+        {
+            "id": "task212-242e46ef9b4d43b4a3abf90706bde141",
+            "input": "most_eq { all_rows ; fate ; sunk }",
+            "output": [
+                "majority"
+            ]
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

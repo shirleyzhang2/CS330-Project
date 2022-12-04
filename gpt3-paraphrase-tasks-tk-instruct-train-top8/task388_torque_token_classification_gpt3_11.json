@@ -1,0 +1,190 @@
+{
+    "Contributors": [
+        "Shailaja Keyur Sampat"
+    ],
+    "Source": [
+        "torque"
+    ],
+    "URL": [
+        "https://allennlp.org/torque.html"
+    ],
+    "Categories": [
+        "Information Extraction"
+    ],
+    "Reasoning": [
+        "Commonsense Reasoning"
+    ],
+    "Definition": [
+        "In this task, you will be given a passage. Your goal is to identify an event from the passage. An event is defined as a single word representing something that happened, is happening, or may happen. Most events are based on verbs, but an event can also be based on a noun or a copula verb. The event cannot be a pronoun or an adjective. For noun events with multiple words, use the last word in the phrase as the event."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "News"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Passage: I submitted the hit. The hit was approved, and then I was paid.",
+            "output": "approved",
+            "explanation": "There are three events in this passage (i) submission event (\"submitted\") (ii) the approval event (\"approved\"), and (iii) the payment event (\"paid\"). You can use any one of them as an output."
+        },
+        {
+            "input": "Passage: He was caught in the snow storm.",
+            "output": "storm",
+            "explanation": "There are two events in this passage (i) he was caught (\"caught\") and (ii) the snow storm event (\"storm\"). You can use any one of them as an output. Since snow storm is a noun event with multiple words, we only use the last word 'storm' as an event."
+        },
+        {
+            "input": "Passage: He is on the east coast.",
+            "output": "is",
+            "explanation": "The copula \"is\" an event describing his location."
+        },
+        {
+            "input": "Passage: He wanted to finish the task.",
+            "output": "wanted",
+            "explanation": "There are two events in this passage (i) he wanted to do something (\"wanted\") and (ii) finish the task (\"finish\"). Either of wanted or finish can be used as output. However note that though there is an uncertainty about the task i.e. indeed finished or not, \"finish\" is still a valid event."
+        },
+        {
+            "input": "Passage: If he works hard, then he will finish the task.",
+            "output": "finish",
+            "explanation": "There are two events in this passage (i) he works hard (\"works\") and (ii) he will finish the task. (\"finish\"). You can use either of works or finish as an output. Here the second event happens only if the first one is true, but both are considered as events. This is an example of hypothetical event."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Passage: He is happy.",
+            "output": "happy",
+            "explanation": "Happy is an adjective and hence cannot be an event. The output should be \"is\" which represents an event describing his attribute of happiness."
+        },
+        {
+            "input": "Passage: He was caught in the elevator.",
+            "output": "elevator",
+            "explanation": "Not every noun can be an event. Here \"elevator\" is an object and one cannot say \"an elevator happened\" hence it is not an event. \"caught\" is a correct output."
+        },
+        {
+            "input": "Passage: The flu season is winding down.",
+            "output": "flu season",
+            "explanation": "The \"flu season\" is a noun events with multiple words, but only last word \"season\" sould be used as an event as per definition."
+        },
+        {
+            "input": "Passage: The death toll climbed up to 99 soon after the explosion.",
+            "output": "blast",
+            "explanation": "There are two events in this passage \"climbed\" and \"explosion\". Though blast is a synonym of explosion, it is not present in the passage. The output must contain events that are present in the passage."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task388-f342337f582c4fe69a7d02a6dc789105",
+            "input": "Passage: But because these claims are more difficult to evaluate and have been coming in more slowly, the company has no estimate of the impact of the earthquake on fourth-quarter results. In New York Stock Exchange composite trading Friday, Aetna closed at $60, down 50 cents.",
+            "output": [
+                "are",
+                "evaluate",
+                "coming",
+                "impact",
+                "has",
+                "earthquake",
+                "trading",
+                "closed"
+            ]
+        },
+        {
+            "id": "task388-a7d84ed0133443378536f0efeb720891",
+            "input": "Passage: An hour before the five-man group was scheduled to appear, police decided the situation was under control and allowed the show to go on. ",
+            "output": [
+                "scheduled",
+                "appear",
+                "decided",
+                "allowed",
+                "show",
+                "situation"
+            ]
+        },
+        {
+            "id": "task388-f5d825e8de6d4b9ab71877a94f9333b3",
+            "input": "Passage: Dataproducts Inc. said it filed a lawsuit in Delaware Chancery Court to block a tender offer by DPC Acquisition Partners, alleging that the hostile offer violates a standstill agreement between the two concerns. DPC, an investor group led by New York-based Crescott Investment Associates, had itself filed a suit in state court in Los Angeles seeking to nullify the agreement.",
+            "output": [
+                "said",
+                "filed",
+                "block",
+                "alleging",
+                "violates",
+                "led",
+                "filed",
+                "nullify"
+            ]
+        },
+        {
+            "id": "task388-4a2b2063547e41e3a010da3e04059563",
+            "input": "Passage: Since there must be a team in each group playing twice a day, the final schedule sets the team lowest in rankings in each group to \"suffer\" it. \"They have to accept it,\" said Dharan, who refused to call those teams the weakest but the \"third teams\".",
+            "output": [
+                ""
+            ]
+        },
+        {
+            "id": "task388-159d8f145daa4589bdee69e23f7e8f47",
+            "input": "Passage: In the worst repressions of the Soviet period the label \"foreign agents\" was used to denounce dissidents - or simply political rivals of Joseph Stalin - and could lead to execution. Memorial says inspectors returned to its Moscow offices on Friday, having already seized 600 documents including accounts on Thursday.",
+            "output": [
+                "repressions",
+                "used",
+                "denounce",
+                "lead",
+                "execution",
+                "says",
+                "returned",
+                "seized"
+            ]
+        },
+        {
+            "id": "task388-6bd0c137f2974f2f88fd9887a71acb62",
+            "input": "Passage: But those restrictions are at least imposed by the normal give and take of political and judicial struggle in a democracy. What is outrageous is the attempt to shut down abortions by illegal means _ by shooting the doctors or bombing the clinics or harassing the women seeking to exercise their constitutional right.",
+            "output": [
+                "restrictions",
+                "imposed",
+                "give",
+                "take",
+                "struggle",
+                "is",
+                "is",
+                "abortions",
+                "means",
+                "shooting",
+                "bombing",
+                "harassing",
+                "seeking",
+                "exercise",
+                "attempt"
+            ]
+        },
+        {
+            "id": "task388-e413e4ba8747482a87fe11fd02902be9",
+            "input": "Passage: BEIJING, Nov. 18 (Xinhua) -- China will import less oil and oil products in 2006 than previous years, an official with the Ministry of Commerce (MOC) said recently. Lu Jianhua, Director of Foreign Trade Department of the MOC, told the Asian Business Forum held recently, that it is unfair to blame China for rising international oil prices.",
+            "output": [
+                "import",
+                "said",
+                "told",
+                "held",
+                "Forum",
+                "blame",
+                "is",
+                "prices"
+            ]
+        },
+        {
+            "id": "task388-2f2ae1c900ad4820b0609c569285f60e",
+            "input": "Passage: Portugal finished second at the 2006 World Cup in Germany, and the last European Cup. ",
+            "output": [
+                "Cup",
+                "finished"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Apache 2.0"
+    ]
+}

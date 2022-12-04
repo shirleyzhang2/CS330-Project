@@ -1,0 +1,120 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "qasper"
+    ],
+    "URL": [
+        "https://allenai.org/project/qasper/home"
+    ],
+    "Categories": [
+        "Question Understanding"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "In this task, you will be presented with a context from an academic paper and a question based on the context. You have to classify the questions into \"Extractive\", \"Abstractive\", or \"Yes-no\" questions. Extractive questions can be answered by concatenating extracts taken from a context into a summary. Answering abstractive questions involves paraphrasing the context using novel sentences. A Yes-no question is a question whose expected answer is one of two choices, one that affirms the question and one that denies the question. The choices are typically either yes or no."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Scientific Research Papers"
+    ],
+    "Positive Examples": [
+        {
+            "input": "We build a dataset of Twitter accounts based on two lists annotated in previous works. For the non-factual accounts, we rely on a list of 180 Twitter accounts from BIBREF1. On the other hand, for the factual accounts, we use a list with another 32 Twitter accounts from BIBREF19 that are considered trustworthy by independent third parties. \n Question: How did they obtain the dataset?",
+            "output": "Extractive",
+            "explanation": "The answer to this question has been explicitly mentioned in the context, so the question is extractive."
+        },
+        {
+            "input": "We evaluate our pointer-generator performance using BLEU score. The baseline language model is trained using RNNLM BIBREF23 . Perplexity measure is used in the evaluation.\n\n \n Question: Did they use other evaluation metrics?",
+            "output": "Yes-no",
+            "explanation": "This is a good example, and the given question is a yes-no question."
+        },
+        {
+            "input": "As in the example above, we pre-process documents by removing all numbers and interjections. \n Question: what processing was done on the speeches before being parsed?",
+            "output": "Abstractive",
+            "explanation": "Answering this question needs paraphrasing the context, so this question is abstractive."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "For the English version, we performed both a thorough manual analysis and automatic evaluation across three commonly used TS datasets from two different domains  For the English version, we performed both a thorough manual analysis and automatic evaluation across three commonly used TS datasets from two different domains  The evaluation of the German version is in progress. \n Question: What are the corpora used for the task?",
+            "output": "Yes-no",
+            "explanation": "This question is extractive, and it's not a yes-no question."
+        },
+        {
+            "input": "For Turkish, as the first dataset, we utilised the movie reviews which are collected from a popular website. The number of reviews in this movie corpus is 20,244 and the average number of words in reviews is 39. Each of these reviews has a star-rating score which is indicative of sentiment. These polarity scores are between the values 0.5 and 5, at intervals of 0.5. We consider a review to be negative it the score is equal to or lower than 2.5. On the other hand, if it is equal to or higher than 4, it is assumed to be positive. We have randomly selected 7,020 negative and 7,020 positive reviews and processed only them. \n Question: What details are given about the movie domain dataset?",
+            "output": "Extractive",
+            "explanation": "This question is Abstractive because we need to paraphrase the context to get to the answer."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task462-84d1146aea6e4d319793de0355a7186f",
+            "input": "The experiment settings from this paper and evaluation protocol for the Mboshi corpus (Boundary F-scores using the ZRC speech reference) are the same from BIBREF8. Table presents the results for bilingual UWS and multilingual leveraging. For the former, we reach our best result by using as aligned information the French, the original aligned language for this dataset. Languages closely related to French (Spanish and Portuguese) ranked better, while our worst result used German. English also performs notably well in our experiments. We believe this is due to the statistics features of the resulting text. We observe in Table that the English portion of the dataset contains the smallest vocabulary among all languages. Since we train our systems in very low-resource settings, vocabulary-related features can impact greatly the system's capacity to language-model, and consequently the final quality of the produced alignments. Even in high-resource settings, it was already attested that some languages are more difficult to model than others BIBREF9. \n Question: Is the model evaluated against any baseline?",
+            "output": [
+                "Yes-no"
+            ]
+        },
+        {
+            "id": "task462-561131d6c4c54deab972e19086dc1a58",
+            "input": "Subsequently, an LSTM decoder generates the characters in the output word form using encoder states and an attention mechanism. \n Question: Does the model have attention?",
+            "output": [
+                "Yes-no"
+            ]
+        },
+        {
+            "id": "task462-c010ee54902742b78f423488ab89b606",
+            "input": "We use three creative English datasets with distinct linguistic characteristics: (1) A corpus of 740 classical and contemporary English poems, (2) a corpus of 14950 metaphor sentences retrieved from a metaphor database website and (3) a corpus of 1500 song lyrics ranging across genres.  We first pre-train our generator on the Gutenberg dataset BIBREF24 for 20 epochs and then fine-tune BIBREF19 them to our target datasets with a language modeling objective. \n Question: Which datasets are used?",
+            "output": [
+                "Extractive"
+            ]
+        },
+        {
+            "id": "task462-66c7e263b2c44c8fa398d1b403a9ab32",
+            "input": "Encoders with induced latent structures have been shown to benefit several tasks including document classification, natural language inference BIBREF12, BIBREF13, and machine translation BIBREF11.  \n Question: Is there any evidence that encoders with latent structures work well on other tasks?",
+            "output": [
+                "Yes-no"
+            ]
+        },
+        {
+            "id": "task462-1c8a1f6afe074b97b3e1820160d0535a",
+            "input": "Therefore, there are 44 tasks (22 INLINEFORM10 2) in total. In addition, there are 2 human summaries for each task. We selected three competitive systems (SumBasic, ILP, and ILP+MC) and therefore we have 3 system-system pairs (ILP+MC vs. ILP, ILP+MC vs. SumBasic, and ILP vs. SumBasic) for each task and each human summary. \n Question: Do they build one model per topic or on all topics?",
+            "output": [
+                "Abstractive"
+            ]
+        },
+        {
+            "id": "task462-7b58d35e0d18467b89803415aa40f340",
+            "input": "Another approach for generating query and image representations is treating images as a black box. Given the statistics of our dataset (3B query, image pairs with 220M unique queries and 900M unique images), we know that different queries co-occur with the same images. Intuitively, if a query $q_1$ co-occurs with many of the same images as query $q_2$ , then $q_1$ and $q_2$ are likely to be semantically similar, regardless of the visual content of the shared images. Thus, we can use a method that uses only co-occurrence statistics to better understand how well we can capture relationships between queries. \n Question: Could you learn such embedding simply from the image annotations and without using visual information?",
+            "output": [
+                "Yes-no"
+            ]
+        },
+        {
+            "id": "task462-5a492e66d122474585fd872e4d28eb6b",
+            "input": "Our approach improves LR by 5.17% (Accuracy) and 18.38% (AUC), and MLP by 10.71% (Accuracy) and 30.27% (AUC) on average. Such significant improvements clearly demonstrate that our approach is effective at improving model performance. \n Question: How are the accuracy merits of the approach demonstrated?",
+            "output": [
+                "Extractive"
+            ]
+        },
+        {
+            "id": "task462-5cbded8d7b624ec2ad7601744a7433dd",
+            "input": "The accuracy of our model is 7.8% higher than the best result achieved by LSVM. The results show that this model can perform better than state-of-the-art baselines including hybrid CNN BIBREF15 and LSTM with attention BIBREF16 by 3.1% on the validation set and 1% on the test set. \n Question: What are state of the art methods authors compare their work with? ",
+            "output": [
+                "Abstractive"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

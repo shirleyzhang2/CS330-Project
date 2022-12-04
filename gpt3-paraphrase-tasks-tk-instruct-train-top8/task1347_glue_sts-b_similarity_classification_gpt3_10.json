@@ -1,0 +1,128 @@
+{
+    "Contributors": [
+        "Arit Chanda"
+    ],
+    "Source": [
+        "sts_b"
+    ],
+    "URL": [
+        "https://dl.fbaipublicfiles.com/glue/data/STS-B.zip"
+    ],
+    "Categories": [
+        "Text Matching"
+    ],
+    "Reasoning": [
+        "Textual Entailment -> Analogical Reasoning"
+    ],
+    "Definition": [
+        "Given two sentences, you must evaluate their similarity and classify them into one of the following classes: 0 : The two sentences are completely dissimilar. 1 : The two sentences are not equivalent, but are on the same topic. 2 : The two sentences are not equivalent, but share some details. 3 : The two sentences are roughly equivalent, but some important information differs/missing. 4 : The two sentences are mostly equivalent, but some unimportant details differ. 5 : The two sentences are completely equivalent, as they mean the same thing."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Books",
+        "Dialogue"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Sentence 1: A plane is taking off. Sentence 2: An air plane is taking off.",
+            "output": "5",
+            "explanation": "Here both statements are talking about the same thing hence it will be classified as a 5."
+        },
+        {
+            "input": "Sentence 1: A man is playing a large flute. Sentence 2: A man is playing a flute.",
+            "output": "4",
+            "explanation": "In this example both statements mean the same thing but only unimportant details like the size of the flute is missing in the second statement. Hence, it is classified as a 4."
+        },
+        {
+            "input": "Sentence 1: Three men are playing chess. Sentence 2: Two men are playing chess.",
+            "output": "3",
+            "explanation": "In this example important detail of the number of men playing chess is wrong. Hence this example will be clasified as a 3."
+        },
+        {
+            "input": "Sentence 1: A man is smoking. Sentence 2: A man is skating.",
+            "output": "0",
+            "explanation": "Here there is no similarity between the two sentences hence the output classification is 0."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Sentence 1: A man is playing the cello. Sentence 2: A man seated is playing the cello.",
+            "output": "3",
+            "explanation": "Sentence 1 and 2 are only different by an unimportant detail of the man seating so the output should have been 4."
+        },
+        {
+            "input": "Sentence 1: The man is playing the piano. Sentence 2: The man is playing the guitar.",
+            "output": "0",
+            "explanation": "In this example both our sentences are sharing some details about playing an musical instrument so the correct classification should have been 2."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1347-30d0f6c6b3f04fc29bd978733879e3cb",
+            "input": "Sentence 1: A white dog with red ears is running in the snow. Sentence 2: a wet black dog with a red collar is in the river",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "id": "task1347-8a9b919960a8441ba43488207b39b326",
+            "input": "Sentence 1: Gazans fire 2 rockets into Israel; no injuries Sentence 2: Gazans fire 89 rockets; cabinet approves reserve call-up",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "id": "task1347-e0681ba21e414002860f126ee63e5fc5",
+            "input": "Sentence 1: Security experts are warning that a new mass-mailing worm is spreading widely across the Internet, sometimes posing as e-mail from the Microsoft founder. Sentence 2: A new worm has been spreading rapidly across the Internet, sometimes pretending to be an e-mail from Microsoft Chairman Bill Gates, antivirus vendors said Monday.",
+            "output": [
+                "5"
+            ]
+        },
+        {
+            "id": "task1347-942d9949807f4d95bb458bb89dc28b66",
+            "input": "Sentence 1: War in the middle east. Sentence 2: A WAR in the middle east.",
+            "output": [
+                "5"
+            ]
+        },
+        {
+            "id": "task1347-c923093d26644e2aa9ecb978b3871875",
+            "input": "Sentence 1: Umm the California was a cargo ship I dont care what the article says. Sentence 2: The California was a cargo ship.",
+            "output": [
+                "4"
+            ]
+        },
+        {
+            "id": "task1347-05af3a70d00243538fc86c72b9a6a886",
+            "input": "Sentence 1: A man making a bed in a hotel. Sentence 2: A man is holding a animal.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "id": "task1347-f5bc10e9693641af82c2a2fac068ee26",
+            "input": "Sentence 1: A woman serving volleyballs over a net. Sentence 2: One woman hands volleyballs to another woman who serves them.",
+            "output": [
+                "3"
+            ]
+        },
+        {
+            "id": "task1347-8225f84df33d43298f84bee8f8e493ab",
+            "input": "Sentence 1: A group of people having a drink. Sentence 2: A row of locomotives on a siding in a field.",
+            "output": [
+                "0"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

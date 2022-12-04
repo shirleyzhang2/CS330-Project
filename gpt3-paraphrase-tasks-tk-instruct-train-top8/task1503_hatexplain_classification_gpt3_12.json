@@ -1,0 +1,115 @@
+{
+    "Contributors": [
+        "Pruthvi Patel"
+    ],
+    "Source": [
+        "hatexplain"
+    ],
+    "URL": [
+        "https://github.com/hate-alert/HateXplain"
+    ],
+    "Categories": [
+        "Toxic Language Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "The input is a tweet. The tweet can be Hate Speech, Offensive, or Normal. Hate Speech and Offensive tweets target one community. Given such a tweet, output the community targeted in the tweet. The community will be one of the nine values: 'African', 'Islam', 'Jewish', 'Women', 'Refugee', 'Arab', 'Caucasian', 'Hispanic', or 'Asian'. Output 'None' if the tweet does not target any community. A tweet can only target one community."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Social Media -> Twitter"
+    ],
+    "Positive Examples": [
+        {
+            "input": "caucasians wearing masks to prevent coronavirus and still don \u2019 t wash their hands",
+            "output": "Caucasian",
+            "explanation": "The tweet generalizes an attribute to the entire community, Caucasian, which makes it offensive."
+        },
+        {
+            "input": "lesson of the week from the holy book the sovereign individual once commerce flows over the internet suppression of speech becomes unstoppable devolution inevitable and the monopoly of violence by governments will end paraphrased from j d davidson rhys mogg",
+            "output": "None",
+            "explanation": "The tweet does not target any specific community hence the correct answer is None"
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "<user> <user> there shd be a film called no hindus in kashmir wud be perfect islamic fanaticsm movement in kashmir",
+            "output": "Hindu",
+            "explanation": "Every input tweet will target one or more of the nine communities provided or will not target any community. Further the tweet targets Muslim community. Hence Hindu is not the correct value. The correct value is Islam."
+        },
+        {
+            "input": "ffs everthing is offensive to muslimes",
+            "output": "None",
+            "explanation": "This tweet is offensive to Muslim community. Hence the correct answer is Islam instead of None."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1503-9c86ee9ff6984133867a0f13598a5610",
+            "input": "would not dap you with the left hoe",
+            "output": [
+                "Women"
+            ]
+        },
+        {
+            "id": "task1503-6832df9e4fc94b66abfd3ceecc351e34",
+            "input": "still the same nigga i am evolving doe",
+            "output": [
+                "None"
+            ]
+        },
+        {
+            "id": "task1503-13adedf1327d4da79e491c9dde81d598",
+            "input": "kill the jews",
+            "output": [
+                "Jewish"
+            ]
+        },
+        {
+            "id": "task1503-ea404c0f5c784e87b52f6da11b9cdebc",
+            "input": "well then send some coon estrogen to my wife she turning more liberal breath by breath due to fake news i do not know how much more i can take hell between her and my two daughters hormones i have started growing breast tissue like pseudo naturally becoming bruce jenner",
+            "output": [
+                "African"
+            ]
+        },
+        {
+            "id": "task1503-bd5273e4fcb34c8bbaf1e9b549ba17a7",
+            "input": "oh look i notice all these little muslim bastards are out now speaking about carnage where the fuck are you when it muslims killing all of our people black white etc you bastards do not have my sympathy fuck you assholes i knew you could speak truth revealed maga fuckislam",
+            "output": [
+                "Islam"
+            ]
+        },
+        {
+            "id": "task1503-79180b5cdfa1453b9361171231d34405",
+            "input": "bitches date one nigga and get to thinking they from the hood",
+            "output": [
+                "Women"
+            ]
+        },
+        {
+            "id": "task1503-00b2707c93ea48d8a4e9dfe06a59551b",
+            "input": "that fucked up she should have suicided bombed the migrant ghetto abode instead",
+            "output": [
+                "Refugee"
+            ]
+        },
+        {
+            "id": "task1503-3fc2adead2dc4cbabf23217bcc5890b0",
+            "input": "sad to say but i do not trust shit i know how bitches operate",
+            "output": [
+                "Women"
+            ]
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

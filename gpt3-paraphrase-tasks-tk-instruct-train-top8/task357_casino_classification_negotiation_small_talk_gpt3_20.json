@@ -1,0 +1,115 @@
+{
+    "Contributors": [
+        "Kushal Chawla"
+    ],
+    "Source": [
+        "casino"
+    ],
+    "URL": [
+        "https://aclanthology.org/2021.naacl-main.254.pdf"
+    ],
+    "Categories": [
+        "Negotiation Strategy Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You will receive an utterance and recent dialogue context containing past 3 utterances. You need to output 'Yes' if the utterance contains the small-talk strategy, otherwise output 'No'. small-talk is a cooperative negotiation strategy used for discussing topics apart from the negotiation, in an attempt to build a rapport with the opponent."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Context: 'Great!  So looks like all the water goes to you.  I will take all the food if that is ok and we can split the wood.  ' 'Well i would need one food and one wood' 'OK.  I think that will work out for me.  You get 3 water, 1 wood and 1 food.  I will take the rest.'\nUtterance: 'Great that's an agreement for me'",
+            "output": "No",
+            "explanation": "The participant does not engage in any small talk in this utterance and primarily refers to the negotiation itself."
+        },
+        {
+            "input": "Context: 'Since you would also like firewood, I propose 2 firewood, 2 water to me, and you get 1 wood, 1 water, and all the food to make up for it.' 'Okay I can agree to that deal.\ud83d\ude42' 'That's fantastic, I'm glad we came to something we both agree with'\nUtterance: 'Me too. I hope you have a wonderful camping trip.\ud83d\ude42'",
+            "output": "Yes",
+            "explanation": "The participant engages in small talk when wishing their opponent to have a wonderful trip."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Context: 'Hello! I am looking forward to the camping trip but could use a few more supplies!' 'hello, me too, i guess we can share' 'Sounds good, I need food the most, what is your most needed item?'\nUtterance: 'my item is food too.'",
+            "output": "Yes",
+            "explanation": "The purpose of the utterance is only to take the negotiation forward and there is no side talk. Hence, the correct answer is 'No'."
+        },
+        {
+            "input": "Context: 'I can do without extra water as long as I have food and firewood to purify water I find.  It might be better for you to have a reliable supply though.' 'That totally makes sense! I actually am good on firewood thankfully, I got some from a person selling it from their yard a little bit ago.' 'I would have been able to bring more with me by getting some from my parents, but my father decided he wanted to get rid of what he had left and so has been enjoying his fire pit a lot lately.'\nUtterance: 'Oh I have always wanted a firepit! I totally understand. If you'd like you can have all 3 of the firewood supply stash to get you started.'",
+            "output": "No",
+            "explanation": "This is wrong. The participant engages in small-talk when referring to the firepit that they always wanted. The correct answer is 'Yes'."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task357-9ab20c05ea3c49f288d2e0cd5452484f",
+            "input": "Context: 'That sounds very fair to me. Thank you for being understanding. \ud83d\ude42' 'Definitely! I am glad we could come to an agreement. Do you like to camp a lot? Or hike?' 'I love to camp! Especially when there is enough firewood! It is a great (and inexpensive) activity for me I get a lot of enjoyment out of. Hopefully you will become an avid camper after this trip!'\nUtterance: 'Haha maybe! I am afraid of some bugs though, especially ticks \ud83d\ude2e'",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task357-76b4d8c561eb43b18d23f16353e9895e",
+            "input": "Context: 'Hello partner  How are you today?'\nUtterance: 'Oh, I'm a bit ill, fever, chills.'",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task357-82f6f8f3a10b4c7a89b7e1d5a159aaab",
+            "input": "Context: 'Hello, how are you doing on this fine day?'\nUtterance: 'Hello, I am doing awesome today. I am so glad I was able to get way and come camping. My bother just called me and said he is going to be coming. It was a surprise for him to be able to come\ud83d\ude42 How are you?'",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task357-6ade3f7cae924b8ba4832da1980f1ac8",
+            "input": "Context: 'Hello! I believe that we can help each other here.'\nUtterance: 'hi how are you, what help you need?'",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task357-c0258bd7c0374aba828966db9feda32c",
+            "input": "Context: 'Hello. How are you today? \ud83d\ude42' 'Pretty good!  I am looking forward to going on this camping trip with my family.' 'Same here! We had a couple bumps in the road though, as our freezer stopped working so all our food went bad \u2639\ufe0f'\nUtterance: 'That is rough \u2639\ufe0f  We should try to split the resources equitably then'",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task357-7b0f00e082cf462795157dc67a57d6ea",
+            "input": "Context: 'hello' 'Hello there'\nUtterance: 'how is your day going?'",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task357-9c0dd013258b43248f562ef82c79bde4",
+            "input": "Context: 'Hey how's it going?'\nUtterance: 'Not bad, yourself?'",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task357-607f4e139652438cb4c483823d594743",
+            "input": "Context: 'Hello there! Excited about your camping trip? \ud83d\ude42'\nUtterance: 'Hello , yes I am , going to have lot fun . Are you excited ?'",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

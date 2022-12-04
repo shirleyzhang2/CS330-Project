@@ -1,0 +1,120 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "qasper"
+    ],
+    "URL": [
+        "https://allenai.org/project/qasper/home"
+    ],
+    "Categories": [
+        "Question Understanding"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "In this task, you will be given a context from an academic paper and a question based on the context. You will need to classify the questions into one of three categories: \"Extractive\", \"Abstractive\", or \"Yes-no\". Extractive questions can be answered by concatenating extracts taken from the context into a summary. Answering abstractive questions requires paraphrasing the context using novel sentences. A yes-no question is a question whose expected answer is one of two choices, one that affirms the question and one that denies the question. Typically, the choices are either yes or no."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Scientific Research Papers"
+    ],
+    "Positive Examples": [
+        {
+            "input": "We build a dataset of Twitter accounts based on two lists annotated in previous works. For the non-factual accounts, we rely on a list of 180 Twitter accounts from BIBREF1. On the other hand, for the factual accounts, we use a list with another 32 Twitter accounts from BIBREF19 that are considered trustworthy by independent third parties. \n Question: How did they obtain the dataset?",
+            "output": "Extractive",
+            "explanation": "The answer to this question has been explicitly mentioned in the context, so the question is extractive."
+        },
+        {
+            "input": "We evaluate our pointer-generator performance using BLEU score. The baseline language model is trained using RNNLM BIBREF23 . Perplexity measure is used in the evaluation.\n\n \n Question: Did they use other evaluation metrics?",
+            "output": "Yes-no",
+            "explanation": "This is a good example, and the given question is a yes-no question."
+        },
+        {
+            "input": "As in the example above, we pre-process documents by removing all numbers and interjections. \n Question: what processing was done on the speeches before being parsed?",
+            "output": "Abstractive",
+            "explanation": "Answering this question needs paraphrasing the context, so this question is abstractive."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "For the English version, we performed both a thorough manual analysis and automatic evaluation across three commonly used TS datasets from two different domains  For the English version, we performed both a thorough manual analysis and automatic evaluation across three commonly used TS datasets from two different domains  The evaluation of the German version is in progress. \n Question: What are the corpora used for the task?",
+            "output": "Yes-no",
+            "explanation": "This question is extractive, and it's not a yes-no question."
+        },
+        {
+            "input": "For Turkish, as the first dataset, we utilised the movie reviews which are collected from a popular website. The number of reviews in this movie corpus is 20,244 and the average number of words in reviews is 39. Each of these reviews has a star-rating score which is indicative of sentiment. These polarity scores are between the values 0.5 and 5, at intervals of 0.5. We consider a review to be negative it the score is equal to or lower than 2.5. On the other hand, if it is equal to or higher than 4, it is assumed to be positive. We have randomly selected 7,020 negative and 7,020 positive reviews and processed only them. \n Question: What details are given about the movie domain dataset?",
+            "output": "Extractive",
+            "explanation": "This question is Abstractive because we need to paraphrase the context to get to the answer."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task462-e9b6f5e57dc04b5ab6f3b8ef8dc7f9c1",
+            "input": "As a document classifier we employ a word-based CNN similar to Kim consisting of the following sequence of layers: $ \\texttt {Conv} \\xrightarrow{} \\texttt {ReLU} \\xrightarrow{} \\texttt {1-Max-Pool} \\xrightarrow{} \\texttt {FC} \\\\ $ Future work would include applying LRP to other neural network architectures (e.g. character-based or recurrent models) on further NLP tasks, as well as exploring how relevance information could be taken into account to improve the classifier's training procedure or prediction performance. \n Question: Do the experiments explore how various architectures and layers contribute towards certain decisions?",
+            "output": [
+                "Yes-no"
+            ]
+        },
+        {
+            "id": "task462-f682e36721ab4d0ea91f27c0ace434f4",
+            "input": "We initialized the embeddings of these words with 300 dimensional Glove embeddings BIBREF31 .  \n Question: Do they use pretrained embeddings?",
+            "output": [
+                "Yes-no"
+            ]
+        },
+        {
+            "id": "task462-07d040f42001496898cf4455e6cd3f08",
+            "input": "We asked medical doctors experienced in extracting knowledge related to medical entities from texts to annotate the entities described above. Initially, we asked four annotators to test our guidelines on two texts. Subsequently, identified issues were discussed and resolved. Following this pilot annotation phase, we asked two different annotators to annotate two case reports according to our guidelines. The same annotators annotated an overall collection of 53 case reports. The annotation was performed using WebAnno BIBREF7, a web-based tool for linguistic annotation. The annotators could choose between a pre-annotated version or a blank version of each text. The pre-annotated versions contained suggested entity spans based on string matches from lists of conditions and findings synonym lists. \n Question: How was annotation performed?",
+            "output": [
+                "Abstractive"
+            ]
+        },
+        {
+            "id": "task462-466d149ef4f44f088bc5e48f3803504e",
+            "input": "Then, we created test sets with varying levels of perturbation operations - $\\lbrace 20\\%,40\\%,60\\%\\rbrace $. \n Question: Are recurrent neural networks trained on perturbed data?",
+            "output": [
+                "Yes-no"
+            ]
+        },
+        {
+            "id": "task462-bdcda166b4944884b30abb729d1987cf",
+            "input": "There are various possible extensions for this work. For example, using all frames assigned to a phone, rather than using only the middle frame. \n Question: Do they propose any further additions that could be made to improve generalisation to unseen speakers?",
+            "output": [
+                "Yes-no"
+            ]
+        },
+        {
+            "id": "task462-c988ef8003d24d0eb3ed2f4689a1fac6",
+            "input": "To show the effectiveness of our approach, we show results on the SICK dataset BIBREF1, a common benchmark for logic-based NLI, and find MonaLog to be competitive with more complicated logic-based approaches (many of which require full semantic parsing and more complex logical machinery). \n Question: Do they beat current state-of-the-art on SICK?",
+            "output": [
+                "Yes-no"
+            ]
+        },
+        {
+            "id": "task462-cf14adc859ff48fc9bf04b5065d01433",
+            "input": "One distinguishing feature of educational topics is their breadth of sub-topics and points of view, as they attract researchers, practitioners, parents, students, or policy-makers. We assume that this diversity leads to the linguistic variability of the education topics and thus represents a challenge for NLP. \n Question: What challenges do different registers and domains pose to this task?",
+            "output": [
+                "Extractive"
+            ]
+        },
+        {
+            "id": "task462-f9f0019384154397a7691dbfb9105c28",
+            "input": "An extrinsic evaluation was carried out on the task of Open IE BIBREF7. \n Question: Is the semantic hierarchy representation used for any task?",
+            "output": [
+                "Abstractive"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

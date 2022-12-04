@@ -1,0 +1,120 @@
+{
+    "Contributors": [
+        "Xudong Shen"
+    ],
+    "Source": [
+        "winomt"
+    ],
+    "URL": [
+        "https://github.com/gabrielStanovsky/mt_gender"
+    ],
+    "Categories": [
+        "Gender Classification"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "Given a sentence that mentions two professions, one of which has a gender that is identifiable using the gendered pronouns in the text and the other of which has a gender that is unidentifiable, and a given profession, return whether the given profession's gender is identifiable or unidentifiable."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Miscellaneous"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Sentence: The farmer needed the accountant for crop tabulation and asked him for help.\n Profession: accountant",
+            "output": "Identifiable",
+            "explanation": "The accountant's gender is identifiable(male) because the pronoun \"him\" is linked to the accountant."
+        },
+        {
+            "input": "Sentence: The supervisor made the nurse perform remedial study because she noticed poorly executed injections.\n Profession: nurse",
+            "output": "Unidentifiable",
+            "explanation": "The nurse's gender is unidentifiable from the given sentence. There is no pronoun referencing the nurse."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Sentence: The driver asked the nurse for an examination because she was feeling ill.\n Profession: driver",
+            "output": "Female",
+            "explanation": "You are expected to answer with \"identifiable\" or \"unidentifiable\" and no specific genders. The driver's gender is identifiable."
+        },
+        {
+            "input": "Sentence: The manager likes the designer's product but he refused to allow a purchase.\n Profession: manager",
+            "output": "Identifiable",
+            "explanation": "The manager's gender is unidentifiable. The pronoun \"he\" refers to the designer, so there's no pronoun that identifies the manager's gender."
+        },
+        {
+            "input": "Sentence: The laborer wanted to take the attendant 's job because she was tired of manual labor.\n Profession: laborer",
+            "output": "Unidentifiable",
+            "explanation": "The laborer's gender can be identified using the pronoun \"she\", so this is an incorrect answer."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task351-8d59b636785543d6bfbd86fdbc1a2a0d",
+            "input": "Sentence: The carpenter hired the cleaner because her house was a mess.\n Profession: cleaner",
+            "output": [
+                "Unidentifiable"
+            ]
+        },
+        {
+            "id": "task351-ea6547aaafbb47cfaa1ecf289993aacc",
+            "input": "Sentence: The CEO enjoyed telling the housekeeper what to do and told him to sweep up.\n Profession: CEO",
+            "output": [
+                "Unidentifiable"
+            ]
+        },
+        {
+            "id": "task351-3b658a41d16a44c6a5a65144cfde0b58",
+            "input": "Sentence: The cleaner waited for the chief and talked to her about the missed payment.\n Profession: cleaner",
+            "output": [
+                "Unidentifiable"
+            ]
+        },
+        {
+            "id": "task351-752f6394c9d34ad4817b441674204a38",
+            "input": "Sentence: The supervisor invited the designer to the party and he smiled.\n Profession: supervisor",
+            "output": [
+                "Unidentifiable"
+            ]
+        },
+        {
+            "id": "task351-fb3b0e52951d45eda25054711eb74c59",
+            "input": "Sentence: The CEO is discussing with the writer about the book he will write.\n Profession: writer",
+            "output": [
+                "Identifiable"
+            ]
+        },
+        {
+            "id": "task351-9342284a80a941f4b7aac26ef34e4768",
+            "input": "Sentence: The developer corrected the secretary and told him not to worry.\n Profession: developer",
+            "output": [
+                "Unidentifiable"
+            ]
+        },
+        {
+            "id": "task351-59a0c0164a7b44eaad0bbeece919bef6",
+            "input": "Sentence: The cleaner hates the developer because he spent a lot of time cleaning the room.\n Profession: developer",
+            "output": [
+                "Unidentifiable"
+            ]
+        },
+        {
+            "id": "task351-333cea666e664654870ce88b0cdb4594",
+            "input": "Sentence: The construction worker knew of the writer because she read books.\n Profession: writer",
+            "output": [
+                "Unidentifiable"
+            ]
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

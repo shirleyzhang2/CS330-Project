@@ -1,0 +1,120 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "matres"
+    ],
+    "URL": [
+        "https://github.com/CogComp/MATRES"
+    ],
+    "Categories": [
+        "Information Extraction"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You will receive a context and a verb, separated by a newline character. You need to output 'Yes' if the verb implies an opinion, an intention, or a wish. A verb refers to an intention only if it refers to an event planned to happen in the future and is not conditional (or part of a condition). Otherwise, output 'No'."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "News"
+    ],
+    "Positive Examples": [
+        {
+            "input": "It was followed by Denmark, Norway, Germany, France, Greece, Luxembourg, Spain, Britain, the United States, Iceland, Belgium, Italy, Portugal and Turkey. NATO decided at last year's Madrid summit to (invite) the three eastern European countries to start accession talks.  \n Verb: invite",
+            "output": "Yes",
+            "explanation": "They planned to \"invite\" the three eastern European countries, so this verb refers to an intention."
+        },
+        {
+            "input": "In Washington today, the Federal Aviation Administration (released) air traffic control tapes from the night the TWA Flight eight hundred went down.  \n Verb: released",
+            "output": "No",
+            "explanation": "In this sentence, the releasing event happened in the past, and hence it's not an intention."
+        },
+        {
+            "input": "We will act again if we have evidence he is (rebuilding) his weapons of mass destruction capabilities, senior officials say. In a bit of television diplomacy, Iraq\u2019s deputy foreign minister responded from Baghdad in less than one hour.  \n Verb: rebuilding",
+            "output": "No",
+            "explanation": "In this sentence, the verb is part of of a condition. Therefore, it cannot be known for sure if he is already rebuilding weapons but we have no evidence, or if he will be building weapons in the future, and hence it's not an intention."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "The Justice Department wants the appeals court to suspend the temporary injunction issued Thursday and also order Elian's great-uncle, Lazaro Gonzalez, to release the boy. The relatives want the court to let them meet with Elian's father without being (required) to surrender the boy.  \n Verb: required",
+            "output": "Yes",
+            "explanation": "In this sentence, required is not an intention, wish, or opinion, as it is part of a condition."
+        },
+        {
+            "input": "The federal charge also carries a fine of up to $250,000. The newly filed charges will (intensify) the ongoing international manhunt, Tolbert said.  \n Verb: intensify",
+            "output": "No",
+            "explanation": "In this sentence, \"intensify\" is planned to happen in the future, and it is an opinion or intention."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task456-cdf12a7bbcf44d2380264d7601f13938",
+            "input": "He repeated charges that his relatives and others in Miami had offered him money to stay in the United States with his son.  They are not going to buy me,  (said) Juan Miguel Gonzalez.  \n Verb: said",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task456-373efea309d941079bcf1cf809bf27f2",
+            "input": "Elian is staying with his paternal great-uncle Lazaro Gonzalez, who is fighting to keep the boy with him in the United States. Cuban exiles in Miami say the boy's mother died to give him freedom in the United States, while theCuban government (maintains) Elian is being improperly kept from his father.  \n Verb: maintains",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task456-17eb73735e82493caf81343a627c304d",
+            "input": "President Fidel Castro declared Wednesday night that it is just matter of days before Elian Gonzalez will be reunited with his father.  I am (talking) about three days  more or less, Castro told hundreds of university students from across Latin American and the Caribbean in town for a regional congress.  \n Verb: talking",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task456-878475ffd8e44b089ddade46f14991eb",
+            "input": "Elian, the boy at the center of the international dispute, was found clinging to an inner tube Nov. 25 off the coast of Florida after his mother, stepfather and others died in a failed attempt to reach U.S. shores. He has been staying with relatives in Miami who do not want to (send) him back to Cuba.  \n Verb: send",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task456-f80536c8088440d6b129b4ed7cd4c573",
+            "input": "Mr. Dor notes that the current euro zonewide system of insuring bank deposits up to 100,000 euros was put in place after the financial panic that followed the Lehman collapse. Those deposits are supposed to be (insured) by national governments.  \n Verb: insured",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task456-a5a6891e6d66416498b92902cf6587bc",
+            "input": "Castro must be dreaming for the family to allow Cuban spies inside Lazaro Gonzalez's home.  Lawyers for the relatives in Miami filed a brief in federal court on Monday arguing the Immigration and Naturalization Service cannot return Elian to Cuba without (holding) a political asylum hearing.  \n Verb: holding",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task456-c9dc121ce8364a7283d33a0863b14767",
+            "input": "NAIROBI, Kenya ( AP ) _ Terrorist bombings at U.S. embassies in Kenya and Tanzania (blew) apart buildings and buses, trapping people under slabs of concrete and twisted steel that rescuers cleared with cranes, blow torches and bare hands.  \n Verb: blew",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task456-79f4ae74358a408eb5e2effa45422c2e",
+            "input": "There were more accounts of people fleeing from the villages near where the offensive was taking place. They were too afraid to (stay), fearing the forces may also move their operations further afield.  \n Verb: stay",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

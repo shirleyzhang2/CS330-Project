@@ -1,0 +1,123 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "dream"
+    ],
+    "URL": [
+        "https://github.com/nlpdata/dream"
+    ],
+    "Categories": [
+        "Question Understanding"
+    ],
+    "Reasoning": [
+        "Reasoning on Social Interactions"
+    ],
+    "Definition": [
+        "In this task, you will be given a conversation and a question. You should categorize the question into one of the following groups: matching, summary, logic, arithmetic, or commonsense. Matching questions are entailed or paraphrased by exactly one sentence in the dialogue, and the answer can be extracted from that same sentence. Questions that cannot be answered by the surface meaning of a single sentence belong in the reasoning category. The summary, logic, arithmetic, and commonsense subcategories require, respectively, that the whole picture of the dialogue be taken into account, logical reasoning, arithmetic knowledge, or commonsense knowledge in addition to the textual information in the dialogue. Note that a question can be in more than one group. \"W\" and \"M\" in the conversations stand for \"woman\" and \"man\"."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue",
+        "Natural Science -> School Science Textbooks"
+    ],
+    "Positive Examples": [
+        {
+            "input": "W: The movie next Tuesday has been cancelled due to lack of interest. M: What do you mean? W: Well, by last night only a few tickets has been sold., Question: What can we conclude about the movie? (A) They want to buy the tickets for the movie. (B) The tickets for the movie were sold. (C) The movie will not be shown.",
+            "output": "commonsense",
+            "explanation": "This is a good example. To answer this question we require commonsense knowledge that cannot be obtained from the dialogue. So, this is a commonsense question."
+        },
+        {
+            "input": "W: What does the term \"alternative energy source\" mean? M: When we think of energy or fuel for our homes and cars, we think of petroleum, a fossil fuel processed from oil removed from the ground, of which there is a limited supply. But alternative fuels can be many things. Wind, sun and water can all be used to create fuel. W: Is the threat of running out of petroleum real? M: It has taken thousands of years to create the natural stores of petroleum we have available at a much faster rate than it is being produced over time. The real controversy surrounding the amount of petroleum we have is how much we need to keep in reserve for future use. Most experts agree that by around 2025, the amount of petroleum we use will reach a peak. Then production and availability will begin to seriously decline. This is not to say there will be no petroleum at this point. But it'll become very difficult and therefore expensive to extract. W: Is that the most important reason to develop alternative fuel and energy sources? M: There are two very clear reasons to do so. One is that whether we have 60 or 600 years of fossil fuels left, we have to find other fuel sources eventually. So the sooner we start, the better off we will be. The other big argument is that when long time, which leads to some long-term negative effects, like global warming and the greenhouse effect., Question: What do we usually refer to when we talk about energy according to the man? (A) Coal burnt daily for the comfort of our homes. (B) Anything that can be used to produce power. (C) Fuel refined from oil extracted from underground.",
+            "output": "matching",
+            "explanation": "The first sentence of the man can answer this question. So, it's a matching question."
+        },
+        {
+            "input": "M: What do you think of my new sweater? W: Well, it looks nice, but why don't you put it on, and then I'll tell you if it suits you? M: Okay. You know, I tried on about twenty at the shop, and this one isn't really what I wanted. I especially can't stand the high neck. W: Why did you buy it then? M: The salesman sold it to me before I realized what had happened. He just never stopped talking about the latest fashions and special reduced prices. Before I could say anything he'd wrapped it up and I realized that I'd paid him. W: Well, it doesn't look too bad. I think it looks good on you. M: But I went out to get a blue sweater to match my black trousers-something with a V-neck, short sleeves and pattern-and I came home with a brown sweater with a high neck, long sleeves and no pattern. W: You've got to learn to stand up to these high-pressure salesmen. They will sell you all sorts of things you don't want if you don't watch out. M: Next time I'll send my wife. She would probably sell something to the salesman. W: That's a good idea. Actually women are much better at shopping than men. Whenever my husband and I buy something important, I always have the finalsay. M: I must admit that women are better at shopping. I should simply leave the whole business to them., Question: Why did the man buy a sweater that he doesn't like? (A) He was pushed by the salesman (B) It was sold at a low price (C) It is the latest fashion.",
+            "output": "logic",
+            "explanation": "To answer this question we need logical reasoning. In the dialogues, they talk about high-pressure salesmen. So by logical reasoning, we could understand that he was pushed by the salesman."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "W: What does the term \"alternative energy source\" mean? M: When we think of energy or fuel for our homes and cars, we think of petroleum, a fossil fuel processed from oil removed from the ground, of which there is a limited supply. But alternative fuels can be many things. Wind, sun and water can all be used to create fuel. W: Is the threat of running out of petroleum real? M: It has taken thousands of years to create the natural stores of petroleum we have available at a much faster rate than it is being produced over time. The real controversy surrounding the amount of petroleum we have is how much we need to keep in reserve for future use. Most experts agree that by around 2025, the amount of petroleum we use will reach a peak. Then production and availability will begin to seriously decline. This is not to say there will be no petroleum at this point. But it'll become very difficult and therefore expensive to extract. W: Is that the most important reason to develop alternative fuel and energy sources? M: There are two very clear reasons to do so. One is that whether we have 60 or 600 years of fossil fuels left, we have to find other fuel sources eventually. So the sooner we start, the better off we will be. The other big argument is that when long time, which leads to some long-term negative effects, like global warming and the greenhouse effect., Question: What do most experts agree on according to the man? (A) Oil will soon be replaced by alternative energy sources. (B) Oil production will begin to decline worldwide by 2025. (C) Oil consumption has given rise to many global problems.",
+            "output": "arithmetic",
+            "explanation": "We don't need arithmetic knowledge to answer this question. It's incorrect. This is a matching question."
+        },
+        {
+            "input": "M: Finally, I've got the chance to put on my new suit tonight. I hope to make a good impression on your family. W: Come on! It's only a family reunion. So jeans and T-shirts are just fine., Question: What does the woman mean? (A) The man has left a good impression on her family. (B) The man can dress casually for the occasion. (C) The man should buy himself a new suit.",
+            "output": "matching",
+            "explanation": "The answer to this question cannot be extracted from the context. We need commonsense knowledge to understand wearing jeans and T-shirts means dressing casually. This is a commonsense question."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task248-282c5c7d2bbe465eadbdc2d4acdae290",
+            "input": "W: Hey, you. Can't you be a bit faster? You make the whole group wait for you. M: How can you blame it on me? I'm having trouble in operating this kind of machine. It is designed for you right handers. W: You always complain about these machines. But you are not the only one using your left hand. M: Really? I don't know any others who are the same as me. W: To tell you the truth, I'm also left-handed. M: You? W: Yeah. You should spend some time getting suited to it in advance. Then you can do it quickly. M: Is that what you have done? W: Yes. In fact, it pays to use both hands. M: OK, I will try., Question: What is the possible relationship between the two speakers? (A) Master and servant. (B) Boss and secretary. (C) Fellow workers",
+            "output": [
+                "commonsense"
+            ]
+        },
+        {
+            "id": "task248-404340df9252437087e7d4dd11d933d2",
+            "input": "M: Can I help you, Madam? W: Yeah, I am returning this chicken. This is the oldest, toughest bird I've ever seen, and on top of that, it's spoiled. M: Well. I'm sorry this has happened. I'll give you a new one. Do you have your receipt? W: My receipt? No, I don't have my receipt. I threw it out already. M: Look, Madam, I'm sorry, but no receipt, no refund. That's the company policy. W: You'd better give my money back right now, or else, you are going to be in hot water. M: Look, I'm sorry, but the policy is \"No receipt, no refund\". That's just the way it is. W: What? This is ridiculous. Look, you don't seem to understand. My friend had recommended Brown's. So I came to this store and I bought this chicken. M: Well, you see. That's the problem. This isn't Brown's supermarket. W: This isn't Brown's? M: No, Brown's is across the street. W: Oh, I am so sorry. I am so embarrassed that I could die. M: Well. W: Please forgive me. M: That's all right. We all make mistakes. Now, what I want you to do is: You take this chicken and you go across the street to Brown's and you shake it in their manager's face., Question: Why does the man reject the woman's request? (A) The company policy does not allow this. (B) There isn't anything wrong with the chicken. (C) The chicken isn't sold at Brown's.",
+            "output": [
+                "logic"
+            ]
+        },
+        {
+            "id": "task248-76dc39a35c8349009d25be2fb2a40abe",
+            "input": "M: Good morning. Can I help you? W: Hello. My name's Jill Bush. I'm planning to go to a conference in Sydney for three weeks. M: I see, do you want the excursion fare or the full return fare? W: Now, can I get a stopover on an excursion fare? M: Yes, you are allowed only one stopover on the excursion fare. W: Oh, I see, only one. M: Yes. But of course, if you pay the full return fare then you can have unlimited stopovers. There's Singapore, Kuwait, Athens, you've really got quite a lot of choices you know. W: Oh, It sounds good. You see, I've got a two-week holiday after the conference. How much is the full fare? M: The full fare? Well, that's really quite a lot. It's \u00a31,204. W: Yes. Well, it's once in a lifetime, you know. The thing is actually that I'm absolutely afraid of flying. I've never done it before. M: Oh dear. Um... W: And I'm hoping that I can persuade my two friends to go along with me. M: Yes, that would be a good idea. W: By the way, one of them is in Cairo at the moment. Would it be possible for me to stopover there on my way to Sydney? M: Yes, of course. There are lots of flights to Cairo and, then plenty more onwards from Cairo to Sydemy. And then you can stay for as long as you like. W: Oh, that's great! Thanks very much., Question: How much does the full fare cost? (A) 1,402 pounds. (B) 1,204 pounds. (C) 2,104 pounds.",
+            "output": [
+                "logic"
+            ]
+        },
+        {
+            "id": "task248-dcbcab62af66474f8632baa0e1a16028",
+            "input": "W: Tony, can I ask you a personal question? M: About what? W: Well, I was wondering about how you are received here in China. M: What do you mean? W: Well, since you are Chinese-Canadian and only speak English and French well; how do native Chinese treat you? M: Oh, well. Sometimes it can get pretty difficult. When people find out that I am a Canadian citizen who can't speak Chinese well,they usually call me a banana. You know, yellow on the outside and white on the inside. W: How does that make you feel? M: Well, I first feel mad. Then I feel sad, because I am seen as someone who has forgotten his roots. All this is because my parents left to find a better life and I decided to return in order to find something I lost. Sometimes I am not sure if I like what I found., Question: How does Tony find his experience in China? (A) Disappointing. (B) Interesting. (C) Crazy.",
+            "output": [
+                "commonsense"
+            ]
+        },
+        {
+            "id": "task248-ec4a3ed3fe214ed1b216fdef4d8b917e",
+            "input": "W: Welcome, everyone. Welcome to Language International. My name is Ema Waston. And I am the center manager. I hope you will all have a wonderful stay here with us. This is Mr. Brone, our social organizer. M: Thank you, Ema. Hello, everyone. I'm Jone Brone, And it's my job to make sure you have some fun while you are here. Now this afternoon we'll go together on the walking tour of the city. And then on Wednesday afternoon, we are off to the legal sports center where you can play volleyball or football, use the gym, or go swimming to keep yourselves fit. And on Friday afternoon, we have a film club. This week's film is Spider Man. On Saturday, we are going on a day trip to Oxford, leaving here at 8:30 in the morning. Please don't be late, or we'll go without you. And finally on Sunday, we are off to London, leaving at the same time. If there are any other things you'd like to do while you are here, just ask me. And I will see if I can help., Question: What is the purpose of the man's talk? (A) To welcome the students to the center. (B) To inform the students of the arrangements. (C) To tell the students the rules they should follow.",
+            "output": [
+                "commonsense"
+            ]
+        },
+        {
+            "id": "task248-74db500272934a6bbbbd9f5a1827fa99",
+            "input": "Woman: Hey. What's this on Facebook? It says ... Are you getting married? Man: Yeah. Didn't you know that? Woman: No. Why didn't you tell me about it? (It) says you're getting married next week. Man: Yeah, and I'm bringing her over to mom's house tomorrow. You'll love Jasmine. Woman: Jasmine? Man: Yeah. Here's her picture on Facebook. Woman: Oh. Wow. Man: What? What do you mean? Woman: Dad is not going to be impressed. Man: Why? Woman: She's got, like a lot her tattoos and a nose ring, and uh, I'm sorry. The family is going to be really surprised. Man: Ah, she's so, well, so sensitive and caring. Woman:Um, well .... [ What? ] Have ... have you taken any marriage prep classes? Man: Ah, who needs that anyway? I know all about women. Woman: Yeah. Right, like .... What have you had? Like ten girlfriends in the last six months? Man: Well, that's different! Woman: Uh, listen. Obviously, you need to improve your communication skills, and the best thing at this point .... if you're really set on marrying Jamie... Man: Jasmine ... Woman: Okay, I'm sorry, Jasmine, anyway, um, you really should take a marriage prep class. Man: What? What you are talking about? I know all about love and romance. Woman: Uh. Right .... Man: What? What do you mean? Woman: Look. Okay. It's more than that. What do you know about, say, personal finance? [ Well, you know ... ] I mean, how are you going to manage your money together? Are you going to have a joint bank account? Whose salary is going to pay the bills? Man: Ah, no problem. No problem. We have that figured out. My paycheck is going to be automatically transfered to her overseas bank account. Woman: Oh. [ What? ] Uh, where exactly is this account? What's the name of the bank? Man: Ah, I don't know. Jasmine's going to take care of that. Woman: Oh, boy. Right. Um, well, what about children? Are you guys going to have any kids? Man: Well, I want a large family, so eight kids would be just about right. Woman: Wow! What does Jasmine say about that? Man: Ah, well, she doesn't want any kids, but I'll change her mind once we get married. ( Right. ) No problem. Woman: Okay, what about housework? How are you going to handle that? Man: Well, Jasmine won't mind doing it. ( (Did) she said that? ) Well, not exactly. We've been just so busy planning out our honeymoon, that we just haven't worked out, you know, these small details. Woman: Great! You know what? By the time you learn her last name, I think things are going to be over between the two of you. Man: No, you just want and see., Question: The woman realizes that her brother is getting married _______. (A) tomorrow (B) in a week (C) next month",
+            "output": [
+                "logic"
+            ]
+        },
+        {
+            "id": "task248-2d1474c2e41349b5950a2bf075ffc5c2",
+            "input": "W: What are you doing up there? M: I'm getting dressed. W: Well, hurry up. We're already late. M: OK. OK. Just a minute. By the away, Susan, where is my red tie? W: It's on the dresser next to the jewelry box. M: Oh, yes. I've got it. Thanks. And do you know where my watch is? W: Isn't it on the top drawer on the right? M: No, it's not there. W: Well. I don't know where it is. M: What time is it now? W: It's 6:45. M: And when does the play start? W: At 8:00 sharp. M: All right, I'm coming... Well, what are you waiting for?, Question: What is the probable relationship between the two speakers? (A) Husband and wife. (B) Mother and son. (C) Father and daughter.",
+            "output": [
+                "commonsense"
+            ]
+        },
+        {
+            "id": "task248-0b6571005827405a893e8a36435ce765",
+            "input": "W: Good morning, sir. Can I help you? M: I want to make an inquiry about leaving my car with you. You see, I am going abroad and I don't want to take the car. But I will need it when I get back. W: I see, sir. Well, we can offer you full parking service for as long as you wish. M: Good. I am going to Washington for two weeks. W: Right. So how long do you want to leave the car with us? M: Well. I'm flying to Washington on the 5th and coming back on the 19th. That's fourteen days, isn't it? W: That means fifteen days' parking service. We have a minimum fee of ten pounds for three days, but for 15 days, it'll only cost you 25. M: It says 22 here. W: No, sir. That's for 14 days. M: Um, 25 for 15 days. W: Now, come this way, sir. We'll complete the form. Can I have your name? M: Francis, Donald Francis. W: And the make of the car, sir? M: Just Ford. W: Ford. And the color? M: Green. W: Your departure day is May 5th, I think you said. M: Yes, the 5th. That's a Friday. W: Friday 5th of May. Now, what time is your flight, sir? M: 11:50. But I have to check in about half an hour beforehand. W: Well, we'd like customers to check their cars in here at least ten minutes before check-in time. M: So. I ought to be here about 11:10. W: Well, it's safer before that. We do get very busy., Question: How much does the man have to pay for the service? (A) 14 pounds. (B) 19 pounds. (C) 25 pounds.",
+            "output": [
+                "logic"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Dedicated License (https://github.com/nlpdata/dream/blob/master/license.txt)"
+    ]
+}

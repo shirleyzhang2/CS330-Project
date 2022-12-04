@@ -1,0 +1,116 @@
+{
+    "Contributors": [
+        "Divya Reddy Katpally"
+    ],
+    "Source": [
+        "dbpedia_14"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/dbpedia_14"
+    ],
+    "Categories": [
+        "Text Matching"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "In this task, you're given a text and a title. The title is present in the document and refers to the entity mentioned in the document. The title might have some text in parentheses, for example: \"HMS Mallow (K81)\", or be slightly different from what is present in the text. If they still refer to the same entity, then it is a correct title. Indicate your answer as \"Yes\" if the title is correct, otherwise indicate your answer as \"No\". Do not generate anything else apart from \"Yes\" or \"No\"."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Wikipedia"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Text: The Mansfield Building Society is a UK building society which has its headquarters in Mansfield Nottinghamshire. It is a member of the Building Societies Association. \nTitle: Mansfield Building Society",
+            "output": "Yes",
+            "explanation": "The title \"Mansfield Building Society\" is present in the text and it is the main entity that is referred in the text. Hence, it is the title of the document."
+        },
+        {
+            "input": "Text:  The third and current HMS Argyll is a Type 23 'Duke' Class frigate. She is currently the oldest serving Type 23 frigate in the Royal Navy. Like all of her class she is named for a British dukedom in this case that of Argyll. \nTitle: HMS Argyll (F231)",
+            "output": "Yes",
+            "explanation": "\"HMS Argyll\" is present in the text and it is the main entity that is referred in the text. Here, the text in parentheses \"F31\" is not present in the document and it can be ignored. Hence, the output is correct. "
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Text: The Mansfield Building Society is a UK building society which has its headquarters in Mansfield Nottinghamshire. It is a member of the Building Societies Association. \nTitle: Mansfield Building Society",
+            "output": "No",
+            "explanation": "The title \"Mansfield Building Society\" is present in the text and it is the main entity that is referred in the text. Hence, the output is incorrect."
+        },
+        {
+            "input": "Text:  The third and current HMS Argyll is a Type 23 'Duke' Class frigate. She is currently the oldest serving Type 23 frigate in the Royal Navy. Like all of her class she is named for a British dukedom in this case that of Argyll. \nTitle: HMS Argyll (F231)",
+            "output": "HMS Argyll",
+            "explanation": "The output should be either \"Yes\" or \"No\". Hence, it is negative example."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task630-aa39ecac39fe4143bf91dae8b320792f",
+            "input": "Text:  Candice S. Miller (born May 7 1954) is the U.S. Representative for Michigan's 10th congressional district serving since 2003. She is a member of the Republican Party.The district includes all of Michigan's Huron Lapeer Sanilac and St. Clair counties plus northern Macomb and eastern Tuscola counties. She is one of only a few members in Congress whose highest level of education is a high school diploma. \nTitle: Kirarin Revolution",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task630-d1fdadc3a5bd43e2b9793e643fd75405",
+            "input": "Text:  The American School of The Hague (ASH) is an American school in Wassenaar Netherlands. Children can attend the school for a maximum of 13 years from Pre-Kindergarten to 12th grade. It is one of the three international focus schools in the area others are the International School of The Hague and the British School in the Netherlands in Voorschoten. There is a French school and German school both which run their national curriculum. \nTitle: American School of The Hague",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task630-1a851a795ca44d7193dd74dfaa61d46b",
+            "input": "Text:  Pi\u0142awa [pi\u02c8wava] (German: Pilowbr\u00fcck) is a village in the administrative district of Gmina Wa\u0142cz within Wa\u0142cz County West Pomeranian Voivodeship in north-western Poland. \nTitle: St. Thomas's Church (old) Dublin",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task630-96bd53ece32c4b98a86780a9f3de7f03",
+            "input": "Text:  Brussels by Night is a Belgian drama film from 1983 directed by former Humo journalist Marc Didden. The low budget picture was financed partly by Herman Schueremans organizer of the Flemish rock festival Rock Werchter. The film was named after a 1979 song by Raymond van het Groenewoud who also wrote the soundtrack for the movie. \nTitle: Brussels By Night",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task630-830c3e8011da4fb09c0ea46df33cd14d",
+            "input": "Text:  Barbara J Zitwer is an American film producer playwright and literary agent.She started her career as a still photographer and location co-ordinator on Larry Cohen's 1984 horror movie Special Effects. In 1985 she worked as a location scout on The Stuff and was the associate producer of 1987's It's Alive III: Island of the Alive. She produced the 1988 Nicolas Cage film Vampire's Kiss. and was the associate producer of the 1990 movie The Ambulance. \nTitle: Szelejewo Pierwsze",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task630-046b28bfb6f54ef1be9cba10c4634488",
+            "input": "Text:  Betrayed is a 1988 motion picture drama directed by Costa-Gavras written by Joe Eszterhas and starring Tom Berenger and Debra Winger. The film is roughly based upon the White separatist terrorist activities of American neo-Nazi Robert Mathews and his group The Order. \nTitle: St. Mary's on the Flats",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task630-b8fa79f872f94348bcacfe1273a97546",
+            "input": "Text:  Street Kings is a 2008 American action-crime-thriller film directed by David Ayer starring Keanu Reeves Forest Whitaker Hugh Laurie Chris Evans Common and The Game. It was released in theaters on April 11 2008.The initial screenplay drafts were written by James Ellroy in the late 1990s under the title The Night Watchman. \nTitle: Street Kings",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task630-5453e05763224aec97230f712bebdfd0",
+            "input": "Text:  Mordellistena rubricollis is a species of beetle in the Mordellistena genus that is in the Mordellidae family. It was described by Champion in 1891. \nTitle: Mordellistena rubricollis",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY-SA",
+        "GNU Free Documentation 2.0"
+    ]
+}

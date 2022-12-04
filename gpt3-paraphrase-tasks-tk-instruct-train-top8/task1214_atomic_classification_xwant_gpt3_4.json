@@ -1,0 +1,125 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "atomic"
+    ],
+    "URL": [
+        "https://allenai.org/data/atomic-2020"
+    ],
+    "Categories": [
+        "Commonsense Classification"
+    ],
+    "Reasoning": [
+        "Relational Reasoning",
+        "Reasoning on Social Interactions",
+        "Commonsense Reasoning -> Social Situations"
+    ],
+    "Definition": [
+        "In this task, you are given two phrases: Head and Tail, separated with <sep>. The Head and the Tail events are short phrases possibly involving participants. The names of specific people have been replaced by generic words (e.g., PersonX, PersonY, PersonZ). PersonX is always the subject of the event. You have to determine whether, as a result of the Head, PersonX wants what is mentioned in the Tail or not. In this task, wanting is a postcondition desire on the part of PersonX, respectively. As an example, if as a result of PersonX giving PersonY gifts, PersonX desires to hug PersonY, then the answer would be classified as \"Yes\". The phrase may also contain \"___\", a placeholder that can be an object, a person, and/or an action."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Sociology",
+        "Commonsense -> Concepts and Relations -> Social Commonsense"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Head: PersonX arranges a date<sep>Tail: to find a nice restaurant.",
+            "output": "Yes",
+            "explanation": "This is a good example. As a result of the Head, PersonX wants to find a nice restaurant."
+        },
+        {
+            "input": "Head: PersonX affects children 's ___<sep>Tail: bad",
+            "output": "No",
+            "explanation": "In this example, bad is not what PersonX wants. So the output is correct."
+        },
+        {
+            "input": "Head: PersonX gives PersonY bread<sep>Tail: to eat a piece of bread",
+            "output": "Yes",
+            "explanation": " As a result of the Head, personX wants to eat a piece of bread. Thus, this example should be classified as \"Yes\"."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Head: PersonX blesses PersonY's heart<sep>Tail: to call person y",
+            "output": "Yes",
+            "explanation": "The Tail is not what PersonX wants as a result of the Head. So the output should be \"No\"."
+        },
+        {
+            "input": "Head: PersonX asks PersonY's mother<sep>Tail: to write down the solution to the problem",
+            "output": "No",
+            "explanation": "If PersonX asks PersonY's mother; as a result, PersonX wants to write down the solution to the problem, and the output should be \"Yes\"."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1214-729236b908104305a80c9bebfd0f7e1f",
+            "input": "Head: PersonX babysits PersonX's nephew<sep>Tail: to be old enough",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1214-39e3b3b664fd4b4ca55c1bb8636b1285",
+            "input": "Head: PersonX improves PersonY's condition<sep>Tail: to go home",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1214-182e0f1c39134cb9a892258717e13f39",
+            "input": "Head: PersonX gets a promotion<sep>Tail: to make higher salary",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1214-6e19783ec38547d6a15c89a42c67716c",
+            "input": "Head: PersonX eventually got ___<sep>Tail: to thank their lucky stars",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1214-ed9162e354484d00b5ba3a5e2138f22a",
+            "input": "Head: PersonX adapts ___ to conditions<sep>Tail: wants to make things easier for herself",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1214-a82a38c59817478184140e355e725dd3",
+            "input": "Head: PersonX climbs into bed<sep>Tail: to relax",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1214-888d7c8b37fb4a61bb525dddda4b729e",
+            "input": "Head: PersonX arranges a date<sep>Tail: civil",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1214-4ccbdc59f45a482dabf95a18e8f5ff1d",
+            "input": "Head: PersonX gets a massage<sep>Tail: to relax",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

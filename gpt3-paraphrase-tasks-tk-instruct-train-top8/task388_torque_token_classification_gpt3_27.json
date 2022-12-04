@@ -1,0 +1,198 @@
+{
+    "Contributors": [
+        "Shailaja Keyur Sampat"
+    ],
+    "Source": [
+        "torque"
+    ],
+    "URL": [
+        "https://allennlp.org/torque.html"
+    ],
+    "Categories": [
+        "Information Extraction"
+    ],
+    "Reasoning": [
+        "Commonsense Reasoning"
+    ],
+    "Definition": [
+        "In this task, a passage will be given and the goal is to identify an event from the passage. An event is defined as a single word representing something that happened, is happening, or may happen. An event can be factual or hypothetical, positive or negative, certain or uncertain. While most events are based on verbs, an event can also be based on a noun (ex. storm, snow, rainfall) or a copula verb (is, was, been, etc.). The event must not be a pronoun or an adjective. For noun events with multiple words, use the last word in the phrase as the event."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "News"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Passage: I submitted the hit. The hit was approved, and then I was paid.",
+            "output": "approved",
+            "explanation": "There are three events in this passage (i) submission event (\"submitted\") (ii) the approval event (\"approved\"), and (iii) the payment event (\"paid\"). You can use any one of them as an output."
+        },
+        {
+            "input": "Passage: He was caught in the snow storm.",
+            "output": "storm",
+            "explanation": "There are two events in this passage (i) he was caught (\"caught\") and (ii) the snow storm event (\"storm\"). You can use any one of them as an output. Since snow storm is a noun event with multiple words, we only use the last word 'storm' as an event."
+        },
+        {
+            "input": "Passage: He is on the east coast.",
+            "output": "is",
+            "explanation": "The copula \"is\" an event describing his location."
+        },
+        {
+            "input": "Passage: He wanted to finish the task.",
+            "output": "wanted",
+            "explanation": "There are two events in this passage (i) he wanted to do something (\"wanted\") and (ii) finish the task (\"finish\"). Either of wanted or finish can be used as output. However note that though there is an uncertainty about the task i.e. indeed finished or not, \"finish\" is still a valid event."
+        },
+        {
+            "input": "Passage: If he works hard, then he will finish the task.",
+            "output": "finish",
+            "explanation": "There are two events in this passage (i) he works hard (\"works\") and (ii) he will finish the task. (\"finish\"). You can use either of works or finish as an output. Here the second event happens only if the first one is true, but both are considered as events. This is an example of hypothetical event."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Passage: He is happy.",
+            "output": "happy",
+            "explanation": "Happy is an adjective and hence cannot be an event. The output should be \"is\" which represents an event describing his attribute of happiness."
+        },
+        {
+            "input": "Passage: He was caught in the elevator.",
+            "output": "elevator",
+            "explanation": "Not every noun can be an event. Here \"elevator\" is an object and one cannot say \"an elevator happened\" hence it is not an event. \"caught\" is a correct output."
+        },
+        {
+            "input": "Passage: The flu season is winding down.",
+            "output": "flu season",
+            "explanation": "The \"flu season\" is a noun events with multiple words, but only last word \"season\" sould be used as an event as per definition."
+        },
+        {
+            "input": "Passage: The death toll climbed up to 99 soon after the explosion.",
+            "output": "blast",
+            "explanation": "There are two events in this passage \"climbed\" and \"explosion\". Though blast is a synonym of explosion, it is not present in the passage. The output must contain events that are present in the passage."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task388-ea3fd9ce1fe64fe195a4172a4111a0f2",
+            "input": "Passage: The mission includes 13 Italians, despite political uncertainty in Rome over whether Italy's leadership of the force will get the required backing of parliament in a vote which was to be held later Wednesday. The advance team arrived in Tirana late Tuesday.",
+            "output": [
+                "includes",
+                "uncertainty",
+                "leadership",
+                "get",
+                "backing",
+                "vote",
+                "held",
+                "arrived",
+                "mission"
+            ]
+        },
+        {
+            "id": "task388-c68749b708704f2c9a89a4b41156b4ba",
+            "input": "Passage: THE HAGUE, Netherlands (AP)_ The World Court Friday rejected U.S. and British objections to a Libyan World Court case that has blocked the trial of two Libyans suspected of blowing up a Pan Am jumbo jet over Scotland in 1988. Libya, which brought the case to the United Nations' highest judicial body in its dispute with the United States and Britain, hailed the ruling and said it would press anew for a trial in a third neutral country.",
+            "output": [
+                "rejected",
+                "objections",
+                "blocked",
+                "suspected",
+                "blowing",
+                "brought",
+                "dispute",
+                "hailed",
+                "ruling",
+                "said",
+                "press"
+            ]
+        },
+        {
+            "id": "task388-92a9825374134c19ad938f6bdb9b5d37",
+            "input": "Passage: The mishap occurred when the bus tried to overtake a mini truck, the police noted. The injured are undergoing treatment at the Mahendra Adarsha Hospital and College of Medical Sciences Teaching Hospital in Bharatpur, the police said, adding, the condition of three is serious.",
+            "output": [
+                "mishap",
+                "occurred",
+                "tried",
+                "overtake",
+                "noted",
+                "undergoing",
+                "said",
+                "adding",
+                "is",
+                "treatment"
+            ]
+        },
+        {
+            "id": "task388-861a82881170485ebee0e2d22eaeea12",
+            "input": "Passage: According to the ministry, China has more than 450,000 elementary and secondAcoordingary schools with more than 210 million students and more than 120,000 kindergartens with 22 million children. Zhou also called for immediate measures to eliminate safety risks involving food poisoning, student fights and other mass incidents.",
+            "output": [
+                "has",
+                "called",
+                "measures",
+                "eliminate",
+                "involving",
+                "poisoning",
+                "fights",
+                "incidents"
+            ]
+        },
+        {
+            "id": "task388-728e6be2506f42d494e19141a7c37bd9",
+            "input": "Passage: Meanwhile Kiyoshi Miyazato fired five birdies against a lone bogey to tie with Imano and Yokoo, who shot a 64 and 70 respectively. Miyazato had birdies on the par-four third and par-three fifth, dropping a shot on seven but enjoyed a blemish-free back nine with birdies on 11, 12 and 15.",
+            "output": [
+                "fired",
+                "tie",
+                "shot",
+                "birdies",
+                "dropping",
+                "enjoyed"
+            ]
+        },
+        {
+            "id": "task388-1c30d6c81dda47a68d9e5deffa815c5b",
+            "input": "Passage: Listing to the measures taken to remove hurdles to the polls, Professor Ahmed told the envoy that the Chief Election Commissioner MA Aziz went on leave, two new Election Commissioners were appointed in view of some political parties' demand for creating congenial atmosphere for the elections while the EC announced the election schedule. Besides, he said, contract jobs at different levels have been canceled and necessary reshuffles in the administration done for impartial elections.",
+            "output": [
+                "Listing",
+                "taken",
+                "remove",
+                "told",
+                "went",
+                "appointed",
+                "creating",
+                "announced",
+                "said",
+                "have",
+                "canceled",
+                "done"
+            ]
+        },
+        {
+            "id": "task388-6ccd45f0fa2e4c909fa852d65f0d115d",
+            "input": "Passage: Japanese police announced Wednesday that Air Force sergeant Danny Matlock, stationed at the Kadena base on the southern Japanese island, had been arrested for the Monday attack. \"The commander of the 353rd SOG (Special Operations Group) expressed his sincere regrets about this incident,\" the US Air Force said in a statement.",
+            "output": [
+                "announced",
+                "arrested",
+                "attack",
+                "expressed",
+                "incident",
+                "said"
+            ]
+        },
+        {
+            "id": "task388-212eb69363e14e0fa657ddf88f84ebe4",
+            "input": "Passage: Farkas, an air force captain, was sent into space on board the Soyuz 36 on May 26, 1980. He spent six days aboard the Salyut 6 spacecraft with three Soviet astronauts, Valery Kubasov, Leonid Popov and Valery Riumin.",
+            "output": [
+                "sent",
+                "spent"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Apache 2.0"
+    ]
+}

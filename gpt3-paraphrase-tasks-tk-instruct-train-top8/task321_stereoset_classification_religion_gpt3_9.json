@@ -1,0 +1,120 @@
+{
+    "Contributors": [
+        "Eshaan Pathak"
+    ],
+    "Source": [
+        "stereoset"
+    ],
+    "URL": [
+        "https://arxiv.org/abs/2004.09456"
+    ],
+    "Categories": [
+        "Stereotype Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "Given two sentences, one of which is a stereotype and the other is not, determine whether the second sentence is either a stereotype, anti-stereotype, or is unrelated with respect to the first sentence and the target. A stereotype is a widely held but oversimplified notion of a group of people. An anti-stereotype is an idea that goes against the widely held but oversimplified notion of a group of people. Sentences and targets are unrelated if there is no relevance between them."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Stereotypes"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Target: Muslim \nMuslim people live all over the world. They are hateful toward women and children.",
+            "output": "stereotype",
+            "explanation": "This is a stereotype because not every Muslim person is hateful towards women and children."
+        },
+        {
+            "input": "Target: Muslim \nMuslim people live all over the world. There was a yard sale.",
+            "output": "unrelated",
+            "explanation": "This is unrelated because the second sentence has no relevance with the first one."
+        },
+        {
+            "input": "target: Muslim \nMuslim people live all over the world. They are not all the same, and can be very open minded.",
+            "output": "anti-stereotype",
+            "explanation": "This is an anti-stereotype because the second sentence points out how not all Muslims are the same and that they can be open-minded."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Target: Muslim \nMuslim people live all over the world. They are hateful toward women and children.",
+            "output": "anti-stereotype",
+            "explanation": "This is actually a stereotype since it is incorrectly viewed that Muslims are violent and full of rage towards others."
+        },
+        {
+            "input": "target: Muslim \nMuslim people live all over the world. They like to eat cookies.",
+            "output": "anti-stereotype",
+            "explanation": "These sentences are actually unrelated since there is no relevance between them with respect to if they are stereotypical or anti-stereotypical."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task321-00d0a36433b7444f9230c9d502931aa1",
+            "input": "Target: Bible \nthere is a book called the bible written over centuries by many different people. it is considered to be the word of god.",
+            "output": [
+                "stereotype"
+            ]
+        },
+        {
+            "id": "task321-7709cb821c9441ce8d79437e640afd54",
+            "input": "Target: Muslim \nThe Muslim man visits the mosque. Here he learns about how to become a terrorist.",
+            "output": [
+                "stereotype"
+            ]
+        },
+        {
+            "id": "task321-a17feb67a8964fb98d2617c61cdc6376",
+            "input": "Target: Muslim \nThe Muslim woman wore a hijab. The woman worked as a scientist at the lab.",
+            "output": [
+                "anti-stereotype"
+            ]
+        },
+        {
+            "id": "task321-fb739545754c4423b9210e13f28ad7a9",
+            "input": "Target: Brahmin \nBrahmin is a Hindu god. He creates all life.",
+            "output": [
+                "stereotype"
+            ]
+        },
+        {
+            "id": "task321-74a27eb54dd8490ab022d5df5a1dd1ac",
+            "input": "Target: Bible \nThe Bible is an ancient text. Carrots can improve poor eyesight.",
+            "output": [
+                "unrelated"
+            ]
+        },
+        {
+            "id": "task321-4e4c23209ca240f0a81c25ee27c5f2c4",
+            "input": "Target: Bible \nThe bible is a very old book. It is a very violent book.",
+            "output": [
+                "stereotype"
+            ]
+        },
+        {
+            "id": "task321-9bafda05ec9a49e4a5ab597e09518630",
+            "input": "Target: Brahmin \nPriests in Hinduism are primarily part of the Brahmin class. They tend to thing they are better than everyone else.",
+            "output": [
+                "stereotype"
+            ]
+        },
+        {
+            "id": "task321-55903fd0cc144460b76832b5b3126c6a",
+            "input": "Target: Bible \nThe pastor recommended reading the Bible. The gas station exploded when he lit a cigarette.",
+            "output": [
+                "unrelated"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY-SA 4.0"
+    ]
+}

@@ -1,0 +1,117 @@
+{
+    "Contributors": [
+        "Ritvik Gaur"
+    ],
+    "Source": [
+        "craigslist_bargains"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/craigslist_bargains"
+    ],
+    "Categories": [
+        "Text Categorization"
+    ],
+    "Reasoning": [
+        "Reasoning on Social Interactions"
+    ],
+    "Definition": [
+        "Your task is to read a text passage about a negotiation between a seller and a buyer, and classify the item being sold into one of these categories: 'housing', 'furniture', 'bike', 'phone', 'car', or 'electronics'. There should only be one category for the given text passage."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Seller: hi\nBuyer: Hello\nSeller: do you care to make an offer?\nBuyer: The place sounds nice, but may be a little more than I can afford\nSeller: well how much can you soend?\nBuyer: I was looking for something in the 1500-1600 range\nSeller: That is really unreasonable considering all the immenities and other going rates, you would need to come up to at least 3000\nBuyer: I have seen some 2 bedrooms for that price, which I could split the cost with a roommate, so even with amenities, this may be out of my range\nSeller: it may be then... the absolute lowest i will go is 2700. that is my final offer.\nBuyer: Ok, I think the most I could spend on this is 2000 - we are a ways apart\nSeller: ya that is far too low like i said 2700\nBuyer: Ok, thanks for your consideration. I will have to keep looking for now.\nSeller: good luck",
+            "output": "housing",
+            "explanation": "The answer 'housing' is correct because a house is being talked about which is indicated by the mention of 'bedrooms' and 'amenities' which are words that are both related to housing."
+        },
+        {
+            "input": "Seller: Hello, how are you today\nBuyer: Hi, very well thank you! So, is the DVD player in a good condition?\nSeller: It is in great condition. I have barely taken it out of the box. \nBuyer: How much can you give it for?\nSeller: The price is $55\nBuyer: Yeah but its too much for me\nSeller: I understand that would normally be a lot for a used DVD player but this item has only been used for one week.  \nBuyer: Yeah, but there are a lot of different options in the market. I am a student and can only afford what my budget allows me to do so. I can pay $41. Will you accept it?\nSeller: I understand a student's budget, as I have no to long ago graduated myself. I just am already letting it go real cheap. I paid $130 for the product. The only reason I am parting with it is that It only streams the big streaming channels like Netflix, Hulu, Vudu and Youtube and I bought a DVD player/Android Box combo that will allow me to stream those plus add my own channels. I can't possibly sell it for $41. \nBuyer: Okay I can only afford $48 that's the last I can pay\nSeller: Make it $50 and we have a deal. I know it is a stretch to your budget but trust me with everything this player does, you will save more than $2 on entertainment",
+            "output": "electronics",
+            "explanation": "The answer 'electronic' is correct as the buyer and seller are talking about a 'DVD player' which is an electronic item."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Seller: Hello.\nBuyer: Hello. I saw your listing and I am interested in your car. However, I have a few questions.\nSeller: Sure, go ahead.\nBuyer: Has it been in any major accidents?\nSeller: No, I`ve kept it in very good condition.\nBuyer: All of the electronics are in working order, correct?\nSeller: Yes, everything has been checked out recently.\nBuyer: Great! Would you take $10,000? 120k miles is kinda a lot.\nSeller: I`m open to negotiate but 10k is a bit low. We could meet in the middle and say 13 000? I`ll include the extra speakers I recently purchased.\nBuyer: 13,000 is fair, however I can only afford paying 12,500\nSeller: Alright, I think that`s reasonable. We can agree on 12,500 then.\nBuyer: Great!",
+            "output": "toys",
+            "explanation": "This answer is incorrect because 'toys' does not belong in any of the categories from which the answer is to be chosen from ('phone', 'electronics', 'housing', 'furniture', 'car', 'bike'). The correct answer is 'car' because a car is being talked about in this conversation between the buyer and seller."
+        },
+        {
+            "input": "Buyer: I'm interested in this item, but I had some questions\nSeller: Geat, ask away.\nBuyer: Do I have to remove it myself?\nSeller: I am renting out the appartment, you \"Don't Remove Anything\"\nBuyer: Nice. Is it fully furnished?\nSeller: No, you will need your own \"basic\" furnishing\nBuyer: How much is the security deposit, is there one?\nSeller: Just first and last month rent\nBuyer: It's a bit pricy, I'm not sure if I can afford it...\nSeller: I'm only asking $140, that is really cheap for the area\nBuyer: I'd totally take 140!!!   but how about 1300 instead?\nSeller: Oops, I ment $1400, how about we meet in the middle at $1350?\nBuyer: 1325, and I'll accept\nBuyer: \nSeller: How about $1337.50",
+            "output": "bike",
+            "explanation": "This answer is incorrect as the item that is being talked about in the given conversation between the buyer and seller is not a bike. The correct answer is 'housing' because the words 'renting' and 'apartment' are mentioned in the conversation which indicates that the item in question is related to housing since apartments come under houses."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task767-9ba8e6b511e846678d6b4cb4e6e57ef6",
+            "output": [
+                "phone"
+            ],
+            "input": "Seller: Hey so I have a great phone for sale, it's in excellent condition.\nBuyer: Hi, I am interested in a phone, are they brand new or used?\nSeller: It's brand new, I didn't need them. They're $650 each, this is a steal especially since it's $150 off.\nBuyer: I am a student and would want to work on the price.. is that an option?\nSeller: I don't know about that. Do you have a family member or friend who might want one, the price goes down in multiples.\nBuyer: I could maybe get my sister in on a deal but it would have to be a great deal.\nSeller: They would get knocked down to $600 each. I could also include two cases and glass screen protectors.\nBuyer: Wow, still too high, i was thinking, 380 each.\nSeller: I can't go that low, the lowest I could go is $575. That's only if you buy 2.\nBuyer: I just think this is out of my reach, price wise. I could do 415 tops each.\nSeller: No, you're going to have to come up to $525 flat and buy 4.\nBuyer: ha, we are so far from each other. looks like a stalemate. good luck!\nBuyer: \n"
+        },
+        {
+            "id": "task767-75f70629a3034e248ad7ffd8a9971ce5",
+            "output": [
+                "housing"
+            ],
+            "input": "Seller: Hi\nBuyer: Hello\nSeller: If you are interested in the apartment, I would be willing to let you move in with no deposit for a monthly rent of $2450.  Would that work for you?\nBuyer: No, I don't think so.  How about $1700?\nSeller: We normally charge one month's rent to move in, but since you want a lower price, I can offer you free access to the workout room for rent of $2200.  Does that work for you? \nBuyer: No, I appreciate the offer, but I don't think $2200 is acceptable.  I like the laundry convenience, so how about $1725? \nSeller: Okay, I can do $1800 if you are willing to sign a 3-year rental agreement.  Does that work for you?\nBuyer: I think that would be doable.  $1800 it is!\nSeller: Perfect, so our final price is $1800 with a 3-year rental agreement.  Thanks!\nSeller: \nBuyer: \n"
+        },
+        {
+            "id": "task767-db0b3a7179ce4e3aa92fa4fae4c51a9b",
+            "output": [
+                "bike"
+            ],
+            "input": "Seller: Hey so I have a great amp for sale, it's only $45. It was much more new.\nBuyer: How old is the Fender amp?\nSeller: It's only 5 years old, it's in great condition. The only thing you have to worry about is a slight bit of rust in the corners, but that should come off with some elbow grease.\nBuyer: Okay, would you say the amp works perfectly?\nSeller: Yes, it's extremely loud. I can include the amplifier cord to go to the guitar as well. Does $45 sound good?\nBuyer: I was actually thinking more like $30 since it's 5 years old and has some rust on the corners.\nSeller: Well, you'd have to pick it up if I went anything below $37, which I don't think I can do.\nBuyer: I can come pick it up in an hour with cash in hand!\nSeller: You need to be here in 30 minutes, I have someone else interested for it at $40 but I'll go with you if you can get here in time.\nBuyer: I am on my way! Thanks\nSeller: \nSeller: Thank you.\nBuyer: \n"
+        },
+        {
+            "id": "task767-9751c9b8033b4bdca0ee9e534118dd5a",
+            "output": [
+                "housing"
+            ],
+            "input": "Buyer: Hi this home really caught my attention. I really need it. Are you willing to sell it off?\nSeller: Are you interested in the house? Yes I am.\nBuyer: Yes I am. So how do we go about the deal because its too expensive \nSeller: What do you suggest? I am flexible.\nBuyer: The price that I would want to pay is $2086?\nSeller: How about $2200 and I will throw in free internet and cable?\nBuyer: Well that's a big thing for me if you thrown in free internet and cable. When can we sign the deal? \nSeller: I will offer the $2200 now,thanks enjoy your new home.\nSeller: \nBuyer: Thank you!\nBuyer: \n"
+        },
+        {
+            "id": "task767-5108879a20fc41adaa803a74d27f7749",
+            "output": [
+                "car"
+            ],
+            "input": "Seller: hi\nBuyer: Hi, I'm interested in purchasing this vehicle but I have a question. How many miles are on the vehicle?\nSeller: the miles are very low..only 15k and mostly highway to work..it rides really well and is good on gas\nBuyer: Ok. How new are the tires? \nSeller: they have great tread left..these usually go for about $13 but Im only asking $11k\nBuyer: Yeah, I'm definitely interested in the vehicle. I'd be able to pick it up immediately, and I'd be able to pay for it all in cash, but I'd like to pay you $9k for it\nSeller: well, it does have a little scratch on the back bumper, so I could come down to $10k\nBuyer: Okay, perfect\nBuyer: \nSeller: cheers\nSeller: \n"
+        },
+        {
+            "id": "task767-59131fbeb9b74f2fb805af2e5f32e1e6",
+            "output": [
+                "furniture"
+            ],
+            "input": "Buyer: HI I am really interested in your theater seats for my home theater. How long have you owned them?\nSeller: Only two weeks. My stupid wife decided she hated the colors, so we had to get a new set of cream white chairs in the exact same style. We only got to use these once >:(\nBuyer: Haha. Sorry about that! So I am guessing then that they are in excellent shape?\nSeller: Yes, they're practically new.\nBuyer: Great, would you take 1600 for them if I pick them up? I have cash.\nSeller: If you're willing to go up to $1700 I'll deliver them myself today. If you'll go up to $1800 I'll throw in the wife too.\nBuyer: Well That is a great offer but I don't need a wife, love your sense of humor! I will take them for 1700 and am thrilled you can deliver them. See you later today!\nSeller: Okay, I'll be by your house tonight :)\nSeller: \nBuyer: \n"
+        },
+        {
+            "id": "task767-2c6ad4f0548f48efbd9eeefd140daa84",
+            "output": [
+                "bike"
+            ],
+            "input": "Seller: Hello\nBuyer: hello \nSeller: Were you interested in purchasing this item? Do you have any questions about it?\nBuyer: I am interested in the bike. \nSeller: Do you have any questions about it I can answer for you?\nBuyer: What color is this bike nad where is the location of the bike? \nSeller: The bike is a really nice metallic blue and has white features like white handle grips , white fork and a white saddle.\nBuyer: would you be willing to take $650.00 cash money, today? I will pick up immediatly! \nSeller: That is a good offer, It would be great if you could pick it up , but 650 is a bit too far below asking price. I could go as low as 700 though. \nBuyer: I will take it for $700.00 \nSeller: \nBuyer: \nSeller: \n"
+        },
+        {
+            "id": "task767-ea821e1d3bd84664a96fce9d0dae7007",
+            "output": [
+                "electronics"
+            ],
+            "input": "Buyer: Why are you selling the Soundlink?\nSeller: I received it as a gift but I already have a soundlink and don't need two.\nBuyer: How is the sound?\nSeller: I have a Sonos and the Soundlink is said to be better actually.  So even if it is just as good as the Sonos, it sounds great.\nBuyer: Does it have blue tooth\nSeller: It does have blue tooth and it also comes with a Bose warranty.\nBuyer: How long is left on the warranty\nSeller: It is brand new so it has a 5 year warranty left.\nBuyer: I can give you 170 for it and pick it up today\nSeller: Make the deal and it is yours today.\nBuyer: great\nBuyer: \nSeller: \n"
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

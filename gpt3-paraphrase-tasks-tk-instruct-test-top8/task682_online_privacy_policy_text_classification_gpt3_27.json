@@ -1,0 +1,132 @@
+{
+    "Contributors": [
+        "Sai Surya Kaushik, Punyamurthula"
+    ],
+    "Source": [
+        "opp_115"
+    ],
+    "URL": [
+        "https://www.usableprivacy.org/data"
+    ],
+    "Categories": [
+        "Text Categorization"
+    ],
+    "Reasoning": [
+        "Reasoning on Social Interactions"
+    ],
+    "Definition": [
+        "You will be given a part of privacy policy text. You need to classify it into one of these categories: (1) First Party Collection/Use, (2) Third Party Sharing/Collection, (3) User Choice/Control, (4) User Access, Edit, & Deletion, (5) Data Retention, (6) Data Security, (7) Policy Change."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Social Media"
+    ],
+    "Positive Examples": [
+        {
+            "input": "An unnamed third party does receive information about you not covered by our label scheme for an unspecified purpose.",
+            "output": "Third Party Sharing/Collection",
+            "explanation": "The given policy text speaks of an unnamed third party which receives data, so the policy text is classified as 'Third Party Sharing/Collection'"
+        },
+        {
+            "input": "The site collects your IP address or device IDs for advertising. Collection happens on the website.",
+            "output": "First Party Collection/Use",
+            "explanation": "The given policy text says the site it'self collects information from user for advertising, so this policy should be classified as 'First Party Collection/Use'"
+        },
+        {
+            "input": "You can opt in for the use of unspecified information by the site, which collects it for an unspecified purpose.",
+            "output": "User Choice/Control",
+            "explanation": "The given policy text says the user can opt for the use of their information which is a choice given to user, so the text has to be classified as 'User Choice/Control'"
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "The site collects your cookies or tracking elements for an unspecified purpose. Collection happens on the website, and your data is aggregated or anonymized.",
+            "output": "User Choice/Control",
+            "explanation": "The given policy text says the site it'self collects information from user, so the policy should be classified as 'First Party Collection/Use' and not 'User Choice/Control'"
+        },
+        {
+            "input": "An unnamed third party does receive unspecified information about you for an unspecified purpose. The data is personally identifiable. You can opt in for data collection for the collection or sharing of your information.",
+            "output": "First Party Collection/Use",
+            "explanation": "The given policy text speaks of an unnamed third party which receives data, so the policy text should be classified as 'Third Party Sharing/Collection' and not 'First Party Collection/Use'"
+        },
+        {
+            "input": "A user's IP address and device IDs is retained indefinitely to fulfill an unspecified purpose.",
+            "output": "Third Party Sharing/Collection",
+            "explanation": "The given policy text talks about retaining the user data like IP Address and device IDs, so the text should be classified as 'Data Retention' and not 'Third Party Sharing/Collection'"
+        },
+        {
+            "input": "An unspecified third party does receive unspecified information about you for legal requirements.",
+            "output": "Science Fiction",
+            "explanation": "The returned category is not among the options provided for categories."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task682-63fe48cb030546498337a1c7a3a3823d",
+            "input": "You can opt out (by contacting the company) from the use of unspecified information by a third party, which uses it for advertising.",
+            "output": [
+                "User Choice/Control"
+            ]
+        },
+        {
+            "id": "task682-a99b89bf568c4908b859e04abd4bc5ca",
+            "input": "The site collects your generic personal information for an additional (non-basic) service or feature. Collection happens in an unspecified way, and your data is identifiable. You can opt in for data collection for the collection of your information.",
+            "output": [
+                "First Party Collection/Use"
+            ]
+        },
+        {
+            "id": "task682-257618eb57464981a5240171c38931ae",
+            "input": "An unnamed third party does collect on the first party website or app your computer information for targeted advertising. The data is aggregated or anonymized. You can configure your privacy with third-party user settings.",
+            "output": [
+                "Third Party Sharing/Collection"
+            ]
+        },
+        {
+            "id": "task682-5986895225f6438da69c1cdf6afd035b",
+            "input": "Users with accounts can edit their information, within the scope of information the company has learned about the user.",
+            "output": [
+                "User Access, Edit and Deletion"
+            ]
+        },
+        {
+            "id": "task682-3d40703d3ad34e0aa44b4567c1ae00e3",
+            "input": "A user's generic personal information is retained for a limited (but unspecified) period of time to meet legal or law enforcement requirements, and then it is deleted..",
+            "output": [
+                "Data Retention"
+            ]
+        },
+        {
+            "id": "task682-7e6e2a771314417cb458fbab7698526c",
+            "input": "When a change is made to the privacy policy that significantly affects data practices, users are personally notified. Users' choices regarding policy changes are not mentioned or are unclear.",
+            "output": [
+                "Policy Change"
+            ]
+        },
+        {
+            "id": "task682-30dbca19818340c2b34812d3e77435f6",
+            "input": "An unnamed third party does not receive your unspecified personal information for an unspecified purpose. The data is personally identifiable.",
+            "output": [
+                "Third Party Sharing/Collection"
+            ]
+        },
+        {
+            "id": "task682-45e595b51ce846d39dd6749d03cc06e2",
+            "input": "When a change of an unspecified nature is made to the privacy policy, users are notified when visiting the website. Users' choices regarding policy changes are not mentioned or are unclear.",
+            "output": [
+                "Policy Change"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY-NC"
+    ]
+}

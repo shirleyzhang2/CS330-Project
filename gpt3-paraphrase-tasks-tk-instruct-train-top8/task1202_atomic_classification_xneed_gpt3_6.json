@@ -1,0 +1,130 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "atomic"
+    ],
+    "URL": [
+        "https://allenai.org/data/atomic-2020"
+    ],
+    "Categories": [
+        "Commonsense Classification"
+    ],
+    "Reasoning": [
+        "Relational Reasoning",
+        "Reasoning on Social Interactions",
+        "Commonsense Reasoning -> Social Situations"
+    ],
+    "Definition": [
+        "In this task, you are given two phrases: Head and Tail, separated with <sep>. The Head and the Tail events are short phrases possibly involving participants. The names of specific people have been replaced by generic words (e.g., PersonX, PersonY, PersonZ). PersonX is always the subject of the event. You have to determine whether PersonX needs what is mentioned in the Tail before the Head or not, where need is a precondition for PersonX to achieve the event. For example, in order for PersonX to give PersonY gifts, PersonX must first buy the presents. Classify your answers into \"Yes\" and \"No\". The phrase may also contain \"___\", a placeholder that can be an object, a person, and/or an action."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Sociology",
+        "Commonsense -> Concepts and Relations -> Social Commonsense"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Head: PersonX is at PersonY's friend's house<sep>Tail: to walk up to PersonY's friend's house",
+            "output": "Yes",
+            "explanation": "This is a good example. PersonX is at PersonY's friend's house. But before, PersonX needed to walk up to PersonY's friend's house."
+        },
+        {
+            "input": "Head: PersonX bats PersonX's eyelashes<sep>Tail: to take someone home",
+            "output": "No",
+            "explanation": "In this example, PersonX doesn't need to take someone home before PersonX bats PersonX's eyelashes. So this output is correct."
+        },
+        {
+            "input": "Head: PersonX finds PersonY opportunity<sep>Tail: research stocks",
+            "output": "Yes",
+            "explanation": "PersonX may need to research stocks before finding an opportunity. Thus, this example should be classified as \"Yes\"."
+        },
+        {
+            "input": "Head: PersonX increases PersonY's rate<sep>Tail: none",
+            "output": "Yes",
+            "explanation": "This is a good example. Since nothing is specified and nothing is a precondition for all the events."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Head: PersonX asks PersonY's boyfriend<sep>Tail: scared",
+            "output": "Yes",
+            "explanation": "PersonX doesn't need to be scared before asking PersonY's boyfriend. So the output should be \"No\"."
+        },
+        {
+            "input": "Head: PersonX holds hands<sep>Tail: to go near him",
+            "output": "No",
+            "explanation": "PersonX needs to go near him before holding the hands, and the output should be \"Yes\"."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1202-c42f611f138c4c33a42de50e961028f9",
+            "input": "Head: PersonX gives ___ some pills<sep>Tail: to go to the store",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1202-c21b6ef601804c778fc7f22f6a0f26c7",
+            "input": "Head: PersonX is driving to school<sep>Tail: to sit in the car",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1202-5d43f7f017d54300a44608c977a7cfe3",
+            "input": "Head: PersonX goes shopping for clothes<sep>Tail: to be invited to a party",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1202-d2c6ec220ce347a5800b4d4e9ac679ad",
+            "input": "Head: PersonX eats PersonY's bread<sep>Tail: to apply sauce to bread",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1202-4009b1d00c3d4a7b9ff03faf444e7888",
+            "input": "Head: PersonX gets ___ for free<sep>Tail: to ask for something",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1202-a657acd7abda4f1aa93ade87b3568e3b",
+            "input": "Head: PersonX accepts happily<sep>Tail: happy",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1202-06e500a740ae465b8baad587ab9f3f83",
+            "input": "Head: PersonX guesses you could say<sep>Tail: decent intuition",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1202-7518630ca61b47e0b98c25a9b005d09d",
+            "input": "Head: PersonX bakes PersonX's own bread<sep>Tail: to buy the ingredients",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

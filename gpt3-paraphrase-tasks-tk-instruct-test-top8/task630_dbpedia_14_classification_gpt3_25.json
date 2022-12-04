@@ -1,0 +1,116 @@
+{
+    "Contributors": [
+        "Divya Reddy Katpally"
+    ],
+    "Source": [
+        "dbpedia_14"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/dbpedia_14"
+    ],
+    "Categories": [
+        "Text Matching"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "In this task, you're given a text and a title. The title is present in the text, and it refers to the entity that is spoken about in the text. The title might have some text in parentheses, for example: \"HMS Mallow (K81)\", or be slightly different from what is present in the text. If they still refer to the same entity, then it is a correct title. Your task is to output \"Yes\" if the title is correct, or \"No\" if the title is not correct."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Wikipedia"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Text: The Mansfield Building Society is a UK building society which has its headquarters in Mansfield Nottinghamshire. It is a member of the Building Societies Association. \nTitle: Mansfield Building Society",
+            "output": "Yes",
+            "explanation": "The title \"Mansfield Building Society\" is present in the text and it is the main entity that is referred in the text. Hence, it is the title of the document."
+        },
+        {
+            "input": "Text:  The third and current HMS Argyll is a Type 23 'Duke' Class frigate. She is currently the oldest serving Type 23 frigate in the Royal Navy. Like all of her class she is named for a British dukedom in this case that of Argyll. \nTitle: HMS Argyll (F231)",
+            "output": "Yes",
+            "explanation": "\"HMS Argyll\" is present in the text and it is the main entity that is referred in the text. Here, the text in parentheses \"F31\" is not present in the document and it can be ignored. Hence, the output is correct. "
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Text: The Mansfield Building Society is a UK building society which has its headquarters in Mansfield Nottinghamshire. It is a member of the Building Societies Association. \nTitle: Mansfield Building Society",
+            "output": "No",
+            "explanation": "The title \"Mansfield Building Society\" is present in the text and it is the main entity that is referred in the text. Hence, the output is incorrect."
+        },
+        {
+            "input": "Text:  The third and current HMS Argyll is a Type 23 'Duke' Class frigate. She is currently the oldest serving Type 23 frigate in the Royal Navy. Like all of her class she is named for a British dukedom in this case that of Argyll. \nTitle: HMS Argyll (F231)",
+            "output": "HMS Argyll",
+            "explanation": "The output should be either \"Yes\" or \"No\". Hence, it is negative example."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task630-1781e8891eda4ac5adfa328c51dc120f",
+            "input": "Text:  The Kalyani Group is a privately held industrial group in India. It is focused in four primary sectors viz. Engineering Steel Automotive & Non-Automotive Components Renewable Energy & Infrastructure and Specialty Chemicals.The group's annual turnover exceeded USD 2.5 billion as of 2011 and has joint ventures with companies such as ArvinMeritor Carpenter Technology Corporation Hayes Lemmerz FAW Corp etc. \nTitle: El Gordo de Am\u00e9rica",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task630-3564d5b8ef18455eacbed2fbfe87d509",
+            "input": "Text:  Child & Co. is a formerly independent private bank that is now owned by The Royal Bank of Scotland (RBS). The branch is based at 1 Fleet Street in the City of London. It is authorised as a brand of The Royal Bank of Scotland by the Prudential Regulation Authority. \nTitle: Child & Co.",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task630-b83ceba81d8f468fafe00adaf8ae05c2",
+            "input": "Text:  Poshteh-ye Samavat (Persian: \u067e\u0634\u062a\u0647 \u0633\u0645\u0627\u0648\u0627\u062a\u200e also Romanized as Poshteh-ye Sam\u0101v\u0101t; also known as Cheshmeh Sam\u0101v\u0101t Mashhad\u012b Q\u0101sem-e Sam\u0101v\u0101t and Posht Sam\u0101v\u0101t) is a village in Cheleh Rural District in the Central District of Gilan-e Gharb County Kermanshah Province Iran. At the 2006 census its population was 106 in 22 families. \nTitle: Poshteh-ye Samavat",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task630-ca56c246f5c64199aa0f59127f28d59b",
+            "input": "Text:  The Mystery of the Missing Man published 1956 is the thirteenth novel in the Five Find-Outers written by Enid Blyton. \nTitle: Plaxton Derwent 3000",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task630-9e379bfb6a3e43b89a998294824eb2ff",
+            "input": "Text:  Antietam Iron Furnace Site and Antietam Village is a national historic district at Antietam Washington County Maryland United States. The district consists of the remains of a mid-18th to late-19th century iron furnace site and the nearby related village. Remnants of the ironworks include a dam and race a possible wheel pit or building foundation the possible location of a furnace stack a four-arch stone bridge built by John Weaver in 1832. \nTitle: HMS Halstarr (1807)",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task630-333368d0b1d94765a20bd33b0d500e09",
+            "input": "Text:  Scaevola ramosissima known as the (Purple Fan-flower or Snake flower) is a small shrub or climber in the family Goodeniaceae native to south eastern Australia. The habitat is often near the sea on poor sandy soils frequented by fire. Growing in the eucalyptus forest or heathlands. \nTitle: B\u00e9la Mez\u0151ssy",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task630-657765960a6448c7bcbc5a3876b21e8f",
+            "input": "Text:  Laemmle (pronounced LEM-lee) Theatres is a group of family-run arthouse movie theaters in the Los Angeles area. It was established in 1938 and is owned and operated by Robert Laemmle and his son Greg Laemmle.Robert Laemmle's father Max and uncle Kurt cousins of Universal Pictures founder Carl Laemmle bought their first movie theater in the Highland Park neighborhood of Los Angeles in 1938. \nTitle: Ultimate Comics: Armor Wars",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task630-d5d40f3c72aa446ebfebb1e1345a8ae5",
+            "input": "Text:  The Echo Ranger is a marine autonomous underwater vehicle (AUV) built by Boeing.Originally built in 2001 to capture high-resolution sonar images of sea beds for oil and gas industry companies such as the Exxon Mobil Corporation the Echo Ranger has been undergoing testing for possible use by the military. Among its possible uses are to stalk targets in enemy waters patrol local harbors for national security threats and scour ocean floors to detect environmental hazards. \nTitle: Echo Ranger",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY-SA",
+        "GNU Free Documentation 2.0"
+    ]
+}

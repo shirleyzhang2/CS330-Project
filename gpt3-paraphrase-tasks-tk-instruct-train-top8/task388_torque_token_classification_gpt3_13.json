@@ -1,0 +1,194 @@
+{
+    "Contributors": [
+        "Shailaja Keyur Sampat"
+    ],
+    "Source": [
+        "torque"
+    ],
+    "URL": [
+        "https://allennlp.org/torque.html"
+    ],
+    "Categories": [
+        "Information Extraction"
+    ],
+    "Reasoning": [
+        "Commonsense Reasoning"
+    ],
+    "Definition": [
+        "In this task, you will be given a passage, and your goal is to identify an event from the passage. An event is a single word representing something that happened, is happening, or may happen. The event must not be a pronoun or an adjective."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "News"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Passage: I submitted the hit. The hit was approved, and then I was paid.",
+            "output": "approved",
+            "explanation": "There are three events in this passage (i) submission event (\"submitted\") (ii) the approval event (\"approved\"), and (iii) the payment event (\"paid\"). You can use any one of them as an output."
+        },
+        {
+            "input": "Passage: He was caught in the snow storm.",
+            "output": "storm",
+            "explanation": "There are two events in this passage (i) he was caught (\"caught\") and (ii) the snow storm event (\"storm\"). You can use any one of them as an output. Since snow storm is a noun event with multiple words, we only use the last word 'storm' as an event."
+        },
+        {
+            "input": "Passage: He is on the east coast.",
+            "output": "is",
+            "explanation": "The copula \"is\" an event describing his location."
+        },
+        {
+            "input": "Passage: He wanted to finish the task.",
+            "output": "wanted",
+            "explanation": "There are two events in this passage (i) he wanted to do something (\"wanted\") and (ii) finish the task (\"finish\"). Either of wanted or finish can be used as output. However note that though there is an uncertainty about the task i.e. indeed finished or not, \"finish\" is still a valid event."
+        },
+        {
+            "input": "Passage: If he works hard, then he will finish the task.",
+            "output": "finish",
+            "explanation": "There are two events in this passage (i) he works hard (\"works\") and (ii) he will finish the task. (\"finish\"). You can use either of works or finish as an output. Here the second event happens only if the first one is true, but both are considered as events. This is an example of hypothetical event."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Passage: He is happy.",
+            "output": "happy",
+            "explanation": "Happy is an adjective and hence cannot be an event. The output should be \"is\" which represents an event describing his attribute of happiness."
+        },
+        {
+            "input": "Passage: He was caught in the elevator.",
+            "output": "elevator",
+            "explanation": "Not every noun can be an event. Here \"elevator\" is an object and one cannot say \"an elevator happened\" hence it is not an event. \"caught\" is a correct output."
+        },
+        {
+            "input": "Passage: The flu season is winding down.",
+            "output": "flu season",
+            "explanation": "The \"flu season\" is a noun events with multiple words, but only last word \"season\" sould be used as an event as per definition."
+        },
+        {
+            "input": "Passage: The death toll climbed up to 99 soon after the explosion.",
+            "output": "blast",
+            "explanation": "There are two events in this passage \"climbed\" and \"explosion\". Though blast is a synonym of explosion, it is not present in the passage. The output must contain events that are present in the passage."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task388-678d0bfcdfd84f3b8f895586265ebc05",
+            "input": "Passage: \"The non-food operations were largely Mr. Lortie's creation {and} his strategy didn't work,\" said Steven Holt, a financial analyst with Midland Doherty Ltd. Provigo's profit record over the past two years tarnished the company's and Mr. Lortie's reputations.",
+            "output": [
+                "operations",
+                "creation",
+                "strategy",
+                "work",
+                "said",
+                "record",
+                "tarnished"
+            ]
+        },
+        {
+            "id": "task388-d81c308dd25e4e8c8b586c4947cdd589",
+            "input": "Passage: The euro was quoted at 1.2866-2869 dollars and 151.15-19 yen compared with Tuesday's 5 p.m. quotes of 1.2839-2849 dollars and 151.39-49 yen in New York and 1.2825-2827 dollars and 151.49-53 yen in Tokyo. ",
+            "output": [
+                "quoted",
+                "compared",
+                "Tuesday",
+                "quotes"
+            ]
+        },
+        {
+            "id": "task388-55f0b7a7a6984cd898125b233b943402",
+            "input": "Passage: A crew member of the US aircraft carrier Independence had to be airlifted to a Sydney hospital after he was hit by a fighter plane attempting a night landing on the ship. The incident late Wednesday left the man with fractured legs and arms, an ambulance spokesman here said.",
+            "output": [
+                "airlifted",
+                "hit",
+                "attempting",
+                "landing",
+                "incident",
+                "left",
+                "said"
+            ]
+        },
+        {
+            "id": "task388-bc6e6f763b9a44eeaf3d7e4d13751881",
+            "input": "Passage: He is the most favored candidate in both of the events at Asiad if not for the sudden exit. Shaheen set the Asian record of 7:56.63 in the 5000m and also won the 3000m title at the Asian Indoor Athletics Championships in Pattaya City of Thailand.",
+            "output": [
+                "is",
+                "set",
+                "Championships",
+                "events",
+                "exit",
+                "5000m",
+                "3000m"
+            ]
+        },
+        {
+            "id": "task388-081e94e2892b4aa0b19cf1c92cad9582",
+            "input": "Passage: Kyle Technology Corp. said a Seattle investor has signed a letter of intent to buy the company for about $3.1 million, or $1.20 a share. The investor, Donald A. Wright, plans to run the company, said a spokesman for Kyle.",
+            "output": [
+                "said",
+                "signed",
+                "buy",
+                "plans",
+                "run",
+                "said"
+            ]
+        },
+        {
+            "id": "task388-6debd2e943af40bd95b07f012c04c418",
+            "input": "Passage: Farmer peasants make up about 70 percent of China's population of 1.3 billion but agriculture contributes only 15 percent to the country's gross domestic product. Experts also point to the widening income gap between rural and urban residents, as an average farmer makes only a third as much as his urban counterpart.",
+            "output": [
+                "make",
+                "contributes",
+                "point",
+                "widening",
+                "makes",
+                "between"
+            ]
+        },
+        {
+            "id": "task388-5178844f60ff4bad815349124369fd33",
+            "input": "Passage: The right-wing Daily Mail struck a similar note, talking of \"Blair's surrender\" and \"spectacular U-turn\" arguing that \"in return for the gigantic cash handover, he was set to get virtually nothing.\" The conservative Daily Telegraph said he \"had performed his biggest climbdown over Europe\" by giving up part of the rebate \"without winning any commitment from France on early reform of farm subsidies\".",
+            "output": [
+                "struck",
+                "talking",
+                "arguing",
+                "handover",
+                "get",
+                "said",
+                "performed",
+                "climbdown",
+                "up",
+                "winning",
+                "commitment",
+                "surrender"
+            ]
+        },
+        {
+            "id": "task388-3980d7baab2f41af8fa5b90fe186f17e",
+            "input": "Passage: The company has five other U.S. plants, including a modern facility at its Battle Creek headquarters known as Building 100, which is to add bran-processing and rice-processing capacity next year. General Mills, meanwhile, finds itself constrained from boosting sales further because its plants are operating at capacity.",
+            "output": [
+                "has",
+                "including",
+                "known",
+                "add",
+                "bran-processing",
+                "rice-processing",
+                "finds",
+                "constrained",
+                "boosting",
+                "sales",
+                "operating"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Apache 2.0"
+    ]
+}

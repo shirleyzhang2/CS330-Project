@@ -1,0 +1,128 @@
+{
+    "Contributors": [
+        "Arit Chanda"
+    ],
+    "Source": [
+        "sts_b"
+    ],
+    "URL": [
+        "https://dl.fbaipublicfiles.com/glue/data/STS-B.zip"
+    ],
+    "Categories": [
+        "Text Matching"
+    ],
+    "Reasoning": [
+        "Textual Entailment -> Analogical Reasoning"
+    ],
+    "Definition": [
+        "You will be given two sentences, and your task is to evaluate the similarity between them and classify them into one of the following classes: 0 : The two sentences are completely dissimilar. 1 : The two sentences are not equivalent, but are on the same topic. 2 : The two sentences are not equivalent, but share some details. 3 : The two sentences are roughly equivalent, but some important information differs/missing. 4 : The two sentences are mostly equivalent, but some unimportant details differ. 5 : The two sentences are completely equivalent, as they mean the same thing."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Books",
+        "Dialogue"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Sentence 1: A plane is taking off. Sentence 2: An air plane is taking off.",
+            "output": "5",
+            "explanation": "Here both statements are talking about the same thing hence it will be classified as a 5."
+        },
+        {
+            "input": "Sentence 1: A man is playing a large flute. Sentence 2: A man is playing a flute.",
+            "output": "4",
+            "explanation": "In this example both statements mean the same thing but only unimportant details like the size of the flute is missing in the second statement. Hence, it is classified as a 4."
+        },
+        {
+            "input": "Sentence 1: Three men are playing chess. Sentence 2: Two men are playing chess.",
+            "output": "3",
+            "explanation": "In this example important detail of the number of men playing chess is wrong. Hence this example will be clasified as a 3."
+        },
+        {
+            "input": "Sentence 1: A man is smoking. Sentence 2: A man is skating.",
+            "output": "0",
+            "explanation": "Here there is no similarity between the two sentences hence the output classification is 0."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Sentence 1: A man is playing the cello. Sentence 2: A man seated is playing the cello.",
+            "output": "3",
+            "explanation": "Sentence 1 and 2 are only different by an unimportant detail of the man seating so the output should have been 4."
+        },
+        {
+            "input": "Sentence 1: The man is playing the piano. Sentence 2: The man is playing the guitar.",
+            "output": "0",
+            "explanation": "In this example both our sentences are sharing some details about playing an musical instrument so the correct classification should have been 2."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1347-afbb0048cebb437f869f32afb3fb30b1",
+            "input": "Sentence 1: A woman sits alone against a brick wall Sentence 2: A woman is walking with a red bag.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "id": "task1347-67545d072fad44ddbfd204ea26eacc34",
+            "input": "Sentence 1: Landon And So This is Christmas We are all vessels filled with many wonders. Sentence 2: Play With Fire We are all vessels filled with many wonders.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "id": "task1347-a18a521123314e638e3aa67d51d1eb96",
+            "input": "Sentence 1: 18 killed, 108 wounded in wave of bombings in Iraq Sentence 2: 9 killed, 31 wounded in car bombs in Iraq's Kirkuk",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "id": "task1347-95c06845838040a4a498f99a52022c2a",
+            "input": "Sentence 1: A brown furry animal stands behind some plants. Sentence 2: A dog pants while standing in the woods.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "id": "task1347-1901fc07dd024f7bb338691c4cdb0b14",
+            "input": "Sentence 1: A woman is cutting a plastic sheet. Sentence 2: A woman is playing a guitar on streets.",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "id": "task1347-58bcc195461149a985f76d6bd6ae2c38",
+            "input": "Sentence 1: A man is dangling a mouse near a snake. Sentence 2: A man is feeding a mice to a snake.",
+            "output": [
+                "3"
+            ]
+        },
+        {
+            "id": "task1347-e3c298ad595e47bd8a08a31ede774f4c",
+            "input": "Sentence 1: A man is dancing on the ceiling. Sentence 2: A man is dancing on the ceiling of a room.",
+            "output": [
+                "5"
+            ]
+        },
+        {
+            "id": "task1347-9fa5b273574441728d4bb2ee126cc4b4",
+            "input": "Sentence 1: A man played the piano. Sentence 2: A man plays a piano.",
+            "output": [
+                "4"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

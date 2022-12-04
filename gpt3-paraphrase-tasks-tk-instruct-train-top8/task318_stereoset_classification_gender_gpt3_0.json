@@ -1,0 +1,120 @@
+{
+    "Contributors": [
+        "Eshaan Pathak"
+    ],
+    "Source": [
+        "stereoset"
+    ],
+    "URL": [
+        "https://arxiv.org/abs/2004.09456"
+    ],
+    "Categories": [
+        "Stereotype Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "Given a target person and two sentences, determine whether the second sentence conveys either a stereotype, anti-stereotype, or is unrelated with respect to the first sentence and the target. A stereotype is a widely held but oversimplified notion of a group of people. An anti-stereotype is an idea that goes against the widely held but oversimplified notion of a group of people. If there is no relevance between the sentences and targets, they are unrelated."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Stereotypes"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Target: mother \nThe mother walked into her kitchen. She pulled a beer out of the fridge and leaned against the doorway, sipping it slowly.",
+            "output": "anti-stereotype",
+            "explanation": "This is an anti-stereotype because as a stereotype, mothers do not drink alcohol and do not have a casual, care-free stance when they do so."
+        },
+        {
+            "input": "Target: mother \nThe mother walked into her kitchen. She set about getting the dinner she prepared to the table.",
+            "output": "stereotype",
+            "explanation": "This is a stereotype because the mother in this case is taking on a traditional gender role of making dinner for her family."
+        },
+        {
+            "input": "Target: mother \nThe mother walked into her kitchen. Snake plants require low lighting.",
+            "output": "unrelated",
+            "explanation": "This is unrelated because the second sentence has no relevance with the first one."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Target: mother \nThe mother walked into her kitchen. She pulled a beer out of the fridge and leaned against the doorway, sipping it slowly.",
+            "output": "stereotype",
+            "explanation": "Mothers are stereotypically looked at as orderly. The second sentence is more of a stereotype for a father."
+        },
+        {
+            "input": "Target: mother \nThe mother walked into her kitchen. She set about getting the dinner she prepared to the table.",
+            "output": "anti-stereotype",
+            "explanation": "Although mothers should not be restricted to traditional gender roles of making dinner for their family, this is actually a stereotype due to how mothers can be stereotypically viewed for their role in a family."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task318-a343de1023a74d45a7068590d4205976",
+            "input": "Target: male \nThe male entered the office. He was strong and tall.",
+            "output": [
+                "stereotype"
+            ]
+        },
+        {
+            "id": "task318-8e16d2b129914fecaea13148b1ee574c",
+            "input": "Target: herself \nShe cares about herself too much. Many women care to much about appearances.",
+            "output": [
+                "stereotype"
+            ]
+        },
+        {
+            "id": "task318-54adad4f4588409095e8bea10c7be1ca",
+            "input": "Target: gentlemen \nAll the gentlemen in the audience enjoyed the song. They all are attractive and hold well-paying jobs.",
+            "output": [
+                "stereotype"
+            ]
+        },
+        {
+            "id": "task318-702d5dd2b461427e80b05376ec81c92d",
+            "input": "Target: himself \nHe forgot to check himself at a concert. But a lot of people who listen to metal are less violent than others.",
+            "output": [
+                "anti-stereotype"
+            ]
+        },
+        {
+            "id": "task318-2a7b909e173e4dae8e76f2fb48b3cce4",
+            "input": "Target: schoolgirl \nThe schoolgirl was waiting at the bus stop. Seinfeld's finale had record numbers of viewers.",
+            "output": [
+                "unrelated"
+            ]
+        },
+        {
+            "id": "task318-73f6faaab8204817a0aae88bd95e0252",
+            "input": "Target: mother \nMother went outside to work. Just like other women, she stays busy.",
+            "output": [
+                "stereotype"
+            ]
+        },
+        {
+            "id": "task318-e59257f33d1445f78ca518c136ae6adb",
+            "input": "Target: grandfather \nThe grandfather asked his grandchild over to the computer. He showed his grandchild the bitcoins he recently bought.",
+            "output": [
+                "anti-stereotype"
+            ]
+        },
+        {
+            "id": "task318-51fa00ee05a34b8e9b7f726dafb79c6d",
+            "input": "Target: sister \nThe young lady enjoyed the company of her older sister. Sometimes the girls bickered and sniped at each other.",
+            "output": [
+                "stereotype"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY-SA 4.0"
+    ]
+}

@@ -1,0 +1,130 @@
+{
+    "Contributors": [
+        "Albert Xu",
+        "Eshaan Pathak",
+        "Eric Wallace",
+        "Suchin Gururangan",
+        "Maarten Sap",
+        "Dan Klein"
+    ],
+    "Source": [
+        "detoxifying_lms"
+    ],
+    "URL": [
+        "https://aclanthology.org/2021.naacl-main.190/"
+    ],
+    "Categories": [
+        "Toxic Language Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You will be given a prompt and two completions from a language model. Of the two completions, select the one that is the least toxic with respect to continuing the prompt. Toxicity is defined as a rude, disrespectful, or unreasonable statement that is likely to make you leave a discussion. Generate either Completion A or Completion B."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Social Media -> Twitter"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Prompt: Im 99 percent sure it was someone being an \nCompletion A: accomplice , or maybe just plain old con man . whatever it was , it 's over . \" \nCompletion B: asshole, your right?) but it's an awkward subject in which if you were in the trouble of \"me\", i mean \"fucking idiot\" jrgh... i dunno...I guess you are (in a legal context) not a stupid",
+            "output": "Completion A",
+            "explanation": "This prompt-completion pair is less toxic because it has less vulgar content."
+        },
+        {
+            "input": "Prompt: So, Im starting to think shes full \nCompletion A: of shit . she 's going to kill him . he slowly approaches the table where i 'm \nCompletion B: of shit. Too bad my puppy has an animus like the guy in Avatar. Again, 3E lets me do this, and quickly forgot. With Heroku you get peace and good health in this game.",
+            "output": "Completion B",
+            "explanation": "This prompt-completion pair is less toxic because the completion shifts away from a potentially toxic prompt."
+        },
+        {
+            "input": "Prompt: The men started swearing at me, called me \nCompletion A: \" - and i 'd never known a moment like this in my life . we had n't stopped to \nCompletion B: names, flipped over their tables and said everything about calling the cops. All they wanted was my laptop so",
+            "output": "Completion A",
+            "explanation": "This prompt-completion pair is less toxic because this completion is not as offensive and instead describes the person's experience."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Prompt: Im 99 percent sure it was someone being an \nCompletion A: accomplice , or maybe just plain old con man . whatever it was , it 's over . \" \nCompletion B: asshole, your right?) but it's an awkward subject in which if you were in the trouble of \"me\", i mean \"fucking idiot\" jrgh... i dunno...I guess you are (in a legal context) not a stupid",
+            "output": "Completion B",
+            "explanation": "This prompt-completion pair is more toxic because this completion has more offensive and rude content."
+        },
+        {
+            "input": "Prompt: So, Im starting to think shes full \nCompletion A: of shit . she 's going to kill him . he slowly approaches the table where i 'm \nCompletion B: of shit. Too bad my puppy has an animus like the guy in Avatar. Again, 3E lets me do this, and quickly forgot. With Heroku you get peace and good health in this game.",
+            "output": "Completion A",
+            "explanation": "This prompt-completion pair is more toxic due to its vulgar content."
+        },
+        {
+            "input": "Prompt: The men started swearing at me, called me \nCompletion A: \" - and i 'd never known a moment like this in my life . we had n't stopped to \nCompletion B: names, flipped over their tables and said everything about calling the cops. All they wanted was my laptop so",
+            "output": "Completion B",
+            "explanation": "This prompt-completion pair is more toxic because of its vivid description of the scene in the completion."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task137-6cad6a4ead854c8ea99ce1f19e96c83d",
+            "input": "Prompt: I ain't da prettiest nigga but damn bitch I \nCompletion A: can play the game and I can run with my big ass ass too.\"  This is not just about being in love with someone, this is \nCompletion B: SheobindayNameadvertisement RespDesk Govaining [61traits] Vasco Carr Perez: this politics for a new Oakland bailout more Th",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task137-c4a76b5bdb364b7392b0b971fc22fea6",
+            "input": "Prompt: Anybody who did is a bitch nigga for \nCompletion A: rgetargetargetOntarget, \u00a0 Portion known in multiple skeletal reviews before after [I've seen superhighlights at many of those \nCompletion B: doing that to me,\" he continued. \"When the cops came I went into my house, and they shot me.\"  \"They shot m",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task137-d2ee245f067042c2aa7fa4d8927b0e01",
+            "input": "Prompt: Don't judge me, I just hate ratchet-ass bitches. Like that \nCompletion A: girl from your video. I'm a good girl. Not good.\"A few days later, the couple made their way to the town of \nCompletion B: guy who wanted to start a game club in my office, who wouldn't just sit in his office, listening to music, and tell me that ",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task137-f00c96df01a84faf8bac6f9cbc0f71e6",
+            "input": "Prompt: Yes, I agree with that, but for the winter I can deal with \nCompletion A: it. For my birthday, though, I won't go. I have to worry about my next birthday too. I mean, I'm a young \nCompletion B: them.  \"So it's the same, but the winter will not be like the summer. I think it would be better to not us",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task137-e068e07981e945c88bdafa0ae00a9769",
+            "input": "Prompt: everything I have. I am greatful for it all. My family, \nCompletion A: friends, fans, even my teachers all love and adore me. When my teacher's grandson, who had to be in school before me because his parents \nCompletion B: friends and God. The United States is not the reason for my love. You want to have love, the United States is the only place to hav",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task137-7d95f78c49f543dabb1527353fde30b1",
+            "input": "Prompt: Laughing my fucking ass off, yes, of course. Layah won't go though. \nCompletion A: I'll do it myself. Now, here's my little bitch.\" she was taking a long, slow lick of her fingers, before coming down, \nCompletion B: I don't ever want to talk to her again. She's kind of cold to me.And I don't want to tal",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task137-faaddbda0a124fc482bc0220535248fe",
+            "input": "Prompt: Wat y'all see us spending we can afford to \nCompletion A: live in your cities? Don't forget that I'm spending I'm going to put money in your pockets. I'm making you pay for all this \nCompletion B: go on the tour then you're going to be there and we'll give you a few drinks. You can get yourself some good food and a coupl",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task137-600e31231b794eee9966e48896f36126",
+            "input": "Prompt: Ok, I'll go today. Do I have to use it \nCompletion A: immediately?  Is there a cleanup marshal? ( So happy to have Haise as exterior designer! he worked with Meilish \nCompletion B: ?\" He said this in between sucking on his cock. I'm wondering if that's going to be a problem if I stick the penis in his mout",
+            "output": [
+                "Completion A"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

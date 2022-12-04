@@ -1,0 +1,120 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "matres"
+    ],
+    "URL": [
+        "https://github.com/CogComp/MATRES"
+    ],
+    "Categories": [
+        "Information Extraction"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "Given a context and a verb separated by a newline character, you have to identify if the given verb implies an opinion, an intention, a wish, or not. Please note that a verb refers to an intention only if it refers to an event planned to happen in the future and is not conditional (or part of a condition). The output should be 'Yes' if the verb refers to an opinion, an intention, or a wish; and 'No' otherwise."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "News"
+    ],
+    "Positive Examples": [
+        {
+            "input": "It was followed by Denmark, Norway, Germany, France, Greece, Luxembourg, Spain, Britain, the United States, Iceland, Belgium, Italy, Portugal and Turkey. NATO decided at last year's Madrid summit to (invite) the three eastern European countries to start accession talks.  \n Verb: invite",
+            "output": "Yes",
+            "explanation": "They planned to \"invite\" the three eastern European countries, so this verb refers to an intention."
+        },
+        {
+            "input": "In Washington today, the Federal Aviation Administration (released) air traffic control tapes from the night the TWA Flight eight hundred went down.  \n Verb: released",
+            "output": "No",
+            "explanation": "In this sentence, the releasing event happened in the past, and hence it's not an intention."
+        },
+        {
+            "input": "We will act again if we have evidence he is (rebuilding) his weapons of mass destruction capabilities, senior officials say. In a bit of television diplomacy, Iraq\u2019s deputy foreign minister responded from Baghdad in less than one hour.  \n Verb: rebuilding",
+            "output": "No",
+            "explanation": "In this sentence, the verb is part of of a condition. Therefore, it cannot be known for sure if he is already rebuilding weapons but we have no evidence, or if he will be building weapons in the future, and hence it's not an intention."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "The Justice Department wants the appeals court to suspend the temporary injunction issued Thursday and also order Elian's great-uncle, Lazaro Gonzalez, to release the boy. The relatives want the court to let them meet with Elian's father without being (required) to surrender the boy.  \n Verb: required",
+            "output": "Yes",
+            "explanation": "In this sentence, required is not an intention, wish, or opinion, as it is part of a condition."
+        },
+        {
+            "input": "The federal charge also carries a fine of up to $250,000. The newly filed charges will (intensify) the ongoing international manhunt, Tolbert said.  \n Verb: intensify",
+            "output": "No",
+            "explanation": "In this sentence, \"intensify\" is planned to happen in the future, and it is an opinion or intention."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task456-51924efb892d4d22ad91ff0e87345792",
+            "input": "Gonzalez also wrote to Attorney General Janet Reno earlier this week, demanding that Elian be returned to him and saying he does not recognize the courts hearing the custody battle. The Justice Department (said) it was reviewing that letter.  \n Verb: said",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task456-04c43703b17d44bf8a0edc0c2ed7bef9",
+            "input": "We cannot stop mobilizing ! The struggle must not stop for one minute !  (said) a message that was read Wednesday night to several thousand rallying Cuban scientists.  \n Verb: said",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task456-d1d74e5ffe47458a95f594dd168a8adb",
+            "input": "It's easy to foresee the day the when users will be able to send anything from their Web browser or Maps directly to Keep. The prospect of Keep (incorporating) features of services such as Pinterest or Pocket, or even making it easy to catalog streaming media, could turn it into something big.  \n Verb: incorporating",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task456-df542b0b7e2446d0bcebe55ef9b82700",
+            "input": "Officials in California are warning residents that oncoming rains will (cause) dangerous and unpredictable landslides.  \n Verb: cause",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task456-01f2bbb7971d4d86b1ac44b0d77513d1",
+            "input": "Kopp also is wanted for questioning in at least two other shootings of doctors who performed abortions. The Canadian warrant issued Monday (charged) Kopp with attempted murder in the 1995 shooting of Dr. Hugh Short, who was wounded in the elbow but survived the attack at his home in Ancaster, Ontario.  \n Verb: charged",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task456-8700559252d34f07becc0d246bbc2643",
+            "input": "People have been calling, and we've been reassuring them that we do n't see further problems,  said Mary Mkimbo, a spokeswoman in New York for the Kenya Tourist Office. The State Department, which does not want to (see) Kenya and Tanzania punished economically as a result of terrorist attacks that were clearly targeted at the United States, has lifted dire travel warnings issued just the bombings that urged Americans to stay away from the two countries.  \n Verb: see",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task456-bcd76f9258164326af1f915a470f5f52",
+            "input": "Reno said the state court had no jurisdiction in the case, but that the Miami relatives should be able to make their case in federal court. Elian's paternal great-uncle, Lazaro Gonzalez, is fighting to keep the boy with him in Miami, saying he can (give) the child a better life outside Cuba.  \n Verb: give",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task456-6907ca849a00431284ba45858f90a36c",
+            "input": "A decade ago, the military planning of Poland, Hungary and the Czech Republic was built around the possibility of a ground assault toward the west. As NATO allies, the goal (is) much smaller armies capable of meeting a variety of contingencies.  \n Verb: is",
+            "output": [
+                "No"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

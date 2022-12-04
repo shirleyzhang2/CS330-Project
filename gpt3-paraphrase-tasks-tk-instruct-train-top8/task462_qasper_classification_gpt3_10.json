@@ -1,0 +1,120 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "qasper"
+    ],
+    "URL": [
+        "https://allenai.org/project/qasper/home"
+    ],
+    "Categories": [
+        "Question Understanding"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "In this task, you will be presented with a context from an academic paper and a question based on that context. You will need to classify the questions as \"Extractive\", \"Abstractive\", or \"Yes-no\" questions. Extractive questions can be answered by combining extracts taken from the context into a summary. Answering abstractive questions involves paraphrasing the context using new sentences. Yes-no questions are questions whose expected answer is one of two choices, usually yes or no."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Scientific Research Papers"
+    ],
+    "Positive Examples": [
+        {
+            "input": "We build a dataset of Twitter accounts based on two lists annotated in previous works. For the non-factual accounts, we rely on a list of 180 Twitter accounts from BIBREF1. On the other hand, for the factual accounts, we use a list with another 32 Twitter accounts from BIBREF19 that are considered trustworthy by independent third parties. \n Question: How did they obtain the dataset?",
+            "output": "Extractive",
+            "explanation": "The answer to this question has been explicitly mentioned in the context, so the question is extractive."
+        },
+        {
+            "input": "We evaluate our pointer-generator performance using BLEU score. The baseline language model is trained using RNNLM BIBREF23 . Perplexity measure is used in the evaluation.\n\n \n Question: Did they use other evaluation metrics?",
+            "output": "Yes-no",
+            "explanation": "This is a good example, and the given question is a yes-no question."
+        },
+        {
+            "input": "As in the example above, we pre-process documents by removing all numbers and interjections. \n Question: what processing was done on the speeches before being parsed?",
+            "output": "Abstractive",
+            "explanation": "Answering this question needs paraphrasing the context, so this question is abstractive."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "For the English version, we performed both a thorough manual analysis and automatic evaluation across three commonly used TS datasets from two different domains  For the English version, we performed both a thorough manual analysis and automatic evaluation across three commonly used TS datasets from two different domains  The evaluation of the German version is in progress. \n Question: What are the corpora used for the task?",
+            "output": "Yes-no",
+            "explanation": "This question is extractive, and it's not a yes-no question."
+        },
+        {
+            "input": "For Turkish, as the first dataset, we utilised the movie reviews which are collected from a popular website. The number of reviews in this movie corpus is 20,244 and the average number of words in reviews is 39. Each of these reviews has a star-rating score which is indicative of sentiment. These polarity scores are between the values 0.5 and 5, at intervals of 0.5. We consider a review to be negative it the score is equal to or lower than 2.5. On the other hand, if it is equal to or higher than 4, it is assumed to be positive. We have randomly selected 7,020 negative and 7,020 positive reviews and processed only them. \n Question: What details are given about the movie domain dataset?",
+            "output": "Extractive",
+            "explanation": "This question is Abstractive because we need to paraphrase the context to get to the answer."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task462-e1dbaac7aa634fc3ba24b659fd4f1596",
+            "input": "Table TABREF23 shows the Pearson, Spearman and Kendall correlation of Rouge and Sera, with pyramid scores. Interestingly, we observe that many variants of Rouge scores do not have high correlations with human pyramid scores. The lowest F-score correlations are for Rouge-1 and Rouge-L (with INLINEFORM0 =0.454). Weak correlation of Rouge-1 shows that matching unigrams between the candidate summary and gold summaries is not accurate in quantifying the quality of the summary. \n Question: What different correlations result when using different variants of ROUGE scores?",
+            "output": [
+                "Extractive"
+            ]
+        },
+        {
+            "id": "task462-5cbded8d7b624ec2ad7601744a7433dd",
+            "input": "The accuracy of our model is 7.8% higher than the best result achieved by LSVM. The results show that this model can perform better than state-of-the-art baselines including hybrid CNN BIBREF15 and LSTM with attention BIBREF16 by 3.1% on the validation set and 1% on the test set. \n Question: What are state of the art methods authors compare their work with? ",
+            "output": [
+                "Abstractive"
+            ]
+        },
+        {
+            "id": "task462-2ec08f06c57644d7920d846e45525178",
+            "input": " Inspired by the line of work reported in these studies, we propose to use modified objective functions for a different purpose: learning more interpretable dense word embeddings. By doing this, we aim to incorporate semantic information from an external lexical resource into the word embedding so that the embedding dimensions are aligned along predefined concepts. This alignment is achieved by introducing a modification to the embedding learning process. In our proposed method, which is built on top of the GloVe algorithm BIBREF2 , the cost function for any one of the words of concept word-groups is modified by the introduction of an additive term to the cost function.  \n Question: What is the additive modification to the objective function?",
+            "output": [
+                "Abstractive"
+            ]
+        },
+        {
+            "id": "task462-74420a0281f24991914295b062ca06a6",
+            "input": "Very recently, the success of deep neural networks in many natural language processing tasks ( BIBREF20 ) has inspired new work in abstractive summarization . BIBREF2 propose a neural attention model with a convolutional encoder to solve this task.  More recently, BIBREF4 extended BIBREF2 's work with an RNN decoder, and BIBREF8 proposed an RNN encoder-decoder architecture for summarization. Both techniques are currently the state-of-the-art on the DUC competition. \n Question: What is the state-of-the art?",
+            "output": [
+                "Abstractive"
+            ]
+        },
+        {
+            "id": "task462-646c1dc2b3b54dfd937099a6297d94cd",
+            "input": "The final code-mixed tweets were forwarded to a group of three annotators who were university students and fluent in both English and Hindi. \n Question: How many annotators tagged each text?",
+            "output": [
+                "Extractive"
+            ]
+        },
+        {
+            "id": "task462-c205eab7fc8f4af1815b62bf55029f6b",
+            "input": "To enable this, we use a bifocal attention mechanism which computes an attention over fields at a macro level and over values at a micro level. We then fuse these attention weights such that the attention weight for a field also influences the attention over the values within it. Fused Bifocal Attention Mechanism\nIntuitively, when a human writes a description from a table she keeps track of information at two levels. At the macro level, it is important to decide which is the appropriate field to attend to next and at a micro level (i.e., within a field) it is important to know which values to attend to next. To capture this behavior, we use a bifocal attention mechanism as described below. Fused Attention: Intuitively, the attention weights assigned to a field should have an influence on all the values belonging to the particular field. To ensure this, we reweigh the micro level attention weights based on the corresponding macro level attention weights. In other words, we fuse the attention weights at the two levels as: DISPLAYFORM0\n\nwhere INLINEFORM0 is the field corresponding to the INLINEFORM1 -th value, INLINEFORM2 is the macro level context vector. \n Question: What is a bifocal attention mechanism?",
+            "output": [
+                "Extractive"
+            ]
+        },
+        {
+            "id": "task462-deee6f5bc5ae47fdb6384dabae4eaa5c",
+            "input": "In order to achieve these configuration the TIMIT data was split. Fig. FIGREF12 illustrates the split of the data into 8 subsets (A-H). The TIMIT dataset contains speech from 462 speakers in training and 168 speakers in the test set, with 8 utterances for each speaker. The TIMIT training and test set are split into 8 blocks, where each block contains 2 utterances per speaker, randomly chosen. Thus each block A,B,C,D contains data from 462 speakers with 924 utterances taken from the training sets, and each block E,F,G,H contains speech from 168 test set speakers with 336 utterances.\n\nFor Task a training of embeddings and the classifier is identical, namely consisting of data from blocks (A+B+C+E+F+G). The test data is the remainder, namely blocks (D+H). For Task b the training of embeddings and classifiers uses (A+B+E+F) and (C+G) respectively, while again using (D+H) for test. Task c keeps both separate: embeddings are trained on (A+B+C+D), classifiers on (E+G) and tests are conducted on (F+H). Note that H is part of all tasks, and that Task c is considerably easier as the number of speakers to separate is only 168, although training conditions are more difficult. \n Question: What TIMIT datasets are used for testing?",
+            "output": [
+                "Abstractive"
+            ]
+        },
+        {
+            "id": "task462-f9170fc6ec084072bb53351302074f4f",
+            "input": "We compare eight different models in our experiments. Four of them have a Projected Layer (see Fig. FIGREF2), while the others do not have, and this is the only difference between these two groups of our models. So, we actually include four models in our experiments (having a projected layer or not). Firstly, LastStateRNN is the classic RNN model, where the last state passes through an MLP and then the LR Layer estimates the corresponding probability. In contrast, in the AvgRNN model we consider the average vector of all states that come out of the cells. The AttentionRNN model is the one that it has been presented in BIBREF9. Moreover, we introduce the MultiAttentionRNN model for the harassment language detection, which instead of one attention, it includes four attentions, one for each category. \n Question: What are the different variations of the attention-based approach which are examined?",
+            "output": [
+                "Abstractive"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

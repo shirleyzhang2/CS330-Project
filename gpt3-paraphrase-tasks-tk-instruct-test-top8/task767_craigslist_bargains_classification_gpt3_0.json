@@ -1,0 +1,117 @@
+{
+    "Contributors": [
+        "Ritvik Gaur"
+    ],
+    "Source": [
+        "craigslist_bargains"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/craigslist_bargains"
+    ],
+    "Categories": [
+        "Text Categorization"
+    ],
+    "Reasoning": [
+        "Reasoning on Social Interactions"
+    ],
+    "Definition": [
+        "Given a text passage comprising of dialogue of negotiations between a seller and a buyer about the sale of an item, classify the item into one of these categories: 'housing', 'furniture', 'bike', 'phone', 'car', 'electronics'. The output should be the name of the category from the stated options."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Seller: hi\nBuyer: Hello\nSeller: do you care to make an offer?\nBuyer: The place sounds nice, but may be a little more than I can afford\nSeller: well how much can you soend?\nBuyer: I was looking for something in the 1500-1600 range\nSeller: That is really unreasonable considering all the immenities and other going rates, you would need to come up to at least 3000\nBuyer: I have seen some 2 bedrooms for that price, which I could split the cost with a roommate, so even with amenities, this may be out of my range\nSeller: it may be then... the absolute lowest i will go is 2700. that is my final offer.\nBuyer: Ok, I think the most I could spend on this is 2000 - we are a ways apart\nSeller: ya that is far too low like i said 2700\nBuyer: Ok, thanks for your consideration. I will have to keep looking for now.\nSeller: good luck",
+            "output": "housing",
+            "explanation": "The answer 'housing' is correct because a house is being talked about which is indicated by the mention of 'bedrooms' and 'amenities' which are words that are both related to housing."
+        },
+        {
+            "input": "Seller: Hello, how are you today\nBuyer: Hi, very well thank you! So, is the DVD player in a good condition?\nSeller: It is in great condition. I have barely taken it out of the box. \nBuyer: How much can you give it for?\nSeller: The price is $55\nBuyer: Yeah but its too much for me\nSeller: I understand that would normally be a lot for a used DVD player but this item has only been used for one week.  \nBuyer: Yeah, but there are a lot of different options in the market. I am a student and can only afford what my budget allows me to do so. I can pay $41. Will you accept it?\nSeller: I understand a student's budget, as I have no to long ago graduated myself. I just am already letting it go real cheap. I paid $130 for the product. The only reason I am parting with it is that It only streams the big streaming channels like Netflix, Hulu, Vudu and Youtube and I bought a DVD player/Android Box combo that will allow me to stream those plus add my own channels. I can't possibly sell it for $41. \nBuyer: Okay I can only afford $48 that's the last I can pay\nSeller: Make it $50 and we have a deal. I know it is a stretch to your budget but trust me with everything this player does, you will save more than $2 on entertainment",
+            "output": "electronics",
+            "explanation": "The answer 'electronic' is correct as the buyer and seller are talking about a 'DVD player' which is an electronic item."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Seller: Hello.\nBuyer: Hello. I saw your listing and I am interested in your car. However, I have a few questions.\nSeller: Sure, go ahead.\nBuyer: Has it been in any major accidents?\nSeller: No, I`ve kept it in very good condition.\nBuyer: All of the electronics are in working order, correct?\nSeller: Yes, everything has been checked out recently.\nBuyer: Great! Would you take $10,000? 120k miles is kinda a lot.\nSeller: I`m open to negotiate but 10k is a bit low. We could meet in the middle and say 13 000? I`ll include the extra speakers I recently purchased.\nBuyer: 13,000 is fair, however I can only afford paying 12,500\nSeller: Alright, I think that`s reasonable. We can agree on 12,500 then.\nBuyer: Great!",
+            "output": "toys",
+            "explanation": "This answer is incorrect because 'toys' does not belong in any of the categories from which the answer is to be chosen from ('phone', 'electronics', 'housing', 'furniture', 'car', 'bike'). The correct answer is 'car' because a car is being talked about in this conversation between the buyer and seller."
+        },
+        {
+            "input": "Buyer: I'm interested in this item, but I had some questions\nSeller: Geat, ask away.\nBuyer: Do I have to remove it myself?\nSeller: I am renting out the appartment, you \"Don't Remove Anything\"\nBuyer: Nice. Is it fully furnished?\nSeller: No, you will need your own \"basic\" furnishing\nBuyer: How much is the security deposit, is there one?\nSeller: Just first and last month rent\nBuyer: It's a bit pricy, I'm not sure if I can afford it...\nSeller: I'm only asking $140, that is really cheap for the area\nBuyer: I'd totally take 140!!!   but how about 1300 instead?\nSeller: Oops, I ment $1400, how about we meet in the middle at $1350?\nBuyer: 1325, and I'll accept\nBuyer: \nSeller: How about $1337.50",
+            "output": "bike",
+            "explanation": "This answer is incorrect as the item that is being talked about in the given conversation between the buyer and seller is not a bike. The correct answer is 'housing' because the words 'renting' and 'apartment' are mentioned in the conversation which indicates that the item in question is related to housing since apartments come under houses."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task767-0cac5f7404904569bd7127b8ce582051",
+            "output": [
+                "housing"
+            ],
+            "input": "Buyer: Hello!\nSeller: Howdy, Partner! Are you interested in my apartment? Do you have any questions?\nBuyer: I do indeed, I've decided to live off campus this semester, and have been eyeing your listing recently. How is the location around the area, and are there any safety concerns?\nSeller: This is located in the epicenter of college life! Very safe area, low crime rate. Tons of nearby eating and People's Park. It's the perfect college student apartment with lots of social areas nearby!\nBuyer: Awesome! Now there may be an issue with the pricing, it is a little bit out of my range, but if you had any units that weren't as flashy as the others, or a leasing offer I could lock into ( I plan to finish my 4 years at the University), that would be great! Is there a way to lower the pricing down to around the $1400 - $1600 range?\nSeller: Absolutely, we can do $1,500 with a 1 year lease, or $1,400 with a 2 year lease. Are you interested in either of those options?\nBuyer: $1400 with a 2 year lease sounds perfect, that would help me out a great deal!\nSeller: Awesome! Welcome aboard, tenant! \nSeller: \nBuyer: \n"
+        },
+        {
+            "id": "task767-649a896fe7d84cfbbaf32086d268a9b9",
+            "output": [
+                "furniture"
+            ],
+            "input": "Buyer: Does it have any scratches/scuffs or anything like that?\nSeller: No, it's in like-new condition\nBuyer: I was looking at something similar but in a full size. Can you come down on the price? If the price is good, I can get different sheets etc.\nSeller: I have some new sheets I can throw in if you're willing to pay the listing price. \nBuyer: I could do $85 and we're picky about sheets because of allergies but thank you.\nSeller: That seems a little lower than I can do. I can come down a bit, but you'll need to do better than that.\nBuyer: Can you deliver it?\nSeller: I have a van, so that shouldn't be a problem, but I'll really need around $135 to make it worth my while\nBuyer: I can go $110 delivered.\nSeller: 125 is the best I can do.\nBuyer: I can't for more than $115.00\nSeller: I really can't do less than $125\nBuyer: If you go ahead and put the sheets with it I'll do $120.00\nSeller: For 125, I'll throw in the sheets, but with that and delivery, I think that's more than a fair price\nBuyer: Ok, deal\nBuyer: \nSeller: \n"
+        },
+        {
+            "id": "task767-9a3ce0ed97214eb8b677f3fcf2778691",
+            "output": [
+                "electronics"
+            ],
+            "input": "Buyer: Hi there.. are they still available?\nSeller: They are still available.\nBuyer: What is the condition? New used?\nSeller: They are brand new, in the box.\nBuyer: Have you ever tested them to make sure they work?\nSeller: They are still available.\nSeller: My son tested them and yes believe me they do work. \nSeller: They are brand new, in the box.\nBuyer: Okay, Would you willing to come down a little in price?\nSeller: I can come down some in the price. Can you pick them up?\nBuyer: Yes, I would be willing.\nSeller: I could come down to $85.\nSeller: My son tested them and yes believe me they do work. \nBuyer: That is great. I can come get them today if you like?\nSeller: Today sounds great. As soon as possible.\nSeller: \nBuyer: \n"
+        },
+        {
+            "id": "task767-3cba2aec204941c28a77faa10e239859",
+            "output": [
+                "housing"
+            ],
+            "input": "Seller: Hey there are you interested in purchasing my home?\nBuyer: Hi there\nSeller: I'ts a great place to raise your kids, with the school minutes away.\nBuyer: It ismy understanding it is arental/lease not to buy, is that cirrect?\nSeller: Yes that's correct. We're asking for around $3500. The neighborhood is great. The house has a brick patio in the backyard, and the yard has a gardener, its very relaxing.\nBuyer: is it non smoking?\nSeller: Nope, you can smoke all you want. Id rather it be out on the patio, but on a rainy day I understand.\nBuyer: That is actually an issue for me, my son is ashmatic and i am sensitive to the smells . Can you come down to 2400 to make this place worth while for us?\nSeller: I'm sorry but that's not a problem, as nobody smokes in the house currently or in the past, so as long as you don't smoke it won't be a problem for your son. I was just letting you know that you are allowed to smoke if you please. The price I can drop down to is going to have to be 2900 at the bare minimum. I hope you understand, I have other clients coming in looking at the place and some have already tried to buy it for around $2600.\nSeller: \nBuyer: \n"
+        },
+        {
+            "id": "task767-02e8bd5f5bef4947a4e810641da89940",
+            "output": [
+                "furniture"
+            ],
+            "input": "Buyer: Hi, I see you are selling a table made from scraps from your shop.\nSeller: Yes it is a great table. While it is made of scraps, many hours were put into it to make it a very stylish and valuable table. \nBuyer: I'm a little concerned that you can see light that would shine through the table.   Would you be will to sell me the table for $350?\nSeller: $350 is a little low for me. I understand your concern about the light, but rest assured it is a great table. How about $420?\nBuyer: I will accept $420 if you agree to deliver to my house at no additional cost.\nSeller: I think I can do that!\nBuyer: \nSeller: \n"
+        },
+        {
+            "id": "task767-df3ab37141e142818895c6331737a9dd",
+            "output": [
+                "car"
+            ],
+            "input": "Buyer: Hi, I am interested in your car\nSeller: Iy is a great car even for it's age. Do you have any questions about it?\nBuyer: That is a lot of miles and an old car, would you be willing to drop your price to $2500\nSeller: I can't go down that far. It is a Honda after all and they tend to hold a lot of value even when they are old. I would be willing to give you a 2 month warranty on it though to ease your mind. \nBuyer: How low are you willing to go?\nSeller: I can go as low as $3500. \nBuyer: my high was at about $3000.  I tell you what lets meet in the middle at $3250 and I will pick it up today.\nSeller: that sounds reasonable to me. \nBuyer: \nBuyer: great\nSeller: \n"
+        },
+        {
+            "id": "task767-095d74ffca6c44928d75148dca472ca6",
+            "output": [
+                "bike"
+            ],
+            "input": "Seller: Hey there! Are you interested in purchasing this awesome bike?\nBuyer: hi im intrested in this bike are u willing to \nSeller: I've got a little wiggle room but $375 is a pretty great deal considering the work that's gone into it.\nBuyer: yeah i hear u but im kind of on a buget and i can offer 225\nSeller: That's a bit low for me, but I would accept $275. That's my bottom dollar. Would that work for you?\nBuyer: would you accept 260\nSeller: I will throw in a sweet bike helmet and handlebar bell, but $275 is the best I can do.\nBuyer: ok we got a deal\nSeller: Awesome, pleasure doing business with you! $275 it is.\nBuyer: \nSeller: \nBuyer: \nSeller: \n"
+        },
+        {
+            "id": "task767-1a18006516254a5daa190da1eae850d6",
+            "output": [
+                "phone"
+            ],
+            "input": "Seller: Are you real?\nBuyer: Yes sir. I am also very interested in this case\nSeller: Thank god, is $8 too much for you? \nBuyer: only slighlty I had a budget of 7 dollars\nSeller: I know that feel, I need to get rid of these asap. Any chance you can go up? You can get this case cheaper, but it'll ship from China. \nBuyer: Well if you could get it to me tomorrow I could go up to 7.50\nSeller: It's a deal, I'll stop by early in the morning.\nSeller: \nBuyer: Oh you are willig to do it for 7 after all?\nSeller: oh, I meant yes to the $7.50.\nBuyer: ok well we cant change it but for refrence we agreed to 7.50. Thank you very much.\nBuyer: \n"
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

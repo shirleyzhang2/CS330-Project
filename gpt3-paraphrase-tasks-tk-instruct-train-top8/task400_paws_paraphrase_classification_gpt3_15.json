@@ -1,0 +1,125 @@
+{
+    "Contributors": [
+        "Amirreza Mirzaei"
+    ],
+    "Source": [
+        "paws"
+    ],
+    "URL": [
+        "https://arxiv.org/abs/1904.01130"
+    ],
+    "Categories": [
+        "Text Matching"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You will receive a sentence pair from Wikipedia with high lexical overlap. If the sentences have the same meaning and are just paraphrases of each other, label them as \"Paraphrase\". If not, label them as \"Not paraphrase\". The two sentences are separated by a new line."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Wikipedia"
+    ],
+    "Positive Examples": [
+        {
+            "input": "In January 2011 , the Deputy Secretary General of FIBA Asia , Hagop Khajirian , inspected the venue together with SBP - President Manuel V. Pangilinan .\nIn January 2011 , FIBA Asia deputy secretary general Hagop Khajirian along with SBP president Manuel V. Pangilinan inspected the venue .",
+            "output": "Paraphrase",
+            "explanation": "The second sentence has the same meaning as the first sentence and is just a paraphrased version of it."
+        },
+        {
+            "input": "The smallest number that can be represented in two positive and seventh ways as a sum of four different powers is 2056364173794800 .\nThe smallest number that can be represented as a sum of four positive seventh potences in two different ways is 2056364173794800 .",
+            "output": "Not paraphrase",
+            "explanation": "The second sentence doesn't have the same meaning as the first."
+        },
+        {
+            "input": "Luciano Williames Dias ( born July 25 , 1970 ) is a Brazilian football coach and former player .\nLuciano Williames Dias ( born 25 July 1970 ) is a former football coach and Brazilian player .",
+            "output": "Not paraphrase",
+            "explanation": "The second sentence doesn't have the same meaning as the first."
+        },
+        {
+            "input": "During her sophomore , junior and senior summers , she spent half of it with her Alaska team , and half playing , and living in Oregon .\nDuring her second , junior and senior summers , she spent half of it with her Alaska team , half playing and living in Oregon .",
+            "output": "Paraphrase",
+            "explanation": "The second sentence doesn't have the same meaning as the first."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "This was a series of nested angular standards , so that measurements in azimuth and elevation could be done directly in polar coordinates relative to the ecliptic .\nThis was a series of nested polar scales , so that measurements in azimuth and elevation could be performed directly in angular coordinates relative to the ecliptic .",
+            "output": "Paraphrase",
+            "explanation": "The second sentence doesn't have the same meaning as the first. As pointed out in the task definition both sentences in all the instances have high lexical overlap, which doesn't mean they have the same meaning."
+        },
+        {
+            "input": "His father emigrated to Missouri in 1868 but returned when his wife became ill and before the rest of the family could also go to America .\nHis father emigrated to America in 1868 , but returned when his wife became ill and before the rest of the family could go to Missouri .",
+            "output": "Paraphrase",
+            "explanation": "In the second sentence, it is not mentioned that the father went to Missouri, so the part about the rest of the family doesn't imply the same meaning as the first sentence. These are not paraphrases."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task400-d0748f21cf454a53b32862022d5a9188",
+            "input": "Elkins Widener became Eleanor Elkins Rice when he married Harvard Professor and Surgeon in October 1915 .\nElkins Widener married Eleanor Elkins Rice when she became Harvard professor and surgeon in October of 1915 .",
+            "output": [
+                "Not paraphrase"
+            ]
+        },
+        {
+            "id": "task400-bc3a03db4a064eacabc7fa041ec09047",
+            "input": "The school was taken over in the 1960s by Patrick Kilroy , and his son Charles Kilroy took over the management of Kilroy 's College in 1999 .\nThe school was taken over by Charles Kilroy in the 1960s , and in 1999 his son Patrick Kilroy took over the management of Kilroy 's College .",
+            "output": [
+                "Not paraphrase"
+            ]
+        },
+        {
+            "id": "task400-597787cafe3f4c888fc11fc252b6de31",
+            "input": "The 2013 BBC programme `` Ripper Street '' , Colonel Madoc Faulkner ( Iain Glen ) refers to a variant of Utterance 325\nThe BBC - Program `` Ripper Street '' from 2013 , Iain Glen ( Colonel Madoc Faulkner ) refers to a variant of Utterance 325 .",
+            "output": [
+                "Paraphrase"
+            ]
+        },
+        {
+            "id": "task400-33a522b4c7704cc3908b23f19a47c5d7",
+            "input": "The daughter of actor Rajesh , Niveditha is married to Arjun Sarja actor Arjun Married\nThe daughter of actor Arjun Sarja is married to Rajesh and Niveditha actor .",
+            "output": [
+                "Not paraphrase"
+            ]
+        },
+        {
+            "id": "task400-8295a380d5074996bee9a616fbd83cf0",
+            "input": "Kironde 's daughter , Katiti Kironde , was the first African - American covergirl of a women 's magazine .\nKatiti Kironde 's daughter Kironde was the first African-American covergirl of a women 's magazine .",
+            "output": [
+                "Not paraphrase"
+            ]
+        },
+        {
+            "id": "task400-c158a93d9cc84fb1b3bfacd6d47f1b20",
+            "input": "Following this uprising , Major Noel tried unsuccessfully to bring Simko and other Kurdish nationalist leaders , including Shaykh Mahmud , together .\nFollowing this rebellion , however , Major Noel tried , unsuccessfully , to bring together Simko and other Kurdish nationalist leaders , including Shaykh Mahmud .",
+            "output": [
+                "Paraphrase"
+            ]
+        },
+        {
+            "id": "task400-0f305c0e56e74088a7347c4799b625fa",
+            "input": "The Baldwins lived in Washington , D.C. Helen Baldwin died in 1977 and Robert Baldwin died March 14 , 1998 , from Lou Gehrig 's disease .\nThe Baldwins lived in Washington , D.C. Robert Baldwin died in 1977 , and Helen Baldwin died from the disease of Lou Gehrig on March 14 , 1998 .",
+            "output": [
+                "Not paraphrase"
+            ]
+        },
+        {
+            "id": "task400-73c22dc553154114bea1a248bdb52603",
+            "input": "Hannah had a son named Harrison and a daughter named Mariah .\nHe had a son named Hannah and a daughter named Mariah .",
+            "output": [
+                "Not paraphrase"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Dedicated License (https://github.com/google-research-datasets/paws/blob/master/LICENSE)"
+    ]
+}

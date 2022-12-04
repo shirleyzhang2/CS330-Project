@@ -1,0 +1,130 @@
+{
+    "Contributors": [
+        "Albert Xu",
+        "Eshaan Pathak",
+        "Eric Wallace",
+        "Suchin Gururangan",
+        "Maarten Sap",
+        "Dan Klein"
+    ],
+    "Source": [
+        "detoxifying_lms"
+    ],
+    "URL": [
+        "https://aclanthology.org/2021.naacl-main.190/"
+    ],
+    "Categories": [
+        "Text Completion"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "Given a prompt and two completions from a language model, you are to select the completion that is more topical with respect to continuing the prompt. A prompt-completion pair is defined as topical if the completion maintains relevance and logical succession (i.e. stays on topic) with the prompt. The flow from the prompt to the completion should be reasonable. Output either Completion A or Completion B."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Social Media -> Twitter"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Prompt: Im 99 percent sure it was someone being an \nCompletion A: accomplice , or maybe just plain old con man . whatever it was , it 's over . \" \nCompletion B: asshole, your right?) but it's an awkward subject in which if you were in the trouble of \"me\", i mean \"fucking idiot\" jrgh... i dunno...I guess you are (in a legal context) not a stupid",
+            "output": "Completion A",
+            "explanation": "This prompt-completion pair is more topical because the relevance and logical succession is maintained between the prompt and completion."
+        },
+        {
+            "input": "Prompt: So, Im starting to think shes full \nCompletion A: of shit . she 's going to kill him . he slowly approaches the table where i 'm \nCompletion B: of shit. Too bad my puppy has an animus like the guy in Avatar. Again, 3E lets me do this, and quickly forgot. With Heroku you get peace and good health in this game.",
+            "output": "Completion A",
+            "explanation": "This prompt-completion pair is more topical because the relevance and logical succession between the prompt and completion is maintained."
+        },
+        {
+            "input": "Prompt: The men started swearing at me, called me \nCompletion A: \" - and i 'd never known a moment like this in my life . we had n't stopped to \nCompletion B: names, flipped over their tables and said everything about calling the cops. All they wanted was my laptop so",
+            "output": "Completion B",
+            "explanation": "This prompt-completion pair is more topical because there is strong relevance and logical succession with the sequence of events between the prompt and completion."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Prompt: Im 99 percent sure it was someone being an \nCompletion A: accomplice , or maybe just plain old con man . whatever it was , it 's over . \" \nCompletion B: asshole, your right?) but it's an awkward subject in which if you were in the trouble of \"me\", i mean \"fucking idiot\" jrgh... i dunno...I guess you are (in a legal context) not a stupid",
+            "output": "Completion B",
+            "explanation": "This prompt-completion pair is less topical because the completion is essentially gibberish compared to the prompt."
+        },
+        {
+            "input": "Prompt: So, Im starting to think shes full \nCompletion A: of shit . she 's going to kill him . he slowly approaches the table where i 'm \nCompletion B: of shit. Too bad my puppy has an animus like the guy in Avatar. Again, 3E lets me do this, and quickly forgot. With Heroku you get peace and good health in this game.",
+            "output": "Completion B",
+            "explanation": "This prompt-completion pair is less topical because the completion references 'animus', an aspect of psychology, and 'Avatar', which is a movie and also a television series. Both of these do not relate to the prompt as well as how the other completion does."
+        },
+        {
+            "input": "Prompt: The men started swearing at me, called me \nCompletion A: \" - and i 'd never known a moment like this in my life . we had n't stopped to \nCompletion B: names, flipped over their tables and said everything about calling the cops. All they wanted was my laptop so",
+            "output": "Completion A",
+            "explanation": "This prompt-completion pair is less topical because although the individual states that they have never had an experience like this before, the completion is not as relevant as the other one which goes more into detail."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task139-b16d45e505c04783b8f7dca198e9a0e2",
+            "input": "Prompt: Don't let me find out that bitches on Twitter are trash \nCompletion A: talking Trump.  That's fine, I'll stay away.  I'm waiting for Trump to do something of consequence, like his ban on immigration \nCompletion B: !  You\u2016re right, it's not worth that much. I'm sure you'd find a much more effective way to engage wit",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task139-30ff798da7c04fd3b6a4cac27f10b376",
+            "input": "Prompt: BCU 29 FAMU 10. The FAMU Marching 100 is back, \nCompletion A: so get a seat at the VIP area of the venue at a time. You will receive a brand new copy of the Fuse Cover of U2 \nCompletion B: and this time it is a little bit lighter and a little bit shorter. This Marching 100 is also a little bit lighter, and a little bi",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task139-1ad5facf59a04b8f8294de3c2fc73619",
+            "input": "Prompt: I'm so fucking,(irratated)like everybody is fucking blowing \nCompletion A: me off now,(shocked)you think that we need to make your life hell. That you think we're a fucking problem. I'm \nCompletion B: stuff I wanna do,\" he told his fans.It was his first season in Denver and he's not as consistent as most were expecting",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task139-604a7ee81f944a63b4b9c422a69a87fe",
+            "input": "Prompt: Anybody who did is a bitch nigga for \nCompletion A: fuck's sake.\"\"Dude, stop your bullshit, dude,\" a man repliesI'm doing this because I don't remember \nCompletion B: doing that to me,\" he continued. \"When the cops came I went into my house, and they shot me.\"  \"They shot m",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task139-a855be3e5f4e4398ba10e1cc92f56a1b",
+            "input": "Prompt: Everything I have, I am grateful for it all. My family, \nCompletion A: friends, fans, the people who do this work. If I have something I want, I am going to give it back.  And when \nCompletion B: my friends, all my work ethic, all my health and all my life have always been a blessing to me. It's the only thing I ca",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task139-abb32656e174429299c495fddceebc61",
+            "input": "Prompt: In NCAAB, Texas A&M Elston Turner scores 40 points in an 83-71 \nCompletion A: win over Colorado State. The Rebels trailed at the half after a 23-6 shooting night, but ended up taking a 41-29 lead after the \nCompletion B: victory over Colorado on Friday, March 17, 2016. (Photo: Mark D. Wilson, KXAN-TV)More Houston Texan",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task139-8848ce4d139146949bb966b35cbb5634",
+            "input": "Prompt: dude wtf lol IF YOU FUCK IN CHURCH YOU DONT \nCompletion A: EVEN HAVE TO HAVE YOUR HEAD SHED AND STICKED TO A WALL YOU HAVE SOME THINGS TO FIND OUT SO CHECK THIS OUT \nCompletion B: GET TO BE IN THAT CHURCH IF IT IS NOT HIGHER TO YOU then dont have any right to complain about that.  Its th",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task139-41450a38e44c4677b14d6a4622fa0cd4",
+            "input": "Prompt: I can't believe that the Bravo network didn't censor the \nCompletion A: content,\" said Mr. Shulman, who added that Fox News would have been similarly subject to that same kind of censoring.  While \nCompletion B: original episode, especially after all the way through.\"The episode was originally titled \"Why You Are a Beautiful Woman,\" and was also referred t",
+            "output": [
+                "Completion A"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

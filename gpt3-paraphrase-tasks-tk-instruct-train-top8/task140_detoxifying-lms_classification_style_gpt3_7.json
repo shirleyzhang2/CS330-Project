@@ -1,0 +1,130 @@
+{
+    "Contributors": [
+        "Albert Xu",
+        "Eshaan Pathak",
+        "Eric Wallace",
+        "Suchin Gururangan",
+        "Maarten Sap",
+        "Dan Klein"
+    ],
+    "Source": [
+        "detoxifying_lms"
+    ],
+    "URL": [
+        "https://aclanthology.org/2021.naacl-main.190/"
+    ],
+    "Categories": [
+        "Text Completion"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "Given a prompt and two completions from a language model, your task is to select the completion that has the most similar style to the prompt. Style is defined as the tone, word choice, grammar, and sentence structure throughout the prompt-completion pair. For example, if a prompt is colloquial, then the completion should also be colloquial, as opposed to a completion that is encyclopedic or overly formal. Generate either Completion A or Completion B."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Social Media -> Twitter"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Prompt: Im 99 percent sure it was someone being an \nCompletion A: accomplice , or maybe just plain old con man . whatever it was , it 's over . \" \nCompletion B: asshole, your right?) but it's an awkward subject in which if you were in the trouble of \"me\", i mean \"fucking idiot\" jrgh... i dunno...I guess you are (in a legal context) not a stupid",
+            "output": "Completion A",
+            "explanation": "This prompt-completion pair is stylistically more similar because the prompt and completion have a similar tone, word choice, grammar, and sentence structure."
+        },
+        {
+            "input": "Prompt: So, Im starting to think shes full \nCompletion A: of shit . she 's going to kill him . he slowly approaches the table where i 'm \nCompletion B: of shit. Too bad my puppy has an animus like the guy in Avatar. Again, 3E lets me do this, and quickly forgot. With Heroku you get peace and good health in this game.",
+            "output": "Completion A",
+            "explanation": "This prompt-completion pair is stylistically more similar because of the completion's relative grammatical correctness."
+        },
+        {
+            "input": "Prompt: The men started swearing at me, called me \nCompletion A: \" - and i 'd never known a moment like this in my life . we had n't stopped to \nCompletion B: names, flipped over their tables and said everything about calling the cops. All they wanted was my laptop so",
+            "output": "Completion B",
+            "explanation": "This prompt-completion pair is stylistically more similar because the completion follows the tone, word choice, and sentence structure of the prompt."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Prompt: Im 99 percent sure it was someone being an \nCompletion A: accomplice , or maybe just plain old con man . whatever it was , it 's over . \" \nCompletion B: asshole, your right?) but it's an awkward subject in which if you were in the trouble of \"me\", i mean \"fucking idiot\" jrgh... i dunno...I guess you are (in a legal context) not a stupid",
+            "output": "Completion B",
+            "explanation": "This prompt-completion pair is stylistically less similar because the completion is nonsensical compared to the prompt."
+        },
+        {
+            "input": "Prompt: So, Im starting to think shes full \nCompletion A: of shit . she 's going to kill him . he slowly approaches the table where i 'm \nCompletion B: of shit. Too bad my puppy has an animus like the guy in Avatar. Again, 3E lets me do this, and quickly forgot. With Heroku you get peace and good health in this game.",
+            "output": "Completion B",
+            "explanation": "This prompt-completion pair is stylistically less similar because the grammar and sentence structure of the completion do not follow the prompt."
+        },
+        {
+            "input": "Prompt: The men started swearing at me, called me \nCompletion A: \" - and i 'd never known a moment like this in my life . we had n't stopped to \nCompletion B: names, flipped over their tables and said everything about calling the cops. All they wanted was my laptop so",
+            "output": "Completion A",
+            "explanation": "This prompt-completion pair is stylistically less similar because the word choice and sentence structure of the completion do not follow the prompt as well as the other completion."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task140-7067693ec17748289afef31c423f5d5f",
+            "input": "Prompt: Don't let me find out that bitches on Twitter are trash \nCompletion A: talking Trump.  That's fine, I'll stay away.  I'm waiting for Trump to do something of consequence, like his ban on immigration \nCompletion B: !  You\u2016re right, it's not worth that much. I'm sure you'd find a much more effective way to engage wit",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task140-8853f4d23037419d9a01649506c84e12",
+            "input": "Prompt: I am ready to punch the motherfuckers in their throat. Oh my science! That \nCompletion A: is, if I can do this without suffering the consequences \u2013 if I am able to get their attention without them having to explain things to the media and \nCompletion B: was fun, though, was that a hit? The sound of two hands clapping together is one I've never heard before. But not today",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task140-868e1f54ed1f49e581d21c59377a026f",
+            "input": "Prompt: My next project is slowly approaching.. Almost there.. \nCompletion A: Please share this with your friends and followers!  I'm looking forward to what this project will bring to us!  And stay \nCompletion B: so my husband and I will have our first child. This is an odd and very difficult time for most couples that choose to have children. So fa",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task140-bb5c1d9e9fb5455894d8768cd26425f4",
+            "input": "Prompt: Laughing my fucking ass off, yes, of course. Layah won't go though. \nCompletion A: I'll do it myself. Now, here's my little bitch.\" she was taking a long, slow lick of her fingers, before coming down, \nCompletion B: I don't ever want to talk to her again. She's kind of cold to me.And I don't want to tal",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task140-61bb8b3ce7ae4c21adc79f749cbffac2",
+            "input": "Prompt: Fuck you, 50, you're an old person going to a matinee. \nCompletion A: Dumbass! He's my enemy because of the way he looks at me. How dare you. You're not supposed to date a \nCompletion B: .)",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task140-f85682bfa46c4e9c8cf4dbf095529158",
+            "input": "Prompt: Yes, I agree with that, but for the winter I can deal with \nCompletion A: it. For my birthday, though, I won't go. I have to worry about my next birthday too. I mean, I'm a young \nCompletion B: them.  \"So it's the same, but the winter will not be like the summer. I think it would be better to not us",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task140-8180c472f81945deba13b0415e7d730e",
+            "input": "Prompt: This is fuck shit dats gonna get 49ers some wind \nCompletion A: .  Curry (49ers): We got a new guy. [Mock-up of new 49ers players.]  Dod \nCompletion B: right now, just like what the fuck you gon get on your back?\"That's when I decided to do the video for this show",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task140-e132761f39e64ee09164f568d09b6e14",
+            "input": "Prompt: yea but I can't see 11 months making it, NOW u need \nCompletion A: to be willing to sacrifice some stuff.   So theres no real incentive for anyone to stick with it for a year but there's still some \nCompletion B: to find some good shoes and shoes that will last 10 months!!! I found a pair of these at Nike (who also offer an entire range of san",
+            "output": [
+                "Completion A"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

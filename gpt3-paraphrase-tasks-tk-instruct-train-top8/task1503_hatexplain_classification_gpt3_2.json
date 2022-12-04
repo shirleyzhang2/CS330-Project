@@ -1,0 +1,115 @@
+{
+    "Contributors": [
+        "Pruthvi Patel"
+    ],
+    "Source": [
+        "hatexplain"
+    ],
+    "URL": [
+        "https://github.com/hate-alert/HateXplain"
+    ],
+    "Categories": [
+        "Toxic Language Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "The input is a tweet. The tweet can be one of three types: Hate Speech, Offensive, or Normal. Hate Speech and Offensive tweets target one community. Given such a tweet, output the community targeted in the tweet. The community can be one of nine values: 'African', 'Islam', 'Jewish', 'Women', 'Refugee', 'Arab', 'Caucasian', 'Hispanic', or 'Asian'. Output 'None' if the tweet does not target any community. A tweet can only target one community."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Social Media -> Twitter"
+    ],
+    "Positive Examples": [
+        {
+            "input": "caucasians wearing masks to prevent coronavirus and still don \u2019 t wash their hands",
+            "output": "Caucasian",
+            "explanation": "The tweet generalizes an attribute to the entire community, Caucasian, which makes it offensive."
+        },
+        {
+            "input": "lesson of the week from the holy book the sovereign individual once commerce flows over the internet suppression of speech becomes unstoppable devolution inevitable and the monopoly of violence by governments will end paraphrased from j d davidson rhys mogg",
+            "output": "None",
+            "explanation": "The tweet does not target any specific community hence the correct answer is None"
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "<user> <user> there shd be a film called no hindus in kashmir wud be perfect islamic fanaticsm movement in kashmir",
+            "output": "Hindu",
+            "explanation": "Every input tweet will target one or more of the nine communities provided or will not target any community. Further the tweet targets Muslim community. Hence Hindu is not the correct value. The correct value is Islam."
+        },
+        {
+            "input": "ffs everthing is offensive to muslimes",
+            "output": "None",
+            "explanation": "This tweet is offensive to Muslim community. Hence the correct answer is Islam instead of None."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1503-365b3d0b2439499faa5dc0e671a1b4bf",
+            "input": "i have reasons to dislike them and some reasons to like them i take the good with the bad if you have a specific answer i can answer it but i d like to remain in the holocaust subject if you do not mind",
+            "output": [
+                "None"
+            ]
+        },
+        {
+            "id": "task1503-b6e6e2bd5c404a92a0d5101cf076cf18",
+            "input": "nothing worse than a ghetto white bitch that says the n word",
+            "output": [
+                "Caucasian"
+            ]
+        },
+        {
+            "id": "task1503-4883a3617093471dac7ff89e97f6327d",
+            "input": "niggas be acting like bitches",
+            "output": [
+                "Women"
+            ]
+        },
+        {
+            "id": "task1503-7cf116e494c1424faaaf550f66098ec8",
+            "input": "i have not said it enough but fuck white bitches",
+            "output": [
+                "Caucasian"
+            ]
+        },
+        {
+            "id": "task1503-108538810b2241959687101d1726ff77",
+            "input": "whites are the minority in ads looking at my calvins women undies first look it seems a white women but look close it is a hispanic with blonde hair close examination of the women one mixed black <number> hispanics no white women in ad",
+            "output": [
+                "Hispanic"
+            ]
+        },
+        {
+            "id": "task1503-6fedcc9811434d3bae84c33b65aaf60d",
+            "input": "she has yid and sandnigger blood irl she is quite manic overcompensating perhaps her first impacts with the wall are leaving her dazed and yiddy",
+            "output": [
+                "Arab"
+            ]
+        },
+        {
+            "id": "task1503-594672722c07448d8811505f295a51aa",
+            "input": "someone should find her at home sometime and beat her with a pipe along with their wetback mayor",
+            "output": [
+                "Hispanic"
+            ]
+        },
+        {
+            "id": "task1503-67f20e036daf4db1a6568ecb9128b306",
+            "input": "hoes be to slick do not trust that bitch",
+            "output": [
+                "Women"
+            ]
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

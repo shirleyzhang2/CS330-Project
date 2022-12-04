@@ -1,0 +1,122 @@
+{
+    "Contributors": [
+        "Eshaan Pathak"
+    ],
+    "Source": [
+        "codah"
+    ],
+    "URL": [
+        "https://aclanthology.org/W19-2008.pdf"
+    ],
+    "Categories": [
+        "Text Completion"
+    ],
+    "Reasoning": [
+        "Commonsense Reasoning"
+    ],
+    "Definition": [
+        "Given a prompt and four completions, select the completion that is the most plausible in continuing or answering the prompt. This task tests common sense and has various categories ranging between idioms, negated statements, polysemy, subject referencing, and quantitative reasoning."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Commonsense -> Concepts and Relations"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Prompt: A clown is fashioning animals from long balloons. He \nCompletion A: releases the animals into their natural habitat. \nCompletion B: makes a giraffe and hands it to a child. \nCompletion C: yells out for his second in command to pilot the battleship around the obstacle. \nCompletion D: releases the balloon and it flies high into the air.",
+            "output": "Completion B",
+            "explanation": "The clown is an entertainer and is twisting balloons to resemble an animal. There are no live animals, and these types of twistable balloons are not able to fly or float up."
+        },
+        {
+            "input": "Prompt: I am feeling hungry. I think I will \nCompletion A: call my mother. \nCompletion B: have some ravioli. \nCompletion C: fly out the window. \nCompletion D: go on a run outside.",
+            "output": "Completion B",
+            "explanation": "If one is hungry, then they will eat some food to satiate their hunger. One must look at the entire context rather than just the current sentence when selecting the best completion to the prompt."
+        },
+        {
+            "input": "Prompt: I am feeling nervous about my midterm tomorrow. I fear that \nCompletion A: the professor will delay the midterm. \nCompletion B: I will doodle on my exam and receive points for it. \nCompetion C: my grandpa has diabetes. \nCompletion D: I will fail.",
+            "output": "Completion D",
+            "explanation": "If one is feeling nervous about their midterm the next day, then they are most likely worried and anxious about the grade they will receive. They will not doodle on their exam because they will surely not do well in that case. The professor delaying a midterm is usually not why a person would feel nervous about the midterm. One may be worried about their grandpa having diabetes, but that is not relevant to taking a midterm."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Prompt: The man entered his house. The man \nCompletion A: can't find the keys to unlock the door. \nCompletion B: goes to school at his university. \nCompletion C: eats the garbage. \nCompletion D: takes his shoes off.",
+            "output": "Completion A",
+            "explanation": "The man must have found the keys to unlock the door in order to have entered his house in the first place. After he entered the house, it is most plausible that he took his shoes off to not get his house dirty. Thus, Completion D is actually the correct answer."
+        },
+        {
+            "input": "The boy likes animals, but only invertebrates. He \nCompletion A: likes pigs. \nCompletion B: likes vertebrates. \nCompletion C: likes spiders. \nCompletion D: likes elephants.",
+            "output": "Completion D",
+            "explanation": "Out of the four possible completions, only one of them mentions an invertebrate. Spiders are invertebrates since they do not have a spine or vertebral column. Thus, Completion C is actually the correct answer."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task156-b42122d29ac140d3a5738e2b8978908b",
+            "input": "Prompt: John experienced a lot of unfortunate things, but he \nCompletion A: regards those unlucky things to be lucky \nCompletion B: thinks he is lucky \nCompletion C: eat sandwiches \nCompletion D: is always sad",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task156-35424b32473248e8b64619684fbce194",
+            "input": "Prompt: Jasmine was born in the USA but lived in Germany as an adult after having grown up in China. She spent her childhood in \nCompletion A: Philadelphia \nCompletion B: Saarbrucken \nCompletion C: Edinburgh \nCompletion D: Xiamen",
+            "output": [
+                "Completion D"
+            ]
+        },
+        {
+            "id": "task156-a29f4188bd0e47e68116f57637341820",
+            "input": "Prompt: A brewer stirs their pot. The brewer \nCompletion A: measures the temperature. \nCompletion B: tastes the metal rim. \nCompletion C: eats their spoon. \nCompletion D: sticks their hand in the fire.",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task156-47adb55bfaff4360ace09b6a34a225a3",
+            "input": "Prompt: One mole of water is not enough. The amount of moles \nCompletion A: must be increased \nCompletion B: can't be contained \nCompletion C: is overwhelming \nCompletion D: that are burrowed underground and dig themselves into the soil must have increased",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task156-f735001ae3e749398cb910fdd10dd4e1",
+            "input": "Prompt: An author types away at his keyboard. He \nCompletion A: prints out his work to check the grammar. \nCompletion B: says to the customer, \"Do you have a membership card with us?\" \nCompletion C: throws a frisbee with his son. \nCompletion D: pulls into the left-turn lane and puts his blinker on.",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task156-dddb097dab154357b591f081a0c04d68",
+            "input": "Prompt: A woman is making a tequila sunrise. After putting ice in the glass, she \nCompletion A: watches the sun rise on the beach. \nCompletion B: mixes in liquor and juice. \nCompletion C: puts ice in the glass. \nCompletion D: pours the ice out of the glass.",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task156-cc5f6c1bf2be4e469c17446b0882ccbe",
+            "input": "Prompt: We realized that the paper this morning was full of old uninteresting news stories. We decided to \nCompletion A: scrutinize it to every last detail. \nCompletion B: throw it away. \nCompletion C: frame it to the living room wall. \nCompletion D: fold it a few times.",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task156-3e70d77970b54dde93d8de2bb6e3874f",
+            "input": "Prompt: A fire broke out in the forest. It \nCompletion A: lit up the night. \nCompletion B: destroyed the lake. \nCompletion C: cooked some bacon. \nCompletion D: burned down some skyscrapers.",
+            "output": [
+                "Completion A"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

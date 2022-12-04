@@ -1,0 +1,127 @@
+{
+    "Contributors": [
+        "Megh Patel"
+    ],
+    "Source": [
+        "deceptive_opinion_spam_dataset"
+    ],
+    "URL": [
+        "https://myleott.com/op-spam.html"
+    ],
+    "Categories": [
+        "Sentiment Analysis"
+    ],
+    "Reasoning": [
+        "Reasoning on Social Interactions"
+    ],
+    "Definition": [
+        "Given a hotel review and its corresponding polarity (i.e., Negative or Positive), identify whether the polarity is correct. If it is correct, write 'true'. If it is not correct, write 'false'."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Reviews"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Review: I stayed at the Hilton Chicago for my cousins wedding. The service was impeccable. Not only was the staff attentive, they were respectful and careful not to interrupt the guests or make themselves known when serving dinner. I had the chicken wellington and it was to die for! The chicken was perfect and moist but the pastry crust was flaky and crispy. They even had Pakistani dinner options for some of the guests. The amenities were great, and after an open bar the night before, the Mimosas and brunch buffet couldn't have been better! I would love to have my wedding there.\nPolarity: Positive",
+            "output": "true",
+            "explanation": "Review writer likes the hotel. There are strong positive words like 'impeccable' and 'great'. Therefore it is true as the polarity mentioned."
+        },
+        {
+            "input": "Review: During my stay at the Hilton Chicago it has been quite unpleasant. How so you might ask? Well ill tell you, the towels where scratchy and the service was terrible and by terrible I mean they weren't even at the desk when I checked in. Also, When I ordered my breakfast, lunch, and dinner from room service I received the wrong order for all meals and felt a little sick after lunch. Finally, The bill was charging me for stuff I didn't want or ask for. But overall the hotel was very bad and unpleasant for me and others. I give it a half a star.\nPolarity: Negative",
+            "output": "true",
+            "explanation": "There are negative words in the review like 'unpleasant', 'terrible', 'bad' and the writer also gives half a star. Therefore it is a negative review which is true."
+        },
+        {
+            "input": "Review: My parents booked five nights at The James for its location and good reviews. They had a terrible first night with defective air conditioning and not much sympathy from the management staff. They sent engineers three times to repair the unit, and they insisted that it was getting cooler when it wasn't, under the rationale that the summer temperature is high and the filter was dirty. At my parents' request, the hotel staff moved them to a lower floor with a queen instead of a king and with neither a rate discount nor an effort to compensate them for the inconvenience and discomfort. The hotel insisted they were fully booked and reluctantly gave them that room. Don't book this hotel in the summer. And by the way, there is no view at all from any of the rooms - except for the windows of other buildings.\nPolarity: Positive",
+            "output": "false",
+            "explanation": "There are negative words like 'terrible', 'defective', 'inconvenience and discomfort', 'dirty' which are bad for hotel room reviews. Hence this is not a positive review."
+        },
+        {
+            "input": "Review: We stay at Hilton for 4 nights last march. It was a pleasant stay. We got a large room with 2 double beds and 2 bathrooms, The TV was Ok, a 27' CRT Flat Screen. The coincierge was very friendly when we need. The room was very cleaned when we arrived, we ordered some pizzas from room service and the pizza was Ok also.The main Hall is beautiful. The breakfast is charged, 20 dollars, kinda expensive. The internet access (WiFi) is charged, 13 dollars/day. Pros: Low rate price, huge rooms, close to attractions at Loop, close to metro station. Cons: Expensive breakfast, Internet access charged. Tip: When leaving the building, always use the Michigan Av exit. Its a great view.\nPolarity: Negative",
+            "output": "false",
+            "explanation": "There are positive reviews about the hotel room and there are positive words like 'pleasant', 'friendly', 'cleaned', 'huge rooms' which describe a good hotel room. Hence this is not a negative review."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Review: We had a great experience at this hotel. The hotel is Huge! The rooms were very clean, well appointed, and our room was very roomy with a great view of the snow covered park. The Staff was so nice and very helpfull. Donald, at the the Concierge desk scored us tickets to WICKED the day of the performance, and on a Holiday weekend too. They were great seats and a reasonable price. He worked very hard for us to see that show. They truely topped off what was a Fun New Years Celebration. This will be my first pick when I return in the spring.\nPolarity: Negative",
+            "output": "true",
+            "explanation": "The review says that the experience was great and there are positive words like 'Huge', 'clean', 'reasonable price'. This is not a negative review."
+        },
+        {
+            "input": "Review: This hotel was not worth it. From the moment we walked into the hotel lobby through check out, the staff were rude and contemptuous. Rooms were only serviceable, and certainly did not live up to the pompous self-descriptions on the website. The bathroom porthole and sliding door were odd and inconvenient. The 'fitness centre' was tiny and poor. We would not come here again.\nPolarity: Positive",
+            "output": "true",
+            "explanation": "This is a negative review because the writer mentions in the first line that it was not worth it and there are some negative words like 'rude', 'contemptuous' and 'inconvenient'. Hence this is a negative review."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task903-dbf081afeecf499c8d607892ea7b6944",
+            "input": "Review: My husband and I stayed at the Hyatt Regency while attending a family wedding in Chicago. From the moment we entered the beautiful lobby we were treated as if we were returning friends. Our rooms were ready upon arrival, and they were just as impressive as when I viewed them online. The location couldn't be more convenient to access all of Chicago's shopping and dining areas. We dined in Seston's Chop House, which I highly recommend. The staff at the hotel are professionals who work to make your stay there a grand experience. The Hyatt Regency Chicago is the only place we will stay when we return to the Windy City!\nPolarity: Positive",
+            "output": [
+                "true"
+            ]
+        },
+        {
+            "id": "task903-8aff000315c245faa7b3948fba548fb7",
+            "input": "Review: We have stayed at several high end places in Chicago and this is still our favorite. Location is superb, staff are particularly gracious and welcoming without being cloying. Cornell, at the front desk, is unfailingly helpful as is the concierge. We love the extra room that a suite provides and if you join the frequent guest program, high speed internet is gratis, as is a breakfast beverage delivered along with the newspaper each morning at the time of your choosing. Bedding is of excellent quality and they offer truly amazing blackout curtains! We have never had a bad stay at this hotel. \nPolarity: Negative",
+            "output": [
+                "false"
+            ]
+        },
+        {
+            "id": "task903-d3de0c4f4ef143eeac3ff99578b4e6fe",
+            "input": "Review: Stayed here in November 2011 on a leisure trip to Chicago. Hotel is very dated, with some rooms that just aren't good enough. Front desk staff was rude. Will not be staying here again - prefer the Swissotel and the Hyatt properties (Regency is similarly priced, and Park Hyatt is 3x more) and a list of boutique hotels in the area as well (Kimpton, etc). Pros: -The only hotel that opens onto Michigan Avenue, very close to all of the excitement -Eno Wine Bar has a great selection of cheeses -Rooms are clean Cons: -Some hotel rooms just make no sense - our first room was tiny and had a window overlooking a ledge (effectively no view), and our second room had two windows that looked out onto a brick wall (actually no view) -You have to pay for everything - internet, gym, and the pool (which was not available due to renovation...) -Entire hotel was very old, not in a classical sense but in a ghost story one -Front desk staff was rude\nPolarity: Negative",
+            "output": [
+                "true"
+            ]
+        },
+        {
+            "id": "task903-a3dece59d59946b886bc3c6460e76f0a",
+            "input": "Review: I was genuinely surprised by my stay at this hotel. The walls were paper thin, and I could hear conversations in the next room. This is not something I would have expected from a higher class of hotel. The room was also smaller than I would have expected for the price. We were given minimal toiletries and towels in the guest room, something which made it difficult for two people to get ready in the morning. We requested new towels, but it took an entire day for them to get around to fulfilling our request. The check-in process was frustrating, mostly due to the unhappy clerk behind the counter. I don't know if she was having a bad day, or just happens to be in such a mood all the time, but either way, it was unpleasant and a pain to deal with. Overall, not a pleasant experience. I think next time, we'll choose another hotel to stay at when visiting Chicago.\nPolarity: Negative",
+            "output": [
+                "true"
+            ]
+        },
+        {
+            "id": "task903-2862988be0d548a984757336e6188ac8",
+            "input": "Review: My husband and I stayed at the Hotel Monaco for 5 days in October, 2007. I cannot begain to tell you how great this place is. The service was impecable and the room was fantastic. Huge window seat to look over Chicago. It was great. The wine reception in the evening was a special treat as was the morning coffee service in the lobby. This was our first trip to Chicago and I hope not our last. I will definately stay at Hotel Monaco again when we return. We booked our room through a safety convention web site. \nPolarity: Positive",
+            "output": [
+                "true"
+            ]
+        },
+        {
+            "id": "task903-e8977caba6ab43ffbebbc2e1027b67aa",
+            "input": "Review: Me and my husband stayed in the Allegro Hotel Chicago for 4 days 3 nights recently. We got a room with a king size bed.. Although the room is small, we got no problems with that as there was enough space for our luggages & all. However, we felt that the bed is not exactly comfortable, the bed sheets kinda feel rough to us. The walls are really thin and we could hear our neighbours talking and occasionally the flushing sound. 1 of the days, our room was not cleaned till afternoon and so we went to check with the front desk and was told that we got to request for our room to be cleaned which was a shock to us as we thought that like all hotels, rooms are cleaned except when you put on the no disturb sign. The worst is upon returning to the hotel at night, we found a bag of our garbage in the room and it was right next to our luggage. The housekeeping people must have forgotten to take it out after cleaning our bins. This is unacceptable to us. The hotel is in the theatre district and it is rather quiet at night. Although it is near the CTA trains, i would rec one to stay somewhere close to the magnificent mile where its lively at night or hotels near the chicago river so that you can get a great view. Am staying again at a Kimpton hotel in San Fran next month and i am contemplating if i should change! Overall, not a good experience and i wouldnt choose this hotel again if i were to head to Chicago again!\nPolarity: Positive",
+            "output": [
+                "false"
+            ]
+        },
+        {
+            "id": "task903-d22a9d0c7e5e4bec8bf5da723bffbb4d",
+            "input": "Review: I have just returned from a lovely shopping trip to Chicago. It is a very nice hotel, and I will love to stay there if I visit Chicago again! There is a lot of positive to say about the hotel; staff is excellent, never experienced such an excellent service -- that alone is worth coming back for. Was pleasantly surprised that the room rate was including breakfast. A few things that could make this hotel even better... A hand shower in the bathroom. The hairdryer to be placed in the bedroom, instead of the bathroom, when the bathroom is all damp after a shower I prefer leaving the bathroom to dry my hair. Free internet access in the lobby. I was surprised I had to pay 6 or 7 USD (for 15 minutes) to log-on and check-in with my airline (only with a few airlines you can check-in without paying?!?!?!?) \nPolarity: Negative",
+            "output": [
+                "false"
+            ]
+        },
+        {
+            "id": "task903-d02dcf74ce5d4402a4c6492f28f9b260",
+            "input": "Review: The air-condition has a noisy fan/compressor in each room. It starts every 3 to 5 min and the noise will wake you up. At least the first night. This is an old fashion system that needs to be replaced. The postal service at the hotel is non-working. The hotel messed up our concert tickets that was correctly addressed and transported by UPS. The tickets were at the Hotel General Managers office. The reception denied that they had arrived. We had to spend most of a day travelling to the ticket agent to resolve it. The Hotel did not find any reason to apologize for the inconvenience. The concert was the reason for our travel to Chicago. Else, the Hotel had good standard, free internet in the lobby, not to good view from the rooms, and friendly staff at the restaurants and the bars. We had booked 20 room-nights all together staying at room 612, 425 and 431 from the 23rd June.\nPolarity: Negative",
+            "output": [
+                "true"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY-NC-SA 3.0"
+    ]
+}

@@ -1,0 +1,130 @@
+{
+    "Contributors": [
+        "Kushal Chawla"
+    ],
+    "Source": [
+        "casino"
+    ],
+    "URL": [
+        "https://aclanthology.org/2021.naacl-main.254.pdf"
+    ],
+    "Categories": [
+        "Negotiation Strategy Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You will be given an utterance and recent dialogue context containing past 3 utterances (if available). You need to output 'Yes' if the utterance contains the no-need strategy, otherwise output 'No'. The no-need strategy is a cooperative negotiation strategy. It is used when a participant points out that they do not need an item based on personal context, such as suggesting that they have ample water to spare. The no-need strategy can directly benefit the opponent since it implies that the item is up for grabs."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Context: \nUtterance: 'how about I give you 2 waters and 1 food package in exchange for all your firewood?'",
+            "output": "No",
+            "explanation": "The utterance does not use the no-need strategy since it never refers to an item that the participant does not need."
+        },
+        {
+            "input": "Context: 'Hi, how are you?' 'Great, how are you?' 'Pretty good, planning my camping trip, checking on supplies.'\nUtterance: 'Here too, looks like the weather has changed for us. We won't have enough water to last as we forgot it. Food, we have some snacks, but not enough to get by for our trip. I'm not overly concerned about firewood since it's so hot. But I'm really concerned about water.'",
+            "output": "Yes",
+            "explanation": "The participant uses no-need when describing that they are not concerned about firewood."
+        },
+        {
+            "input": "Context: 'Hello, I'm in a strong need for food and water. Please let me have a few packages of food and water. I'd gladly trade all my firewood for it.' 'Hello. Wow! That does not sound good. My sister just called and let me know she will be coming tonight. She is bringing food so i have plenty to share. \ud83d\ude42' 'That's some good news. \ud83d\ude42 Are you sure she is going to be bringing food with her?'\nUtterance: 'Yea She is bring tons of food. So don't worry we have plenty of food to spare. \ud83d\ude42 She did forget to get water. I didn't know she was coming so i didn't grab any and I forgot the 3 packages of water for myself at the store. \u2639\ufe0f'",
+            "output": "Yes",
+            "explanation": "The participant explains that they will have plenty of food, so they are using the no-need strategy."
+        },
+        {
+            "input": "Context: '(sorry for the misspellings on above post, my keyboard does that) Ok since that  is your highest priority , I have 2 food 1 water and 2 firewood ? Is that agreeable ?\ud83d\ude42' 'What do you think about this offer, I will give you 2 of FOOD since it is what you need the most, 1 of WATER since it is what I need and 2 of WOOD, I will have less wood but we will both be satisfied.' 'Yes very agreeable ! Thank you .\ud83d\ude42'\nUtterance: 'Ok! Thanks.\ud83d\ude42'",
+            "output": "No",
+            "explanation": "The utterance does not use the no-need strategy since it never refers to an item that the participant does not need."
+        },
+        {
+            "input": "Context: 'I agree, with camping i feel there are many uncertainties. Finding clean water would be too difficult, best to take as much water as possible. ' 'I will also need some Firewood too to start a fire' 'I feel for firewood we dont need as much, as we are going to be camping, with that means, in my opinion, with branches and brush available, maybe we can take 2 fire woods, what do you think?'\nUtterance: 'Since I got some food already, can I get 3 water, 2 firewood and 0 food then?'",
+            "output": "Yes",
+            "explanation": "The participant states that they won't need firewood, so the answer is Yes."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Context: 'Hello'\nUtterance: 'Hello! How are you doing today?'",
+            "output": "Yes",
+            "explanation": "The utterance does not contain the no-need strategy. The correct answer is 'No'."
+        },
+        {
+            "input": "Context: 'Hello, what are your preferences for extra supplies?  I am greatly in need of food and water.  We will be doing a lot of activity in a hot, dry climate.\ud83d\ude42' 'I prefer firewood because I will get cold at night. I forgot blankets \u2639\ufe0f' 'Would it work for you, then, to give me the three food and three water, and I can give you all of the firewood?'\nUtterance: 'No. Because I brought a water purifier but don't plan on hunting or fishing. So I'd be willing to give up all the water but I want 2 of the food.'",
+            "output": "No",
+            "explanation": "The participant uses the no-need strategy when they say that they brought the water purifier. So the correct answer is 'Yes'."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task354-6bce44c2c6914c86876815b2809a9be2",
+            "input": "Context: 'I'm also going camping with my two children and 2 of my nephews  How would you like to divide the supplies?' 'Well what do you need the most of?' 'I need the most firewood due to a congenital issue that results in us having poor blood circulation to our extremities, thus making them susceptible to frostbite in the cold!'\nUtterance: 'Oh dear, that sounds serious!  Well I need food the most because my children eat sooo much and I don't think I packed enough.  How about I'll give you all my firewood in exchange for all your food?'",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task354-1846bf03a2284f578bbf94087ae1086b",
+            "input": "Context: 'I'd be fine with taking less food.  So, I would get 3 firewood, 1 food, and 0 water.  Is that correct?' 'And I would get 0 firewood, 2 food and 3 water. That seems right to me.' 'That'\nUtterance: 'It looks like we have to continue this conversation beyond a certain point before we come to a deal, so - what is your most cherished camping memory?'",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task354-65753c1d9f7e46149a321d06193aecdb",
+            "input": "Context: 'Okay. I'm not especially worried about food. What's your lowest priority?' 'I have enough food too. Can I take 2 water, 1 firewood and 2 food?' 'How about two water, 1 firewood and 1 food, since we both value water the most?'\nUtterance: 'Is that what you want or what you are offering?'",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task354-cb193823c8b64f0f8dbdd171b55469c7",
+            "input": "Context: 'thanks! where do you plan on camping? I know popular places are worried about spreading Covid and a lot of offices that give out camping permits are closed.' 'We're going to check out Acadia National Park. I'm not totally sure on the details, I'm letting my boyfriend plan and I'm just handling the packing haha' 'Lol, that's totally understandable. Are you planning to make any campfires?'\nUtterance: 'Some, but I'm not too worried about my firewood stock. I'm pretty sure there's a decent amount of wood out there in the park.'",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task354-7236078231984fd798c40094d042a018",
+            "input": "Context: 'Well, I'm kind of low on water, so I'd like to get as much of that as I can. I'd like to go hiking and I don't really have enough water for a long trip. What about you?' 'Ohh nice.I also have the same issue around here.The thirst for water is growing high than ever due to drought' 'Well, that's a bummer. How are you set for food? While I wouldn't mind a bit more, I'm in pretty good shape there, so I'd be willing to trade it for water. I'd hate to leave without getting a good hike in.'\nUtterance: 'Hun,It's a bit of a fair deal,but due to the condition here i will need a bit more of water though foo cannot be overlooked also for survival but still to survive we take chances.So do you mind me giving you a package of food and u trading 2 pakages of water?.'",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task354-7a0ffae83920444cbaac85c9de6e58ac",
+            "input": "Context: 'I was actually saying you get 2 firewood and I get 3 waters. Then you could have 2 food and I get 1 food.' 'That's seems fair to me since we all need food to eat' 'Okay, I'm glad we were able to work something out!'\nUtterance: 'Am also glad.You are more interested in water. Do you drink a lot of water frequently?'",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task354-f63db0826cbe464abb8685dcbb5a3e71",
+            "input": "Context: 'I need more food since I have a huge family. Can you give me all food i give you all water?' 'i need a little more food because i forgot that we where staying longer and i forgot some of my food. Can i give you 1 food package please? '\nUtterance: 'Food is what I need most. I can not survive with less than 2 food'",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task354-18ee4d94446146538efe0b14dcc15f3d",
+            "input": "Context: 'Food is also my highest preference, followed by firewood, with water being the lowest. I don't have a medical condition that needs food so I can give you 2 units if I can have 1?' 'That would be great if you could! ' 'I can do that! What's your next highest priority? I would prefer 2 firewood as I need to be warm at all times and plan to camp in the cooler weather'\nUtterance: 'I can easily give you two firewood! One should be more than enough for me. Especially since you helped me out with the food!'",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

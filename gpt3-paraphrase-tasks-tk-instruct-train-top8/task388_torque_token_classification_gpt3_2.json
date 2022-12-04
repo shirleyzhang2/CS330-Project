@@ -1,0 +1,197 @@
+{
+    "Contributors": [
+        "Shailaja Keyur Sampat"
+    ],
+    "Source": [
+        "torque"
+    ],
+    "URL": [
+        "https://allennlp.org/torque.html"
+    ],
+    "Categories": [
+        "Information Extraction"
+    ],
+    "Reasoning": [
+        "Commonsense Reasoning"
+    ],
+    "Definition": [
+        "In this task, you will be given a passage, and your goal is to identify an event from the passage. An event is defined as a single word representing something that happened, is happening, or may happen. The event must not be a pronoun or an adjective. For noun events with multiple words, use the last word in the phrase as event."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "News"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Passage: I submitted the hit. The hit was approved, and then I was paid.",
+            "output": "approved",
+            "explanation": "There are three events in this passage (i) submission event (\"submitted\") (ii) the approval event (\"approved\"), and (iii) the payment event (\"paid\"). You can use any one of them as an output."
+        },
+        {
+            "input": "Passage: He was caught in the snow storm.",
+            "output": "storm",
+            "explanation": "There are two events in this passage (i) he was caught (\"caught\") and (ii) the snow storm event (\"storm\"). You can use any one of them as an output. Since snow storm is a noun event with multiple words, we only use the last word 'storm' as an event."
+        },
+        {
+            "input": "Passage: He is on the east coast.",
+            "output": "is",
+            "explanation": "The copula \"is\" an event describing his location."
+        },
+        {
+            "input": "Passage: He wanted to finish the task.",
+            "output": "wanted",
+            "explanation": "There are two events in this passage (i) he wanted to do something (\"wanted\") and (ii) finish the task (\"finish\"). Either of wanted or finish can be used as output. However note that though there is an uncertainty about the task i.e. indeed finished or not, \"finish\" is still a valid event."
+        },
+        {
+            "input": "Passage: If he works hard, then he will finish the task.",
+            "output": "finish",
+            "explanation": "There are two events in this passage (i) he works hard (\"works\") and (ii) he will finish the task. (\"finish\"). You can use either of works or finish as an output. Here the second event happens only if the first one is true, but both are considered as events. This is an example of hypothetical event."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Passage: He is happy.",
+            "output": "happy",
+            "explanation": "Happy is an adjective and hence cannot be an event. The output should be \"is\" which represents an event describing his attribute of happiness."
+        },
+        {
+            "input": "Passage: He was caught in the elevator.",
+            "output": "elevator",
+            "explanation": "Not every noun can be an event. Here \"elevator\" is an object and one cannot say \"an elevator happened\" hence it is not an event. \"caught\" is a correct output."
+        },
+        {
+            "input": "Passage: The flu season is winding down.",
+            "output": "flu season",
+            "explanation": "The \"flu season\" is a noun events with multiple words, but only last word \"season\" sould be used as an event as per definition."
+        },
+        {
+            "input": "Passage: The death toll climbed up to 99 soon after the explosion.",
+            "output": "blast",
+            "explanation": "There are two events in this passage \"climbed\" and \"explosion\". Though blast is a synonym of explosion, it is not present in the passage. The output must contain events that are present in the passage."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task388-6d268bf155a0447e8becab13574a1bc9",
+            "input": "Passage: Zvjezdan Misimovic produced a magical free-kick on 70 minutes to down Hamburg, who had Dutch international Rafael van der Vaart sent off for a brutal tackle from behind. Hamburg are the only founding club never to have been relegated from the Bundesliga but need to turn things around soon to preserve that record.",
+            "output": [
+                "produced",
+                "down",
+                "sent",
+                "tackle",
+                "are",
+                "relegated",
+                "need",
+                "turn",
+                "preserve"
+            ]
+        },
+        {
+            "id": "task388-30ade59e916641bd940fb54e9d8f356b",
+            "input": "Passage: Commercial space on the website sold for 1,000 to 3,000 yuan (125 to 375 U.S. dollars) per month. On Oct. 3 last year, when the website was closed down, the registered members exceeded 600,000 around China.",
+            "output": [
+                "sold",
+                "closed",
+                "exceeded"
+            ]
+        },
+        {
+            "id": "task388-8625043f05c04ee4aaffc2860b365f30",
+            "input": "Passage: Judging by leaks to the US media, Baker will also recommend increasing the number of US army trainers, while withdrawing troops from combat and by early 2008 leaving only 70,000 in Iraq in a support role. The White House may well be receptive to this idea, but seems opposed to another: that of reaching out to US foes Iran and Syria to persuade them to use their influence to calm the unrest in neighbouring Iraq.",
+            "output": [
+                "leaks",
+                "recommend",
+                "increasing",
+                "withdrawing",
+                "combat",
+                "leaving",
+                "receptive",
+                "opposed",
+                "reaching",
+                "persuade",
+                "use",
+                "calm",
+                "unrest"
+            ]
+        },
+        {
+            "id": "task388-b3b1ee1a03cc48228725d8a00499e71b",
+            "input": "Passage: DD Acquisition Corp., a partnership of Unicorp Canada Corp.'s Kingsbridge Capital Group and Cara Operations Ltd., extended to Nov. 20 its $45-a-share offer for all Dunkin' Donuts Inc. shares outstanding. The offer, which was due to expire yesterday, is conditional on 50.1% of Dunkin' common shares, on a fully diluted basis, being tendered and on the withdrawal of the company's poison pill rights plan.",
+            "output": [
+                "extended",
+                "offer",
+                "offer",
+                "due",
+                "expire",
+                "being",
+                "withdrawal"
+            ]
+        },
+        {
+            "id": "task388-715abb29822f43edb37c8192c31a9419",
+            "input": "Passage: But if the relatives balk, the Justice Department should quickly revoke their custody of the child and obtain a federal court order instructing them and their lawyers to turn Elian over to his father. The relatives may be less defiant if they are held in contempt of court.",
+            "output": [
+                "balk",
+                "revoke",
+                "obtain",
+                "instructing",
+                "turn",
+                "be",
+                "held"
+            ]
+        },
+        {
+            "id": "task388-c33ae7dfb37b4f91a1131a7258dfd38c",
+            "input": "Passage: Once Gonzalez comes to the United States _ it would be preferable if he went to Miami rather than to Washington _ only the most obdurate foes of Castro can argue that Elian should not be reunited with him. Gonzalez's arrival should also help clear the way for the Justice Department to make arrangements to transfer custody of the child.",
+            "output": [
+                "comes",
+                "be",
+                "went",
+                "argue",
+                "reunited",
+                "arrival",
+                "help",
+                "clear",
+                "make",
+                "arrangements",
+                "transfer"
+            ]
+        },
+        {
+            "id": "task388-3f4957668e8f439db81b900c159c2227",
+            "input": "Passage: Qantas has already approved orders for 12 of Airbus's new super jumbo A380s, with the company planning to fly the aircraft on the Australia-US route after delivery in late 2006. ",
+            "output": [
+                "approved",
+                "orders",
+                "planning",
+                "fly",
+                "delivery"
+            ]
+        },
+        {
+            "id": "task388-c61c5f136f104da3b43e8df8f0b6d8a8",
+            "input": "Passage: Media reports in Tanzania have said the ingredients for the bombs had originated in the Middle East and were transferred by sea via the Comoro Islands to Tanzania. Reports in Kenya said the components of the bomb that exploded in Nairobi were transported by road from Tanzania to Kenya.",
+            "output": [
+                "reports",
+                "said",
+                "originated",
+                "transferred",
+                "via",
+                "said",
+                "exploded",
+                "transported"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Apache 2.0"
+    ]
+}

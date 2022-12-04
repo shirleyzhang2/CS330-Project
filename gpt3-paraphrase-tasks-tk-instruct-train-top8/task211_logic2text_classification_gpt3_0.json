@@ -1,0 +1,128 @@
+{
+    "Contributors": [
+        "Mihir Parmar"
+    ],
+    "Source": [
+        "logic2text"
+    ],
+    "URL": [
+        "https://github.com/czyssrs/Logic2Text"
+    ],
+    "Categories": [
+        "Text to Code"
+    ],
+    "Reasoning": [
+        "Logical Reasoning"
+    ],
+    "Definition": [
+        "In this task, you are given commands in terms of logical operations, and you must determine if the natural interpretation of the command is appropriate for the given table. If it is appropriate, generate the label \"yes\". Otherwise, generate the label \"no\". The logical operators are defined as follows: 1. count: returns the number of rows in the view. 2. only: returns whether there is exactly one row in the view. 3. hop: returns the value under the header column of the row. 4. and: returns the boolean operation result of two arguments. 5. max/min/avg/sum: returns the max/min/average/sum of the values under the header column. 6. nth_max/nth_min: returns the n-th max/n-th min of the values under the header column. 7. argmax/argmin: returns the row with the max/min value in header column. 8. nth_argmax/nth_argmin: returns the row with the n-th max/min value in header column. 9. eq/not_eq: returns if the two arguments are equal. 10. round_eq: returns if the two arguments are roughly equal under certain tolerance. 11. greater/less: returns if the first argument is greater/less than the second argument. 12. diff: returns the difference between two arguments. 13. filter_eq/ filter_not_eq: returns the subview whose values under the header column is equal/not equal to the third argument. 14. filter_greater/filter_less: returns the subview whose values under the header column is greater/less than the third argument. 15. filter_greater_eq /filter_less_eq: returns the subview whose values under the header column is greater/less or equal than the third argument. 16. filter_all: returns the view itself for the case of describing the whole table 17. all_eq/not_eq: returns whether all the values under the header column are equal/not equal to the third argument. 18. all_greater/less: returns whether all the values under the header column are greater/less than the third argument. 19. all_greater_eq/less_eq: returns whether all the values under the header column are greater/less or equal to the third argument. 20. most_eq/not_eq: returns whether most of the values under the header column are equal/not equal to the third argument. 21. most_greater/less: returns whether most of the values under the header column are greater/less than the third argument. 22. most_greater_eq/less_eq: returns whether most of the values under the header column are greater/less or equal to the third argument."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Wikipedia",
+        "Logic -> Propositional Logic"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Command: eq { hop { nth_argmax { all_rows ; attendance ; 3 } ; competition } ; danish superliga 2005 - 06 }, interpretation: select the row whose attendance record of all rows is 3rd maximum. the competition record of this row is danish superliga 2005-06.",
+            "output": "yes",
+            "explanation": "Here, the command and interpretion given for the command is correct that 3rd maximum should be selected from given table rows. Hence, the label is 'yes'."
+        },
+        {
+            "input": "Command: eq { hop { argmax { all_rows ; duration } ; actor } ; lesley saweard }, interpretation: select the row whose duration record of all rows is maximum. the actor record of this row is lesley saweard.",
+            "output": "yes",
+            "explanation": "Here, the command and interpretion given for the command is correct that the maximum duration should be selected from the given table rows. Hence, the label is 'yes'."
+        },
+        {
+            "input": "Command: most_eq { all_rows ; points ; 0 }, interpretation: select the row whose duration record of all rows is maximum. the actor record of this row is lesley saweard.",
+            "output": "no",
+            "explanation": "Here, the command and interpretion given for the command is not correct because command indicates that the most of the point records are zero, however, interetation indicates that the maximum duration should be selected from the given table rows. Hence, the label is 'no'."
+        },
+        {
+            "input": "Command: and { only { filter_eq { all_rows ; acquisition via ; rookie draft } } ; eq { hop { filter_eq { all_rows ; acquisition via ; rookie draft } ; name } ; reynel hugnatan } }, interpretation: select the row whose attendance record of all rows is 3rd maximum. the competition record of this row is danish superliga 2005-06.",
+            "output": "no",
+            "explanation": "Here, the command and interpretion given for the command is not correct because command selects only one row whose acquisition record fuzzily matches to rookie draft, however, interpretation indicates that 3rd maximum should be selected from given table rows. Hence, the label is 'no'."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Command: eq { hop { nth_argmax { all_rows ; attendance ; 3 } ; competition } ; danish superliga 2005 - 06 }, interpretation: select the row whose attendance record of all rows is 3rd maximum. the competition record of this row is danish superliga 2005-06.",
+            "output": "no",
+            "explanation": "Given command and corresponding natural language interpretation is right, still label is 'no'. It must be 'yes'."
+        },
+        {
+            "input": "Command: eq { hop { nth_argmax { all_rows ; goal gain ; 3 } ; team } ; south china }, interpretation: select the rows whose name of county record fuzzily matches to veszpr\u00e9m. take the area (km square) record of this row. select the rows whose name of county record fuzzily matches to tolna.",
+            "output": "yes",
+            "explanation": "Given command and corresponding natural language interpretation is completely mis-matched, still label is 'yes'. It must be 'no'."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task211-c65f6a20933c4df88b1f451e2053939a",
+            "input": "Command: eq { hop { nth_argmax { all_rows ; semifinalists ; 4 } ; country / territory } ; australia }, interpretation: select the row whose semifinalists record of all rows is 4th maximum . the country / territory record of this row is australia .",
+            "output": [
+                "yes"
+            ]
+        },
+        {
+            "id": "task211-59bd5b51fa5e4135b5089bf8c20499ec",
+            "input": "Command: eq { hop { argmax { all_rows ; population } ; official name } ; saint george }, interpretation: select the row whose population record of all rows is maximum . the official name record of this row is saint george .",
+            "output": [
+                "yes"
+            ]
+        },
+        {
+            "id": "task211-a5a777b7c35943bab83fed875a1ccf43",
+            "input": "Command: eq { hop { nth_argmin { all_rows ; age ; 7 } ; name } ; konstantopoulos }, interpretation: for the method records of all rows , most of them fuzzily match to tko .",
+            "output": [
+                "no"
+            ]
+        },
+        {
+            "id": "task211-94a95556e48f49838844c56784a29d64",
+            "input": "Command: greater { hop { filter_eq { all_rows ; opponent ; troy nelson } ; round } ; hop { filter_eq { all_rows ; opponent ; shelton barnes } ; round } }, interpretation: select the rows whose opponent record fuzzily matches to troy nelson . take the round record of this row . select the rows whose opponent record fuzzily matches to shelton barnes . take the round record of this row . the first record is greater than the second record .",
+            "output": [
+                "yes"
+            ]
+        },
+        {
+            "id": "task211-aa9cbed8002c447e9f3eec81f9d78898",
+            "input": "Command: eq { hop { argmax { all_rows ; date } ; label } ; fantasy records }, interpretation: select the row whose date record of all rows is maximum . the label record of this row is fantasy records .",
+            "output": [
+                "yes"
+            ]
+        },
+        {
+            "id": "task211-ea3ec27878e5473e89c4bd6336df7387",
+            "input": "Command: eq { min { all_rows ; date } ; september 4 , 1994 }, interpretation: select the row whose date record of all rows is 2nd maximum . the tournament record of this row is moscow .",
+            "output": [
+                "no"
+            ]
+        },
+        {
+            "id": "task211-aa42273a20d94bac9eb852a5c7ea5397",
+            "input": "Command: round_eq { avg { all_rows ; points } ; 30 }, interpretation: select the rows whose college record fuzzily matches to north carolina . select the row whose height record of these rows is maximum . the player record of this row is jeff lebo .",
+            "output": [
+                "no"
+            ]
+        },
+        {
+            "id": "task211-1743fa2f77c84a19bf63bc8e2ca9b1fe",
+            "input": "Command: eq { count { filter_eq { all_rows ; score ; 0 } } ; 7 }, interpretation: select the rows whose score record is equal to 0 . the number of such rows is 7 .",
+            "output": [
+                "yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

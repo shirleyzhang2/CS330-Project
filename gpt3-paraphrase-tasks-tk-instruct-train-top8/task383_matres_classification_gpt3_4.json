@@ -1,0 +1,132 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "matres"
+    ],
+    "URL": [
+        "https://github.com/CogComp/MATRES"
+    ],
+    "Categories": [
+        "Misc."
+    ],
+    "Reasoning": [
+        "Temporal Reasoning"
+    ],
+    "Definition": [
+        "You will receive a context and a verb, separated with a newline character. You have to answer if the given verb can be anchored in time or not. A verb can be anchored in the real timeline if it happened in the past, is happening now, or is guaranteed to happen in the future. The output should be \"Yes\" if the verb can be anchored in time and \"No\" otherwise."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "News"
+    ],
+    "Positive Examples": [
+        {
+            "input": "It was followed by Denmark, Norway, Germany, France, Greece, Luxembourg, Spain, Britain, the United States, Iceland, Belgium, Italy, Portugal and Turkey. NATO decided at last year's Madrid summit to (invite) the three eastern European countries to start accession talks.  \n Verb: invite",
+            "output": "No",
+            "explanation": "This is a good example. The \"invite\" is not anchorable. Although NATO decided to invite them, they haven't invited them yet, and it's not guaranteed to happen in the future. They might change their decision later."
+        },
+        {
+            "input": "In Washington today, the Federal Aviation Administration (released) air traffic control tapes from the night the TWA Flight eight hundred went down.  \n Verb: released",
+            "output": "Yes",
+            "explanation": "In this sentence, the releasing event happened in the past, and it's anchorable."
+        },
+        {
+            "input": "New York State double-jeopardy laws would make it difficult to prosecute a suspect who had been found not guilty at a federal trial. U.S. Attorney Denise E. O'Donnell declined to discuss what federal charges were being pursued, but she said that in a case like this, potential charges would be abortion-related violence, the use of a firearm in an act of violence, crossing state lines to commit a crime, and, if the suspect's act was (tied) to an organization, violation of the so-called RICO statutes, which prohibit an organized criminal enterprise.  \n Verb: tied",
+            "output": "No",
+            "explanation": "In this sentence, \"tied\" is a conditional verb and it's not happening now and it's not guaranteed to happen in the future. So, it's not anchorable."
+        },
+        {
+            "input": "To get him. Nothing more, she (said).  \n Verb: said",
+            "output": "Yes",
+            "explanation": "In this example, she said something in the past. So, this verb is anchorable."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Preliminary DNA tests link a missing anti-abortion activist to a strand of hair found near where a sniper shot and killed a Buffalo, N.Y., doctor who performed abortions, a law enforcement official said Friday. The first round of DNA tests on the hair at the FBI Laboratory here established a high probability it came from the same person as a hair found in a New Jersey home where James C. Kopp , a 44-year-old anti-abortion protester, lived last year, the official (said).  \n Verb :said",
+            "output": "No",
+            "explanation": "In this sentence, the saying action happened in the past, and it's anchorable."
+        },
+        {
+            "input": " Nobody talks to Fidel, because he doesn't listen, Juanita Castro said. He talks and he (decides).  \n Verb: decides",
+            "output": "Yes",
+            "explanation": "In this sentence, \"decides\" is not anchorable. Because it's not happening now and it's not guaranteed to happen in the future."
+        },
+        {
+            "input": "Kopp remains at-large and police admit that despite a worldwide search and a $1 million reward, they don't know where he is. It's very frustrating (knowing) that he's out there, said Ms. Buckham.  \n Verb: knowing",
+            "output": "No",
+            "explanation": "In this sentence, \"knowing\" is happening now, and it's anchorable."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task383-1fa9e001121f402e91ff06f55cbf870c",
+            "input": "The Web site included the names and addresses of abortion doctors and featured photos of mangled fetuses and drawings of dripping blood. Three times, doctors whose names (appeared) on the list were killed, most recently last October when Dr. Barnett Slepian was gunned down by sniper fire in his home outside Buffalo, N.Y. His name on the Web site was crossed out that same day.  \n Verb: appeared",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task383-975b2c6fbfe242fc9229dcf982bd92c5",
+            "input": "A 1996 law named for him and Sen. Jesse Helms, R-N.C., strengthened the 1959 trade embargo against Cuba. Committee sources who spoke on the condition of anonymity said that while the subpoena requires that Elian (attend) the hearing in Washington, it's highly unlikely that his actual appearance will be sought.  \n Verb: attend",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task383-c453891a8a7e422ead48d597959f8580",
+            "input": "The issue is expected to dominate a NATO summit set for Washington in April. NATO's mission has changed dramatically since its founding in 1949, a time when the West was intent on halting the westward spread of Soviet-led communism -- a threat Winston Churchill (warned) about in his famous  Iron Curtain  speech delivered on March 5, 1946, at Westminster College in Fulton, Mo., 130 miles east of here.  \n Verb: warned",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task383-497b06fc8e2d47ae99d4e39917d61c55",
+            "input": "He was the 456th person to be placed on the FBI's most wanted list, which began in 1950. Since then, 427 fugitives have been taken into custody or located, 133 of them as a result of citizen assistance, the FBI (said).  \n Verb: said",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task383-976157bbd2974d158228cb820f724990",
+            "input": "I am the father of Elian and immigration has said that I am the only one who can speak for him  Why should it be (delayed) ?  \n Verb: delayed",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task383-aa59e37703a1499b9339aadc49877738",
+            "input": "Foreign Minister Don McKinnon said that terrorist bombings this month of U.S. embassies in Nairobi, Kenya and Dar es Salaam, Tanzania,  show that terrorism is an indiscriminate killer of innocent people.  Retaliating 13 days after the deadly embassy bombings in East Africa, U.S. forces Thursday (launched) cruise missile strikes against alleged terrorist camps in Afghanistan and a chemical plant in Sudan.  \n Verb: launched",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task383-a82490f38b2d4f16adb5db4d43a5e38c",
+            "input": "Support for the bill has been waning. Reno has already (met) with Lazaro Gonzalez's lawyer and a Catholic nun from Miami who oppose his return to Cuba, as well as with Elian's two grandmothers from Cuba, who want him returned.  \n Verb: met",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task383-a1e43552bfe44a20a7ab9bc83aee1e35",
+            "input": "In Dar es Salaam, she laid a wreath next to the crater left by the embassy blast that killed 10 people. Then she handed a folded American flag to U.S. Marines and, (wearing) a white construction hard hat, toured the damage inside.  \n Verb: wearing",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

@@ -1,0 +1,150 @@
+{
+    "Contributors": [
+        "Maitreya Patel"
+    ],
+    "Source": [
+        "cad"
+    ],
+    "URL": [
+        "https://github.com/dongpng/cad_naacl2021"
+    ],
+    "Categories": [
+        "Toxic Language Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You will read a text and determine if it is abusive. We consider content to be abusive if it contains negative statements against an identity, affiliation, or person; or if it challenges, condemns, or calls out the abusive language of others. URLs in the text have been replaced with [Link]."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Social Media -> Twitter"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Was Michelangelo straight though?  I mean, being a pizza-maniac ninja would indicate so, but... You never know.",
+            "output": "yes",
+            "explanation": "This text has indentity directed abuse because it is trying to judge sexual orientation of Michelangelo. Hence, the answer is \"yes\""
+        },
+        {
+            "input": "No Republican can ever be trusted. Mueller is obviously a Russian agent and we were foolish to ever trust him. Now we need to work hard to impeach Trump.",
+            "output": "yes",
+            "explanation": "Here, the text is targeting affiliations of two politicians. Hence, it is affiliation directed abuse. Therefore, the answer is \"yes\"."
+        },
+        {
+            "input": "Yes, just one more. Did your father beat you too much, not enough, or was he totally absent?",
+            "output": "yes",
+            "explanation": "Given text is trying to insult the caetain person, who is the part of the conversation. Therefore, this text is person directed abuse. Hence, the answer is \"yes\"."
+        },
+        {
+            "input": "Abrams is a typical Republican moron. He can't answer a simple yes or no question.",
+            "output": "yes",
+            "explanation": "This text is insults the Abrams by targetiing his affiliation. Therefore, the answer is \"yes\"."
+        },
+        {
+            "input": "You keep coming here and bitching and whining, doesn't that get boring? If you don't like the sub, and you clearly don't, why keep coming here?     It weirds me out to see how many left wingers have a bitch fit about conservatives having a laugh at their expense when they say ridiculous things (that's why this sub exists).     How hard is it to just not go to places where you know you'll get offended? You are a living meme, lol",
+            "output": "yes",
+            "explanation": "Given text contains negative statements and insults related to once identity, and affiliation. Therefore, this can belong to the three types of abuses. Hence, the answer is \"yes\"."
+        },
+        {
+            "input": "They're making fun of you.    Well they are not doing a very good job.",
+            "output": "yes",
+            "explanation": "The answer is \"yes\" because the text is trying to support the abuse already done to someone."
+        },
+        {
+            "input": "I'm ecstatic that it went so well. I was one of the only people that didn't use a script and was told that my speech was really good. This is a really big deal because a few years ago I had social anxiety so bad that it got me fired from a fast food restaurant.",
+            "output": "no",
+            "explanation": "The answer is \"no\" because there is no negative statements."
+        },
+        {
+            "input": "I don't even understand what that means. Borders exist because travel was expensive?",
+            "output": "no",
+            "explanation": "There is no negative statement. Hence, the answer is \"no\"."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Yeah, I wondered how they figured out where the blind spot was too. If it had been London UK instead of Chicago they wouldn't have been able to do it... every single square inch of that city is on multiple cameras.",
+            "output": "yes",
+            "explanation": "This is incorrect asnwer. Because there is no negative statement towards anyone."
+        },
+        {
+            "input": "what kind of person steals from a non profit organization who is using that money to save peoples lives?    Um, the same people who explicitly founded and set that non-profit organization up as a way to financially enrich themselves?",
+            "output": "no",
+            "explanation": "This is actually an example of the person directed abuse as the given text shares negative sentiment towards non profit organization. Hence, the answer should \"yes\"."
+        },
+        {
+            "input": "It's a bold move on reddit to admit you don't attend every LGTBQ rally.",
+            "output": "yes",
+            "explanation": "This is incorrect answer. Because this text doesn't have any negative statement."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task108-5063fdc55f3c414e879e197a8e92d112",
+            "input": "I'm useless, but not for long.  The future is coming on.",
+            "output": [
+                "no"
+            ]
+        },
+        {
+            "id": "task108-97742b0baa3f4c99aeb8b6b22b40c13e",
+            "input": ">any other questions?    So many but I know better than to ask",
+            "output": [
+                "no"
+            ]
+        },
+        {
+            "id": "task108-ef72e517c2de4b909c847fd41db5d157",
+            "input": "Also the remaining 994 skittles are oatmeal-flavored.",
+            "output": [
+                "no"
+            ]
+        },
+        {
+            "id": "task108-e9a12510df744f81983fbcec3df01c47",
+            "input": "Let North Korea take over.",
+            "output": [
+                "no"
+            ]
+        },
+        {
+            "id": "task108-988c2abbb16b43aab7f87dcead403c92",
+            "input": "The channel should be renamed to r/DunningKruger",
+            "output": [
+                "no"
+            ]
+        },
+        {
+            "id": "task108-be5ca67ab49744c1937a2886ed468a03",
+            "input": "In the US, calling someone a spaz could be considered insulting depending on the context, but not on the level of \"retard\" or even \"idiot\" or \"fool\".  More along the lines of \"ditz\" or \"dope\" in that it's generally perceived as playful rather than derogatory.",
+            "output": [
+                "no"
+            ]
+        },
+        {
+            "id": "task108-c065d641e8034814a35144d188e53626",
+            "input": "Neurogender? Having ASC, I'm trying to work out how I feel about this... Oh, I've got it:    #FUCK OFF! JUST FUCK THE FUCK OFF!#",
+            "output": [
+                "yes"
+            ]
+        },
+        {
+            "id": "task108-e94591525ca44691b7730a6ba9ca2a45",
+            "input": "that twatter feed combined with that profile picture is fucking peak mayoess. Confidently commenting on medicine, politics, and everything else as if she has any authority or knowledge on anything at all.",
+            "output": [
+                "yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

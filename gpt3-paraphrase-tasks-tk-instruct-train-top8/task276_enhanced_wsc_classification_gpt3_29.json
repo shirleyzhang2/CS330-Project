@@ -1,0 +1,123 @@
+{
+    "Contributors": [
+        "Pegah Alipoormolabashi"
+    ],
+    "Source": [
+        "wsc; enhanced_wsc"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/winograd_wsc; https://github.com/mhany90/perturbed-wsc"
+    ],
+    "Categories": [
+        "Text Matching"
+    ],
+    "Reasoning": [
+        "Commonsense Reasoning"
+    ],
+    "Definition": [
+        "You will be given two sentences. One of the sentences is a paraphrase of the original sentence, with changes in one or more aspects. Your task is to decide what is the difference between the two sentences. The types of change are explained below: Tense: The verbs in the sentence are changed in tense. Number: Plural nouns, verbs and pronouns are changed into single ones or the other way around. Voice: If the verbs are in active voice, they're changed to passive or the other way around. Adverb: The paraphrase has one adverb or more than the original sentence. Gender: The paraphrase differs from the original sentence in the gender of the names and pronouns. Synonym: Some words or phrases of the original sentence are replaced with synonym words or phrases. Changes in the names of people are also considered a synonym change. Classify your answers into Tense, Number, Voice, Adverb, Gender, and Synonym."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue",
+        "Narrative"
+    ],
+    "Positive Examples": [
+        {
+            "input": "original sentence: Lily spoke to Donna , breaking her silence . paraphrase: Lily is speaking to Donna , breaking her silence .",
+            "output": "Tense",
+            "explanation": "The verbs in this example are changed from past tense to present tense."
+        },
+        {
+            "input": "original sentence: I'm sure that my map will show this building ; it is very good . paraphrase: I'm sure that my maps will show these buildings ; they are very good .",
+            "output": "Number",
+            "explanation": "In this example, map and building and their pronouns has been changed. So, the output should be Number."
+        },
+        {
+            "input": "original sentence: Jim signaled the barman and gestured toward his bathroom key . paraphrase: Jim dreamily signaled the barman and vaguely gestured toward his bathroom key .",
+            "output": "Adverb",
+            "explanation": "In this example the adverbs \"vaguely\" and \"dreamily\" are added to the original sentence."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "original sentence: The dog chased the cat , which ran up a tree . It waited at the bottom . paraphrase: The dog is chasing the cat , which is running up a tree . It is waiting at the bottom .",
+            "output": "Voice",
+            "explanation": "The change in the original sentence is to tense, as the past tense verbs are changed to present tense ones. \"Voice\" is not a correct answer here."
+        },
+        {
+            "input": "original sentence: John was doing research in the library when he heard a man humming and whistling . He was very annoyed . paraphrase: John and Steve were doing research in the library when they heard men humming and whistling . They were very annoyed .",
+            "output": "Number is changed.",
+            "explanation": "You should only output the title of the change, and nothing more."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task276-9c7f920b546f41428f1899ea87411f4b",
+            "input": "original sentence: Many people start to read Paul's books and can't put them down . They are popular because Paul writes so well . paraphrase: Many people started to read Paul's books and couldn't put them down . They were popular because Paul wrote so well .",
+            "output": [
+                "Tense"
+            ]
+        },
+        {
+            "id": "task276-8adda57203514569bd3f39c1649ef15f",
+            "input": "original sentence: Fred is the only man still alive who remembers my great-grandfather . He was a remarkable man . paraphrase: Fred and Julian are the only men still alive who remember my great-grandfathers . They were remarkable men .",
+            "output": [
+                "Number"
+            ]
+        },
+        {
+            "id": "task276-d47903b01b40441da849d7ce3e92389a",
+            "input": "original sentence: Adam can't leave work here until Bob arrives to replace him . If Bob had left home for work on time , he would be here by this time . paraphrase: Adam can't really leave work here until Bob arrives to replace him . If Bob had actually left home for work on time , he would be here by this time .",
+            "output": [
+                "Adverb"
+            ]
+        },
+        {
+            "id": "task276-9799761a0d01404db1fea2e3bf43a822",
+            "input": "original sentence: Ann asked Mary what time the library closes , but she had forgotten . paraphrase: Luke asked Henry what time the library closes , but he had forgotten .",
+            "output": [
+                "Gender"
+            ]
+        },
+        {
+            "id": "task276-e3688dd15f2b496f808247fe979336cd",
+            "input": "original sentence: There is a gap in the wall . You can see the garden through it . paraphrase: There really is a gap in the wall . You can see the garden through it .",
+            "output": [
+                "Adverb"
+            ]
+        },
+        {
+            "id": "task276-c60bd3088aeb463ebf50b260991afb34",
+            "input": "original sentence: Jane gave Joan candy because she was hungry . paraphrase: Jane and Lucy gave Joan and Anne candy because they were hungry .",
+            "output": [
+                "Number"
+            ]
+        },
+        {
+            "id": "task276-f1facd1407544b91aa308a3f737db44c",
+            "input": "original sentence: Jim yelled at Kevin because he was so upset . paraphrase: Kevin was yelled at by Jim because he was so upset .",
+            "output": [
+                "Voice"
+            ]
+        },
+        {
+            "id": "task276-dae5dd198a2d48f39736d8b84c538260",
+            "input": "original sentence: John was jogging through the park when he saw a man juggling watermelons . He was very impressed . paraphrase: ivan was jogging through the park when he saw a man juggling watermelons . he was very impressed .",
+            "output": [
+                "Synonym"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

@@ -1,0 +1,122 @@
+{
+    "Contributors": [
+        "Hadi Mazboudi"
+    ],
+    "Source": [
+        "wiqa"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/wiqa"
+    ],
+    "Categories": [
+        "Sentence Ordering"
+    ],
+    "Reasoning": [
+        "Temporal Reasoning"
+    ],
+    "Definition": [
+        "Given a set of steps describing a process, you need to answer the question 'Are the given steps in order?' with either Yes or No. No means the steps are out of order and do not make sense in the current order. Yes means the steps are in order and make sense in the current order. A set of steps are not in order if the steps reference information that is introduced in a later step."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Natural Science"
+    ],
+    "Positive Examples": [
+        {
+            "input": " ['The seeds are dispersed by wind, animals, etc', 'The seeds reach the ground', 'Grow into new trees', 'The process repeats itself over and over', 'A tree produces seeds', 'These new trees produce seeds'] ",
+            "output": "No",
+            "explanation": "These steps are not in order. The first step in this sequence is 'The seeds are dispersed by wind, animals, etc' but the step introducing the seed 'A tree produces seeds' is after the steps referencing the seeds. Therefore, the answer is No"
+        },
+        {
+            "input": " ['The carafe is filled with water', 'The water is poured into the machine at the back', 'Coffee beans are put into a grinder', 'The grinder is activated', 'A filter is put into the coffee maker', 'The ground coffee is put into the filter', 'Sometimes a bit of salt is added to the grounds to bring out flavor', 'The top of the machine is closed', 'The power is turned on', 'The water passes through the grounds and becomes coffee.'] ",
+            "output": "Yes",
+            "explanation": "These steps are in order. The information from each previous step leads into the next step. Therefore, the correct answer is Yes"
+        },
+        {
+            "input": " ['The nest is done.', 'The bird makes a flat base with twigs', 'The bird picks a tree', 'The bird makes sides with twigs and other things', 'The bird adds softer material to the inside', 'The bird collects twigs and other refuse'] ",
+            "output": "No",
+            "explanation": "These steps are not in order. The first step is 'The nest is done'. Since these steps outline how birds make a nest, this step should be last. Therefore, the steps are out of order and the answer is No"
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": " ['The cans are transported to a facility', 'The molds are flattened and rolled into sheets to reuse.', 'The cans are heated to 1400 degrees to melt them', 'The molten metal is poured into molds', 'The cans are shredded by a machine', 'Put the aluminum can into a recycle bin'] ",
+            "output": "Yes",
+            "explanation": "This answer is incorrect because these steps are out of order. The step 'Put the aluminum can into a recycle bin' should be first. Without this step, the step 'The cans are transported to a facility' does not make sense because the cans are not introduced yet. The correct answer is No"
+        },
+        {
+            "input": " ['Acid rain is produced by chemicals that reach into the atmosphere', 'Falls onto the ground', 'The acid rain starts scouring rocks', 'Destroys vegetation', 'The lack of vegetation alters the surrounding environment.'] ",
+            "output": "No",
+            "explanation": "This answer is incorrect because these steps are in order. The step, 'Acid rain is produced by chemicals that reach into the atmosphere' introduces the subject of the process, acid rain. The step 'Falls onto the ground' refers to the acid rain that was in the previous step. After the acid falls onto the ground, the next step is 'The acid rain starts scouring rocks'. The next step describes what happens after acid rain falls onto the ground, 'Destroys vegetation'. After the acid rain destroys vegetation, 'The lack of vegetation alters the surrounding environment.' Since each step only uses information from previous steps, the correct answer is Yes"
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1548-bfc397642f1e4d228c22c389dce649da",
+            "input": " ['Grass and small plants grow in an area', 'These plants die', 'The soil gains organic material', 'The soil becomes more fertile', 'Larger plants are able to be supported', 'Trees eventually grow.'] ",
+            "output": [
+                "  Yes  "
+            ]
+        },
+        {
+            "id": "task1548-671264a0c4ca4f3d95dd7cf87c957777",
+            "input": " ['Sunlight is absorbed by a green chemical in the leaves.', 'It passes through vessels in the stem on its way to the leaves', 'Water is absorbed by the roots', 'These pores are called stomata', 'Carbon dioxide from the air passes through small pores (holes) in the leaves'] ",
+            "output": [
+                "  No  "
+            ]
+        },
+        {
+            "id": "task1548-8d9e259067b84c739fcb07d92a1f7b98",
+            "input": " ['The consumer throws aluminum cans and foil into a recycle bin', 'The aluminum is collected', 'Taken to a treatment plant', 'The aluminum is sorted and cleaned ready for reprocessing', 'The aluminum is re-melted', 'Turned into molten aluminum', 'The aluminum is made into large blocks called ingots', 'The ingots are sent to mills to be rolled out', 'The rolled out product is made into new aluminum products.'] ",
+            "output": [
+                "  Yes  "
+            ]
+        },
+        {
+            "id": "task1548-5c81ebd4dece480886d75aa21b680ace",
+            "input": " ['You breathe oxygen into your body through the nose or mouth', 'The oxygen travels to the lungs through the windpipe', 'The air sacs in the lungs send the oxygen into the blood stream', 'The carbon dioxide in the blood stream is transferred to the air sacs', 'The lungs expel through the nose or mouth back into the environment.'] ",
+            "output": [
+                "  Yes  "
+            ]
+        },
+        {
+            "id": "task1548-4ea83e7e04a342388d2edb35a34d772d",
+            "input": " ['The copies infect other cells to make more viruses, or they escape from the body and infect a new victim', 'The receptors will lock onto a target cell using these chemical receptors on the surface, which docks onto the cell surface', 'The flu virus has receptors, which are like viral Velcro, on the surface of the virus particle', 'The receptors  then go into the cell', 'The receptors use it like a factory', 'The copies come streaming out of the cell', 'The receptors take it over and make it produce thousands or in some cases millions of copies of new viruses'] ",
+            "output": [
+                "  No  "
+            ]
+        },
+        {
+            "id": "task1548-d3dc915a50c54e52a6e1b738f3aac784",
+            "input": " ['Carbon dioxide passes through stomata in the leaves', 'Water is absorbed through roots', 'Chloroplast cells in leaves contain chlorophyll', 'Chlorophyll absorbs energy from sunlight', 'Energy splits water molecules into hydrogen and oxygen', 'Oxygen gets released into atmosphere', 'Hydrogen and carbon dioxide used to create glucose', 'Glucose is food for plants.'] ",
+            "output": [
+                "  Yes  "
+            ]
+        },
+        {
+            "id": "task1548-9350ee9134d34568bb5eba07b8a124c2",
+            "input": " ['The acid in the rain gets to the limestone below the soil', 'Acid continues to erode the limestone with more rain over time', 'The acid dissolves the limestone', 'The carbon dioxide in the rain washes through the soil', 'The eroded limestone sometimes forms caves.', 'The carbon dioxide turns into acid', 'Limestone is located under the soil', 'Rain picks up carbon dioxide as it falls to earth', 'The rain falls on the soil over the limestone'] ",
+            "output": [
+                "  No  "
+            ]
+        },
+        {
+            "id": "task1548-8b2d4c57c9cf48639e681d5a1842ef0b",
+            "input": " ['An egg is laid by a mother bird', 'A baby bird forms within the egg if it is fertilized', 'The baby bird begins pecking out of the egg', 'The baby bird is unable to fly to get food', 'The mother bird must feed the baby bird food', 'The bird grows stronger and grows wings', 'The bird is able to fly', 'The bird is able to leave the nest and find food', 'The bird is able to reproduce.'] ",
+            "output": [
+                "  Yes  "
+            ]
+        }
+    ],
+    "Instance License": [
+        "Apache 2.0"
+    ]
+}

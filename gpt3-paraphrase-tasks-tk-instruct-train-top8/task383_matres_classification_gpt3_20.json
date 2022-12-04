@@ -1,0 +1,132 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "matres"
+    ],
+    "URL": [
+        "https://github.com/CogComp/MATRES"
+    ],
+    "Categories": [
+        "Misc."
+    ],
+    "Reasoning": [
+        "Temporal Reasoning"
+    ],
+    "Definition": [
+        "You will be given a context and a verb, separated by a newline character. You have to output whether the given verb can be anchored in time or not. A verb can be anchored in the real timeline if it happened in the past, is happening now, or is guaranteed to happen in the future. The output should be \"Yes\" if the verb can be anchored in time and \"No\" otherwise."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "News"
+    ],
+    "Positive Examples": [
+        {
+            "input": "It was followed by Denmark, Norway, Germany, France, Greece, Luxembourg, Spain, Britain, the United States, Iceland, Belgium, Italy, Portugal and Turkey. NATO decided at last year's Madrid summit to (invite) the three eastern European countries to start accession talks.  \n Verb: invite",
+            "output": "No",
+            "explanation": "This is a good example. The \"invite\" is not anchorable. Although NATO decided to invite them, they haven't invited them yet, and it's not guaranteed to happen in the future. They might change their decision later."
+        },
+        {
+            "input": "In Washington today, the Federal Aviation Administration (released) air traffic control tapes from the night the TWA Flight eight hundred went down.  \n Verb: released",
+            "output": "Yes",
+            "explanation": "In this sentence, the releasing event happened in the past, and it's anchorable."
+        },
+        {
+            "input": "New York State double-jeopardy laws would make it difficult to prosecute a suspect who had been found not guilty at a federal trial. U.S. Attorney Denise E. O'Donnell declined to discuss what federal charges were being pursued, but she said that in a case like this, potential charges would be abortion-related violence, the use of a firearm in an act of violence, crossing state lines to commit a crime, and, if the suspect's act was (tied) to an organization, violation of the so-called RICO statutes, which prohibit an organized criminal enterprise.  \n Verb: tied",
+            "output": "No",
+            "explanation": "In this sentence, \"tied\" is a conditional verb and it's not happening now and it's not guaranteed to happen in the future. So, it's not anchorable."
+        },
+        {
+            "input": "To get him. Nothing more, she (said).  \n Verb: said",
+            "output": "Yes",
+            "explanation": "In this example, she said something in the past. So, this verb is anchorable."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Preliminary DNA tests link a missing anti-abortion activist to a strand of hair found near where a sniper shot and killed a Buffalo, N.Y., doctor who performed abortions, a law enforcement official said Friday. The first round of DNA tests on the hair at the FBI Laboratory here established a high probability it came from the same person as a hair found in a New Jersey home where James C. Kopp , a 44-year-old anti-abortion protester, lived last year, the official (said).  \n Verb :said",
+            "output": "No",
+            "explanation": "In this sentence, the saying action happened in the past, and it's anchorable."
+        },
+        {
+            "input": " Nobody talks to Fidel, because he doesn't listen, Juanita Castro said. He talks and he (decides).  \n Verb: decides",
+            "output": "Yes",
+            "explanation": "In this sentence, \"decides\" is not anchorable. Because it's not happening now and it's not guaranteed to happen in the future."
+        },
+        {
+            "input": "Kopp remains at-large and police admit that despite a worldwide search and a $1 million reward, they don't know where he is. It's very frustrating (knowing) that he's out there, said Ms. Buckham.  \n Verb: knowing",
+            "output": "No",
+            "explanation": "In this sentence, \"knowing\" is happening now, and it's anchorable."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task383-986d076335074e278079f8d6e8774a4d",
+            "input": "A small group of girls wore construction paper handcuffs -- an apparent reference to the government's characterization of Elian's retention in the United States as a  kidnapping.  Fidel Castro's government has been using such traditional political events -- along with other rallies almost every day -- to (draw) attention to the case of Elian, who was rescued Nov. 25 while clinging to an inner tube.  \n Verb: draw",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task383-4e6b86d0886b4650b395d16b0e223c53",
+            "input": "NATO Secretary General Javier Solana says,  The accession of the Czech Republic, Hungary and Poland... is perhaps the clearest demonstration of the fact that Europe is growing closer together.   Extending membership to these three democracies helps to (stabilize) a region that historically has been the staging ground for many of the disasters of this century.   \n Verb: stabilize",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task383-dd479a1ccecc4a5898ee9dabae82d5c0",
+            "input": "At the same time, we want to help Kenya prepare to meet future medical disasters, regardless of their cause.  The bombings on Aug. 7 killed 259 people, including 12 Americans, and (injured) more than 5,500.  \n Verb: injured",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task383-17ee07196b0445feb83c7bb5b3e19fc4",
+            "input": "In Havana, Elian's father joined President Fidel Castro on Thursday in a packed auditorium in what has become a daily public rally to press for the boy's return. Speaker after speaker (denounced) the United States and extolled the virtues of Cuba's communist revolution.  \n Verb: denounced",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task383-c4f00e8e2bc14a6196fa3a5dbdc336da",
+            "input": "\" Terrorism is inconsistent with our African history, our tradition, our culture and our beliefs, \" he said. \" Americans and Africans need to (strengthen) their cooperation in this universal battle \" against terrorism.  \n Verb: strengthen",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task383-bdae0622632d4aebb57eca5c77aa7f9b",
+            "input": "His presence on American soil is necessary to dispel doubts about his fitness as a father _ raised maliciously by Elian's Miami relatives _ and to end speculation that he is indifferent about reclaiming custody of his son. With Gonzalez all but out of sight in Cuba, the relatives have had a free hand to distort the case with bogus legal arguments and unsubstantiated claims that Elian is afraid to (see) his father.  \n Verb: see",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task383-00b54a6414e64c49bc1a6d9ed550f69c",
+            "input": "The struggle must not stop for one minute !  said a message that was read Wednesday night to several thousand rallying Cuban scientists. Rescued on Nov. 25 by fishermen off the Florida coast, Elian has (become) the subject of an international custody battle.  \n Verb: become",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task383-c5a16d7dfbbd46bc82bcaa6ef7d7c6a8",
+            "input": "MIAMI ( AP ) -- In efforts to prevent Elian Gonzalez's return to Cuba, an anti-Castro lawmaker subpoenaed him Friday to testify before a congressional committee and one of his Miami relatives (sought) to become his legal guardian.  \n Verb: sought",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

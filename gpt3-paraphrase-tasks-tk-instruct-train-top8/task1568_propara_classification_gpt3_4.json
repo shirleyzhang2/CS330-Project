@@ -1,0 +1,127 @@
+{
+    "Contributors": [
+        "Amrit Bhaskar"
+    ],
+    "Source": [
+        "propara"
+    ],
+    "URL": [
+        "https://arxiv.org/abs/1805.06975"
+    ],
+    "Categories": [
+        "Information Extraction"
+    ],
+    "Reasoning": [
+        "Deductive Reasoning"
+    ],
+    "Definition": [
+        "In this task, you are given a paragraph, an event, and an entity. The event is part of the paragraph and it changes the state of the entity. Your task is to classify the state of the entity into three classes: 1) not exist, 2) unknown location, and 3) known location. \"Not exist\" means the entity doesn't exist in that state anymore. \"Unknown location\" means the entity exists in that state but location is unknown. \"Known location\" means the entity exists and location is known."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Natural Science"
+    ],
+    "Positive Examples": [
+        {
+            "input": " \"process paragraph : Magma rises from deep in the earth. The magma goes into volcanos. The volcanos pressure the magma upwards. The pressure causes the magma to push through the surface of the volcano. The lava cools. The lava forms new rock. New magma is pressured to the surface of the volcano. The volcano bursts through the rock the formed after the last eruption\" , \"event : Magma rises from deep in the earth\" , \"entity : magma\" ",
+            "output": "known location",
+            "explanation": "The process paragraph explains in steps about - the cause for volcano eruption. The event is a part of the process paragraph given. The entity lies both in process paragraph and the event. So, this is a good example."
+        },
+        {
+            "input": " \"process paragraph : Water from the ocean washes onto beaches in waves. The waves contain sediment from the ocean. The water and particles in it hit rocks and sand on the beach. The wind and current sometimes push the water and particles harder. Tiny parts of the rocks on the shore come off the larger rocks. The waves pick up sand and small rocks from the beach. The waves go back out into the ocean. The waves carry the new particles with them. Rocks and the beach look a little different. \", \"event : The waves go back out into the ocean. \", \"entity : waves\" ",
+            "output": " known location ",
+            "explanation": "The process paragraph explains in steps about - the sequence of events during erosion by the ocean. The event is a part of the process paragraph given. The entity lies both in process paragraph and the event. So, this is a good example."
+        },
+        {
+            "input": " \"process paragraph : Water from oceans, lakes, swamps, rivers, and plants turns into water vapor. Water vapor condenses into millions of tiny droplets that form clouds. Clouds lose these droplets through rain or snow, also caused precipitation. Precipitation is either absorbed into the ground or runs off into rivers. Water that was absorbed into the ground is taken up by plants. Plants lose water from their surfaces as vapor. The vapor goes back into the atmosphere. Water that runs off into rivers flows into ponds, lakes, or oceans. The water evaporates back into the atmosphere. \", \"event : Water from oceans, lakes, swamps, rivers, and plants turns into water vapor. \", \"entity : water\" ",
+            "output": " not exist ",
+            "explanation": "The process paragraph explains in steps about - the sequence of events during water cycle. The event is a part of the process paragraph given. The entity lies both in process paragraph and the event. So, this is a good example."
+        },
+        {
+            "input": " \"process paragraph : Sediment settles in a place due to gravity. The sediment breaks down into small particles. Wind or water picks up the sediment. The sediment travels along the same route as the wind or water. The sediment is deposited at new locations by the wind or water. The sediment is picked up again by new wind or water. The sediment travels further. The sediment is deposited again in a new place. \", \"event : The sediment is picked up again by new wind or water. \", \"entity : sediment; small particles\" ",
+            "output": " unknown location ",
+            "explanation": "The process paragraph explains in steps about - the sequence of events during sediment transportation across the earth. The event is a part of the process paragraph given. The entity lies both in process paragraph and the event. So, this is a good example."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": " \"process paragraph : Water from oceans, lakes, swamps, rivers, and plants turns into water vapor. Water vapor condenses into millions of tiny droplets that form clouds. Clouds lose these droplets through rain or snow, also caused precipitation. Precipitation is either absorbed into the ground or runs off into rivers. Water that was absorbed into the ground is taken up by plants. Plants lose water from their surfaces as vapor. The vapor goes back into the atmosphere. Water that runs off into rivers flows into ponds, lakes, or oceans. The water evaporates back into the atmosphere. \", \"event : Water from oceans, lakes, swamps, rivers, and plants turns into water vapor. \", \"entity : water\" ",
+            "output": " known location ",
+            "explanation": "This is a bad example because the output class is incorrect. Water in this event has turned into water vapor and is longer in the form of water. The existence is necessary to find the location. "
+        },
+        {
+            "input": " \"process paragraph : Magma rises to the surface during a volcano. The magma undergoes changes in temperature. The magma undergoes changes in pressure. The magma cools. The magma solidifies. The magma crystallizes. Igneous rock is formed. \", \"event : Magma rises to the surface during a volcano. \", \"entity : magma\" ",
+            "output": " unknown location ",
+            "explanation": "This is a bad example because the output class is incorrect. Magma in this event has risen to the surface and is considered a known location. Only classify to unknown location when the place of entity is not determined. "
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1568-7e9a3f7ad6c24aabb5b1dfd77af81bf1",
+            "input": " \"process paragraph : : Adult rabbits mate. The female becomes pregnant. The female gives birth to rabbit babies. The rabbit babies grow into adult rabbits. The new adults mate with other rabbits. Produce more rabbits. \", \"event : The female becomes pregnant.\", \"entity : adult rabits\" ",
+            "output": [
+                " unknown location "
+            ]
+        },
+        {
+            "id": "task1568-0747aa3563b14c92a69eea4a04e78496",
+            "input": " \"process paragraph : : Food enters the mouth. Food mixes with saliva. Food is swallowed. Enzymes in the stomach break down the food. The food moves to the small intestine. Hormones from the pancreas move to the small intestine. The hormones create the amount of sugar in the blood from the food. The sugar in the blood travels to the body. The sugar provides energy for the muscles. \", \"event : Food mixes with saliva.\", \"entity : food\" ",
+            "output": [
+                " known location "
+            ]
+        },
+        {
+            "id": "task1568-2ac5177a902441cfb57404246b761a08",
+            "input": " \"process paragraph : : Get the ice tray. Remove any ice cubes currently in the tray. Fill the tray with cold water. Ensure the tray is evenly filled to an appropriate level. Open the freezer. Place the tray in the freezer. Close the freezer door. Wait. \", \"event : Remove any ice cubes currently in the tray.\", \"entity : ice tray ; tray\" ",
+            "output": [
+                " unknown location "
+            ]
+        },
+        {
+            "id": "task1568-bd10567dae714e71b74527c525e906ad",
+            "input": " \"process paragraph : : Trash is put into a household trashbag. The trashbags are thrown into a large outdoor trashcan. The trashcan is emptied by a large trash truck. The trash truck travels to the landfill. Unloads all the trash the truck has collected. \", \"event : The trashbags are thrown into a large outdoor trashcan.\", \"entity : trash\" ",
+            "output": [
+                " known location "
+            ]
+        },
+        {
+            "id": "task1568-449d0b040654411f8ea5f396fd4b1f6d",
+            "input": " \"process paragraph : : Tectonic plates smash together. The edges of the plates crumple up. The ridges are mountain ranges. Magma is forced to the surface. Magma forms a volcano. \", \"event : The edges of the plates crumple up.\", \"entity : magma\" ",
+            "output": [
+                " unknown location "
+            ]
+        },
+        {
+            "id": "task1568-1d9bf3fa2ce94d3c854cb96ad0357152",
+            "input": " \"process paragraph : : The organism must die to begin the process. The soft tissue decomposes. The bones are left behind. Scavengers tear the body apart and move the bones elsewhere. Wind and rain also scatter the bones further. The bones left behind will weather and become buried by sand and soil. The proteins in the bone are replaced with minerals that are dissolved in the soil. This creates a rock-like substance called a fossil. Water and wind erosion wear away the layers of soil on top of the fossil. This makes discovery of the fossil possible. \", \"event : The soft tissue decomposes.\", \"entity : organism\" ",
+            "output": [
+                " not exist "
+            ]
+        },
+        {
+            "id": "task1568-2be36da2a64840ccbc2c1bd253ccdfad",
+            "input": " \"process paragraph : : You wash the wound. You apply a bandaid or other covering if needed. The blood clots. A scab forms. The skin repairs itself under the protective cover of the scab. The scab falls off. \", \"event : You apply a bandaid or other covering if needed.\", \"entity : Wound\" ",
+            "output": [
+                " known location "
+            ]
+        },
+        {
+            "id": "task1568-b9f4ed25cc7a4400896c0802a45d99cf",
+            "input": " \"process paragraph : : Choose what you want to write your letter on. Think of what you want to say. Write some nice things!. Place the letter into an envelope. Put a stamp on the top right corner of the face of the envelope. Write the address of the recipient on the envelope. Put the envelope in your mailbox. Raise the flag on your mailbox, indicating to the mailman that you have outgoing mail. \", \"event : Think of what you want to say.\", \"entity : envelope\" ",
+            "output": [
+                " unknown location "
+            ]
+        }
+    ],
+    "Instance License": [
+        "Apache 2.0"
+    ]
+}

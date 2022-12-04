@@ -1,0 +1,116 @@
+{
+    "Contributors": [
+        "Divya Reddy Katpally"
+    ],
+    "Source": [
+        "dbpedia_14"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/dbpedia_14"
+    ],
+    "Categories": [
+        "Text Matching"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "In this task, you're given a text and a title. The title is present in the document and it refers to the entity in the document. If the title is slightly different from what is present in the text but still refers to the same entity, then it is a correct title. Indicate your answer as \"Yes\" if the title is correct, otherwise indicate your answer as \"No\"."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Wikipedia"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Text: The Mansfield Building Society is a UK building society which has its headquarters in Mansfield Nottinghamshire. It is a member of the Building Societies Association. \nTitle: Mansfield Building Society",
+            "output": "Yes",
+            "explanation": "The title \"Mansfield Building Society\" is present in the text and it is the main entity that is referred in the text. Hence, it is the title of the document."
+        },
+        {
+            "input": "Text:  The third and current HMS Argyll is a Type 23 'Duke' Class frigate. She is currently the oldest serving Type 23 frigate in the Royal Navy. Like all of her class she is named for a British dukedom in this case that of Argyll. \nTitle: HMS Argyll (F231)",
+            "output": "Yes",
+            "explanation": "\"HMS Argyll\" is present in the text and it is the main entity that is referred in the text. Here, the text in parentheses \"F31\" is not present in the document and it can be ignored. Hence, the output is correct. "
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Text: The Mansfield Building Society is a UK building society which has its headquarters in Mansfield Nottinghamshire. It is a member of the Building Societies Association. \nTitle: Mansfield Building Society",
+            "output": "No",
+            "explanation": "The title \"Mansfield Building Society\" is present in the text and it is the main entity that is referred in the text. Hence, the output is incorrect."
+        },
+        {
+            "input": "Text:  The third and current HMS Argyll is a Type 23 'Duke' Class frigate. She is currently the oldest serving Type 23 frigate in the Royal Navy. Like all of her class she is named for a British dukedom in this case that of Argyll. \nTitle: HMS Argyll (F231)",
+            "output": "HMS Argyll",
+            "explanation": "The output should be either \"Yes\" or \"No\". Hence, it is negative example."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task630-e1892661c7cc4f11a7411058fc872da6",
+            "input": "Text:  The Kemerovo State University (Russian: \u041a\u0435\u0301\u043c\u0435\u0440\u043e\u0432\u0441\u043a\u0438\u0439 \u0433\u043e\u0441\u0443\u0434\u0430\u0301\u0440\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u0439 \u0443\u043d\u0438\u0432\u0435\u0440\u0441\u0438\u0442\u0435\u0301\u0442) (KemSU) was established in 1973 as a successor to Kemerovo Pedagogical Institute. It is a leading educational and scientific center of Kemerovo Oblast with five branches throughout the oblast in Belovo Anzhero-Sudzhensk Novokuznetsk Prokopyevsk as well as in Ulan Bator in Mongolia. \nTitle: Krimmena Mistika",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task630-3f64b7bb4ff8421b9c131722eaa568c2",
+            "input": "Text:  Jai Jwala is a 1972 Hindi drama film directed by Manohar Deepak. The film stars Sunil Dutt and Madhumati. \nTitle: Jai Jwala",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task630-1e53b7c696e446d1b773371ac0ad87cb",
+            "input": "Text:  Jake Barker-Daish (born 7 May 1993) is an Australian football (soccer) player who plays as a midfielder for Adelaide United in the A-League. In 2010 Barker-Daish won the Australian Institute Of Sport player of the year. \nTitle: Jake Barker-Daish",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task630-fd87c9c1c95f45d491e032979a4745e7",
+            "input": "Text:  The Steuben Memorial State Historic Site is a historic location and state park in the eastern part of Steuben Oneida County New York that honors Baron von Steuben the Drillmaster of the American Revolution. The land in this part of Oneida County was part of a 16000-acre (6500 ha) land grant made to von Steuben for his services to the United States. He used the land for his summer residence. \nTitle: Amphitheater High School",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task630-ac6c6a535f154031944853d090377253",
+            "input": "Text:  Bear Mountain Indian Mission School is a historic Native American missionary school in Amherst Virginia.The school was used by the Monacan tribe since: [i]n 1868 [when] a parcel of land was donated for a meeting place for the Indian people. At the time churches and schools were provided for whites and for blacks but not for Indians. Originally a wooden arbor served as the meeting place and itinerant ministers began to hold Baptist and Methodist services there. \nTitle: Bear Mountain Indian Mission School",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task630-ee209fe0fd474fe2a6d60c97b7a625b1",
+            "input": "Text:  Babcock University is a private Christian co-educational Nigerian university owned and operated by the Seventh-day Adventist Church in Nigeria. The university is located equidistant between Ibadan and Lagos. Enrolment was about 6000 as of 2009. \nTitle: Babcock University",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task630-744dd6a81e1448db8de85bb39c5fb9d6",
+            "input": "Text:  Mullin High School or Mullin School is a 1A high school located in Mullin Texas (USA). It is part of the Mullin Independent School District located in northwest Mills County. Mullin School has all grades (K-12) in one building. In 2013 the school was rated Met Standard by the Texas Education Agency. \nTitle: Mullin High School",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task630-36e20c42c5984eb8ad9b4bceffbefdf2",
+            "input": "Text:  Rise Up is an album released by Peter Frampton in 1980. As Frampton stated: This album was released in Brazil to promote our tour there in 1980 - the album eventually turned into Breaking All the Rules released the next year.. \nTitle: Myrmecia regularis",
+            "output": [
+                "No"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY-SA",
+        "GNU Free Documentation 2.0"
+    ]
+}

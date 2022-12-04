@@ -1,0 +1,128 @@
+{
+    "Contributors": [
+        "Arit Chanda"
+    ],
+    "Source": [
+        "sts_b"
+    ],
+    "URL": [
+        "https://dl.fbaipublicfiles.com/glue/data/STS-B.zip"
+    ],
+    "Categories": [
+        "Text Matching"
+    ],
+    "Reasoning": [
+        "Textual Entailment -> Analogical Reasoning"
+    ],
+    "Definition": [
+        "This task requires you to compare two sentences and classify them into one of the following six categories, from 0-5, based on their similarity: 0 : The two sentences are completely dissimilar. 1 : The two sentences are not equivalent, but are on the same topic. 2 : The two sentences are not equivalent, but share some details. 3 : The two sentences are roughly equivalent, but some important information differs/missing. 4 : The two sentences are mostly equivalent, but some unimportant details differ. 5 : The two sentences are completely equivalent, as they mean the same thing."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Books",
+        "Dialogue"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Sentence 1: A plane is taking off. Sentence 2: An air plane is taking off.",
+            "output": "5",
+            "explanation": "Here both statements are talking about the same thing hence it will be classified as a 5."
+        },
+        {
+            "input": "Sentence 1: A man is playing a large flute. Sentence 2: A man is playing a flute.",
+            "output": "4",
+            "explanation": "In this example both statements mean the same thing but only unimportant details like the size of the flute is missing in the second statement. Hence, it is classified as a 4."
+        },
+        {
+            "input": "Sentence 1: Three men are playing chess. Sentence 2: Two men are playing chess.",
+            "output": "3",
+            "explanation": "In this example important detail of the number of men playing chess is wrong. Hence this example will be clasified as a 3."
+        },
+        {
+            "input": "Sentence 1: A man is smoking. Sentence 2: A man is skating.",
+            "output": "0",
+            "explanation": "Here there is no similarity between the two sentences hence the output classification is 0."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Sentence 1: A man is playing the cello. Sentence 2: A man seated is playing the cello.",
+            "output": "3",
+            "explanation": "Sentence 1 and 2 are only different by an unimportant detail of the man seating so the output should have been 4."
+        },
+        {
+            "input": "Sentence 1: The man is playing the piano. Sentence 2: The man is playing the guitar.",
+            "output": "0",
+            "explanation": "In this example both our sentences are sharing some details about playing an musical instrument so the correct classification should have been 2."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1347-f6e9ae1b2e2c44f6b63408312d58e494",
+            "input": "Sentence 1: Swiss tourist gang-raped in India Sentence 2: Swiss tourist gang-raped in India",
+            "output": [
+                "5"
+            ]
+        },
+        {
+            "id": "task1347-345432c420f9461d9edb220c0408a8ae",
+            "input": "Sentence 1: The Standard & Poor's 500 index advanced 6.48, or 0.7 per cent, to 990.51. Sentence 2: The broader Standard & Poor's 500 Index .SPX rose 6.48 points, or 0.66 percent, to 990.51.",
+            "output": [
+                "5"
+            ]
+        },
+        {
+            "id": "task1347-3fe320ede0164b8aaadc10dabed3d3f1",
+            "input": "Sentence 1: Someone is slicing tortila's. Sentence 2: Someone is riding a horse.",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "id": "task1347-65bee4c8f5e844c796a04aa4cbd001ba",
+            "input": "Sentence 1: Do you know how many passengers testified or what they said? Sentence 2: How many passengers said they saw an iceberg?",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "id": "task1347-effcba7de7df4b00a65b86726da6f966",
+            "input": "Sentence 1: A young woman leans over her plate at a meal. Sentence 2: A young woman, topless except for paint or mud.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "id": "task1347-b997f394e96f4917bfeaa1b1c76622f6",
+            "input": "Sentence 1: A scantily clad woman is standing next to a car. Sentence 2: A scantily clad woman standing next to a small red vehicle.",
+            "output": [
+                "4"
+            ]
+        },
+        {
+            "id": "task1347-332f98526657462aa7e08bb248dd3e41",
+            "input": "Sentence 1: Proverbs  John the Baptist was a Nazarite from birth. Sentence 2: John the Baptist was a Nazarite from birth.",
+            "output": [
+                "5"
+            ]
+        },
+        {
+            "id": "task1347-7cbfe10633464492aa968b4085008e88",
+            "input": "Sentence 1: They passed through the Lemelson Medical, Educational and Research Foundation Limited Partnership in 2001 to Syndia. Sentence 2: It said the patents were \"allegedly\" assigned to Syndia in 2001 through the Lemelson Medical, Educational and Research Foundation Limited Partnership.",
+            "output": [
+                "2"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

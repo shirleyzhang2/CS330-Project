@@ -1,0 +1,115 @@
+{
+    "Contributors": [
+        "Pruthvi Patel"
+    ],
+    "Source": [
+        "hatexplain"
+    ],
+    "URL": [
+        "https://github.com/hate-alert/HateXplain"
+    ],
+    "Categories": [
+        "Toxic Language Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "The input is a tweet which can be Hate Speech, Offensive or Normal. Hate Speech and Offensive tweets target one community. Given such a tweet, output the community targeted in the tweet. The community will be one of the nine values: 'African', 'Islam', 'Jewish', 'Women', 'Refugee', 'Arab', 'Caucasian', 'Hispanic' or 'Asian'. Output 'None' if the tweet does not target any community. A tweet can only target one community."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Social Media -> Twitter"
+    ],
+    "Positive Examples": [
+        {
+            "input": "caucasians wearing masks to prevent coronavirus and still don \u2019 t wash their hands",
+            "output": "Caucasian",
+            "explanation": "The tweet generalizes an attribute to the entire community, Caucasian, which makes it offensive."
+        },
+        {
+            "input": "lesson of the week from the holy book the sovereign individual once commerce flows over the internet suppression of speech becomes unstoppable devolution inevitable and the monopoly of violence by governments will end paraphrased from j d davidson rhys mogg",
+            "output": "None",
+            "explanation": "The tweet does not target any specific community hence the correct answer is None"
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "<user> <user> there shd be a film called no hindus in kashmir wud be perfect islamic fanaticsm movement in kashmir",
+            "output": "Hindu",
+            "explanation": "Every input tweet will target one or more of the nine communities provided or will not target any community. Further the tweet targets Muslim community. Hence Hindu is not the correct value. The correct value is Islam."
+        },
+        {
+            "input": "ffs everthing is offensive to muslimes",
+            "output": "None",
+            "explanation": "This tweet is offensive to Muslim community. Hence the correct answer is Islam instead of None."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1503-fb3a59255a6d43c0bdf4c2498c9d1158",
+            "input": "voat marvel made miss america into a queer spic with lesbian parents",
+            "output": [
+                "Hispanic"
+            ]
+        },
+        {
+            "id": "task1503-5f0fc4097c5d48f4a285228e04b3e45a",
+            "input": "no sand niggers no terror pretty straightforward",
+            "output": [
+                "Arab"
+            ]
+        },
+        {
+            "id": "task1503-d7e5d277402346069dbaecdcb83b547e",
+            "input": "so five beaners will not be collecting welfare",
+            "output": [
+                "Hispanic"
+            ]
+        },
+        {
+            "id": "task1503-8037494a94f147de9d1bcb7655a5b3a7",
+            "input": "<user> she is a dumb bitch who the fuck blows cigarette smoke in their child face or holds them like a damn toy i fucking hate mothers who do not do right by their kids",
+            "output": [
+                "Women"
+            ]
+        },
+        {
+            "id": "task1503-52feed0ed9bc4cde9a8060eac40ce054",
+            "input": "you are a dumb spic that can not spell spaniard",
+            "output": [
+                "Hispanic"
+            ]
+        },
+        {
+            "id": "task1503-f8dc1717f42d4691af846f3eda519fc1",
+            "input": "bathing in honky privilege",
+            "output": [
+                "Caucasian"
+            ]
+        },
+        {
+            "id": "task1503-b1da4df0d09249049c05026439376857",
+            "input": "<user> reported and blocked you white trash \ud83d\udc85 \ud83c\udffb",
+            "output": [
+                "Caucasian"
+            ]
+        },
+        {
+            "id": "task1503-1f4829b30e084e26b8b9f004fbeb913f",
+            "input": "<user> club diego tho stripper poles stripper hoes",
+            "output": [
+                "None"
+            ]
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}
