@@ -115,6 +115,23 @@ source scripts/eval_tk_instruct.sh
 Predictions and metrics are saved at: `Tk-Instruct/output/` as before.
 
 ### Run prompt ensemble
+Set `find_paraphrase_metrics(args.metrics_path, args.output_path, args.k, best=True, paraphrase_save_file=args.paraphrase_save_file)` in the main function of `Tk-Instruct/src/ensemble_paraphrased_prompts.py`
+
+Specify input/paraphrase_save_file paths
+
+Run
+```
+cd Tk-Instruct/src
+python ensemble_paraphrased_prompts.py
+```
+
+Specify paraphrase_save_file and run
+```
+cd ../../
+python utils/find_paraphrases_std.py
+```
+
+### Compute standard deviation of paraphrases
 Specify whether to find majority vote or find best paraphrase in `Tk-Instruct/src/ensemble_paraphrased_prompts.py`
 
 Specify input/output paths
@@ -125,7 +142,6 @@ cd Tk-Instruct/src
 python ensemble_paraphrased_prompts.py
 ```
 
-Note: Remember to set argument `-k` to the desired number of prompts to include. Set `k` to be equal to the total number of prompts to include all prompts in the ensemble, or smaller than the total for random downsampling. 
 
 ### Train Tk-Instruct
 
@@ -167,7 +183,7 @@ The original model has a predict_exact_match of 48.5091, while the finetuned mod
 
 Another observation that these evaluation scores are still higher than the predict_exact match from our previous experiments with 16 paraphrased prompts, which was around 40. This may be attributed to the improvement we made when prompting GPT-3 to generate higher-quality paraphrases.
 
-It appears that as we hypothesized, the model becomes less sensitive to different wordings after finetuning. The standard deviation among different paraphrases averaged across all tasks in the test split drops drastically from 5.1135 to 1.4318. 
+It appears that as we hypothesized, the model becomes less sensitive to different wordings after finetuning. The standard deviation among different paraphrases averaged across all tasks in the test split drops drastically from 5.1135 to 1.4318.
 
 ### Train prompt quality classification/regression model
 Preprocess paraphrases from predict_results.json:
