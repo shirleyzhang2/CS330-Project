@@ -134,7 +134,8 @@ class NaturalInstructions(datasets.GeneratorBasedBuilder):
             datasets.SplitGenerator(
                 name=datasets.Split.TEST,
                 gen_kwargs={
-                    "path": os.path.join(split_dir, "test_tasks_v2.txt"),
+                    "path": os.path.join(split_dir, "train_tasks_v2.txt"),
+                    # "path": os.path.join(split_dir, "test_tasks_v2.txt"),
                     # "path": os.path.join(split_dir, "test_tasks.txt"),
                     #"path": os.path.join(split_dir, "train_tasks_original.txt"),
                     # "path": os.path.join(split_dir, "textual_entailment_first10.txt"),
