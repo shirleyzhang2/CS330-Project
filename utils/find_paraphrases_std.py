@@ -5,7 +5,7 @@ from absl import logging
 import pandas as pd
 import re
 
-paraphrase_path = "Tk-Instruct/output/gpt3-paraphrase-tasks-tk-instruct-notfinetuned-v2/predict_results_save_paraphrase.json"
+paraphrase_path = "Tk-Instruct/output/gpt3-paraphrase-tasks-tk-instruct-finetuned-v2/predict_results_save_paraphrase.json"
 paraphrase_result = json.load(open(paraphrase_path))
 std_lst = []
 for task, pairs in paraphrase_result.items():
