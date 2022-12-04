@@ -167,6 +167,8 @@ The original model has a predict_exact_match of 48.5091, while the finetuned mod
 
 Another observation that these evaluation scores are still higher than the predict_exact match from our previous experiments with 16 paraphrased prompts, which was around 40. This may be attributed to the improvement we made when prompting GPT-3 to generate higher-quality paraphrases.
 
+It appears that as we hypothesized, the model becomes less sensitive to different wordings after finetuning. The standard deviation among different paraphrases averaged across all tasks in the test split drops drastically from 5.1135 to 1.4318. 
+
 ### Train prompt quality classification/regression model
 Preprocess paraphrases from predict_results.json:
 ```
@@ -203,7 +205,6 @@ Evaluation loss of regression and classification model are both diverging, which
 Command: `python semantic_textual_similarity.py`
 
 There is a minor positive correlation of 0.05815013. 
-
 
 
 
