@@ -1,0 +1,85 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "matres"
+    ],
+    "URL": [
+        "https://github.com/CogComp/MATRES"
+    ],
+    "Categories": [
+        "Information Extraction"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You will be given a context and a verb separated by a newline character. You have to identify if the given verb implies an opinion, an intention, or a wish. The output should be: 'Yes' if the verb refers to an opinion, an intention, or a wish; and 'No' otherwise."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "News"
+    ],
+    "Positive Examples": [
+        {
+            "input": "It was followed by Denmark, Norway, Germany, France, Greece, Luxembourg, Spain, Britain, the United States, Iceland, Belgium, Italy, Portugal and Turkey. NATO decided at last year's Madrid summit to (invite) the three eastern European countries to start accession talks.  \n Verb: invite",
+            "output": "Yes",
+            "explanation": "They planned to \"invite\" the three eastern European countries, so this verb refers to an intention."
+        },
+        {
+            "input": "In Washington today, the Federal Aviation Administration (released) air traffic control tapes from the night the TWA Flight eight hundred went down.  \n Verb: released",
+            "output": "No",
+            "explanation": "In this sentence, the releasing event happened in the past, and hence it's not an intention."
+        },
+        {
+            "input": "We will act again if we have evidence he is (rebuilding) his weapons of mass destruction capabilities, senior officials say. In a bit of television diplomacy, Iraq\u2019s deputy foreign minister responded from Baghdad in less than one hour.  \n Verb: rebuilding",
+            "output": "No",
+            "explanation": "In this sentence, the verb is part of of a condition. Therefore, it cannot be known for sure if he is already rebuilding weapons but we have no evidence, or if he will be building weapons in the future, and hence it's not an intention."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "The Justice Department wants the appeals court to suspend the temporary injunction issued Thursday and also order Elian's great-uncle, Lazaro Gonzalez, to release the boy. The relatives want the court to let them meet with Elian's father without being (required) to surrender the boy.  \n Verb: required",
+            "output": "Yes",
+            "explanation": "In this sentence, required is not an intention, wish, or opinion, as it is part of a condition."
+        },
+        {
+            "input": "The federal charge also carries a fine of up to $250,000. The newly filed charges will (intensify) the ongoing international manhunt, Tolbert said.  \n Verb: intensify",
+            "output": "No",
+            "explanation": "In this sentence, \"intensify\" is planned to happen in the future, and it is an opinion or intention."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task456-11e26b6cfc0b48ccacbca7fb1ed9c8ef",
+            "input": "Castro called Munero -- who reportedly drove a taxi and engaged in unofficial businesses in the Cuban city of Cardenas -- a  ruffian  on whom Cuban police had amassed  100 pages of reports.  According to sources quoted by the Miami Herald, Munero had fled to Florida in June 1998 and (returned) to Cuba later that year, only to be jailed for several months.  \n Verb: returned",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task456-bc34e164b146431e92c284ca3037e3da",
+            "input": "Dozens of people were still missing, however, and the death toll was expected to rise, they said. The suspected car bombings occurred 700 kilometers ( 450 miles ) from each other but just minutes apart on Friday, (turning) busy streets in two African capitals into bloody piles of concrete and knots of steel.  \n Verb: turning",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task456-e2f157b41a384c20b0f5d425c6491987",
+            "input": "Albright, echoing the president, said the United States would \" continue to be present around the world, wherever we have interests to defend. \" \" We will do all we can to (protect) our diplomatic and military peoples around the world, \" she said.  \n Verb: protect",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

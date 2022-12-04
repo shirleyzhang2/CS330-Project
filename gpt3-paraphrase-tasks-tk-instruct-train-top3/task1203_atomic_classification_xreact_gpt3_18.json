@@ -1,0 +1,90 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "atomic"
+    ],
+    "URL": [
+        "https://allenai.org/data/atomic-2020"
+    ],
+    "Categories": [
+        "Commonsense Classification"
+    ],
+    "Reasoning": [
+        "Relational Reasoning",
+        "Reasoning on Social Interactions",
+        "Commonsense Reasoning -> Social Situations"
+    ],
+    "Definition": [
+        "You are given two phrases, Head and Tail, which are events possibly involving participants. The names of specific people have been replaced by generic words. PersonX is always the subject of the event. You have to determine whether, as a result of the Head, PersonX may feel what is mentioned in the Tail. The feeling is an emotional reaction on the part of X or other participants in an event. For example, as a result of gift-giving, X might feel good about [one]self. Classify your answers into \"Yes\" and \"No\"."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Sociology",
+        "Commonsense -> Concepts and Relations -> Social Commonsense"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Head: PersonX arrives home<sep>Tail: satisfied",
+            "output": "Yes",
+            "explanation": "This is a good example. As a result of the Head, PersonX will feels satisfied."
+        },
+        {
+            "input": "Head: PersonX becomes distracted<sep>Tail: They would suffer injuries too.",
+            "output": "No",
+            "explanation": "In this example, if PersonX becomes distracted, PersonX won't feel what is mentioned in the Tail. So this output is correct."
+        },
+        {
+            "input": "Head: PersonX finds PersonY's wallet<sep>Tail: glad to help someone get something back.",
+            "output": "Yes",
+            "explanation": "If PersonX finds PersonY's wallet, personX will be glad to help someone get something back. Thus, this example should be classified as \"Yes\"."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Head: PersonX accepts ___ in exchange<sep>Tail: to want to compromise",
+            "output": "Yes",
+            "explanation": "If PersonX accepts something in exchange, PersonX will not feel what is mentioned in the Tail. So the output should be \"No\"."
+        },
+        {
+            "input": "Head: PersonX projects PersonY image<sep>Tail: happy",
+            "output": "No",
+            "explanation": "If PersonX projects PersonY image, as a result, PersonX may feel happy, and the output should be \"Yes\"."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1203-9be3e7336ec24f1cb1acbeea5029e2bb",
+            "input": "Head: PersonX hits something hard<sep>Tail: powerful",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1203-25d2ecd38dd54c8d9c21a1fee5d38059",
+            "input": "Head: PersonX asks PersonY's boyfriend<sep>Tail: make a phone call",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1203-40cc57fc5b7f40dbbcb908e9dc820e70",
+            "input": "Head: PersonX reaches the water 's ___<sep>Tail: determined",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

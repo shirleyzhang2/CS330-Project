@@ -1,0 +1,90 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "matres"
+    ],
+    "URL": [
+        "https://github.com/CogComp/MATRES"
+    ],
+    "Categories": [
+        "Word Semantics"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "Given a context and a verb separated by a newline character, you have to determine if the verb is static. A verb is static if it is about an event that doesn't change or it happens regularly. Output \"Yes\" if the verb is static and \"No\" otherwise."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "News"
+    ],
+    "Positive Examples": [
+        {
+            "input": "New York (is) on the east coast. \n Verb: is",
+            "output": "Yes",
+            "explanation": "This is a good example. New York always is on the east coast."
+        },
+        {
+            "input": "Suspected bombs exploded outside the U.S. embassies in the Kenyan and Tanzanian capitals Friday, (killing) dozens of people, witnesses said. \n Verb: killing",
+            "output": "No",
+            "explanation": "In this example, killing is not static because it's restricted to a specific period."
+        },
+        {
+            "input": "He cannot decide for himself. The one that (decides) for him is me, his father.  \n Verb: decides",
+            "output": "Yes",
+            "explanation": "In this example, his father always decides for him, and it happens regularly. So, it's a static verb."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "He (is) a brave man. \n Verb: is",
+            "output": "No",
+            "explanation": "Being brave is static, so the answer is incorrect."
+        },
+        {
+            "input": "In Washington today, the Federal Aviation Administration (released) air traffic control tapes from the night the TWA Flight eight hundred went down. \n Verb: released",
+            "output": "Yes",
+            "explanation": "In this example, \"released\" happened in the past and it's not static."
+        },
+        {
+            "input": "\" We were pleased that England and New Zealand knew about it, and we thought that's where it would stop. \" He also talked about his \" second job \" as the group's cameraman, and having to wear four pairs of gloves to (work) the clockwork camera.  \n Verb: work",
+            "output": "No",
+            "explanation": "In this example, \"work\" happens regularly. So, the answer is incorrect, and it's static."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task459-cf1b732dbddc45c5b8169652747198b6",
+            "input": "Terrorist bombings at U.S. embassies in Kenya and Tanzania blew apart buildings and buses, trapping people under slabs of concrete and twisted steel that rescuers cleared with cranes, blow torches and bare hands. At least 82 were killed and more than 1,700 injured, officials (said) as dawn broke Saturday.  \n Verb: said",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task459-af718024660c466388f05390a3946803",
+            "input": "Steve Hurst has that. The US military buildup in the Persian gulf continues apace, more planes (headed) from the united states and senior officials say Iraq's president Saddam Hussein can expect punishing air strikes to continue well into the future if he does n't stop building biological and chemical weapons.  \n Verb: headed",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task459-24a76b1cc08f4241a1b0b42d42c391d3",
+            "input": "FBI officials said they were not certain whether Stauber or Gingrich had been involved in antiabortion activities. The two men are believed to (live) in the Cleveland area.  \n Verb: live",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

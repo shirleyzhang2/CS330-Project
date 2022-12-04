@@ -1,0 +1,85 @@
+{
+    "Contributors": [
+        "Arya Tawde"
+    ],
+    "Source": [
+        "lj_speec"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/lj_speech"
+    ],
+    "Categories": [
+        "Punctuation Error Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "For the given passage or sentence, identify if proper punctuation is used. This includes proper capitalization and the use of punctuations such as commas, semi-colons and full-stops. Return True if all punctuation is properly applied, else return False."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Books"
+    ],
+    "Positive Examples": [
+        {
+            "input": "jack ate the beans that the old man gave him.",
+            "output": "False",
+            "explanation": "The first letter of a new sentence is not capitalized, hence punctuation is incomplete."
+        },
+        {
+            "input": "The old sage was wise intelligent frail and weak",
+            "output": "False",
+            "explanation": "Commas and full-stop are missing and hence punctuation is not complete."
+        },
+        {
+            "input": "The boy looked at the red flower.",
+            "output": "True",
+            "explanation": "Capitalization and Punctuation are perfect."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "The chicken crossed the road.",
+            "output": "False",
+            "explanation": "There is nothing wrong with the punctuation, the answer should be True."
+        },
+        {
+            "input": "The professor congratualted marie on her victory.",
+            "output": "True",
+            "explanation": "Marie is a proper noun and should be capitalized but it isn't. Therefore the answer should be False."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1706-498c6dc385be4ca993b5208352804238",
+            "input": "Palmer's plan was to administer poison in quantities insufficient to cause death, but enough to produce illness which would account for death.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "id": "task1706-34000f737e4645f3ac1cef77d0d300a4",
+            "input": "I was pretty sure it was the same man I saw. When they made him turn sideways, I was positive that was the one I seen, end quote.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "id": "task1706-544e99f7cc9b46939bff4c8c1204c9ec",
+            "input": "Bread raised with what is known to bakers as a \u201csponge,\u201d requires more time and a trifle more work than the simpler form for which I have just already given directions.",
+            "output": [
+                "True"
+            ]
+        }
+    ],
+    "Instance License": [
+        "LibriVox: Public Domain (https://librivox.org/pages/public-domain/)"
+    ]
+}

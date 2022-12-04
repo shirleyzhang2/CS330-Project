@@ -1,0 +1,88 @@
+{
+    "Contributors": [
+        "Anjana Arunkumar"
+    ],
+    "Source": [
+        "abductive_nli"
+    ],
+    "URL": [
+        "https://leaderboard.allenai.org/anli/submissions/about"
+    ],
+    "Categories": [
+        "Coherence Classification"
+    ],
+    "Reasoning": [
+        "Commonsense Reasoning",
+        "Abductive Reasoning"
+    ],
+    "Definition": [
+        "In this task, you will be given a short story with a beginning and two potential middles. Your job is to choose the middle statement that makes the story less plausible by indicating 1 or 2 in the output. If both sentences are plausible, pick the one that makes less sense."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Commonsense -> Stories"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Beginning: Butch had a really old computer. Middle 1: Butch decided to order a new computer online. Middle 2: Butch noticed that a storm was approaching to his town. Ending: It arrived and Butch was much happier.",
+            "output": "2",
+            "explanation": "People generally don't feel happy about natural disasters like storms. Therefore, we choose 2 in this case."
+        },
+        {
+            "input": "Beginning: John was on the trail running. Middle 1: John accelerated the speed and broke his leg accidentally. Middle 2: John was chased by a bear. Ending: He ran even faster until he got to his car safely.",
+            "output": "1",
+            "explanation": "When someone breaks his/her leg, it is difficult to run. Therefore, we choose 1 in this case."
+        },
+        {
+            "input": "Beginning: Gina was putting posters on her bedroom walls. Middle 1: Gina wanted to match the colorful posters. Middle 2: Gina ripped the poster on accident. Ending: Gina decided she would wear more colorful clothing.",
+            "output": "2",
+            "explanation": "In this example, both Middle sentences sound plausible, but the first one is MORE plausible as a story. Therefore, we choose 2 in this case."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Beginning: Mary's mom came home with more bananas than they could possibly eat. Middle 1: Mary and her mom decided to make chocolate covered frozen bananas to avoid waste. Middle 2: So Mary made pineapple splits for everyone. Ending: That was the best way ever to eat a banana!",
+            "output": "1",
+            "explanation": "The story talks about bananas, so discussion of pineapples makes the story incoherent. Therefore, we should not choose 1 in this case."
+        },
+        {
+            "input": "Beginning: Jon decided to steal a police car. Middle 1: Jon crashed the police car into a telephone poll. Middle 2: Jon wasn't caught. Ending: Jon went to prison for three years.",
+            "output": "1",
+            "explanation": "If a person is not caught committing a crime, they cannot go to prison. Therefore, we should not choose 1 in this case."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task070-0f6fcfe5e881475c98bbe7405ff89b64",
+            "input": "Beginning: Tim is the star basketball player on his team. Middle 1: Rather than try the shot he passed the ball. Middle 2: Rathe than pass the ball he tried the shot. Ending: He misses the shot and loses the game!",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "id": "task070-ca01d1f294954834b1b45a21f08d2e8c",
+            "input": "Beginning: Jessica was just waking up one day. Middle 1: She realised that she left her phone on the bus. Middle 2: She realized that she had her phone in her pocket. Ending: Jessica was sad for the rest of the day.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "id": "task070-5944c332af4a4366a308707c06a49f21",
+            "input": "Beginning: Boris had a baseball game coming up. Middle 1: Boris practiced every day. Middle 2: Boris practiced once every decade. Ending: His team won the game because Boris hit the winning home run.",
+            "output": [
+                "2"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

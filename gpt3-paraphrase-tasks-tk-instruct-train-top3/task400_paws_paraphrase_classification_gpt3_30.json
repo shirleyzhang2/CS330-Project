@@ -1,0 +1,90 @@
+{
+    "Contributors": [
+        "Amirreza Mirzaei"
+    ],
+    "Source": [
+        "paws"
+    ],
+    "URL": [
+        "https://arxiv.org/abs/1904.01130"
+    ],
+    "Categories": [
+        "Text Matching"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You will be given a sentence pair from wikipedia. If the sentences have the same meaning, label them as \"Paraphrase\". If the sentences do not have the same meaning, label them as \"Not paraphrase\". The two sentences are seperated by a new line."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Wikipedia"
+    ],
+    "Positive Examples": [
+        {
+            "input": "In January 2011 , the Deputy Secretary General of FIBA Asia , Hagop Khajirian , inspected the venue together with SBP - President Manuel V. Pangilinan .\nIn January 2011 , FIBA Asia deputy secretary general Hagop Khajirian along with SBP president Manuel V. Pangilinan inspected the venue .",
+            "output": "Paraphrase",
+            "explanation": "The second sentence has the same meaning as the first sentence and is just a paraphrased version of it."
+        },
+        {
+            "input": "The smallest number that can be represented in two positive and seventh ways as a sum of four different powers is 2056364173794800 .\nThe smallest number that can be represented as a sum of four positive seventh potences in two different ways is 2056364173794800 .",
+            "output": "Not paraphrase",
+            "explanation": "The second sentence doesn't have the same meaning as the first."
+        },
+        {
+            "input": "Luciano Williames Dias ( born July 25 , 1970 ) is a Brazilian football coach and former player .\nLuciano Williames Dias ( born 25 July 1970 ) is a former football coach and Brazilian player .",
+            "output": "Not paraphrase",
+            "explanation": "The second sentence doesn't have the same meaning as the first."
+        },
+        {
+            "input": "During her sophomore , junior and senior summers , she spent half of it with her Alaska team , and half playing , and living in Oregon .\nDuring her second , junior and senior summers , she spent half of it with her Alaska team , half playing and living in Oregon .",
+            "output": "Paraphrase",
+            "explanation": "The second sentence doesn't have the same meaning as the first."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "This was a series of nested angular standards , so that measurements in azimuth and elevation could be done directly in polar coordinates relative to the ecliptic .\nThis was a series of nested polar scales , so that measurements in azimuth and elevation could be performed directly in angular coordinates relative to the ecliptic .",
+            "output": "Paraphrase",
+            "explanation": "The second sentence doesn't have the same meaning as the first. As pointed out in the task definition both sentences in all the instances have high lexical overlap, which doesn't mean they have the same meaning."
+        },
+        {
+            "input": "His father emigrated to Missouri in 1868 but returned when his wife became ill and before the rest of the family could also go to America .\nHis father emigrated to America in 1868 , but returned when his wife became ill and before the rest of the family could go to Missouri .",
+            "output": "Paraphrase",
+            "explanation": "In the second sentence, it is not mentioned that the father went to Missouri, so the part about the rest of the family doesn't imply the same meaning as the first sentence. These are not paraphrases."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task400-01ab764f62664a6386ace83fb28e2d5e",
+            "input": "Presley was given a physical and allocated army serial number 53310761 before being sworn and leader of his group was made .\nPresley was given a physical and assigned Army serial number 53310761 , before being sworn in and made leader of his group .",
+            "output": [
+                "Paraphrase"
+            ]
+        },
+        {
+            "id": "task400-eb995a0ee2fc4d00ad73966036c2fa84",
+            "input": "A singular conspiracy ( 1974 ) by Edgar Allan Poe is a fictional treatment of the ignored period in Barry Perowne 's life from January to May 1844 .\nA Singular Conspiracy ( 1974 ) by Edgar Allan Poe is a fictional treatment of the unaccounted period in Barry Perowne 's life from January to May 1844 .",
+            "output": [
+                "Not paraphrase"
+            ]
+        },
+        {
+            "id": "task400-41768d5713544bf792d034e8e2e6486a",
+            "input": "From perhaps the 7th century BC through to the 25th century AD it was an integral part of Assyria .\nIt was perhaps an integral part of Assyria from the 25th century BC to the 7th century A.D .",
+            "output": [
+                "Not paraphrase"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Dedicated License (https://github.com/google-research-datasets/paws/blob/master/LICENSE)"
+    ]
+}

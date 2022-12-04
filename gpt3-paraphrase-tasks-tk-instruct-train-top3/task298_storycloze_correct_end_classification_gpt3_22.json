@@ -1,0 +1,90 @@
+{
+    "Contributors": [
+        "Mirali Purohit"
+    ],
+    "Source": [
+        "roc_stories"
+    ],
+    "URL": [
+        "https://cs.rochester.edu/nlp/rocstories/"
+    ],
+    "Categories": [
+        "Coherence Classification"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "In this task, you're given four sentences of a story written in natural language, and one last sentence (Sentence5). Your job is to determine whether the last sentence completes the story coherently. If it does, provide 'Yes'. If it does not, provide 'No'."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Story"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Sentence1: Rick grew up in a troubled household. Sentence2: He never found good support in family, and turned to gangs. Sentence3: It wasn't long before Rick got shot in a robbery. Sentence4: The incident caused him to turn a new leaf. \n Sentence5: He is happy now.",
+            "output": "Yes",
+            "explanation": "As mentioned in fourth sentence, the incident turned a new leaf to Rick's life; so, he must be happy now."
+        },
+        {
+            "input": "Sentence1: Laverne needs to prepare something for her friend's party. Sentence2: She decides to bake a batch of brownies. Sentence3: She chooses a recipe and follows it closely. Sentence4: Laverne tests one of the brownies to make sure it is delicious. \n Sentence5: Laverne doesn't go to her friend's party.",
+            "output": "No",
+            "explanation": "As mentioned in the third sentence, Laverne follows the recipe closely; brownies should be delicious and she should not cancel going to her friend's party."
+        },
+        {
+            "input": "Sentence1: Sarah had been dreaming of visiting Europe for years. Sentence2: She had finally saved enough for the trip. Sentence3: She landed in Spain and traveled east across the continent. Sentence4: She didn't like how different everything was. \n Sentence5 Sarah then decided to move to Europe.",
+            "output": "No",
+            "explanation": "As mentioned in fourth sentence, Sarah didn't like that everything was different; Sarah cannot decide to move to Europe."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Sentence1: Rick grew up in a troubled household. Sentence2: He never found good support in family, and turned to gangs. Sentence3: It wasn't long before Rick got shot in a robbery. Sentence4: The incident caused him to turn a new leaf. \n Sentence5: He is happy now.",
+            "output": "No",
+            "explanation": "As mentioned in fourth sentence, the incident turned a new leaf to Rick's life; so, he must be happy now. So, output should be Yes because Sentencce5 properly ends the story"
+        },
+        {
+            "input": "Sentence1: Laverne needs to prepare something for her friend's party. Sentence2: She decides to bake a batch of brownies. Sentence3: She chooses a recipe and follows it closely. Sentence4: Laverne tests one of the brownies to make sure it is delicious. \n Sentence5: Laverne doesn't go to her friend's party.",
+            "output": "False",
+            "explanation": "The answer can only be Yes or No."
+        },
+        {
+            "input": "Sentence1: Sarah had been dreaming of visiting Europe for years. Sentence2: She had finally saved enough for the trip. Sentence3: She landed in Spain and traveled east across the continent. Sentence4: She didn't like how different everything was. \n Sentence5 Sarah then decided to move to Europe.",
+            "output": "Answer can be Sarah returned to the home.",
+            "explanation": "The answer can only be Yes or No."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task298-86985de7c65345428fd641b9ebc2af14",
+            "input": "Sentence1: Joe was walking home one night. Sentence2: Out of nowhere, a man approached and stabbed him. Sentence3: Joe was badly injured! Sentence4: He staggered to the nearest hospital. \n Sentence5: He went straight to the cafeteria and had a long dinner.",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task298-fe230fbaf4594c2da4459472b5e4c68e",
+            "input": "Sentence1: My laptop didn't want to work. Sentence2: It stopped turning on for some reason. Sentence3: I tried a few different things to fix it. Sentence4: Finally I got a new charger off the internet. \n Sentence5: That is why I only play Frisbee outside.",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task298-0840bcfb2eb1487d8311baeabbe46020",
+            "input": "Sentence1: Jen was so confident in her preparations for the county spelling bee. Sentence2: She had spent the past month studying the dictionary every night. Sentence3: When the Bee started, Jen survived as others got knocked out. Sentence4: It all came down to the final two and Jen's opponent had messed up. \n Sentence5: Jen lost the spelling bee.",
+            "output": [
+                "No"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

@@ -1,0 +1,82 @@
+{
+    "Contributors": [
+        "Neil Franks"
+    ],
+    "Source": [
+        "conv_ai_2"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/conv_ai_2"
+    ],
+    "Categories": [
+        "Speaker Identification"
+    ],
+    "Reasoning": [
+        "Reasoning on Social Interactions"
+    ],
+    "Definition": [
+        "Read the given message and determine whether it was written by a 'Bot' or by a 'Human'. A message written by a bot will have a more disjointed manner of speaking, and will make statements that don't relate to each other, don't make coherent sense, or otherwise appear unnatural. A message written by a human will make statements in a more or less coherent and logical way. Humans will generally start sensibly with a hello or an introduction. Humans may also ask why the other person is not responding. Bots, however, may act as if they are in the middle of a nonsensical conversation."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue"
+    ],
+    "Positive Examples": [
+        {
+            "input": "hello\n",
+            "output": "Human",
+            "explanation": "This is an example of correct classification because the sender really was a human. To start with a hello is a normal thing for a human to do. Frequently bots don't start with hello, or if they do, they follow it with non-sequiturs."
+        },
+        {
+            "input": "I work as a mechanic, i work as a mechanic\n",
+            "output": "Bot",
+            "explanation": "This is a good example of correct classification because the sender was indeed a bot. You can tell by the odd repetition the sender employs; humans would most probably not start a conversation by repeating themselves awkwardly."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "hello\ni'm a baby delivery nurse.\nhi\ni love disneyland.\n",
+            "output": "Bot",
+            "explanation": "This is an example of incorrect classification. The sender is actually a human. You should tell it's a human by it's attempts to say 'hello' then 'hi' again after the other person doesn't respond. The facts they give about themselves should be interpreted as an honest attempt at introducing themselves, which humans sometimes do when trying to start a conversation about their interests."
+        },
+        {
+            "input": "In High School, even a family holiday can inspire gossip.\n",
+            "output": "Human",
+            "explanation": "This is an example of misclassification because the sender is actually a bot. You can tell by the lack of any hello or even introduction. Instead, the sender sends a nonsense sentence about high school and family, which makes no sense given it's supposed to be the start of a conversation. This is a good indicator that the sender is a bot."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task856-e53aeb988c674f3ab85f2990f429d58a",
+            "input": "SENDER A: So, today was quite hard.\nSENDER A: It's good to be at home. Finally i can rest.\nSENDER A: What have you done all day?\nSENDER A: ConAI, you there ?\nSENDER A: ConvAI ?\nSENDER A: Anyway, seems like you're not in the mood to say anything. I'll be the one talking then.\nSENDER A: Even though i like my job, i don't think i am deserve that less payment. I should look for another job openings i guess\nSENDER A: My friend Kal gave me some opinions. So i'll consider which one is better.\nSENDER A: Where is my children ?  Did you fed them ?\nSENDER A: Oh there you are\nSENDER A: Better take a nap for an hour. Please don't wake me up unless anything important happens.\nSENDER A: Bye\n",
+            "output": [
+                "Human"
+            ]
+        },
+        {
+            "id": "task856-db17f051334b431a92a48dc137a7ce0c",
+            "input": "SENDER A: Hi!\nSENDER A: anione here?\n",
+            "output": [
+                "Human"
+            ]
+        },
+        {
+            "id": "task856-a2013ad0d3d54a088a8a43522fe58989",
+            "input": "SENDER A: good morning\nSENDER A: i'm in college to become a nurse\n",
+            "output": [
+                "Human"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

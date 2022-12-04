@@ -1,0 +1,89 @@
+{
+    "Contributors": [
+        "Anjana Arunkumar"
+    ],
+    "Source": [
+        "abductive_nli"
+    ],
+    "URL": [
+        "https://leaderboard.allenai.org/anli/submissions/about"
+    ],
+    "Categories": [
+        "Coherence Classification"
+    ],
+    "Reasoning": [
+        "Commonsense Reasoning",
+        "Abductive Reasoning",
+        "Textual Entailment -> Abductive Reasoning"
+    ],
+    "Definition": [
+        "In this task, you will be given a short story with a beginning, two potential middles, and an ending. Your task is to output \"1\" or \"2\" corresponding to the middle statement that makes the story coherent / plausible. If both sentences are plausible, pick the one that makes most sense."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Commonsense -> Stories"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Beginning: Butch had a really old computer. Middle 1: Butch decided to order a new computer online. Middle 2: Butch noticed that a storm was approaching to his town. Ending: It arrived and Butch was much happier.",
+            "output": "1",
+            "explanation": "People generally don't feel happy about natural disasters like storms. Therefore, we choose 1 in this case."
+        },
+        {
+            "input": "Beginning: John was on the trail running. Middle 1: John accelerated the speed and broke his leg accidentally. Middle 2: John was chased by a bear. Ending: He ran even faster until he got to his car safely.",
+            "output": "2",
+            "explanation": "When someone breaks his/her leg, it is difficult to run. Therefore, we choose 2 in this case."
+        },
+        {
+            "input": "Beginning: Gina was putting posters on her bedroom walls. Middle 1: Gina wanted to match the colorful posters. Middle 2: Gina ripped the poster on accident. Ending: Gina decided she would wear more colorful clothing.",
+            "output": "1",
+            "explanation": "In this example, both Middle sentences sound plausible, but the first one is MORE plausible as a story. Therefore, we choose 1 in this case."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Beginning: Mary's mom came home with more bananas than they could possibly eat. Middle 1: Mary and her mom decided to make chocolate covered frozen bananas to avoid waste. Middle 2: So Mary made pineapple splits for everyone. Ending: That was the best way ever to eat a banana!",
+            "output": "2",
+            "explanation": "The story talks about bananas, so discussion of pineapples makes the story incoherent. Therefore, we should not choose 2 in this case."
+        },
+        {
+            "input": "Beginning: Jon decided to steal a police car. Middle 1: Jon crashed the police car into a telephone poll. Middle 2: Jon wasn't caught. Ending: Jon went to prison for three years.",
+            "output": "Jon crashed the police car into a telephone poll.",
+            "explanation": "You should not answer with the chosen middle sentence. You should only answer with 1 or 2."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task069-bdbc6c36ea854411a1ebb3d093602816",
+            "input": "Beginning: Sarah decided to plant a garden. Middle 1: Sarah planted lots of vegetables. Middle 2: Sarah planted lots of weeds. Ending: The garden eventually grew and produced numerous vegetables.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "id": "task069-e2a191d186f24d769790ff3ae3c57f20",
+            "input": "Beginning: Lizzy was angry when she woke up. Middle 1: Lizzy had a big spider in her room. Middle 2: Lizzy had a big lizard in her room. Ending: When she opened her eyes the spider was gone.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "id": "task069-06bdb9b7aed6412398df9c189bd0fe0c",
+            "input": "Beginning: Timmy knew he wasn't supposed to eat candy before breakfast. Middle 1: Timmy's mother gave him candy for breakfast. Middle 2: Timmy told his mother that he hadn't eaten any candy. Ending: She silenced his protests by pointing at his chocolate thumb print.",
+            "output": [
+                "2"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

@@ -1,0 +1,85 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "qasper"
+    ],
+    "URL": [
+        "https://allenai.org/project/qasper/home"
+    ],
+    "Categories": [
+        "Question Understanding"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "In this task, you will be given a context from an academic paper and a question based on the context. Your task is to classify the questions into one of three categories: \"Extractive\", \"Abstractive\", or \"Yes-no\". Extractive questions can be answered by combining extracts from the context into a summary. Answering abstractive questions requires you to paraphrase the context using new sentences. A yes-no question is a question whose expected answer is one of two choices, typically either yes or no."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Scientific Research Papers"
+    ],
+    "Positive Examples": [
+        {
+            "input": "We build a dataset of Twitter accounts based on two lists annotated in previous works. For the non-factual accounts, we rely on a list of 180 Twitter accounts from BIBREF1. On the other hand, for the factual accounts, we use a list with another 32 Twitter accounts from BIBREF19 that are considered trustworthy by independent third parties. \n Question: How did they obtain the dataset?",
+            "output": "Extractive",
+            "explanation": "The answer to this question has been explicitly mentioned in the context, so the question is extractive."
+        },
+        {
+            "input": "We evaluate our pointer-generator performance using BLEU score. The baseline language model is trained using RNNLM BIBREF23 . Perplexity measure is used in the evaluation.\n\n \n Question: Did they use other evaluation metrics?",
+            "output": "Yes-no",
+            "explanation": "This is a good example, and the given question is a yes-no question."
+        },
+        {
+            "input": "As in the example above, we pre-process documents by removing all numbers and interjections. \n Question: what processing was done on the speeches before being parsed?",
+            "output": "Abstractive",
+            "explanation": "Answering this question needs paraphrasing the context, so this question is abstractive."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "For the English version, we performed both a thorough manual analysis and automatic evaluation across three commonly used TS datasets from two different domains  For the English version, we performed both a thorough manual analysis and automatic evaluation across three commonly used TS datasets from two different domains  The evaluation of the German version is in progress. \n Question: What are the corpora used for the task?",
+            "output": "Yes-no",
+            "explanation": "This question is extractive, and it's not a yes-no question."
+        },
+        {
+            "input": "For Turkish, as the first dataset, we utilised the movie reviews which are collected from a popular website. The number of reviews in this movie corpus is 20,244 and the average number of words in reviews is 39. Each of these reviews has a star-rating score which is indicative of sentiment. These polarity scores are between the values 0.5 and 5, at intervals of 0.5. We consider a review to be negative it the score is equal to or lower than 2.5. On the other hand, if it is equal to or higher than 4, it is assumed to be positive. We have randomly selected 7,020 negative and 7,020 positive reviews and processed only them. \n Question: What details are given about the movie domain dataset?",
+            "output": "Extractive",
+            "explanation": "This question is Abstractive because we need to paraphrase the context to get to the answer."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task462-db5c9ddd30694ba2b760d6629a5fae74",
+            "input": "Our unsupervised ranking model outperforms the supervised IMS system by 1.02% on the CoNLL F1 score, and achieves competitive performance with the latent tree model. Moreover, our approach considerably narrows the gap to other supervised systems listed in Table 3 . \n Question: Is the model presented in the paper state of the art?",
+            "output": [
+                "Abstractive"
+            ]
+        },
+        {
+            "id": "task462-db913104253341419339d29756f0e90a",
+            "input": "Notably, this increase is observed after the conclusion of the US presidential primaries and during the period of the Democratic and Republican National Conventions and does not reduce even after the conclusion of the US presidential elections held on November 8. \n Question: What other political events are included in the database?",
+            "output": [
+                "Extractive"
+            ]
+        },
+        {
+            "id": "task462-afe0d8ee10f84acda5e69239dfa94626",
+            "input": "The output of a system with the target words in the predicted order is compared to the gold ranking of the DURel data set. As the metric to assess how well the model's output fits the gold ranking Spearman's $\\rho $ was used. The higher Spearman's rank-order correlation the better the system's performance. \n Question: How is evaluation performed?",
+            "output": [
+                "Extractive"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

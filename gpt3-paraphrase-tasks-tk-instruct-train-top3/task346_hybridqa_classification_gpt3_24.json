@@ -1,0 +1,80 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "hybridqa"
+    ],
+    "URL": [
+        "https://github.com/wenhuchen/HybridQA"
+    ],
+    "Categories": [
+        "Pos Tagging"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "In this task, you will be presented with a question, a word, and a POS tag. You have to determine whether the part-of-speech tag of the given word in the question is equal to the given POS tag. Give your answer with True or False."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Wikipedia"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Who were the builders of the mosque in Herat with fire temples ? \n, Word: Who \n, POS tag: IN",
+            "output": "False",
+            "explanation": "This is a good example. POS tag of who should be WP(Wh-pronoun), and not IN(Preposition)."
+        },
+        {
+            "input": "What is the borough in which Kia Oval is located ? \n, Word: is \n, POS tag: VBZ",
+            "output": "True",
+            "explanation": "Based on the given question, \"is\" is a 3rd person singular present verb and Its POS tag is VBZ."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "After what season did the number 7 competitor retire ? \n, Word: 7 \n, POS tag: NN",
+            "output": "True",
+            "explanation": "7 is a cardinal number, and Its POS tag should be CD, so the output should be False."
+        },
+        {
+            "input": "After what season did the number 7 competitor retire ? \n, Word: 7 \n, POS tag: NN",
+            "output": "Wrong",
+            "explanation": "Only \"True\" or \"False\" are allowed, and you can't use any other word here."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task346-aa1d1b417ecc49db97b907ecfd44c0b7",
+            "input": "What station did the player picked 156 in the 1975 Major League Baseball draft become an analyst on ? \n, Word: 1975 \n, POS tag: NNP",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "id": "task346-2ae47b7c1fc9459689a62f23dfe32a8f",
+            "input": "What lookout if located near a town with the population of 3,112 ? \n, Word: population \n, POS tag: IN",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "id": "task346-b1ddc1f980614111988a7af190331c0c",
+            "input": "Who was the artist that idealized the quarter ( canadian coin ) which had an image of a shallow-draft boat ? \n, Word: the \n, POS tag: VBD",
+            "output": [
+                "False"
+            ]
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

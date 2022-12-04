@@ -1,0 +1,130 @@
+{
+    "Contributors": [
+        "Shailaja Keyur Sampat"
+    ],
+    "Source": [
+        "torque"
+    ],
+    "URL": [
+        "https://allennlp.org/torque.html"
+    ],
+    "Categories": [
+        "Information Extraction"
+    ],
+    "Reasoning": [
+        "Commonsense Reasoning"
+    ],
+    "Definition": [
+        "In this task, you will be given a passage, and your goal is to identify an event from the passage. An event is a single word representing something that happened, is happening, or may happen. It can be factual or hypothetical, positive or negative, certain or uncertain. Most events are based on verbs, but an event can also be based on a noun (ex. storm, snow, rainfall) or a copula verb (is, was, been, etc.). The event must not be a pronoun or an adjective. For noun events with multiple words, use the last word in the phrase as the event."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "News"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Passage: I submitted the hit. The hit was approved, and then I was paid.",
+            "output": "approved",
+            "explanation": "There are three events in this passage (i) submission event (\"submitted\") (ii) the approval event (\"approved\"), and (iii) the payment event (\"paid\"). You can use any one of them as an output."
+        },
+        {
+            "input": "Passage: He was caught in the snow storm.",
+            "output": "storm",
+            "explanation": "There are two events in this passage (i) he was caught (\"caught\") and (ii) the snow storm event (\"storm\"). You can use any one of them as an output. Since snow storm is a noun event with multiple words, we only use the last word 'storm' as an event."
+        },
+        {
+            "input": "Passage: He is on the east coast.",
+            "output": "is",
+            "explanation": "The copula \"is\" an event describing his location."
+        },
+        {
+            "input": "Passage: He wanted to finish the task.",
+            "output": "wanted",
+            "explanation": "There are two events in this passage (i) he wanted to do something (\"wanted\") and (ii) finish the task (\"finish\"). Either of wanted or finish can be used as output. However note that though there is an uncertainty about the task i.e. indeed finished or not, \"finish\" is still a valid event."
+        },
+        {
+            "input": "Passage: If he works hard, then he will finish the task.",
+            "output": "finish",
+            "explanation": "There are two events in this passage (i) he works hard (\"works\") and (ii) he will finish the task. (\"finish\"). You can use either of works or finish as an output. Here the second event happens only if the first one is true, but both are considered as events. This is an example of hypothetical event."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Passage: He is happy.",
+            "output": "happy",
+            "explanation": "Happy is an adjective and hence cannot be an event. The output should be \"is\" which represents an event describing his attribute of happiness."
+        },
+        {
+            "input": "Passage: He was caught in the elevator.",
+            "output": "elevator",
+            "explanation": "Not every noun can be an event. Here \"elevator\" is an object and one cannot say \"an elevator happened\" hence it is not an event. \"caught\" is a correct output."
+        },
+        {
+            "input": "Passage: The flu season is winding down.",
+            "output": "flu season",
+            "explanation": "The \"flu season\" is a noun events with multiple words, but only last word \"season\" sould be used as an event as per definition."
+        },
+        {
+            "input": "Passage: The death toll climbed up to 99 soon after the explosion.",
+            "output": "blast",
+            "explanation": "There are two events in this passage \"climbed\" and \"explosion\". Though blast is a synonym of explosion, it is not present in the passage. The output must contain events that are present in the passage."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task388-fed1dba57e8948f3a73c104cc125b047",
+            "input": "Passage: The steps come on the top of credit-tightening and tax measures introduced in May last year against excessive speculation in private property which have softened real-estate prices. Market speculation Friday sent property stocks reeling, with the Stock Exchange of Singapore Property Index ending down five percent -- the largest one-day fall since the May curbs.",
+            "output": [
+                "steps",
+                "measures",
+                "introduced",
+                "speculation",
+                "softened",
+                "speculation",
+                "reeling",
+                "down",
+                "fall",
+                "curbs"
+            ]
+        },
+        {
+            "id": "task388-d13dd95294be45ad9d96d24fa0192b57",
+            "input": "Passage: Hong Kong leader Donald Tsang said he and the Executive Council, or cabinet, completely supported the decision. \"We believe that the decision (Tang) has made respects fully the wishes of Hong Kong people that we should seriously consider widening our tax base.\"",
+            "output": [
+                "said",
+                "supported",
+                "decision",
+                "believe",
+                "decision",
+                "made",
+                "respects",
+                "wishes",
+                "consider",
+                "widening"
+            ]
+        },
+        {
+            "id": "task388-cdeb9874dadf4db0873a4489d0ddef42",
+            "input": "Passage: Under the statute, a child born abroad to an unwed American mother is automatically considered a U.S. citizen. But the child of an unwed American father has no citizenship rights unless the father takes the affirmative step of acknowledging paternity and formally agrees to provide support until the child turns 18.",
+            "output": [
+                "born",
+                "considered",
+                "takes",
+                "agrees",
+                "provide",
+                "turns"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Apache 2.0"
+    ]
+}

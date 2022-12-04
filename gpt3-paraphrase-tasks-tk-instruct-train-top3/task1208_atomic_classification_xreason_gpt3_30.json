@@ -1,0 +1,90 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "atomic"
+    ],
+    "URL": [
+        "https://allenai.org/data/atomic-2020"
+    ],
+    "Categories": [
+        "Commonsense Classification"
+    ],
+    "Reasoning": [
+        "Relational Reasoning",
+        "Reasoning on Social Interactions",
+        "Commonsense Reasoning -> Social Situations"
+    ],
+    "Definition": [
+        "Given two phrases: Head and Tail, separated with <sep>, your task is to determine whether The Tail is the reason for the Head. The reason provides a post-fact explanation of the cause of an event. If The Tail is the reason for the Head, classify your answer as \"Yes\". If The Tail is not the reason for the Head, classify your answer as \"No\". The phrase may also contain \"___\", a placeholder that can be an object, a person, and/or an action."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Sociology",
+        "Commonsense -> Concepts and Relations -> Social Commonsense"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Head: hear music<sep>Tail: have ears",
+            "output": "Yes",
+            "explanation": "This is a good example. The Tail is the reason for the Head."
+        },
+        {
+            "input": "Head: PersonX accepts ___ in exchange<sep>Tail: happy",
+            "output": "No",
+            "explanation": "In this example, happy is not the reason for the acceptance. So this output is correct."
+        },
+        {
+            "input": "Head: go to school<sep>Tail: humans learn at school",
+            "output": "Yes",
+            "explanation": "Learning is the reason for going to school. Thus, this example should be classified as \"Yes\"."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Head: PersonX accepts PersonY's offer<sep>Tail: shakes hands",
+            "output": "Yes",
+            "explanation": "Shaking hands is not the reason for accepting the offer. So the output should be \"No\"."
+        },
+        {
+            "input": "Head: die<sep>Tail: hadn't had food",
+            "output": "No",
+            "explanation": "Not having food is the reason for dying, and the output should be \"Yes\"."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1208-cf1664a8a5954eefb429ed9f1640baaa",
+            "input": "Head: go to opera<sep>Tail: love singing",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1208-8db8bb0714b54ebcbd2b9811ca0d7531",
+            "input": "Head: PersonX accepts the job<sep>Tail: excited",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1208-c5d00d252e674d36abe875e12685c43f",
+            "input": "Head: PersonX accepts PersonY offer<sep>Tail: pay person X",
+            "output": [
+                "No"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

@@ -1,0 +1,85 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "matres"
+    ],
+    "URL": [
+        "https://github.com/CogComp/MATRES"
+    ],
+    "Categories": [
+        "Information Extraction"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You will receive a context and a verb, separated by a newline character. Your task is to identify if the given verb implies an opinion, intention, or wish. A verb refers to an intention only if it refers to an event planned to happen in the future and is not conditional (or part of a condition). Output 'Yes' if the verb refers to an opinion, intention, or wish. Output 'No' if the verb does not refer to an opinion, intention, or wish."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "News"
+    ],
+    "Positive Examples": [
+        {
+            "input": "It was followed by Denmark, Norway, Germany, France, Greece, Luxembourg, Spain, Britain, the United States, Iceland, Belgium, Italy, Portugal and Turkey. NATO decided at last year's Madrid summit to (invite) the three eastern European countries to start accession talks.  \n Verb: invite",
+            "output": "Yes",
+            "explanation": "They planned to \"invite\" the three eastern European countries, so this verb refers to an intention."
+        },
+        {
+            "input": "In Washington today, the Federal Aviation Administration (released) air traffic control tapes from the night the TWA Flight eight hundred went down.  \n Verb: released",
+            "output": "No",
+            "explanation": "In this sentence, the releasing event happened in the past, and hence it's not an intention."
+        },
+        {
+            "input": "We will act again if we have evidence he is (rebuilding) his weapons of mass destruction capabilities, senior officials say. In a bit of television diplomacy, Iraq\u2019s deputy foreign minister responded from Baghdad in less than one hour.  \n Verb: rebuilding",
+            "output": "No",
+            "explanation": "In this sentence, the verb is part of of a condition. Therefore, it cannot be known for sure if he is already rebuilding weapons but we have no evidence, or if he will be building weapons in the future, and hence it's not an intention."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "The Justice Department wants the appeals court to suspend the temporary injunction issued Thursday and also order Elian's great-uncle, Lazaro Gonzalez, to release the boy. The relatives want the court to let them meet with Elian's father without being (required) to surrender the boy.  \n Verb: required",
+            "output": "Yes",
+            "explanation": "In this sentence, required is not an intention, wish, or opinion, as it is part of a condition."
+        },
+        {
+            "input": "The federal charge also carries a fine of up to $250,000. The newly filed charges will (intensify) the ongoing international manhunt, Tolbert said.  \n Verb: intensify",
+            "output": "No",
+            "explanation": "In this sentence, \"intensify\" is planned to happen in the future, and it is an opinion or intention."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task456-c04a0997b76749ae892f33d20f47fa00",
+            "input": "The relatives want the court to let them meet with Elian's father without being required to surrender the boy. The court watch (comes) after one of the most bitter charges yet in the custody battle.  \n Verb: comes",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task456-9d77938554f54178b97fb83cf914f067",
+            "input": "Before his Sunday night address, Castro played the affectionate grandfather to the 12 first-graders proposed to go on the trip, assuring them that their planned trip to Washington to retrieve their little friend was a very important mission. Patting some of the kids on the head, Castro (assured) them that they formed a powerful  commando.   \n Verb: assured",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task456-2599d69dc015471c811f49f980b905be",
+            "input": "\" Extending membership to these three democracies helps to stabilize a region that historically has been the staging ground for many of the disasters of this century, \" Solana added, referring to the two world wars. The U.S. State Department has said the three new members \" enhance NATO's ability to fulfill its core mission of collective defense, respond to a range of security challenges and (reduce) the possibility of another major conflict in Europe of the kind that has claimed so many American lives. \"  \n Verb: reduce",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

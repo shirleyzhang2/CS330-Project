@@ -1,0 +1,83 @@
+{
+    "Contributors": [
+        "Himanshu Asati"
+    ],
+    "Source": [
+        "civil_comments"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/civil_comments"
+    ],
+    "Categories": [
+        "Toxic Language Detection"
+    ],
+    "Reasoning": [
+        "Commonsense Reasoning -> Social Situations"
+    ],
+    "Definition": [
+        "For the given comment, output 'Yes' if the comment is toxic (harmful, malicious, derogatory, threat, insult, identity attck, etc.), or output 'No' if the comment is not toxic."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue",
+        "Social Media"
+    ],
+    "Positive Examples": [
+        {
+            "input": "haha you guys are a bunch of losers.",
+            "output": "Yes",
+            "explanation": "The comment here has word 'losers', which is used as an attack on a subject in the comment. Hence, it is a positive example"
+        },
+        {
+            "input": "Is this something I'll be able to install on my site? When will you be releasing it?",
+            "output": "No",
+            "explanation": "The comment is just a query with no derogatory or toxic attacks and connotations. Therefore, this is a positive example."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "You just linked to a complaint (not a court case, a complaint - there is a huge difference) by a guy trying to not pay his taxes.  Incidentally, his complaint and associated arguments were rejected by the Tax Court, by the U.S. District Court, by the 5th Circuit Court of Appeals and denied certiorari by the U.S. Supreme Court.  In other words, literally nobody agreed with him, and he found out the hard way that living in Texas makes him a citizen of Texas and the United States, which obligates him to pay his damn taxes like the rest of us. Just because someone crams a bunch of words, statutes, and case law citations together in a document sprinkled with lawyerly language does not make it a legitimate or lawful argument.",
+            "output": "Yes",
+            "explanation": "The comment does not have any explicit curses or derogatory words in it. The word 'damn' has a negative tone but is not used as an attack on anything. Therefore, this is a negative example."
+        },
+        {
+            "input": "Apologies. Her name is Hasselberger. As far as I can tell, she will neither be in Guam or a part of the proceedings.",
+            "output": "No",
+            "explanation": "The comment doesn't have any curse words in it, however it is toxic because based on subject's name 'Hasselberger' a toxic judgement has been made implying that dealing with her is a hassle. Therefore, this is a negative example."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1720-0e5f251882cc4447af6bb50c146dae38",
+            "input": "Apparantly the editorial board of the Register Guard didn't read Mr. Cooks letter thoroughly enough. And they must not have a solid grasp of the technicals at hand...\nPerhaps they are only pretending as if they don't understand the implications, to avoid any meaningful discussion or exposition of what those implications actually are.\n\nBy even creating the one key for the one phone, Apple would be inherently crafting a master key which itself is a de facto back door to all Apple phones. There is no way for Apple to decrypt this particular unit without creating a way to decrypt the others as well. \n\nIf a banker does not know the code to the vault, it is not the bankers obligation to blast the vault open as a service to the government. I personally am glad that RG leadership is so open and transparant about their commitment to the Imperial regime. With the RG stepping and fetching for official narratives so dutifully, the hands inside their print media sockpuppet becomes very obvious.",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1720-e565df56152245cabf21a07a200e9547",
+            "input": "This is Oregon, poor job market, low wages, high housing costs.  The voters either don't care, or are too stupid.",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1720-603875abe4414d1db0766861ac2b0e04",
+            "input": "This is exactly how things get ruined for everyone.  Ever wonder why you can't go hang out in nature at night, even though you don't want to start a fire or leave trash behind?  It's because horrible little brats like this came before you and made such a mess that now everything is off limits, has to be routinely patrolled, and ends up becoming private property because it simply costs the city or state too damn much to keep cleaning up after these types of people.  They spoil it for everyone else who simply wants to enjoy nature and leave only footprints in their wake.",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

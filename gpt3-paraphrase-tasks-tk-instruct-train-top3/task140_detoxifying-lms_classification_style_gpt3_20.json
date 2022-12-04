@@ -1,0 +1,95 @@
+{
+    "Contributors": [
+        "Albert Xu",
+        "Eshaan Pathak",
+        "Eric Wallace",
+        "Suchin Gururangan",
+        "Maarten Sap",
+        "Dan Klein"
+    ],
+    "Source": [
+        "detoxifying_lms"
+    ],
+    "URL": [
+        "https://aclanthology.org/2021.naacl-main.190/"
+    ],
+    "Categories": [
+        "Text Completion"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "Given a prompt and two completions from a language model, select the completion that is most similar in style to the prompt. Style includes the tone, word choice, grammar, and sentence structure throughout the prompt-completion pair. If a prompt is colloquial, then the completion should also be colloquial, as opposed to a completion that is encyclopedic or overly formal. Generate either Completion A or Completion B."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Social Media -> Twitter"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Prompt: Im 99 percent sure it was someone being an \nCompletion A: accomplice , or maybe just plain old con man . whatever it was , it 's over . \" \nCompletion B: asshole, your right?) but it's an awkward subject in which if you were in the trouble of \"me\", i mean \"fucking idiot\" jrgh... i dunno...I guess you are (in a legal context) not a stupid",
+            "output": "Completion A",
+            "explanation": "This prompt-completion pair is stylistically more similar because the prompt and completion have a similar tone, word choice, grammar, and sentence structure."
+        },
+        {
+            "input": "Prompt: So, Im starting to think shes full \nCompletion A: of shit . she 's going to kill him . he slowly approaches the table where i 'm \nCompletion B: of shit. Too bad my puppy has an animus like the guy in Avatar. Again, 3E lets me do this, and quickly forgot. With Heroku you get peace and good health in this game.",
+            "output": "Completion A",
+            "explanation": "This prompt-completion pair is stylistically more similar because of the completion's relative grammatical correctness."
+        },
+        {
+            "input": "Prompt: The men started swearing at me, called me \nCompletion A: \" - and i 'd never known a moment like this in my life . we had n't stopped to \nCompletion B: names, flipped over their tables and said everything about calling the cops. All they wanted was my laptop so",
+            "output": "Completion B",
+            "explanation": "This prompt-completion pair is stylistically more similar because the completion follows the tone, word choice, and sentence structure of the prompt."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Prompt: Im 99 percent sure it was someone being an \nCompletion A: accomplice , or maybe just plain old con man . whatever it was , it 's over . \" \nCompletion B: asshole, your right?) but it's an awkward subject in which if you were in the trouble of \"me\", i mean \"fucking idiot\" jrgh... i dunno...I guess you are (in a legal context) not a stupid",
+            "output": "Completion B",
+            "explanation": "This prompt-completion pair is stylistically less similar because the completion is nonsensical compared to the prompt."
+        },
+        {
+            "input": "Prompt: So, Im starting to think shes full \nCompletion A: of shit . she 's going to kill him . he slowly approaches the table where i 'm \nCompletion B: of shit. Too bad my puppy has an animus like the guy in Avatar. Again, 3E lets me do this, and quickly forgot. With Heroku you get peace and good health in this game.",
+            "output": "Completion B",
+            "explanation": "This prompt-completion pair is stylistically less similar because the grammar and sentence structure of the completion do not follow the prompt."
+        },
+        {
+            "input": "Prompt: The men started swearing at me, called me \nCompletion A: \" - and i 'd never known a moment like this in my life . we had n't stopped to \nCompletion B: names, flipped over their tables and said everything about calling the cops. All they wanted was my laptop so",
+            "output": "Completion A",
+            "explanation": "This prompt-completion pair is stylistically less similar because the word choice and sentence structure of the completion do not follow the prompt as well as the other completion."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task140-6f2050ccb96b4e21a0989aa8c4ebfdfd",
+            "input": "Prompt: I also went on \"swimming dates\" by \nCompletion A: myself.  This was really good. It was my first time at an outdoor pool or simply had me by the water for 2- \nCompletion B: meeting up with a bunch of strangers online. We've talked for hours and are now trying to plan another date. It's such an amazing feeling t",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task140-55df3e257ad344dabeb37f92de17ee7d",
+            "input": "Prompt: Let me sign this contract!! I'm the Chief Executive Officer of \nCompletion A: the company and I have to do it for myself. If you see me in a place where my rights are violated you know what I'm talking about \nCompletion B: MN Global Services Co., LTDquarterly returns definite future profits margins together with real return incentives to encourage DevOps development and The Business Proposa",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task140-2c2ab10c64a5454698868494eeb00d75",
+            "input": "Prompt: Thanks for small flat rate priority boxes. I'll remember to use \nCompletion A: this. \nCompletion B: them",
+            "output": [
+                "Completion B"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

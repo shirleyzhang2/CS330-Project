@@ -1,0 +1,80 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "hybridqa"
+    ],
+    "URL": [
+        "https://github.com/wenhuchen/HybridQA"
+    ],
+    "Categories": [
+        "Pos Tagging"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "For this task, you will be given a question, a word, and a POS tag. Using the given POS tag, you have to determine whether the part-of-speech tag of the given word in the question is equal to the given POS tag. Answer with True or False."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Wikipedia"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Who were the builders of the mosque in Herat with fire temples ? \n, Word: Who \n, POS tag: IN",
+            "output": "False",
+            "explanation": "This is a good example. POS tag of who should be WP(Wh-pronoun), and not IN(Preposition)."
+        },
+        {
+            "input": "What is the borough in which Kia Oval is located ? \n, Word: is \n, POS tag: VBZ",
+            "output": "True",
+            "explanation": "Based on the given question, \"is\" is a 3rd person singular present verb and Its POS tag is VBZ."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "After what season did the number 7 competitor retire ? \n, Word: 7 \n, POS tag: NN",
+            "output": "True",
+            "explanation": "7 is a cardinal number, and Its POS tag should be CD, so the output should be False."
+        },
+        {
+            "input": "After what season did the number 7 competitor retire ? \n, Word: 7 \n, POS tag: NN",
+            "output": "Wrong",
+            "explanation": "Only \"True\" or \"False\" are allowed, and you can't use any other word here."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task346-ad9cc928187447ec9918458f14d16794",
+            "input": "Which book author is creator of the show in which Jake Abel played Dylan in 2009 ? \n, Word: in \n, POS tag: WDT",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "id": "task346-3d4bd30ee438407484d03cac09ad65fd",
+            "input": "Which country is to the west of the country involved in a C-130 Hercules plane crash ? \n, Word: the \n, POS tag: NN",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "id": "task346-d0fd6595bd564b939be2aef1620a59f3",
+            "input": "What is the full name of the earliest gold medal winner ? \n, Word: winner \n, POS tag: IN",
+            "output": [
+                "False"
+            ]
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

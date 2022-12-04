@@ -1,0 +1,86 @@
+{
+    "Contributors": [
+        "Ishani Mondal"
+    ],
+    "Source": [
+        "ade_corpus_v2"
+    ],
+    "URL": [
+        "https://github.com/trunghlt/AdverseDrugReaction/tree/master/ADE-Corpus-V2"
+    ],
+    "Categories": [
+        "Text Categorization"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "The task is to read medical case reports extracted from MEDLINE and classify them as mentioning an adverse drug reaction or not. An adverse drug reaction is a harmful or unpleasant reaction to a medication that warrants prevention or specific treatment in the future."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Biology -> Clinical Knowledge",
+        "Healthcare"
+    ],
+    "Positive Examples": [
+        {
+            "input": "A case is reported of a child with fatal pulmonary fibrosis following BCNU therapy.",
+            "output": "adverse drug event",
+            "explanation": "Here, the child is facing some trouble after undergoing a particular therapy, thereby causing an adverse effect of the therapy."
+        },
+        {
+            "input": "She responded well to Sodium valproate.",
+            "output": "non-adverse drug event",
+            "explanation": "This is a pretty straightforward remark because it is related to filing taxes with minimal stress and is unrelated to irony or sarcasm."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "The patient suffered from breathing trouble after taking azithromycin.",
+            "output": "serious",
+            "explanation": "You are expected to return \"adverse drug event\" or \"non-adverse drug event\". This should be classified as adverse drug event because the patient suffers from an issue after taking in a particular drug."
+        },
+        {
+            "input": "The patient is feeling better at the hospital.",
+            "output": "wellness",
+            "explanation": "You are expected to return \"adverse drug event\" or \"non-adverse drug event\". This should be classified as non-adverse drug event because no harmful after-effect of any medical intervention has been mentioned."
+        },
+        {
+            "input": "A case is reported of a child with fatal pulmonary fibrosis following BCNU therapy.",
+            "output": "non-adverse drug event",
+            "explanation": "Here, the child is facing some trouble after undergoing a particular therapy, thereby causing an adverse effect of the therapy. So, it needs to be tagged as adverse drug event instead of non-adverse drug event."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1495-3ed3ba21010f40449fabb3252d22643b",
+            "input": "Since 1979, over 30 published case reports have documented the relationship between phenylpropanolamine and stroke.",
+            "output": [
+                "adverse drug event"
+            ]
+        },
+        {
+            "id": "task1495-c63f7ac3150c490ea4f82cbec1277ac1",
+            "input": "Further studies are needed to determine the optimal dose and schedule of DMSO application and to assess its efficacy in extravasation injuries from other vesicants.",
+            "output": [
+                "non-adverse drug event"
+            ]
+        },
+        {
+            "id": "task1495-8c0e8500646b46cf815dc168324bc50c",
+            "input": "The aim of this paper is to report the case of rosaceiform eruption induced by erlotinib in an 81-year-old-man and to discuss the pathogenetic role of Demodex folliculorum mites, found in the present patient, using skin scraping.",
+            "output": [
+                "adverse drug event"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

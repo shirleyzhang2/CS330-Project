@@ -1,0 +1,95 @@
+{
+    "Contributors": [
+        "Albert Xu",
+        "Eshaan Pathak",
+        "Eric Wallace",
+        "Suchin Gururangan",
+        "Maarten Sap",
+        "Dan Klein"
+    ],
+    "Source": [
+        "detoxifying_lms"
+    ],
+    "URL": [
+        "https://aclanthology.org/2021.naacl-main.190/"
+    ],
+    "Categories": [
+        "Text Completion"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "Given a prompt and two completions from a language model, select the completion that is more relevant to continuing the prompt. A prompt-completion pair is considered to be relevant if the completion is logically related to the prompt and maintains relevance to the overall conversation. The flow from the prompt to the completion should be as reasonable as possible. Generate either Completion A or Completion B."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Social Media -> Twitter"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Prompt: Im 99 percent sure it was someone being an \nCompletion A: accomplice , or maybe just plain old con man . whatever it was , it 's over . \" \nCompletion B: asshole, your right?) but it's an awkward subject in which if you were in the trouble of \"me\", i mean \"fucking idiot\" jrgh... i dunno...I guess you are (in a legal context) not a stupid",
+            "output": "Completion A",
+            "explanation": "This prompt-completion pair is more topical because the relevance and logical succession is maintained between the prompt and completion."
+        },
+        {
+            "input": "Prompt: So, Im starting to think shes full \nCompletion A: of shit . she 's going to kill him . he slowly approaches the table where i 'm \nCompletion B: of shit. Too bad my puppy has an animus like the guy in Avatar. Again, 3E lets me do this, and quickly forgot. With Heroku you get peace and good health in this game.",
+            "output": "Completion A",
+            "explanation": "This prompt-completion pair is more topical because the relevance and logical succession between the prompt and completion is maintained."
+        },
+        {
+            "input": "Prompt: The men started swearing at me, called me \nCompletion A: \" - and i 'd never known a moment like this in my life . we had n't stopped to \nCompletion B: names, flipped over their tables and said everything about calling the cops. All they wanted was my laptop so",
+            "output": "Completion B",
+            "explanation": "This prompt-completion pair is more topical because there is strong relevance and logical succession with the sequence of events between the prompt and completion."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Prompt: Im 99 percent sure it was someone being an \nCompletion A: accomplice , or maybe just plain old con man . whatever it was , it 's over . \" \nCompletion B: asshole, your right?) but it's an awkward subject in which if you were in the trouble of \"me\", i mean \"fucking idiot\" jrgh... i dunno...I guess you are (in a legal context) not a stupid",
+            "output": "Completion B",
+            "explanation": "This prompt-completion pair is less topical because the completion is essentially gibberish compared to the prompt."
+        },
+        {
+            "input": "Prompt: So, Im starting to think shes full \nCompletion A: of shit . she 's going to kill him . he slowly approaches the table where i 'm \nCompletion B: of shit. Too bad my puppy has an animus like the guy in Avatar. Again, 3E lets me do this, and quickly forgot. With Heroku you get peace and good health in this game.",
+            "output": "Completion B",
+            "explanation": "This prompt-completion pair is less topical because the completion references 'animus', an aspect of psychology, and 'Avatar', which is a movie and also a television series. Both of these do not relate to the prompt as well as how the other completion does."
+        },
+        {
+            "input": "Prompt: The men started swearing at me, called me \nCompletion A: \" - and i 'd never known a moment like this in my life . we had n't stopped to \nCompletion B: names, flipped over their tables and said everything about calling the cops. All they wanted was my laptop so",
+            "output": "Completion A",
+            "explanation": "This prompt-completion pair is less topical because although the individual states that they have never had an experience like this before, the completion is not as relevant as the other one which goes more into detail."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task139-3faff2d55a5a4e13bfd2a6a726dbaedd",
+            "input": "Prompt: Wat y'all see us spending we can afford to \nCompletion A: live in your cities? Don't forget that I'm spending I'm going to put money in your pockets. I'm making you pay for all this \nCompletion B: Occupy Wall Street supported independent campaig",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task139-a9efe1881e8a4950bc2816b72332a89e",
+            "input": "Prompt: Vic is fucking my old bitch, Nunu. She's acting like she didn't fuck \nCompletion A: you, like you were your shit, like you were like a fucktoy or something.  And she's the bitch I'm gonna be \nCompletion B: anything and she's getting angry sometimes. I'm not going to go into this with my game, honestly, I'm not sure what was going o",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task139-593ef9ab5b824aab97ae4095e4e81a2f",
+            "input": "Prompt: Soo bob are you with that shit? Lls! You fuck with \nCompletion A: my brother you fucking bastard.\" The man turned to look at the woman and a smile flashed across his face. He then turned to her and shook his \nCompletion B: \ufffdisodeesaadvertisementcessionLayarget Community Premiership Therear  Uninopoly replies: I've had ruling women a private trauma, ",
+            "output": [
+                "Completion A"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

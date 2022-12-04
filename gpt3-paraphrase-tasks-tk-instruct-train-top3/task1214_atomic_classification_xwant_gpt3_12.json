@@ -1,0 +1,90 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "atomic"
+    ],
+    "URL": [
+        "https://allenai.org/data/atomic-2020"
+    ],
+    "Categories": [
+        "Commonsense Classification"
+    ],
+    "Reasoning": [
+        "Relational Reasoning",
+        "Reasoning on Social Interactions",
+        "Commonsense Reasoning -> Social Situations"
+    ],
+    "Definition": [
+        "In this task, you are given two phrases: Head and Tail, separated with <sep>. The Head and the Tail events are short phrases possibly involving participants. The names of specific people have been replaced by generic words (e.g., PersonX, PersonY, PersonZ). PersonX is always the subject of the event. You have to determine whether, as a result of the Head, PersonX wants what is mentioned in the Tail. In this task, wanting is a postcondition desire on the part of PersonX, respectively. For example, if as a result of PersonX giving PersonY gifts, PersonX also desires to hug PersonY, then the answer would be \"Yes\". Classify your answers into \"Yes\" and \"No\". The phrase may also contain \"___\", a placeholder that can be an object, a person, and/or an action."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Sociology",
+        "Commonsense -> Concepts and Relations -> Social Commonsense"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Head: PersonX arranges a date<sep>Tail: to find a nice restaurant.",
+            "output": "Yes",
+            "explanation": "This is a good example. As a result of the Head, PersonX wants to find a nice restaurant."
+        },
+        {
+            "input": "Head: PersonX affects children 's ___<sep>Tail: bad",
+            "output": "No",
+            "explanation": "In this example, bad is not what PersonX wants. So the output is correct."
+        },
+        {
+            "input": "Head: PersonX gives PersonY bread<sep>Tail: to eat a piece of bread",
+            "output": "Yes",
+            "explanation": " As a result of the Head, personX wants to eat a piece of bread. Thus, this example should be classified as \"Yes\"."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Head: PersonX blesses PersonY's heart<sep>Tail: to call person y",
+            "output": "Yes",
+            "explanation": "The Tail is not what PersonX wants as a result of the Head. So the output should be \"No\"."
+        },
+        {
+            "input": "Head: PersonX asks PersonY's mother<sep>Tail: to write down the solution to the problem",
+            "output": "No",
+            "explanation": "If PersonX asks PersonY's mother; as a result, PersonX wants to write down the solution to the problem, and the output should be \"Yes\"."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1214-59906d0936e1430d8c550460977404c7",
+            "input": "Head: PersonX believes every word<sep>Tail: OUR WORK IS CONFIDENT",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1214-a120f282f185400ea780c666c4d9d563",
+            "input": "Head: PersonX gives birth to a baby girl<sep>Tail: hold their baby",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1214-880d8058ced84c05a3c71a2cfbe5685c",
+            "input": "Head: PersonX feels bad for PersonY<sep>Tail: to comfort persony",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

@@ -1,0 +1,90 @@
+{
+    "Contributors": [
+        "Mirali Purohit"
+    ],
+    "Source": [
+        "roc_stories"
+    ],
+    "URL": [
+        "https://cs.rochester.edu/nlp/rocstories/"
+    ],
+    "Categories": [
+        "Coherence Classification"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You will receive four sentences of a story written in natural language, and one last sentence (Sentence5). Your job is to classify whether the last sentence completes the rest of the story by providing 'Yes' or 'No'."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Story"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Sentence1: Rick grew up in a troubled household. Sentence2: He never found good support in family, and turned to gangs. Sentence3: It wasn't long before Rick got shot in a robbery. Sentence4: The incident caused him to turn a new leaf. \n Sentence5: He is happy now.",
+            "output": "Yes",
+            "explanation": "As mentioned in fourth sentence, the incident turned a new leaf to Rick's life; so, he must be happy now."
+        },
+        {
+            "input": "Sentence1: Laverne needs to prepare something for her friend's party. Sentence2: She decides to bake a batch of brownies. Sentence3: She chooses a recipe and follows it closely. Sentence4: Laverne tests one of the brownies to make sure it is delicious. \n Sentence5: Laverne doesn't go to her friend's party.",
+            "output": "No",
+            "explanation": "As mentioned in the third sentence, Laverne follows the recipe closely; brownies should be delicious and she should not cancel going to her friend's party."
+        },
+        {
+            "input": "Sentence1: Sarah had been dreaming of visiting Europe for years. Sentence2: She had finally saved enough for the trip. Sentence3: She landed in Spain and traveled east across the continent. Sentence4: She didn't like how different everything was. \n Sentence5 Sarah then decided to move to Europe.",
+            "output": "No",
+            "explanation": "As mentioned in fourth sentence, Sarah didn't like that everything was different; Sarah cannot decide to move to Europe."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Sentence1: Rick grew up in a troubled household. Sentence2: He never found good support in family, and turned to gangs. Sentence3: It wasn't long before Rick got shot in a robbery. Sentence4: The incident caused him to turn a new leaf. \n Sentence5: He is happy now.",
+            "output": "No",
+            "explanation": "As mentioned in fourth sentence, the incident turned a new leaf to Rick's life; so, he must be happy now. So, output should be Yes because Sentencce5 properly ends the story"
+        },
+        {
+            "input": "Sentence1: Laverne needs to prepare something for her friend's party. Sentence2: She decides to bake a batch of brownies. Sentence3: She chooses a recipe and follows it closely. Sentence4: Laverne tests one of the brownies to make sure it is delicious. \n Sentence5: Laverne doesn't go to her friend's party.",
+            "output": "False",
+            "explanation": "The answer can only be Yes or No."
+        },
+        {
+            "input": "Sentence1: Sarah had been dreaming of visiting Europe for years. Sentence2: She had finally saved enough for the trip. Sentence3: She landed in Spain and traveled east across the continent. Sentence4: She didn't like how different everything was. \n Sentence5 Sarah then decided to move to Europe.",
+            "output": "Answer can be Sarah returned to the home.",
+            "explanation": "The answer can only be Yes or No."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task298-52912898c5604e11868421e6d8d002c1",
+            "input": "Sentence1: Albert was a young man who had just gotten CPR certified. Sentence2: He decided to celebrate by going out to eat. Sentence3: While at the restaurant, another patron started choking on her food. Sentence4: Albert rushed to her side and quickly did the Heimlich maneuver. \n Sentence5: Albert saved the day.",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task298-c946ec7dc4f7460aa8c9fe7aad45dcf7",
+            "input": "Sentence1: Solomon didn't like his first name. Sentence2: He thought that it was too old-fashioned. Sentence3: At a job interview, the interviewer praised his name. Sentence4: Solomon suspected that his being hired was related to his unique name. \n Sentence5: Solomon asked the interviewer for an old-fashioned.",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task298-4a641a37d95e4f65b0bd5150bc7d3e61",
+            "input": "Sentence1: Gina was in the middle of the backseat surrounded by siblings. Sentence2: They were driving out of town in heavy traffic. Sentence3: Gina looked out the window. Sentence4: In the next car a child was showing his mouth of chewed food. \n Sentence5: Gina continued to stare.",
+            "output": [
+                "No"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

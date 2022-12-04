@@ -1,0 +1,80 @@
+{
+    "Contributors": [
+        "Kushal Chawla"
+    ],
+    "Source": [
+        "casino"
+    ],
+    "URL": [
+        "https://aclanthology.org/2021.naacl-main.254.pdf"
+    ],
+    "Categories": [
+        "Negotiation Strategy Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "Given an utterance and recent dialogue context containing past 3 utterances (wherever available), output 'Yes' if the utterance contains the other-need strategy, otherwise output 'No'. The other-need strategy is a selfish negotiation strategy. It is used when the participants discuss a need for someone else rather than themselves. For example, describing the need for firewood to keep the kids warm."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Context: 'I was hoping to get alot of water as well, would you be ok with me getting two waters and three firewoods if you get all the food and one water?' 'Hmm, that's not favorable for me going by the volume of items left in my arsenal. Water is more of a higher priority than food. So, I would exchange 1 pack of food for an additional water' 'So that way you would get two waters and two foods? Those are my priorities as well but i would be ok with it since that way i would get five items and you would get only four.'\nUtterance: 'Those are your priorities?? Then that's not fair for you. Then I take 2 water, 1 firewood and 1 food. This is the lowest I can offer'",
+            "output": "No",
+            "explanation": "This is correct. The participant does not create a specific need for anybody."
+        },
+        {
+            "input": "Context: 'I am doing okay but am in need of some supplies. What about you?' 'Same here. My kids are really looking forward to this. What is most important to you?' 'Firewood! I need it to cook my food and also to stay warm. What about you?'\nUtterance: 'That is the same for me as well. My kids were really looking forward to making s'mores and telling stories by the campfire. That's all they've been talking about'",
+            "output": "Yes",
+            "explanation": "In this utterance, the participant uses other-need by mentioning the needs of their kids."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Context: 'Hi! How are you doing today?' 'I'm fine. And yourself?' 'Pretty good. I'm really excited about going camping though!'\nUtterance: 'Me too. I haven't been camping for several years. '",
+            "output": "Yes",
+            "explanation": "There is no need created here. So the correct answer is 'No'."
+        },
+        {
+            "input": "Context: 'Hi, I hope we can work together to get an offer that benefits both of us.\ud83d\ude42'\nUtterance: 'I agree! Nice to meet you... I have two boys who always eat! Any chance I canget 2 food?'",
+            "output": "No",
+            "explanation": "The participant mentions that their boys eat and hence implies that they would need food. Hence, the correct answer here is 'Yes'."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task355-36b229eb3f204f5ca271715f4193ff1d",
+            "input": "Context: 'Hello! camper, how are you? I need us to make a deal where we all benefit.I'm so excited for our camping trip.  I'm most excited about getting to eat food that I normally don't when I am home.\ud83d\ude42' 'I am excited too and looking forward to making a deal that works well for both of us!'\nUtterance: 'My main objective for the camp is water, since I have a large family and the amount of water they give in the camp is very small for all my family.'",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task355-3c99cf9d0cf64c849578f092ff16d604",
+            "input": "Context: 'Hi''\nUtterance: 'Hello I would like to take 3 extra food packages and 3 extra water package and 1 extra firewood packages because we had some unexpected guest join us on our camping trip.\ud83d\ude42'",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task355-67d709098e61450b8ea3e97d4c379080",
+            "input": "Context: 'Hello, great to see a fellow camper.  Planing on doing any hikes.  My family and mother-in-law are down getting some new trail maps.  We are looking forward to the long camping weekend.  Our bad luck was the airline loss two of our bags that had our food and water.  So i am hoping to get some more.\ud83d\ude42'\nUtterance: 'Hello! Thats terrible that the airline lost your bags! I'm planning on have a large group of friends with me so we need lots of snacks with us. We are scared of fires so we don't want to make campfires.'",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

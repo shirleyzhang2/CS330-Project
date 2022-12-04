@@ -1,0 +1,89 @@
+{
+    "Contributors": [
+        "Anjana Arunkumar"
+    ],
+    "Source": [
+        "abductive_nli"
+    ],
+    "URL": [
+        "https://leaderboard.allenai.org/anli/submissions/about"
+    ],
+    "Categories": [
+        "Coherence Classification"
+    ],
+    "Reasoning": [
+        "Commonsense Reasoning",
+        "Abductive Reasoning",
+        "Textual Entailment -> Abductive Reasoning"
+    ],
+    "Definition": [
+        "You will read a short story that has a beginning, two potential middles, and an ending. Your task is to determine which middle makes the story more coherent or plausible. You will do this by writing \"1\" or \"2\" in the output, corresponding to the first or second middle, respectively. If both middles are plausible, choose the one that makes the most sense."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Commonsense -> Stories"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Beginning: Butch had a really old computer. Middle 1: Butch decided to order a new computer online. Middle 2: Butch noticed that a storm was approaching to his town. Ending: It arrived and Butch was much happier.",
+            "output": "1",
+            "explanation": "People generally don't feel happy about natural disasters like storms. Therefore, we choose 1 in this case."
+        },
+        {
+            "input": "Beginning: John was on the trail running. Middle 1: John accelerated the speed and broke his leg accidentally. Middle 2: John was chased by a bear. Ending: He ran even faster until he got to his car safely.",
+            "output": "2",
+            "explanation": "When someone breaks his/her leg, it is difficult to run. Therefore, we choose 2 in this case."
+        },
+        {
+            "input": "Beginning: Gina was putting posters on her bedroom walls. Middle 1: Gina wanted to match the colorful posters. Middle 2: Gina ripped the poster on accident. Ending: Gina decided she would wear more colorful clothing.",
+            "output": "1",
+            "explanation": "In this example, both Middle sentences sound plausible, but the first one is MORE plausible as a story. Therefore, we choose 1 in this case."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Beginning: Mary's mom came home with more bananas than they could possibly eat. Middle 1: Mary and her mom decided to make chocolate covered frozen bananas to avoid waste. Middle 2: So Mary made pineapple splits for everyone. Ending: That was the best way ever to eat a banana!",
+            "output": "2",
+            "explanation": "The story talks about bananas, so discussion of pineapples makes the story incoherent. Therefore, we should not choose 2 in this case."
+        },
+        {
+            "input": "Beginning: Jon decided to steal a police car. Middle 1: Jon crashed the police car into a telephone poll. Middle 2: Jon wasn't caught. Ending: Jon went to prison for three years.",
+            "output": "Jon crashed the police car into a telephone poll.",
+            "explanation": "You should not answer with the chosen middle sentence. You should only answer with 1 or 2."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task069-c85634e67bfd4f679708a5f53d9c42ae",
+            "input": "Beginning: Larry did not like to read books. Middle 1: Larry found a book he enjoyed at the doctors office. Middle 2: Larry was bored with the book at the doctors office. Ending: Because he read the hard book, Larry learned to appreciate books.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "id": "task069-b01dc0c5793641fdb6d1660d426a4faf",
+            "input": "Beginning: Jim was walking around the neighborhood. Middle 1: Jim was an undercover policeman. Middle 2: Jim looked suspicious to neighbors. Ending: As a result, he got arrested.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "id": "task069-9d1176ba2f99479098ea427f8079cf5d",
+            "input": "Beginning: Chris wanted money for a new bike. Middle 1: Chris quit his job. Middle 2: Chris put in overtime at work. Ending: Chris was able to get his new bike.",
+            "output": [
+                "2"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

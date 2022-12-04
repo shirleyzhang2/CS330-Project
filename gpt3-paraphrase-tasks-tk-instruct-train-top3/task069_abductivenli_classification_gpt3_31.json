@@ -1,0 +1,89 @@
+{
+    "Contributors": [
+        "Anjana Arunkumar"
+    ],
+    "Source": [
+        "abductive_nli"
+    ],
+    "URL": [
+        "https://leaderboard.allenai.org/anli/submissions/about"
+    ],
+    "Categories": [
+        "Coherence Classification"
+    ],
+    "Reasoning": [
+        "Commonsense Reasoning",
+        "Abductive Reasoning",
+        "Textual Entailment -> Abductive Reasoning"
+    ],
+    "Definition": [
+        "In this task, you will be shown a short story with a beginning, two potential middles, and an ending. Your job is to choose the middle statement that makes the story coherent / plausible. If both sentences are plausible, pick the one that makes most sense. To do this, write \"1\" or \"2\" in the output, corresponding to the middle statement you choose."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Commonsense -> Stories"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Beginning: Butch had a really old computer. Middle 1: Butch decided to order a new computer online. Middle 2: Butch noticed that a storm was approaching to his town. Ending: It arrived and Butch was much happier.",
+            "output": "1",
+            "explanation": "People generally don't feel happy about natural disasters like storms. Therefore, we choose 1 in this case."
+        },
+        {
+            "input": "Beginning: John was on the trail running. Middle 1: John accelerated the speed and broke his leg accidentally. Middle 2: John was chased by a bear. Ending: He ran even faster until he got to his car safely.",
+            "output": "2",
+            "explanation": "When someone breaks his/her leg, it is difficult to run. Therefore, we choose 2 in this case."
+        },
+        {
+            "input": "Beginning: Gina was putting posters on her bedroom walls. Middle 1: Gina wanted to match the colorful posters. Middle 2: Gina ripped the poster on accident. Ending: Gina decided she would wear more colorful clothing.",
+            "output": "1",
+            "explanation": "In this example, both Middle sentences sound plausible, but the first one is MORE plausible as a story. Therefore, we choose 1 in this case."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Beginning: Mary's mom came home with more bananas than they could possibly eat. Middle 1: Mary and her mom decided to make chocolate covered frozen bananas to avoid waste. Middle 2: So Mary made pineapple splits for everyone. Ending: That was the best way ever to eat a banana!",
+            "output": "2",
+            "explanation": "The story talks about bananas, so discussion of pineapples makes the story incoherent. Therefore, we should not choose 2 in this case."
+        },
+        {
+            "input": "Beginning: Jon decided to steal a police car. Middle 1: Jon crashed the police car into a telephone poll. Middle 2: Jon wasn't caught. Ending: Jon went to prison for three years.",
+            "output": "Jon crashed the police car into a telephone poll.",
+            "explanation": "You should not answer with the chosen middle sentence. You should only answer with 1 or 2."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task069-bef49a73eb8f4db19ef0db6babf5e169",
+            "input": "Beginning: We took our ten year old niece to NYC in 1983. Middle 1: We saw a lot of new sights, all new to our anti-brother-in-law. Middle 2: we saw a lot of new sights, all new to our niece. Ending: Our niece enjoyed herself immensely.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "id": "task069-909646535dfd410e9c43600b30a8bd65",
+            "input": "Beginning: Sam bought a new house and wanted to build a shed. Middle 1: Sam hired a decorator to help her. Middle 2: Sam didn't have any help. Ending: Sam liked the way that this map looked with the shed.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "id": "task069-d5cef03dc01248f8915b25b59831755f",
+            "input": "Beginning: Sue's family was having a watermelon seed spitting contest. Middle 1: Sue knew the challenge was canceled and didn't practice. Middle 2: Sue knew the challenge was coming up and practiced. Ending: It took all she had, but Sue won by propelling hers four feet ahead!",
+            "output": [
+                "2"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

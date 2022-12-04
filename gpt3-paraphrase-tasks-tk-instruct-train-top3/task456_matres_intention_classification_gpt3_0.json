@@ -1,0 +1,85 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "matres"
+    ],
+    "URL": [
+        "https://github.com/CogComp/MATRES"
+    ],
+    "Categories": [
+        "Information Extraction"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "Given a context and a verb separated by a newline character, you have to identify if the given verb implies an opinion, an intention, a wish, or not. Output 'Yes' if the verb refers to an opinion, an intention, or a wish. Output 'No' if the verb does not refer to an opinion, an intention, or a wish."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "News"
+    ],
+    "Positive Examples": [
+        {
+            "input": "It was followed by Denmark, Norway, Germany, France, Greece, Luxembourg, Spain, Britain, the United States, Iceland, Belgium, Italy, Portugal and Turkey. NATO decided at last year's Madrid summit to (invite) the three eastern European countries to start accession talks.  \n Verb: invite",
+            "output": "Yes",
+            "explanation": "They planned to \"invite\" the three eastern European countries, so this verb refers to an intention."
+        },
+        {
+            "input": "In Washington today, the Federal Aviation Administration (released) air traffic control tapes from the night the TWA Flight eight hundred went down.  \n Verb: released",
+            "output": "No",
+            "explanation": "In this sentence, the releasing event happened in the past, and hence it's not an intention."
+        },
+        {
+            "input": "We will act again if we have evidence he is (rebuilding) his weapons of mass destruction capabilities, senior officials say. In a bit of television diplomacy, Iraq\u2019s deputy foreign minister responded from Baghdad in less than one hour.  \n Verb: rebuilding",
+            "output": "No",
+            "explanation": "In this sentence, the verb is part of of a condition. Therefore, it cannot be known for sure if he is already rebuilding weapons but we have no evidence, or if he will be building weapons in the future, and hence it's not an intention."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "The Justice Department wants the appeals court to suspend the temporary injunction issued Thursday and also order Elian's great-uncle, Lazaro Gonzalez, to release the boy. The relatives want the court to let them meet with Elian's father without being (required) to surrender the boy.  \n Verb: required",
+            "output": "Yes",
+            "explanation": "In this sentence, required is not an intention, wish, or opinion, as it is part of a condition."
+        },
+        {
+            "input": "The federal charge also carries a fine of up to $250,000. The newly filed charges will (intensify) the ongoing international manhunt, Tolbert said.  \n Verb: intensify",
+            "output": "No",
+            "explanation": "In this sentence, \"intensify\" is planned to happen in the future, and it is an opinion or intention."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task456-721f6370440b43fb9363588971b1e2aa",
+            "input": "In one case, riot police had to use tear gas to clear them. Saying  nothing is certain  about Elian's return, Cuba's government (exhorted) citizens to keep rallying, after the boy's relatives in Miami said they would look for ways to get around Wednesday's ruling by the U.S. Immigration and Naturalization Service to repatriate the child by Jan. 14.  \n Verb: exhorted",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task456-4a1c88cb82f8489388cfebbd95637f4c",
+            "input": "The Internet, the global network of computers, is now far reaching into the country - extending its embrace to include every nook and cranny of the nation - opening doors to not only a diverse range of information sources but also an exhaustive list of possibilities to create new applications which add value to people's lives. In the business world, the Internet - through intranet and extranet solutions - has become an invaluable tool for companies to harness so as to (gain) a competitive edge.  \n Verb: gain",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task456-513f30e221e6411ab12a2a89c9c10c6e",
+            "input": "Indeed, French President Francois Mitterrand said yesterday that some allied forces are crossing Iraqi territory as part of a \" pincer \" movement to trap the soldiers occupying Kuwait, but insisted, \" The purpose is n't to invade Iraqi territory, that's not the aim, that is n't the mandate. \" Nevertheless, American officials over the weekend became more open in declaring that by destroying Saddam Hussein's military machine they (hope) to destroy his regime -- a goal likely to be supported by most Americans.  \n Verb: hope",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

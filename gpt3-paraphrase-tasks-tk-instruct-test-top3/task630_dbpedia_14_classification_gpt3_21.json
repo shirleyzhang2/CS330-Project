@@ -1,0 +1,81 @@
+{
+    "Contributors": [
+        "Divya Reddy Katpally"
+    ],
+    "Source": [
+        "dbpedia_14"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/dbpedia_14"
+    ],
+    "Categories": [
+        "Text Matching"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "In this task, you're given a text and a title. The title is present in the document and refers to the entity mentioned in the document. The title might have some text in parentheses, for example: \"HMS Mallow (K81)\", or be slightly different from what is present in the text. If they still refer to the same entity, then it is a correct title. Indicate your answer as \"Yes\" if the title is correct, otherwise indicate your answer as \"No\". Do not generate anything else apart from \"Yes\" or \"No\"."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Wikipedia"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Text: The Mansfield Building Society is a UK building society which has its headquarters in Mansfield Nottinghamshire. It is a member of the Building Societies Association. \nTitle: Mansfield Building Society",
+            "output": "Yes",
+            "explanation": "The title \"Mansfield Building Society\" is present in the text and it is the main entity that is referred in the text. Hence, it is the title of the document."
+        },
+        {
+            "input": "Text:  The third and current HMS Argyll is a Type 23 'Duke' Class frigate. She is currently the oldest serving Type 23 frigate in the Royal Navy. Like all of her class she is named for a British dukedom in this case that of Argyll. \nTitle: HMS Argyll (F231)",
+            "output": "Yes",
+            "explanation": "\"HMS Argyll\" is present in the text and it is the main entity that is referred in the text. Here, the text in parentheses \"F31\" is not present in the document and it can be ignored. Hence, the output is correct. "
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Text: The Mansfield Building Society is a UK building society which has its headquarters in Mansfield Nottinghamshire. It is a member of the Building Societies Association. \nTitle: Mansfield Building Society",
+            "output": "No",
+            "explanation": "The title \"Mansfield Building Society\" is present in the text and it is the main entity that is referred in the text. Hence, the output is incorrect."
+        },
+        {
+            "input": "Text:  The third and current HMS Argyll is a Type 23 'Duke' Class frigate. She is currently the oldest serving Type 23 frigate in the Royal Navy. Like all of her class she is named for a British dukedom in this case that of Argyll. \nTitle: HMS Argyll (F231)",
+            "output": "HMS Argyll",
+            "explanation": "The output should be either \"Yes\" or \"No\". Hence, it is negative example."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task630-1a851a795ca44d7193dd74dfaa61d46b",
+            "input": "Text:  Pi\u0142awa [pi\u02c8wava] (German: Pilowbr\u00fcck) is a village in the administrative district of Gmina Wa\u0142cz within Wa\u0142cz County West Pomeranian Voivodeship in north-western Poland. \nTitle: St. Thomas's Church (old) Dublin",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task630-d1fdadc3a5bd43e2b9793e643fd75405",
+            "input": "Text:  The American School of The Hague (ASH) is an American school in Wassenaar Netherlands. Children can attend the school for a maximum of 13 years from Pre-Kindergarten to 12th grade. It is one of the three international focus schools in the area others are the International School of The Hague and the British School in the Netherlands in Voorschoten. There is a French school and German school both which run their national curriculum. \nTitle: American School of The Hague",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task630-046b28bfb6f54ef1be9cba10c4634488",
+            "input": "Text:  Betrayed is a 1988 motion picture drama directed by Costa-Gavras written by Joe Eszterhas and starring Tom Berenger and Debra Winger. The film is roughly based upon the White separatist terrorist activities of American neo-Nazi Robert Mathews and his group The Order. \nTitle: St. Mary's on the Flats",
+            "output": [
+                "No"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY-SA",
+        "GNU Free Documentation 2.0"
+    ]
+}

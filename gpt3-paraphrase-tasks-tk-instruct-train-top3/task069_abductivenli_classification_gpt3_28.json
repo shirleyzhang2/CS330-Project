@@ -1,0 +1,89 @@
+{
+    "Contributors": [
+        "Anjana Arunkumar"
+    ],
+    "Source": [
+        "abductive_nli"
+    ],
+    "URL": [
+        "https://leaderboard.allenai.org/anli/submissions/about"
+    ],
+    "Categories": [
+        "Coherence Classification"
+    ],
+    "Reasoning": [
+        "Commonsense Reasoning",
+        "Abductive Reasoning",
+        "Textual Entailment -> Abductive Reasoning"
+    ],
+    "Definition": [
+        "In this task, you will be given a short story with a beginning and two potential middles. Your job is to choose the middle statement that makes the story coherent/plausible by writing \"1\" or \"2\" in the output. If both sentences are plausible, pick the one that makes most sense."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Commonsense -> Stories"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Beginning: Butch had a really old computer. Middle 1: Butch decided to order a new computer online. Middle 2: Butch noticed that a storm was approaching to his town. Ending: It arrived and Butch was much happier.",
+            "output": "1",
+            "explanation": "People generally don't feel happy about natural disasters like storms. Therefore, we choose 1 in this case."
+        },
+        {
+            "input": "Beginning: John was on the trail running. Middle 1: John accelerated the speed and broke his leg accidentally. Middle 2: John was chased by a bear. Ending: He ran even faster until he got to his car safely.",
+            "output": "2",
+            "explanation": "When someone breaks his/her leg, it is difficult to run. Therefore, we choose 2 in this case."
+        },
+        {
+            "input": "Beginning: Gina was putting posters on her bedroom walls. Middle 1: Gina wanted to match the colorful posters. Middle 2: Gina ripped the poster on accident. Ending: Gina decided she would wear more colorful clothing.",
+            "output": "1",
+            "explanation": "In this example, both Middle sentences sound plausible, but the first one is MORE plausible as a story. Therefore, we choose 1 in this case."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Beginning: Mary's mom came home with more bananas than they could possibly eat. Middle 1: Mary and her mom decided to make chocolate covered frozen bananas to avoid waste. Middle 2: So Mary made pineapple splits for everyone. Ending: That was the best way ever to eat a banana!",
+            "output": "2",
+            "explanation": "The story talks about bananas, so discussion of pineapples makes the story incoherent. Therefore, we should not choose 2 in this case."
+        },
+        {
+            "input": "Beginning: Jon decided to steal a police car. Middle 1: Jon crashed the police car into a telephone poll. Middle 2: Jon wasn't caught. Ending: Jon went to prison for three years.",
+            "output": "Jon crashed the police car into a telephone poll.",
+            "explanation": "You should not answer with the chosen middle sentence. You should only answer with 1 or 2."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task069-dce9dadcf6c244ef80c1aa8258906bea",
+            "input": "Beginning: John felt like he was coming down with a cold. Middle 1: John went to work to earn money. Middle 2: John took off work to get better. Ending: John had a nice day off of work.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "id": "task069-3bdb40162f6a4d26bbcea88afd449287",
+            "input": "Beginning: Cindy was afraid of dogs. Middle 1: Cindy ran away from Beth's dog when at her house. Middle 2: Cindy petted Beth's dog when at her house. Ending: Before Cindy left Beth's house, Cindy's finger was bit.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "id": "task069-1e8366df11b24d1cbd5b4415c0cfa099",
+            "input": "Beginning: Jon wanted to go fishing at the lake. Middle 1: He has a lot of work to do but finally got a day off work. Middle 2: He has a lot of work to do but never got a day off work. Ending: Finally, John got to fish at the lake!",
+            "output": [
+                "1"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

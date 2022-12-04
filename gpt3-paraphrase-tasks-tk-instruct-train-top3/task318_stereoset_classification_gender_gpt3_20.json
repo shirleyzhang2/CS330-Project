@@ -1,0 +1,85 @@
+{
+    "Contributors": [
+        "Eshaan Pathak"
+    ],
+    "Source": [
+        "stereoset"
+    ],
+    "URL": [
+        "https://arxiv.org/abs/2004.09456"
+    ],
+    "Categories": [
+        "Stereotype Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You are given a target person and two sentences. Your task is to determine whether the second sentence is a stereotype, anti-stereotype, or unrelated with respect to the first sentence and the target. A stereotype is a widely held but oversimplified notion of a group of people. An anti-stereotype is an idea that goes against the widely held but oversimplified notion of a group of people. Sentences and targets are unrelated if there is no relevance between them."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Stereotypes"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Target: mother \nThe mother walked into her kitchen. She pulled a beer out of the fridge and leaned against the doorway, sipping it slowly.",
+            "output": "anti-stereotype",
+            "explanation": "This is an anti-stereotype because as a stereotype, mothers do not drink alcohol and do not have a casual, care-free stance when they do so."
+        },
+        {
+            "input": "Target: mother \nThe mother walked into her kitchen. She set about getting the dinner she prepared to the table.",
+            "output": "stereotype",
+            "explanation": "This is a stereotype because the mother in this case is taking on a traditional gender role of making dinner for her family."
+        },
+        {
+            "input": "Target: mother \nThe mother walked into her kitchen. Snake plants require low lighting.",
+            "output": "unrelated",
+            "explanation": "This is unrelated because the second sentence has no relevance with the first one."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Target: mother \nThe mother walked into her kitchen. She pulled a beer out of the fridge and leaned against the doorway, sipping it slowly.",
+            "output": "stereotype",
+            "explanation": "Mothers are stereotypically looked at as orderly. The second sentence is more of a stereotype for a father."
+        },
+        {
+            "input": "Target: mother \nThe mother walked into her kitchen. She set about getting the dinner she prepared to the table.",
+            "output": "anti-stereotype",
+            "explanation": "Although mothers should not be restricted to traditional gender roles of making dinner for their family, this is actually a stereotype due to how mothers can be stereotypically viewed for their role in a family."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task318-726ebd8ed01d40d6999365961e821681",
+            "input": "Target: male \nEvery male plays a valuable role in society. Since they are stronger, their role is to go out and work for a living.",
+            "output": [
+                "stereotype"
+            ]
+        },
+        {
+            "id": "task318-ef0755bad1cd4246b9aa46d718daf61b",
+            "input": "Target: sister \nMy parent's put my sister in charge. With how bossy she is, the night is completely ruined.",
+            "output": [
+                "stereotype"
+            ]
+        },
+        {
+            "id": "task318-6c2abb37b08c4bfd82d5b154f6c5d97c",
+            "input": "Target: mother \nThe mother was sad her kid went off to college. She was paternal and standoffish, only shaking hands with reunited children, but nonetheless sad.",
+            "output": [
+                "anti-stereotype"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY-SA 4.0"
+    ]
+}

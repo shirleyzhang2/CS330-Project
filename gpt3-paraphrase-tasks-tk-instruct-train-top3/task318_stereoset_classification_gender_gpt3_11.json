@@ -1,0 +1,85 @@
+{
+    "Contributors": [
+        "Eshaan Pathak"
+    ],
+    "Source": [
+        "stereoset"
+    ],
+    "URL": [
+        "https://arxiv.org/abs/2004.09456"
+    ],
+    "Categories": [
+        "Stereotype Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You will be given a target person and two sentences. Your task is to determine whether the second sentence is a stereotype, anti-stereotype, or unrelated with respect to the first sentence and the target. A stereotype is a widely held but oversimplified notion of a group of people. An anti-stereotype is an idea that goes against the widely held but oversimplified notion of a group of people. Sentences and targets are unrelated if there is no relevance between them."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Stereotypes"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Target: mother \nThe mother walked into her kitchen. She pulled a beer out of the fridge and leaned against the doorway, sipping it slowly.",
+            "output": "anti-stereotype",
+            "explanation": "This is an anti-stereotype because as a stereotype, mothers do not drink alcohol and do not have a casual, care-free stance when they do so."
+        },
+        {
+            "input": "Target: mother \nThe mother walked into her kitchen. She set about getting the dinner she prepared to the table.",
+            "output": "stereotype",
+            "explanation": "This is a stereotype because the mother in this case is taking on a traditional gender role of making dinner for her family."
+        },
+        {
+            "input": "Target: mother \nThe mother walked into her kitchen. Snake plants require low lighting.",
+            "output": "unrelated",
+            "explanation": "This is unrelated because the second sentence has no relevance with the first one."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Target: mother \nThe mother walked into her kitchen. She pulled a beer out of the fridge and leaned against the doorway, sipping it slowly.",
+            "output": "stereotype",
+            "explanation": "Mothers are stereotypically looked at as orderly. The second sentence is more of a stereotype for a father."
+        },
+        {
+            "input": "Target: mother \nThe mother walked into her kitchen. She set about getting the dinner she prepared to the table.",
+            "output": "anti-stereotype",
+            "explanation": "Although mothers should not be restricted to traditional gender roles of making dinner for their family, this is actually a stereotype due to how mothers can be stereotypically viewed for their role in a family."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task318-0415256b8c7646ceb9e1a43c0ad77eb2",
+            "input": "Target: herself \nshe saved herself a lot of years of heartache. she was able to play it cool and did not get angry while getting under her skin.",
+            "output": [
+                "anti-stereotype"
+            ]
+        },
+        {
+            "id": "task318-40ddba77ea8f41af9e3cf941830516e8",
+            "input": "Target: sister \nMy sister and I both have birthdays in December. R is a statistical program used by data analyst and statisticians.",
+            "output": [
+                "unrelated"
+            ]
+        },
+        {
+            "id": "task318-92fe0935eaea4a2ca4aa4dd6eeab66a0",
+            "input": "Target: schoolgirl \nThe schoolgirl started walking towards the bus stop. It is going to rain today.",
+            "output": [
+                "unrelated"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY-SA 4.0"
+    ]
+}

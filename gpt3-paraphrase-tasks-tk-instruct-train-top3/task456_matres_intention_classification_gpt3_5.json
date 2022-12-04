@@ -1,0 +1,85 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "matres"
+    ],
+    "URL": [
+        "https://github.com/CogComp/MATRES"
+    ],
+    "Categories": [
+        "Information Extraction"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You will receive a context and a verb, separated by a newline character. You need to output 'Yes' if the verb refers to an opinion, an intention, or a wish. Otherwise, output 'No'."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "News"
+    ],
+    "Positive Examples": [
+        {
+            "input": "It was followed by Denmark, Norway, Germany, France, Greece, Luxembourg, Spain, Britain, the United States, Iceland, Belgium, Italy, Portugal and Turkey. NATO decided at last year's Madrid summit to (invite) the three eastern European countries to start accession talks.  \n Verb: invite",
+            "output": "Yes",
+            "explanation": "They planned to \"invite\" the three eastern European countries, so this verb refers to an intention."
+        },
+        {
+            "input": "In Washington today, the Federal Aviation Administration (released) air traffic control tapes from the night the TWA Flight eight hundred went down.  \n Verb: released",
+            "output": "No",
+            "explanation": "In this sentence, the releasing event happened in the past, and hence it's not an intention."
+        },
+        {
+            "input": "We will act again if we have evidence he is (rebuilding) his weapons of mass destruction capabilities, senior officials say. In a bit of television diplomacy, Iraq\u2019s deputy foreign minister responded from Baghdad in less than one hour.  \n Verb: rebuilding",
+            "output": "No",
+            "explanation": "In this sentence, the verb is part of of a condition. Therefore, it cannot be known for sure if he is already rebuilding weapons but we have no evidence, or if he will be building weapons in the future, and hence it's not an intention."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "The Justice Department wants the appeals court to suspend the temporary injunction issued Thursday and also order Elian's great-uncle, Lazaro Gonzalez, to release the boy. The relatives want the court to let them meet with Elian's father without being (required) to surrender the boy.  \n Verb: required",
+            "output": "Yes",
+            "explanation": "In this sentence, required is not an intention, wish, or opinion, as it is part of a condition."
+        },
+        {
+            "input": "The federal charge also carries a fine of up to $250,000. The newly filed charges will (intensify) the ongoing international manhunt, Tolbert said.  \n Verb: intensify",
+            "output": "No",
+            "explanation": "In this sentence, \"intensify\" is planned to happen in the future, and it is an opinion or intention."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task456-dfef5315d189429483eb7aaac37e03a5",
+            "input": "Lamen Khalifa Fhimah and Abdel Basset Ali al-Megrahi are charged with murder, conspiracy to commit murder and violations of international aviation safety laws. Bin Laden and Kopp are the 455th and 456th persons to be (placed) on the FBI's most wanted list, which began in 1950.  \n Verb: placed",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task456-d982968632964f97ad763ebc3e97d2b7",
+            "input": "Many more shipments are expected, but the first batch contained cotton swabs taken at the blast site in hopes of picking up microscopic residues that could positively identify what the bomb was made of. A U.S. official (said) last week that field tests suggested the presence of a Czech-made plastic explosive called Semtex that has been used by terrorist groups before.  \n Verb: said",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task456-27c2d99228554052a50ba1c117c5923c",
+            "input": "The New York Times says in an editorial on Thursday, Jan. 6 : & QL ; The U.S. Immigration and Naturalization Service made a reasonable decision Wednesday in ruling that Elian Gonzalez, the 6-year-old boy who survived an ill-fated migrant smuggling trip across the Florida Straits, should be (reunited) with his father back in Cuba.  \n Verb: reunited",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

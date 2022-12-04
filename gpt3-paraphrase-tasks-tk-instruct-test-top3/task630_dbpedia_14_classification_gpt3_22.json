@@ -1,0 +1,81 @@
+{
+    "Contributors": [
+        "Divya Reddy Katpally"
+    ],
+    "Source": [
+        "dbpedia_14"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/dbpedia_14"
+    ],
+    "Categories": [
+        "Text Matching"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "In this task, you're given a text and a title. The title might be slightly different from what is present in the text, but if it still refers to the same entity, then it is a correct title. Indicate your answer as \"Yes\" if the title is correct, otherwise indicate your answer as \"No\". Do not generate anything else apart from \"Yes\" or \"No\"."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Wikipedia"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Text: The Mansfield Building Society is a UK building society which has its headquarters in Mansfield Nottinghamshire. It is a member of the Building Societies Association. \nTitle: Mansfield Building Society",
+            "output": "Yes",
+            "explanation": "The title \"Mansfield Building Society\" is present in the text and it is the main entity that is referred in the text. Hence, it is the title of the document."
+        },
+        {
+            "input": "Text:  The third and current HMS Argyll is a Type 23 'Duke' Class frigate. She is currently the oldest serving Type 23 frigate in the Royal Navy. Like all of her class she is named for a British dukedom in this case that of Argyll. \nTitle: HMS Argyll (F231)",
+            "output": "Yes",
+            "explanation": "\"HMS Argyll\" is present in the text and it is the main entity that is referred in the text. Here, the text in parentheses \"F31\" is not present in the document and it can be ignored. Hence, the output is correct. "
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Text: The Mansfield Building Society is a UK building society which has its headquarters in Mansfield Nottinghamshire. It is a member of the Building Societies Association. \nTitle: Mansfield Building Society",
+            "output": "No",
+            "explanation": "The title \"Mansfield Building Society\" is present in the text and it is the main entity that is referred in the text. Hence, the output is incorrect."
+        },
+        {
+            "input": "Text:  The third and current HMS Argyll is a Type 23 'Duke' Class frigate. She is currently the oldest serving Type 23 frigate in the Royal Navy. Like all of her class she is named for a British dukedom in this case that of Argyll. \nTitle: HMS Argyll (F231)",
+            "output": "HMS Argyll",
+            "explanation": "The output should be either \"Yes\" or \"No\". Hence, it is negative example."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task630-757b59535b4c4400a05f4709a8f1ea2e",
+            "input": "Text:  Raycom Media Inc. is a broadcasting company based in Montgomery Alabama. \nTitle: Col de la Croix Fry",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task630-649b964a54854d00b617205c26f22a0a",
+            "input": "Text:  What's Done in the Dark is a play written and directed by American playwright Tyler Perry. The show first opened in September 2006. The play is a mixture of comedy drama and music set in a hospital emergency room and focuses on two nurses one of whom is a single mother and the other of whom is having an affair with a doctor and an eccentric hypochondriac patient who is in fact Mr. Brown. The DVD was released on February 12 2008. \nTitle: Cally's Comet",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task630-2566506ff258470faaa564d1fc1e3938",
+            "input": "Text:  Actinidia rubus is a woody climbing vine native to mountainous areas of the Chinese provinces of Sichuan and Yunnan. Branchlets and petioles are deep reddish-brown. Flowers are yellow. \nTitle: Actinidia rubus",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY-SA",
+        "GNU Free Documentation 2.0"
+    ]
+}

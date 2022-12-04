@@ -1,0 +1,93 @@
+{
+    "Contributors": [
+        "Ishan Purohit"
+    ],
+    "Source": [
+        "multilingual_amazon_reviews"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/amazon_reviews_multi"
+    ],
+    "Categories": [
+        "Text Categorization"
+    ],
+    "Reasoning": [
+        "Reasoning on Social Interactions",
+        "Commonsense Reasoning"
+    ],
+    "Definition": [
+        "In this task, you are given an Amazon review and a category for the product being reviewed. Your task is to classify whether the given category matches the review. Output \"True\" if the review and its category match, otherwise output \"False\"."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Reviews"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Review: Arrived broken. Manufacturer defect. Two of the legs of the base were not completely formed, so there was no way to insert the casters. I unpackaged the entire chair and hardware before noticing this. So, I'll spend twice the amount of time boxing up the whole useless thing and send it back with a 1-star review of part of a chair I never got to sit in. I will go so far as to include a picture of what their injection molding and quality assurance process missed though. I will be hesitant to buy again. It makes me wonder if there aren't missing structures and supports that don't impede the assembly process. \n Category: furniture",
+            "output": "True",
+            "explanation": "It's the correct category. Because the customer gives a review of the product which belongs to the furniture category, which we can see it from the way the customer describes his experience sharing how he unpackaged his chair."
+        },
+        {
+            "input": "Review: the cabinet dot were all detached from backing... got me \n Category: home_improvement",
+            "output": "True",
+            "explanation": "It's the correct category. Because the product belongs to the home_improvement category, we can see it in the review where the customer mentions a cabinet dot."
+        },
+        {
+            "input": "Review: I got this with 50% charge. Put it under the sun. two days later, it has 25%. Never able to charge it once. Should have returned it right away. \n Category: utensils",
+            "output": "False",
+            "explanation": "It's an incorrect category. Because the product belongs to the electronics category and not utensils. Because the customer shared his experience related to the charging issue."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Review: Took way too long for these seeds to arrive and for only a single one to germinate is even more disappointing! Not worth the $ \n Category: gardening",
+            "output": "gardening",
+            "explanation": "It's only supposed to generate True or False."
+        },
+        {
+            "input": "Review: This was the third pair that I returned because they did not fit (the first two pairs were the same size). I received a full refund for those, but not for these! I WILL NEVER BUY FROM THEM, AGAIN!!! EVER! \n Category: shoes",
+            "output": "False",
+            "explanation": "The product belongs to shoes category. So, the answer should be True."
+        },
+        {
+            "input": "Review: Junk never work just damaged the brick \n Category: home_improvement",
+            "output": "True False",
+            "explanation": "It should either return True or False not both."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1308-9eb91d4ad5ca44fb82d3f8f0bbbae4a0",
+            "input": "Reviews: The width adjustability on this gate is badly designed, or should I say non-existent. Although there are multiple tension mechanisms they do not freely adjust to any width. If the width is not exact to the setting the gate just falls off. There is NO tension included in the technology. \n Category: apparel",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "id": "task1308-1769dc16482f4791969931daf217eced",
+            "input": "Reviews: This item isn't at all like the advertised product. The fit is terrible and there is a thin border along the outside that doesn't have adhesive. It makes me feel like it should peel off, but it's not the protective plastic. I already got a couple of grains or crumbs lodged along the outside border where it doesn't connect with the device. I also have to push repeatedly in the center to get a response. I'll never order from this company again. \n Category: wireless",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "id": "task1308-a2c06862fe5f4fcf997b8a9286266018",
+            "input": "Reviews: I buy Vega for the high quality ingredients and overall healthiness of the powders \u2014 but this is basically just sugar, with a couple of added ingredients. Honestly, I was appalled at the amount of added sugar to this mix. \n Category: apparel",
+            "output": [
+                "False"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Amazon License (https://s3.amazonaws.com/amazon-reviews-pds/license.txt)"
+    ]
+}

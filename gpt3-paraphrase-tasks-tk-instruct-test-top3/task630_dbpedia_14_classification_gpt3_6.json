@@ -1,0 +1,81 @@
+{
+    "Contributors": [
+        "Divya Reddy Katpally"
+    ],
+    "Source": [
+        "dbpedia_14"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/dbpedia_14"
+    ],
+    "Categories": [
+        "Text Matching"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "Given a text and a title, your task is to determine whether the title is correct for the text. A title is correct if it refers to the same entity as the text. If the title is correct, output \"Yes\". If the title is not correct, output \"No\"."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Wikipedia"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Text: The Mansfield Building Society is a UK building society which has its headquarters in Mansfield Nottinghamshire. It is a member of the Building Societies Association. \nTitle: Mansfield Building Society",
+            "output": "Yes",
+            "explanation": "The title \"Mansfield Building Society\" is present in the text and it is the main entity that is referred in the text. Hence, it is the title of the document."
+        },
+        {
+            "input": "Text:  The third and current HMS Argyll is a Type 23 'Duke' Class frigate. She is currently the oldest serving Type 23 frigate in the Royal Navy. Like all of her class she is named for a British dukedom in this case that of Argyll. \nTitle: HMS Argyll (F231)",
+            "output": "Yes",
+            "explanation": "\"HMS Argyll\" is present in the text and it is the main entity that is referred in the text. Here, the text in parentheses \"F31\" is not present in the document and it can be ignored. Hence, the output is correct. "
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Text: The Mansfield Building Society is a UK building society which has its headquarters in Mansfield Nottinghamshire. It is a member of the Building Societies Association. \nTitle: Mansfield Building Society",
+            "output": "No",
+            "explanation": "The title \"Mansfield Building Society\" is present in the text and it is the main entity that is referred in the text. Hence, the output is incorrect."
+        },
+        {
+            "input": "Text:  The third and current HMS Argyll is a Type 23 'Duke' Class frigate. She is currently the oldest serving Type 23 frigate in the Royal Navy. Like all of her class she is named for a British dukedom in this case that of Argyll. \nTitle: HMS Argyll (F231)",
+            "output": "HMS Argyll",
+            "explanation": "The output should be either \"Yes\" or \"No\". Hence, it is negative example."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task630-3e7119f3226f40aabbdce3750e946240",
+            "input": "Text:  Salvatore Schillaci (Italian pronunciation: [salva\u02c8tore skil\u02c8lat\u0283i]; born December 1 1964) commonly referred to by his nickname Tot\u00f2 is a former Italian football player. During his career he played for Messina (1982\u20131989) Juventus (1989\u20131992) Internazionale (1992\u20131994) and J\u00fabilo Iwata (1994\u20131997). \nTitle: Cho Oyu 8201m \u2013 Field Recordings from Tibet",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task630-d5d40f3c72aa446ebfebb1e1345a8ae5",
+            "input": "Text:  The Echo Ranger is a marine autonomous underwater vehicle (AUV) built by Boeing.Originally built in 2001 to capture high-resolution sonar images of sea beds for oil and gas industry companies such as the Exxon Mobil Corporation the Echo Ranger has been undergoing testing for possible use by the military. Among its possible uses are to stalk targets in enemy waters patrol local harbors for national security threats and scour ocean floors to detect environmental hazards. \nTitle: Echo Ranger",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task630-97412ea6efa14c15981d224134790319",
+            "input": "Text:  USS Fort Wayne (ID 3786) was a freighter acquired by the U.S. Navy during the last year of World War I. She was assigned to carry cargo to Europe after which she was decommissioned and sold by the U.S. Shipping Board. She then became the SS Fort Wayne and was scrapped in Japan in 1934. \nTitle: Gonna Make U Jump",
+            "output": [
+                "No"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY-SA",
+        "GNU Free Documentation 2.0"
+    ]
+}

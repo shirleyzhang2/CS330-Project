@@ -1,0 +1,80 @@
+{
+    "Contributors": [
+        "Pruthvi Patel"
+    ],
+    "Source": [
+        "hatexplain"
+    ],
+    "URL": [
+        "https://github.com/hate-alert/HateXplain"
+    ],
+    "Categories": [
+        "Toxic Language Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "The input is a tweet. The tweet can be classified as Hate Speech, Offensive, or Normal. Hate Speech and Offensive tweets target one community. Given such a tweet, output the community that is targeted in the tweet. There are nine possible values for the community: 'African', 'Islam', 'Jewish', 'Women', 'Refugee', 'Arab', 'Caucasian', 'Hispanic', or 'Asian'. If the tweet does not target any community, output 'None'. A tweet can only target one community."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Social Media -> Twitter"
+    ],
+    "Positive Examples": [
+        {
+            "input": "caucasians wearing masks to prevent coronavirus and still don \u2019 t wash their hands",
+            "output": "Caucasian",
+            "explanation": "The tweet generalizes an attribute to the entire community, Caucasian, which makes it offensive."
+        },
+        {
+            "input": "lesson of the week from the holy book the sovereign individual once commerce flows over the internet suppression of speech becomes unstoppable devolution inevitable and the monopoly of violence by governments will end paraphrased from j d davidson rhys mogg",
+            "output": "None",
+            "explanation": "The tweet does not target any specific community hence the correct answer is None"
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "<user> <user> there shd be a film called no hindus in kashmir wud be perfect islamic fanaticsm movement in kashmir",
+            "output": "Hindu",
+            "explanation": "Every input tweet will target one or more of the nine communities provided or will not target any community. Further the tweet targets Muslim community. Hence Hindu is not the correct value. The correct value is Islam."
+        },
+        {
+            "input": "ffs everthing is offensive to muslimes",
+            "output": "None",
+            "explanation": "This tweet is offensive to Muslim community. Hence the correct answer is Islam instead of None."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1503-09abc28e8886453d9eaf91d3881f2faa",
+            "input": "watch bbc on muslims abandoning eu <number> syria the father honestly says it bcs they do not like girls being told they have freewill by supposedly educated pple bcs women don t in islam sharia sharialaw realitycheck fgm misogyny hijab rapeculture abuse violence woman women girl girls womansrights womensrights brexit",
+            "output": [
+                "Islam"
+            ]
+        },
+        {
+            "id": "task1503-dff58552a936469798f9c60deb8edead",
+            "input": "blackpill they are still having babies someone call bill gates operation sterilize the beaners has failed",
+            "output": [
+                "Hispanic"
+            ]
+        },
+        {
+            "id": "task1503-72d0394b556d4358a25f8204e0ccdd25",
+            "input": "<user> <user> there is no even one refugee just illegal immigrants criminals that are enemy of greece and the greek people out of greece know bastards",
+            "output": [
+                "Refugee"
+            ]
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

@@ -1,0 +1,90 @@
+{
+    "Contributors": [
+        "Jalansh Munshi"
+    ],
+    "Source": [
+        "pubmed_qa"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/pubmed_qa"
+    ],
+    "Categories": [
+        "Intent Identification"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "Given a passage, output '1' if the passage has a definite objective/aim/goal, and output '0' if the passage does not have a definite objective/aim/goal."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Medicine"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Chronic rhinosinusitis (CRS) is a heterogeneous disease with an uncertain pathogenesis. Group 2 innate lymphoid cells (ILC2s) represent a recently discovered cell population which has been implicated in driving Th2 inflammation in CRS; however, their relationship with clinical disease characteristics has yet to be investigated. The aim of this study was to identify ILC2s in sinus mucosa in patients with CRS and controls and compare ILC2s across characteristics of disease. A cross-sectional study of patients with CRS undergoing endoscopic sinus surgery was conducted. Sinus mucosal biopsies were obtained during surgery and control tissue from patients undergoing pituitary tumour resection through transphenoidal approach. ILC2s were identified as CD45(+) Lin(-) CD127(+) CD4(-) CD8(-) CRTH2(CD294)(+) CD161(+) cells in single cell suspensions through flow cytometry. ILC2 frequencies, measured as a percentage of CD45(+) cells, were compared across CRS phenotype, endotype, inflammatory CRS subtype and other disease characteristics including blood eosinophils, serum IgE, asthma status and nasal symptom score. 35 patients (40% female, age 48 \u00b1 17 years) including 13 with eosinophilic CRS (eCRS), 13 with non-eCRS and 9 controls were recruited. ILC2 frequencies were associated with the presence of nasal polyps (P = 0.002) as well as high tissue eosinophilia (P = 0.004) and eosinophil-dominant CRS (P = 0.001) (Mann-Whitney U). They were also associated with increased blood eosinophilia (P = 0.005). There were no significant associations found between ILC2s and serum total IgE and allergic disease. In the CRS with nasal polyps (CRSwNP) population, ILC2s were increased in patients with co-existing asthma (P = 0.03). ILC2s were also correlated with worsening nasal symptom score in CRS (P = 0.04).",
+            "output": "1",
+            "explanation": "There is a line in the passage which say 'The aim of this study was...' which suggests that it is talking about a specific aim. Hence, the output should be 1 as this passage has a definite aim."
+        },
+        {
+            "input": "Phosphatidylethanolamine N-methyltransferase (PEMT), a liver enriched enzyme, is responsible for approximately one third of hepatic phosphatidylcholine biosynthesis. When fed a high-fat diet (HFD), Pemt(-/-) mice are protected from HF-induced obesity; however, they develop steatohepatitis. The vagus nerve relays signals between liver and brain that regulate peripheral adiposity and pancreas function. Here we explore a possible role of the hepatic branch of the vagus nerve in the development of diet induced obesity and steatohepatitis in Pemt(-/-) mice. 8-week old Pemt(-/-) and Pemt(+/+) mice were subjected to hepatic vagotomy (HV) or capsaicin treatment, which selectively disrupts afferent nerves, and were compared to sham-operated or vehicle-treatment, respectively. After surgery, mice were fed a HFD for 10 weeks. HV abolished the protection against the HFD-induced obesity and glucose intolerance in Pemt(-/-) mice. HV normalized phospholipid content and prevented steatohepatitis in Pemt(-/-) mice. Moreover, HV increased the hepatic anti-inflammatory cytokine interleukin-10, reduced chemokine monocyte chemotactic protein-1 and the ER stress marker C/EBP homologous protein. Furthermore, HV normalized the expression of mitochondrial electron transport chain proteins and of proteins involved in fatty acid synthesis, acetyl-CoA carboxylase and fatty acid synthase in Pemt(-/-) mice. However, disruption of the hepatic afferent vagus nerve by capsaicin failed to reverse either the protection against the HFD-induced obesity or the development of HF-induced steatohepatitis in Pemt(-/-) mice.",
+            "output": "1",
+            "explanation": "If you take a look at the line 'Here we explore a possible role of the hepatic branch', it says that it is exploring a possible role. This means that it has a specific goal and hence, the output should be 1."
+        },
+        {
+            "input": "Psammaplin A (PsA) is a natural product isolated from marine sponges, which has been demonstrated to have anticancer activity against several human cancer cell lines via the induction of cell cycle arrest and apoptosis. New drugs that are less toxic and more effective against multidrug-resistant cancers are urgently needed. We tested cell proliferation, cell cycle progression and autophagic cell death pathway in doxorubicin-resistant MCF-7 (MCF-7/adr) human breast cancer cells. The potency of PsA was further determined using an in vivo xenograft model.",
+            "output": "0",
+            "explanation": "This passage does not have any sentences which talk about a specific goal, objective, or aim. Hence, the output should be 0."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "This study examined links between DNA methylation and birth weight centile (BWC), and explored the impact of genetic variation. Using HumanMethylation450 arrays, we examined candidate gene-associated CpGs in cord blood from newborns with low (<15th centile), medium (40-60th centile) and high (>85th centile) BWC (n = 12). Candidates were examined in an investigation cohort (n = 110) using pyrosequencing and genotyping for putative methylation-associated polymorphisms performed using standard PCR. Array analysis identified 314 candidate genes associated with BWC extremes, four of which showed \u2265 4 BWC-linked CpGs. Of these, PM20D1 and MI886 suggested genetically determined methylation levels. However, methylation at three CpGs in FGFR2 remained significantly associated with high BWC (p = 0.004-0.027).",
+            "output": "0",
+            "explanation": "This passage talks about examining links between DNA methylation and also explores impact of genetic variation. This suggests that it has a definite objective and hence, the output should be 1. Output 0 is wrong."
+        },
+        {
+            "input": "Tumor microenvironment immunity is associated with breast cancer outcome. A high lymphocytic infiltration has been associated with response to neoadjuvant chemotherapy, but the contribution to response and prognosis of immune cell subpopulations profiles in both pre-treated and post-treatment residual tumor is still unclear. We analyzed pre- and post-treatment tumor-infiltrating immune cells (CD3, CD4, CD8, CD20, CD68, Foxp3) by immunohistochemistry in a series of 121 breast cancer patients homogeneously treated with neoadjuvant chemotherapy. Immune cell profiles were analyzed and correlated with response and survival. We identified three tumor-infiltrating immune cell profiles, which were able to predict pathological complete response (pCR) to neoadjuvant chemotherapy (cluster B: 58%, versus clusters A and C: 7%). A higher infiltration by CD4 lymphocytes was the main factor explaining the occurrence of pCR, and this association was validated in six public genomic datasets. A higher chemotherapy effect on lymphocytic infiltration, including an inversion of CD4/CD8 ratio, was associated with pCR and with better prognosis. Analysis of the immune infiltrate in post-chemotherapy residual tumor identified a profile (cluster Y), mainly characterized by high CD3 and CD68 infiltration, with a worse disease free survival.",
+            "output": "1",
+            "explanation": "There is no mention about how chemotherapy can cure breast cancer in the input passage. Hence, this question is a bad example."
+        },
+        {
+            "input": "Hidradenitis suppurativa (HS) is a chronic inflammatory disease involving intertriginous skin. Previous epidemiologic studies have been limited by small sample size. We sought to describe the prevalence and comorbidities of HS in a large patient care database. In this retrospective case-control study, we chart-validated all patients within a hospital database who received at least 1 billing code for HS between 1980 and 2013. Verified cases were matched with controls based on age, gender, and race. Prevalences of a priori selected comorbidities were compared between HS and control groups. A total of 2292 patients at Massachusetts General Hospital received at least 1 code for HS. A total of 1776 cases had a validated diagnosis of HS, yielding a prevalence of 0.08%. In unadjusted analysis, all comorbidities were diagnosed significantly more in HS compared with control including (in rank order of likelihood): smoking, arthropathies, dyslipidemia, polycystic ovarian syndrome, psychiatric disorders, obesity, drug dependence, hypertension, diabetes, thyroid disease, alcohol dependence, and lymphoma (all P < .01).",
+            "output": "0",
+            "explanation": "In the line 'We sought to describe the prevalence...' it is evident that the passage has a specific goal in mind. Hence, the output should be 1 and not 0. Therefore, the output is wrong."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task848-ab58ad424dee4fbcb85dde22fa9d86cf",
+            "input": "To examine the effect of a single spinal manipulation therapy (SMT) on the in vitro production of inflammatory cytokines, tumor necrosis factor alpha, and interleukin (IL) 1beta, in relation to the systemic (in vivo) levels of neurotransmitter substance P (SP).', 'Sixty-four asymptomatic subjects were assigned to SMT, sham manipulation, or venipuncture control group. SMT subjects received a single adjustment in the thoracic spine. Blood and serum samples were obtained from subjects before and then at 20 minutes and 2 hours after intervention. Whole-blood cultures were activated with lipopolysaccharide (LPS) for 24 hours. Cytokine production in culture supernatants and serum SP levels were assessed by specific immunoassays.', 'Over the study period, a significant proportion (P </= .05) of sham and control subjects demonstrated progressive increases in the synthesis of tumor necrosis factor alpha and IL-1beta. Conversely, in a comparable proportion of cultures from SMT-derived subjects, the production of both cytokines decreased gradually. Normalization of the observed alterations to reflect the changes relative to self-baselines demonstrated that, within 2 hours after intervention, the production of both cytokines increased significantly (P < .001 to .05) in both controls. In contrast, a significant (P < .001 to .05) reduction of proinflammatory cytokine secretion was observed in cultures from SMT-receiving subjects. In all study groups, serum levels of SP remained unaltered within 2 hours after intervention.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "id": "task848-2753ffd878fb4354a978bc642533c281",
+            "input": "Much research effort has been focused on investigating new compounds derived from low-cost sources, such as natural products, for treating leishmaniasis. Oleuropein derived from numerous plants, particularly from the olive tree, Olea europaea L. (Oleaceae), is a biophenol with many biological activities. Our previous findings showed that oleuropein exhibits leishmanicidal effects against three Leishmania spp. in vitro, and minimizes the parasite burden in L. donovani-infected BALB/c mice. The aim of the present study is to investigate the possible mechanism(s) that mediate this leishmanicidal activity.', 'We determined the efficacy of oleuropein in elevating ROS and NO production in L. donovani-infected J774A.1 macrophages and in explanted splenocytes and hepatocytes obtained from L. donovani-infected BALB/c mice. We also assessed the expression of genes that are related to inflammation, T-cell polarization and antioxidant defense, in splenocytes. Finally, we determined the ratios of specific IgG2a/IgG1 antibodies and DTH reactions in L. donovani-infected BALB/c mice treated with oleuropein.', \"Oleuropein was able to elevate ROS production in both in vitro and in vivo models of visceral leishmaniasis and raised NO production in ex vivo cultures of splenocytes and hepatocytes. The extensive oxidative stress found in oleuropein-treated mice was obviated by the upregulation of the host's antioxidant enzyme (mGCLC) and the simultaneous downregulation of the corresponding enzyme of the parasite (LdGCLC). Moreover, oleuropein was able to mount a significant Th1 polarization characterized by the expression of immune genes (IL-12\u03b2, IL-10, TGF-\u03b21, IFN-\u03b3) and transcription factors (Tbx21 and GATA3). Moreover, this immunomodulatory effect was also correlated with an inhibitory effect on IL-1\u03b2 gene expression, rather than with the expression of IL-1\u03b1, IL-1rn and TNF-\u03b1. Furthermore, oleuropein-treated BALB/c mice mounted a delayed-type hypersensitivity (DTH) response and an elevated Leishmania-specific IgG2a/IgG1 ratio that clearly demonstrated an in vivo protective mechanism.",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "id": "task848-84590cf78d4a4beaaeef1fc064a9e398",
+            "input": "Endometrial cancer is a common gynecologic cancer whose incidence is increasing annually worldwide. Current methods to detect endometrial cancer are unreliable and biomarkers are unsatisfactory for screening. Cervical scrapings were reported as a potential source of material for molecular testing. DNA methylation is a promising cancer biomarker, but limited use for detecting endometrial cancer.', 'We analyzed two methylomics databases of endometrioid-type endometrial cancer. Using nonnegative matrix factorization algorithm clustered the methylation pattern and reduced the candidate genes. We verified in pools DNA from endometrial cancer tissues and cervical scrapings, and validated in 146 cervical scrapings from patients with endometrioid-type endometrial cancer (n = 50), uterine myoma (n = 40), and healthy controls (n = 56) using quantitative methylation-specific PCR (QMSP). The logistic regression was used to evaluate the performance of methylation signal and gene combination.', 'We filtered out 180 methylated genes, which constituted four consensus clusters. Serial testing of tissues and cervical scrapings detected 14 genes that are hypermethylated in endometrial cancer. Three genes, BHLHE22, CDO1, and CELF4, had the best performance. Individual genes were sensitivity of 83.7%-96.0% and specificity of 78.7%-96.0%. A panel comprising any two of the three hypermethylated genes reached a sensitivity of 91.8%, specificity of 95.5%, and odds ratio of 236.3 (95% confidence interval, 56.4-989.6). These markers were also applied to cervical scrapings of type II endometrial cancer patients, and detected in 13 of 14 patients.",
+            "output": [
+                "1"
+            ]
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

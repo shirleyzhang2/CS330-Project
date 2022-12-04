@@ -1,0 +1,92 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "atomic"
+    ],
+    "URL": [
+        "https://allenai.org/data/atomic-2020"
+    ],
+    "Categories": [
+        "Commonsense Classification"
+    ],
+    "Reasoning": [
+        "Relational Reasoning",
+        "Reasoning on Social Interactions",
+        "Commonsense Reasoning -> Social Situations",
+        "Commonsense Reasoning -> Spatial Reasoning"
+    ],
+    "Definition": [
+        "In this task, you are given two events, Head and Tail, which are separated by <sep>. PersonX is always the subject of the event. You have to determine whether the Head happens after the Tail or not, and classify your answers into \"Yes\" and \"No\". The phrase may also contain \"___\", a placeholder that can be an object, a person, and/or an action."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Sociology",
+        "Commonsense -> Concepts and Relations -> Social Commonsense",
+        "Commonsense -> Concepts and Relations -> Spatial Commonsense"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Head: PersonX cuts the ribbon<sep>Tail: PersonX opens a store",
+            "output": "Yes",
+            "explanation": "This is a good example. The Head happens after the Tail."
+        },
+        {
+            "input": "Head: PersonX acquires PersonY knowledge<sep>Tail: He plays also.",
+            "output": "No",
+            "explanation": "In this example, the Head and the Tail can happen at the same time. So the output should be\"No\"."
+        },
+        {
+            "input": "Head: PersonX wants to go outside<sep>Tail: PersonX opens the door",
+            "output": "Yes",
+            "explanation": "In this example, opening the door happens before going out. Thus, this example should be classified as \"Yes\"."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Head: PersonX adapts to PersonY's environment<sep>Tail: accommodating",
+            "output": "Yes",
+            "explanation": "Accommodating is not an event that happens before the Head. So the output should be \"No\"."
+        },
+        {
+            "input": "Head: PersonX adopts a baby<sep>Tail: PersonX takes adoption classes",
+            "output": "No",
+            "explanation": "Adopting a baby happens after taking the adoptions classes, and the output should be \"Yes\"."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1205-e1448e6f8d5b4e778aac6bb5599fd9f2",
+            "input": "Head: PersonX abolishes the ___ altogether<sep>Tail: lost the documents",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1205-0cd4d375a2764de8a0d632b4244cc068",
+            "input": "Head: PersonX acts like men<sep>Tail: masculine",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1205-89974e56dd27401a94552ffb8c8a755c",
+            "input": "Head: PersonX increases PersonY's power<sep>Tail: PersonX gives PersonY a promotion",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

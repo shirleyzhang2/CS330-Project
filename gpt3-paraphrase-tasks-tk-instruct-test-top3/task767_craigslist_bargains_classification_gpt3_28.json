@@ -1,0 +1,82 @@
+{
+    "Contributors": [
+        "Ritvik Gaur"
+    ],
+    "Source": [
+        "craigslist_bargains"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/craigslist_bargains"
+    ],
+    "Categories": [
+        "Text Categorization"
+    ],
+    "Reasoning": [
+        "Reasoning on Social Interactions"
+    ],
+    "Definition": [
+        "Your task is to read a text passage comprising of a dialogue between a seller and a buyer, and classify the item being sold into exactly one of these categories: 'housing', 'furniture', 'bike', 'phone', 'car', or 'electronics'. The output should be the name of the category from the stated options, and there should be only one category for the given text passage."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Seller: hi\nBuyer: Hello\nSeller: do you care to make an offer?\nBuyer: The place sounds nice, but may be a little more than I can afford\nSeller: well how much can you soend?\nBuyer: I was looking for something in the 1500-1600 range\nSeller: That is really unreasonable considering all the immenities and other going rates, you would need to come up to at least 3000\nBuyer: I have seen some 2 bedrooms for that price, which I could split the cost with a roommate, so even with amenities, this may be out of my range\nSeller: it may be then... the absolute lowest i will go is 2700. that is my final offer.\nBuyer: Ok, I think the most I could spend on this is 2000 - we are a ways apart\nSeller: ya that is far too low like i said 2700\nBuyer: Ok, thanks for your consideration. I will have to keep looking for now.\nSeller: good luck",
+            "output": "housing",
+            "explanation": "The answer 'housing' is correct because a house is being talked about which is indicated by the mention of 'bedrooms' and 'amenities' which are words that are both related to housing."
+        },
+        {
+            "input": "Seller: Hello, how are you today\nBuyer: Hi, very well thank you! So, is the DVD player in a good condition?\nSeller: It is in great condition. I have barely taken it out of the box. \nBuyer: How much can you give it for?\nSeller: The price is $55\nBuyer: Yeah but its too much for me\nSeller: I understand that would normally be a lot for a used DVD player but this item has only been used for one week.  \nBuyer: Yeah, but there are a lot of different options in the market. I am a student and can only afford what my budget allows me to do so. I can pay $41. Will you accept it?\nSeller: I understand a student's budget, as I have no to long ago graduated myself. I just am already letting it go real cheap. I paid $130 for the product. The only reason I am parting with it is that It only streams the big streaming channels like Netflix, Hulu, Vudu and Youtube and I bought a DVD player/Android Box combo that will allow me to stream those plus add my own channels. I can't possibly sell it for $41. \nBuyer: Okay I can only afford $48 that's the last I can pay\nSeller: Make it $50 and we have a deal. I know it is a stretch to your budget but trust me with everything this player does, you will save more than $2 on entertainment",
+            "output": "electronics",
+            "explanation": "The answer 'electronic' is correct as the buyer and seller are talking about a 'DVD player' which is an electronic item."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Seller: Hello.\nBuyer: Hello. I saw your listing and I am interested in your car. However, I have a few questions.\nSeller: Sure, go ahead.\nBuyer: Has it been in any major accidents?\nSeller: No, I`ve kept it in very good condition.\nBuyer: All of the electronics are in working order, correct?\nSeller: Yes, everything has been checked out recently.\nBuyer: Great! Would you take $10,000? 120k miles is kinda a lot.\nSeller: I`m open to negotiate but 10k is a bit low. We could meet in the middle and say 13 000? I`ll include the extra speakers I recently purchased.\nBuyer: 13,000 is fair, however I can only afford paying 12,500\nSeller: Alright, I think that`s reasonable. We can agree on 12,500 then.\nBuyer: Great!",
+            "output": "toys",
+            "explanation": "This answer is incorrect because 'toys' does not belong in any of the categories from which the answer is to be chosen from ('phone', 'electronics', 'housing', 'furniture', 'car', 'bike'). The correct answer is 'car' because a car is being talked about in this conversation between the buyer and seller."
+        },
+        {
+            "input": "Buyer: I'm interested in this item, but I had some questions\nSeller: Geat, ask away.\nBuyer: Do I have to remove it myself?\nSeller: I am renting out the appartment, you \"Don't Remove Anything\"\nBuyer: Nice. Is it fully furnished?\nSeller: No, you will need your own \"basic\" furnishing\nBuyer: How much is the security deposit, is there one?\nSeller: Just first and last month rent\nBuyer: It's a bit pricy, I'm not sure if I can afford it...\nSeller: I'm only asking $140, that is really cheap for the area\nBuyer: I'd totally take 140!!!   but how about 1300 instead?\nSeller: Oops, I ment $1400, how about we meet in the middle at $1350?\nBuyer: 1325, and I'll accept\nBuyer: \nSeller: How about $1337.50",
+            "output": "bike",
+            "explanation": "This answer is incorrect as the item that is being talked about in the given conversation between the buyer and seller is not a bike. The correct answer is 'housing' because the words 'renting' and 'apartment' are mentioned in the conversation which indicates that the item in question is related to housing since apartments come under houses."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task767-1cceb712073d455487547d4fdf25cc2e",
+            "output": [
+                "phone"
+            ],
+            "input": "Seller: Hello\nBuyer: Hello, I saw your ad for your iphone 7, so it is brand new sealed in box?\nSeller: Yes, Its completely brand new. Never used. \nBuyer: Will it work with Boost Mobile?\nSeller: It's unlocked and will work with every service provider. \nBuyer: Excellent, I think my only concern is the lack of a warranty.  Do you provide any protection?  What if it breaks within the first week or month of using it?\nSeller: Good question. It does not have a warranty, but I believe that apple-care is around $99. I could knock off a bit of the selling price so that you could purchase the apple-care. I'm looking to get this off my hands ASAP.\nBuyer: Okay, I'm comparing it to several other offers I've seen on ebay.  What about if we do $550 so that I can get that applecare warranty and I'll bring you cash today?\nSeller: That's a bit low for me. This model sells for around $1,000 if you were to purchase a new one today and the condition of this phone is completely new and untouched. What if I offered $620?\nBuyer: I'm still a little nervous that it won't work with my network, if it doesn't work with Boost will you take it back within 24 hours?\nSeller: I understand. I would definitely take it back as long as it's within a 24 hour period. You could check with your provider and get back to me. You could also do that while we're together before you even hand me the money.\nBuyer: Okay good idea, then let's meet and I'll bring the $620 and call Boost while we're together, sound good?\nSeller: You have a deal.\nSeller: \nBuyer: \n"
+        },
+        {
+            "id": "task767-58da11b9d6f044c78c6d1814c99ed885",
+            "output": [
+                "housing"
+            ],
+            "input": "Buyer: Hello how are you\nSeller: Great! How about yourself?\nBuyer: Super special awesome!  I see you're renting out an apartment\nSeller: I am! It's very close to the UC Berkeley campus, and to lots of transit and entertainment options even if you're not a student or faculty. The asking price is $2200.\nBuyer: But what is the neighborhood like?\nSeller: It's near campus, and many of the people living in the neighborhood go to Berkeley or teach there. It's also full of things to do and see.\nBuyer: What is the lease agreement you are thinking of\nSeller: Open to different types of lease agreements if there's something you're looking for. But our standard is a month to month lease with one month's rent as deposit.\nBuyer: Hmmm.  No credit check?  How about $1600 a month?\nSeller: $1600 is fine for a deposit, and we're happy to pick you up for a tour of the unit. We generally don't fool with credit checks, especially on month to month leases.\nBuyer: Alright, I think I can come in later today\nBuyer: \nSeller: \n"
+        },
+        {
+            "id": "task767-b7935af6c70b413db8c042c73d65d094",
+            "output": [
+                "furniture"
+            ],
+            "input": "Buyer: Hello, I was interesting in your TV stand. I was wondering it there is any damage or markings from use?\nSeller: It has been lightly used, but there is no significant damage to the item.\nBuyer: Is it a smoke and/or pet free home?\nSeller: Yes, we live in a small apartment and we aren't aloud to have pets or smoke indoors.\nBuyer: Would you be willing to do 55$ and I can pick it up today?\nSeller: No, I don't think I can sell it for less than $100.\nBuyer: I can swing 62, I did find it online for a bit less but its a longer drive for me to get that one.\nSeller: The best I can do is $80 and a case of beer.\nBuyer: 70$ and a 12 pack?\nSeller: No thanks, I'll take my chances and let the ad run.\nBuyer: ok, no problem.\nSeller: \n"
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

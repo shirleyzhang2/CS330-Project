@@ -1,0 +1,88 @@
+{
+    "Contributors": [
+        "Mihir Parmar"
+    ],
+    "Source": [
+        "logic2text"
+    ],
+    "URL": [
+        "https://github.com/czyssrs/Logic2Text"
+    ],
+    "Categories": [
+        "Text to Code"
+    ],
+    "Reasoning": [
+        "Logical Reasoning"
+    ],
+    "Definition": [
+        "In this task, you are given a set of commands, each of which corresponds to a specific category of logical operation. Your job is to classify each command into one of the seven categories: majority, unique, superlative, count, comparative, aggregation, or ordinal. The majority category describes the majority values (most or all) over one column, with the scope of all table rows or a subset of rows. The unique category describes one unique row, regarding one column, with the scope of all table rows or a subset of rows. The superlative category describes the maximum or minimum value in a column, with the scope of all table rows or a subset of rows. The ordinal category describes the n-th maximum or minimum value in a column, with the scope of all table rows or a subset of rows. The comparative category compares two rows in the table, regarding their values in one column. The count category counts some rows in the table based on the values in one column, with the scope of all table rows or a subset of rows. The aggregation category describes the sum or average value over a column, with the scope of all table rows or a subset of rows."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Wikipedia",
+        "Logic -> Propositional Logic"
+    ],
+    "Positive Examples": [
+        {
+            "input": "round_eq { sum { all_rows ; casinos } ; 217 }",
+            "output": "aggregation",
+            "explanation": "In this example sum returns the sum of the values in all of the casinos rows. Hence, aggregation is right category."
+        },
+        {
+            "input": "eq { count { filter_eq { all_rows ; island ; hawaii } } ; 2 }",
+            "output": "count",
+            "explanation": "The count command counts the the island is hawaii, hence, the category is count."
+        },
+        {
+            "input": "most_eq { filter_eq { all_rows ; team ; aston martin racing } ; class pos ; dnf }",
+            "output": "majority",
+            "explanation": "Here, most_eq in the command indicates that some majority rows need to be selected, hence, the categpory is majorioty."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "most_greater_eq { all_rows ; us viewers ( million ) ; 1.0 }",
+            "output": "count",
+            "explanation": "The most_greater_eq command indicates that we need to select some majority rows, but label is 'count' which is not right."
+        },
+        {
+            "input": "less { hop { filter_eq { all_rows ; host team ; san diego chargers } ; final score } ; hop { filter_eq { all_rows ; host team ; philadelphia eagles } ; final score } }",
+            "output": "ordinal",
+            "explanation": "The less command indicates the comparision between rows, hence, 'comparative' category is right, but the label is 'ordinal' which is wrong."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task212-490667ecf4724487aa958291e29b17d7",
+            "input": "eq { hop { nth_argmax { all_rows ; attendance ; 2 } ; date } ; october 8 , 2001 }",
+            "output": [
+                "ordinal"
+            ]
+        },
+        {
+            "id": "task212-a237263c297c42e196e6f868925374e7",
+            "input": "round_eq { sum { all_rows ; money } ; 414749 }",
+            "output": [
+                "aggregation"
+            ]
+        },
+        {
+            "id": "task212-4e7ae18d3b4e447fb4ab29343c5d2e3f",
+            "input": "and { only { filter_eq { all_rows ; livery ; dark blue } } ; eq { hop { filter_eq { all_rows ; livery ; dark blue } ; number & name } ; no d4279 arthur wright } }",
+            "output": [
+                "unique"
+            ]
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

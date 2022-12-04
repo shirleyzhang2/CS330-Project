@@ -1,0 +1,76 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "record"
+    ],
+    "URL": [
+        "https://arxiv.org/pdf/1810.12885.pdf"
+    ],
+    "Categories": [
+        "Question Answering"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "In this task, you will be given a passage and a question. You need to find the best entity from the passage that is most likely to fill in the blank in the question. Then, you need to classify the answers based on the options given."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "News"
+    ],
+    "Positive Examples": [
+        {
+            "input": "For four years we have waited expectantly for the pitter patter of tiny paws. Soon, that wait could finally be over. Tian Tian, the UK's only female giant panda, has conceived and could give birth to a cub as early as August. However Edinburgh Zoo, where the pandas live, have warned people 'not to get too excited' as the process is 'extremely complex'. Moreover, on the two previous occasions keepers inseminated Tian Tian - whose name means 'Sweetie' - she has failed to produce a panda cub. She was artificially inseminated again in March this year, but keepers at the zoo say implantation - when a fertilised egg attaches to the uterus - has not yet occurred.Tian Tian has conceived and could give birth to a cub as early as AugustShe has been inseminated twice before but so far failed to produce a cubTian Tian and Yang Guang arrived in 2011 from China to great fanfareOn loan at \u00a3600k a year, became first giant pandas to live in UK for 17 years \n Questions:Under the terms of the agreement any cubs will return to _ at the age of two, the age at which they would normally leave their mother in the wild. (A) Tian Tian (B) UK (C) Edinburgh Zoo (D) Sweetie (E) Yang Guang (F) China",
+            "output": "(F)",
+            "explanation": "This is a good example. Based on the passage, any cubs will return to China at the age of two"
+        },
+        {
+            "input": "Manchester United did make an ambitious bid to sign Barcelona forward Neymar in the summer, according to the Brazil international's father. It has been widely reported that Louis van Gaal attempted to bring the 23-year-old to Old Trafford in the final weeks of the transfer window, with Neymar admitting that there had been discussions about a possible switch. Manchester United's desperate scramble for new striker after allowing Robin van Persie, Radamel Falcao and Javier Hernandez to all leave the club, led to them being linked with a host of players, including Bayern Munich forward Thomas Muller. United eventually parted with \u00a336million for French teenager Anthony Martial from Monaco but, according to Neymar's father\u00a0Neymar da Silva Santos, only after they had failed with a bid to lure his son away from the Nou Camp.Manchester United were widely reported to have bid for Neymar in summerThe player's father has confirmed that the Old Trafford club did make offerThe Brazil international is ready to open talks over a new deal at Barcelona \n Questions:'_'s offer came to Bar\u00e7a and they told us they won't sell,' Neymar Snr is quoted as saying by Brazilian newspaper Globo. (A) Manchester United (B) Barcelona (C) Neymar (D) Brazil (E) Louis van Gaal (F) Old Trafford (G) Robin van Persie (H) Radamel Falcao (I) Javier Hernandez (J) Bayern Munich (K) Thomas Muller (L) French (M) Anthony Martial (N) Monaco (O) Neymar da Silva Santos (P) Nou Camp",
+            "output": "(A)",
+            "explanation": "Based on the given passage, option (A) is correct."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Manchester United did make an ambitious bid to sign Barcelona forward Neymar in the summer, according to the Brazil international's father. It has been widely reported that Louis van Gaal attempted to bring the 23-year-old to Old Trafford in the final weeks of the transfer window, with Neymar admitting that there had been discussions about a possible switch. Manchester United's desperate scramble for new striker after allowing Robin van Persie, Radamel Falcao and Javier Hernandez to all leave the club, led to them being linked with a host of players, including Bayern Munich forward Thomas Muller. United eventually parted with \u00a336million for French teenager Anthony Martial from Monaco but, according to Neymar's father\u00a0Neymar da Silva Santos, only after they had failed with a bid to lure his son away from the Nou Camp.Manchester United were widely reported to have bid for Neymar in summerThe player's father has confirmed that the Old Trafford club did make offerThe Brazil international is ready to open talks over a new deal at Barcelona \n Questions:'_'s offer came to Bar\u00e7a and they told us they won't sell,' Neymar Snr is quoted as saying by Brazilian newspaper Globo. (A) Manchester United (B) Barcelona (C) Neymar (D) Brazil (E) Louis van Gaal (F) Old Trafford (G) Robin van Persie (H) Radamel Falcao (I) Javier Hernandez (J) Bayern Munich (K) Thomas Muller (L) French (M) Anthony Martial (N) Monaco (O) Neymar da Silva Santos (P) Nou Camp",
+            "output": "(C)",
+            "explanation": "Based on the passage Manchester United's offer came to Bar\u00e7a, and option (C) is incorrect."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task302-74bb103865bf4c8e8d311abec2872489",
+            "input": "Washington (CNN) The top U.S. commander for the fight against ISIS on Monday slammed the idea of \"carpet bombing\" the terror group. Army Lt. Gen. Sean MacFarland, who directs the coalition fighting ISIS in Iraq and Syria, provided the most detailed military criticism to date about the concept and detailed why it's militarily unacceptable. \"Indiscriminate bombing where we don't care if we are killing innocents or combatants is just inconsistent with our values,\" he said in response to a question from CNN on the possibility of using carpet bombing. Though MacFarland didn't mention any political candidates by name in his answer, Republican Sen. Ted Cruz of Texas while on the campaign trail has called for employing the practice against ISIS.Army Lt. Gen. Sean MacFarland detailed why carpet bombing is seen as militarily unacceptableThe notion of carpet bombing ISIS has been brought up during the Republican presidential race \n Questions:Does that mean leveling the ISIS capital of Raqqa in _, where there are hundreds of thousands of civilians?\". (A) Washington (B) CNN (C) U.S. (D) ISIS (E) Army Lt (F) Sean MacFarland (G) Iraq (H) Syria (I) MacFarland (J) Republican (K) Ted Cruz (L) Texas",
+            "output": [
+                "(H)"
+            ]
+        },
+        {
+            "id": "task302-41b0a248d26848b581d5e9703894ee45",
+            "input": "(CNN) Authorities missed an opportunity a decade ago to stop a key ISIS operative thought to be behind the Paris and Brussels attacks, a former Belgian intelligence officer says. Instead, Andre Jacob, who at the time was the head of the anti-terrorism unit for Belgian intelligence, says that Oussama Atar, believed by French authorities to be the elusive \"Abu Ahmad,\" was incarcerated in multiple Iraqi detention centers where he became further radicalized. The Belgian-Moroccan national, now 32, would years later introduce his own family -- including his cousins, the\u00a0El Bakraoui brothers\u00a0who carried out the Brussels attacks -- to his extremist ideologies, according to French and Belgian authorities.Oussama Atar is wanted by authorities in connection with Paris, Brussels terror attacksAndre Jacob, a retired anti-terror expert met him in 2006; says there was an opportunity to stop Atar a decade ago \n Questions:By September 2012, Atar was back in _ -- a different man. (A) CNN (B) ISIS (C) Paris (D) Brussels (E) Belgian (F) Andre Jacob (G) Oussama Atar (H) French (I) Abu Ahmad (J) Iraqi (K) Moroccan (L) El Bakraoui (M) Atar",
+            "output": [
+                "(D)"
+            ]
+        },
+        {
+            "id": "task302-b00e7d9455c1478594a71002de32ed04",
+            "input": "(CNN) If there is one thing we can count on Donald Trump to deliver, it is controversy. From the day his campaign began, the Republican front-runner has been blunt, outspoken and frequently offensive. Now, just as Trump is attempting to present a more presidential image, the GOP has a new Trump-related headache. Activist groups, particularly those representing minorities and women, are pressing major corporations not to sponsor the Republican convention in July. They hope to persuade companies like Microsoft and Google to drop out of sponsoring what is sure to be a contentious event. These groups have the right idea by speaking out against corporate backing for Cleveland. By sponsoring the GOP convention, companies would be providing a platform for Trump's ugly rhetoric. It is bad messaging and poor business strategy for corporations to be seen as promoting the increasingly toxic Trump brand. Over the course of his campaign thus far, Trump has insulted Latinos, immigrants, women, Muslims, Black Lives Matter protesters, disabled people, and journalists.Raul Reyes: Companies face increasing pressure from petitions to \"Dump Trump\"He says GOP lawmakers are hedging over whether to attend their convention \n Questions:Convention organizers clearly anticipate chaos, as evidenced by the fact that _ is seeking bids on 2,000 sets of riot gear for its police force in advance of the convention. (A) CNN (B) Donald Trump (C) Republican (D) Trump (E) GOP (F) Microsoft (G) Google (H) Cleveland (I) Latinos (J) Muslims (K) Black Lives Matter (L) Raul Reyes (M) Dump Trump",
+            "output": [
+                "(H)"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Apache 2.0",
+        "Dedicated Term of Use (https://archive.org/about/terms.php)"
+    ]
+}

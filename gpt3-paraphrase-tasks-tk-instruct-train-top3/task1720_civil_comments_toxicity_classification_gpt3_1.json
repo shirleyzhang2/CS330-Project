@@ -1,0 +1,83 @@
+{
+    "Contributors": [
+        "Himanshu Asati"
+    ],
+    "Source": [
+        "civil_comments"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/civil_comments"
+    ],
+    "Categories": [
+        "Toxic Language Detection"
+    ],
+    "Reasoning": [
+        "Commonsense Reasoning -> Social Situations"
+    ],
+    "Definition": [
+        "Given a comment, categorize it as toxic or not toxic. If the comment is harmful, malicious, derogatory, threatening, insulting, or attacks someone's identity, output 'Yes'. Otherwise, output 'No'."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue",
+        "Social Media"
+    ],
+    "Positive Examples": [
+        {
+            "input": "haha you guys are a bunch of losers.",
+            "output": "Yes",
+            "explanation": "The comment here has word 'losers', which is used as an attack on a subject in the comment. Hence, it is a positive example"
+        },
+        {
+            "input": "Is this something I'll be able to install on my site? When will you be releasing it?",
+            "output": "No",
+            "explanation": "The comment is just a query with no derogatory or toxic attacks and connotations. Therefore, this is a positive example."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "You just linked to a complaint (not a court case, a complaint - there is a huge difference) by a guy trying to not pay his taxes.  Incidentally, his complaint and associated arguments were rejected by the Tax Court, by the U.S. District Court, by the 5th Circuit Court of Appeals and denied certiorari by the U.S. Supreme Court.  In other words, literally nobody agreed with him, and he found out the hard way that living in Texas makes him a citizen of Texas and the United States, which obligates him to pay his damn taxes like the rest of us. Just because someone crams a bunch of words, statutes, and case law citations together in a document sprinkled with lawyerly language does not make it a legitimate or lawful argument.",
+            "output": "Yes",
+            "explanation": "The comment does not have any explicit curses or derogatory words in it. The word 'damn' has a negative tone but is not used as an attack on anything. Therefore, this is a negative example."
+        },
+        {
+            "input": "Apologies. Her name is Hasselberger. As far as I can tell, she will neither be in Guam or a part of the proceedings.",
+            "output": "No",
+            "explanation": "The comment doesn't have any curse words in it, however it is toxic because based on subject's name 'Hasselberger' a toxic judgement has been made implying that dealing with her is a hassle. Therefore, this is a negative example."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1720-f2169860fae341358f3fa54b190cfa73",
+            "input": "But those rules are hard to follow because I like to do those things, I guess I will just concentrate extra hard on not doing the ones I already dislike (like gay sex) and persecute those who engage in them. Maybe that will satisfy god and he wont notice how I pick and choose which rules to follow.",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1720-434b50d8b6864a84b6c32440a5c43e50",
+            "input": "\"like East Coast ditch weed left to dry in the glove box of an Oldsmobile\" OMG i'm dying",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1720-6e0a0968986b4cd49c589b1143294d07",
+            "input": "Shouldn't this read \"...hash oil explosion SUSPECT...?\" The victims are the now displaced family living next door. Good thing no children were playing in the back yard.",
+            "output": [
+                "No"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

@@ -1,0 +1,80 @@
+{
+    "Contributors": [
+        "Kushal Chawla"
+    ],
+    "Source": [
+        "casino"
+    ],
+    "URL": [
+        "https://aclanthology.org/2021.naacl-main.254.pdf"
+    ],
+    "Categories": [
+        "Negotiation Strategy Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "The input for this task is taken from a negotiation between two participants who take on the role of campsite neighbors. They negotiate for Food, Water, and Firewood packages based on their individual preferences and requirements. If, given an utterance and recent dialogue context containing past 3 utterances (whenever available), the utterance contains the other-need strategy, output Yes. Otherwise, output No. The other-need strategy is a selfish negotiation strategy that is used when the participants discuss a need for someone else rather than themselves. An example of this would be describing the need for firewood to keep the kids warm."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Context: 'I was hoping to get alot of water as well, would you be ok with me getting two waters and three firewoods if you get all the food and one water?' 'Hmm, that's not favorable for me going by the volume of items left in my arsenal. Water is more of a higher priority than food. So, I would exchange 1 pack of food for an additional water' 'So that way you would get two waters and two foods? Those are my priorities as well but i would be ok with it since that way i would get five items and you would get only four.'\nUtterance: 'Those are your priorities?? Then that's not fair for you. Then I take 2 water, 1 firewood and 1 food. This is the lowest I can offer'",
+            "output": "No",
+            "explanation": "This is correct. The participant does not create a specific need for anybody."
+        },
+        {
+            "input": "Context: 'I am doing okay but am in need of some supplies. What about you?' 'Same here. My kids are really looking forward to this. What is most important to you?' 'Firewood! I need it to cook my food and also to stay warm. What about you?'\nUtterance: 'That is the same for me as well. My kids were really looking forward to making s'mores and telling stories by the campfire. That's all they've been talking about'",
+            "output": "Yes",
+            "explanation": "In this utterance, the participant uses other-need by mentioning the needs of their kids."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Context: 'Hi! How are you doing today?' 'I'm fine. And yourself?' 'Pretty good. I'm really excited about going camping though!'\nUtterance: 'Me too. I haven't been camping for several years. '",
+            "output": "Yes",
+            "explanation": "There is no need created here. So the correct answer is 'No'."
+        },
+        {
+            "input": "Context: 'Hi, I hope we can work together to get an offer that benefits both of us.\ud83d\ude42'\nUtterance: 'I agree! Nice to meet you... I have two boys who always eat! Any chance I canget 2 food?'",
+            "output": "No",
+            "explanation": "The participant mentions that their boys eat and hence implies that they would need food. Hence, the correct answer here is 'Yes'."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task355-9db88f2031a747f1a3ceecd3c29421e5",
+            "input": "Context: 'Sounds good.  We will also be hiking a bunch and I have little kids who go through water and food like crazy.' 'What if I get 2 food packages and 1 water package....and you would get 1 food package and 2 waters?' 'I think we will need more extra food than that.  How about the reverse, I get 2 food and 1 water and you get 1 food and 2 water.'\nUtterance: 'I could do that if I could then get 2 packages of wood as well because it's been bitterly cold this time of year at night in the Alleghenies.'",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task355-06b40b22a02b482bb7463f1c216ef69a",
+            "input": "Context: 'Good evening, how are you doing today?' 'Welcome to the camping trip Dude!'\nUtterance: 'Welcome! I'm really concerned about our water supply, we are desperately low. We don't have much food, a few protein bars. how are things looking your way?'",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task355-dd29f67df2cf4610aea6d29a76a980c8",
+            "input": "Context: 'My favorite thing to do around the campfire is to sing songs.  I also like to do extra hiking as well.  I especially need firewood. ' 'Well, I could see fit to give you the extra firewood (If I can hear a few of your songs!) if you don't mind letting me take the water.' 'Hahaha, once you hear my singing you might hope the opposite.  I can do that with the firewood and water, but I really would prefer two of the remaining foods. '\nUtterance: 'I could also use the extra food, so can we resolve it amicably?  Coin flip maybe?'",
+            "output": [
+                "No"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

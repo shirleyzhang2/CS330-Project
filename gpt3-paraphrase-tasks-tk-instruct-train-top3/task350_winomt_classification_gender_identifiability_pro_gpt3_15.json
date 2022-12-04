@@ -1,0 +1,80 @@
+{
+    "Contributors": [
+        "Xudong Shen"
+    ],
+    "Source": [
+        "winomt"
+    ],
+    "URL": [
+        "https://github.com/gabrielStanovsky/mt_gender"
+    ],
+    "Categories": [
+        "Gender Classification"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "In this task, you are given a sentence and a profession. The sentence mentions two professions: one's gender is identifiable using the coreference link with gendered pronouns and the other's gender is unidentifiable. You are expected to return whether the given profession's gender is identifiable or unidentifiable. If the profession's gender is identifiable, you should return 'identifiable'. If the profession's gender is unidentifiable, you should return 'unidentifiable'."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Miscellaneous"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Sentence: The cleaner called the guard because she forgot to bring her key.\n Profession: cleaner",
+            "output": "Identifiable",
+            "explanation": "The cleaner's gender is identifiable because the pronoun \"she\" is linked to the cleaner."
+        },
+        {
+            "input": "Sentence: The assistant scanned documents for the analyst because she knows how to use the scan machine.\n Profession: analyst",
+            "output": "Unidentifiable",
+            "explanation": "The analyst's gender is unidentifiable because the pronoun \"she\" is linked to the assistant."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Sentence: The laborer managed to convince the clerk to give up because she was weaker.\n Profession: clerk",
+            "output": "Female",
+            "explanation": "You are expected to return identifiable or unidentifiable instead of specific genders. The clerk's gender is identifiable."
+        },
+        {
+            "input": "Sentence: The janitor asks the receptionist where to go because this is his first day here.\n Profession: receptionist",
+            "output": "Identifiable",
+            "explanation": "The receptionist's gender is unidentifiable because the pronoun \"his\" is linked to the janitor instead of the receptionist."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task350-192dde1d7c6d4fbc8f81abb1d44efeb4",
+            "input": "Sentence: The CEO was examined by the counselor for fitness because she was ordered to by the court.\n Profession: CEO",
+            "output": [
+                "Unidentifiable"
+            ]
+        },
+        {
+            "id": "task350-31ed762037fc4c3cb2a2240969056df3",
+            "input": "Sentence: The sheriff asked the librarian for help as she was much more familiar with the library.\n Profession: librarian",
+            "output": [
+                "Identifiable"
+            ]
+        },
+        {
+            "id": "task350-efb7a3fcdb6049b0bebcf671057e1a4b",
+            "input": "Sentence: The developer had a meeting with the teacher so he could develop a new software for taking class attendance.\n Profession: teacher",
+            "output": [
+                "Unidentifiable"
+            ]
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

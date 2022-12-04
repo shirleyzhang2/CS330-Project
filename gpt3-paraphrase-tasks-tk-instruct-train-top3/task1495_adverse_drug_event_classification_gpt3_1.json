@@ -1,0 +1,86 @@
+{
+    "Contributors": [
+        "Ishani Mondal"
+    ],
+    "Source": [
+        "ade_corpus_v2"
+    ],
+    "URL": [
+        "https://github.com/trunghlt/AdverseDrugReaction/tree/master/ADE-Corpus-V2"
+    ],
+    "Categories": [
+        "Text Categorization"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "The task is to read medical case reports extracted from MEDLINE and classify them as either non-adverse drug events or adverse drug events. An adverse drug reaction is a harmful or unpleasant reaction resulting from the use of a medical product. It predicts hazard from future administration and warrants prevention or specific treatment, or alteration of the dosage regimen, or withdrawal of the product."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Biology -> Clinical Knowledge",
+        "Healthcare"
+    ],
+    "Positive Examples": [
+        {
+            "input": "A case is reported of a child with fatal pulmonary fibrosis following BCNU therapy.",
+            "output": "adverse drug event",
+            "explanation": "Here, the child is facing some trouble after undergoing a particular therapy, thereby causing an adverse effect of the therapy."
+        },
+        {
+            "input": "She responded well to Sodium valproate.",
+            "output": "non-adverse drug event",
+            "explanation": "This is a pretty straightforward remark because it is related to filing taxes with minimal stress and is unrelated to irony or sarcasm."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "The patient suffered from breathing trouble after taking azithromycin.",
+            "output": "serious",
+            "explanation": "You are expected to return \"adverse drug event\" or \"non-adverse drug event\". This should be classified as adverse drug event because the patient suffers from an issue after taking in a particular drug."
+        },
+        {
+            "input": "The patient is feeling better at the hospital.",
+            "output": "wellness",
+            "explanation": "You are expected to return \"adverse drug event\" or \"non-adverse drug event\". This should be classified as non-adverse drug event because no harmful after-effect of any medical intervention has been mentioned."
+        },
+        {
+            "input": "A case is reported of a child with fatal pulmonary fibrosis following BCNU therapy.",
+            "output": "non-adverse drug event",
+            "explanation": "Here, the child is facing some trouble after undergoing a particular therapy, thereby causing an adverse effect of the therapy. So, it needs to be tagged as adverse drug event instead of non-adverse drug event."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1495-f48b9a5351734d3495ff81794dab5896",
+            "input": "The clinical course is usually aggressive.",
+            "output": [
+                "non-adverse drug event"
+            ]
+        },
+        {
+            "id": "task1495-68ceaf015f8f4018a9a7596c361d6844",
+            "input": "CASE SUMMARY: A 61-year-old woman with no apparent risk factors for liver injury developed acute hepatitis one week after the final dose of a long-term course of pulse itraconazole therapy (200 mg orally twice daily, 1 wk on, 3 wk off, for 24 wk) for onychomycosis.",
+            "output": [
+                "adverse drug event"
+            ]
+        },
+        {
+            "id": "task1495-9b12f80468754f5dae81a4bfe69f391c",
+            "input": "Disseminated salmonellosis in a patient treated with temozolomide.",
+            "output": [
+                "adverse drug event"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

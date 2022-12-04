@@ -1,0 +1,80 @@
+{
+    "Contributors": [
+        "Kushal Chawla"
+    ],
+    "Source": [
+        "casino"
+    ],
+    "URL": [
+        "https://aclanthology.org/2021.naacl-main.254.pdf"
+    ],
+    "Categories": [
+        "Negotiation Strategy Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You will receive an utterance and recent dialogue context containing past 3 utterances (if available). You need to output 'Yes' if the utterance contains the elicit-pref strategy, otherwise output 'No'. The elicit-pref strategy is a cooperative negotiation strategy used to discover the preference order of the opponent in the negotiation."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Context: 'What do you think if in the camp we get together and have a meeting between your family and mine? We can have a small party to get to know each other better.' 'Sounds great!' 'Ok, my proposal is to give you all the firewood you need, on the condition that you give me all the water I need. And regarding food we can negotiate.'\nUtterance: 'That sounds good. What do you propose on the food?'",
+            "output": "No",
+            "explanation": "The primary utterance does not try to elicit information on the preference order of the participant. So this is correct."
+        },
+        {
+            "input": "Context: 'Good morning' 'Hi, how goes it?' 'It's going alright. What do you need the most to trade?'\nUtterance: 'well, I run and could use some extra water. How about you?'",
+            "output": "Yes",
+            "explanation": "This is correct. The utterance asks about the preference of the opponent, which is clear from the context."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Context: 'Which one do you prefer most?' 'They sort of need more water for their meds' 'I'm sorry to hear that! But can you spare 1 for me since you probably don't need all the water.'\nUtterance: 'Sure that sounds fair. Thank you. Besides water what do you need for your trip?'",
+            "output": "No",
+            "explanation": "In the utterance, the participant asks about the needs of the opponent. So the answer should be 'Yes'."
+        },
+        {
+            "input": "Context: 'I am willing to give you the most water if I am able to have the most food.' 'Well I need some food because what if I get lost as well? ' 'I understand that, but walking away with the most food and the most water would essentially leave me for dead lol. Do you prefer water or food? '\nUtterance: 'I prefer to have the most water as I have a medical condition that requires me to stay extremely hydrated at all times. If I get too dehydrated, it's extremely bad for me. How about I get 3 water and 1 food, and 2 firewood?'",
+            "output": "Yes",
+            "explanation": "The participant does not try to elicit anything about the preference order, at least directly. The correct answer is 'No'."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task353-0b5b044390b741caabbc7089e1cc2142",
+            "input": "Context: \nUtterance: 'Hello, the trip sounds like it will be a lot of fun.  What is the most important essential package for you and your family?  I know we didnt bring a lot of food so I am looking for more of that than anything else.'",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task353-ea07fd55698144079b43e61e65382ab4",
+            "input": "Context: 'I think we'll both need each of the three items, but we can't split them evenly. How about I take 2 waters, 2 firewoods, and a food. You can have two food packages, a water, and a firewood.'\nUtterance: 'hi bro, 2 water for 2 firewood 1 food for me'",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task353-b86cd7f375e94d018322520ebc8317f9",
+            "input": "Context: 'We aren't allowed to submit it just yet. So let's chat. What do you value most among the items?' 'Please don't try to order me around. \ud83d\ude21 I require a majority of water.' 'Let's be reasonable here. If you are nice to me I'll be nice to you. I'll take the majority of the wood and food if you want most water.'\nUtterance: 'Again don't patronize me.  What is your main focus?'",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

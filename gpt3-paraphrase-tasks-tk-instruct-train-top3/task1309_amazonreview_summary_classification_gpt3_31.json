@@ -1,0 +1,93 @@
+{
+    "Contributors": [
+        "Ishan Purohit"
+    ],
+    "Source": [
+        "multilingual_amazon_reviews"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/amazon_reviews_multi"
+    ],
+    "Categories": [
+        "Summarization"
+    ],
+    "Reasoning": [
+        "Reasoning on Social Interactions",
+        "Commonsense Reasoning"
+    ],
+    "Definition": [
+        "You will be given reviews from Amazon's food products and a summary of that review. Your task is to output \"True\" if the given review and its summary match, or \"False\" if they do not match."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Reviews"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Review: My cat won't touch these. My dog, however, chews them and makes a mess all over the carpet and I can't get the shredded sticks out! Messy. Waste of money! \n Summary: Cat hates them",
+            "output": "True",
+            "explanation": "The answer is True. Because it's a correct summary where the owner mentioned their cat hated the product."
+        },
+        {
+            "input": "Review: In the process of returning. The sizing is way off. Looks gorgeous but didn't fit. \n Summary: Sizing is not accurate",
+            "output": "True",
+            "explanation": "The answer is True. Because it's a correct summary where the user mentioned the size of the product didn't fit them."
+        },
+        {
+            "input": "Review: Amazon is not helping at all. They sent me an image of the delivered package, it's not even my address. This is the 3rd time that my package has been delivered to the wrong address. I'm curious how the delivery driver can take a picture of the delivery at the wrong address, identified in the photos, and Amazon's only solution is to refund my $$. What is the purpose of being a Prime Member when they can't do the simple things correct? \n Summary: Received it at the right time",
+            "output": "False",
+            "explanation": "The delivery driver deliver it to wrong address. So, it's an incorrect summary."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Review: The design is good, but the build is disappointing. I used these one time, and they are falling apart. The long handles are all detached and the mesh started detaching from the handle. \n Summary: Not falling apart!",
+            "output": "True",
+            "explanation": "The answer should be False. Because It's an incorrect summary where user mentioned that the design falls apart after one time use."
+        },
+        {
+            "input": "Review: These were listed as size regular. When I open them they were size regular to large. Way too big for me. I tried to return them and there is a no return policy for these items. Money wasted. \n Summary: Size isn't clear",
+            "output": "False",
+            "explanation": "The answer should be True. Because It's not a correct size because user didn't get their size. So it's a correct summary."
+        },
+        {
+            "input": "Review: Did not hold up for even one month of play at our club. Fiberboard under attractive painting so did not withstand being left outside. Fell apart. \n Summary: Didn't last for even a month.",
+            "output": "Negative",
+            "explanation": "It's supposed to generate True or false."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1309-e01dc3bfa4bf4ab0bc1825660c1a03d3",
+            "input": "Reviews: Only one of the three cables worked. The other two would not work with my iPhone as described. Phone would continue to say non-compatible device. Would not buy again. Completely unsatisfied and unhappy with this product. \n Summary: Completely unsatisfied and unhappy with this product.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "id": "task1309-a77818c79cd54b3bb3c4974c6e25b129",
+            "input": "Reviews: It's almost impossible to use this with any normal grip without hitting the change mode button. Moving that button to a reasonable location would have made this a five-star item. Sounds trivial perhaps, but it is a constant annoyance every time I use it. You'd think after 6 weeks you'd find a routine that gets around this issue but it is so poorly placed that it's impossible to avoid. My strong advice is to choose something else. \n Summary: Flavor is light - Like it- top $$ for amount of product",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "id": "task1309-54e08965e5194fbd8e401b1ab25c98f2",
+            "input": "Reviews: Did not fit my spin mop at all. \n Summary: Warehouse deals and don\u2019t buy from them they\u2019re a bunch a scam artists.",
+            "output": [
+                "False"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Amazon License (https://s3.amazonaws.com/amazon-reviews-pds/license.txt)"
+    ]
+}

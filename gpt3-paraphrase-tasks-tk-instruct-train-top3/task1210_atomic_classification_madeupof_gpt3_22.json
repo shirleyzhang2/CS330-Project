@@ -1,0 +1,92 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "atomic"
+    ],
+    "URL": [
+        "https://allenai.org/data/atomic-2020"
+    ],
+    "Categories": [
+        "Commonsense Classification"
+    ],
+    "Reasoning": [
+        "Relational Reasoning",
+        "Reasoning on Social Interactions",
+        "Commonsense Reasoning -> Social Situations",
+        "Reasoning on Objects"
+    ],
+    "Definition": [
+        "In this task, you will be given two phrases: Head and Tail, separated with <sep>. The Head and the Tail events will be short phrases involving participants. The names of specific people have been replaced with generic words (e.g., PersonX, PersonY, PersonZ). PersonX will always be the subject of the event. You will need to determine whether the Head is a part, portion, or makeup of the Tail or not. Classify your answers into \"Yes\" and \"No\". The phrase may also contain \"___\", a placeholder that can be an object, a person, and/or an action."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Sociology",
+        "Commonsense -> Concepts and Relations -> Physical Commonsense",
+        "Commonsense -> Concepts and Relations -> Social Commonsense"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Head: bed<sep>Tail: mattress",
+            "output": "Yes",
+            "explanation": "This is a good example. The Head is made of the Tail."
+        },
+        {
+            "input": "Head: PersonX asks ___ to go with PersonY<sep>Tail: follows the other person",
+            "output": "No",
+            "explanation": "In this example, The relation between the Head and the Tail is different, and the Head is not made up of the Tail. So the output should be\"No\"."
+        },
+        {
+            "input": "Head: government<sep>Tail: police",
+            "output": "Yes",
+            "explanation": "In this example, the government is made of the police. Thus, this example should be classified as \"Yes\"."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Head: PersonX acts weird<sep>Tail: attention",
+            "output": "Yes",
+            "explanation": "In this example, The Head needs the Tail, and it is not made up of the Tail. So the output should be \"No\"."
+        },
+        {
+            "input": "Head: war<sep>Tail: aggression",
+            "output": "No",
+            "explanation": "The war is made up of aggression, and the output should be \"Yes\"."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1210-63aeb1a4a8ad42d49eeaf018c232aaa1",
+            "input": "Head: PersonX accepts PersonY invitation<sep>Tail: buys a present",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1210-335973c1e492444aad7f2692fb0d4dfd",
+            "input": "Head: broom<sep>Tail: broomstick",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1210-33fee6cd53e8416e9150caea4229e366",
+            "input": "Head: distributor<sep>Tail: distributor point",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

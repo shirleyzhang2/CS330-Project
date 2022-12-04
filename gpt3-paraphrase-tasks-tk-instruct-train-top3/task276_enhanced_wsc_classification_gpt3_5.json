@@ -1,0 +1,88 @@
+{
+    "Contributors": [
+        "Pegah Alipoormolabashi"
+    ],
+    "Source": [
+        "wsc; enhanced_wsc"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/winograd_wsc; https://github.com/mhany90/perturbed-wsc"
+    ],
+    "Categories": [
+        "Text Matching"
+    ],
+    "Reasoning": [
+        "Commonsense Reasoning"
+    ],
+    "Definition": [
+        "You will be given two sentences. One of them is created by paraphrasing the original one, with changes on an aspect, or using synonyms. Your task is to decide what is the difference between two sentences. Types of change that you will need to look for include the following: Tense: The verbs in the sentence are changed in tense. Number: Plural nouns, verbs and pronouns are changed into single ones or the other way around. Voice: If the verbs are in active voice, they're changed to passive or the other way around. Adverb: The paraphrase has one adverb or more than the original sentence. Gender: The paraphrase differs from the original sentence in the gender of the names and pronouns. Synonym: Some words or phrases of the original sentence are replaced with synonym words or phrases. Changes in the names of people are also considered a synonym change. Your task is to classify the differences between the two sentences into the categories of Tense, Number, Voice, Adverb, Gender, and Synonym."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue",
+        "Narrative"
+    ],
+    "Positive Examples": [
+        {
+            "input": "original sentence: Lily spoke to Donna , breaking her silence . paraphrase: Lily is speaking to Donna , breaking her silence .",
+            "output": "Tense",
+            "explanation": "The verbs in this example are changed from past tense to present tense."
+        },
+        {
+            "input": "original sentence: I'm sure that my map will show this building ; it is very good . paraphrase: I'm sure that my maps will show these buildings ; they are very good .",
+            "output": "Number",
+            "explanation": "In this example, map and building and their pronouns has been changed. So, the output should be Number."
+        },
+        {
+            "input": "original sentence: Jim signaled the barman and gestured toward his bathroom key . paraphrase: Jim dreamily signaled the barman and vaguely gestured toward his bathroom key .",
+            "output": "Adverb",
+            "explanation": "In this example the adverbs \"vaguely\" and \"dreamily\" are added to the original sentence."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "original sentence: The dog chased the cat , which ran up a tree . It waited at the bottom . paraphrase: The dog is chasing the cat , which is running up a tree . It is waiting at the bottom .",
+            "output": "Voice",
+            "explanation": "The change in the original sentence is to tense, as the past tense verbs are changed to present tense ones. \"Voice\" is not a correct answer here."
+        },
+        {
+            "input": "original sentence: John was doing research in the library when he heard a man humming and whistling . He was very annoyed . paraphrase: John and Steve were doing research in the library when they heard men humming and whistling . They were very annoyed .",
+            "output": "Number is changed.",
+            "explanation": "You should only output the title of the change, and nothing more."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task276-fcfca49adf1a4220b41fc4649db7cad8",
+            "input": "original sentence: I couldn't find a spoon , so I tried using a pen to stir my coffee . But that turned out to be a bad idea , because it got full of coffee . paraphrase: i couldn't find a spoon , so i tried using a marker to stir my drink . but that turned out to be a bad idea , because it got full of coffee .",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "id": "task276-cd06c31648134d648302408071d7e914",
+            "input": "original sentence: This book introduced Shakespeare to Goethe ; it was a major influence on his writing . paraphrase: Shakespeare was introduced to Goethe by this book ; it was a major influence on his writing .",
+            "output": [
+                "Voice"
+            ]
+        },
+        {
+            "id": "task276-3e03483332f4406fbad3b19292a11756",
+            "input": "original sentence: Jim comforted Kevin because he was so upset . paraphrase: Lucy comforted Emma because she was so upset .",
+            "output": [
+                "Gender"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

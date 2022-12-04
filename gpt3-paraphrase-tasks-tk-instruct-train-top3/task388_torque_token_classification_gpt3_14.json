@@ -1,0 +1,139 @@
+{
+    "Contributors": [
+        "Shailaja Keyur Sampat"
+    ],
+    "Source": [
+        "torque"
+    ],
+    "URL": [
+        "https://allennlp.org/torque.html"
+    ],
+    "Categories": [
+        "Information Extraction"
+    ],
+    "Reasoning": [
+        "Commonsense Reasoning"
+    ],
+    "Definition": [
+        "In this task, you will be given a passage, and you have to identify an event from the passage. An event is a single word representing something that happened, is happening, or may happen. The event must not be a pronoun or an adjective. For noun events with multiple words, use the last word in the phrase as the event."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "News"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Passage: I submitted the hit. The hit was approved, and then I was paid.",
+            "output": "approved",
+            "explanation": "There are three events in this passage (i) submission event (\"submitted\") (ii) the approval event (\"approved\"), and (iii) the payment event (\"paid\"). You can use any one of them as an output."
+        },
+        {
+            "input": "Passage: He was caught in the snow storm.",
+            "output": "storm",
+            "explanation": "There are two events in this passage (i) he was caught (\"caught\") and (ii) the snow storm event (\"storm\"). You can use any one of them as an output. Since snow storm is a noun event with multiple words, we only use the last word 'storm' as an event."
+        },
+        {
+            "input": "Passage: He is on the east coast.",
+            "output": "is",
+            "explanation": "The copula \"is\" an event describing his location."
+        },
+        {
+            "input": "Passage: He wanted to finish the task.",
+            "output": "wanted",
+            "explanation": "There are two events in this passage (i) he wanted to do something (\"wanted\") and (ii) finish the task (\"finish\"). Either of wanted or finish can be used as output. However note that though there is an uncertainty about the task i.e. indeed finished or not, \"finish\" is still a valid event."
+        },
+        {
+            "input": "Passage: If he works hard, then he will finish the task.",
+            "output": "finish",
+            "explanation": "There are two events in this passage (i) he works hard (\"works\") and (ii) he will finish the task. (\"finish\"). You can use either of works or finish as an output. Here the second event happens only if the first one is true, but both are considered as events. This is an example of hypothetical event."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Passage: He is happy.",
+            "output": "happy",
+            "explanation": "Happy is an adjective and hence cannot be an event. The output should be \"is\" which represents an event describing his attribute of happiness."
+        },
+        {
+            "input": "Passage: He was caught in the elevator.",
+            "output": "elevator",
+            "explanation": "Not every noun can be an event. Here \"elevator\" is an object and one cannot say \"an elevator happened\" hence it is not an event. \"caught\" is a correct output."
+        },
+        {
+            "input": "Passage: The flu season is winding down.",
+            "output": "flu season",
+            "explanation": "The \"flu season\" is a noun events with multiple words, but only last word \"season\" sould be used as an event as per definition."
+        },
+        {
+            "input": "Passage: The death toll climbed up to 99 soon after the explosion.",
+            "output": "blast",
+            "explanation": "There are two events in this passage \"climbed\" and \"explosion\". Though blast is a synonym of explosion, it is not present in the passage. The output must contain events that are present in the passage."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task388-d11c71f771d54b248b211dddbd1e658c",
+            "input": "Passage: Once triggered, the rights allow holders to buy additional shares at 50% of the then current market price or, at the board's discretion, to receive securities or assets. Separately, Dominion Textile posted net income of 4.7 million Canadian dollars ($4 million), or 12 Canadian cents a share, for the fiscal-first quarter ended Sept. 30.",
+            "output": [
+                "triggered",
+                "allow",
+                "buy",
+                "receive",
+                "posted",
+                "ended"
+            ]
+        },
+        {
+            "id": "task388-c586219385234bbab1f51ebacc133ee4",
+            "input": "Passage: In a country where more than 50 percent of the population are living on less than two dollars a day, the human cost of such disasters is enormous. Senator Richard Gordon, who also heads the Philippine Red Cross, said that unless the cycle of poverty is tackled \"these disasters will just go on repeating themselves.\"",
+            "output": [
+                "living",
+                "day",
+                "cost",
+                "disasters",
+                "heads",
+                "said",
+                "cycle",
+                "poverty",
+                "tackled",
+                "disasters",
+                "repeating"
+            ]
+        },
+        {
+            "id": "task388-b7745f46918f4349aaf14f7680a30488",
+            "input": "Passage: Confidence in Hong Kong's future depends on its new status as a Special Administrative Region (SAR) of China not leading to an erosion of the rule of law or key rights such as free speech, the right to assembly and form political parties and data protection, the commission report noted. Primary responsibility for ensuing that the SAR lives up to its tasks lies with the Hong Kong government and Chinese authorities, but the EU also had a role to play in monitoring events.",
+            "output": [
+                "Confidence",
+                "depends",
+                "status",
+                "leading",
+                "erosion",
+                "rule",
+                "speech",
+                "assembly",
+                "form",
+                "protection",
+                "noted",
+                "ensuing",
+                "up",
+                "tasks",
+                "lies",
+                "play",
+                "monitoring",
+                "events"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Apache 2.0"
+    ]
+}

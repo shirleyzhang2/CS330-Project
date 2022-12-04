@@ -1,0 +1,90 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "matres"
+    ],
+    "URL": [
+        "https://github.com/CogComp/MATRES"
+    ],
+    "Categories": [
+        "Word Semantics"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You will be given a context and a verb separated by a newline character. A verb is a negation if it is not going to exist, not happen, or has no effect. The output should be \"Yes\" if the verb is a negation and \"No\" otherwise."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "News"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Only the government of the United States can decide if it prefers this variant, continued the letter, which Castro read on a state television station broadcast. Gonzalez for months refused requests by Elian's Miami relatives to go to the United States to (claim) the boy.  \n Verb: claim",
+            "output": "Yes",
+            "explanation": "This is a good example. Gonzalez refused to \"claim\" the boy. So, the claim didn't happen and it's a negation."
+        },
+        {
+            "input": "In Washington today, the Federal Aviation Administration (released) air traffic control tapes from the night the TWA Flight eight hundred went down.  \n Verb: released",
+            "output": "No",
+            "explanation": "In this sentence, the releasing event happened in the past, and it's not a negation."
+        },
+        {
+            "input": "Nobody hurried her up. No one (held) her back.  \n Verb: held",
+            "output": "Yes",
+            "explanation": "In this example, No one held her back. So \"held\" didn't happened and it's a negation."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "WASHINGTON ( AP ) -- Preliminary DNA tests link a missing anti-abortion activist to a strand of hair found near where a sniper shot and killed a Buffalo, N.Y., doctor who (performed) abortions, a law enforcement official said Friday.  \n Verb: performed",
+            "output": "Yes",
+            "explanation": "In this sentence, the performing action happened in the past, and it's not a negation."
+        },
+        {
+            "input": "He insisted that the NGO law \" will not change our position at all \". \" We won't (refuse) foreign donations, nor will we register as a 'foreign agent', \" he said.  \n Verb: refuse",
+            "output": "No",
+            "explanation": "In this sentence, \"refuse\" won't happen, so it's a negation."
+        },
+        {
+            "input": "Hungary has come home. We (are) back in the family, said Hungarian Foreign Minister Janos Martonyi.  \n Verb: are",
+            "output": "Yes",
+            "explanation": "In this example, they are back in the family. So \"are\" is happening now, and it's not a negation."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task458-3d760ccb01ba4227972793ff87fe884a",
+            "input": "The black Labrador chased Elian around the yard and playfully nipped at his blue soccer shorts.  Elian tells me he does not (want) to go back to Cuba,  said Delfin Gonzalez, another of Elian's great-uncles.  \n Verb: want",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task458-60bf8d496f86442498a088a34635f8c5",
+            "input": "( AP ) -- A rifle found near the home of a slain abortion doctor may yield important clues for investigators trying to (track) down the gunman.  \n Verb: track",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task458-7044d3b794ac482ea037d74fb3638016",
+            "input": "It is for me very symbolic that it is precisely here that we today accept the guarantee that my country never again will become the powerless victim of foreign invasion,  Kavan said. In looking ahead to even greater expansion of NATO, Polish Foreign Minister Bronislaw Geremek (said),  We should keep the door of the alliance open for those who have fought for freedom...  \n Verb: said",
+            "output": [
+                "No"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

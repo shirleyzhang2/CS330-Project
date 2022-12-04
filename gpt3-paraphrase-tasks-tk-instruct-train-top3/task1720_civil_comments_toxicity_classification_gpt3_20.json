@@ -1,0 +1,83 @@
+{
+    "Contributors": [
+        "Himanshu Asati"
+    ],
+    "Source": [
+        "civil_comments"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/civil_comments"
+    ],
+    "Categories": [
+        "Toxic Language Detection"
+    ],
+    "Reasoning": [
+        "Commonsense Reasoning -> Social Situations"
+    ],
+    "Definition": [
+        "Given a comment, output 'Yes' if the comment is toxic (harmful, malicious, derogatory, threat, insult, identity attack, etc.), or 'No' if the comment is not toxic."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue",
+        "Social Media"
+    ],
+    "Positive Examples": [
+        {
+            "input": "haha you guys are a bunch of losers.",
+            "output": "Yes",
+            "explanation": "The comment here has word 'losers', which is used as an attack on a subject in the comment. Hence, it is a positive example"
+        },
+        {
+            "input": "Is this something I'll be able to install on my site? When will you be releasing it?",
+            "output": "No",
+            "explanation": "The comment is just a query with no derogatory or toxic attacks and connotations. Therefore, this is a positive example."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "You just linked to a complaint (not a court case, a complaint - there is a huge difference) by a guy trying to not pay his taxes.  Incidentally, his complaint and associated arguments were rejected by the Tax Court, by the U.S. District Court, by the 5th Circuit Court of Appeals and denied certiorari by the U.S. Supreme Court.  In other words, literally nobody agreed with him, and he found out the hard way that living in Texas makes him a citizen of Texas and the United States, which obligates him to pay his damn taxes like the rest of us. Just because someone crams a bunch of words, statutes, and case law citations together in a document sprinkled with lawyerly language does not make it a legitimate or lawful argument.",
+            "output": "Yes",
+            "explanation": "The comment does not have any explicit curses or derogatory words in it. The word 'damn' has a negative tone but is not used as an attack on anything. Therefore, this is a negative example."
+        },
+        {
+            "input": "Apologies. Her name is Hasselberger. As far as I can tell, she will neither be in Guam or a part of the proceedings.",
+            "output": "No",
+            "explanation": "The comment doesn't have any curse words in it, however it is toxic because based on subject's name 'Hasselberger' a toxic judgement has been made implying that dealing with her is a hassle. Therefore, this is a negative example."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1720-9da869bf73fe41f4beba99e2ad986166",
+            "input": "\u201cI support the ban on assault weapons and I support a slightly longer waiting period to purchase a gun.\u201d\nSource: The America We Deserve, by Donald Trump, p.102 , Jul 2, 2000",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1720-f18c1067fb7746a396dfeed0c1f36a6f",
+            "input": "Can you say, Medicaid expansion? Idiots!",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1720-6cfe8887dbd644c29514632e06974295",
+            "input": "Does Ms. Millett know anything except for when she received her monthly paycheck? : )",
+            "output": [
+                "No"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

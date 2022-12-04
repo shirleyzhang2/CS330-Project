@@ -1,0 +1,152 @@
+{
+    "Contributors": [
+        "Atharva Naik"
+    ],
+    "Source": [
+        "evalution"
+    ],
+    "URL": [
+        "https://aclanthology.org/W15-4208"
+    ],
+    "Categories": [
+        "Word Relation Classification"
+    ],
+    "Reasoning": [
+        "Commonsense Reasoning"
+    ],
+    "Definition": [
+        "Given a pair of words, you must deduce the type of relationship between them. The possible types of relations are: 'Entails, HasProperty, Synonym, Antonym, HasA, MemberOf, PartOf, MadeOf, IsA'. The first word will be denoted as X and the second word will be denoted as Y. An 'IsA' relation holds when 'X is a type of Y'. An 'Antonym' relation holds when 'X can be used as the opposite of Y'. A 'Synonym' relation applies when 'X can be used in place of Y, without changing the meaning'. A 'PartOf' relation holds when 'X is a part of Y'. A 'MemberOf' relation holds when 'X is a member of Y'. A 'MadeOf' relation holds when 'X is made of Y'. An 'Entailment' relation holds when 'If X is true, then Y is true as well'. A 'HasA' relation holds when 'X can have or contain Y'. A 'HasProperty' relation holds when 'Y is a property of X'."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Commonsense"
+    ],
+    "Positive Examples": [
+        {
+            "input": "X: balance, Y: scale",
+            "output": "IsA",
+            "explanation": "Balance is a kind of scale."
+        },
+        {
+            "input": "X: big, Y: small",
+            "output": "Antonym",
+            "explanation": "Big can be used as the opposite of small."
+        },
+        {
+            "input": "X: bird, Y: feather",
+            "output": "HasProperty",
+            "explanation": "Birds have feathers."
+        },
+        {
+            "input": "X: bloom, Y: flower",
+            "output": "Synonym",
+            "explanation": "Bloom and flower can mean the same thing. E.g. the roses bloomed or the roses flowered."
+        },
+        {
+            "input": "X: cake, Y: egg",
+            "output": "HasA",
+            "explanation": "A cake can have or can contain eggs."
+        },
+        {
+            "input": "X: cannon, Y: tank",
+            "output": "PartOf",
+            "explanation": "A cannon is a part of a tank."
+        },
+        {
+            "input": "X: dog, Y: hair",
+            "output": "MadeOf",
+            "explanation": "A dog is made of hair (among other things)."
+        },
+        {
+            "input": "X: tribe, Y: family",
+            "output": "MemberOf",
+            "explanation": "A tribe is a member of family."
+        },
+        {
+            "input": "X: write, Y: spell",
+            "output": "Entails",
+            "explanation": "If write is true then also spell is true."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "X: balance, Y: scale",
+            "output": "HasA",
+            "explanation": "The label is incorrect because, balance is a kind of scale, but doesn't have a scale."
+        },
+        {
+            "input": "X: big, Y: small",
+            "output": "Synonym",
+            "explanation": "Big can be used as the opposite of small so the label of Synonym is incorrect."
+        },
+        {
+            "input": "X: bird, Y: feather",
+            "output": "PartOf",
+            "explanation": "Incorrect because bird is not a part of feather."
+        },
+        {
+            "input": "X: bloom, Y: flower",
+            "output": "Antonym",
+            "explanation": "The label is incorrect as bloom and flower can be used in the same sense and hence are synonyms."
+        },
+        {
+            "input": "X: cake, Y: egg",
+            "output": "IsA",
+            "explanation": "The label is incorrect as a cake is not an egg."
+        },
+        {
+            "input": "X: cannon, Y: tank",
+            "output": "MadeOf",
+            "explanation": "Incorrect because a cannon is not made of a tank."
+        },
+        {
+            "input": "X: write, Y: speak",
+            "output": "Entails",
+            "explanation": "Incorrect because even when write is true, speak might not be true."
+        },
+        {
+            "input": "X: tribe, Y: country",
+            "output": "MemberOf",
+            "explanation": "incorrect as tribe is not a member of country."
+        },
+        {
+            "input": "X: write, Y: read",
+            "output": "HasProperty",
+            "explanation": "Incorrect because write is neither characterized by nor does is it have read as a property."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1429-c0bc2f05aa5a4e09a8196ab0401dfbc2",
+            "input": "X: adventure, Y: nothing",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "id": "task1429-95b53884c9914e6fad7a0546b5000bf1",
+            "input": "X: beauty, Y: ugly",
+            "output": [
+                "Antonym"
+            ]
+        },
+        {
+            "id": "task1429-12af3769cfd54bbaa49c726f06ca6e77",
+            "input": "X: butter, Y: milk",
+            "output": [
+                "MadeOf"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

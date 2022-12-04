@@ -1,0 +1,91 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "atomic"
+    ],
+    "URL": [
+        "https://allenai.org/data/atomic-2020"
+    ],
+    "Categories": [
+        "Commonsense Classification"
+    ],
+    "Reasoning": [
+        "Relational Reasoning",
+        "Reasoning on Social Interactions",
+        "Commonsense Reasoning -> Social Situations",
+        "Reasoning on Objects"
+    ],
+    "Definition": [
+        "In this task, you are given two phrases: Head and Tail, separated by <sep>. The Head and the Tail events are short phrases involving participants. The names of specific people have been replaced by generic words (e.g., PersonX, PersonY, PersonZ). PersonX is always the subject of the event. You have to determine whether the Head is capable of the Tail or not. Being capable of something includes general capabilities, such as a human is capable of thinking and reasoning, or specialized capabilities such as a surgeon is capable of operating on a patient. Classify your answers into \"Yes\" and \"No\". The phrase may also contain \"___\", a placeholder that can be an object, a person, and/or an action."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Sociology",
+        "Commonsense -> Concepts and Relations -> Social Commonsense"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Head: chicken<sep>Tail: lay eggs",
+            "output": "Yes",
+            "explanation": "This is a good example. The Head is capable of the Tail."
+        },
+        {
+            "input": "Head: PersonX accomplishes PersonY's work<sep>Tail: satisfied",
+            "output": "No",
+            "explanation": "In this example, being capable of satisfied doesn't make sense. So the output should be\"No\"."
+        },
+        {
+            "input": "Head: warder<sep>Tail: leave jail",
+            "output": "Yes",
+            "explanation": "In this example, the warder is capable of leaving the jail. Thus, this example should be classified as \"Yes\"."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Head: PersonX achieves PersonY end<sep>Tail: to be alone",
+            "output": "Yes",
+            "explanation": "In this example, PersonX achieves PersonY end is/are capable of being alone doesn't make sense. So the output should be \"No\"."
+        },
+        {
+            "input": "Head: scientist<sep>Tail: discover new",
+            "output": "No",
+            "explanation": "The scientist is capable of discovering new things, and the output should be \"Yes\"."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1215-85b407445a7f42d4a9d89dc0be34464c",
+            "input": "Head: baseball player<sep>Tail: hit home run",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1215-6d763b429ae54f7e93d0bd660a828277",
+            "input": "Head: PersonX acts like men<sep>Tail: repressed",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1215-ebde4c2201eb4ef0bf02626943a8440b",
+            "input": "Head: astronaut<sep>Tail: travel to moon",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

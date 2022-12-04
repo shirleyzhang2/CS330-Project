@@ -1,0 +1,95 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "atomic"
+    ],
+    "URL": [
+        "https://allenai.org/data/atomic-2020"
+    ],
+    "Categories": [
+        "Commonsense Classification"
+    ],
+    "Reasoning": [
+        "Relational Reasoning",
+        "Reasoning on Social Interactions",
+        "Commonsense Reasoning -> Social Situations"
+    ],
+    "Definition": [
+        "In this task, you are given two phrases: Head and Tail, separated with <sep>. The Head and the Tail events are short phrases possibly involving participants. The names of specific people have been replaced by generic words (e.g., PersonX, PersonY, PersonZ). PersonX is always the subject of the event. You have to determine whether PersonX needs to do what is mentioned in the Tail before the Head event can happen. Here need means that the Tail is a precondition for PersonX to achieve the Head. For example, in order for PersonX to give PersonY gifts, PersonX must first buy the presents. Classify your answers into \"Yes\" and \"No\". The phrase may also contain \"___\", a placeholder that can be an object, a person, and/or an action."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Sociology",
+        "Commonsense -> Concepts and Relations -> Social Commonsense"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Head: PersonX is at PersonY's friend's house<sep>Tail: to walk up to PersonY's friend's house",
+            "output": "Yes",
+            "explanation": "This is a good example. PersonX is at PersonY's friend's house. But before, PersonX needed to walk up to PersonY's friend's house."
+        },
+        {
+            "input": "Head: PersonX bats PersonX's eyelashes<sep>Tail: to take someone home",
+            "output": "No",
+            "explanation": "In this example, PersonX doesn't need to take someone home before PersonX bats PersonX's eyelashes. So this output is correct."
+        },
+        {
+            "input": "Head: PersonX finds PersonY opportunity<sep>Tail: research stocks",
+            "output": "Yes",
+            "explanation": "PersonX may need to research stocks before finding an opportunity. Thus, this example should be classified as \"Yes\"."
+        },
+        {
+            "input": "Head: PersonX increases PersonY's rate<sep>Tail: none",
+            "output": "Yes",
+            "explanation": "This is a good example. Since nothing is specified and nothing is a precondition for all the events."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Head: PersonX asks PersonY's boyfriend<sep>Tail: scared",
+            "output": "Yes",
+            "explanation": "PersonX doesn't need to be scared before asking PersonY's boyfriend. So the output should be \"No\"."
+        },
+        {
+            "input": "Head: PersonX holds hands<sep>Tail: to go near him",
+            "output": "No",
+            "explanation": "PersonX needs to go near him before holding the hands, and the output should be \"Yes\"."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1202-dbde36e66c7549daa464daa2ca824112",
+            "input": "Head: PersonX checks the internet<sep>Tail: turn computer on",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1202-b818d691d4504d6fb6083d9aa061e51c",
+            "input": "Head: PersonX holds out PersonY's hands<sep>Tail: to grab PersonY's hands",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1202-00bc9b41b09c4ca5a0d7d8e768427ad7",
+            "input": "Head: PersonX gets cancer<sep>Tail: to get sick",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

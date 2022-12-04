@@ -1,0 +1,90 @@
+{
+    "Contributors": [
+        "Mirali Purohit"
+    ],
+    "Source": [
+        "clariq"
+    ],
+    "URL": [
+        "https://github.com/aliannejadi/ClariQ"
+    ],
+    "Categories": [
+        "Question Understanding"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "Given an ambiguous question/query and a clarification statement, your task is to classify whether the given clarification accurately clarifies the given query or not. If it does, provide 'Yes'. If it does not, provide 'No'."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Query: Tell me about defender \n Clarification: are you referring to the arcade game called defender",
+            "output": "Yes",
+            "explanation": "The given clarification properly clarify the query. Hence, the output is Yes."
+        },
+        {
+            "input": "Query: I'm looking for information on hobby stores \n Clarification: are you interested in learning about treatments for von willebrand disease",
+            "output": "No",
+            "explanation": "The query asking about information on hobby store, however, the clarification talks about disease. Hencce, the output is No."
+        },
+        {
+            "input": "Query: I'm looking for universal animal cuts reviews \n Clarification: Why are you looking for universal bird cuts reviews",
+            "output": "No",
+            "explanation": "The clarification part changed the main entity of the query, i.e., animal to bird. Hence, the output is No."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Query: Tell me about defender \n Clarification: are you referring to the arcade game called defender",
+            "output": "Yes, I am referring to the arcade game.",
+            "explanation": "The answer can only be Yes or No."
+        },
+        {
+            "input": "Query: I'm looking for information on hobby stores \n Clarification: what location do you want to find a hobby store in",
+            "output": "Correct",
+            "explanation": "The answer can only be Yes or No."
+        },
+        {
+            "input": "Query: I'm looking for universal animal cuts reviews \n Clarification: Why are you looking for universal bird cuts reviews",
+            "output": "Clarification does not properly clarify the query.",
+            "explanation": "The answer can only be Yes or No."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task227-a2c8d853f5ec46a58e946251ff9c9faa",
+            "input": "Query: figs \n Clarification: are you interested in the calorie count or other nutrition information for the fruit",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task227-4886fc4f9754441d830a502782959ca9",
+            "input": "Query: tell me about cass county missouri \n Clarification: are you interested in a list of homes for sale in cass county",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task227-edac9ac34e4e443092f1a8a96713bad7",
+            "input": "Query: Tell me about black history. \n Clarification: are you interested in the history of the last supper painting",
+            "output": [
+                "No"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

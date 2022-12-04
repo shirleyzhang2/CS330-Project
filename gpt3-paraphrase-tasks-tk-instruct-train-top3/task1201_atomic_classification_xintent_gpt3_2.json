@@ -1,0 +1,90 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "atomic"
+    ],
+    "URL": [
+        "https://allenai.org/data/atomic-2020"
+    ],
+    "Categories": [
+        "Commonsense Classification"
+    ],
+    "Reasoning": [
+        "Relational Reasoning",
+        "Reasoning on Social Interactions",
+        "Commonsense Reasoning -> Social Situations"
+    ],
+    "Definition": [
+        "In this task, you are given two phrases: Head and Tail, separated by <sep>. The Head and the Tail events are short phrases possibly involving participants. The names of specific people have been replaced by generic words (e.g., PersonX, PersonY, PersonZ). PersonX is always the subject of the event. The Tail is the intention of the PersonX from the Head. The intention is the likely intent or desire of PersonX behind the execution of an event. For example, given the Head PersonX gives PersonY gifts, an intention might be that PersonX wanted to be thoughtful. Classify your answers into \"Yes\" and \"No\". The phrase may also contain \"___\", a placeholder that can be an object, a person, and/or an action."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Sociology",
+        "Commonsense -> Concepts and Relations -> Social Commonsense"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Head: PersonX plays a song<sep>Tail: to hear music.",
+            "output": "Yes",
+            "explanation": "This is a good example. PersonX plays a song because PersonX wanted to hear music."
+        },
+        {
+            "input": "Head: PersonX becomes distracted<sep>Tail: occupied",
+            "output": "No",
+            "explanation": "In this example, occupied is not the intention of PersonX's distraction. So this output is correct."
+        },
+        {
+            "input": "Head: PersonX brings PersonX's kids<sep>Tail: to take them to play",
+            "output": "Yes",
+            "explanation": "PersonX brings PersonX's kids because PersonX wants to take them to play. Thus, this example should be classified as \"Yes\"."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Head: PersonX addresses PersonY audience<sep>Tail: excited",
+            "output": "Yes",
+            "explanation": "Being excited is not the intention of PersonX in the Head sentence. So the output should be \"No\"."
+        },
+        {
+            "input": "Head: PersonX saves the money<sep>Tail: to buy something special",
+            "output": "No",
+            "explanation": "PersonX saves the money because PersonX wanted to buy something special, and the output should be \"Yes\"."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1201-eae4256ad98d424ba1c7d0197b714f34",
+            "input": "Head: PersonX passes PersonX's driving test<sep>Tail: to drive well",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1201-4dff56643870411287d99eeeb6cf69c0",
+            "input": "Head: PersonX asks the teacher<sep>Tail: helpful",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1201-a218494693db4b1daf250d677e4c7cbd",
+            "input": "Head: PersonX achieves PersonX's ___ by means<sep>Tail: to start business",
+            "output": [
+                "No"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

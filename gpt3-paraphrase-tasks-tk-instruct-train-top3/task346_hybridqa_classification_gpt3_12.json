@@ -1,0 +1,80 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "hybridqa"
+    ],
+    "URL": [
+        "https://github.com/wenhuchen/HybridQA"
+    ],
+    "Categories": [
+        "Pos Tagging"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "In this task, you will be given a question, a word, and a POS tag. You have to determine if the part-of-speech tag of the given word in the question is equal to the given POS tag or not. Give your answer as True or False. The Alphabetical list of part-of-speech tags that can be used in this task are as follows: CC: Coordinating conjunction, CD: Cardinal number, DT: Determiner, EX: Existential there, FW: Foreign word, IN: Preposition or subordinating conjunction, JJ: Adjective, JJR: Adjective, comparative, JJS: Adjective, superlative, LS: List item marker, MD: Modal, NN: Noun, singular or mass, NNS: Noun, plural, NNP: Proper noun, singular, NNPS: Proper noun, plural, PDT: Predeterminer, POS: Possessive ending, PRP: Personal pronoun, PRP$: Possessive pronoun, RB: Adverb, RBR: Adverb, comparative, RBS: Adverb, superlative, RP: Particle, SYM: Symbol, TO: to, UH: Interjection, VB: Verb, base form, VBD: Verb, past tense, VBG: Verb, gerund or present participle, VBN: Verb, past participle, VBP: Verb, non-3rd person singular present, VBZ: Verb, 3rd person singular present, WDT: Wh-determiner, WP: Wh-pronoun, WP$: Possessive wh-pronoun, WRB: Wh-adverb."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Wikipedia"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Who were the builders of the mosque in Herat with fire temples ? \n, Word: Who \n, POS tag: IN",
+            "output": "False",
+            "explanation": "This is a good example. POS tag of who should be WP(Wh-pronoun), and not IN(Preposition)."
+        },
+        {
+            "input": "What is the borough in which Kia Oval is located ? \n, Word: is \n, POS tag: VBZ",
+            "output": "True",
+            "explanation": "Based on the given question, \"is\" is a 3rd person singular present verb and Its POS tag is VBZ."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "After what season did the number 7 competitor retire ? \n, Word: 7 \n, POS tag: NN",
+            "output": "True",
+            "explanation": "7 is a cardinal number, and Its POS tag should be CD, so the output should be False."
+        },
+        {
+            "input": "After what season did the number 7 competitor retire ? \n, Word: 7 \n, POS tag: NN",
+            "output": "Wrong",
+            "explanation": "Only \"True\" or \"False\" are allowed, and you can't use any other word here."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task346-1d9803ca86994c16b4974caf212b5751",
+            "input": "In what year did the first Nobel laureate ever to reach the age of 100 win the award ? \n, Word: award \n, POS tag: TO",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "id": "task346-79c3ddca98af467aa82a997c1974aa2b",
+            "input": "What is the ICAO of the airport whose location is the primary home of Njala University ? \n, Word: home \n, POS tag: NN",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "id": "task346-56a92e40386749bca021448d6e983b0e",
+            "input": "Who was the recipient for the Unit that was raised in 1717 in Annapolis Royal , Nova Scotia ? \n, Word: the \n, POS tag: ,",
+            "output": [
+                "False"
+            ]
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

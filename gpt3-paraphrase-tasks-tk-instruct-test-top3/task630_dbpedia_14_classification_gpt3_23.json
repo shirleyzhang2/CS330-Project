@@ -1,0 +1,81 @@
+{
+    "Contributors": [
+        "Divya Reddy Katpally"
+    ],
+    "Source": [
+        "dbpedia_14"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/dbpedia_14"
+    ],
+    "Categories": [
+        "Text Matching"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "In this task, you're given a text and a title. The title is present in the text, and it refers to the entity which is mentioned in the text. The title might have some text in parentheses, for example: \"HMS Mallow (K81)\", or be slightly different from what is present in the text. If they still refer to the same entity, then it is a correct title. Indicate your answer as \"Yes\" if the title is correct, otherwise indicate your answer as \"No\". Do not generate anything else apart from \"Yes\" or \"No\"."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Wikipedia"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Text: The Mansfield Building Society is a UK building society which has its headquarters in Mansfield Nottinghamshire. It is a member of the Building Societies Association. \nTitle: Mansfield Building Society",
+            "output": "Yes",
+            "explanation": "The title \"Mansfield Building Society\" is present in the text and it is the main entity that is referred in the text. Hence, it is the title of the document."
+        },
+        {
+            "input": "Text:  The third and current HMS Argyll is a Type 23 'Duke' Class frigate. She is currently the oldest serving Type 23 frigate in the Royal Navy. Like all of her class she is named for a British dukedom in this case that of Argyll. \nTitle: HMS Argyll (F231)",
+            "output": "Yes",
+            "explanation": "\"HMS Argyll\" is present in the text and it is the main entity that is referred in the text. Here, the text in parentheses \"F31\" is not present in the document and it can be ignored. Hence, the output is correct. "
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Text: The Mansfield Building Society is a UK building society which has its headquarters in Mansfield Nottinghamshire. It is a member of the Building Societies Association. \nTitle: Mansfield Building Society",
+            "output": "No",
+            "explanation": "The title \"Mansfield Building Society\" is present in the text and it is the main entity that is referred in the text. Hence, the output is incorrect."
+        },
+        {
+            "input": "Text:  The third and current HMS Argyll is a Type 23 'Duke' Class frigate. She is currently the oldest serving Type 23 frigate in the Royal Navy. Like all of her class she is named for a British dukedom in this case that of Argyll. \nTitle: HMS Argyll (F231)",
+            "output": "HMS Argyll",
+            "explanation": "The output should be either \"Yes\" or \"No\". Hence, it is negative example."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task630-3efdb2e914a64ff78ff1dc45c54964d9",
+            "input": "Text:  Zalesie \u017burowskie [za\u02c8l\u025b\u0255\u025b \u0290u\u02c8r\u0254fsk\u02b2\u025b] is a village in the administrative district of Gmina Zarzecze within Przeworsk County Subcarpathian Voivodeship in south-eastern Poland. \nTitle: Ren\u00e9 Maran",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task630-4d19a20dc6904e2bade756f21c339ce2",
+            "input": "Text:  Jonathan Anthony Nichols (born 10 September 1981 in Plymouth) is an English former professional footballer.Nichols signed for Torquay United on a YTS apprenticeship making his debut whilst still an apprentice on 2 March 1999 in a 2-0 defeat away to Leyton Orient with another five league appearances before the end of the season leading to him being awarded the club's Young Player of the Year Award. \nTitle: Jon Nichols",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task630-79b8a8520546478e9c2a11f4d110c0fd",
+            "input": "Text:  Listed on the Main Board of The Stock Exchange of Hong Kong Limited in May 1997 Luk Fook Holdings (International) Limited (\u516d\u798f\u96c6\u5718(\u570b\u969b)\u6709\u9650\u516c\u53f8\uff09(Stock Code: 0590) principally engages in the sourcing designing wholesaling trademark licensing and retailing of a variety of gold and platinum jewellery gold ornaments and gem-set jewellery. \nTitle: GamerDNA",
+            "output": [
+                "No"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY-SA",
+        "GNU Free Documentation 2.0"
+    ]
+}

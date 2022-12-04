@@ -1,0 +1,93 @@
+{
+    "Contributors": [
+        "Mihir Parmar"
+    ],
+    "Source": [
+        "logic2text"
+    ],
+    "URL": [
+        "https://github.com/czyssrs/Logic2Text"
+    ],
+    "Categories": [
+        "Text to Code"
+    ],
+    "Reasoning": [
+        "Logical Reasoning"
+    ],
+    "Definition": [
+        "In this task, you are given a command in terms of logical operations and a natural interpretation of the command. Your job is to generate a label \"yes\" if the interpretation is appropriate for the command, otherwise generate label \"no\"."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Wikipedia",
+        "Logic -> Propositional Logic"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Command: eq { hop { nth_argmax { all_rows ; attendance ; 3 } ; competition } ; danish superliga 2005 - 06 }, interpretation: select the row whose attendance record of all rows is 3rd maximum. the competition record of this row is danish superliga 2005-06.",
+            "output": "yes",
+            "explanation": "Here, the command and interpretion given for the command is correct that 3rd maximum should be selected from given table rows. Hence, the label is 'yes'."
+        },
+        {
+            "input": "Command: eq { hop { argmax { all_rows ; duration } ; actor } ; lesley saweard }, interpretation: select the row whose duration record of all rows is maximum. the actor record of this row is lesley saweard.",
+            "output": "yes",
+            "explanation": "Here, the command and interpretion given for the command is correct that the maximum duration should be selected from the given table rows. Hence, the label is 'yes'."
+        },
+        {
+            "input": "Command: most_eq { all_rows ; points ; 0 }, interpretation: select the row whose duration record of all rows is maximum. the actor record of this row is lesley saweard.",
+            "output": "no",
+            "explanation": "Here, the command and interpretion given for the command is not correct because command indicates that the most of the point records are zero, however, interetation indicates that the maximum duration should be selected from the given table rows. Hence, the label is 'no'."
+        },
+        {
+            "input": "Command: and { only { filter_eq { all_rows ; acquisition via ; rookie draft } } ; eq { hop { filter_eq { all_rows ; acquisition via ; rookie draft } ; name } ; reynel hugnatan } }, interpretation: select the row whose attendance record of all rows is 3rd maximum. the competition record of this row is danish superliga 2005-06.",
+            "output": "no",
+            "explanation": "Here, the command and interpretion given for the command is not correct because command selects only one row whose acquisition record fuzzily matches to rookie draft, however, interpretation indicates that 3rd maximum should be selected from given table rows. Hence, the label is 'no'."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Command: eq { hop { nth_argmax { all_rows ; attendance ; 3 } ; competition } ; danish superliga 2005 - 06 }, interpretation: select the row whose attendance record of all rows is 3rd maximum. the competition record of this row is danish superliga 2005-06.",
+            "output": "no",
+            "explanation": "Given command and corresponding natural language interpretation is right, still label is 'no'. It must be 'yes'."
+        },
+        {
+            "input": "Command: eq { hop { nth_argmax { all_rows ; goal gain ; 3 } ; team } ; south china }, interpretation: select the rows whose name of county record fuzzily matches to veszpr\u00e9m. take the area (km square) record of this row. select the rows whose name of county record fuzzily matches to tolna.",
+            "output": "yes",
+            "explanation": "Given command and corresponding natural language interpretation is completely mis-matched, still label is 'yes'. It must be 'no'."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task211-7929c51fe1264fa4b6a3b7f5724e8634",
+            "input": "Command: eq { count { filter_eq { all_rows ; state ; new york } } ; 3 }, interpretation: select the rows whose state record fuzzily matches to new york . the number of such rows is 3 .",
+            "output": [
+                "yes"
+            ]
+        },
+        {
+            "id": "task211-ab59820f886e44d8ac188198c51d46e1",
+            "input": "Command: eq { hop { argmax { all_rows ; date } ; number & name } ; no 07005 }, interpretation: select the row whose date record of all rows is maximum . the number & name record of this row is no 07005 .",
+            "output": [
+                "yes"
+            ]
+        },
+        {
+            "id": "task211-d176adff022b42e397ee1b4b2a40b6a6",
+            "input": "Command: round_eq { sum { all_rows ; crowd } ; 129,800 }, interpretation: the average of the wins record of all rows is .12 .",
+            "output": [
+                "no"
+            ]
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

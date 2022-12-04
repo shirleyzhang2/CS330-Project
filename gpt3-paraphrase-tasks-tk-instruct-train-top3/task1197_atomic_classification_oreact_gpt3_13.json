@@ -1,0 +1,90 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "atomic"
+    ],
+    "URL": [
+        "https://allenai.org/data/atomic-2020"
+    ],
+    "Categories": [
+        "Commonsense Classification"
+    ],
+    "Reasoning": [
+        "Relational Reasoning",
+        "Reasoning on Social Interactions",
+        "Commonsense Reasoning -> Social Situations"
+    ],
+    "Definition": [
+        "Given a tuple comprising Head and Tail events, separated by <sep>, you have to determine whether the result of the Head event leads to the feeling mentioned in the Tail event for PersonY or other participants. Feelings in this task are the emotional reactions on the part of PersonY or other participants in an event. For example, if the Head event is gift-giving, the result might be that others (in this case, PersonY) feel appreciated. Classify your answers into \"Yes\" and \"No\". The phrase may also contain \"___\", a placeholder that can be an object, a person, and/or an action."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Sociology",
+        "Commonsense -> Concepts and Relations -> Social Commonsense"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Head: PersonX adapts ___ to conditions<sep>Tail: Get things done more effectively",
+            "output": "No",
+            "explanation": "As a result of the Head, The others won't feel things are done more effectively."
+        },
+        {
+            "input": "Head: PersonX lights ___ on fire<sep>Tail: none",
+            "output": "Yes",
+            "explanation": "This is a good example. As a result of Head sentence, others will feel nothing."
+        },
+        {
+            "input": "Head: PersonX asks PersonY to play<sep>Tail: to play",
+            "output": "No",
+            "explanation": "In this example, \"to play\" is not an emotional reaction. Thus, this example should be classified as \"No\"."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Head: PersonX affects children 's ___<sep>Tail: to make a difference",
+            "output": "Yes",
+            "explanation": "If PersonX affects children 's ___, others won't feel to make a difference. So the output should be \"No\"."
+        },
+        {
+            "input": "Head: PersonX gives PersonY command<sep>Tail: like they are set to task",
+            "output": "No",
+            "explanation": "If PersonX gives PersonY command, PersonY will feel like he/she is set to the task, and the output should be \"Yes\"."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1197-8c317b7e7a76468f9ce522a796fbfc7f",
+            "input": "Head: PersonX receives another ___<sep>Tail: none",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1197-8e523f7b7f8b4c31a1523457ce29ddf7",
+            "input": "Head: PersonX acts weird<sep>Tail: curious",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1197-277209f607ee463eae8e09e0ed576db8",
+            "input": "Head: PersonX answers the door<sep>Tail: see who is there",
+            "output": [
+                "No"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

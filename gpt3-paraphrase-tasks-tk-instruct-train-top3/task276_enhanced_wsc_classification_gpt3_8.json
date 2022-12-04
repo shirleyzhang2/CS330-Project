@@ -1,0 +1,88 @@
+{
+    "Contributors": [
+        "Pegah Alipoormolabashi"
+    ],
+    "Source": [
+        "wsc; enhanced_wsc"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/winograd_wsc; https://github.com/mhany90/perturbed-wsc"
+    ],
+    "Categories": [
+        "Text Matching"
+    ],
+    "Reasoning": [
+        "Commonsense Reasoning"
+    ],
+    "Definition": [
+        "You will be given two sentences. One sentence is created by paraphrasing the other sentence, with changes in one aspect or more. Your task is to decide what the difference is between the two sentences. The types of changes are explained below: Tense: The verbs in the sentence are changed in tense. Number: Plural nouns, verbs and pronouns are changed into single ones or the other way around. Voice: If the verbs are in active voice, they're changed to passive or the other way around. Adverb: The paraphrase has one adverb or more than the original sentence. Gender: The paraphrase differs from the original sentence in the gender of the names and pronouns. Synonym: Some words or phrases of the original sentence are replaced with synonym words or phrases. Changes in the names of people are also considered a synonym change. Classify your answers into Tense, Number, Voice, Adverb, Gender, and Synonym."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue",
+        "Narrative"
+    ],
+    "Positive Examples": [
+        {
+            "input": "original sentence: Lily spoke to Donna , breaking her silence . paraphrase: Lily is speaking to Donna , breaking her silence .",
+            "output": "Tense",
+            "explanation": "The verbs in this example are changed from past tense to present tense."
+        },
+        {
+            "input": "original sentence: I'm sure that my map will show this building ; it is very good . paraphrase: I'm sure that my maps will show these buildings ; they are very good .",
+            "output": "Number",
+            "explanation": "In this example, map and building and their pronouns has been changed. So, the output should be Number."
+        },
+        {
+            "input": "original sentence: Jim signaled the barman and gestured toward his bathroom key . paraphrase: Jim dreamily signaled the barman and vaguely gestured toward his bathroom key .",
+            "output": "Adverb",
+            "explanation": "In this example the adverbs \"vaguely\" and \"dreamily\" are added to the original sentence."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "original sentence: The dog chased the cat , which ran up a tree . It waited at the bottom . paraphrase: The dog is chasing the cat , which is running up a tree . It is waiting at the bottom .",
+            "output": "Voice",
+            "explanation": "The change in the original sentence is to tense, as the past tense verbs are changed to present tense ones. \"Voice\" is not a correct answer here."
+        },
+        {
+            "input": "original sentence: John was doing research in the library when he heard a man humming and whistling . He was very annoyed . paraphrase: John and Steve were doing research in the library when they heard men humming and whistling . They were very annoyed .",
+            "output": "Number is changed.",
+            "explanation": "You should only output the title of the change, and nothing more."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task276-ad68ab79f70a448d8c38348a47e1182f",
+            "input": "original sentence: Joe has sold his house and bought a new one a few miles away . He will be moving out of it on Thursday . paraphrase: The house has been sold by Joe and a new one a few miles away has been bought . It will be moved out of by him on Thursday .",
+            "output": [
+                "Voice"
+            ]
+        },
+        {
+            "id": "task276-b0dc8c2676b5492682522364f0f14e4d",
+            "input": "original sentence: I put the cake away in the refrigerator . It has a lot of butter in it . paraphrase: I am putting the cake away in the refrigerator . It has a lot of butter in it .",
+            "output": [
+                "Tense"
+            ]
+        },
+        {
+            "id": "task276-edfb443425494152940fb98a070e9b6c",
+            "input": "original sentence: Bob was playing cards with Adam and was way ahead . If Adam hadn't had a sudden run of good luck , he would have lost . paraphrase: Bob is playing cards with Adam and is way ahead . If Adam doesn't have a sudden run of good luck , he will lose .",
+            "output": [
+                "Tense"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

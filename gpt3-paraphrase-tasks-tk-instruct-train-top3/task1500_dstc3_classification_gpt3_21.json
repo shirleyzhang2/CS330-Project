@@ -1,0 +1,93 @@
+{
+    "Contributors": [
+        "Pruthvi Patel"
+    ],
+    "Source": [
+        "dstc3"
+    ],
+    "URL": [
+        "https://github.com/NathanDuran/DSTC3-Corpus"
+    ],
+    "Categories": [
+        "Dialogue State Tracking"
+    ],
+    "Reasoning": [
+        "Reasoning on Social Interactions"
+    ],
+    "Definition": [
+        "The input is a conversation between an automated system and a user. The user is looking for suggestions for pubs, restaurants and coffee shops in Cambridge. In the dialogue, the user may provide some criteria for the type of place they want such as price range, cuisine, etc. Given such a dialogue, output the price range the user is looking for, which can take one of four values: Cheap, Moderate, Expensive and Don't Care. Output cannot be any other value than the four values. Note that if the user asks for the prices of items provided at a pub, restaurant or coffee shop but doesn't mention the price range they are looking for, then the correct classification will be Don't Care. If the user does not mention a particular price, the correct classification will be Don't Care."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Public Places",
+        "Dialogue"
+    ],
+    "Positive Examples": [
+        {
+            "input": "System: 'Thank you for calling the Cambridge Information system. Your call will be recorded for research purposes. You may ask for information about a place to eat, such as a restaurant, a pub, or a cafe. How may I help you?'\nUser: 'im looking for a moderately priced coffee shop'\nSystem: 'Are you looking for somewhere near a particular venue? For example, Cambridge Contemporary Art, Great Saint Mary's Church, or Primavera.'\nUser: 'no im not'\nSystem: 'Cafe Eleven, which is in the moderate price range, is an outstanding cafe.'\nUser: 'can i get the phone number and the postcode'\nSystem: 'The phone number of Cafe Eleven is 01223369157. It's in the area with the postcode CB1 1DG.'\nUser: 'thank you goodbye'\n",
+            "output": "Moderate",
+            "explanation": "The user mentions that they are looking for a moderately priced coffee shop."
+        },
+        {
+            "input": "System: 'Thank you for calling the Cambridge Information system. Your call will be recorded for research purposes. You may ask for information about a place to eat, such as a restaurant, a pub, or a cafe. How may I help you?'\nUser: 'im looking for a greek restaurant and the price is not important'\nSystem: 'What kind of price range are you looking for? For example, cheap, expensive, or moderate.'\nUser: 'it doesnt matter'\nSystem: 'What part of town do you have in mind? For example, something in the central, Girton, or New Chesterton area.'\nUser: 'it doesnt matter'\nSystem: 'The Eraina Taverna is a great restaurant and it serves greek food.'\nUser: 'what is the address'\nSystem: 'The Eraina Taverna is located on 2 Free School Lane. The price for main courses ranges from 6 pounds 50 to 13 pounds 95.'\nUser: 'what is the phone number'\nSystem: 'The phone number of the Eraina Taverna is 01223902126.'\nUser: 'what is the postcode'\nSystem: 'The Eraina Taverna is in the area with the postcode CB2 3QA.'\nUser: 'thank you good bye'\n",
+            "output": "Don't Care",
+            "explanation": "The user mentions that price is not important in the conversation."
+        },
+        {
+            "input": "System: 'Thank you for calling the Cambridge Information system. Your call will be recorded for research purposes. You may ask for information about a place to eat, such as a restaurant, a pub, or a cafe. How may I help you?'\nUser: 'sil'\nSystem: 'What kind of venue are you looking for? For example, a cafe, or a pub.'\nUser: 'restaurant'\nSystem: 'What type of food would you like? For example, Continental, Seafood, or Traditional.'\nUser: 'background noise'\nSystem: 'What type of food would you like? For example, Chinese, Thai, or Turkish.'\nUser: 'background noise'\nSystem: 'What type of food would you like? For example, Northern european, International, or Traditional.'\nUser: 'i dont care'\nSystem: 'Are you looking for somewhere near a particular venue? For example, Byard Art, Cherry Hinton Water Play, or Magdalene College.'\nUser: 'traditional'\nSystem: 'Are you looking for somewhere near a particular venue? For example, Cambridge Contemporary Art, Downing College, or The Fitzwilliam Museum.'\nUser: 'inintelligible'\nSystem: 'What part of town do you have in mind? For example, something in the Cherry Hinton, Chesterton, or Newnham area.'\nUser: 'trumpington'\nSystem: 'Are you looking for somewhere near a particular venue? For example, the Lynne Strover Gallery, Saint Catharine's College, or Lamma's Land.'\nUser: 'trumpington'\nSystem: 'Blue Spice is a great restaurant.'\nUser: 'unintelligible'\nSystem: 'Are you looking for somewhere near a particular venue? For example, Cambridge Contemporary Art, the Museum Of Technology, or the Regency Gallery.'\nUser: 'background noise'\nSystem: 'What part of town do you have in mind? For example, something in the Chesterton, Girton, or Trumpington area.'\nUser: 'background noise'\nSystem: 'Blue Spice is in the Girton part of town.'\nUser: 'trumpington'\nSystem: 'The Oak Bistro is an outstanding restaurant and it's in the Trumpington part of town.'\nUser: 'what is the address'\nSystem: 'The Oak Bistro is on 6 Lensfield Road.'\nUser: 'background noise'\nSystem: 'The Oak Bistro is an outstanding restaurant.'\nUser: 'background noise'\nSystem: 'The Oak Bistro, which is in the Trumpington part of town, is an outstanding restaurant.'\nUser: 'what is the address'\nSystem: 'The Oak Bistro is on 6 Lensfield Road.'\nUser: 'what is the address'\nSystem: 'The Oak Bistro is on 6 Lensfield Road.'\nUser: 'whats the phone number'\nSystem: 'The phone number of The Oak Bistro is 01223323361.'\nUser: 'what is the phone number'\nSystem: 'The phone number of The Oak Bistro is 01223323361.'\nUser: 'thank you good bye'\nSystem: 'The Oak Bistro is an outstanding restaurant.'\nUser: 'thank you good bye'\n",
+            "output": "Don't Care",
+            "explanation": "The user doesn't mention the preferred price range in the entire conversation. Hence the correct answer is 'Don't Care'"
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "System: 'Thank you for calling the Cambridge Information system. Your call will be recorded for research purposes. You may ask for information about a place to eat, such as a restaurant, a pub, or a cafe. How may I help you?'\nUser: 'sil'\nSystem: 'Are you looking for a pub or a restaurant?'\nUser: 'hello im looking for a seafood restaurant and it should have expensive price range'\nSystem: 'Loch Fyne, which serves seafood, is an outstanding restaurant. It's in the expensive price range.'\nUser: 'okay uh what is the address and phone number'\nSystem: 'Loch Fyne is on 37 Trumpington Street and its phone number is 01223902103. The price for main courses ranges from 9 pounds to 20 pounds.'\nUser: 'okay thank you goodbye'\n",
+            "output": "Don't Care",
+            "explanation": "The user mentions that they need an expensive restaurant. Hence the correct answer is Expensive instead of Don't Care"
+        },
+        {
+            "input": "System: 'Thank you for calling the Cambridge Information system. Your call will be recorded for research purposes. You may ask for information about a place to eat, such as a restaurant, a pub, or a cafe. How may I help you?'\nUser: 'i want an international restaurant'\nSystem: 'Giraffe is an outstanding restaurant and it serves international food.'\nUser: 'what is the phone number and price'\nSystem: 'The phone number of Giraffe is 01223300707. The price for main courses ranges from 6 pounds 95 to 14 pounds 95 and the price for a cappuccino is 2 pounds 10.'\nUser: 'thank you good bye'\n",
+            "output": "Expensive",
+            "explanation": "The user merely asks for the price range and doesn't mention a particular price range. Hence the correct answer is Don't Care instead of Expensive."
+        },
+        {
+            "input": "System: 'Thank you for calling the Cambridge Information system. Your call will be recorded for research purposes. You may ask for information about a place to eat, such as a restaurant, a pub, or a cafe. How may I help you?'\nUser: 'i want an international restaurant'\nSystem: 'Giraffe is an outstanding restaurant and it serves international food.'\nUser: 'what is the phone number and price'\nSystem: 'The phone number of Giraffe is 01223300707. The price for main courses ranges from 6 pounds 95 to 14 pounds 95 and the price for a cappuccino is 2 pounds 10.'\nUser: 'thank you good bye'\n",
+            "output": "Moderately Expensive",
+            "explanation": "This answer is incorrect because the output has to be one of the four values: Cheap, Moderate, Expensive and Don't Care. The correct answer would be Expensive."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1500-d3cfe38b59e3446fac55a1efeec2a95c",
+            "input": "System: 'Thank you for calling the Cambridge Information system. Your call will be recorded for research purposes. You may ask for information about a place to eat, such as a restaurant, a pub, or a cafe. How may I help you?'\nUser: 'hi im looking for a pub food restaurant and it should have moderate price range'\nSystem: 'What part of town do you have in mind? For example, Fen Ditton, or riverside.'\nUser: 'i dont care'\nSystem: 'The Lion and Lamb, which serves pub food, is an outstanding restaurant. It's in the moderate price range.'\nUser: 'can i get the address and the phone number'\nSystem: 'The Lion and Lamb is on High Street, Milton and its phone number is 01223860202.'\nUser: 'alright thank you good bye'\nSystem: 'The Lion and Lamb, which serves pub food, is a great restaurant. It's in the moderate price range.'\nUser: 'alright thank you good bye'\n",
+            "output": [
+                "Moderate"
+            ]
+        },
+        {
+            "id": "task1500-7bc983fbb3bf41f3bd258cbd0252df0b",
+            "input": "System: 'Thank you for calling the Cambridge Information system. Your call will be recorded for research purposes. You may ask for information about a place to eat, such as a restaurant, a pub, or a cafe. How may I help you?'\nUser: 'expensive restaurant in addonbrookes'\nSystem: 'What kind of venue are you looking for? For example, a cafe, a pub, or a restaurant.'\nUser: 'noise sil'\nSystem: 'What kind of venue are you looking for? For example, a pub, or a restaurant.'\nUser: 'expensive restaurant'\nSystem: 'What part of town do you have in mind? For example, something in the Cherry Hinton, Chesterton, or New Chesterton area.'\nUser: 'addonbrookes'\nSystem: 'What type of food would you like? For example, Fastfood, French, or Middleeastern.'\nUser: 'unintelligible'\nSystem: 'What part of town do you have in mind? For example, something in the Castle Hill, Cherry Hinton, or Newnham area.'\nUser: 'sil'\nSystem: 'Are you looking for somewhere near a particular venue? For example, Artspace, Holy Trinity Church, or the Regency Gallery.'\nUser: 'no'\nSystem: 'What part of town do you have in mind? For example, something in the Arbury, central, or Trumpington area.'\nUser: 'noise sil'\nSystem: 'Are you looking for a pub or a restaurant?'\nUser: 'addonbrookes'\nSystem: 'Are you looking for a pub or a restaurant?'\nUser: 'restaurant'\nSystem: 'Let me confirm. You are looking for a venue in the Girton area.'\nUser: 'restaurant'\nSystem: 'Let me confirm. You are looking for a venue in the Girton area.'\nUser: 'no'\nSystem: 'What type of food would you like? For example, Fusion, Greek, or Vegetarian.'\nUser: 'no'\nSystem: 'What type of food would you like? For example, Continental, Fusion, or Thai.'\nUser: 'sil'\nSystem: 'What type of food would you like? For example, pub, Indian, or Seafood.'\nUser: 'greek'\nSystem: 'What type of food would you like? For example, Chinese take away, Italian, or Thai.'\nUser: 'sea food'\nSystem: 'Loch Fyne is a great restaurant, it serves seafood and it's in the expensive price range.'\nUser: 'thia'\nSystem: 'Would you like thai or X food?'\nUser: 'whats the address'\nSystem: 'Would you like thai or X food?'\nUser: 'the address'\nSystem: 'Would you like thai or X food?'\nUser: 'sil'\nSystem: 'Would you like thai or X food?'\nUser: 'thia'\nSystem: 'Loch Fyne is on 37 Trumpington Street.'\nUser: 'thia'\nSystem: 'The Wrestlers, which serves thai food, is a great restaurant. It's in the expensive price range.'\nUser: 'whats the phone number'\nSystem: 'The phone number of The Wrestlers is 01223566554.'\nUser: 'what the phone number'\nSystem: 'The phone number of The Wrestlers is 01223566554.'\nUser: 'thank you good bye'\n",
+            "output": [
+                "Expensive"
+            ]
+        },
+        {
+            "id": "task1500-d8d67f107092400790cf2ed37dc79257",
+            "input": "System: 'Thank you for calling the Cambridge Information system. Your call will be recorded for research purposes. You may ask for information about a place to eat, such as a restaurant, a pub, or a cafe. How may I help you?'\nUser: 'unitelligible'\nSystem: 'What kind of venue are you looking for? For example, a pub, or a restaurant.'\nUser: 'unintelligible'\nSystem: 'What kind of venue are you looking for? For example, a cafe.'\nUser: 'sil'\nSystem: 'What kind of venue are you looking for? For example, a cafe, or a restaurant.'\nUser: 'japanese restaurant in moderate price range'\nSystem: 'Yippee Noodle Bar, which serves chinese take away and japanese food, is an outstanding restaurant. It's in the moderate price range.'\nUser: 'whats the address'\nSystem: 'Yippee Noodle Bar is located on 7-9 King Street.'\nUser: 'thank you goodbye'\nSystem: 'Yippee Noodle Bar is a great restaurant.'\nUser: 'unintelligible'\nSystem: 'Yippee Noodle Bar is a great restaurant.'\nUser: 'thank you goodbye'\n",
+            "output": [
+                "Moderate"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

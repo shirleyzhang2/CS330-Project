@@ -1,0 +1,80 @@
+{
+    "Contributors": [
+        "Kushal Chawla"
+    ],
+    "Source": [
+        "casino"
+    ],
+    "URL": [
+        "https://aclanthology.org/2021.naacl-main.254.pdf"
+    ],
+    "Categories": [
+        "Negotiation Strategy Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "The input is taken from a negotiation between two campsite neighbors who are negotiating for Food, Water, and Firewood packages. Given an utterance and recent dialogue context containing past 3 utterances, output Yes if the utterance contains the other-need strategy, otherwise output No. The other-need strategy is a selfish negotiation strategy that is used when the participants discuss a need for someone else rather than themselves."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Context: 'I was hoping to get alot of water as well, would you be ok with me getting two waters and three firewoods if you get all the food and one water?' 'Hmm, that's not favorable for me going by the volume of items left in my arsenal. Water is more of a higher priority than food. So, I would exchange 1 pack of food for an additional water' 'So that way you would get two waters and two foods? Those are my priorities as well but i would be ok with it since that way i would get five items and you would get only four.'\nUtterance: 'Those are your priorities?? Then that's not fair for you. Then I take 2 water, 1 firewood and 1 food. This is the lowest I can offer'",
+            "output": "No",
+            "explanation": "This is correct. The participant does not create a specific need for anybody."
+        },
+        {
+            "input": "Context: 'I am doing okay but am in need of some supplies. What about you?' 'Same here. My kids are really looking forward to this. What is most important to you?' 'Firewood! I need it to cook my food and also to stay warm. What about you?'\nUtterance: 'That is the same for me as well. My kids were really looking forward to making s'mores and telling stories by the campfire. That's all they've been talking about'",
+            "output": "Yes",
+            "explanation": "In this utterance, the participant uses other-need by mentioning the needs of their kids."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Context: 'Hi! How are you doing today?' 'I'm fine. And yourself?' 'Pretty good. I'm really excited about going camping though!'\nUtterance: 'Me too. I haven't been camping for several years. '",
+            "output": "Yes",
+            "explanation": "There is no need created here. So the correct answer is 'No'."
+        },
+        {
+            "input": "Context: 'Hi, I hope we can work together to get an offer that benefits both of us.\ud83d\ude42'\nUtterance: 'I agree! Nice to meet you... I have two boys who always eat! Any chance I canget 2 food?'",
+            "output": "No",
+            "explanation": "The participant mentions that their boys eat and hence implies that they would need food. Hence, the correct answer here is 'Yes'."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task355-d761544ddba44d7783d12291e00cd417",
+            "input": "Context: \nUtterance: 'Hi, I would like to get 2 additional packages of food, 2 additional jugs of water, and 1 additional bundle of firewood. I need the additional food because I will have 3 children with me on the trip and one of those being a baby. The baby needs water for her bottles and I need an additional bundle of firewood to warm her bottles.'",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task355-a01580abecfe4d21a0fedf41748757ef",
+            "input": "Context: 'Hello, I'm in need of some extra food for my trip.  I just checked and some of my food is past the expiration date.'\nUtterance: 'Hi friend! How are you. Food is a non negotiable for me. We currently don't have enough for our trip.'",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task355-1235b18582fe4ff2b8cf89e1974f25b1",
+            "input": "Context: 'Hi, how are you, ready for the big camping trip?'\nUtterance: 'Yes I am. I'm actually already at the camp and came across some homeless people who could really use all the food they can get.'",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

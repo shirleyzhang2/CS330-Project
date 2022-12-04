@@ -1,0 +1,90 @@
+{
+    "Contributors": [
+        "Mirali Purohit"
+    ],
+    "Source": [
+        "roc_stories"
+    ],
+    "URL": [
+        "https://cs.rochester.edu/nlp/rocstories/"
+    ],
+    "Categories": [
+        "Coherence Classification"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "In this task, you will be given four sentences of a story written in natural language, and one last sentence (Sentence5). You need to output 'Yes' or 'No' based on whether the last sentence completes the rest of the story coherently."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Story"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Sentence1: Rick grew up in a troubled household. Sentence2: He never found good support in family, and turned to gangs. Sentence3: It wasn't long before Rick got shot in a robbery. Sentence4: The incident caused him to turn a new leaf. \n Sentence5: He is happy now.",
+            "output": "Yes",
+            "explanation": "As mentioned in fourth sentence, the incident turned a new leaf to Rick's life; so, he must be happy now."
+        },
+        {
+            "input": "Sentence1: Laverne needs to prepare something for her friend's party. Sentence2: She decides to bake a batch of brownies. Sentence3: She chooses a recipe and follows it closely. Sentence4: Laverne tests one of the brownies to make sure it is delicious. \n Sentence5: Laverne doesn't go to her friend's party.",
+            "output": "No",
+            "explanation": "As mentioned in the third sentence, Laverne follows the recipe closely; brownies should be delicious and she should not cancel going to her friend's party."
+        },
+        {
+            "input": "Sentence1: Sarah had been dreaming of visiting Europe for years. Sentence2: She had finally saved enough for the trip. Sentence3: She landed in Spain and traveled east across the continent. Sentence4: She didn't like how different everything was. \n Sentence5 Sarah then decided to move to Europe.",
+            "output": "No",
+            "explanation": "As mentioned in fourth sentence, Sarah didn't like that everything was different; Sarah cannot decide to move to Europe."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Sentence1: Rick grew up in a troubled household. Sentence2: He never found good support in family, and turned to gangs. Sentence3: It wasn't long before Rick got shot in a robbery. Sentence4: The incident caused him to turn a new leaf. \n Sentence5: He is happy now.",
+            "output": "No",
+            "explanation": "As mentioned in fourth sentence, the incident turned a new leaf to Rick's life; so, he must be happy now. So, output should be Yes because Sentencce5 properly ends the story"
+        },
+        {
+            "input": "Sentence1: Laverne needs to prepare something for her friend's party. Sentence2: She decides to bake a batch of brownies. Sentence3: She chooses a recipe and follows it closely. Sentence4: Laverne tests one of the brownies to make sure it is delicious. \n Sentence5: Laverne doesn't go to her friend's party.",
+            "output": "False",
+            "explanation": "The answer can only be Yes or No."
+        },
+        {
+            "input": "Sentence1: Sarah had been dreaming of visiting Europe for years. Sentence2: She had finally saved enough for the trip. Sentence3: She landed in Spain and traveled east across the continent. Sentence4: She didn't like how different everything was. \n Sentence5 Sarah then decided to move to Europe.",
+            "output": "Answer can be Sarah returned to the home.",
+            "explanation": "The answer can only be Yes or No."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task298-7dcfc79cb4cd4d2ab9c2309f1f324fb7",
+            "input": "Sentence1: Joyce wanted to rent a movie. Sentence2: She didn't know that Netflix offered online streaming. Sentence3: She went to the video store to find something to watch. Sentence4: Someone there told her about Netflix Instant Streaming. \n Sentence5: Joyce decided to buy a cookie instead.",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task298-31667e2589f34520b6afe034cc6ec727",
+            "input": "Sentence1: Pablo wanted a jawbreaker. Sentence2: He had no money however. Sentence3: He went through his closet to see what he could sell. Sentence4: He found a toy bear and sold it for 50 cents. \n Sentence5: Then he bought his candy.",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task298-dc2d7c02cae644618a95da98d122487f",
+            "input": "Sentence1: It was a very cold day. Sentence2: The snow was coming down very hard for many hours. Sentence3: The people of Lansing were stuck in their homes without power. Sentence4: The storm brought three feet of snow to the city. \n Sentence5: School was cancelled.",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

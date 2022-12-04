@@ -1,0 +1,90 @@
+{
+    "Contributors": [
+        "Jalansh Munshi"
+    ],
+    "Source": [
+        "pubmed_qa"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/pubmed_qa"
+    ],
+    "Categories": [
+        "Intent Identification"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "Given a passage, you must determine if it has a definite objective/aim/goal. Output '1' if it does, and output '0' if it does not."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Medicine"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Chronic rhinosinusitis (CRS) is a heterogeneous disease with an uncertain pathogenesis. Group 2 innate lymphoid cells (ILC2s) represent a recently discovered cell population which has been implicated in driving Th2 inflammation in CRS; however, their relationship with clinical disease characteristics has yet to be investigated. The aim of this study was to identify ILC2s in sinus mucosa in patients with CRS and controls and compare ILC2s across characteristics of disease. A cross-sectional study of patients with CRS undergoing endoscopic sinus surgery was conducted. Sinus mucosal biopsies were obtained during surgery and control tissue from patients undergoing pituitary tumour resection through transphenoidal approach. ILC2s were identified as CD45(+) Lin(-) CD127(+) CD4(-) CD8(-) CRTH2(CD294)(+) CD161(+) cells in single cell suspensions through flow cytometry. ILC2 frequencies, measured as a percentage of CD45(+) cells, were compared across CRS phenotype, endotype, inflammatory CRS subtype and other disease characteristics including blood eosinophils, serum IgE, asthma status and nasal symptom score. 35 patients (40% female, age 48 \u00b1 17 years) including 13 with eosinophilic CRS (eCRS), 13 with non-eCRS and 9 controls were recruited. ILC2 frequencies were associated with the presence of nasal polyps (P = 0.002) as well as high tissue eosinophilia (P = 0.004) and eosinophil-dominant CRS (P = 0.001) (Mann-Whitney U). They were also associated with increased blood eosinophilia (P = 0.005). There were no significant associations found between ILC2s and serum total IgE and allergic disease. In the CRS with nasal polyps (CRSwNP) population, ILC2s were increased in patients with co-existing asthma (P = 0.03). ILC2s were also correlated with worsening nasal symptom score in CRS (P = 0.04).",
+            "output": "1",
+            "explanation": "There is a line in the passage which say 'The aim of this study was...' which suggests that it is talking about a specific aim. Hence, the output should be 1 as this passage has a definite aim."
+        },
+        {
+            "input": "Phosphatidylethanolamine N-methyltransferase (PEMT), a liver enriched enzyme, is responsible for approximately one third of hepatic phosphatidylcholine biosynthesis. When fed a high-fat diet (HFD), Pemt(-/-) mice are protected from HF-induced obesity; however, they develop steatohepatitis. The vagus nerve relays signals between liver and brain that regulate peripheral adiposity and pancreas function. Here we explore a possible role of the hepatic branch of the vagus nerve in the development of diet induced obesity and steatohepatitis in Pemt(-/-) mice. 8-week old Pemt(-/-) and Pemt(+/+) mice were subjected to hepatic vagotomy (HV) or capsaicin treatment, which selectively disrupts afferent nerves, and were compared to sham-operated or vehicle-treatment, respectively. After surgery, mice were fed a HFD for 10 weeks. HV abolished the protection against the HFD-induced obesity and glucose intolerance in Pemt(-/-) mice. HV normalized phospholipid content and prevented steatohepatitis in Pemt(-/-) mice. Moreover, HV increased the hepatic anti-inflammatory cytokine interleukin-10, reduced chemokine monocyte chemotactic protein-1 and the ER stress marker C/EBP homologous protein. Furthermore, HV normalized the expression of mitochondrial electron transport chain proteins and of proteins involved in fatty acid synthesis, acetyl-CoA carboxylase and fatty acid synthase in Pemt(-/-) mice. However, disruption of the hepatic afferent vagus nerve by capsaicin failed to reverse either the protection against the HFD-induced obesity or the development of HF-induced steatohepatitis in Pemt(-/-) mice.",
+            "output": "1",
+            "explanation": "If you take a look at the line 'Here we explore a possible role of the hepatic branch', it says that it is exploring a possible role. This means that it has a specific goal and hence, the output should be 1."
+        },
+        {
+            "input": "Psammaplin A (PsA) is a natural product isolated from marine sponges, which has been demonstrated to have anticancer activity against several human cancer cell lines via the induction of cell cycle arrest and apoptosis. New drugs that are less toxic and more effective against multidrug-resistant cancers are urgently needed. We tested cell proliferation, cell cycle progression and autophagic cell death pathway in doxorubicin-resistant MCF-7 (MCF-7/adr) human breast cancer cells. The potency of PsA was further determined using an in vivo xenograft model.",
+            "output": "0",
+            "explanation": "This passage does not have any sentences which talk about a specific goal, objective, or aim. Hence, the output should be 0."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "This study examined links between DNA methylation and birth weight centile (BWC), and explored the impact of genetic variation. Using HumanMethylation450 arrays, we examined candidate gene-associated CpGs in cord blood from newborns with low (<15th centile), medium (40-60th centile) and high (>85th centile) BWC (n = 12). Candidates were examined in an investigation cohort (n = 110) using pyrosequencing and genotyping for putative methylation-associated polymorphisms performed using standard PCR. Array analysis identified 314 candidate genes associated with BWC extremes, four of which showed \u2265 4 BWC-linked CpGs. Of these, PM20D1 and MI886 suggested genetically determined methylation levels. However, methylation at three CpGs in FGFR2 remained significantly associated with high BWC (p = 0.004-0.027).",
+            "output": "0",
+            "explanation": "This passage talks about examining links between DNA methylation and also explores impact of genetic variation. This suggests that it has a definite objective and hence, the output should be 1. Output 0 is wrong."
+        },
+        {
+            "input": "Tumor microenvironment immunity is associated with breast cancer outcome. A high lymphocytic infiltration has been associated with response to neoadjuvant chemotherapy, but the contribution to response and prognosis of immune cell subpopulations profiles in both pre-treated and post-treatment residual tumor is still unclear. We analyzed pre- and post-treatment tumor-infiltrating immune cells (CD3, CD4, CD8, CD20, CD68, Foxp3) by immunohistochemistry in a series of 121 breast cancer patients homogeneously treated with neoadjuvant chemotherapy. Immune cell profiles were analyzed and correlated with response and survival. We identified three tumor-infiltrating immune cell profiles, which were able to predict pathological complete response (pCR) to neoadjuvant chemotherapy (cluster B: 58%, versus clusters A and C: 7%). A higher infiltration by CD4 lymphocytes was the main factor explaining the occurrence of pCR, and this association was validated in six public genomic datasets. A higher chemotherapy effect on lymphocytic infiltration, including an inversion of CD4/CD8 ratio, was associated with pCR and with better prognosis. Analysis of the immune infiltrate in post-chemotherapy residual tumor identified a profile (cluster Y), mainly characterized by high CD3 and CD68 infiltration, with a worse disease free survival.",
+            "output": "1",
+            "explanation": "There is no mention about how chemotherapy can cure breast cancer in the input passage. Hence, this question is a bad example."
+        },
+        {
+            "input": "Hidradenitis suppurativa (HS) is a chronic inflammatory disease involving intertriginous skin. Previous epidemiologic studies have been limited by small sample size. We sought to describe the prevalence and comorbidities of HS in a large patient care database. In this retrospective case-control study, we chart-validated all patients within a hospital database who received at least 1 billing code for HS between 1980 and 2013. Verified cases were matched with controls based on age, gender, and race. Prevalences of a priori selected comorbidities were compared between HS and control groups. A total of 2292 patients at Massachusetts General Hospital received at least 1 code for HS. A total of 1776 cases had a validated diagnosis of HS, yielding a prevalence of 0.08%. In unadjusted analysis, all comorbidities were diagnosed significantly more in HS compared with control including (in rank order of likelihood): smoking, arthropathies, dyslipidemia, polycystic ovarian syndrome, psychiatric disorders, obesity, drug dependence, hypertension, diabetes, thyroid disease, alcohol dependence, and lymphoma (all P < .01).",
+            "output": "0",
+            "explanation": "In the line 'We sought to describe the prevalence...' it is evident that the passage has a specific goal in mind. Hence, the output should be 1 and not 0. Therefore, the output is wrong."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task848-cf150f6a73524a159cff090a4181da91",
+            "input": "Parasympathetic dysfunction is an independent risk factor for mortality in heart failure for which there is no specific pharmacologic treatment. This article aims to determine the effect of pyridostigmine, an anticholinesterase agent, on the integrated physiologic responses to dynamic exercise in heart failure.', 'Patients with chronic heart failure (n = 23; 9 female; age = 48 +/- 12 years) were submitted to 3 maximal cardiopulmonary exercise tests on treadmill in different days. The first test was used for adaptation and to determine exercise tolerance. The other tests were performed after oral administration of pyridostigmine (45 mg, 3 times/day, for 24 hours) or placebo, in random order. All patients were taking their usual medication. Pyridostigmine reduced cholinesterase activity by 30%, inhibited the chronotropic response throughout exercise, up to 60% of maximal effort (pyridostigmine = 108 +/- 3 beats/min vs. placebo = 113 +/- 3 beats/min; P = .040), and improved heart rate reserve (pyridostigmine = 73 +/- 5 beats/min vs. placebo = 69 +/- 5 beats/min; P = 0.035) and heart rate recovery in the first minute after exercise (pyridostigmine = 25 +/- 2 beats/min vs. placebo = 22 +/- 2 beats/min; P = .005), whereas peak heart rate was similar to placebo. Oxygen pulse, an indirect indicator of stroke volume, was higher under pyridostigmine during submaximal exercise.",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "id": "task848-ca1fba2988d94881a42905fef8c03482",
+            "input": "To empirically derive the optimal measure of pharmacologic cardiovascular support in infants undergoing cardiac surgery with bypass and to assess the association between this score and clinical outcomes in a multi-institutional cohort.', 'Prospective, multi-institutional cohort study.', \"Cardiac ICUs at four academic children's hospitals participating in the Pediatric Cardiac Critical Care Consortium during the study period.\", 'Children younger than 1 year at the time of surgery treated postoperatively in the cardiac ICU.', 'None.', 'Three hundred ninety-one infants undergoing surgery with bypass were enrolled consecutively from November 2011 to April 2012. Hourly doses of all vasoactive agents were recorded for the first 48 hours after cardiac ICU admission. Multiple derivations of an inotropic score were tested, and maximum vasoactive-inotropic score in the first 24 hours was further analyzed for association with clinical outcomes. The primary composite \"poor outcome\" variable included at least one of mortality, mechanical circulatory support, cardiac arrest, renal replacement therapy, or neurologic injury. High vasoactive-inotropic score was empirically defined as more than or equal to 20. Multivariable logistic regression was performed controlling for center and patient characteristics. Patients with high vasoactive-inotropic score had significantly greater odds of a poor outcome (odds ratio, 6.5; 95% CI, 2.9-14.6), mortality (odds ratio, 13.2; 95% CI, 3.7-47.6), and prolonged time to first extubation and cardiac ICU length of stay compared with patients with low vasoactive-inotropic score. Stratified analyses by age (neonate vs infant) and surgical complexity (low vs high) showed similar associations with increased morbidity and mortality for patients with high vasoactive-inotropic score.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "id": "task848-99db76b4dc40490591cb79249c521cec",
+            "input": "Accelerated thrombus formation induced by exposure to combustion-derived air pollution has been linked to alterations in endogenous fibrinolysis and platelet activation in response to pulmonary and systemic inflammation. We hypothesised that mechanisms independent of inflammation contribute to accelerated thrombus formation following exposure to diesel exhaust particles (DEP).', 'Thrombosis in rats was assessed 2, 6 and 24 h after administration of DEP, carbon black (CB; control carbon nanoparticle), DQ12 quartz microparticles (to induce pulmonary inflammation) or saline (vehicle) by either intra-tracheal instillation (0.5 mg, except Quartz; 0.125 mg) or intravenous injection (0.5 mg/kg). Thrombogenicity was assessed by carotid artery occlusion, fibrinolytic variables and platelet-monocyte aggregates. Measures of inflammation were determined in plasma and bronchoalveolar lavage fluid. Tissue plasminogen activator (t-PA) and plasminogen activator inhibitor (PAI)-1 were measured following direct in vitro exposure of human umbilical vein endothelial cells (HUVECs) to DEP (10-150 \u03bcg/mL).', 'Instillation of DEP reduced the time to thrombotic occlusion in vivo, coinciding with the peak of DEP-induced pulmonary inflammation (6 h). CB and DQ12 produced greater inflammation than DEP but did not alter time to thrombotic occlusion. Intravenous DEP produced an earlier (2 h) acceleration of thrombosis (as did CB) without pulmonary or systemic inflammation. DEP inhibited t-PA and PAI-1 release from HUVECs, and reduced the t-PA/PAI-1 ratio in vivo; similar effects in vivo were seen with CB and DQ12. DEP, but not CB or DQ12, increased platelet-monocyte aggregates.",
+            "output": [
+                "0"
+            ]
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

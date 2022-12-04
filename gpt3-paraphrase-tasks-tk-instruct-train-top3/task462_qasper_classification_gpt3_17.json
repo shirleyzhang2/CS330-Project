@@ -1,0 +1,85 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "qasper"
+    ],
+    "URL": [
+        "https://allenai.org/project/qasper/home"
+    ],
+    "Categories": [
+        "Question Understanding"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "In this task, you will be presented with a context from an academic paper and a question based on the context. You have to classify the questions into \"Extractive\", \"Abstractive\", or \"Yes-no\" questions. Extractive questions can be answered by concatenating extracts taken from a context into a summary. Abstractive questions involve paraphrasing the context using novel sentences. Yes-no questions are questions whose expected answer is one of two choices, one that affirms the question and one that denies the question. Typically, the choices are either yes or no."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Scientific Research Papers"
+    ],
+    "Positive Examples": [
+        {
+            "input": "We build a dataset of Twitter accounts based on two lists annotated in previous works. For the non-factual accounts, we rely on a list of 180 Twitter accounts from BIBREF1. On the other hand, for the factual accounts, we use a list with another 32 Twitter accounts from BIBREF19 that are considered trustworthy by independent third parties. \n Question: How did they obtain the dataset?",
+            "output": "Extractive",
+            "explanation": "The answer to this question has been explicitly mentioned in the context, so the question is extractive."
+        },
+        {
+            "input": "We evaluate our pointer-generator performance using BLEU score. The baseline language model is trained using RNNLM BIBREF23 . Perplexity measure is used in the evaluation.\n\n \n Question: Did they use other evaluation metrics?",
+            "output": "Yes-no",
+            "explanation": "This is a good example, and the given question is a yes-no question."
+        },
+        {
+            "input": "As in the example above, we pre-process documents by removing all numbers and interjections. \n Question: what processing was done on the speeches before being parsed?",
+            "output": "Abstractive",
+            "explanation": "Answering this question needs paraphrasing the context, so this question is abstractive."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "For the English version, we performed both a thorough manual analysis and automatic evaluation across three commonly used TS datasets from two different domains  For the English version, we performed both a thorough manual analysis and automatic evaluation across three commonly used TS datasets from two different domains  The evaluation of the German version is in progress. \n Question: What are the corpora used for the task?",
+            "output": "Yes-no",
+            "explanation": "This question is extractive, and it's not a yes-no question."
+        },
+        {
+            "input": "For Turkish, as the first dataset, we utilised the movie reviews which are collected from a popular website. The number of reviews in this movie corpus is 20,244 and the average number of words in reviews is 39. Each of these reviews has a star-rating score which is indicative of sentiment. These polarity scores are between the values 0.5 and 5, at intervals of 0.5. We consider a review to be negative it the score is equal to or lower than 2.5. On the other hand, if it is equal to or higher than 4, it is assumed to be positive. We have randomly selected 7,020 negative and 7,020 positive reviews and processed only them. \n Question: What details are given about the movie domain dataset?",
+            "output": "Extractive",
+            "explanation": "This question is Abstractive because we need to paraphrase the context to get to the answer."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task462-3c6a13ac7240426a92fd560ed25f42fb",
+            "input": "We introduce a list of 8 different competencies that a reading system should master in order to process reviews and text documents in general. These 8 tasks require different competencies and a different level of understanding of the document to be well answered. For instance, detecting if an aspect is mentioned in a review will require less understanding of the review than predicting explicitly the rating of this aspect. Table TABREF10 presents the 8 tasks we have introduced in this dataset with an example of a question that corresponds to each task. \n Question: What kind of questions are present in the dataset?",
+            "output": [
+                "Extractive"
+            ]
+        },
+        {
+            "id": "task462-f609a35795cb43e4815018cc63aedb3c",
+            "input": "The MP framework is based on the core idea of recursive neighborhood aggregation. That is, at every iteration, the representation of each vertex is updated based on messages received from its neighbors. All spectral GNNs can be described in terms of the MP framework.\n\nGNNs have been applied with great success to bioinformatics and social network data, for node classification, link prediction, and graph classification. However, a few studies only have focused on the application of the MP framework to representation learning on text. This paper proposes one such application. The concept of message passing over graphs has been around for many years BIBREF0, BIBREF1, as well as that of graph neural networks \n Question: What is the message passing framework?",
+            "output": [
+                "Abstractive"
+            ]
+        },
+        {
+            "id": "task462-8ec021efaf3b489b8f5f074a9da245fb",
+            "input": "For all tasks, we use a TensorFlow implementation. AraNet predicts age, dialect, gender, emotion, irony, and sentiment from social media posts. It delivers state-of-the-art and competitive performance on these tasks and has the advantage of using a unified, simple framework based on the recently-developed BERT model.  \n Question: Did they experiment on all the tasks?",
+            "output": [
+                "Yes-no"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

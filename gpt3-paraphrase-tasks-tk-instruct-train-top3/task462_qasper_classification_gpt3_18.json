@@ -1,0 +1,85 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "qasper"
+    ],
+    "URL": [
+        "https://allenai.org/project/qasper/home"
+    ],
+    "Categories": [
+        "Question Understanding"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "In this task, you will be given a context from an academic paper and a question based on that context. You will need to classify the questions as \"Extractive\", \"Abstractive\", or \"Yes-no\" questions. Extractive questions can be answered by combining extracts taken from the context into a summary. Abstractive questions require you to paraphrase the context using new sentences. Yes-no questions are questions whose expected answer is one of two choices, usually yes or no."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Scientific Research Papers"
+    ],
+    "Positive Examples": [
+        {
+            "input": "We build a dataset of Twitter accounts based on two lists annotated in previous works. For the non-factual accounts, we rely on a list of 180 Twitter accounts from BIBREF1. On the other hand, for the factual accounts, we use a list with another 32 Twitter accounts from BIBREF19 that are considered trustworthy by independent third parties. \n Question: How did they obtain the dataset?",
+            "output": "Extractive",
+            "explanation": "The answer to this question has been explicitly mentioned in the context, so the question is extractive."
+        },
+        {
+            "input": "We evaluate our pointer-generator performance using BLEU score. The baseline language model is trained using RNNLM BIBREF23 . Perplexity measure is used in the evaluation.\n\n \n Question: Did they use other evaluation metrics?",
+            "output": "Yes-no",
+            "explanation": "This is a good example, and the given question is a yes-no question."
+        },
+        {
+            "input": "As in the example above, we pre-process documents by removing all numbers and interjections. \n Question: what processing was done on the speeches before being parsed?",
+            "output": "Abstractive",
+            "explanation": "Answering this question needs paraphrasing the context, so this question is abstractive."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "For the English version, we performed both a thorough manual analysis and automatic evaluation across three commonly used TS datasets from two different domains  For the English version, we performed both a thorough manual analysis and automatic evaluation across three commonly used TS datasets from two different domains  The evaluation of the German version is in progress. \n Question: What are the corpora used for the task?",
+            "output": "Yes-no",
+            "explanation": "This question is extractive, and it's not a yes-no question."
+        },
+        {
+            "input": "For Turkish, as the first dataset, we utilised the movie reviews which are collected from a popular website. The number of reviews in this movie corpus is 20,244 and the average number of words in reviews is 39. Each of these reviews has a star-rating score which is indicative of sentiment. These polarity scores are between the values 0.5 and 5, at intervals of 0.5. We consider a review to be negative it the score is equal to or lower than 2.5. On the other hand, if it is equal to or higher than 4, it is assumed to be positive. We have randomly selected 7,020 negative and 7,020 positive reviews and processed only them. \n Question: What details are given about the movie domain dataset?",
+            "output": "Extractive",
+            "explanation": "This question is Abstractive because we need to paraphrase the context to get to the answer."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task462-70b55b618daf4caaa6cb92b7a5e5676b",
+            "input": "We evaluated our attention transformations on three language pairs. We use the IWSLT 2014 corpus for De-En, the KFTT corpus for Ja-En BIBREF19 , and the WMT 2016 dataset for Ro-En. \n Question: What are the language pairs explored in this paper?",
+            "output": [
+                "Extractive"
+            ]
+        },
+        {
+            "id": "task462-db85b1f20a044fac8430c9e99c24ef45",
+            "input": " For a given query $q = \\langle s, r, ? \\rangle $ , we identify mentions in $S_q$ of the entities in $C_q \\cup \\lbrace s\\rbrace $ and create one node per mention. This process is based on the following heuristic:\n\nwe consider mentions spans in $S_q$ exactly matching an element of $C_q \\cup \\lbrace s\\rbrace $ . Admittedly, this is a rather simple strategy which may suffer from low recall.\n\nwe use predictions from a coreference resolution system to add mentions of elements in $C_q \\cup \\lbrace s\\rbrace $ beyond exact matching (including both noun phrases and anaphoric pronouns). In particular, we use the end-to-end coreference resolution by BIBREF16 .\n\nwe discard mentions which are ambiguously resolved to multiple coreference chains; this may sacrifice recall, but avoids propagating ambiguity. \n Question: How did they detect entity mentions?",
+            "output": [
+                "Abstractive"
+            ]
+        },
+        {
+            "id": "task462-d2c807c6f5954ad3ac9bdee38928e0fe",
+            "input": "As we only extracted references to other judicial decisions, we obtained 471,319 references from Supreme Court decisions, 167,237 references from Supreme Administrative Court decisions and 264,463 references from Constitutional Court Decisions. These are numbers of text spans identified as references prior the further processing described in Section SECREF3. \n Question: How big is the dataset?",
+            "output": [
+                "Abstractive"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

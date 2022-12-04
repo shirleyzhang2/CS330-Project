@@ -1,0 +1,90 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "atomic"
+    ],
+    "URL": [
+        "https://allenai.org/data/atomic-2020"
+    ],
+    "Categories": [
+        "Commonsense Classification"
+    ],
+    "Reasoning": [
+        "Relational Reasoning",
+        "Reasoning on Social Interactions",
+        "Commonsense Reasoning -> Social Situations"
+    ],
+    "Definition": [
+        "In this task, you will be given two phrases: Head and Tail, separated by <sep>. Head and Tail are short phrases involving participants. The names of specific people have been replaced by generic words (e.g., PersonX, PersonY, PersonZ). PersonX is always the subject of the event. You need to determine whether, as a result of the Head, PersonX will be affected as mentioned in the Tail. These effects are social actions that may occur after the Head event. Classify your answers into \"Yes\" and \"No\". The phrase may also contain \"___\", a placeholder that can be an object, a person, and/or an action."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Sociology",
+        "Commonsense -> Concepts and Relations -> Social Commonsense"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Head: PersonX goes ___ with some friends<sep>Tail: spends too much money",
+            "output": "Yes",
+            "explanation": "This is a good example. As a result of the Head, PersonX will spend too much money."
+        },
+        {
+            "input": "Head: PersonX achieves ___ by means<sep>Tail: hardworking",
+            "output": "No",
+            "explanation": "In this example, if PersonX achieves something by means, PersonX is not hardworking. So this output is correct."
+        },
+        {
+            "input": "Head: PersonX is allergic to bees<sep>Tail: MUST TAKE CORRESPONDING SAFETY PRECAUTIONS",
+            "output": "Yes",
+            "explanation": "If PersonX is allergic to bees, personX must take corresponding safety precautions. Thus, this example should be classified as \"Yes\"."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Head: PersonX asks PersonY to go<sep>Tail: goes somewhere else",
+            "output": "Yes",
+            "explanation": "If PersonX asks PersonY to go, PersonX won't go somewhere else. So the output should be \"No\"."
+        },
+        {
+            "input": "Head: PersonX eats red meat<sep>Tail: gets meat stuck in teeth",
+            "output": "No",
+            "explanation": "If PersonX eats red meat, the meat will be stuck in PersonX's teeth, and the output should be \"Yes\"."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1200-4455dc465c664716b86fcda69541bc20",
+            "input": "Head: PersonX exerts PersonY effect<sep>Tail: makes a point",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1200-5ed993ea4a0f4e32bbfaede5797e3f7b",
+            "input": "Head: PersonX buries the lead<sep>Tail: PersonX tells a story",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1200-6930a1acaff64a31af45008ca9690dce",
+            "input": "Head: PersonX answers PersonY question<sep>Tail: Articulate",
+            "output": [
+                "No"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

@@ -1,0 +1,82 @@
+{
+    "Contributors": [
+        "Ritvik Gaur"
+    ],
+    "Source": [
+        "craigslist_bargains"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/craigslist_bargains"
+    ],
+    "Categories": [
+        "Dialogue State Tracking"
+    ],
+    "Reasoning": [
+        "Reasoning on Social Interactions"
+    ],
+    "Definition": [
+        "The task is to classify a given text passage into one of two possible labels: 'accepted' or 'rejected'. A text is classified as 'accepted' if, by the end of the conversation, the buyer seems likely to buy the item from the seller. A sale is likely made when the buyer and seller agree upon a common price or when a deal is made between them. A text is classified as 'rejected' if the buyer did not seem interested in buying the item from the seller at the end of the conversation. This happens when the buyer and seller do not agree on the price or other aspects of the item being sold by the seller."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Buyer: Hi,I am interested in your board!\nSeller: Hi, do you have any questions?\nBuyer: Do you know what wood it is made out of?\nSeller: I do not know specifically but the brand is a gravity skateboard. \nBuyer: The wheels seem nice on it, but they could be a beter quality. Would you accept 100 for the board?\nSeller: No, that offer is too low. The board is pretty much brand new as it's been ridden only 4 or 5 times.  The bone bearings are brand new.\nBuyer: If I picked it up at your location would you accpet 120?\nSeller: Make it 150 and we got a deal. \nBuyer: I could do 145, if you can gurantee the painting on the front of the board is not scratched up. \nSeller: Deal\nBuyer: Great!",
+            "output": "accepted",
+            "explanation": "The answer 'accepted' is the correct answer because here the buyer and seller agree on a price and make a deal at the end of the conversation."
+        },
+        {
+            "input": "Buyer: I am interested in the Benz. How much for it?\nSeller: I am asking $26800. \nBuyer: How many miles on it?\nSeller: Only 16,473.\nBuyer: Has it had any major repairs?\nSeller: No, it has been accident free and in great condition.\nBuyer: Why are you selling it?\nSeller: starting to expand our family, time for an suv and baby seat.\nBuyer: I can give you 17000. That will buy a lot of diapers.\nSeller: I need the SUV. That is just way too low for me. Sorry you need to come way up.\nBuyer: I can do 20,000 if you throw in a 3 year warranty to cover any repairs that might naturally arise\nSeller: There is a warranty in place, so that is not a problem. But I need a minimum of 25000\nBuyer: How long is the warranty?\nSeller: Ten more years.\nBuyer: 22500 and you got a deal\nSeller: nO SORRY i am firm on the 25,000 being my lowest offer.\nBuyer: Can't do it.",
+            "output": "rejected",
+            "explanation": "The answer 'rejected' is correct because at the end of the conversation the buyer and seller do not agree to a common price. Since the buyer was asking for a price of 22500 and the seller was not accepting offers below 25000, the buyer did not decide to buy the item from the seller."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Buyer: i want to live in your house but i cant pay 1000k\nSeller: It really is a nice home.\nBuyer: i agree i lvoe the area , how old is the home\nSeller: I am not positive. It looks nice I can't tell sorry.\nBuyer: will you do 500 ? i need to buy new beds and furtinure\nSeller: I can't do half. I am sorry. It has a garage and a fenced in yard if you have kids.\nBuyer: i can do 600 if you waive the deposit\nSeller: Honestly I think the lowest I can do is $800 with the deposit. I am sorry. That is what they go for in this neighborhood. \nBuyer: ok i can do 750 lowest and fits my bussdet\nSeller: Ok I think we can make a deal.\nBuyer: deal\n",
+            "output": "rejected",
+            "explanation": "This is the wrong answer and the correct answer is 'accepted' because here the buyer and seller agree on the same price and make a deal at the end, which indicates that the buyer decided to buy the item from the seller."
+        },
+        {
+            "input": "Buyer: I think this is a fair price\nSeller: Why is there an offer there already?\nBuyer: This is within the area comps and reasonable for this size of home.\nSeller: I can't accept that low. That is $1000 less then asking price.\nBuyer: My final offer would be 1850.00\nSeller: I really don't think I could go that low.\nBuyer: What is your bottom line?\nSeller: For a 4 Bedroom, 2 1/2 bath with a 2 car garage in California. it has a tennis court a children play structure.I think the best I could is $2000.\nBuyer: I don't see anything in the listing about a tennis court or a child's play structure. I am not willing to go over $1850 and will assume all maintenance issues with this rental.\nSeller: You can't make another offer anyway. I can't erase your original offer. I am going to have to reject.\nBuyer: ok\n",
+            "output": "yes",
+            "explanation": "This answer 'yes' is incorrect here because it is not among the only two options 'accepted' or 'rejected' from which the answer is to be chosen. The correct answer is 'rejected' because the buyer and the seller are not able to agree upon the same price as seen in the conversation where the buyer is offering 1850 but the seller will not sell for under 2000 and so the seller rejects the buyer's offer. This indicates that the buyer does not end up buying the item from the seller."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task766-fcb4b29185484fe39744f09fb1b16631",
+            "output": [
+                "accepted"
+            ],
+            "input": "Buyer: Hello. I'm interested in the hospital bed. Can you tell me about it?\nSeller:  it is in excellent condition. It is fully adjustable It adjust at the head knees and height as well. It also has rolling wheels for easy moving. The mattress is very nice. It comes with side rails. It breaks down into 3 sections so when you pick it up you should be good if you are in a station wagon, mini van or SUV and I will be willing to help you load it\nBuyer: Did you obtain this bed from a hospital or a medical supply store?\nSeller: I purchased it from a medical supply store. \nBuyer: Why did you need such a bed?\nSeller: My husband had to use it for a short time after a surgery he had. He is now recovered and we no longer need it.\nBuyer: How long was he in the bed?\nSeller: He used it for 10 weeks. So it is still like new condition.\nBuyer: How old is the bed?\nSeller: We purchased it about 4 months ago in preparation for him needing it for his surgery.\nBuyer: It's a drive for me to come to Sunol. Would you be willing to take $400 for the bed to cover my gas expense?\nSeller: I have someone else wanting to come look that is willing to pay more, If you are really in need of the bed I can deliver if you pay asking price of $525 or I can take $450 if you come pick it up and I help you load.\nBuyer: I would be willing to do the $450. \nSeller: \nBuyer: \n"
+        },
+        {
+            "id": "task766-3e60fe2006a1409c98a5900c905d61a7",
+            "output": [
+                "accepted"
+            ],
+            "input": "Seller: Hi, are you calling about the desk?\nBuyer: Yes I'm interested in the desk what kind of condition is it in?\nSeller: It is in excellent condition. Like new actually. I was going to usee it in my office, but then my wife left me. Now I need to sell it to pay her off.\nBuyer: Would you be willing to work with me on the price at all?\nSeller: I could probably come down a bit, but not too much. What were you thinking?\nBuyer: I was thinking about 20 bucks\nSeller: How about 35 and I can include the chair as well.\nBuyer: You know what that sounds good to me we have a deal.\nSeller: very good 35 with the chair.\nSeller: \nBuyer: \n"
+        },
+        {
+            "id": "task766-b97c9a461ba64a99b574d3abec103eba",
+            "output": [
+                "accepted"
+            ],
+            "input": "Seller: hello\nBuyer: Hello, are your patio chairs still available?\nSeller: Yes they are\nBuyer: How old are these chairs?\nSeller: They're only a year old but they do have some sun discoloration.\nBuyer: Have they been out in the elements very much?\nSeller: Yeah , they are pretty much outside all the time. But again they just have some sun discoloration and are in good shape otherwise.\nBuyer: They aren't under any kind of covering?\nSeller: No. The covering in the photo is cushions. They come in out of the elements though and are offered with the chairs.\nBuyer: Would you be willing to take $8 for them since the plastic might have become brittle in the sun?\nSeller: These chairs hold up very well, as they are meant to be used outside in any conditions. But yes I will consider taking $8 if you are able to come pick them up tonight.\nBuyer: Yes I will be there tonight.\nSeller: \nBuyer: \n"
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

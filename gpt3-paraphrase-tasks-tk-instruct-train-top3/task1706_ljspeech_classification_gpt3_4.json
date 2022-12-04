@@ -1,0 +1,85 @@
+{
+    "Contributors": [
+        "Arya Tawde"
+    ],
+    "Source": [
+        "lj_speec"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/lj_speech"
+    ],
+    "Categories": [
+        "Punctuation Error Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "The task is to identify whether a given passage or sentence has proper punctuation. This includes proper capitalization and the use of punctuations such as commas, semi-colons and full-stops. The answer is True if all punctuation is properly applied, else the answer is False."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Books"
+    ],
+    "Positive Examples": [
+        {
+            "input": "jack ate the beans that the old man gave him.",
+            "output": "False",
+            "explanation": "The first letter of a new sentence is not capitalized, hence punctuation is incomplete."
+        },
+        {
+            "input": "The old sage was wise intelligent frail and weak",
+            "output": "False",
+            "explanation": "Commas and full-stop are missing and hence punctuation is not complete."
+        },
+        {
+            "input": "The boy looked at the red flower.",
+            "output": "True",
+            "explanation": "Capitalization and Punctuation are perfect."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "The chicken crossed the road.",
+            "output": "False",
+            "explanation": "There is nothing wrong with the punctuation, the answer should be True."
+        },
+        {
+            "input": "The professor congratualted marie on her victory.",
+            "output": "True",
+            "explanation": "Marie is a proper noun and should be capitalized but it isn't. Therefore the answer should be False."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1706-5f77ddc5d29a4aa094539bea65c4f363",
+            "input": "The Commission believes that both the FBI and the Secret Service have too narrowly construed their respective responsibilities.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "id": "task1706-76d7a1a79e6a44eabcfb9e816319c6d3",
+            "input": "the agent who was assigned his case at the time of the assassination, the Director of the FBI,",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "id": "task1706-6e2de1f6478b4e1682fa65a5a64a233e",
+            "input": "that she had had a quarrel with her mistress, and that the latter with all others who tasted the dumplings were similarly attacked, although no one died.",
+            "output": [
+                "False"
+            ]
+        }
+    ],
+    "Instance License": [
+        "LibriVox: Public Domain (https://librivox.org/pages/public-domain/)"
+    ]
+}

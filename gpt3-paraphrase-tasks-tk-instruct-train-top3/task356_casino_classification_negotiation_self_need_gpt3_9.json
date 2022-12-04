@@ -1,0 +1,80 @@
+{
+    "Contributors": [
+        "Kushal Chawla"
+    ],
+    "Source": [
+        "casino"
+    ],
+    "URL": [
+        "https://aclanthology.org/2021.naacl-main.254.pdf"
+    ],
+    "Categories": [
+        "Negotiation Strategy Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "In this task, you are given an utterance and recent dialogue context containing past 3 utterances (wherever available). Your task is to output 'Yes' if the utterance contains the self-need strategy, otherwise output 'No'. self-need is a selfish negotiation strategy. It is used to create a personal need for an item in the negotiation, such as by pointing out that the participant sweats a lot to show preference towards water packages."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Context: 'That sounds pretty reasonable as I am in need of firewood the most. Would it be most reasonable to each take what we need most and split the water down the middle?' 'Yes, it would.' 'I think that sounds fair. The problem is that there are 3 waters and one of us would get two and the other one. How should we sort that?'\nUtterance: 'You can take the two water. I am not that thirsty most days.'",
+            "output": "No",
+            "explanation": "In this utterance, the participant does not use self-need since they do not talk about any need for themselves."
+        },
+        {
+            "input": "Context: 'hello, how are you today?' 'Great.  Though I am a bit stressed.  I could use a camping trip. ' 'yes, me too. i am going to one. but i need some food.'\nUtterance: 'Yeah.  I like to go for long hikes so for that I need water and food.  '",
+            "output": "Yes",
+            "explanation": "This is correct since the participant mentions that they would need water for their long hikes."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Context: 'Hello. I am so looking forward to this camp out. My daughter just called and said she is going to come and bring some of her firiends. \ud83d\ude42' 'Hello! That sounds pretty reasonable to me. I was going out with a bunch of my buddies. We like to hike a lot in the sun, so we need lots of water. How does it sound if i take all the food and water, but you get all the firewood?' 'I love hiking. My daughter is bringing extra water. So we could trade the water for the firewood. We do need just a little food as I didn't plan on having an extra person.'\nUtterance: 'Hmm, okay, that sounds reasonable. How does 3 water, 2 food and 1 firewood for me, and all the rest for you sound?'",
+            "output": "Yes",
+            "explanation": "There is no self-need discussed in the utterance. Hence, the correct answer here is 'No'."
+        },
+        {
+            "input": "Context: 'we want to explore the animals in the area birds and just enjoy all the nice views.' 'Cool, that sounds very nice and relaxing \ud83d\ude42. It kinda sounds like my husband, he likes to do things like these with no concrete plan and just decides on the spot what he wants to do. The only problem with it is that he dumps all the planning on me so I have to make sure I have extra of ANY possible idea he has.' 'Yes we always get stuck making the plans so can I have 2 firewood and you get 2 food and 2 water? Please respond a little faster with your messages that would be very nice'\nUtterance: 'Unfortunately, I need the firewood to make campfires. Since you are planning to cook a romantic camping meal, don't you need food?'",
+            "output": "No",
+            "explanation": "This is wrong. The participant clearly discusses the need of firewood for making campfires. Hence, the correct answer is 'Yes'."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task356-6ea10e92aa484342b0a5e4896dca10dc",
+            "input": "Context: 'Hello! camper, how are you? I need us to make a deal where we all benefit.I'm so excited for our camping trip.  I'm most excited about getting to eat food that I normally don't when I am home.\ud83d\ude42' 'I am excited too and looking forward to making a deal that works well for both of us!'\nUtterance: 'My main objective for the camp is water, since I have a large family and the amount of water they give in the camp is very small for all my family.'",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task356-014659c8ea054cf784810301e6d714aa",
+            "input": "Context: \nUtterance: 'Hello there?'",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task356-ec1eb3f210bd4d55b86ea5baa0b71784",
+            "input": "Context: 'We're nearly there and just realized that we must have missed picking up some of our stuff before leaving.' 'Were we supposed to bring things?  Oh, no!  I'm gonna die...' 'Of course, it's always wise to bring things. We absolutely need water and some food. Water is critical though.'\nUtterance: 'You got that right!  I just came from a three-day rugby tournament and I am totally dehydrated.  I hope they have enough at the site.  I also get the chills bigtime when I am dehydrated. That's how I know I am very dehydrated...'",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

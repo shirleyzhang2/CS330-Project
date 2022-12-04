@@ -1,0 +1,81 @@
+{
+    "Contributors": [
+        "Divya Reddy Katpally"
+    ],
+    "Source": [
+        "dbpedia_14"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/dbpedia_14"
+    ],
+    "Categories": [
+        "Text Matching"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You will be given a text and a title. The title is present in the text and refers to the entity in the text. The title might have some text in parentheses, for example: \"HMS Mallow (K81)\", or be slightly different from what is present in the text. If they still refer to the same entity, then it is a correct title. Indicate your answer as \"Yes\" if the title is correct, otherwise indicate your answer as \"No\". Do not generate anything else apart from \"Yes\" or \"No\"."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Wikipedia"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Text: The Mansfield Building Society is a UK building society which has its headquarters in Mansfield Nottinghamshire. It is a member of the Building Societies Association. \nTitle: Mansfield Building Society",
+            "output": "Yes",
+            "explanation": "The title \"Mansfield Building Society\" is present in the text and it is the main entity that is referred in the text. Hence, it is the title of the document."
+        },
+        {
+            "input": "Text:  The third and current HMS Argyll is a Type 23 'Duke' Class frigate. She is currently the oldest serving Type 23 frigate in the Royal Navy. Like all of her class she is named for a British dukedom in this case that of Argyll. \nTitle: HMS Argyll (F231)",
+            "output": "Yes",
+            "explanation": "\"HMS Argyll\" is present in the text and it is the main entity that is referred in the text. Here, the text in parentheses \"F31\" is not present in the document and it can be ignored. Hence, the output is correct. "
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Text: The Mansfield Building Society is a UK building society which has its headquarters in Mansfield Nottinghamshire. It is a member of the Building Societies Association. \nTitle: Mansfield Building Society",
+            "output": "No",
+            "explanation": "The title \"Mansfield Building Society\" is present in the text and it is the main entity that is referred in the text. Hence, the output is incorrect."
+        },
+        {
+            "input": "Text:  The third and current HMS Argyll is a Type 23 'Duke' Class frigate. She is currently the oldest serving Type 23 frigate in the Royal Navy. Like all of her class she is named for a British dukedom in this case that of Argyll. \nTitle: HMS Argyll (F231)",
+            "output": "HMS Argyll",
+            "explanation": "The output should be either \"Yes\" or \"No\". Hence, it is negative example."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task630-971c9fff06294531aa4d22abfd1a26ab",
+            "input": "Text:  The Other Me is a 2000 Disney Channel Original Movie about a teenager who accidentally clones himself as a genius and ends up using his clone to pass school. The movie is the 23rd Disney Channel Original Movie and is based on the book Me Two by Mary C. Ryan. \nTitle: The Other Me",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task630-12c7ebe2cfca48d3b4d78940ed909d95",
+            "input": "Text:  Wormwood: A Drama of Paris (1890) is a proto-modernist novel written by Marie Corelli. The novel was published in Europe in the traditional Victorian three-volume format and addressed the modern effects and woes of absinthe in fin-de-siecle Paris.The European edition was published in 1890 by Richard Bentley & Son London. The American edition was published by Wm. L. Allison New York. \nTitle: Wormwood: A Drama of Paris",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task630-3d96b2fb2f7b46f88c55569dcff3252d",
+            "input": "Text:  Unity Christian High School (commonly Unity Christian UCHS or UNITY) is a Christian private secondary school in Barrie Ontario Canada serving students in grades 9\u201312. Graduating students are eligible to receive an Ontario Secondary School Diploma from the Ministry of Education and Training in addition to a Unity Christian High School diploma.Unity is a member of the Ontario Alliance of Christian Schools.Unity was founded in 2004 and was located in Inniswood Baptist Church. \nTitle: Qaleh Hamud",
+            "output": [
+                "No"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY-SA",
+        "GNU Free Documentation 2.0"
+    ]
+}

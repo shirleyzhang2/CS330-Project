@@ -1,0 +1,85 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "qasper"
+    ],
+    "URL": [
+        "https://allenai.org/project/qasper/home"
+    ],
+    "Categories": [
+        "Question Understanding"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "In this task, you will be presented with a context from an academic paper and a question based on the context. You have to classify the questions into one of three categories: \"Extractive\", \"Abstractive\", or \"Yes-no\". Extractive questions can be answered by concatenating extracts taken from a context into a summary. Abstractive questions, on the other hand, require you to paraphrase the context using novel sentences. Yes-no questions are questions whose expected answer is one of two choices, typically either yes or no."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Scientific Research Papers"
+    ],
+    "Positive Examples": [
+        {
+            "input": "We build a dataset of Twitter accounts based on two lists annotated in previous works. For the non-factual accounts, we rely on a list of 180 Twitter accounts from BIBREF1. On the other hand, for the factual accounts, we use a list with another 32 Twitter accounts from BIBREF19 that are considered trustworthy by independent third parties. \n Question: How did they obtain the dataset?",
+            "output": "Extractive",
+            "explanation": "The answer to this question has been explicitly mentioned in the context, so the question is extractive."
+        },
+        {
+            "input": "We evaluate our pointer-generator performance using BLEU score. The baseline language model is trained using RNNLM BIBREF23 . Perplexity measure is used in the evaluation.\n\n \n Question: Did they use other evaluation metrics?",
+            "output": "Yes-no",
+            "explanation": "This is a good example, and the given question is a yes-no question."
+        },
+        {
+            "input": "As in the example above, we pre-process documents by removing all numbers and interjections. \n Question: what processing was done on the speeches before being parsed?",
+            "output": "Abstractive",
+            "explanation": "Answering this question needs paraphrasing the context, so this question is abstractive."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "For the English version, we performed both a thorough manual analysis and automatic evaluation across three commonly used TS datasets from two different domains  For the English version, we performed both a thorough manual analysis and automatic evaluation across three commonly used TS datasets from two different domains  The evaluation of the German version is in progress. \n Question: What are the corpora used for the task?",
+            "output": "Yes-no",
+            "explanation": "This question is extractive, and it's not a yes-no question."
+        },
+        {
+            "input": "For Turkish, as the first dataset, we utilised the movie reviews which are collected from a popular website. The number of reviews in this movie corpus is 20,244 and the average number of words in reviews is 39. Each of these reviews has a star-rating score which is indicative of sentiment. These polarity scores are between the values 0.5 and 5, at intervals of 0.5. We consider a review to be negative it the score is equal to or lower than 2.5. On the other hand, if it is equal to or higher than 4, it is assumed to be positive. We have randomly selected 7,020 negative and 7,020 positive reviews and processed only them. \n Question: What details are given about the movie domain dataset?",
+            "output": "Extractive",
+            "explanation": "This question is Abstractive because we need to paraphrase the context to get to the answer."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task462-8a991a419f604b05bda5f1681143b5b9",
+            "input": "In all our experiments, we used the out-of-the-box BERT models without any task-specific fine-tuning. \n Question: How does their model differ from BERT?",
+            "output": [
+                "Abstractive"
+            ]
+        },
+        {
+            "id": "task462-219057dfcd1f413c820a51c4ce676fce",
+            "input": "SVM: We define 3 sets of features to characterize each question. The first is a simple bag-of-words set of features over the question (SVM-BOW), the second is bag-of-words features of the question as well as length of the question in words (SVM-BOW + LEN), and lastly we extract bag-of-words features, length of the question in words as well as part-of-speech tags for the question (SVM-BOW + LEN + POS). This results in vectors of 200, 201 and 228 dimensions respectively, which are provided to an SVM with a linear kernel. No-Answer Baseline (NA) : Most of the questions we receive are difficult to answer in a legally-sound way on the basis of information present in the privacy policy. We establish a simple baseline to quantify the effect of identifying every question as unanswerable. Word Count Baseline : To quantify the effect of using simple lexical matching to answer the questions, we retrieve the top candidate policy sentences for each question using a word count baseline BIBREF53, which counts the number of question words that also appear in a sentence. We include the top 2, 3 and 5 candidates as baselines. Human Performance: We pick each reference answer provided by an annotator, and compute the F1 with respect to the remaining references, as described in section 4.2.1. Each reference answer is treated as the prediction, and the remaining n-1 answers are treated as the gold reference. The average of the maximum F1 across all reference answers is computed as the human baseline. \n Question: Were other baselines tested to compare with the neural baseline?",
+            "output": [
+                "Extractive"
+            ]
+        },
+        {
+            "id": "task462-20ac039adc6a4dc0a5a96d55469bfcf8",
+            "input": "The stance towards vaccination was categorized into `Negative\u2019, `Neutral\u2019, `Positive\u2019 and `Not clear\u2019. \n Question: Do they allow for messages with vaccination-related key terms to be of neutral stance?",
+            "output": [
+                "Yes-no"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

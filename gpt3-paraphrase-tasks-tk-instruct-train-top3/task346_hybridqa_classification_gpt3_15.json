@@ -1,0 +1,80 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "hybridqa"
+    ],
+    "URL": [
+        "https://github.com/wenhuchen/HybridQA"
+    ],
+    "Categories": [
+        "Pos Tagging"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "In this task, you will be given a question, a word, and a POS tag. You need to determine whether the POS tag of the given word in the question is equal to the given POS tag or not. Give your answer with True or False."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Wikipedia"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Who were the builders of the mosque in Herat with fire temples ? \n, Word: Who \n, POS tag: IN",
+            "output": "False",
+            "explanation": "This is a good example. POS tag of who should be WP(Wh-pronoun), and not IN(Preposition)."
+        },
+        {
+            "input": "What is the borough in which Kia Oval is located ? \n, Word: is \n, POS tag: VBZ",
+            "output": "True",
+            "explanation": "Based on the given question, \"is\" is a 3rd person singular present verb and Its POS tag is VBZ."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "After what season did the number 7 competitor retire ? \n, Word: 7 \n, POS tag: NN",
+            "output": "True",
+            "explanation": "7 is a cardinal number, and Its POS tag should be CD, so the output should be False."
+        },
+        {
+            "input": "After what season did the number 7 competitor retire ? \n, Word: 7 \n, POS tag: NN",
+            "output": "Wrong",
+            "explanation": "Only \"True\" or \"False\" are allowed, and you can't use any other word here."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task346-45a460ddb8484e7ba76800beb6604f94",
+            "input": "When does the code of the state with an area of 1,852,642 square kilometers date back to ? \n, Word: date \n, POS tag: NN",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "id": "task346-a491ef0cb9e84a689954dce4e5b859bb",
+            "input": "What is the mascot of the school David Kasch attended ? \n, Word: David \n, POS tag: NN",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "id": "task346-79d3be64e59448c0b67cc65c6f5b2a2c",
+            "input": "What was Aritra Dutta Banik 's role in the film that also stars Mithun Chakraborty ? \n, Word: Banik \n, POS tag: NNP",
+            "output": [
+                "True"
+            ]
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

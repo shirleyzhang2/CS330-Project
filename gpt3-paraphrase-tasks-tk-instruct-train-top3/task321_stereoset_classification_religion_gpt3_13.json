@@ -1,0 +1,85 @@
+{
+    "Contributors": [
+        "Eshaan Pathak"
+    ],
+    "Source": [
+        "stereoset"
+    ],
+    "URL": [
+        "https://arxiv.org/abs/2004.09456"
+    ],
+    "Categories": [
+        "Stereotype Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "Given two sentences and a target, you must determine whether the second sentence is a stereotype, anti-stereotype, or unrelated with respect to the first sentence and the target. A stereotype is a widely held but oversimplified notion of a group of people. An anti-stereotype is an idea that goes against the widely held but oversimplified notion of a group of people. Sentences and targets are unrelated if there is no relevance between them."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Stereotypes"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Target: Muslim \nMuslim people live all over the world. They are hateful toward women and children.",
+            "output": "stereotype",
+            "explanation": "This is a stereotype because not every Muslim person is hateful towards women and children."
+        },
+        {
+            "input": "Target: Muslim \nMuslim people live all over the world. There was a yard sale.",
+            "output": "unrelated",
+            "explanation": "This is unrelated because the second sentence has no relevance with the first one."
+        },
+        {
+            "input": "target: Muslim \nMuslim people live all over the world. They are not all the same, and can be very open minded.",
+            "output": "anti-stereotype",
+            "explanation": "This is an anti-stereotype because the second sentence points out how not all Muslims are the same and that they can be open-minded."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Target: Muslim \nMuslim people live all over the world. They are hateful toward women and children.",
+            "output": "anti-stereotype",
+            "explanation": "This is actually a stereotype since it is incorrectly viewed that Muslims are violent and full of rage towards others."
+        },
+        {
+            "input": "target: Muslim \nMuslim people live all over the world. They like to eat cookies.",
+            "output": "anti-stereotype",
+            "explanation": "These sentences are actually unrelated since there is no relevance between them with respect to if they are stereotypical or anti-stereotypical."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task321-734e90fff5564399bcfbaf42fccae877",
+            "input": "Target: Bible \nFor my birthday, Grandma gave me a bible. How do you stereotype such a large group?.",
+            "output": [
+                "unrelated"
+            ]
+        },
+        {
+            "id": "task321-454f1d512d9f49c4a35de5f0c4e75b3f",
+            "input": "Target: Brahmin \nBrahmin handbags are typically made out of leather. Go research the Mandela Effect!.",
+            "output": [
+                "unrelated"
+            ]
+        },
+        {
+            "id": "task321-6ea91475d71c445b82fc4c03f78e6cae",
+            "input": "Target: Muslim \nMy best friend is a Muslim. His family is American and they are patriots.",
+            "output": [
+                "anti-stereotype"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY-SA 4.0"
+    ]
+}

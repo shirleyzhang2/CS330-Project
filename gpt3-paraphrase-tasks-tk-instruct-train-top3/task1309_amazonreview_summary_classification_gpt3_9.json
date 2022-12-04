@@ -1,0 +1,93 @@
+{
+    "Contributors": [
+        "Ishan Purohit"
+    ],
+    "Source": [
+        "multilingual_amazon_reviews"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/amazon_reviews_multi"
+    ],
+    "Categories": [
+        "Summarization"
+    ],
+    "Reasoning": [
+        "Reasoning on Social Interactions",
+        "Commonsense Reasoning"
+    ],
+    "Definition": [
+        "In this task, you will be given reviews from Amazon's food products and a summary of that review. Your task is to determine whether the given summary matches the original review. If the review and its summary match, generate \"True\". If they do not match, generate \"False\"."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Reviews"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Review: My cat won't touch these. My dog, however, chews them and makes a mess all over the carpet and I can't get the shredded sticks out! Messy. Waste of money! \n Summary: Cat hates them",
+            "output": "True",
+            "explanation": "The answer is True. Because it's a correct summary where the owner mentioned their cat hated the product."
+        },
+        {
+            "input": "Review: In the process of returning. The sizing is way off. Looks gorgeous but didn't fit. \n Summary: Sizing is not accurate",
+            "output": "True",
+            "explanation": "The answer is True. Because it's a correct summary where the user mentioned the size of the product didn't fit them."
+        },
+        {
+            "input": "Review: Amazon is not helping at all. They sent me an image of the delivered package, it's not even my address. This is the 3rd time that my package has been delivered to the wrong address. I'm curious how the delivery driver can take a picture of the delivery at the wrong address, identified in the photos, and Amazon's only solution is to refund my $$. What is the purpose of being a Prime Member when they can't do the simple things correct? \n Summary: Received it at the right time",
+            "output": "False",
+            "explanation": "The delivery driver deliver it to wrong address. So, it's an incorrect summary."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Review: The design is good, but the build is disappointing. I used these one time, and they are falling apart. The long handles are all detached and the mesh started detaching from the handle. \n Summary: Not falling apart!",
+            "output": "True",
+            "explanation": "The answer should be False. Because It's an incorrect summary where user mentioned that the design falls apart after one time use."
+        },
+        {
+            "input": "Review: These were listed as size regular. When I open them they were size regular to large. Way too big for me. I tried to return them and there is a no return policy for these items. Money wasted. \n Summary: Size isn't clear",
+            "output": "False",
+            "explanation": "The answer should be True. Because It's not a correct size because user didn't get their size. So it's a correct summary."
+        },
+        {
+            "input": "Review: Did not hold up for even one month of play at our club. Fiberboard under attractive painting so did not withstand being left outside. Fell apart. \n Summary: Didn't last for even a month.",
+            "output": "Negative",
+            "explanation": "It's supposed to generate True or false."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1309-d4439e3851e7486597cf72b448b51792",
+            "input": "Reviews: Extremely fragile broke first 2 minutes of wearing it and I\u2019m pretty petite \n Summary: ... broke first 2 minutes of wearing it and I\u2019m pretty",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "id": "task1309-cd09878c43d143acb9261d8b708b69fe",
+            "input": "Reviews: Love this pedal for the price. Accurate tuning, mutes my guitar when in use. Only problem is that there's a very audible 'pop' noise when the pedal is engaged. I'd send it back for a second one but then I'm paying for return shipping. \n Summary: Tuner pedal - it tunes, but there's a loud noise when activated",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "id": "task1309-30ba77ebd7074d8bb405da36feb62be1",
+            "input": "Reviews: Even though they are 'self leveling' they were both off by 3/8 of an inch over a 6' run as compared to two known good levels. it's a qc issue because both of them were off by differing amounts, and there's no way to fine tune the level, so I sent the first back, got the second and it was worse. sent it back and chose a more expensive blue brand instead. \n Summary: Don't bother, unit and replacement unit were both way off out of the box",
+            "output": [
+                "True"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Amazon License (https://s3.amazonaws.com/amazon-reviews-pds/license.txt)"
+    ]
+}

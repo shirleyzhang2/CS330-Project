@@ -1,0 +1,131 @@
+{
+    "Contributors": [
+        "Shailaja Keyur Sampat"
+    ],
+    "Source": [
+        "torque"
+    ],
+    "URL": [
+        "https://allennlp.org/torque.html"
+    ],
+    "Categories": [
+        "Information Extraction"
+    ],
+    "Reasoning": [
+        "Commonsense Reasoning"
+    ],
+    "Definition": [
+        "In this task, you will be given a passage, and your goal is to identify an event from the passage. An event is defined as a single word representing something that happened, is happening, or may happen. An event can be factual or hypothetical, positive or negative, certain or uncertain. Most events are based on verbs, but an event can also be based on a noun (ex. storm, snow, rainfall) or a copula verb (is, was, been, etc.). The event must not be a pronoun or an adjective. For noun events with multiple words, use the last word in the phrase as the event."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "News"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Passage: I submitted the hit. The hit was approved, and then I was paid.",
+            "output": "approved",
+            "explanation": "There are three events in this passage (i) submission event (\"submitted\") (ii) the approval event (\"approved\"), and (iii) the payment event (\"paid\"). You can use any one of them as an output."
+        },
+        {
+            "input": "Passage: He was caught in the snow storm.",
+            "output": "storm",
+            "explanation": "There are two events in this passage (i) he was caught (\"caught\") and (ii) the snow storm event (\"storm\"). You can use any one of them as an output. Since snow storm is a noun event with multiple words, we only use the last word 'storm' as an event."
+        },
+        {
+            "input": "Passage: He is on the east coast.",
+            "output": "is",
+            "explanation": "The copula \"is\" an event describing his location."
+        },
+        {
+            "input": "Passage: He wanted to finish the task.",
+            "output": "wanted",
+            "explanation": "There are two events in this passage (i) he wanted to do something (\"wanted\") and (ii) finish the task (\"finish\"). Either of wanted or finish can be used as output. However note that though there is an uncertainty about the task i.e. indeed finished or not, \"finish\" is still a valid event."
+        },
+        {
+            "input": "Passage: If he works hard, then he will finish the task.",
+            "output": "finish",
+            "explanation": "There are two events in this passage (i) he works hard (\"works\") and (ii) he will finish the task. (\"finish\"). You can use either of works or finish as an output. Here the second event happens only if the first one is true, but both are considered as events. This is an example of hypothetical event."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Passage: He is happy.",
+            "output": "happy",
+            "explanation": "Happy is an adjective and hence cannot be an event. The output should be \"is\" which represents an event describing his attribute of happiness."
+        },
+        {
+            "input": "Passage: He was caught in the elevator.",
+            "output": "elevator",
+            "explanation": "Not every noun can be an event. Here \"elevator\" is an object and one cannot say \"an elevator happened\" hence it is not an event. \"caught\" is a correct output."
+        },
+        {
+            "input": "Passage: The flu season is winding down.",
+            "output": "flu season",
+            "explanation": "The \"flu season\" is a noun events with multiple words, but only last word \"season\" sould be used as an event as per definition."
+        },
+        {
+            "input": "Passage: The death toll climbed up to 99 soon after the explosion.",
+            "output": "blast",
+            "explanation": "There are two events in this passage \"climbed\" and \"explosion\". Though blast is a synonym of explosion, it is not present in the passage. The output must contain events that are present in the passage."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task388-9354b85417104118bc08cb91d798c06d",
+            "input": "Passage: China remains a runaway leader with 74 golds, with Japan in a distant second place with 10, one over arch rival South Korea. The 22-year-old Liu defended his EAG title in 13.21 seconds, beating teammate Shi Dongpeng (13.36) and Japan's Kota Kumamoto ( 13.89).",
+            "output": [
+                "remains",
+                "defended",
+                "beating",
+                "in"
+            ]
+        },
+        {
+            "id": "task388-333a65cc4f1b4a1bbf57b75945fdf58a",
+            "input": "Passage: Olmert said Sunday that he agreed to release the money \"in order to help in humanitarian aid to the Palestinian people who suffer among other things due to the failing conduct of their government which is not part of the international community.\" The United Arab Emirates is to transfer 30 million dollars to the Palestinian Authority \"to help reduce the suffering of the Palestinian people,\" the official WAM news agency said.",
+            "output": [
+                "said",
+                "agreed",
+                "release",
+                "help",
+                "aid",
+                "suffer",
+                "conduct",
+                "is",
+                "transfer",
+                "help",
+                "reduce",
+                "suffering",
+                "said"
+            ]
+        },
+        {
+            "id": "task388-2edca70806084cc984322157ab2e7450",
+            "input": "Passage: Mali's ruling party is leading the first round of legislative elections, officials said Saturday, but the abandonment of the second deciding round by opposition parties crying foul has cast a cloud over the whole process. Of the 55 electorates, the Alliance for Democracy in Mali party has won 14 outright, has a favourable situation in 37 and unfavourable in three.",
+            "output": [
+                "leading",
+                "elections",
+                "said",
+                "abandonment",
+                "crying",
+                "cast",
+                "process",
+                "won",
+                "has",
+                "unfavourable"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Apache 2.0"
+    ]
+}

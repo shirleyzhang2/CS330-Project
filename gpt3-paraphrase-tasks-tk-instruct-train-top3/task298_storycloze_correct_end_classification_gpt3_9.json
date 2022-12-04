@@ -1,0 +1,90 @@
+{
+    "Contributors": [
+        "Mirali Purohit"
+    ],
+    "Source": [
+        "roc_stories"
+    ],
+    "URL": [
+        "https://cs.rochester.edu/nlp/rocstories/"
+    ],
+    "Categories": [
+        "Coherence Classification"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "In this task, you will receive four sentences of a story written in natural language, and one last sentence (Sentence5). Your task is to output 'Yes' or 'No', depending on whether the last sentence completes the rest of the story coherently."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Story"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Sentence1: Rick grew up in a troubled household. Sentence2: He never found good support in family, and turned to gangs. Sentence3: It wasn't long before Rick got shot in a robbery. Sentence4: The incident caused him to turn a new leaf. \n Sentence5: He is happy now.",
+            "output": "Yes",
+            "explanation": "As mentioned in fourth sentence, the incident turned a new leaf to Rick's life; so, he must be happy now."
+        },
+        {
+            "input": "Sentence1: Laverne needs to prepare something for her friend's party. Sentence2: She decides to bake a batch of brownies. Sentence3: She chooses a recipe and follows it closely. Sentence4: Laverne tests one of the brownies to make sure it is delicious. \n Sentence5: Laverne doesn't go to her friend's party.",
+            "output": "No",
+            "explanation": "As mentioned in the third sentence, Laverne follows the recipe closely; brownies should be delicious and she should not cancel going to her friend's party."
+        },
+        {
+            "input": "Sentence1: Sarah had been dreaming of visiting Europe for years. Sentence2: She had finally saved enough for the trip. Sentence3: She landed in Spain and traveled east across the continent. Sentence4: She didn't like how different everything was. \n Sentence5 Sarah then decided to move to Europe.",
+            "output": "No",
+            "explanation": "As mentioned in fourth sentence, Sarah didn't like that everything was different; Sarah cannot decide to move to Europe."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Sentence1: Rick grew up in a troubled household. Sentence2: He never found good support in family, and turned to gangs. Sentence3: It wasn't long before Rick got shot in a robbery. Sentence4: The incident caused him to turn a new leaf. \n Sentence5: He is happy now.",
+            "output": "No",
+            "explanation": "As mentioned in fourth sentence, the incident turned a new leaf to Rick's life; so, he must be happy now. So, output should be Yes because Sentencce5 properly ends the story"
+        },
+        {
+            "input": "Sentence1: Laverne needs to prepare something for her friend's party. Sentence2: She decides to bake a batch of brownies. Sentence3: She chooses a recipe and follows it closely. Sentence4: Laverne tests one of the brownies to make sure it is delicious. \n Sentence5: Laverne doesn't go to her friend's party.",
+            "output": "False",
+            "explanation": "The answer can only be Yes or No."
+        },
+        {
+            "input": "Sentence1: Sarah had been dreaming of visiting Europe for years. Sentence2: She had finally saved enough for the trip. Sentence3: She landed in Spain and traveled east across the continent. Sentence4: She didn't like how different everything was. \n Sentence5 Sarah then decided to move to Europe.",
+            "output": "Answer can be Sarah returned to the home.",
+            "explanation": "The answer can only be Yes or No."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task298-92298146ac5a492b95be67c17c92a1d6",
+            "input": "Sentence1: Tim wanted to learn astronomy. Sentence2: He wanted to go into outer space. Sentence3: However he was to young to be an astronaut. Sentence4: This news made him sad. \n Sentence5: Tim hated mars.",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task298-d644053d81594d08b3f23fcb2ed0f3e0",
+            "input": "Sentence1: Hailey liked to play with her friends. Sentence2: She had a playdate every week. Sentence3: One day Hailey's mom got in an argument with one of the other moms. Sentence4: Hailey was told they were never going back. \n Sentence5: Hailey was excited to see them all again tomorrow.",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task298-10588787e3e74c889229af10cbf3c1bf",
+            "input": "Sentence1: Miriam was constantly arguing about everything. Sentence2: Her mother told her that it was a bad habit. Sentence3: Miriam never stopped being pedantic. Sentence4: She later became a lawyer. \n Sentence5: Miriam did not enjoy arguing.",
+            "output": [
+                "No"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

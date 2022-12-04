@@ -1,0 +1,81 @@
+{
+    "Contributors": [
+        "Divya Reddy Katpally"
+    ],
+    "Source": [
+        "dbpedia_14"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/dbpedia_14"
+    ],
+    "Categories": [
+        "Text Matching"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "In this task, you are given the body of a document and a title. The title might have some text in parentheses, for example: \"HMS Mallow (K81)\", or be slightly different from what is present in the text. Your task is to determine whether the title is correct. A correct title is one that refers to the same entity as the text. Output \"Yes\" if the title is correct, otherwise output \"No\"."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Wikipedia"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Text: The Mansfield Building Society is a UK building society which has its headquarters in Mansfield Nottinghamshire. It is a member of the Building Societies Association. \nTitle: Mansfield Building Society",
+            "output": "Yes",
+            "explanation": "The title \"Mansfield Building Society\" is present in the text and it is the main entity that is referred in the text. Hence, it is the title of the document."
+        },
+        {
+            "input": "Text:  The third and current HMS Argyll is a Type 23 'Duke' Class frigate. She is currently the oldest serving Type 23 frigate in the Royal Navy. Like all of her class she is named for a British dukedom in this case that of Argyll. \nTitle: HMS Argyll (F231)",
+            "output": "Yes",
+            "explanation": "\"HMS Argyll\" is present in the text and it is the main entity that is referred in the text. Here, the text in parentheses \"F31\" is not present in the document and it can be ignored. Hence, the output is correct. "
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Text: The Mansfield Building Society is a UK building society which has its headquarters in Mansfield Nottinghamshire. It is a member of the Building Societies Association. \nTitle: Mansfield Building Society",
+            "output": "No",
+            "explanation": "The title \"Mansfield Building Society\" is present in the text and it is the main entity that is referred in the text. Hence, the output is incorrect."
+        },
+        {
+            "input": "Text:  The third and current HMS Argyll is a Type 23 'Duke' Class frigate. She is currently the oldest serving Type 23 frigate in the Royal Navy. Like all of her class she is named for a British dukedom in this case that of Argyll. \nTitle: HMS Argyll (F231)",
+            "output": "HMS Argyll",
+            "explanation": "The output should be either \"Yes\" or \"No\". Hence, it is negative example."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task630-742a1834924141cc8f150b1d59dba2de",
+            "input": "Text:  Secrets of the Lamp is an accessory for the 2nd edition of the Advanced Dungeons & Dragons fantasy role-playing game published in 1993. \nTitle: Secrets of the Lamp",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task630-8ff7ef99fed0449081acbaa37a7d3879",
+            "input": "Text:  Cinder Cone is a cinder cone volcano in Lassen Volcanic National Park (located in Northern California in the United States). It is located about 10 miles (16 km) northeast of Lassen Peak and provides an excellent view of Brokeoff Mountain Lassen Peak and Chaos Crags. The cone was built to a height of 750 feet (230 m) above the surrounding area and spread ash over 30 square miles (78 km2). Then like many cinder cones it was snuffed out when several basalt lava flows erupted from its base. \nTitle: Cinder Cone and the Fantastic Lava Beds",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task630-f311763ad48f4d70a410580390ef01dc",
+            "input": "Text:  Tibiscus University of Timi\u015foara is an accredited university in Timi\u015foara Romania. It was established in 1991 and accredited by Law 484/11.07.2002.More precisely it has 14 accredited or temporarily authorized license (Bachelor's) curricula according to Government Decision no. 749/2009 and 10 accredited or temporarily authorized Master's curricula according to Order no. 4360/2010 of the Romanian Department of Education. \nTitle: American School of The Hague",
+            "output": [
+                "No"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY-SA",
+        "GNU Free Documentation 2.0"
+    ]
+}

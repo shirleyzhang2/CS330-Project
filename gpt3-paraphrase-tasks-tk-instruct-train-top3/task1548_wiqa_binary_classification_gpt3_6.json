@@ -1,0 +1,87 @@
+{
+    "Contributors": [
+        "Hadi Mazboudi"
+    ],
+    "Source": [
+        "wiqa"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/wiqa"
+    ],
+    "Categories": [
+        "Sentence Ordering"
+    ],
+    "Reasoning": [
+        "Temporal Reasoning"
+    ],
+    "Definition": [
+        "Given a set of steps describing a process, you need to answer the question 'Are the given steps in order?' with either 'Yes' or 'No'. If the steps are out of order and do not make sense in the order they are in, the answer is 'No'. If the steps are in order and make sense in the order they are in, the answer is 'Yes'. A set of steps are not in order if the steps reference information that is introduced in a later step."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Natural Science"
+    ],
+    "Positive Examples": [
+        {
+            "input": " ['The seeds are dispersed by wind, animals, etc', 'The seeds reach the ground', 'Grow into new trees', 'The process repeats itself over and over', 'A tree produces seeds', 'These new trees produce seeds'] ",
+            "output": "No",
+            "explanation": "These steps are not in order. The first step in this sequence is 'The seeds are dispersed by wind, animals, etc' but the step introducing the seed 'A tree produces seeds' is after the steps referencing the seeds. Therefore, the answer is No"
+        },
+        {
+            "input": " ['The carafe is filled with water', 'The water is poured into the machine at the back', 'Coffee beans are put into a grinder', 'The grinder is activated', 'A filter is put into the coffee maker', 'The ground coffee is put into the filter', 'Sometimes a bit of salt is added to the grounds to bring out flavor', 'The top of the machine is closed', 'The power is turned on', 'The water passes through the grounds and becomes coffee.'] ",
+            "output": "Yes",
+            "explanation": "These steps are in order. The information from each previous step leads into the next step. Therefore, the correct answer is Yes"
+        },
+        {
+            "input": " ['The nest is done.', 'The bird makes a flat base with twigs', 'The bird picks a tree', 'The bird makes sides with twigs and other things', 'The bird adds softer material to the inside', 'The bird collects twigs and other refuse'] ",
+            "output": "No",
+            "explanation": "These steps are not in order. The first step is 'The nest is done'. Since these steps outline how birds make a nest, this step should be last. Therefore, the steps are out of order and the answer is No"
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": " ['The cans are transported to a facility', 'The molds are flattened and rolled into sheets to reuse.', 'The cans are heated to 1400 degrees to melt them', 'The molten metal is poured into molds', 'The cans are shredded by a machine', 'Put the aluminum can into a recycle bin'] ",
+            "output": "Yes",
+            "explanation": "This answer is incorrect because these steps are out of order. The step 'Put the aluminum can into a recycle bin' should be first. Without this step, the step 'The cans are transported to a facility' does not make sense because the cans are not introduced yet. The correct answer is No"
+        },
+        {
+            "input": " ['Acid rain is produced by chemicals that reach into the atmosphere', 'Falls onto the ground', 'The acid rain starts scouring rocks', 'Destroys vegetation', 'The lack of vegetation alters the surrounding environment.'] ",
+            "output": "No",
+            "explanation": "This answer is incorrect because these steps are in order. The step, 'Acid rain is produced by chemicals that reach into the atmosphere' introduces the subject of the process, acid rain. The step 'Falls onto the ground' refers to the acid rain that was in the previous step. After the acid falls onto the ground, the next step is 'The acid rain starts scouring rocks'. The next step describes what happens after acid rain falls onto the ground, 'Destroys vegetation'. After the acid rain destroys vegetation, 'The lack of vegetation alters the surrounding environment.' Since each step only uses information from previous steps, the correct answer is Yes"
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1548-2c62a00e96b647378ab065b42a66e11e",
+            "input": " ['Blood is sent to the liver', 'Energy is produced', 'The blood leaves the liver cleaned.', 'The blood is cleaned', 'The liver uses chemicals and proteins to treat the blood'] ",
+            "output": [
+                "  No  "
+            ]
+        },
+        {
+            "id": "task1548-2c8d6eea0f624d9b8f56685815b706c6",
+            "input": " ['If the magma building in the volcano is thick and sticky it will trap gases', 'If the magma is thin and runs', 'Results in an explosive eruption when the pressure becomes too intense', 'Gain energy for eruption', 'Some of the energy is converted into seismic activity (earthquakes)', 'Collects inside magma chambers underneath a volcano', 'Magma rises', 'The magma results in a low-pressure, slow-moving flow of magma instead of a violent eruption', 'Pressure builds in the magma chambers as they fill', 'Magma is formed when rock melts inside the Earth&#x27;s crust'] ",
+            "output": [
+                "  No  "
+            ]
+        },
+        {
+            "id": "task1548-bac96acb0d3c44b49de056692a5a5824",
+            "input": " ['Carbon dioxide and energy from ATP are used to create sugar', 'Carbon dioxide enters the leaves through the stomates by diffusion', 'Oxygen exits the leaves through the stomata by diffusion', 'Water is transported to the leaves in the xylem', 'The plant reuses the water or the water exits through the stomata as water vapor.', 'Energy harvested through light reaction is stored by forming ATP'] ",
+            "output": [
+                "  No  "
+            ]
+        }
+    ],
+    "Instance License": [
+        "Apache 2.0"
+    ]
+}

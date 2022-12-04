@@ -1,0 +1,88 @@
+{
+    "Contributors": [
+        "Anjana Arunkumar"
+    ],
+    "Source": [
+        "abductive_nli"
+    ],
+    "URL": [
+        "https://leaderboard.allenai.org/anli/submissions/about"
+    ],
+    "Categories": [
+        "Coherence Classification"
+    ],
+    "Reasoning": [
+        "Commonsense Reasoning",
+        "Abductive Reasoning"
+    ],
+    "Definition": [
+        "In this task, you will be given a short story with a beginning, two potential middles, and an ending. Your task is to choose the middle statement that makes the story incoherent or implausible by indicating 1 or 2 in the output. If both sentences are plausible, pick the one that makes less sense."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Commonsense -> Stories"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Beginning: Butch had a really old computer. Middle 1: Butch decided to order a new computer online. Middle 2: Butch noticed that a storm was approaching to his town. Ending: It arrived and Butch was much happier.",
+            "output": "2",
+            "explanation": "People generally don't feel happy about natural disasters like storms. Therefore, we choose 2 in this case."
+        },
+        {
+            "input": "Beginning: John was on the trail running. Middle 1: John accelerated the speed and broke his leg accidentally. Middle 2: John was chased by a bear. Ending: He ran even faster until he got to his car safely.",
+            "output": "1",
+            "explanation": "When someone breaks his/her leg, it is difficult to run. Therefore, we choose 1 in this case."
+        },
+        {
+            "input": "Beginning: Gina was putting posters on her bedroom walls. Middle 1: Gina wanted to match the colorful posters. Middle 2: Gina ripped the poster on accident. Ending: Gina decided she would wear more colorful clothing.",
+            "output": "2",
+            "explanation": "In this example, both Middle sentences sound plausible, but the first one is MORE plausible as a story. Therefore, we choose 2 in this case."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Beginning: Mary's mom came home with more bananas than they could possibly eat. Middle 1: Mary and her mom decided to make chocolate covered frozen bananas to avoid waste. Middle 2: So Mary made pineapple splits for everyone. Ending: That was the best way ever to eat a banana!",
+            "output": "1",
+            "explanation": "The story talks about bananas, so discussion of pineapples makes the story incoherent. Therefore, we should not choose 1 in this case."
+        },
+        {
+            "input": "Beginning: Jon decided to steal a police car. Middle 1: Jon crashed the police car into a telephone poll. Middle 2: Jon wasn't caught. Ending: Jon went to prison for three years.",
+            "output": "1",
+            "explanation": "If a person is not caught committing a crime, they cannot go to prison. Therefore, we should not choose 1 in this case."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task070-1413e2abc1d14156b7442b36567c252a",
+            "input": "Beginning: Nancy walked inside the subway store. Middle 1: Nancy tried Subway'w new wrap. Middle 2: Nancy tried Subway's new pizza. Ending: Nancy couldn't wait to get the rest of the pizza.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "id": "task070-0ed8db5ae9304cc6aa3fb9e28d256c9a",
+            "input": "Beginning: Jim was disappointed to learn he had orders to an undesirable country. Middle 1: The orders needed an ordinary person to lead a project. Middle 2: The orders needed someone very experienced to lead a project. Ending: Jim had been in his position too short a time so he was able to stay.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "id": "task070-113d77e2647a4f92af82c2e90d07992d",
+            "input": "Beginning: Kim couldn't make herself vomit with her finger Middle 1: Her toothbrush tried to do it with her instead. Middle 2: She tried to do it with her toothbrush instead. Ending: Kim gagged and dropped her toothbrush in the toilet.",
+            "output": [
+                "1"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

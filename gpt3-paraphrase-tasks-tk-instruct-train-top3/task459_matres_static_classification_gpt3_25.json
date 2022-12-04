@@ -1,0 +1,90 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "matres"
+    ],
+    "URL": [
+        "https://github.com/CogComp/MATRES"
+    ],
+    "Categories": [
+        "Word Semantics"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "Given a context and a verb, output \"Yes\" if the verb is static and \"No\" otherwise. A verb is static if it is about an event that doesn't change or it happens regularly."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "News"
+    ],
+    "Positive Examples": [
+        {
+            "input": "New York (is) on the east coast. \n Verb: is",
+            "output": "Yes",
+            "explanation": "This is a good example. New York always is on the east coast."
+        },
+        {
+            "input": "Suspected bombs exploded outside the U.S. embassies in the Kenyan and Tanzanian capitals Friday, (killing) dozens of people, witnesses said. \n Verb: killing",
+            "output": "No",
+            "explanation": "In this example, killing is not static because it's restricted to a specific period."
+        },
+        {
+            "input": "He cannot decide for himself. The one that (decides) for him is me, his father.  \n Verb: decides",
+            "output": "Yes",
+            "explanation": "In this example, his father always decides for him, and it happens regularly. So, it's a static verb."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "He (is) a brave man. \n Verb: is",
+            "output": "No",
+            "explanation": "Being brave is static, so the answer is incorrect."
+        },
+        {
+            "input": "In Washington today, the Federal Aviation Administration (released) air traffic control tapes from the night the TWA Flight eight hundred went down. \n Verb: released",
+            "output": "Yes",
+            "explanation": "In this example, \"released\" happened in the past and it's not static."
+        },
+        {
+            "input": "\" We were pleased that England and New Zealand knew about it, and we thought that's where it would stop. \" He also talked about his \" second job \" as the group's cameraman, and having to wear four pairs of gloves to (work) the clockwork camera.  \n Verb: work",
+            "output": "No",
+            "explanation": "In this example, \"work\" happens regularly. So, the answer is incorrect, and it's static."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task459-fca90133c57541f6825c92828d2d05de",
+            "input": "\" If I were choosing the people of tomorrow, I would have chosen the people who are now on the board, \" he said. A Reuters spokesman said the departure (reflects) \" no change in strategy or profits. \"  \n Verb: reflects",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task459-f8ae59078c514bcdb74868eb7beb2e0c",
+            "input": "The bomb outside the U.S. Embassy in Tanzania was so powerful that it shook furniture in homes a mile away. But the solid construction of the Israeli-built embassy may have prevented the carnage of a similar bomb in Kenya, an official (said) Saturday.  \n Verb: said",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task459-16b215310b774d598649d898d9b3bd41",
+            "input": "CBS News first reported last night that the tomb may contain the remains of Air Force pilot Michael Blassie. There was a suspicion the body (was) Blassie because his uniform and ID card were found near the body in Vietnam.  \n Verb: was",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

@@ -1,0 +1,82 @@
+{
+    "Contributors": [
+        "Neil Franks"
+    ],
+    "Source": [
+        "conv_ai_2"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/conv_ai_2"
+    ],
+    "Categories": [
+        "Speaker Identification"
+    ],
+    "Reasoning": [
+        "Reasoning on Social Interactions"
+    ],
+    "Definition": [
+        "Given a message written by either a 'Bot' or a 'Human', you must determine who the author is. 'Bot' messages will typically be more disjointed and will make statements that don't relate to each other, don't make coherent sense, or otherwise appear unnatural. 'Human' messages will be written in a more or less coherent and logical way. Since these messages are supposed to be conversation openers, humans will generally start sensibly with a hello or an introduction. Humans may also ask why the other person is not responding. Bots, however, may act as if they are in the middle of a nonsensical conversation."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue"
+    ],
+    "Positive Examples": [
+        {
+            "input": "hello\n",
+            "output": "Human",
+            "explanation": "This is an example of correct classification because the sender really was a human. To start with a hello is a normal thing for a human to do. Frequently bots don't start with hello, or if they do, they follow it with non-sequiturs."
+        },
+        {
+            "input": "I work as a mechanic, i work as a mechanic\n",
+            "output": "Bot",
+            "explanation": "This is a good example of correct classification because the sender was indeed a bot. You can tell by the odd repetition the sender employs; humans would most probably not start a conversation by repeating themselves awkwardly."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "hello\ni'm a baby delivery nurse.\nhi\ni love disneyland.\n",
+            "output": "Bot",
+            "explanation": "This is an example of incorrect classification. The sender is actually a human. You should tell it's a human by it's attempts to say 'hello' then 'hi' again after the other person doesn't respond. The facts they give about themselves should be interpreted as an honest attempt at introducing themselves, which humans sometimes do when trying to start a conversation about their interests."
+        },
+        {
+            "input": "In High School, even a family holiday can inspire gossip.\n",
+            "output": "Human",
+            "explanation": "This is an example of misclassification because the sender is actually a bot. You can tell by the lack of any hello or even introduction. Instead, the sender sends a nonsense sentence about high school and family, which makes no sense given it's supposed to be the start of a conversation. This is a good indicator that the sender is a bot."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task856-8b824c52eff145dba8e7eb7ea8d952e9",
+            "input": "SENDER A: hello?\n",
+            "output": [
+                "Human"
+            ]
+        },
+        {
+            "id": "task856-9c1e0ab6dbe048ec93a57a9e776db069",
+            "input": "SENDER A: hi\nSENDER A: i'm a boy\nSENDER A: do you like coffe\n",
+            "output": [
+                "Human"
+            ]
+        },
+        {
+            "id": "task856-3e4d56400a254b5fb7f14bfc8dfa6b0e",
+            "input": "SENDER A: Hey! \ud83d\udc4b \nHow is your day? \ud83e\udd14\nSENDER A: Hey, are you alive there? \ud83d\ude31\nSENDER A: Are you still with me?\nSENDER A: You are great \ud83d\ude1c \nThank you!\n",
+            "output": [
+                "Bot"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

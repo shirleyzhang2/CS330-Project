@@ -1,0 +1,90 @@
+{
+    "Contributors": [
+        "Jalansh Munshi"
+    ],
+    "Source": [
+        "pubmed_qa"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/pubmed_qa"
+    ],
+    "Categories": [
+        "Intent Identification"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "Given a passage, you must determine whether or not it has a definite objective/aim/goal. Output '1' if it does, and '0' if it does not."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Medicine"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Chronic rhinosinusitis (CRS) is a heterogeneous disease with an uncertain pathogenesis. Group 2 innate lymphoid cells (ILC2s) represent a recently discovered cell population which has been implicated in driving Th2 inflammation in CRS; however, their relationship with clinical disease characteristics has yet to be investigated. The aim of this study was to identify ILC2s in sinus mucosa in patients with CRS and controls and compare ILC2s across characteristics of disease. A cross-sectional study of patients with CRS undergoing endoscopic sinus surgery was conducted. Sinus mucosal biopsies were obtained during surgery and control tissue from patients undergoing pituitary tumour resection through transphenoidal approach. ILC2s were identified as CD45(+) Lin(-) CD127(+) CD4(-) CD8(-) CRTH2(CD294)(+) CD161(+) cells in single cell suspensions through flow cytometry. ILC2 frequencies, measured as a percentage of CD45(+) cells, were compared across CRS phenotype, endotype, inflammatory CRS subtype and other disease characteristics including blood eosinophils, serum IgE, asthma status and nasal symptom score. 35 patients (40% female, age 48 \u00b1 17 years) including 13 with eosinophilic CRS (eCRS), 13 with non-eCRS and 9 controls were recruited. ILC2 frequencies were associated with the presence of nasal polyps (P = 0.002) as well as high tissue eosinophilia (P = 0.004) and eosinophil-dominant CRS (P = 0.001) (Mann-Whitney U). They were also associated with increased blood eosinophilia (P = 0.005). There were no significant associations found between ILC2s and serum total IgE and allergic disease. In the CRS with nasal polyps (CRSwNP) population, ILC2s were increased in patients with co-existing asthma (P = 0.03). ILC2s were also correlated with worsening nasal symptom score in CRS (P = 0.04).",
+            "output": "1",
+            "explanation": "There is a line in the passage which say 'The aim of this study was...' which suggests that it is talking about a specific aim. Hence, the output should be 1 as this passage has a definite aim."
+        },
+        {
+            "input": "Phosphatidylethanolamine N-methyltransferase (PEMT), a liver enriched enzyme, is responsible for approximately one third of hepatic phosphatidylcholine biosynthesis. When fed a high-fat diet (HFD), Pemt(-/-) mice are protected from HF-induced obesity; however, they develop steatohepatitis. The vagus nerve relays signals between liver and brain that regulate peripheral adiposity and pancreas function. Here we explore a possible role of the hepatic branch of the vagus nerve in the development of diet induced obesity and steatohepatitis in Pemt(-/-) mice. 8-week old Pemt(-/-) and Pemt(+/+) mice were subjected to hepatic vagotomy (HV) or capsaicin treatment, which selectively disrupts afferent nerves, and were compared to sham-operated or vehicle-treatment, respectively. After surgery, mice were fed a HFD for 10 weeks. HV abolished the protection against the HFD-induced obesity and glucose intolerance in Pemt(-/-) mice. HV normalized phospholipid content and prevented steatohepatitis in Pemt(-/-) mice. Moreover, HV increased the hepatic anti-inflammatory cytokine interleukin-10, reduced chemokine monocyte chemotactic protein-1 and the ER stress marker C/EBP homologous protein. Furthermore, HV normalized the expression of mitochondrial electron transport chain proteins and of proteins involved in fatty acid synthesis, acetyl-CoA carboxylase and fatty acid synthase in Pemt(-/-) mice. However, disruption of the hepatic afferent vagus nerve by capsaicin failed to reverse either the protection against the HFD-induced obesity or the development of HF-induced steatohepatitis in Pemt(-/-) mice.",
+            "output": "1",
+            "explanation": "If you take a look at the line 'Here we explore a possible role of the hepatic branch', it says that it is exploring a possible role. This means that it has a specific goal and hence, the output should be 1."
+        },
+        {
+            "input": "Psammaplin A (PsA) is a natural product isolated from marine sponges, which has been demonstrated to have anticancer activity against several human cancer cell lines via the induction of cell cycle arrest and apoptosis. New drugs that are less toxic and more effective against multidrug-resistant cancers are urgently needed. We tested cell proliferation, cell cycle progression and autophagic cell death pathway in doxorubicin-resistant MCF-7 (MCF-7/adr) human breast cancer cells. The potency of PsA was further determined using an in vivo xenograft model.",
+            "output": "0",
+            "explanation": "This passage does not have any sentences which talk about a specific goal, objective, or aim. Hence, the output should be 0."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "This study examined links between DNA methylation and birth weight centile (BWC), and explored the impact of genetic variation. Using HumanMethylation450 arrays, we examined candidate gene-associated CpGs in cord blood from newborns with low (<15th centile), medium (40-60th centile) and high (>85th centile) BWC (n = 12). Candidates were examined in an investigation cohort (n = 110) using pyrosequencing and genotyping for putative methylation-associated polymorphisms performed using standard PCR. Array analysis identified 314 candidate genes associated with BWC extremes, four of which showed \u2265 4 BWC-linked CpGs. Of these, PM20D1 and MI886 suggested genetically determined methylation levels. However, methylation at three CpGs in FGFR2 remained significantly associated with high BWC (p = 0.004-0.027).",
+            "output": "0",
+            "explanation": "This passage talks about examining links between DNA methylation and also explores impact of genetic variation. This suggests that it has a definite objective and hence, the output should be 1. Output 0 is wrong."
+        },
+        {
+            "input": "Tumor microenvironment immunity is associated with breast cancer outcome. A high lymphocytic infiltration has been associated with response to neoadjuvant chemotherapy, but the contribution to response and prognosis of immune cell subpopulations profiles in both pre-treated and post-treatment residual tumor is still unclear. We analyzed pre- and post-treatment tumor-infiltrating immune cells (CD3, CD4, CD8, CD20, CD68, Foxp3) by immunohistochemistry in a series of 121 breast cancer patients homogeneously treated with neoadjuvant chemotherapy. Immune cell profiles were analyzed and correlated with response and survival. We identified three tumor-infiltrating immune cell profiles, which were able to predict pathological complete response (pCR) to neoadjuvant chemotherapy (cluster B: 58%, versus clusters A and C: 7%). A higher infiltration by CD4 lymphocytes was the main factor explaining the occurrence of pCR, and this association was validated in six public genomic datasets. A higher chemotherapy effect on lymphocytic infiltration, including an inversion of CD4/CD8 ratio, was associated with pCR and with better prognosis. Analysis of the immune infiltrate in post-chemotherapy residual tumor identified a profile (cluster Y), mainly characterized by high CD3 and CD68 infiltration, with a worse disease free survival.",
+            "output": "1",
+            "explanation": "There is no mention about how chemotherapy can cure breast cancer in the input passage. Hence, this question is a bad example."
+        },
+        {
+            "input": "Hidradenitis suppurativa (HS) is a chronic inflammatory disease involving intertriginous skin. Previous epidemiologic studies have been limited by small sample size. We sought to describe the prevalence and comorbidities of HS in a large patient care database. In this retrospective case-control study, we chart-validated all patients within a hospital database who received at least 1 billing code for HS between 1980 and 2013. Verified cases were matched with controls based on age, gender, and race. Prevalences of a priori selected comorbidities were compared between HS and control groups. A total of 2292 patients at Massachusetts General Hospital received at least 1 code for HS. A total of 1776 cases had a validated diagnosis of HS, yielding a prevalence of 0.08%. In unadjusted analysis, all comorbidities were diagnosed significantly more in HS compared with control including (in rank order of likelihood): smoking, arthropathies, dyslipidemia, polycystic ovarian syndrome, psychiatric disorders, obesity, drug dependence, hypertension, diabetes, thyroid disease, alcohol dependence, and lymphoma (all P < .01).",
+            "output": "0",
+            "explanation": "In the line 'We sought to describe the prevalence...' it is evident that the passage has a specific goal in mind. Hence, the output should be 1 and not 0. Therefore, the output is wrong."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task848-7cd436ce268b4f4db0e1d600f50b309b",
+            "input": "To provide optimal treatment of heterogeneous triple negative breast cancer (TNBC), we need biomarkers that can predict the chemotherapy response.', 'We retrospectively investigated BRCAness in 73 patients with breast cancer who had been treated with taxane- and/or anthracycline-based neoadjuvant chemotherapy (NAC). Using multiplex, ligation-dependent probe amplification on formalin-fixed core needle biopsy (CNB) specimens before NAC and surgical specimens after NAC. BRCAness status was assessed with the assessor unaware of the clinical information.', 'We obtained 45 CNB and 60 surgical specimens from the 73\\xa0patients. Of the 45 CNB specimens, 17 had BRCAness (38.6% of all subtypes). Of the 23 TNBC CNB specimens, 14\\xa0had BRCAness (61% of TNBC cases). The clinical response rates were significantly lower for BRCAness than for non-BRCAness tumors, both for all tumors (58.8% vs. 89.3%, P\\xa0= .03) and for TNBC (50% vs. 100%, P\\xa0= .02). All tumors that progressed with taxane therapy had BRCAness. Of the patients with TNBC, those with non-BRCAness cancer had pathologic complete responses significantly more often than did those with BRCAness tumors (77.8%\\xa0vs. 14.3%, P\\xa0= .007). After NAC, the clinical response rates were significant lower for BRCAness than for non-BRCAness tumors in all subtypes (P\\xa0= .002) and in TNBC cases (P\\xa0= .008). After a median follow-up of 26.4 months, 6 patients-all with BRCAness-had developed recurrence. Patients with BRCAness had shorter progression-free survival than did those with non- BRCAness (P\\xa0=\\xa0.049).",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "id": "task848-34e04d116843471ba6b9f875d1148e2f",
+            "input": "Although Kupffer cells (KCs) are capable of producing important growth-stimulating cytokines, their role in liver regeneration following partial hepatectomy (PH) remains poorly understood.', 'In the present study liver regeneration was studied after KC-depletion by intravenous administration of liposome-encapsulated dichloromethylene-diphosphonate (C12MDP), a method known to physically eliminate KCs. Furthermore, splenectomy was performed one week prior to PH to exclude the effect of C12MDP-liposomes on macrophage populations in the spleen.', 'KC-depletion was confirmed in cryostat liver sections stained with the monoclonal antibody ED2, a marker for resident tissue macrophages. Forty-eight hours after PH, the cumulative hepatocyte DNA synthesis, as determined in liver sections by the hepatocyte bromodeoxyuridine labeling index, was significantly decreased in KC-depleted rats when compared to control-rats. The weight of the remnant liver, expressed as a percentage of the initial liver weight, was significantly less at 96 h after PH in KC-depleted rats. KC-depletion abolished the hepatic interleukin-6 (IL-6) and interleukin-10 (IL-10) mRNA synthesis and decreased hepatic expression of tumor necrosis factor-alpha (TNF-alpha), hepatocyte growth factor (HGF) and transforming growth factor-beta1(TGF-beta1) mRNA after PH, as was assessed by reverse-transcriptase polymerase chain reaction (RT-PCR). Moreover, at 4 h after PH the systemic release of IL-6 was significantly decreased in KC-depleted rats.",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "id": "task848-b2061b45931745898f20ee3ed4d3543a",
+            "input": "Several studies have shown excess mortality among hip fracture patients compared with the normal population of the same age. Finnish guidelines for medical treatment of hip fracture patients recommend anti-osteoporosis medication and the daily concomitant use of prescribed calcium and vitamin D supplements. However, whether post-fracture use of calcium and vitamin D supplements is associated with survival in such patients has not been evaluated.', \"To study the association between survival in hip fracture patients and patients' sex and age, pre-fracture vitamin D status, American Society of Anesthesiologists - Physical Status (ASA-PS) class, type of fracture and post-fracture use of prescribed calcium plus vitamin D and anti-osteoporotic medication.\", \"The study population was 221 hip fracture patients primarily treated in acute care for a new hip fracture in 2003-4 in two Finnish hospitals. After a median of 27.5 months from the fracture, a questionnaire was sent to all patients who were still alive at the time (n = 137). The patients were queried about their use of prescribed calcium plus vitamin D supplementation and of anti-osteoporotic drugs. The follow-up time for use of anti-osteoporotic medication and prescribed calcium and vitamin D was 19.5-36 months (median 27.5 months). Data on the use of prescribed calcium plus vitamin D supplementation and anti-osteoporotic drugs were checked against information on reimbursement of drug prescriptions held by the Finnish Social Insurance Institution. A total of 4 years' (48 months') survival data for all patients in the study population was also obtained, with the dates of patient deaths being checked against Official National and Regional population statistics. Patient survival was analysed using both the Bayesian multivariate analysis and the life table method.\", 'In the multivariate analysis, the combination of variables that best explained post-fracture survival was as follows: age <80 years; ASA-PS class 1-2 (ASA-PS class 1 and 2 data were combined in calculations); post-fracture use of prescribed calcium plus vitamin D supplements concomitantly with anti-osteoporotic drugs; post-fracture use of prescribed calcium plus vitamin D supplements; post-fracture use of anti-osteoporotic drugs only; and type of fracture (femoral neck or subtrochanteric). This model correctly predicted 74% of cases. At 36 months, we observed a 36% reduction in deaths in females who used prescribed calcium plus vitamin D supplementation and a corresponding 43% reduction in males. Survival of females who used anti-osteoporotic drugs concomitantly was even greater (43% reduction in deaths) over the entire follow-up period. Excess mortality was highest in females and males who used neither anti-osteoporotic drugs nor prescribed calcium and vitamin D.",
+            "output": [
+                "1"
+            ]
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

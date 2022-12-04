@@ -1,0 +1,90 @@
+{
+    "Contributors": [
+        "Shreeshiv Patel"
+    ],
+    "Source": [
+        "head_qa"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/head_qa"
+    ],
+    "Categories": [
+        "Text Categorization"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "In this task, you will be given a question and a set of answer options. Your task is to classify the question and each answer option into one of the following topics: medicine, nursery, psychology, chemistry, pharmacology, biology."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Healthcare"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Question: A distension is defined as: \n Options:  <0> Soft tissue injury. <1> Forced movement of abrupt production. <2> Injury by stretching a muscle. <3> Injury of the joint capsule. <4> Interruption in the continuity of a bone.",
+            "output": "nursery",
+            "explanation": "Distension means Bloating and swelling in the belly area. It does not have much to do with chemistry, psychology, pharmacology, biology and medicine. Hence, the correct topic is nursery."
+        },
+        {
+            "input": "Question: Which of the following steps of cholesterol biosynthesis is what controls the speed and place of metabolic regulation: \n Options:  <0> Geranyl pyrophosphate\uf0e0 Farnesyl pyrophosphate. <1> ,\uf0e0 Lanosterol <2> Lanosterol \uf0e0 Cholesterol. <3> Acetyl CoA \uf0e0 Acetoacetyl CoA. <4> 3-Hydroxy-3-methylglutaryl CoA\uf0e0 Mevalonic acid.",
+            "output": "chemistry",
+            "explanation": "The question text is about cholesterol biosynthesis which looks like some chemical. Options are also related to different chemicals like Geranyl pyrophosphate\uf0e0 Farnesyl pyrophosphate, Lanosterol \uf0e0 Cholesterol, Acetyl CoA, etc. So, it\u2019s clear that the question belongs to the chemistry class."
+        },
+        {
+            "input": "Question: What name does the episode receive with psychotic symptoms that occur after a strong alcohol intoxication in which the individual has been consuming large doses of alcohol for several days? \n Options: <0> Delirium tremens. <1> Partial amnesias. <2> Alcoholic hallucinosis <3> abstinence syndrome. <4> Korsakoff syndrome.",
+            "output": "psychology",
+            "explanation": "The question text and the options are more related to mental conditions. From this information, we can infer that this input belongs to the psychology class. "
+        },
+        {
+            "input": "Question: The liver converts ethanol into: \n Options:  <0> Methanol <1> Acetone. <2> Acetaldehyde <3> Hydrogen peroxide. <4> Glycerol.",
+            "output": "chemistry",
+            "explanation": "The question text and the options are highly related to chemicals like Methanol, Acetone, Glycerol which are well-known chemicals. From this information, one can say that this question is belongs to the chemistry class."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Question: Ketogenic amino acids: \n Options:  <0> They may contribute to the synthesis of glucose. <1> They are intermediaries of the urea cycle. <2> They are the substrate of reactions catalyzed by transketolase. <3> They can produce acetyl-coenzyme A. <4> They are eliminated in the form of ketoses.",
+            "output": "psychology",
+            "explanation": "For the given question the correct topic is biology, so the output is incorrect."
+        },
+        {
+            "input": "Question: Mr. A. P. has been discharged after being operated on for a gastric resection. What recommendations should you give to avoid the rapid evacuation syndrome? \n Options:  <0> Drink liquids during the meal. <1> Take a diet high in carbohydrates. <2> After ingestion, the decubitus position is the most beneficial if the patient tolerates it. <3> You should plan rest periods of 15 minutes after meals. <4> Take a diet low in protein and fat, to avoid abdominal distension.",
+            "output": "biology",
+            "explanation": "The given question is about nursery so correct output should be nursery, not biology."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1434-557ec7c1f84746e0861169bf56ba7c58",
+            "input": "Question: Regarding the newborn, point out the correct statement: \n Options:  <0> Premature immature is one whose birth weight varies between 2,000 and 2,500 gr. and has a gestational age of less than 37 weeks. <1> Newborn of low weight is the one that weighs at birth less than 2,500 gr. and his gestational age is between 37 and 42 weeks. <2> Newborn pseudot\u00e9rmino is the one that weighs less than 2,500 gr. and her gestational age is greater than 37 weeks. <3> Premature babies are newborns weighing less than 2,500 gr. <4> Post-term newborn is the one with a gestational age greater than 40 weeks.",
+            "output": [
+                "nursery"
+            ]
+        },
+        {
+            "id": "task1434-f1eb928fb44444c5b932060be201a968",
+            "input": "Question: The clinical specificity of an analytical parameter (test), with respect to a certain pathology, is defined as: \n Options:  <0> The mean concentrations of this test in healthy patients. <1> A pathological concentration of the test in the presence of the disease. <2> A pathological concentration of the test in the absence of the disease. <3> A normal concentration of the test in the absence of the disease. <4> A normal concentration of the test in the presence of the disease.",
+            "output": [
+                "chemistry"
+            ]
+        },
+        {
+            "id": "task1434-82bc6da96407422ba9e95e4b0f4cfa22",
+            "input": "Question: A 25-year-old woman with no history of interest or toxic habits who went to the emergency room due to severe pain in her right ear, total inability to open her mouth, sudden onset and no previous history of trauma. It refers to the use of a discharge plate due to a nighttime dental clenching habit. What is your diagnosis? \n Options:  <0> Dislocation of the mandibular condyle in front of the joint eminence. <1> Acute joint blockage (anterior dislocation of the articular meniscus). <2> Mandibular condyle fracture. <3> Fibrous ankylosis of the temporomandibular joint. <4> Bony ankylosis of the temporomandibular joint.",
+            "output": [
+                "medicine"
+            ]
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

@@ -1,0 +1,82 @@
+{
+    "Contributors": [
+        "Ritvik Gaur"
+    ],
+    "Source": [
+        "craigslist_bargains"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/craigslist_bargains"
+    ],
+    "Categories": [
+        "Text Categorization"
+    ],
+    "Reasoning": [
+        "Reasoning on Social Interactions"
+    ],
+    "Definition": [
+        "Your task is to read a text passage about a negotiation between a seller and a buyer, and classify the item being sold into one of the following categories: 'housing', 'furniture', 'bike', 'phone', 'car', or 'electronics'. The output should be the name of the category, and there should only be one category for the given text passage."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Seller: hi\nBuyer: Hello\nSeller: do you care to make an offer?\nBuyer: The place sounds nice, but may be a little more than I can afford\nSeller: well how much can you soend?\nBuyer: I was looking for something in the 1500-1600 range\nSeller: That is really unreasonable considering all the immenities and other going rates, you would need to come up to at least 3000\nBuyer: I have seen some 2 bedrooms for that price, which I could split the cost with a roommate, so even with amenities, this may be out of my range\nSeller: it may be then... the absolute lowest i will go is 2700. that is my final offer.\nBuyer: Ok, I think the most I could spend on this is 2000 - we are a ways apart\nSeller: ya that is far too low like i said 2700\nBuyer: Ok, thanks for your consideration. I will have to keep looking for now.\nSeller: good luck",
+            "output": "housing",
+            "explanation": "The answer 'housing' is correct because a house is being talked about which is indicated by the mention of 'bedrooms' and 'amenities' which are words that are both related to housing."
+        },
+        {
+            "input": "Seller: Hello, how are you today\nBuyer: Hi, very well thank you! So, is the DVD player in a good condition?\nSeller: It is in great condition. I have barely taken it out of the box. \nBuyer: How much can you give it for?\nSeller: The price is $55\nBuyer: Yeah but its too much for me\nSeller: I understand that would normally be a lot for a used DVD player but this item has only been used for one week.  \nBuyer: Yeah, but there are a lot of different options in the market. I am a student and can only afford what my budget allows me to do so. I can pay $41. Will you accept it?\nSeller: I understand a student's budget, as I have no to long ago graduated myself. I just am already letting it go real cheap. I paid $130 for the product. The only reason I am parting with it is that It only streams the big streaming channels like Netflix, Hulu, Vudu and Youtube and I bought a DVD player/Android Box combo that will allow me to stream those plus add my own channels. I can't possibly sell it for $41. \nBuyer: Okay I can only afford $48 that's the last I can pay\nSeller: Make it $50 and we have a deal. I know it is a stretch to your budget but trust me with everything this player does, you will save more than $2 on entertainment",
+            "output": "electronics",
+            "explanation": "The answer 'electronic' is correct as the buyer and seller are talking about a 'DVD player' which is an electronic item."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Seller: Hello.\nBuyer: Hello. I saw your listing and I am interested in your car. However, I have a few questions.\nSeller: Sure, go ahead.\nBuyer: Has it been in any major accidents?\nSeller: No, I`ve kept it in very good condition.\nBuyer: All of the electronics are in working order, correct?\nSeller: Yes, everything has been checked out recently.\nBuyer: Great! Would you take $10,000? 120k miles is kinda a lot.\nSeller: I`m open to negotiate but 10k is a bit low. We could meet in the middle and say 13 000? I`ll include the extra speakers I recently purchased.\nBuyer: 13,000 is fair, however I can only afford paying 12,500\nSeller: Alright, I think that`s reasonable. We can agree on 12,500 then.\nBuyer: Great!",
+            "output": "toys",
+            "explanation": "This answer is incorrect because 'toys' does not belong in any of the categories from which the answer is to be chosen from ('phone', 'electronics', 'housing', 'furniture', 'car', 'bike'). The correct answer is 'car' because a car is being talked about in this conversation between the buyer and seller."
+        },
+        {
+            "input": "Buyer: I'm interested in this item, but I had some questions\nSeller: Geat, ask away.\nBuyer: Do I have to remove it myself?\nSeller: I am renting out the appartment, you \"Don't Remove Anything\"\nBuyer: Nice. Is it fully furnished?\nSeller: No, you will need your own \"basic\" furnishing\nBuyer: How much is the security deposit, is there one?\nSeller: Just first and last month rent\nBuyer: It's a bit pricy, I'm not sure if I can afford it...\nSeller: I'm only asking $140, that is really cheap for the area\nBuyer: I'd totally take 140!!!   but how about 1300 instead?\nSeller: Oops, I ment $1400, how about we meet in the middle at $1350?\nBuyer: 1325, and I'll accept\nBuyer: \nSeller: How about $1337.50",
+            "output": "bike",
+            "explanation": "This answer is incorrect as the item that is being talked about in the given conversation between the buyer and seller is not a bike. The correct answer is 'housing' because the words 'renting' and 'apartment' are mentioned in the conversation which indicates that the item in question is related to housing since apartments come under houses."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task767-d2f5470c9f9b427c9476e4157c58763b",
+            "output": [
+                "housing"
+            ],
+            "input": "Buyer: Hello\nSeller: Hi.  This is a great studio apartment with lots of new features\nBuyer: Okay\nSeller: \nBuyer: I have some questions of this studio\nSeller: sure, what do you want to know\nBuyer: what is the area of the studio?\nSeller: its right by lake merrit\nBuyer: I mean the sq ft area\nSeller: 1000\nBuyer: Okay. Other question is the studio have washer and dryer inside it\nSeller: there is a laundry room in the building\nBuyer: In which floor this studio present? \nSeller: it is on the ground floor\nBuyer: Ok how many floors are there in the building?\nSeller: there are two floors\nBuyer: In which floor laundry room there?\nSeller: it is also on the ground floor\nBuyer: Ok fine. \nSeller: will you accept the offered price?\nBuyer: Is it any depoit I need to pay?\nSeller: half of the first month's rent\nBuyer: Is this studio fully furnished?\nSeller: yes, with new furniture\nBuyer: couch or 2 set sofa present\nSeller: sofa and a loveseat\nBuyer: Ok I am willing to pay max of 1500 for this studio\nSeller: i can make a deal for 1700\nBuyer: Is this apartment have covered car parking?\nSeller: each unit has a 1 car garage\nBuyer: any separate pay for that. Or it included with rental\nSeller: the garage is included\nBuyer: Ok. then I will accept for 155\nSeller: if you meet me halfway between 1500 and 1700, we have a deal at 1600\nBuyer: 1550\nSeller: sorry, i have a lot of other interest in the unit and they are willing to pay more\nBuyer: even I saw 1bhk for 1800 in other buildings near by. If you have agree with 1550. Will accept the offer\nSeller: if you'd like to pay 1800 for a unit in another building, you can.  Or you can pay 1600 for this unit.\nBuyer: that is 1 bhk. Not a studio aparment. also area is 1400 sqft\nSeller: my building is the only one with a view of lake merrit\nBuyer: I understand that so only I increased it from 1500 to 1550. The final amount is 1560. Close the deal and I am ready to pay deposit nowitself\nSeller: i can't make that deal.  I have plenty of other interested parties who are willing to pay 1600+\nBuyer: Ok then I will look into other aparments. My spouse already saw one apartment and finalized. I liked your apartment. So only speaking with you tillnow. Think and decide.. Choice yours.. I am asking for less money. It is correct rent for this apartment 1560\nSeller: i think you should take the other apartment then before you lose it.  I'll work with the other interested parties.\nBuyer: Ok thanks for your time Bye\nBuyer: \n"
+        },
+        {
+            "id": "task767-870935d1ff5e4991b30772ff94c97ad7",
+            "output": [
+                "housing"
+            ],
+            "input": "Buyer: i want to live in your house but i cant pay 1000k\nSeller: It really is a nice home.\nBuyer: i agree i lvoe the area , how old is the home\nSeller: I am not positive. It looks nice I can't tell sorry.\nBuyer: will you do 500 ? i need to buy new beds and furtinure\nSeller: I can't do half. I am sorry. It has a garage and a fenced in yard if you have kids.\nBuyer: i can do 600 if you waive the deposit\nSeller: Honestly I think the lowest I can do is $800 with the deposit. I am sorry. That is what they go for in this neighborhood. \nBuyer: ok i can do 750 lowest and fits my bussdet\nSeller: Ok I think we can make a deal.\nBuyer: deal\nBuyer: \n"
+        },
+        {
+            "id": "task767-db0b3a7179ce4e3aa92fa4fae4c51a9b",
+            "output": [
+                "bike"
+            ],
+            "input": "Seller: Hey so I have a great amp for sale, it's only $45. It was much more new.\nBuyer: How old is the Fender amp?\nSeller: It's only 5 years old, it's in great condition. The only thing you have to worry about is a slight bit of rust in the corners, but that should come off with some elbow grease.\nBuyer: Okay, would you say the amp works perfectly?\nSeller: Yes, it's extremely loud. I can include the amplifier cord to go to the guitar as well. Does $45 sound good?\nBuyer: I was actually thinking more like $30 since it's 5 years old and has some rust on the corners.\nSeller: Well, you'd have to pick it up if I went anything below $37, which I don't think I can do.\nBuyer: I can come pick it up in an hour with cash in hand!\nSeller: You need to be here in 30 minutes, I have someone else interested for it at $40 but I'll go with you if you can get here in time.\nBuyer: I am on my way! Thanks\nSeller: \nSeller: Thank you.\nBuyer: \n"
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

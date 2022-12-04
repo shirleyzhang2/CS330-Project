@@ -1,0 +1,81 @@
+{
+    "Contributors": [
+        "Divya Reddy Katpally"
+    ],
+    "Source": [
+        "dbpedia_14"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/dbpedia_14"
+    ],
+    "Categories": [
+        "Text Matching"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "In this task, you will be given a text and a title. The title will be present in the text, and it will refer to the entity that is mentioned in the text. The title might have some text in parentheses, for example: \"HMS Mallow (K81)\", or be slightly different from what is present in the text. If they still refer to the same entity, then it is a correct title. Indicate your answer as \"Yes\" if the title is correct, otherwise indicate your answer as \"No\"."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Wikipedia"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Text: The Mansfield Building Society is a UK building society which has its headquarters in Mansfield Nottinghamshire. It is a member of the Building Societies Association. \nTitle: Mansfield Building Society",
+            "output": "Yes",
+            "explanation": "The title \"Mansfield Building Society\" is present in the text and it is the main entity that is referred in the text. Hence, it is the title of the document."
+        },
+        {
+            "input": "Text:  The third and current HMS Argyll is a Type 23 'Duke' Class frigate. She is currently the oldest serving Type 23 frigate in the Royal Navy. Like all of her class she is named for a British dukedom in this case that of Argyll. \nTitle: HMS Argyll (F231)",
+            "output": "Yes",
+            "explanation": "\"HMS Argyll\" is present in the text and it is the main entity that is referred in the text. Here, the text in parentheses \"F31\" is not present in the document and it can be ignored. Hence, the output is correct. "
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Text: The Mansfield Building Society is a UK building society which has its headquarters in Mansfield Nottinghamshire. It is a member of the Building Societies Association. \nTitle: Mansfield Building Society",
+            "output": "No",
+            "explanation": "The title \"Mansfield Building Society\" is present in the text and it is the main entity that is referred in the text. Hence, the output is incorrect."
+        },
+        {
+            "input": "Text:  The third and current HMS Argyll is a Type 23 'Duke' Class frigate. She is currently the oldest serving Type 23 frigate in the Royal Navy. Like all of her class she is named for a British dukedom in this case that of Argyll. \nTitle: HMS Argyll (F231)",
+            "output": "HMS Argyll",
+            "explanation": "The output should be either \"Yes\" or \"No\". Hence, it is negative example."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task630-753e5cd9bd454a96840e7ee9b21f4608",
+            "input": "Text:  Stars/Time/Bubbles/Love is the fourth album from The Free Design. It was released in 1970. In 2004 it was named The Free Design's best album to date by Dominique Leone on Pitchfork. \nTitle: Systematic Chaos",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task630-04caaecba04a4b0cadd93951edbe64c7",
+            "input": "Text:  Credit Bank is a commercial bank in Kenya. It is one of the commercial banks licensed by the Central Bank of Kenya the national banking regulator. \nTitle: Credit Bank",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task630-891086f9c805446f995b75ecad6d4673",
+            "input": "Text:  Geographical is the magazine of the Royal Geographical Society (with the Institute of British Geographers) and was founded by Michael Huxley in 1935.The publishers pay a licence fee to the Society which is used to fund the advancement of exploration and research and the promotion of geographical knowledge. The magazine features articles on geographical topics the environment conservation and travel. The magazine is published twelve times per year (monthly). \nTitle: American School in Japan",
+            "output": [
+                "No"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY-SA",
+        "GNU Free Documentation 2.0"
+    ]
+}

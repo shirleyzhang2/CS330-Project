@@ -1,0 +1,85 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "qasper"
+    ],
+    "URL": [
+        "https://allenai.org/project/qasper/home"
+    ],
+    "Categories": [
+        "Question Understanding"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "In this task, you will be given a context from an academic paper and a question based on that context. Your task is to classify the question as \"Extractive\", \"Abstractive\", or \"Yes-no\". Extractive questions can be answered by concatenating extracts taken from the context into a summary. Abstractive questions involve paraphrasing the context using novel sentences. Yes-no questions are questions whose expected answer is one of two choices, typically either yes or no."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Scientific Research Papers"
+    ],
+    "Positive Examples": [
+        {
+            "input": "We build a dataset of Twitter accounts based on two lists annotated in previous works. For the non-factual accounts, we rely on a list of 180 Twitter accounts from BIBREF1. On the other hand, for the factual accounts, we use a list with another 32 Twitter accounts from BIBREF19 that are considered trustworthy by independent third parties. \n Question: How did they obtain the dataset?",
+            "output": "Extractive",
+            "explanation": "The answer to this question has been explicitly mentioned in the context, so the question is extractive."
+        },
+        {
+            "input": "We evaluate our pointer-generator performance using BLEU score. The baseline language model is trained using RNNLM BIBREF23 . Perplexity measure is used in the evaluation.\n\n \n Question: Did they use other evaluation metrics?",
+            "output": "Yes-no",
+            "explanation": "This is a good example, and the given question is a yes-no question."
+        },
+        {
+            "input": "As in the example above, we pre-process documents by removing all numbers and interjections. \n Question: what processing was done on the speeches before being parsed?",
+            "output": "Abstractive",
+            "explanation": "Answering this question needs paraphrasing the context, so this question is abstractive."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "For the English version, we performed both a thorough manual analysis and automatic evaluation across three commonly used TS datasets from two different domains  For the English version, we performed both a thorough manual analysis and automatic evaluation across three commonly used TS datasets from two different domains  The evaluation of the German version is in progress. \n Question: What are the corpora used for the task?",
+            "output": "Yes-no",
+            "explanation": "This question is extractive, and it's not a yes-no question."
+        },
+        {
+            "input": "For Turkish, as the first dataset, we utilised the movie reviews which are collected from a popular website. The number of reviews in this movie corpus is 20,244 and the average number of words in reviews is 39. Each of these reviews has a star-rating score which is indicative of sentiment. These polarity scores are between the values 0.5 and 5, at intervals of 0.5. We consider a review to be negative it the score is equal to or lower than 2.5. On the other hand, if it is equal to or higher than 4, it is assumed to be positive. We have randomly selected 7,020 negative and 7,020 positive reviews and processed only them. \n Question: What details are given about the movie domain dataset?",
+            "output": "Extractive",
+            "explanation": "This question is Abstractive because we need to paraphrase the context to get to the answer."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task462-aa9a07e1249f45e48d5373168691a56d",
+            "input": "Moreover, because English does not mark grammatical gender, approaches developed for English are not transferable to morphologically rich languages that exhibit gender agreement BIBREF8 . \n Question: Why does not the approach from English work on other languages?",
+            "output": [
+                "Abstractive"
+            ]
+        },
+        {
+            "id": "task462-9aa5dd44c7434ce6bccdfda3de0c4b9a",
+            "input": "Questions are gathered from anonymized, aggregated queries to the Google search engine. Queries that are likely to be yes/no questions are heuristically identified: we found selecting queries where the first word is in a manually constructed set of indicator words and are of sufficient length, to be effective.\n\nQuestions are only kept if a Wikipedia page is returned as one of the first five results, in which case the question and Wikipedia page are given to a human annotator for further processing.\n\nAnnotators label question/article pairs in a three-step process. First, they decide if the question is good, meaning it is comprehensible, unambiguous, and requesting factual information. This judgment is made before the annotator sees the Wikipedia page. Next, for good questions, annotators find a passage within the document that contains enough information to answer the question. Annotators can mark questions as \u201cnot answerable\" if the Wikipedia article does not contain the requested information. Finally, annotators mark whether the question's answer is \u201cyes\" or \u201cno\". Annotating data in this manner is quite expensive since annotators need to search entire Wikipedia documents for relevant evidence and read the text carefully. \n Question: how was the dataset built?",
+            "output": [
+                "Abstractive"
+            ]
+        },
+        {
+            "id": "task462-1e1cddb7ec8c42fea8c2aa024d95955e",
+            "input": "We collected tweets associated to a dozen US mainstream news websites, i.e. most trusted sources described in BIBREF18, with the Streaming API, and we referred to Hoaxy API BIBREF16 for what concerns tweets containing links to 100+ US disinformation outlets. We filtered out articles associated to less than 50 tweets. The resulting dataset contains overall $\\sim $1.7 million tweets for mainstream news, collected in a period of three weeks (February 25th, 2019-March 18th, 2019), which are associated to 6,978 news articles, and $\\sim $1.6 million tweets for disinformation, collected in a period of three months (January 1st, 2019-March 18th, 2019) for sake of balance of the two classes, which hold 5,775 distinct articles. Diffusion censoring effects BIBREF14 were correctly taken into account in both collection procedures. We provide in Figure FIGREF4 the distribution of articles by source and political bias for both news domains. For what concerns the Italian scenario we first collected tweets with the Streaming API in a 3-week period (April 19th, 2019-May 5th, 2019), filtering those containing URLs pointing to Italian official newspapers websites as described in BIBREF22; these correspond to the list provided by the association for the verification of newspaper circulation in Italy (Accertamenti Diffusione Stampa). We instead referred to the dataset provided by BIBREF23 to obtain a set of tweets, collected continuously since January 2019 using the same Twitter endpoint, which contain URLs to 60+ Italian disinformation websites. In order to get balanced classes (April 5th, 2019-May 5th, 2019), we retained data collected in a longer period w.r.t to mainstream news. In both cases we filtered out articles with less than 50 tweets; overall this dataset contains $\\sim $160k mainstream tweets, corresponding to 227 news articles, and $\\sim $100k disinformation tweets, corresponding to 237 news articles. We provide in Figure FIGREF5 the distribution of articles according to distinct sources for both news domains.  \n Question: Which two news domains are country-independent?",
+            "output": [
+                "Abstractive"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

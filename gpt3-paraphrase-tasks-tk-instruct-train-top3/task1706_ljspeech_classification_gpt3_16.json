@@ -1,0 +1,85 @@
+{
+    "Contributors": [
+        "Arya Tawde"
+    ],
+    "Source": [
+        "lj_speec"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/lj_speech"
+    ],
+    "Categories": [
+        "Punctuation Error Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "Given a passage or sentence, you need to output True if all punctuation is properly applied, or False if not. Proper punctuation includes proper capitalization and the use of punctuations such as commas, semi-colons and full-stops."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Books"
+    ],
+    "Positive Examples": [
+        {
+            "input": "jack ate the beans that the old man gave him.",
+            "output": "False",
+            "explanation": "The first letter of a new sentence is not capitalized, hence punctuation is incomplete."
+        },
+        {
+            "input": "The old sage was wise intelligent frail and weak",
+            "output": "False",
+            "explanation": "Commas and full-stop are missing and hence punctuation is not complete."
+        },
+        {
+            "input": "The boy looked at the red flower.",
+            "output": "True",
+            "explanation": "Capitalization and Punctuation are perfect."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "The chicken crossed the road.",
+            "output": "False",
+            "explanation": "There is nothing wrong with the punctuation, the answer should be True."
+        },
+        {
+            "input": "The professor congratualted marie on her victory.",
+            "output": "True",
+            "explanation": "Marie is a proper noun and should be capitalized but it isn't. Therefore the answer should be False."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1706-7d0aa034b03c4b5a8e197aa96229d6ee",
+            "input": "The Chronicles of Newgate, Volume 2. By Arthur Griffiths. Section 8: The beginnings of prison reform.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "id": "task1706-4f4f177781d54d169f1f40cf6e2c6fb9",
+            "input": "He cannot and will not take the precautions of a dictator or a sovereign.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "id": "task1706-a5e4a4c3def64be18de156d2c0e16f37",
+            "input": "Officer Ray Hawkins said",
+            "output": [
+                "False"
+            ]
+        }
+    ],
+    "Instance License": [
+        "LibriVox: Public Domain (https://librivox.org/pages/public-domain/)"
+    ]
+}

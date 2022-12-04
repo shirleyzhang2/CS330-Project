@@ -1,0 +1,80 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "hybridqa"
+    ],
+    "URL": [
+        "https://github.com/wenhuchen/HybridQA"
+    ],
+    "Categories": [
+        "Pos Tagging"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You will be presented with a question, a word, and a POS tag. Your task is to determine if the POS tag of the given word in the question is equal to the given POS tag. Answer with True or False."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Wikipedia"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Who were the builders of the mosque in Herat with fire temples ? \n, Word: Who \n, POS tag: IN",
+            "output": "False",
+            "explanation": "This is a good example. POS tag of who should be WP(Wh-pronoun), and not IN(Preposition)."
+        },
+        {
+            "input": "What is the borough in which Kia Oval is located ? \n, Word: is \n, POS tag: VBZ",
+            "output": "True",
+            "explanation": "Based on the given question, \"is\" is a 3rd person singular present verb and Its POS tag is VBZ."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "After what season did the number 7 competitor retire ? \n, Word: 7 \n, POS tag: NN",
+            "output": "True",
+            "explanation": "7 is a cardinal number, and Its POS tag should be CD, so the output should be False."
+        },
+        {
+            "input": "After what season did the number 7 competitor retire ? \n, Word: 7 \n, POS tag: NN",
+            "output": "Wrong",
+            "explanation": "Only \"True\" or \"False\" are allowed, and you can't use any other word here."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task346-90ffdb8fe1fe408db6aa33efe16c1f90",
+            "input": "When was the castle built in 1304 destroyed ? \n, Word: built \n, POS tag: NN",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "id": "task346-de1dc1acac0a4ff5b9f8f2da2b65c1ca",
+            "input": "What is the conservation of the lemur species named for a star of Monty Python ? \n, Word: star \n, POS tag: DT",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "id": "task346-796f4375b1fd4766b3f7c3a8f8c7862d",
+            "input": "What is the name of the serial whose channel is based in New Delhi ? \n, Word: the \n, POS tag: DT",
+            "output": [
+                "True"
+            ]
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

@@ -1,0 +1,88 @@
+{
+    "Contributors": [
+        "Pegah Alipoormolabashi"
+    ],
+    "Source": [
+        "wsc; enhanced_wsc"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/winograd_wsc; https://github.com/mhany90/perturbed-wsc"
+    ],
+    "Categories": [
+        "Text Matching"
+    ],
+    "Reasoning": [
+        "Commonsense Reasoning"
+    ],
+    "Definition": [
+        "You will be given two sentences. The first sentence is the original sentence, and the second sentence is a paraphrase of the original sentence with changes in aspect, tense, number, voice, adverb, gender, or synonym. Your task is to identify the type of change (tense, number, voice, adverb, gender, or synonym) that was made from the original sentence to the paraphrase."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue",
+        "Narrative"
+    ],
+    "Positive Examples": [
+        {
+            "input": "original sentence: Lily spoke to Donna , breaking her silence . paraphrase: Lily is speaking to Donna , breaking her silence .",
+            "output": "Tense",
+            "explanation": "The verbs in this example are changed from past tense to present tense."
+        },
+        {
+            "input": "original sentence: I'm sure that my map will show this building ; it is very good . paraphrase: I'm sure that my maps will show these buildings ; they are very good .",
+            "output": "Number",
+            "explanation": "In this example, map and building and their pronouns has been changed. So, the output should be Number."
+        },
+        {
+            "input": "original sentence: Jim signaled the barman and gestured toward his bathroom key . paraphrase: Jim dreamily signaled the barman and vaguely gestured toward his bathroom key .",
+            "output": "Adverb",
+            "explanation": "In this example the adverbs \"vaguely\" and \"dreamily\" are added to the original sentence."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "original sentence: The dog chased the cat , which ran up a tree . It waited at the bottom . paraphrase: The dog is chasing the cat , which is running up a tree . It is waiting at the bottom .",
+            "output": "Voice",
+            "explanation": "The change in the original sentence is to tense, as the past tense verbs are changed to present tense ones. \"Voice\" is not a correct answer here."
+        },
+        {
+            "input": "original sentence: John was doing research in the library when he heard a man humming and whistling . He was very annoyed . paraphrase: John and Steve were doing research in the library when they heard men humming and whistling . They were very annoyed .",
+            "output": "Number is changed.",
+            "explanation": "You should only output the title of the change, and nothing more."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task276-376dc5ffed9340809feea810ae7846f6",
+            "input": "original sentence: Bob paid for Charlie's college education , but now Charlie acts as though it never happened . He is very hurt . paraphrase: Jane paid for Anne's college education , but now Anne acts as though it never happened . She is very hurt .",
+            "output": [
+                "Gender"
+            ]
+        },
+        {
+            "id": "task276-4f28e0fb18004750baa17b441ad0dba6",
+            "input": "original sentence: Jane knocked on the door , and Susan answered it . She invited her to come out . paraphrase: cory knocked on the door , and dolly answered it . she invited her to come out .",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "id": "task276-a76f0a0aa8d9415595c8670322aa7e1b",
+            "input": "original sentence: Sam and Amy are passionately in love , but Amy's parents are unhappy about it , because they are fifteen . paraphrase: Sam and Amy are passionately in love , but Amy's parents are very unhappy about it , because they are fifteen .",
+            "output": [
+                "Adverb"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

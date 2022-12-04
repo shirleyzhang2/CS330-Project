@@ -1,0 +1,91 @@
+{
+    "Contributors": [
+        "Sujan Reddy A"
+    ],
+    "Source": [
+        "human_ratings_of_natural_language_generation_outputs"
+    ],
+    "URL": [
+        "https://researchportal.hw.ac.uk/en/datasets/human-ratings-of-natural-language-generation-outputs"
+    ],
+    "Categories": [
+        "Text Quality Evaluation"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You will be given an original reference and a system-generated reference. Your task is to determine if the system-generated reference sounds natural. If it could have been produced by a native speaker, output 1. If not, output 0."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue",
+        "Public Places -> Restaurants"
+    ],
+    "Positive Examples": [
+        {
+            "input": "System Reference: x is a reasonably priced fast food restaurant down by river cheap.\nOriginal Reference: x is a cheap fastfood restaurant located near the riverside.",
+            "output": "1",
+            "explanation": "The system reference could have been uttered by a native speaker."
+        },
+        {
+            "input": "System Reference: red door cafe, is in the are hill of hayes valley cathedral hill.\nOriginal Reference: red door cafe is in the hayes valley and cathedral hill area.",
+            "output": "0",
+            "explanation": "The system reference could not have been uttered by a native speaker because \"is in the are hill of\" is not a meaningful phrase."
+        },
+        {
+            "input": "System Reference: x is a chinese restaurant in the city centre and area near x.\nOriginal Reference: x is a chinese restaurant in the city centre near x.",
+            "output": "0",
+            "explanation": "The system reference contains the word \"and\" after city centre and is therefore grammatically incorrect since a conjunction is not required here."
+        },
+        {
+            "input": "System Reference: the name is taj campton place and it is a nice hotel.\nOriginal Reference: the taj campton place is a nice hotel.",
+            "output": "0",
+            "explanation": "The system reference is not natural because it is unlikely that a native speaker says \"the name is taj campton place\"."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "System Reference: x is a reasonably priced fast food restaurant down by river cheap.\nOriginal Reference: x is a cheap fastfood restaurant located near the riverside.",
+            "output": "5.5",
+            "explanation": "The output has to be ."
+        },
+        {
+            "input": "System Reference: x is a restaurant that serves italian serving fashionable and it english cafe food.\nOriginal Reference: x restaurant is a cafe which serves english food.",
+            "output": "I dont know",
+            "explanation": "Do not output anything other that 1 or 0."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1186-5c5c3c4c251a46e6a99f137b3267f30f",
+            "input": "System Reference: the inn san francisco is located near mission, they accept credit cards, and internet access.\nOriginal Reference: the inn san francisco is located near mission and they accept credit card -s and internet access.",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "id": "task1186-ecef248542b14f95b6de888e968664d1",
+            "input": "System Reference: hotel kabuki is near japantown and has internet that allows dogs.\nOriginal Reference: hotel kabuki allows dogs, has internet and is near japantown.",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "id": "task1186-52c4e47163364544be964ed6cd79543e",
+            "input": "System Reference: darbar restaurant allows children, it serves pakistani food, and it is good for lunch.\nOriginal Reference: darbar restaurant serves good pakistani food for lunch that allows child -s.",
+            "output": [
+                "1"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY"
+    ]
+}

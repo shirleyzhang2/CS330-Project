@@ -1,0 +1,126 @@
+{
+    "Contributors": [
+        "Shailaja Keyur Sampat"
+    ],
+    "Source": [
+        "torque"
+    ],
+    "URL": [
+        "https://allennlp.org/torque.html"
+    ],
+    "Categories": [
+        "Information Extraction"
+    ],
+    "Reasoning": [
+        "Commonsense Reasoning"
+    ],
+    "Definition": [
+        "In this task, you will be given a passage. Your goal is to identify an event from the passage. An event is defined as a single word representing something that happened, is happening, or may happen. The event must not be a pronoun or an adjective. For noun events with multiple words, use the last word in the phrase as event."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "News"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Passage: I submitted the hit. The hit was approved, and then I was paid.",
+            "output": "approved",
+            "explanation": "There are three events in this passage (i) submission event (\"submitted\") (ii) the approval event (\"approved\"), and (iii) the payment event (\"paid\"). You can use any one of them as an output."
+        },
+        {
+            "input": "Passage: He was caught in the snow storm.",
+            "output": "storm",
+            "explanation": "There are two events in this passage (i) he was caught (\"caught\") and (ii) the snow storm event (\"storm\"). You can use any one of them as an output. Since snow storm is a noun event with multiple words, we only use the last word 'storm' as an event."
+        },
+        {
+            "input": "Passage: He is on the east coast.",
+            "output": "is",
+            "explanation": "The copula \"is\" an event describing his location."
+        },
+        {
+            "input": "Passage: He wanted to finish the task.",
+            "output": "wanted",
+            "explanation": "There are two events in this passage (i) he wanted to do something (\"wanted\") and (ii) finish the task (\"finish\"). Either of wanted or finish can be used as output. However note that though there is an uncertainty about the task i.e. indeed finished or not, \"finish\" is still a valid event."
+        },
+        {
+            "input": "Passage: If he works hard, then he will finish the task.",
+            "output": "finish",
+            "explanation": "There are two events in this passage (i) he works hard (\"works\") and (ii) he will finish the task. (\"finish\"). You can use either of works or finish as an output. Here the second event happens only if the first one is true, but both are considered as events. This is an example of hypothetical event."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Passage: He is happy.",
+            "output": "happy",
+            "explanation": "Happy is an adjective and hence cannot be an event. The output should be \"is\" which represents an event describing his attribute of happiness."
+        },
+        {
+            "input": "Passage: He was caught in the elevator.",
+            "output": "elevator",
+            "explanation": "Not every noun can be an event. Here \"elevator\" is an object and one cannot say \"an elevator happened\" hence it is not an event. \"caught\" is a correct output."
+        },
+        {
+            "input": "Passage: The flu season is winding down.",
+            "output": "flu season",
+            "explanation": "The \"flu season\" is a noun events with multiple words, but only last word \"season\" sould be used as an event as per definition."
+        },
+        {
+            "input": "Passage: The death toll climbed up to 99 soon after the explosion.",
+            "output": "blast",
+            "explanation": "There are two events in this passage \"climbed\" and \"explosion\". Though blast is a synonym of explosion, it is not present in the passage. The output must contain events that are present in the passage."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task388-55611b58b9f44801818cbbac00fcfff9",
+            "input": "Passage: Bethlehem Steel Corp., hammered by higher costs and lower shipments to key automotive and service-center customers, posted a 54% drop in third-quarter profit. Separately, two more of the nation's top steelmakers -- Armco Inc. and National Intergroup Inc. -- reported lower operating earnings in their steel businesses, marking what is generally believed to be the end of a two-year boom in the industry.",
+            "output": [
+                "hammered",
+                "posted",
+                "drop",
+                "reported",
+                "marking",
+                "believed",
+                "boom"
+            ]
+        },
+        {
+            "id": "task388-8735c1b348244c2bb20cf7572267c297",
+            "input": "Passage: Rodionov said last month that a number of other Russian armed forces generals were likely to be dismissed soon for corruption, without naming any of them. ",
+            "output": [
+                "said",
+                "were",
+                "dismissed",
+                "naming"
+            ]
+        },
+        {
+            "id": "task388-cd5a5d9712b8433b94f15d296f9aa882",
+            "input": "Passage: He said that the Israeli operation came as part of a pressure campaign exerted against the Hamas-led government and the Palestinian people. Attributing the action to the inclusion of an ultra-nationalist politician into Israel's government, Haneya said that \"The massacre committed today in Beit Hanoun is a result of the Israeli government's move to include a radical minister.\"",
+            "output": [
+                "said",
+                "operation",
+                "came",
+                "campaign",
+                "exerted",
+                "Attributing",
+                "inclusion",
+                "said",
+                "committed",
+                "move",
+                "include"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Apache 2.0"
+    ]
+}

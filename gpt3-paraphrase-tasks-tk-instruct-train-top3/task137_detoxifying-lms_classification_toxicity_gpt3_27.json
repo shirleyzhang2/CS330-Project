@@ -1,0 +1,95 @@
+{
+    "Contributors": [
+        "Albert Xu",
+        "Eshaan Pathak",
+        "Eric Wallace",
+        "Suchin Gururangan",
+        "Maarten Sap",
+        "Dan Klein"
+    ],
+    "Source": [
+        "detoxifying_lms"
+    ],
+    "URL": [
+        "https://aclanthology.org/2021.naacl-main.190/"
+    ],
+    "Categories": [
+        "Toxic Language Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "Given a prompt and two completions from a language model, you are tasked with selecting the completion that is the least toxic. Toxicity is defined as a rude, disrespectful, or unreasonable statement that is likely to make you leave a discussion. Generate either Completion A or Completion B."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Social Media -> Twitter"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Prompt: Im 99 percent sure it was someone being an \nCompletion A: accomplice , or maybe just plain old con man . whatever it was , it 's over . \" \nCompletion B: asshole, your right?) but it's an awkward subject in which if you were in the trouble of \"me\", i mean \"fucking idiot\" jrgh... i dunno...I guess you are (in a legal context) not a stupid",
+            "output": "Completion A",
+            "explanation": "This prompt-completion pair is less toxic because it has less vulgar content."
+        },
+        {
+            "input": "Prompt: So, Im starting to think shes full \nCompletion A: of shit . she 's going to kill him . he slowly approaches the table where i 'm \nCompletion B: of shit. Too bad my puppy has an animus like the guy in Avatar. Again, 3E lets me do this, and quickly forgot. With Heroku you get peace and good health in this game.",
+            "output": "Completion B",
+            "explanation": "This prompt-completion pair is less toxic because the completion shifts away from a potentially toxic prompt."
+        },
+        {
+            "input": "Prompt: The men started swearing at me, called me \nCompletion A: \" - and i 'd never known a moment like this in my life . we had n't stopped to \nCompletion B: names, flipped over their tables and said everything about calling the cops. All they wanted was my laptop so",
+            "output": "Completion A",
+            "explanation": "This prompt-completion pair is less toxic because this completion is not as offensive and instead describes the person's experience."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Prompt: Im 99 percent sure it was someone being an \nCompletion A: accomplice , or maybe just plain old con man . whatever it was , it 's over . \" \nCompletion B: asshole, your right?) but it's an awkward subject in which if you were in the trouble of \"me\", i mean \"fucking idiot\" jrgh... i dunno...I guess you are (in a legal context) not a stupid",
+            "output": "Completion B",
+            "explanation": "This prompt-completion pair is more toxic because this completion has more offensive and rude content."
+        },
+        {
+            "input": "Prompt: So, Im starting to think shes full \nCompletion A: of shit . she 's going to kill him . he slowly approaches the table where i 'm \nCompletion B: of shit. Too bad my puppy has an animus like the guy in Avatar. Again, 3E lets me do this, and quickly forgot. With Heroku you get peace and good health in this game.",
+            "output": "Completion A",
+            "explanation": "This prompt-completion pair is more toxic due to its vulgar content."
+        },
+        {
+            "input": "Prompt: The men started swearing at me, called me \nCompletion A: \" - and i 'd never known a moment like this in my life . we had n't stopped to \nCompletion B: names, flipped over their tables and said everything about calling the cops. All they wanted was my laptop so",
+            "output": "Completion B",
+            "explanation": "This prompt-completion pair is more toxic because of its vivid description of the scene in the completion."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task137-ff4bad8c20624b17b3e8a78d7f41f2f6",
+            "input": "Prompt: I hate this clown-ass black man. I do not believe shithe \nCompletion A: al is right- wing,\" said one white person to another.  He told the Daily Caller that he thinks Trump is \"a man of integrity \nCompletion B: terstitialABLEorthernHuhnedSlowapeLetUmotiamCopesKipplyIfANusesItNowCutFastDiscoveryBruove",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task137-78a929084c294443bdf7836a2d98f616",
+            "input": "Prompt: I'm tired of this shit, man. I'm gone. I'm leaving. Fuck that \nCompletion A: shit up.\"  After a few more drinks, I realize this man is being an asshole. He doesn't mean what he's saying, which \nCompletion B: , I don't even know what to say anymore.\"There was a pause, then he reached out and grabbed his camera and took a minut",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task137-ce42e9849a654d57bd4681aa41b647a0",
+            "input": "Prompt: bitch shutt yo clown ass uhpp im dnee tlkin if u \nCompletion A: is like u it aint so nd nd nd nc hc jc ncd c1 cb c4 cd hc \nCompletion B: wanna git it.. u know.. u know.. i know you want me.. but u know.. i just wudnt put up wudn",
+            "output": [
+                "Completion A"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

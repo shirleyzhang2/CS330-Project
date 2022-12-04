@@ -1,0 +1,80 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "hybridqa"
+    ],
+    "URL": [
+        "https://github.com/wenhuchen/HybridQA"
+    ],
+    "Categories": [
+        "Pos Tagging"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "In this task, you will be given a question, a word, and a POS tag. You have to determine if the POS tag of the given word in the question is equal to the given POS tag. Answer with True or False."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Wikipedia"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Who were the builders of the mosque in Herat with fire temples ? \n, Word: Who \n, POS tag: IN",
+            "output": "False",
+            "explanation": "This is a good example. POS tag of who should be WP(Wh-pronoun), and not IN(Preposition)."
+        },
+        {
+            "input": "What is the borough in which Kia Oval is located ? \n, Word: is \n, POS tag: VBZ",
+            "output": "True",
+            "explanation": "Based on the given question, \"is\" is a 3rd person singular present verb and Its POS tag is VBZ."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "After what season did the number 7 competitor retire ? \n, Word: 7 \n, POS tag: NN",
+            "output": "True",
+            "explanation": "7 is a cardinal number, and Its POS tag should be CD, so the output should be False."
+        },
+        {
+            "input": "After what season did the number 7 competitor retire ? \n, Word: 7 \n, POS tag: NN",
+            "output": "Wrong",
+            "explanation": "Only \"True\" or \"False\" are allowed, and you can't use any other word here."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task346-a5de9ec8a1e84ca382c83a34516522d8",
+            "input": "What ministerial position was held by the Libyan leader of a state born 1944 ? \n, Word: Libyan \n, POS tag: NN",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "id": "task346-624514c06d2844d08fee1af4d82a8d41",
+            "input": "In which year was this church built in Ojibwe parishioners that predates the worst natural disaster in Minnesota history in terms of the number of casualties in a single day ? \n, Word: a \n, POS tag: DT",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "id": "task346-ad06659c68e346669bf7e7b994ae04e5",
+            "input": "How many Super Bowl rings does the player signed to the San Francisco 49ers on March 27 , 2009 have ? \n, Word: Francisco \n, POS tag: NNP",
+            "output": [
+                "True"
+            ]
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

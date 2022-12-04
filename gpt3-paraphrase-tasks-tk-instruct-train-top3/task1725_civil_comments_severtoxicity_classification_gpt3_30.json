@@ -1,0 +1,83 @@
+{
+    "Contributors": [
+        "Himanshu Asati"
+    ],
+    "Source": [
+        "civil_comments"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/civil_comments"
+    ],
+    "Categories": [
+        "Toxic Language Detection"
+    ],
+    "Reasoning": [
+        "Commonsense Reasoning -> Social Situations"
+    ],
+    "Definition": [
+        "Given a comment, categorize it as being severely toxic or not. If the comment is severely toxic, output 'Yes'. Otherwise, output 'No'."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue",
+        "Social Media"
+    ],
+    "Positive Examples": [
+        {
+            "input": "First off IDIOTS HIS HONDA IS NOT STOLEN I HAVE THE TITLE SIGNED OFF BY LAST OWNER IN MY POSSESSION.2ND THE ONLY THING HE WAS IN TROUBLE FOR BEFORE THE CHASE WAS FOR NOT CHECKING IN WITH HIS PROBATION OFFICER WHICH BRINGS THIS FACT TO LIGHT.YOU CAN DOWNLOAD DOUGLAS COUNTY PROBATION DEPARTMENT LIST OF CURRENT PEOPLE ON PROBATION AND SCROLL THROUGH THE ENTIRE LIST HIS NAME IS NOWHERE ON IT.I ALSO HAVE THAT LIST ON MY PHONE DIRECTLY FROM TTHEIR WEBSIGHT SO THEREFORE I AM GOING TO INVESTIGATE MORE AND BE FILING PAPERWORK AND IF NEEDBE I WILL GO THRU FBI TO RESOLVE THE ACTIONS OF THE CROOKED DEALINGS OF DCPD....IF YOURE GONNA WRITE A STORY ABOUT SOMEONE YOU SHOULD GET THE FACTS STRAIGHT..ALSO I WAS NOT ON PHONE WITH MY SON DURING THE CHASE.HE CALLED ME AT THE BEGINNING OF CHASE AND AFTER HE LEFT HIS CAR.THE DEPUTIES WERE RIGHT HE4E WITH ME DURING MOST OF CHASE .SO AGAIN GET YOUR STORY STRAIGHT..I HAVE NOT HEARD FROM MY SONS SINCE THEN...",
+            "output": "Yes",
+            "explanation": "The comment here contains all caps phrase which is interpreted as strong language in text. Also, it has word 'IDIOTS' which is meant as an derogatory attack on a subject. This should be severly toxic . Hence, it is a positive example"
+        },
+        {
+            "input": "David, you ought to consider checking your facts rather than making things up all while being a bully and a troll.",
+            "output": "No",
+            "explanation": "The comment is toxic but it doesn't use very strong language or racial slurs or words that denote sever toxicity. It is classified as not severely toxic. Therefore, this is a positive example."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "FFFFUUUUUUUUUUUUUUU",
+            "output": "No",
+            "explanation": "The comment is abbreviation of 'Fuck You' which is toxic, but classified as not severly toxic. Therefore, this is a negative example."
+        },
+        {
+            "input": "Yeah, that man would look pretty ridiculous, given that 80% of congress, 95% of Fortune 500 CEOs, and 100% of American presidents are male. Why, do you suppose, do those women make an issue of that?",
+            "output": "Yes",
+            "explanation": "The comment does not contain any derogatory words or attacks on any subject that would cause it to be severely toxic, however it is classified as severely toxic. This is a negative example "
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1725-7b306b3de12c4a46a040daa2612c164d",
+            "input": "Sorry to have to do this, but just to see if profanity filtering is enabled: fuck.",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1725-6ead9e7598f047e3b123fbaedad55ce0",
+            "input": "Yeah - accurately quoting what somebody said is just SO unfair.",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1725-06754c9d231b4af084c1074372c3eee9",
+            "input": "I do not believe \"Why do liberals love criminals? My God, liberals are insane!\" (Pabst)\nNor do I believe \"NRA gun freaks are mentally unstable and are the source of most of the domestic terrorism occurring in the States.\" (Skolnik)\n\nBut I do fear  there is truth to \"Reading the comments I have no doubt we\u2019re heading for civil war.\" (Sanders)\nSo please folks of all sides, get a grip.  We're all Americans here.",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

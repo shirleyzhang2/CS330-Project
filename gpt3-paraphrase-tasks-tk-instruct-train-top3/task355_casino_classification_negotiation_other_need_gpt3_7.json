@@ -1,0 +1,80 @@
+{
+    "Contributors": [
+        "Kushal Chawla"
+    ],
+    "Source": [
+        "casino"
+    ],
+    "URL": [
+        "https://aclanthology.org/2021.naacl-main.254.pdf"
+    ],
+    "Categories": [
+        "Negotiation Strategy Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You will receive an utterance and recent dialogue context containing past 3 utterances (if available). Output 'Yes' if the utterance contains the other-need strategy, otherwise output 'No'. The other-need strategy is selfish and is used when the participants discuss a need for someone else rather than themselves."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Context: 'I was hoping to get alot of water as well, would you be ok with me getting two waters and three firewoods if you get all the food and one water?' 'Hmm, that's not favorable for me going by the volume of items left in my arsenal. Water is more of a higher priority than food. So, I would exchange 1 pack of food for an additional water' 'So that way you would get two waters and two foods? Those are my priorities as well but i would be ok with it since that way i would get five items and you would get only four.'\nUtterance: 'Those are your priorities?? Then that's not fair for you. Then I take 2 water, 1 firewood and 1 food. This is the lowest I can offer'",
+            "output": "No",
+            "explanation": "This is correct. The participant does not create a specific need for anybody."
+        },
+        {
+            "input": "Context: 'I am doing okay but am in need of some supplies. What about you?' 'Same here. My kids are really looking forward to this. What is most important to you?' 'Firewood! I need it to cook my food and also to stay warm. What about you?'\nUtterance: 'That is the same for me as well. My kids were really looking forward to making s'mores and telling stories by the campfire. That's all they've been talking about'",
+            "output": "Yes",
+            "explanation": "In this utterance, the participant uses other-need by mentioning the needs of their kids."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Context: 'Hi! How are you doing today?' 'I'm fine. And yourself?' 'Pretty good. I'm really excited about going camping though!'\nUtterance: 'Me too. I haven't been camping for several years. '",
+            "output": "Yes",
+            "explanation": "There is no need created here. So the correct answer is 'No'."
+        },
+        {
+            "input": "Context: 'Hi, I hope we can work together to get an offer that benefits both of us.\ud83d\ude42'\nUtterance: 'I agree! Nice to meet you... I have two boys who always eat! Any chance I canget 2 food?'",
+            "output": "No",
+            "explanation": "The participant mentions that their boys eat and hence implies that they would need food. Hence, the correct answer here is 'Yes'."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task355-e76eba16979444cba871447ef492ab1e",
+            "input": "Context: 'Yes. Can you help me to give some extra fodd?' 'I am willing to give you the good, though it would help us--we have a large group.  I really would like to take the water.  We are camping out in a primitive campsite with no running water.' 'Ya sure. '\nUtterance: 'Sorry for the type--I meant 'food' not 'good'.\ud83d\ude42'",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task355-27b704b718e447b09426966cfc742e3c",
+            "input": "Context: 'How are you enjoying the camping trip so far?' 'Hi. It\u2019s great, but very cold here. How about you? ' 'Yes the cold is hard to adjust to I can't seem to shake the chill.'\nUtterance: 'I could really use some extra firewood!'",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task355-f83230b42525447790e72ef07d58c8c7",
+            "input": "Context: 'Hello how are you?' 'I'm great thank you! How are you?'\nUtterance: 'Good thanks. I'm a bodybuilder so I need a lot of food and water if that's ok with you?'",
+            "output": [
+                "No"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

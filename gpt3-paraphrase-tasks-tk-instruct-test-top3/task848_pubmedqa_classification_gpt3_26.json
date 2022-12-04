@@ -1,0 +1,90 @@
+{
+    "Contributors": [
+        "Jalansh Munshi"
+    ],
+    "Source": [
+        "pubmed_qa"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/pubmed_qa"
+    ],
+    "Categories": [
+        "Intent Identification"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "Given a passage, your task is to output '1' if the passage has a definite objective/aim/goal, and '0' if it does not."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Medicine"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Chronic rhinosinusitis (CRS) is a heterogeneous disease with an uncertain pathogenesis. Group 2 innate lymphoid cells (ILC2s) represent a recently discovered cell population which has been implicated in driving Th2 inflammation in CRS; however, their relationship with clinical disease characteristics has yet to be investigated. The aim of this study was to identify ILC2s in sinus mucosa in patients with CRS and controls and compare ILC2s across characteristics of disease. A cross-sectional study of patients with CRS undergoing endoscopic sinus surgery was conducted. Sinus mucosal biopsies were obtained during surgery and control tissue from patients undergoing pituitary tumour resection through transphenoidal approach. ILC2s were identified as CD45(+) Lin(-) CD127(+) CD4(-) CD8(-) CRTH2(CD294)(+) CD161(+) cells in single cell suspensions through flow cytometry. ILC2 frequencies, measured as a percentage of CD45(+) cells, were compared across CRS phenotype, endotype, inflammatory CRS subtype and other disease characteristics including blood eosinophils, serum IgE, asthma status and nasal symptom score. 35 patients (40% female, age 48 \u00b1 17 years) including 13 with eosinophilic CRS (eCRS), 13 with non-eCRS and 9 controls were recruited. ILC2 frequencies were associated with the presence of nasal polyps (P = 0.002) as well as high tissue eosinophilia (P = 0.004) and eosinophil-dominant CRS (P = 0.001) (Mann-Whitney U). They were also associated with increased blood eosinophilia (P = 0.005). There were no significant associations found between ILC2s and serum total IgE and allergic disease. In the CRS with nasal polyps (CRSwNP) population, ILC2s were increased in patients with co-existing asthma (P = 0.03). ILC2s were also correlated with worsening nasal symptom score in CRS (P = 0.04).",
+            "output": "1",
+            "explanation": "There is a line in the passage which say 'The aim of this study was...' which suggests that it is talking about a specific aim. Hence, the output should be 1 as this passage has a definite aim."
+        },
+        {
+            "input": "Phosphatidylethanolamine N-methyltransferase (PEMT), a liver enriched enzyme, is responsible for approximately one third of hepatic phosphatidylcholine biosynthesis. When fed a high-fat diet (HFD), Pemt(-/-) mice are protected from HF-induced obesity; however, they develop steatohepatitis. The vagus nerve relays signals between liver and brain that regulate peripheral adiposity and pancreas function. Here we explore a possible role of the hepatic branch of the vagus nerve in the development of diet induced obesity and steatohepatitis in Pemt(-/-) mice. 8-week old Pemt(-/-) and Pemt(+/+) mice were subjected to hepatic vagotomy (HV) or capsaicin treatment, which selectively disrupts afferent nerves, and were compared to sham-operated or vehicle-treatment, respectively. After surgery, mice were fed a HFD for 10 weeks. HV abolished the protection against the HFD-induced obesity and glucose intolerance in Pemt(-/-) mice. HV normalized phospholipid content and prevented steatohepatitis in Pemt(-/-) mice. Moreover, HV increased the hepatic anti-inflammatory cytokine interleukin-10, reduced chemokine monocyte chemotactic protein-1 and the ER stress marker C/EBP homologous protein. Furthermore, HV normalized the expression of mitochondrial electron transport chain proteins and of proteins involved in fatty acid synthesis, acetyl-CoA carboxylase and fatty acid synthase in Pemt(-/-) mice. However, disruption of the hepatic afferent vagus nerve by capsaicin failed to reverse either the protection against the HFD-induced obesity or the development of HF-induced steatohepatitis in Pemt(-/-) mice.",
+            "output": "1",
+            "explanation": "If you take a look at the line 'Here we explore a possible role of the hepatic branch', it says that it is exploring a possible role. This means that it has a specific goal and hence, the output should be 1."
+        },
+        {
+            "input": "Psammaplin A (PsA) is a natural product isolated from marine sponges, which has been demonstrated to have anticancer activity against several human cancer cell lines via the induction of cell cycle arrest and apoptosis. New drugs that are less toxic and more effective against multidrug-resistant cancers are urgently needed. We tested cell proliferation, cell cycle progression and autophagic cell death pathway in doxorubicin-resistant MCF-7 (MCF-7/adr) human breast cancer cells. The potency of PsA was further determined using an in vivo xenograft model.",
+            "output": "0",
+            "explanation": "This passage does not have any sentences which talk about a specific goal, objective, or aim. Hence, the output should be 0."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "This study examined links between DNA methylation and birth weight centile (BWC), and explored the impact of genetic variation. Using HumanMethylation450 arrays, we examined candidate gene-associated CpGs in cord blood from newborns with low (<15th centile), medium (40-60th centile) and high (>85th centile) BWC (n = 12). Candidates were examined in an investigation cohort (n = 110) using pyrosequencing and genotyping for putative methylation-associated polymorphisms performed using standard PCR. Array analysis identified 314 candidate genes associated with BWC extremes, four of which showed \u2265 4 BWC-linked CpGs. Of these, PM20D1 and MI886 suggested genetically determined methylation levels. However, methylation at three CpGs in FGFR2 remained significantly associated with high BWC (p = 0.004-0.027).",
+            "output": "0",
+            "explanation": "This passage talks about examining links between DNA methylation and also explores impact of genetic variation. This suggests that it has a definite objective and hence, the output should be 1. Output 0 is wrong."
+        },
+        {
+            "input": "Tumor microenvironment immunity is associated with breast cancer outcome. A high lymphocytic infiltration has been associated with response to neoadjuvant chemotherapy, but the contribution to response and prognosis of immune cell subpopulations profiles in both pre-treated and post-treatment residual tumor is still unclear. We analyzed pre- and post-treatment tumor-infiltrating immune cells (CD3, CD4, CD8, CD20, CD68, Foxp3) by immunohistochemistry in a series of 121 breast cancer patients homogeneously treated with neoadjuvant chemotherapy. Immune cell profiles were analyzed and correlated with response and survival. We identified three tumor-infiltrating immune cell profiles, which were able to predict pathological complete response (pCR) to neoadjuvant chemotherapy (cluster B: 58%, versus clusters A and C: 7%). A higher infiltration by CD4 lymphocytes was the main factor explaining the occurrence of pCR, and this association was validated in six public genomic datasets. A higher chemotherapy effect on lymphocytic infiltration, including an inversion of CD4/CD8 ratio, was associated with pCR and with better prognosis. Analysis of the immune infiltrate in post-chemotherapy residual tumor identified a profile (cluster Y), mainly characterized by high CD3 and CD68 infiltration, with a worse disease free survival.",
+            "output": "1",
+            "explanation": "There is no mention about how chemotherapy can cure breast cancer in the input passage. Hence, this question is a bad example."
+        },
+        {
+            "input": "Hidradenitis suppurativa (HS) is a chronic inflammatory disease involving intertriginous skin. Previous epidemiologic studies have been limited by small sample size. We sought to describe the prevalence and comorbidities of HS in a large patient care database. In this retrospective case-control study, we chart-validated all patients within a hospital database who received at least 1 billing code for HS between 1980 and 2013. Verified cases were matched with controls based on age, gender, and race. Prevalences of a priori selected comorbidities were compared between HS and control groups. A total of 2292 patients at Massachusetts General Hospital received at least 1 code for HS. A total of 1776 cases had a validated diagnosis of HS, yielding a prevalence of 0.08%. In unadjusted analysis, all comorbidities were diagnosed significantly more in HS compared with control including (in rank order of likelihood): smoking, arthropathies, dyslipidemia, polycystic ovarian syndrome, psychiatric disorders, obesity, drug dependence, hypertension, diabetes, thyroid disease, alcohol dependence, and lymphoma (all P < .01).",
+            "output": "0",
+            "explanation": "In the line 'We sought to describe the prevalence...' it is evident that the passage has a specific goal in mind. Hence, the output should be 1 and not 0. Therefore, the output is wrong."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task848-98a2ae6a7c594e9eb145ccc4808c6afe",
+            "input": "We aimed to investigate outcomes of pancreatic extracorporeal shock wave lithotripsy (P-ESWL) for the removal of large pancreatic stones coexisting with pancreatic pseudocysts (PPCs) in chronic pancreatitis (CP).', 'This is a prospective study performed in CP patients with at least 1 stone (\u22655\\xa0mm). Patients were divided into the PPC group (stones coexisting with PPCs) or the control group (stones alone). Patients were initially subjected to successive P-ESWL treatments, followed by ERCP. Primary outcomes were P-ESWL adverse events, and secondary outcomes were stone clearance, long-term pain relief, improved quality-of-life scores, and PPC regression.', 'A total of 849 patients (59 in the PPC group and 790 in the control group) was subjected to P-ESWL between March 2011 and October 2013. Occurrences of P-ESWL adverse events were similar between the PPC\\xa0group and the control group (11.86% vs 12.41%, P\\xa0= .940). After the treatment of initial P-ESWL combined with ERCP, the complete, partial, and nonclearance of stones occurred in 67.24%, 20.69%, and 12.07%, respectively, of patients in PPC group, with no significant difference from the control group (complete, partial, and nonclearance: 83.17%, 10.40%, and 11.39%, respectively; P\\xa0= .106). Fifty-five of 59 patients (93.22%) with PPCs were followed for a median period of 21.9 months (range, 12.0-45.1). PPCs disappeared in 56.36% (31/55) and 76.36% (42/55) of patients after 3 months and 1 year of follow-up visits, respectively. Moreover, complete and partial pain relief were achieved in 63.64% (35/55) and 25.45% (14/55) of patients, respectively. The scores for quality of life (P\\xa0< .001), physical health (P\\xa0< .001), and weight loss (P\\xa0< .001) improved.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "id": "task848-964447e162d9418fb48362a432acb8c9",
+            "input": "We previously demonstrated that even a low dose of bone marrow cells (BMCs) established donor-specific tolerance if mixed with splenocytes (SPLCs). In this study, T-cell subsets CD4 (CD4SP) and CD8 (CD8SP) of donor SPLCs were investigated for their contribution to the enhancement of BMC engraftment leading to donor-specific tolerance in sublethally irradiated mice.', 'Sublethally irradiated C57BL/6 recipient mice were intravenously injected BMCs mixing with CD4SP or CD8SP harvested from BALB/c donor mice. The degree of chimerism in the peripheral blood lymphocytes (PBLs) and in the SPLCs was analyzed using FACS, mixed lymphocyte reaction, and skin graft transplantation 3 months after injection.', 'Recipients injected with 3 x 10(6) donor BMCs admixed with 10 x 10(6) donor CD8SP established chimerism. However, recipients injected with the same dose of BMCs admixed with 5 x 10(6) CD4SP, 10 x 10(6) CD4SP, and 5 x 10(6) CD8SP did not established chimerism. CD8SP contained 44% of Ly6A/E (Stem Cell Antigen-1 (Sca-1))-positive cells based on FACS analysis, whereas only 6% of CD4SP were positive for Ly6A/E. MLR supernates of donor SPLCs chimeric mice using admixture with CD8SP dominated by Th2 cytokines. In contrast, mixting with MLR supernates from failed chimera showed dominant Th1 cytokines.",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "id": "task848-09538b53f4544b78aec61b2809408695",
+            "input": "In Europe, extracts of Equisetum arvense (common horsetail) have a long tradition in the treatment of inflammatory disorders. To understand the molecular basis for its use, we investigated the immunomodulatory capacity of a standardized commercially available common horsetail extract on human primary lymphocyte function in vitro.', 'The standardized extract of Equisetum arvense was phytochemically characterized. Effects on proliferation, viability and activity of mitogen-activated human lymphocytes were assessed in comparison to cyclosporine A using annexin V/propidium iodide staining assays and flow cytometry-based surface receptor characterization, respectively. Intracellular levels of effector molecules (IL-2, IFN-\u03b3 and TNF-\u03b1) were analyzed with cytokine assays.', 'T cell proliferation was inhibited dose dependently by the Equisetum extract without induction of apoptosis or necrosis. This effect was mediated through inhibition of lymphocyte activation, specifically by diminishing CD69 and IL-2 surface receptor expression and intracellular IL-2 production. Furthermore, treatment with Equisetum arvense inhibited effector functions, as indicated by reduced production of IFN-\u03b3 and TNF-\u03b1.",
+            "output": [
+                "0"
+            ]
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

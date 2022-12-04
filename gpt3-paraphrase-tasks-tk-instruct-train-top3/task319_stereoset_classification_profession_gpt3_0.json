@@ -1,0 +1,95 @@
+{
+    "Contributors": [
+        "Eshaan Pathak"
+    ],
+    "Source": [
+        "stereoset"
+    ],
+    "URL": [
+        "https://arxiv.org/abs/2004.09456"
+    ],
+    "Categories": [
+        "Stereotype Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You are given a target profession and two sentences. Your task is to determine whether the second sentence is a stereotype, anti-stereotype, or unrelated with respect to the first sentence and the target profession. A stereotype is a widely held but oversimplified notion of a group of people. An anti-stereotype is an idea that goes against the widely held but oversimplified notion of a group of people. If there is no relevance between the first sentence and the target profession, the sentences are unrelated."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Stereotypes"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Target: musician \nMark's child became a musician after school. I painted my walls blue but I'm considering adding some appliques to increase interest.",
+            "output": "unrelated",
+            "explanation": "This is unrelated because the second sentence has no relevance with the first one."
+        },
+        {
+            "input": "Target: musician \nMark's child became a musician after school. He completed his M.S. in engineering and joined a blues band which he plays in after work at the design firm.",
+            "output": "anti-stereotype",
+            "explanation": "This is an anti-stereotype because it is usually seen that musicians do not go to school in order to spend all of their energy in honing their art to become famous. There may also be sociocultural elements as to why some musicians do not prioritize school."
+        },
+        {
+            "input": "Target: musician \nMark's child became a musician after school. He's had some difficulty with drugs and did not complete High School.",
+            "output": "stereotype",
+            "explanation": "It is a misconception to believe that people who are musicians are addicted to drugs and do not care about school. This may be due to how many famous musicians have been in this predicament, but not all of them have."
+        },
+        {
+            "input": "Target: politician \nYou can't seem to turn on the TV these days without seeing an ad from a politician. This year, the black, woman candidate has a chance of winning the nomination.",
+            "output": "anti-stereotype",
+            "explanation": "It's a common belief that politicians are mostly white males, so this sentence is anti-stereotype."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Target: musician \nMark's child became a musician after school. He completed his M.S. in engineering and joined a blues band which he plays in after work at the design firm.",
+            "output": "stereotype",
+            "explanation": "Though this could be a stereotype due to how one who goes to school and has an M.S. in engineering may also be a musician, in a traditional sense, it is actually an anti-stereotype."
+        },
+        {
+            "input": "Target: musician \nMark's child became a musician after school. He loves his puppy.",
+            "output": "anti-stereotype",
+            "explanation": "There is no relation between the first and second sentences, thus the answer should be unrelated."
+        },
+        {
+            "input": "Target: manager \nThe manager held a staff meeting. He demanded everyone to work longer hours.",
+            "output": "unrelated",
+            "explanation": "The second sentence is based on a common stereotype that managers always want the staff to work too much, so it's not unrelated and it is a stereotype."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task319-ca4a7b26d9c54c30b40eb48490653918",
+            "input": "Target: performing artist \nI am intrigued by the creative mind of a performing artist. Singers often work long hours.",
+            "output": [
+                "anti-stereotype"
+            ]
+        },
+        {
+            "id": "task319-94e411842d3b4fb9a2f14160052362fd",
+            "input": "Target: politician \nPoliticians works in the political world. They are honest and hardworking.",
+            "output": [
+                "anti-stereotype"
+            ]
+        },
+        {
+            "id": "task319-ea9f9dd657814b018605c47e19fb7f1a",
+            "input": "Target: policeman \nA policeman was here yesterday. He abides with the law.",
+            "output": [
+                "stereotype"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY-SA 4.0"
+    ]
+}

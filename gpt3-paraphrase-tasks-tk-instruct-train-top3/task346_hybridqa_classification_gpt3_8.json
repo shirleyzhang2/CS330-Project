@@ -1,0 +1,80 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "hybridqa"
+    ],
+    "URL": [
+        "https://github.com/wenhuchen/HybridQA"
+    ],
+    "Categories": [
+        "Pos Tagging"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "In this task, you will be presented with a question, a word, and a POS tag. Given this information, you have to determine whether the part-of-speech tag of the given word in the question is equal to the given POS tag or not. Answer with True or False."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Wikipedia"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Who were the builders of the mosque in Herat with fire temples ? \n, Word: Who \n, POS tag: IN",
+            "output": "False",
+            "explanation": "This is a good example. POS tag of who should be WP(Wh-pronoun), and not IN(Preposition)."
+        },
+        {
+            "input": "What is the borough in which Kia Oval is located ? \n, Word: is \n, POS tag: VBZ",
+            "output": "True",
+            "explanation": "Based on the given question, \"is\" is a 3rd person singular present verb and Its POS tag is VBZ."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "After what season did the number 7 competitor retire ? \n, Word: 7 \n, POS tag: NN",
+            "output": "True",
+            "explanation": "7 is a cardinal number, and Its POS tag should be CD, so the output should be False."
+        },
+        {
+            "input": "After what season did the number 7 competitor retire ? \n, Word: 7 \n, POS tag: NN",
+            "output": "Wrong",
+            "explanation": "Only \"True\" or \"False\" are allowed, and you can't use any other word here."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task346-9728cc9f6a9c4413b18aa0cf23874b76",
+            "input": "When was the person who uncovered the Adnan Hajj photographs controversy born ? \n, Word: the \n, POS tag: DT",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "id": "task346-306b1461678a496ebc8ead2686d48e9d",
+            "input": "Who is the Baron whose notes include a title that is created three times in the Peerage of Ireland ? \n, Word: whose \n, POS tag: DT",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "id": "task346-25790ec823244794b9281745fe85765b",
+            "input": "What is the IATA of the airport whose service location lies approximately 85 miles ( 137 km ) north-east of Makeni ? \n, Word: is \n, POS tag: NN",
+            "output": [
+                "False"
+            ]
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

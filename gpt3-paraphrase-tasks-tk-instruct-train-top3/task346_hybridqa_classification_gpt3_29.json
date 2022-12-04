@@ -1,0 +1,80 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "hybridqa"
+    ],
+    "URL": [
+        "https://github.com/wenhuchen/HybridQA"
+    ],
+    "Categories": [
+        "Pos Tagging"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You will be given a question, a word, and a POS tag. Your task is to determine whether the given POS tag matches the POS tag of the word in the question. Answer with True or False."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Wikipedia"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Who were the builders of the mosque in Herat with fire temples ? \n, Word: Who \n, POS tag: IN",
+            "output": "False",
+            "explanation": "This is a good example. POS tag of who should be WP(Wh-pronoun), and not IN(Preposition)."
+        },
+        {
+            "input": "What is the borough in which Kia Oval is located ? \n, Word: is \n, POS tag: VBZ",
+            "output": "True",
+            "explanation": "Based on the given question, \"is\" is a 3rd person singular present verb and Its POS tag is VBZ."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "After what season did the number 7 competitor retire ? \n, Word: 7 \n, POS tag: NN",
+            "output": "True",
+            "explanation": "7 is a cardinal number, and Its POS tag should be CD, so the output should be False."
+        },
+        {
+            "input": "After what season did the number 7 competitor retire ? \n, Word: 7 \n, POS tag: NN",
+            "output": "Wrong",
+            "explanation": "Only \"True\" or \"False\" are allowed, and you can't use any other word here."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task346-fef7df072c274baa931b12e01c0b829b",
+            "input": "Which country was earlier in voting order ? A country which was represented by someone singing 'Oui , oui , oui , oui for the 1959 Eurovision Song Contest , or a country which choose to use the song Augustin ? \n, Word: A \n, POS tag: NN",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "id": "task346-7e69506c2ecc44f58c7b0b6a9dd28d98",
+            "input": "Which neighboring country 's border is the city that held the 5th Economic Cooperation Organization Heads of State Summit close to ? \n, Word: Cooperation \n, POS tag: NNP",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "id": "task346-4e9598851e5942b1bf5ab4ea5b7fe62d",
+            "input": "What is the format of the event type that are the main event of a minimum three-day mini-convention ? \n, Word: format \n, POS tag: NN",
+            "output": [
+                "True"
+            ]
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

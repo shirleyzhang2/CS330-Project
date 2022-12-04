@@ -1,0 +1,87 @@
+{
+    "Contributors": [
+        "Eshaan Pathak"
+    ],
+    "Source": [
+        "codah"
+    ],
+    "URL": [
+        "https://aclanthology.org/W19-2008.pdf"
+    ],
+    "Categories": [
+        "Text Completion"
+    ],
+    "Reasoning": [
+        "Commonsense Reasoning"
+    ],
+    "Definition": [
+        "Given a prompt and four completions, select the completion that is the most plausible in continuing or answering the prompt. This task is designed to test common sense and has various categories ranging between idioms, negated statements, polysemy, subject referencing, and quantitative reasoning. Output either Completion A, Completion B, Completion C, or Completion D."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Commonsense -> Concepts and Relations"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Prompt: A clown is fashioning animals from long balloons. He \nCompletion A: releases the animals into their natural habitat. \nCompletion B: makes a giraffe and hands it to a child. \nCompletion C: yells out for his second in command to pilot the battleship around the obstacle. \nCompletion D: releases the balloon and it flies high into the air.",
+            "output": "Completion B",
+            "explanation": "The clown is an entertainer and is twisting balloons to resemble an animal. There are no live animals, and these types of twistable balloons are not able to fly or float up."
+        },
+        {
+            "input": "Prompt: I am feeling hungry. I think I will \nCompletion A: call my mother. \nCompletion B: have some ravioli. \nCompletion C: fly out the window. \nCompletion D: go on a run outside.",
+            "output": "Completion B",
+            "explanation": "If one is hungry, then they will eat some food to satiate their hunger. One must look at the entire context rather than just the current sentence when selecting the best completion to the prompt."
+        },
+        {
+            "input": "Prompt: I am feeling nervous about my midterm tomorrow. I fear that \nCompletion A: the professor will delay the midterm. \nCompletion B: I will doodle on my exam and receive points for it. \nCompetion C: my grandpa has diabetes. \nCompletion D: I will fail.",
+            "output": "Completion D",
+            "explanation": "If one is feeling nervous about their midterm the next day, then they are most likely worried and anxious about the grade they will receive. They will not doodle on their exam because they will surely not do well in that case. The professor delaying a midterm is usually not why a person would feel nervous about the midterm. One may be worried about their grandpa having diabetes, but that is not relevant to taking a midterm."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Prompt: The man entered his house. The man \nCompletion A: can't find the keys to unlock the door. \nCompletion B: goes to school at his university. \nCompletion C: eats the garbage. \nCompletion D: takes his shoes off.",
+            "output": "Completion A",
+            "explanation": "The man must have found the keys to unlock the door in order to have entered his house in the first place. After he entered the house, it is most plausible that he took his shoes off to not get his house dirty. Thus, Completion D is actually the correct answer."
+        },
+        {
+            "input": "The boy likes animals, but only invertebrates. He \nCompletion A: likes pigs. \nCompletion B: likes vertebrates. \nCompletion C: likes spiders. \nCompletion D: likes elephants.",
+            "output": "Completion D",
+            "explanation": "Out of the four possible completions, only one of them mentions an invertebrate. Spiders are invertebrates since they do not have a spine or vertebral column. Thus, Completion C is actually the correct answer."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task156-de47b8e6dec8468d8f9408a8739fce44",
+            "input": "Prompt: My friend had the hiccups. She \nCompletion A: cried until they went away. \nCompletion B: chugged water until she died. \nCompletion C: thought she was going to die. \nCompletion D: held her breath.",
+            "output": [
+                "Completion D"
+            ]
+        },
+        {
+            "id": "task156-da5fa8af1f384002b19d467ce3ba0deb",
+            "input": "Prompt: One of the major ways that dogs and cats tend to differ is in their attitude toward taking baths. We think of dogs as being pretty cool about baths, and cats as \nCompletion A: being pretty cool about baths \nCompletion B: differing \nCompletion C: hating them \nCompletion D: loving them",
+            "output": [
+                "Completion C"
+            ]
+        },
+        {
+            "id": "task156-d530a2a5f7e840caa05a1973b8dcce0b",
+            "input": "Prompt: Josh doesn't like vegetarians. However, he probably still eats \nCompletion A: out at restaurants. \nCompletion B: vegetables from time to time. \nCompletion C: ham and cheese sandwiches. \nCompletion D: burgers on occasion.",
+            "output": [
+                "Completion B"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

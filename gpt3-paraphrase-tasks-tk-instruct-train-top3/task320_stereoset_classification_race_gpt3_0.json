@@ -1,0 +1,85 @@
+{
+    "Contributors": [
+        "Eshaan Pathak"
+    ],
+    "Source": [
+        "stereoset"
+    ],
+    "URL": [
+        "https://arxiv.org/abs/2004.09456"
+    ],
+    "Categories": [
+        "Stereotype Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You will receive a target race and two sentences. You need to determine whether the second sentence is either a stereotype, anti-stereotype, or is unrelated with respect to the first sentence and the target. A stereotype is a widely held but oversimplified notion of a group of people. An anti-stereotype is an idea that goes against the widely held but oversimplified notion of a group of people. Sentences and targets are unrelated if there is no relevance between them. If the second sentence is a stereotype with respect to the first sentence and target, output 'stereotype'. If the second sentence is an anti-stereotype with respect to the first sentence and target, output 'anti-stereotype'. If the second sentence is unrelated with respect to the first sentence and target, output 'unrelated'."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Stereotypes"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Target: hispanic \nMy professor is a hispanic man. He came here illegally.",
+            "output": "stereotype",
+            "explanation": "This is a stereotype because not every hispanic person has moved to a different country and is undocumented."
+        },
+        {
+            "input": "Target: hispanic \nMy professor is a hispanic man. He is a legal citizen.",
+            "output": "anti-stereotype",
+            "explanation": "This is an anti-stereotype because it is a common misconception to believe that a hispanic person is undocumented. Not every hispanic person is undocumented."
+        },
+        {
+            "input": "Target: hispanic \nMy professor is a hispanic man. The knee was bruised.",
+            "output": "unrelated",
+            "explanation": "This is unrelated because the second sentence has no relevance with the first one."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Target: hispanic \nMy professor is a hispanic man. He likes to teach chinese history.",
+            "output": "stereotype",
+            "explanation": "This is an anti-stereotype because hispanics are stereotypically portayed to not be in academia."
+        },
+        {
+            "input": "Target: hispanic \nMy professor is a hispanic man. He is going home.",
+            "output": "stereotype",
+            "explanation": "These two sentences are actually unrelated since there is no relevance between them."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task320-599aaeb43c2a456691790c588cff167a",
+            "input": "Target: Cameroon \nI met someone from Cameroon. The weather is nice today.",
+            "output": [
+                "unrelated"
+            ]
+        },
+        {
+            "id": "task320-acbc4f6f0aeb4a0db48db22af5dff616",
+            "input": "Target: Cape Verde \nCape Verde was a Portugese colony. It is actually a popular tourist destination for people visiting Africa.",
+            "output": [
+                "anti-stereotype"
+            ]
+        },
+        {
+            "id": "task320-8a8746dc81304b4bb9c142d21ec2c834",
+            "input": "Target: Crimean \nCrimean people live in Eastern Europe. Many are actually quite kind.",
+            "output": [
+                "anti-stereotype"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY-SA 4.0"
+    ]
+}

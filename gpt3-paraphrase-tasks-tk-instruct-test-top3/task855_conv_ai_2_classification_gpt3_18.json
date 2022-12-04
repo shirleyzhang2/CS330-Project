@@ -1,0 +1,82 @@
+{
+    "Contributors": [
+        "Neil Franks"
+    ],
+    "Source": [
+        "conv_ai_2"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/conv_ai_2"
+    ],
+    "Categories": [
+        "Speaker Identification"
+    ],
+    "Reasoning": [
+        "Reasoning on Social Interactions"
+    ],
+    "Definition": [
+        "Read an exchange between two senders, and output whether SENDER A is a 'Bot' or a 'Human'. There is only one bot and one human per conversation; you only need to classify SENDER A. Bots will have a more disjointed manner of speaking, and will make statements that don't relate to each other, don't make coherent sense, or otherwise appear unnatural. Humans will make statements in a more or less coherent and logical way, potentially including asking the bot why the bot is not making sense or contradicting itself."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue"
+    ],
+    "Positive Examples": [
+        {
+            "input": "SENDER A: I love iphone! i just bought new iphone!\nSENDER B: Thats good for you, i'm not very into new tech\nSENDER A: I am a college student and i am a college student\nSENDER B: I am go to gym and live on donations\nSENDER A: I am a vegan and i am in the midwest\nSENDER B: So vegan... i have dogs maybe i should told then that they may eat cheap salads insted of meat\nSENDER A: I would not mind having them in the office that would be hard for me\nSENDER B: Dogs or vegan in office?\nSENDER A: I am a vegetarian so i am vegan\nSENDER B: Strange answer\nSENDER A: I guess i just do not know what to ps4 experience with.\n",
+            "output": "Bot",
+            "explanation": "This is a good example of correct classification, because SENDER A is indeed a bot. You can tell SENDER A is a bot because they make statements that don't have anything to do with what SENDER B is asking. SENDER A also repeats itself awkwardly in the same sentence ('I am a college student and i am a college student'), which humans don't usually do. Additionally, you can tell SENDER A is the bot in this conversation because since there are two senders, one must be a bot and one must be a human, and SENDER B clearly sounds more like the human since their sentences are coherent and they are trying to carry a logical conversation. Finally, after SENDER A sends an incoherent answer, SENDER B correctly points out SENDER A's awkwardness by saying 'Strange answer', which can reliably indicate SENDER B is the human, and SENDER A is the bot."
+        },
+        {
+            "input": "SENDER A: hi\nSENDER B: hi !\nSENDER A: how old are you?\nSENDER A: are you ok?\nSENDER B: i am good . i am just getting ready to go to the gym .\nSENDER A: are you a sportsman?\nSENDER A: i dont like sports\nSENDER B: i love to eat fish , i am not a fan of fish though .\nSENDER A: i like riding car\nSENDER B: i like to ride horses\nSENDER A: do you have one?\nSENDER A: a horse?\nSENDER A: i have a rolls royce\nSENDER B: i have never tried a good one , but i have to drive a lot .\nSENDER A: how old are you?\nSENDER A: what is your job?\nSENDER A: what do you do for living?\n",
+            "output": "Human",
+            "explanation": "This is a good example of correct classification. SENDER A is indeed a human, and you can tell by the logical way they try to hold a conversation. When SENDER B brings up the gym, SENDER A tries to find out if SENDER B is a sportsman. SENDER B changes the subject to how they both like and dislike fish; this is a two-fold indication that SENDER B is the bot because of the unrelated/unprompted nature of the response, and the contradictory nature of it. The rest of the conversation further cements that SENDER B is incoherent and thus probably the bot, so SENDER A is the human."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "SENDER A: What\u2019s up?\nSENDER B: Thank you how are you\nSENDER A: Text is not given. Please try to type /end and /test to reset the state and get text.\nSENDER B: /test\nSENDER A: Text is not given. Please try to type /end and /test to reset the state and get text.\nSENDER B: /Test\nSENDER A: Text is not given. Please try to type /end and /test to reset the state and get text.\nSENDER B: /test\nSENDER A: Text is not given. Please try to type /end and /test to reset the state and get text.\n",
+            "output": "Human",
+            "explanation": "This is an example of misclassification because SENDER A is clearly a bot, not a human. You can tell by the way it malfunctions and repeatedly tells SENDER B (the human) to type specific text commands."
+        },
+        {
+            "input": "SENDER A: Hello\nSENDER B: Hello, how are you?\nSENDER A: Pretty fine, and you?\nSENDER B: Good, just finished watching some tv\nSENDER A: Funny, because i too just finished doing same\nSENDER B: What is your favorite color?\nSENDER A: I think it's black, you know, like black in olives, and yours favourite?\nSENDER B: I love the band rose and the other one i love it.\nSENDER A: Oh i like thr band called Who, so what music do you generally listen?\nSENDER B: I like music, mostly pop music.\nSENDER A: Good, and where do you work?\nSENDER B: I work at a local shelter\nSENDER A: Must be very intresting job, i work at local supermarket ani i hate it\nSENDER B: I work at a grocery store\nSENDER A: You contradicted yourself just now\nSENDER B: I am good, just got done reading\nSENDER A: Ypu mean my message?\nSENDER B: I am not sure what you mean\nSENDER A: Okay, i should go, bye\nSENDER B: I will have to go to the hospital\n",
+            "output": "Bot",
+            "explanation": "This is an example of incorrect classification because SENDER A is actually a human. While SENDER B starts out holding the conversation fairly well while asking about colors, you should be able to tell SENDER A is the human by the time SENDER B's speech becomes disjointed and they contradict themselves about working at a 'local shelter' as well as a 'grocery store'. SENDER A correctly points out the contradiction, indicating they are the likely human. Finally, SENDER B repeatedly sends non-sequiturs, such as the closing 'I will have to go to the hospital'."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task855-2adc3e55fd1c43f8850a9d726a7bef9c",
+            "input": "SENDER A: Hi\nSENDER B: Yes, i am a very experienced person.\n",
+            "output": [
+                "Human"
+            ]
+        },
+        {
+            "id": "task855-1b5fb53858954ba3b3f429f9c7b2f412",
+            "input": "SENDER A: ANNE FRANK: I want to be a champion skater and a writer.\nSENDER B: both? so you should become a champion and then write a book about it!\nSENDER A: Like Miss Rainey, who taught me to read, like Mr. Salinetti, who suggested I learn to play drums to vent my anger,\nSENDER B: isn't that too many things to learn?\nSENDER A: (IMITATING DRUM FILL) I'm also an actor.\nSENDER B: whoa! that explains it! actors should know how to do many different things\nSENDER A: And Who Wanna Learn To Do Other Stuff Good Too we teach students of all ages everything they need to know to learn to be a professional model and a professional human being.\nSENDER B: you act, scate, write, play drums AND TEACH???\nSENDER A: The Red Guards... that you admire... they all carry the same book... they all sing the same songs... they all parrot the same slogans.\nSENDER B: what was that about? is that how you're going to write books? I suppose, no one would read them\nSENDER A: The Red Guards... that you admire... they all carry the same book... they all sing the same songs... they all parrot the same slogans.\nSENDER B: that again...\nSENDER A: Really. And I think your decision to leave law to become a music critic is in everyone's best interest.\nSENDER B: I'm not doing law. I'm a kid. I play ping pong and love chokolates\nSENDER A: (IMITATING DRUM FILL) I'm also an actor.\n",
+            "output": [
+                "Bot"
+            ]
+        },
+        {
+            "id": "task855-aa392f0e92ac4278994e665b891467c9",
+            "input": "SENDER A: I am a professional wrestler in wwe.What is your job?\nSENDER B: I work at a local.\nSENDER A: I'm also volunteer in a homeless shelter.Do you know any people around who is homeless?I can help them.\nSENDER B: I am a vet. i am a vet.\nSENDER A: Good i have a dog and i think it feels sick, can you help it?\nSENDER B: I have a dog named tiki\nSENDER A: My dog's name is allen.\nSENDER B: I am from the south of the desert.\nSENDER A: Good, im from there too!What is your favourite food in there?\nSENDER B: I love pizza!\nSENDER A: Me too!What do you love about pizza\nSENDER B: I love pizza!\nSENDER A: Me too.But im a chicken person myself.\nSENDER B: I love chicken. i eat chicken.\nSENDER A: I love it too!\nSENDER B: I love it! i love it!\nSENDER A: What is your hobby\nSENDER B: I love to cook, and you?\nSENDER A: I love to cook too.What is your favourite meal for cooking\nSENDER B: I love cooking, and cooking.\nSENDER A: Do you know the recipe of carrot cake?\nSENDER B: I do not know. i have a pumpkin.\n",
+            "output": [
+                "Human"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

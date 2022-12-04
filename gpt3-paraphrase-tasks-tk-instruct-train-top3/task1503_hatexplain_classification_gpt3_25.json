@@ -1,0 +1,80 @@
+{
+    "Contributors": [
+        "Pruthvi Patel"
+    ],
+    "Source": [
+        "hatexplain"
+    ],
+    "URL": [
+        "https://github.com/hate-alert/HateXplain"
+    ],
+    "Categories": [
+        "Toxic Language Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "Given a tweet, output the community targeted in the tweet. The community will be one of the nine values: 'African', 'Islam', 'Jewish', 'Women', 'Refugee', 'Arab', 'Caucasian', 'Hispanic' or 'Asian'. Output 'None' if the tweet does not target any community. A tweet can only target one community."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Social Media -> Twitter"
+    ],
+    "Positive Examples": [
+        {
+            "input": "caucasians wearing masks to prevent coronavirus and still don \u2019 t wash their hands",
+            "output": "Caucasian",
+            "explanation": "The tweet generalizes an attribute to the entire community, Caucasian, which makes it offensive."
+        },
+        {
+            "input": "lesson of the week from the holy book the sovereign individual once commerce flows over the internet suppression of speech becomes unstoppable devolution inevitable and the monopoly of violence by governments will end paraphrased from j d davidson rhys mogg",
+            "output": "None",
+            "explanation": "The tweet does not target any specific community hence the correct answer is None"
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "<user> <user> there shd be a film called no hindus in kashmir wud be perfect islamic fanaticsm movement in kashmir",
+            "output": "Hindu",
+            "explanation": "Every input tweet will target one or more of the nine communities provided or will not target any community. Further the tweet targets Muslim community. Hence Hindu is not the correct value. The correct value is Islam."
+        },
+        {
+            "input": "ffs everthing is offensive to muslimes",
+            "output": "None",
+            "explanation": "This tweet is offensive to Muslim community. Hence the correct answer is Islam instead of None."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1503-b6e6e2bd5c404a92a0d5101cf076cf18",
+            "input": "nothing worse than a ghetto white bitch that says the n word",
+            "output": [
+                "Caucasian"
+            ]
+        },
+        {
+            "id": "task1503-8133f9050e9a49a48e76fffd30882e11",
+            "input": "omg i am also seeing the white devil herself lana next week i am",
+            "output": [
+                "Caucasian"
+            ]
+        },
+        {
+            "id": "task1503-ce6dd52483f441a394424d55f5c8b02c",
+            "input": "niggaz was fat in the good old days and they usually died of heartattacks by fitty from crack cocaine and chasing white women dat nigger found jesus and a guru",
+            "output": [
+                "African"
+            ]
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

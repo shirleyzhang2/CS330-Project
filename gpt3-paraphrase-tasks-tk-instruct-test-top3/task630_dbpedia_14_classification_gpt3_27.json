@@ -1,0 +1,81 @@
+{
+    "Contributors": [
+        "Divya Reddy Katpally"
+    ],
+    "Source": [
+        "dbpedia_14"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/dbpedia_14"
+    ],
+    "Categories": [
+        "Text Matching"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "In this task, you will be given the body of a document and a title for the document. The title may be slightly different from what is present in the text, but as long as it refers to the same entity, it is a correct title. Output \"Yes\" if the title is correct, otherwise output \"No\"."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Wikipedia"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Text: The Mansfield Building Society is a UK building society which has its headquarters in Mansfield Nottinghamshire. It is a member of the Building Societies Association. \nTitle: Mansfield Building Society",
+            "output": "Yes",
+            "explanation": "The title \"Mansfield Building Society\" is present in the text and it is the main entity that is referred in the text. Hence, it is the title of the document."
+        },
+        {
+            "input": "Text:  The third and current HMS Argyll is a Type 23 'Duke' Class frigate. She is currently the oldest serving Type 23 frigate in the Royal Navy. Like all of her class she is named for a British dukedom in this case that of Argyll. \nTitle: HMS Argyll (F231)",
+            "output": "Yes",
+            "explanation": "\"HMS Argyll\" is present in the text and it is the main entity that is referred in the text. Here, the text in parentheses \"F31\" is not present in the document and it can be ignored. Hence, the output is correct. "
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Text: The Mansfield Building Society is a UK building society which has its headquarters in Mansfield Nottinghamshire. It is a member of the Building Societies Association. \nTitle: Mansfield Building Society",
+            "output": "No",
+            "explanation": "The title \"Mansfield Building Society\" is present in the text and it is the main entity that is referred in the text. Hence, the output is incorrect."
+        },
+        {
+            "input": "Text:  The third and current HMS Argyll is a Type 23 'Duke' Class frigate. She is currently the oldest serving Type 23 frigate in the Royal Navy. Like all of her class she is named for a British dukedom in this case that of Argyll. \nTitle: HMS Argyll (F231)",
+            "output": "HMS Argyll",
+            "explanation": "The output should be either \"Yes\" or \"No\". Hence, it is negative example."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task630-1d24fe3c3e7d4fbebbc895660c20211b",
+            "input": "Text:  The Kemerovo State University (Russian: \u041a\u0435\u0301\u043c\u0435\u0440\u043e\u0432\u0441\u043a\u0438\u0439 \u0433\u043e\u0441\u0443\u0434\u0430\u0301\u0440\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u0439 \u0443\u043d\u0438\u0432\u0435\u0440\u0441\u0438\u0442\u0435\u0301\u0442) (KemSU) was established in 1973 as a successor to Kemerovo Pedagogical Institute. It is a leading educational and scientific center of Kemerovo Oblast with five branches throughout the oblast in Belovo Anzhero-Sudzhensk Novokuznetsk Prokopyevsk as well as in Ulan Bator in Mongolia. \nTitle: Kemerovo State University",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task630-02266db856884ee7ab5568cd66ffc58f",
+            "input": "Text:  The Boynton and The Windsor are a pair historic buildings at 718 and 720 Main Street in Worcester Massachusetts. They are nearly identical brick apartment buildings that were constructed c. 1887 to designs by Barker & Nourse and are well preserved instances of late 19th century apartment house construction that once lined Main Street for many blocks. \nTitle: Boynton and Windsor",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task630-6a032ac165484942bc4e32992805813e",
+            "input": "Text:  The King of Ireland's Son is a children's novel published in Ireland in 1916 written by Padraic Colum and illustrated by Willy Pogany. It is the story of the eldest of the King of Ireland's sons and his adventures winning and then finding Fedelma the Enchanter's Daughter who after being won is kidnapped from him by the King of the Land of Mist. \nTitle: The King of Ireland's Son",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY-SA",
+        "GNU Free Documentation 2.0"
+    ]
+}

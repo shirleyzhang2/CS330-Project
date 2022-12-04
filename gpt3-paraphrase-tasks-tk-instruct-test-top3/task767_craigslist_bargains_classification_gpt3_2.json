@@ -1,0 +1,82 @@
+{
+    "Contributors": [
+        "Ritvik Gaur"
+    ],
+    "Source": [
+        "craigslist_bargains"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/craigslist_bargains"
+    ],
+    "Categories": [
+        "Text Categorization"
+    ],
+    "Reasoning": [
+        "Reasoning on Social Interactions"
+    ],
+    "Definition": [
+        "Given a text passage comprising of a dialogue between a seller and a buyer about the sale of an item, your task is to classify the item into one of the following categories: 'housing', 'furniture', 'bike', 'phone', 'car', or 'electronics'. The output should be the name of the category, and there should only be one category for the given text passage."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Seller: hi\nBuyer: Hello\nSeller: do you care to make an offer?\nBuyer: The place sounds nice, but may be a little more than I can afford\nSeller: well how much can you soend?\nBuyer: I was looking for something in the 1500-1600 range\nSeller: That is really unreasonable considering all the immenities and other going rates, you would need to come up to at least 3000\nBuyer: I have seen some 2 bedrooms for that price, which I could split the cost with a roommate, so even with amenities, this may be out of my range\nSeller: it may be then... the absolute lowest i will go is 2700. that is my final offer.\nBuyer: Ok, I think the most I could spend on this is 2000 - we are a ways apart\nSeller: ya that is far too low like i said 2700\nBuyer: Ok, thanks for your consideration. I will have to keep looking for now.\nSeller: good luck",
+            "output": "housing",
+            "explanation": "The answer 'housing' is correct because a house is being talked about which is indicated by the mention of 'bedrooms' and 'amenities' which are words that are both related to housing."
+        },
+        {
+            "input": "Seller: Hello, how are you today\nBuyer: Hi, very well thank you! So, is the DVD player in a good condition?\nSeller: It is in great condition. I have barely taken it out of the box. \nBuyer: How much can you give it for?\nSeller: The price is $55\nBuyer: Yeah but its too much for me\nSeller: I understand that would normally be a lot for a used DVD player but this item has only been used for one week.  \nBuyer: Yeah, but there are a lot of different options in the market. I am a student and can only afford what my budget allows me to do so. I can pay $41. Will you accept it?\nSeller: I understand a student's budget, as I have no to long ago graduated myself. I just am already letting it go real cheap. I paid $130 for the product. The only reason I am parting with it is that It only streams the big streaming channels like Netflix, Hulu, Vudu and Youtube and I bought a DVD player/Android Box combo that will allow me to stream those plus add my own channels. I can't possibly sell it for $41. \nBuyer: Okay I can only afford $48 that's the last I can pay\nSeller: Make it $50 and we have a deal. I know it is a stretch to your budget but trust me with everything this player does, you will save more than $2 on entertainment",
+            "output": "electronics",
+            "explanation": "The answer 'electronic' is correct as the buyer and seller are talking about a 'DVD player' which is an electronic item."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Seller: Hello.\nBuyer: Hello. I saw your listing and I am interested in your car. However, I have a few questions.\nSeller: Sure, go ahead.\nBuyer: Has it been in any major accidents?\nSeller: No, I`ve kept it in very good condition.\nBuyer: All of the electronics are in working order, correct?\nSeller: Yes, everything has been checked out recently.\nBuyer: Great! Would you take $10,000? 120k miles is kinda a lot.\nSeller: I`m open to negotiate but 10k is a bit low. We could meet in the middle and say 13 000? I`ll include the extra speakers I recently purchased.\nBuyer: 13,000 is fair, however I can only afford paying 12,500\nSeller: Alright, I think that`s reasonable. We can agree on 12,500 then.\nBuyer: Great!",
+            "output": "toys",
+            "explanation": "This answer is incorrect because 'toys' does not belong in any of the categories from which the answer is to be chosen from ('phone', 'electronics', 'housing', 'furniture', 'car', 'bike'). The correct answer is 'car' because a car is being talked about in this conversation between the buyer and seller."
+        },
+        {
+            "input": "Buyer: I'm interested in this item, but I had some questions\nSeller: Geat, ask away.\nBuyer: Do I have to remove it myself?\nSeller: I am renting out the appartment, you \"Don't Remove Anything\"\nBuyer: Nice. Is it fully furnished?\nSeller: No, you will need your own \"basic\" furnishing\nBuyer: How much is the security deposit, is there one?\nSeller: Just first and last month rent\nBuyer: It's a bit pricy, I'm not sure if I can afford it...\nSeller: I'm only asking $140, that is really cheap for the area\nBuyer: I'd totally take 140!!!   but how about 1300 instead?\nSeller: Oops, I ment $1400, how about we meet in the middle at $1350?\nBuyer: 1325, and I'll accept\nBuyer: \nSeller: How about $1337.50",
+            "output": "bike",
+            "explanation": "This answer is incorrect as the item that is being talked about in the given conversation between the buyer and seller is not a bike. The correct answer is 'housing' because the words 'renting' and 'apartment' are mentioned in the conversation which indicates that the item in question is related to housing since apartments come under houses."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task767-18b300a6a9af4f038102d90784c209d5",
+            "output": [
+                "car"
+            ],
+            "input": "Buyer: Do you still have the Toyota for sale?\nSeller: Yes I still have it. Are you interested?\nBuyer: Yes. What kind of condition is it in and does it have any mechanical problems?\nSeller: It's in really great condition. It has 106k miles but these are mostly highway miles so the engine runs like it's lower miles than that.\nBuyer: Okay then. The price is a little high are you willing to negotiate?\nSeller: I can negotiate a little bit but that's really a pretty reasonable price already. What were you thinking?\nBuyer: Are you willing to go down to 8000?\nSeller: No that is way too low, it's worth much more than that. How about 13500? \nBuyer: That is too high. I don't think it's worth that much given the mileage. How about 10500\nSeller: Since the engine is in really good condition that would really be too low. 12500 is the lowest I can go.\nBuyer: Okay that sounds fair.\nBuyer: \nSeller: \n"
+        },
+        {
+            "id": "task767-f395eb644ae84e4494c0b87d1c0ff93e",
+            "output": [
+                "bike"
+            ],
+            "input": "Buyer: Hi! Can you tell me more about this bike? How old is it?\nSeller: This bike is only two years old. A very sturdy bike constructed from steel. Also it is only slightly used as my child who I orignally bought it for hit a growth spurt shortly after.\nBuyer: Does it have any issues? Flat tires, faulty brakes etc?\nSeller: No there are no such issues I had sprayed the exposed metal parts with anti rust. Therefore the brakes still function smoothly. As for tires I had recently ensured to inflate back to the appropriate tire pressure.\nBuyer: Would you take $70\nSeller: That would be a little too low for me. Ihad previoulsy paid around 200 for it brand new so 70 would put me at quite a loss. I could throw in a bicyle bell if that would intrest you.\nBuyer: What about $80 and I'll pick it up?\nSeller: Would you still want the bell in this case?\nBuyer: No.\nSeller: Then that would be fine I could also meet you half way if necessary.\nBuyer: Perfect\nBuyer: \nSeller: \n"
+        },
+        {
+            "id": "task767-05ff03acdac5401d8135c6e58c89f4ac",
+            "output": [
+                "car"
+            ],
+            "input": "Seller: Hi I am selling the 2000 civic si turbo for $9500. Are you interested?\nBuyer: I am but it seems over priced. The previous ad listed a turbo for 5000. \nSeller: This car has b20 stock rebuilt, 200 mines on it.. GSR head, Type r transmission competition clutch.. Competition fly wheel, STR intake manifold, and many other perks and benefits... $5000 is way underpriced.\nBuyer: Blue Book lists a 2000 Civic Si in excelent condition at 4500\nSeller: I do not believe that is correct. I cannot go any lower than $8000, so take it or leave it.\nBuyer: I could do 6k but for a 2000 that's the best I could do.\nSeller: \nBuyer: \n"
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

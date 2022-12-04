@@ -1,0 +1,85 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "matres"
+    ],
+    "URL": [
+        "https://github.com/CogComp/MATRES"
+    ],
+    "Categories": [
+        "Information Extraction"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You will be given a context and a verb, separated by a newline character. You have to identify if the given verb implies an opinion, an intention, a wish, or not. The output should be 'Yes' if the verb refers to an opinion, an intention, or a wish; and 'No' otherwise."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "News"
+    ],
+    "Positive Examples": [
+        {
+            "input": "It was followed by Denmark, Norway, Germany, France, Greece, Luxembourg, Spain, Britain, the United States, Iceland, Belgium, Italy, Portugal and Turkey. NATO decided at last year's Madrid summit to (invite) the three eastern European countries to start accession talks.  \n Verb: invite",
+            "output": "Yes",
+            "explanation": "They planned to \"invite\" the three eastern European countries, so this verb refers to an intention."
+        },
+        {
+            "input": "In Washington today, the Federal Aviation Administration (released) air traffic control tapes from the night the TWA Flight eight hundred went down.  \n Verb: released",
+            "output": "No",
+            "explanation": "In this sentence, the releasing event happened in the past, and hence it's not an intention."
+        },
+        {
+            "input": "We will act again if we have evidence he is (rebuilding) his weapons of mass destruction capabilities, senior officials say. In a bit of television diplomacy, Iraq\u2019s deputy foreign minister responded from Baghdad in less than one hour.  \n Verb: rebuilding",
+            "output": "No",
+            "explanation": "In this sentence, the verb is part of of a condition. Therefore, it cannot be known for sure if he is already rebuilding weapons but we have no evidence, or if he will be building weapons in the future, and hence it's not an intention."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "The Justice Department wants the appeals court to suspend the temporary injunction issued Thursday and also order Elian's great-uncle, Lazaro Gonzalez, to release the boy. The relatives want the court to let them meet with Elian's father without being (required) to surrender the boy.  \n Verb: required",
+            "output": "Yes",
+            "explanation": "In this sentence, required is not an intention, wish, or opinion, as it is part of a condition."
+        },
+        {
+            "input": "The federal charge also carries a fine of up to $250,000. The newly filed charges will (intensify) the ongoing international manhunt, Tolbert said.  \n Verb: intensify",
+            "output": "No",
+            "explanation": "In this sentence, \"intensify\" is planned to happen in the future, and it is an opinion or intention."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task456-a4faf84df74745b2b0448d47509ab625",
+            "input": "Juanita Castro, who arrived in Miami in 1961, believes the custody of the child should be worked out between his family members. She is not certain whether the boy should (stay) in the United States, but she feels that since he's been here so long, he should be afforded the opportunity to live in a free country.  \n Verb: stay",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task456-a1532e3dc5bd4da9a5d347512133fa85",
+            "input": "Speaking on the ABC program, Abdul Amir al-Anbari, Iraq's ambassador to the U.N., asserted that an embargo on Iraq could plunge the U.S. into a \" depression \" and the rest of the world into an economic \" crisis. \" Iraq clearly is trying to woo back more Arab support in case the conflict drags on, (hoping) that its neighbors eventually will help it survive a prolonged war of economic attrition with the West.  \n Verb: hoping",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task456-df321b8a8a964cecb9a26eef6b1c6e92",
+            "input": "Both great-uncles live in Miami. Juan Miguel Gonzalez (objected) to the media access to Elian that Lazaro Gonzalez's family has permitted and to the treatment of Elian by psychologists selected by Lazaro Gonzalez's family.  \n Verb: objected",
+            "output": [
+                "No"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

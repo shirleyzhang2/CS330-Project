@@ -1,0 +1,92 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "atomic"
+    ],
+    "URL": [
+        "https://allenai.org/data/atomic-2020"
+    ],
+    "Categories": [
+        "Commonsense Classification"
+    ],
+    "Reasoning": [
+        "Relational Reasoning",
+        "Reasoning on Social Interactions",
+        "Commonsense Reasoning -> Social Situations",
+        "Commonsense Reasoning -> Spatial Reasoning"
+    ],
+    "Definition": [
+        "In this task, you will be given two phrases: Head and Tail, which will be separated by <sep>. The Head and the Tail events will be short phrases possibly involving participants. The names of specific people have been replaced by generic words (e.g., PersonX, PersonY, PersonZ). PersonX is always the subject of the event. You will need to determine whether the Head happens before the Tail or not, and classify your answers into \"Yes\" or \"No\". The phrase may also contain \"___\", which is a placeholder that can be an object, a person, and/or an action."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Sociology",
+        "Commonsense -> Concepts and Relations -> Social Commonsense",
+        "Commonsense -> Concepts and Relations -> Spatial Commonsense"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Head: PersonX swims at the local pool<sep>Tail: PersonX learns a new way of swimming",
+            "output": "Yes",
+            "explanation": "This is a good example. The Head happens before the Tail."
+        },
+        {
+            "input": "Head: PersonX acts as PersonY intermediary<sep>Tail: assist and protect PersonY's interests",
+            "output": "No",
+            "explanation": "In this example, the Head and the Tail can happen at the same time. So the output should be\"No\"."
+        },
+        {
+            "input": "Head: PersonX gets new glasses<sep>Tail: PersonX reads the tiny print on the bottle",
+            "output": "Yes",
+            "explanation": "In this example, getting new glasses happens before reading the tiny print on the bottle. Thus, this example should be classified as \"Yes\"."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Head: PersonX acts like a PersonY<sep>Tail: to observe",
+            "output": "Yes",
+            "explanation": "Observing is not an event that happens before the Head. So the output should be \"No\"."
+        },
+        {
+            "input": "Head: PersonX tries to fix it<sep>Tail: PersonX orders new glass",
+            "output": "No",
+            "explanation": "Trying to fix happens before ordering new glass, and the output should be \"Yes\"."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1206-a8f36fa8288a48cd954b82b0e3b5420b",
+            "input": "Head: PersonX makes oatmeal<sep>Tail: PersonX pours the oatmeal into the bowl",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1206-22721d9025794f3eb33b46323fb37835",
+            "input": "Head: PersonX sees the sights<sep>Tail: PersonX documents the sights with a camera",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1206-60759bbccade434491a98a5d53111fce",
+            "input": "Head: PersonX asks a friend<sep>Tail: PersonX solves the problem with the help of their friend",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

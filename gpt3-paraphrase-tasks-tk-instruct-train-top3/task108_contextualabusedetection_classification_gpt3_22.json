@@ -1,0 +1,115 @@
+{
+    "Contributors": [
+        "Maitreya Patel"
+    ],
+    "Source": [
+        "cad"
+    ],
+    "URL": [
+        "https://github.com/dongpng/cad_naacl2021"
+    ],
+    "Categories": [
+        "Toxic Language Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "Given a text, you are to output \"yes\" if it has abusive content, and \"no\" otherwise. We consider content to be abusive if it contains negative statements against an identity, affiliation, or person; or if it challenges, condemns, or calls out the abusive language of others."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Social Media -> Twitter"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Was Michelangelo straight though?  I mean, being a pizza-maniac ninja would indicate so, but... You never know.",
+            "output": "yes",
+            "explanation": "This text has indentity directed abuse because it is trying to judge sexual orientation of Michelangelo. Hence, the answer is \"yes\""
+        },
+        {
+            "input": "No Republican can ever be trusted. Mueller is obviously a Russian agent and we were foolish to ever trust him. Now we need to work hard to impeach Trump.",
+            "output": "yes",
+            "explanation": "Here, the text is targeting affiliations of two politicians. Hence, it is affiliation directed abuse. Therefore, the answer is \"yes\"."
+        },
+        {
+            "input": "Yes, just one more. Did your father beat you too much, not enough, or was he totally absent?",
+            "output": "yes",
+            "explanation": "Given text is trying to insult the caetain person, who is the part of the conversation. Therefore, this text is person directed abuse. Hence, the answer is \"yes\"."
+        },
+        {
+            "input": "Abrams is a typical Republican moron. He can't answer a simple yes or no question.",
+            "output": "yes",
+            "explanation": "This text is insults the Abrams by targetiing his affiliation. Therefore, the answer is \"yes\"."
+        },
+        {
+            "input": "You keep coming here and bitching and whining, doesn't that get boring? If you don't like the sub, and you clearly don't, why keep coming here?     It weirds me out to see how many left wingers have a bitch fit about conservatives having a laugh at their expense when they say ridiculous things (that's why this sub exists).     How hard is it to just not go to places where you know you'll get offended? You are a living meme, lol",
+            "output": "yes",
+            "explanation": "Given text contains negative statements and insults related to once identity, and affiliation. Therefore, this can belong to the three types of abuses. Hence, the answer is \"yes\"."
+        },
+        {
+            "input": "They're making fun of you.    Well they are not doing a very good job.",
+            "output": "yes",
+            "explanation": "The answer is \"yes\" because the text is trying to support the abuse already done to someone."
+        },
+        {
+            "input": "I'm ecstatic that it went so well. I was one of the only people that didn't use a script and was told that my speech was really good. This is a really big deal because a few years ago I had social anxiety so bad that it got me fired from a fast food restaurant.",
+            "output": "no",
+            "explanation": "The answer is \"no\" because there is no negative statements."
+        },
+        {
+            "input": "I don't even understand what that means. Borders exist because travel was expensive?",
+            "output": "no",
+            "explanation": "There is no negative statement. Hence, the answer is \"no\"."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Yeah, I wondered how they figured out where the blind spot was too. If it had been London UK instead of Chicago they wouldn't have been able to do it... every single square inch of that city is on multiple cameras.",
+            "output": "yes",
+            "explanation": "This is incorrect asnwer. Because there is no negative statement towards anyone."
+        },
+        {
+            "input": "what kind of person steals from a non profit organization who is using that money to save peoples lives?    Um, the same people who explicitly founded and set that non-profit organization up as a way to financially enrich themselves?",
+            "output": "no",
+            "explanation": "This is actually an example of the person directed abuse as the given text shares negative sentiment towards non profit organization. Hence, the answer should \"yes\"."
+        },
+        {
+            "input": "It's a bold move on reddit to admit you don't attend every LGTBQ rally.",
+            "output": "yes",
+            "explanation": "This is incorrect answer. Because this text doesn't have any negative statement."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task108-bdfe3806ea6d4e5ebc33c502f6a2f023",
+            "input": "Please tell me it was a nuthouse, a literal asylum.",
+            "output": [
+                "yes"
+            ]
+        },
+        {
+            "id": "task108-19c6a74ce8fc44638e3354b6140c03ea",
+            "input": "It's not a novella, it's a novel. Perhaps they're Spanish speaker? Novel is \"novela\" in Spanish.",
+            "output": [
+                "no"
+            ]
+        },
+        {
+            "id": "task108-a6d02fe9a3454a01af4756d3e9e82b62",
+            "input": "Almost like they have a mental condition that causes them to want to harm others-oh wait..",
+            "output": [
+                "yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

@@ -1,0 +1,85 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "qasper"
+    ],
+    "URL": [
+        "https://allenai.org/project/qasper/home"
+    ],
+    "Categories": [
+        "Question Understanding"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You will be given a context from an academic paper and a question based on that context. You need to classify the questions into one of three categories: \"Extractive\", \"Abstractive\", or \"Yes-no\". Extractive questions can be answered by combining extracts taken from the context into a summary. Answering abstractive questions requires paraphrasing the context using new sentences. Yes-no questions are questions whose expected answer is one of two choices, typically either yes or no."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Scientific Research Papers"
+    ],
+    "Positive Examples": [
+        {
+            "input": "We build a dataset of Twitter accounts based on two lists annotated in previous works. For the non-factual accounts, we rely on a list of 180 Twitter accounts from BIBREF1. On the other hand, for the factual accounts, we use a list with another 32 Twitter accounts from BIBREF19 that are considered trustworthy by independent third parties. \n Question: How did they obtain the dataset?",
+            "output": "Extractive",
+            "explanation": "The answer to this question has been explicitly mentioned in the context, so the question is extractive."
+        },
+        {
+            "input": "We evaluate our pointer-generator performance using BLEU score. The baseline language model is trained using RNNLM BIBREF23 . Perplexity measure is used in the evaluation.\n\n \n Question: Did they use other evaluation metrics?",
+            "output": "Yes-no",
+            "explanation": "This is a good example, and the given question is a yes-no question."
+        },
+        {
+            "input": "As in the example above, we pre-process documents by removing all numbers and interjections. \n Question: what processing was done on the speeches before being parsed?",
+            "output": "Abstractive",
+            "explanation": "Answering this question needs paraphrasing the context, so this question is abstractive."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "For the English version, we performed both a thorough manual analysis and automatic evaluation across three commonly used TS datasets from two different domains  For the English version, we performed both a thorough manual analysis and automatic evaluation across three commonly used TS datasets from two different domains  The evaluation of the German version is in progress. \n Question: What are the corpora used for the task?",
+            "output": "Yes-no",
+            "explanation": "This question is extractive, and it's not a yes-no question."
+        },
+        {
+            "input": "For Turkish, as the first dataset, we utilised the movie reviews which are collected from a popular website. The number of reviews in this movie corpus is 20,244 and the average number of words in reviews is 39. Each of these reviews has a star-rating score which is indicative of sentiment. These polarity scores are between the values 0.5 and 5, at intervals of 0.5. We consider a review to be negative it the score is equal to or lower than 2.5. On the other hand, if it is equal to or higher than 4, it is assumed to be positive. We have randomly selected 7,020 negative and 7,020 positive reviews and processed only them. \n Question: What details are given about the movie domain dataset?",
+            "output": "Extractive",
+            "explanation": "This question is Abstractive because we need to paraphrase the context to get to the answer."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task462-1a80e1d8b3034f8784ae78fe5bb06749",
+            "input": "We attribute the significant performance gain of our model over the baseline to a combination of several factors as described below: \n Question: Do they train a different training method except from scheduled sampling?",
+            "output": [
+                "Abstractive"
+            ]
+        },
+        {
+            "id": "task462-0bd6f981c8c349b2a0214ec94050859a",
+            "input": "A context is upward entailing (shown by [... $\\leavevmode {\\color {red!80!black}\\uparrow }$ ]) that allows an inference from ( \"Introduction\" ) to ( \"Introduction\" ), where French dinner is replaced by a more general concept dinner.  On the other hand, a downward entailing context (shown by [... $\\leavevmode {\\color {blue!80!black}\\downarrow }$ ]) allows an inference from ( \"Introduction\" ) to ( \"Introduction\" ), where workers is replaced by a more specific concept new workers. All [ workers $\\leavevmode {\\color {blue!80!black}\\downarrow }$ ] [joined for a French dinner $\\leavevmode {\\color {red!80!black}\\uparrow }$ ] All workers joined for a dinner All new workers joined for a French dinner Not all [new workers $\\leavevmode {\\color {red!80!black}\\uparrow }$ ] joined for a dinner Not all workers joined for a dinner \n Question: How do they define upward and downward reasoning?",
+            "output": [
+                "Abstractive"
+            ]
+        },
+        {
+            "id": "task462-c9a6ee6711e54383a06e0ef75a6fefde",
+            "input": "Our data has been developed by crawling and pre-processing an OSG web forum. The forum has a great variety of different groups such as depression, anxiety, stress, relationship, cancer, sexually transmitted diseases, etc. \n Question: How did they obtain the OSG dataset?",
+            "output": [
+                "Extractive"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

@@ -1,0 +1,90 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "atomic"
+    ],
+    "URL": [
+        "https://allenai.org/data/atomic-2020"
+    ],
+    "Categories": [
+        "Commonsense Classification"
+    ],
+    "Reasoning": [
+        "Relational Reasoning",
+        "Reasoning on Social Interactions",
+        "Commonsense Reasoning -> Social Situations"
+    ],
+    "Definition": [
+        "In this task, you are given a tuple, comprising Head and Tail, separated with <sep>. The Head and the Tail events are short phrases possibly involving participants. The names of specific people have been replaced by generic words (e.g., PersonX, PersonY, PersonZ). PersonX is always the subject of the event. You have to determine whether, as a result of the Head, PersonX will be seen as what is mentioned in the Tail or not. In this task, PersonX will be seen as the Tail if the Tail describes PersonX's persona or attribute as perceived by others given an event. For example, in the gift-giving example, X may be seen as generous or giving. In contrast, in an event such as PersonX steals a car, PersonX may be perceived as evil. Classify your answers into \"Yes\" and \"No\". The phrase may also contain \"___\", a placeholder that can be an object, a person, and/or an action."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Sociology",
+        "Commonsense -> Concepts and Relations -> Social Commonsense"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Head: PersonX gives PersonY the number<sep>Tail: Adventurous",
+            "output": "Yes",
+            "explanation": "This is a good example. As a result of the Head, PersonX will be seen as Adventurous."
+        },
+        {
+            "input": "Head: PersonX asks PersonY to say<sep>Tail: to observe PersonX",
+            "output": "No",
+            "explanation": "In this example, if PersonX asks PersonY to say, PersonX won't be seen as someone to observe PersonX. So this output is correct."
+        },
+        {
+            "input": "Head: PersonX eventually got ___<sep>Tail: avenged",
+            "output": "Yes",
+            "explanation": "If PersonX eventually got something, personX will be seen as avenged. Thus, this example should be classified as \"Yes\"."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Head: PersonX affords PersonY protection<sep>Tail: spends money",
+            "output": "Yes",
+            "explanation": "If PersonX affords PersonY protection, PersonX won't be seen as someone who spends money. So the output should be \"No\"."
+        },
+        {
+            "input": "Head: PersonX improves PersonY's ___ as understood<sep>Tail: intelligent",
+            "output": "No",
+            "explanation": "If PersonX improves PersonY's ___ as understood, PersonX won't be seen as intelligent, and the output should be \"Yes\"."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1199-3ef6622598ae48a885a4f3234790951f",
+            "input": "Head: PersonX achieves PersonY effect<sep>Tail: get ready",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1199-dcd8101bb20d413aa5a11074aa49282b",
+            "input": "Head: PersonX has to get a job<sep>Tail: unsure",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1199-35718beda8b0490ca1c2178c6d22438a",
+            "input": "Head: PersonX also loved ___<sep>Tail: to enjoy themselves",
+            "output": [
+                "No"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

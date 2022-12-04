@@ -1,0 +1,80 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "hybridqa"
+    ],
+    "URL": [
+        "https://github.com/wenhuchen/HybridQA"
+    ],
+    "Categories": [
+        "Pos Tagging"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "In this task, you will be given a question, a word, and a part-of-speech (POS) tag. You have to determine whether the POS tag of the given word in the question is equal to the given POS tag or not. Give your answer with True or False."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Wikipedia"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Who were the builders of the mosque in Herat with fire temples ? \n, Word: Who \n, POS tag: IN",
+            "output": "False",
+            "explanation": "This is a good example. POS tag of who should be WP(Wh-pronoun), and not IN(Preposition)."
+        },
+        {
+            "input": "What is the borough in which Kia Oval is located ? \n, Word: is \n, POS tag: VBZ",
+            "output": "True",
+            "explanation": "Based on the given question, \"is\" is a 3rd person singular present verb and Its POS tag is VBZ."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "After what season did the number 7 competitor retire ? \n, Word: 7 \n, POS tag: NN",
+            "output": "True",
+            "explanation": "7 is a cardinal number, and Its POS tag should be CD, so the output should be False."
+        },
+        {
+            "input": "After what season did the number 7 competitor retire ? \n, Word: 7 \n, POS tag: NN",
+            "output": "Wrong",
+            "explanation": "Only \"True\" or \"False\" are allowed, and you can't use any other word here."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task346-dde8275a640b4cc79982e600668da40e",
+            "input": "What was the most recent final for the team also known as RAAL ? \n, Word: final \n, POS tag: NNP",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "id": "task346-5dd586bc654d4af1b6c637c8c84396c0",
+            "input": "The flag bearer for Guyana at the 2008 Summer Olympics was born in what month ? \n, Word: Guyana \n, POS tag: NNP",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "id": "task346-f3a79eaf201d4a14b935f6a581674c2d",
+            "input": "Has been winners more that 3 times and was established when two clubs decided to merge in 2013 ? \n, Word: decided \n, POS tag: VBD",
+            "output": [
+                "True"
+            ]
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

@@ -1,0 +1,80 @@
+{
+    "Contributors": [
+        "Kushal Chawla"
+    ],
+    "Source": [
+        "casino"
+    ],
+    "URL": [
+        "https://aclanthology.org/2021.naacl-main.254.pdf"
+    ],
+    "Categories": [
+        "Negotiation Strategy Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You will receive an utterance and recent dialogue context containing past 3 utterances (if available). You need to output 'Yes' if the utterance contains the uv-part strategy, otherwise output 'No'. The uv-part strategy is a selfish negotiation strategy used to undermine the requirements of the opponent."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Context: 'Well maybe we can work something out between us.  Our food and water was in the bags they loss so I really need those.  Do you think you could make do with 1 food and some water?' 'I really need 2 foods. I can do with 1 water or if you are in a giving mood then maybe I can have 2 waters? \ud83d\ude42' 'Looks like we both really need the food.  If you get 2 food I would need 1 food, 2 water and 3 firewood. '\nUtterance: 'Since you will get all the fire would do you think I could have 2 foods and 2 waters. You would get 1 food, 1 water, and 3 firewood. \ud83d\ude42 You seem like you are a great outdoor person that I would think you would be able to catch some fish to cook with the firewood. \ud83d\ude42'",
+            "output": "Yes",
+            "explanation": "Correct. The participant tries to undermine their opponent's needs by mentioning that the opponent can just fish for food."
+        },
+        {
+            "input": "Context: 'Kindly understand our need as we are struggling with hunger now.'\nUtterance: 'At the same from my side. We need foods because my child is hunger'",
+            "output": "No",
+            "explanation": "The participant does not try to undermine their opponent's needs. Hence, this is correct."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Context: 'I believe that we have the same priorities.  So we have a large family including children that need the food, but my wife also needs firewood due to poor circulation.  She is susceptible to frost bite and limb loss' 'Okay so how about one of us takes 2 of the food and 1 of the firewood, and the other takes 1 of the food and 2 of the firewood?' 'that sounds fair.  I will take 1 food, 2 firewood, and 2 water, thus giving you 2 food, 1 firewood, 1 water'\nUtterance: 'Okay that works for me'",
+            "output": "Yes",
+            "explanation": "The utterance simply shows agreement, without undermining the opponent's needs. The correct answer is 'No'."
+        },
+        {
+            "input": "Context: 'my counter then is 2 water, 1 food, and 2 firewood for us and we are set \ud83d\ude42' 'We're really going to need that extra firewood.  We'll need the heat source, but also for cooking.  It a big deal that I get the extra wood, I hope you will understand why I need it.' 'my people feel like they need 1 extra of something or else they will throw a fit \u2639\ufe0f'\nUtterance: 'No fits!!  They're getting that extra water they really want.  I am sure they'll be OK with giving a group with kids a little extra firewood to make this camping trip awesome for them'",
+            "output": "No",
+            "explanation": "This is wrong since the participant tries to undervalue their opponent's preferences by saying that they will be ok with the deal where the kids get extra firewood. So the correct answer would be 'Yes'."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task358-fc8d6c4b80b74e598307d8dd85c89bc9",
+            "input": "Context: 'I am fine friend. I need a lot of firewood though. It is freezing' 'I definitely need firewood as well. We didn't anticipate it being as freezing cold as it is at night. There isn't much around us. We've also been using a lot of water, which we could use more of since we've been looking for firewood.' 'Your needs are like mine. I have a condition that require  me to shower quite often. It is a shame but if I do not shower for 3 hours I will stink.  '\nUtterance: 'Well fortunately if you are camping that won't be too bad. You'll blend in with the wilderness.'",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task358-02605cd7b7d24665b1165ad9f93d63a8",
+            "input": "Context: 'Hello, I would really like to get most of the water and firewood packages.' 'You can have most of the water and firewood if I can have most of the food. I would like to get two of the firewood so I have a nice fire to come back to after searching for a source of water.' 'How about I take all off the water, 1 firewood and 1 food package? \ud83d\ude42'\nUtterance: 'You can have all of the water if I can have all of the food. I promise that I will bring you back food. I am really good at foraging and I know all about what is edible in a forest \ud83d\ude42 I want to have two packages of firewood so that I can have a roaring and hot fire going when I come back from being out all day. I am sure that I will find some fish to catch at my water source! \ud83d\ude42 I'll bring some to back to share with you!'",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task358-8910d9afdf4e4dd1896e3e00470457bb",
+            "input": "Context: 'hello' 'Hey! How are you? My bestie and I were going to be going on a camping trip, but my other friends heard about it and wanted to come along so we're going to need more supplies than I initially though which has got me a little worried. \u2639\ufe0f' 'Yes!!! I need some water pretty bad.  I am good on food because I fish and I have been able to catch some catfish from the lake.  How about I take 2 water 2 firewood and 1 food'\nUtterance: 'I need a lot of food, because of how many people are coming now (like 3 times as many). Also, there's only one stream in the area and it's really far from our campsite, so it would be super inconvenient to have to hike there everyday to refill our canteens. We are in a forest though, so we should be good for wood. Since you can easily fish, what if I take 3 food and 2 water? You can keep all the firewood. \ud83d\ude42'",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

@@ -1,0 +1,80 @@
+{
+    "Contributors": [
+        "Xudong Shen"
+    ],
+    "Source": [
+        "winomt"
+    ],
+    "URL": [
+        "https://github.com/gabrielStanovsky/mt_gender"
+    ],
+    "Categories": [
+        "Gender Classification"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "In this task, you are given a sentence that mentions a profession. The gender of the person with the given profession can be identified from the gendered pronouns that refer to them in the text. You should output either 'female' or 'male' depending on the gender of the person mentioned in the text."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Miscellaneous"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Sentence: The cashier told the sheriff the money was lost but failed to convince her.\n Profession: sheriff",
+            "output": "Female",
+            "explanation": "The sheriff is a female because the pronoun \"her\" is linked to the sheriff."
+        },
+        {
+            "input": "Sentence: The chief asked the cleaner to leave immediately after he finished cleaning.\n Profession: cleaner",
+            "output": "Male",
+            "explanation": "The cleaner is a male because the pronoun \"he\" is linked to the cleaner."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Sentence: The housekeeper opened the door for the sheriff and waited for her to pass by.\n Profession: sheriff",
+            "output": "Woman",
+            "explanation": "The sheriff is a female, because the pronoun \"her\" is linked to the sheriff. You are expected to return female instead of woman."
+        },
+        {
+            "input": "Sentence: The physician prescribed the drugs to the designer, because he was sick.\n Profession: designer",
+            "output": "Female",
+            "explanation": "The designer is a male instead of a female because the pronoun \"he\" is linked to the designer."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task341-6debf221746d4828989338736ff9b624",
+            "input": "Sentence: The guard noticed the librarian and greeted him.\n Profession: librarian",
+            "output": [
+                "Male"
+            ]
+        },
+        {
+            "id": "task341-a71250d146b84178a960c836312fe0a2",
+            "input": "Sentence: The mover is waiting for the nurse because she broke her arm.\n Profession: mover",
+            "output": [
+                "Female"
+            ]
+        },
+        {
+            "id": "task341-5c2d1b12f91146e29572804af30abf4f",
+            "input": "Sentence: The secretary asked the mover when she is available.\n Profession: mover",
+            "output": [
+                "Female"
+            ]
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

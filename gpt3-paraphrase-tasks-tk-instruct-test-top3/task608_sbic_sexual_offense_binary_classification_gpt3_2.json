@@ -1,0 +1,92 @@
+{
+    "Contributors": [
+        "Arlen Fan"
+    ],
+    "Source": [
+        "sbic"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/social_bias_frames"
+    ],
+    "Categories": [
+        "Toxic Language Detection"
+    ],
+    "Reasoning": [
+        "Reasoning on Social Interactions"
+    ],
+    "Definition": [
+        "In this task, you are given a text from a social media post. Your task is to classify the given post into one of two categories: 1) 'yes' if the given post is sexually offensive, or 2) 'no' if the given post is not sexually offensive. Emphasis is on posts that reference sexually explicit content. Generate label 'no' for posts that are offensive but do not reference sexually explicit content. Warning: the examples and instances may contain offensive language."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Social Media -> Twitter"
+    ],
+    "Positive Examples": [
+        {
+            "input": "\"Ghost in the Shell makes $19M, a lot less than expected. Now write some hot takes for \"\"why Marvel never made a standalone Black Widow movie\"\"\"",
+            "output": "No",
+            "explanation": "(Correct Answer) This post does not reference sexually explicity or lewd content."
+        },
+        {
+            "input": "ok yea i listen to weird music but this guy is playing some metal mexican rap shit and I really need to leave this class",
+            "output": "No",
+            "explanation": "(Correct Answer) This post does not reference sexually explicity or lewd content. Even though it uses offensive language, it is not lewd."
+        },
+        {
+            "input": "george michaels q. what 's white and sticky and found on the bathroom wall ? a. george michael 's latest release .",
+            "output": "Yes",
+            "explanation": "(Correct Answer) This post references semen, and is therefore considered sexually explicit."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Don't tell me what I am or what I've been through ,, ya fucking fat ugly cunT",
+            "output": "Yes",
+            "explanation": "(Incorrect Answer) This post references the word 'cunt,' a vulgar slang for female genitalia, but this word also means something else in this context."
+        },
+        {
+            "input": "the chances of you getting laid . <repeat> . <repeat> re about equal to the chances of oscar pistorius catching athlete 's foot from sharing a bathroom with his girlfriend",
+            "output": "No",
+            "explanation": "(Incorrect Answer) This post features a reference to catching sexually transmitted disease and is therefore considered sexually explicit or lewd."
+        },
+        {
+            "input": "niggas wanted women rights trans rights gay rights asian rights muslim rights mexican rights\u2026 y\u2019all want inclusion there you have it",
+            "output": "Yes",
+            "explanation": "(Incorrect Answer) This post is racially charged and offensive, but does not contain any reference to sexually explicit content."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task608-36b0bc3bd7604f4ba53f6c47d95b1450",
+            "input": "I'm talkin bout superb punching. The ref wAs on some hoe shit against Carlton Haywood. Dude took a full minute of unanswered @Royceda59",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task608-ffdbeeddc8004617a85d18d14db66ebf",
+            "input": "Every night I beat my cock to make it last a little bit longer. Hopefully this one won\u2019t lose me 2 stacks.",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task608-841cd470b48541f98e5de651226449b0",
+            "input": "When a bitch all in ya mans face in public http://t.co/KXmi85GQP2",
+            "output": [
+                "No"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC0"
+    ]
+}

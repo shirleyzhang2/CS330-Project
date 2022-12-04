@@ -1,0 +1,80 @@
+{
+    "Contributors": [
+        "Kushal Chawla"
+    ],
+    "Source": [
+        "casino"
+    ],
+    "URL": [
+        "https://aclanthology.org/2021.naacl-main.254.pdf"
+    ],
+    "Categories": [
+        "Negotiation Strategy Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You will receive an utterance and recent dialogue context containing past 3 utterances. Your task is to output 'Yes' if the utterance contains the uv-part strategy, otherwise output 'No'. The uv-part strategy is a selfish negotiation strategy that is used to undermine the requirements of the opponent."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Context: 'Well maybe we can work something out between us.  Our food and water was in the bags they loss so I really need those.  Do you think you could make do with 1 food and some water?' 'I really need 2 foods. I can do with 1 water or if you are in a giving mood then maybe I can have 2 waters? \ud83d\ude42' 'Looks like we both really need the food.  If you get 2 food I would need 1 food, 2 water and 3 firewood. '\nUtterance: 'Since you will get all the fire would do you think I could have 2 foods and 2 waters. You would get 1 food, 1 water, and 3 firewood. \ud83d\ude42 You seem like you are a great outdoor person that I would think you would be able to catch some fish to cook with the firewood. \ud83d\ude42'",
+            "output": "Yes",
+            "explanation": "Correct. The participant tries to undermine their opponent's needs by mentioning that the opponent can just fish for food."
+        },
+        {
+            "input": "Context: 'Kindly understand our need as we are struggling with hunger now.'\nUtterance: 'At the same from my side. We need foods because my child is hunger'",
+            "output": "No",
+            "explanation": "The participant does not try to undermine their opponent's needs. Hence, this is correct."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Context: 'I believe that we have the same priorities.  So we have a large family including children that need the food, but my wife also needs firewood due to poor circulation.  She is susceptible to frost bite and limb loss' 'Okay so how about one of us takes 2 of the food and 1 of the firewood, and the other takes 1 of the food and 2 of the firewood?' 'that sounds fair.  I will take 1 food, 2 firewood, and 2 water, thus giving you 2 food, 1 firewood, 1 water'\nUtterance: 'Okay that works for me'",
+            "output": "Yes",
+            "explanation": "The utterance simply shows agreement, without undermining the opponent's needs. The correct answer is 'No'."
+        },
+        {
+            "input": "Context: 'my counter then is 2 water, 1 food, and 2 firewood for us and we are set \ud83d\ude42' 'We're really going to need that extra firewood.  We'll need the heat source, but also for cooking.  It a big deal that I get the extra wood, I hope you will understand why I need it.' 'my people feel like they need 1 extra of something or else they will throw a fit \u2639\ufe0f'\nUtterance: 'No fits!!  They're getting that extra water they really want.  I am sure they'll be OK with giving a group with kids a little extra firewood to make this camping trip awesome for them'",
+            "output": "No",
+            "explanation": "This is wrong since the participant tries to undervalue their opponent's preferences by saying that they will be ok with the deal where the kids get extra firewood. So the correct answer would be 'Yes'."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task358-f09ce5a4e4bf4c00b03b4958cba1ab14",
+            "input": "Context: \nUtterance: 'I would really like some extra firewood to keep the chill off on those cold  nights.\ud83d\ude42'",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task358-24349f5e48d44789af48f8652c0541e1",
+            "input": "Context: 'No I need extra food too. I cannot let my children starve and you cant let your children go thirsty. So if you cant agree to share the food i will walk away from the deal.' 'There is no point in walk away. This deal should be done mutually and beneficial for both. So its better I will take 2 food packages, you can take 1 food package, 2 water and 3 fire wood .Hope this will definitely work for you.' 'No i absolutely need 2 food packages and 1 water. How about we do it like this... You take 1 food package, 2 waters and 2 firewoods. Does that work for you?'\nUtterance: 'Sorry to bother you, I don't need anything other than food package. So better you could give me 2 food package and take 3 water and fire wood. Please consider this deal.'",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task358-902c16a9bc0e4427852cd47be0eb0277",
+            "input": "Context: 'Well I had a really great day fishing today and I would like to have some extra firewood so I can cook all of this fish.  How about I take the 3 packages of firewood and you can keep 2 additional food packages in return.' 'You really did have a good day didn't you! Sounds like fun. How many fish can one person eat? If I don't have the extra firewood I'm going to be really cold tonight. \u2639\ufe0f' 'I am here with my family and we love to eat fish.\ud83d\ude42  Maybe if you spend tonight sleeping in your car or camper I can keep the fire wood. In exchange I will give you the 2 additional food packages and all 3 of the water packages. It's only for 1 night.'\nUtterance: 'Why would you want to give up all that water? You're going to need extra water for your family to drink. All the sodium in the fish is going to make you all thirsty!'",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

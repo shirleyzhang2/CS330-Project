@@ -1,0 +1,87 @@
+{
+    "Contributors": [
+        "Hadi Mazboudi"
+    ],
+    "Source": [
+        "wiqa"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/wiqa"
+    ],
+    "Categories": [
+        "Sentence Ordering"
+    ],
+    "Reasoning": [
+        "Temporal Reasoning"
+    ],
+    "Definition": [
+        "The task is to determine whether a given set of steps are in order or not. If the steps reference information that is introduced in a later step, then the answer is No. Otherwise, the answer is Yes."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Natural Science"
+    ],
+    "Positive Examples": [
+        {
+            "input": " ['The seeds are dispersed by wind, animals, etc', 'The seeds reach the ground', 'Grow into new trees', 'The process repeats itself over and over', 'A tree produces seeds', 'These new trees produce seeds'] ",
+            "output": "No",
+            "explanation": "These steps are not in order. The first step in this sequence is 'The seeds are dispersed by wind, animals, etc' but the step introducing the seed 'A tree produces seeds' is after the steps referencing the seeds. Therefore, the answer is No"
+        },
+        {
+            "input": " ['The carafe is filled with water', 'The water is poured into the machine at the back', 'Coffee beans are put into a grinder', 'The grinder is activated', 'A filter is put into the coffee maker', 'The ground coffee is put into the filter', 'Sometimes a bit of salt is added to the grounds to bring out flavor', 'The top of the machine is closed', 'The power is turned on', 'The water passes through the grounds and becomes coffee.'] ",
+            "output": "Yes",
+            "explanation": "These steps are in order. The information from each previous step leads into the next step. Therefore, the correct answer is Yes"
+        },
+        {
+            "input": " ['The nest is done.', 'The bird makes a flat base with twigs', 'The bird picks a tree', 'The bird makes sides with twigs and other things', 'The bird adds softer material to the inside', 'The bird collects twigs and other refuse'] ",
+            "output": "No",
+            "explanation": "These steps are not in order. The first step is 'The nest is done'. Since these steps outline how birds make a nest, this step should be last. Therefore, the steps are out of order and the answer is No"
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": " ['The cans are transported to a facility', 'The molds are flattened and rolled into sheets to reuse.', 'The cans are heated to 1400 degrees to melt them', 'The molten metal is poured into molds', 'The cans are shredded by a machine', 'Put the aluminum can into a recycle bin'] ",
+            "output": "Yes",
+            "explanation": "This answer is incorrect because these steps are out of order. The step 'Put the aluminum can into a recycle bin' should be first. Without this step, the step 'The cans are transported to a facility' does not make sense because the cans are not introduced yet. The correct answer is No"
+        },
+        {
+            "input": " ['Acid rain is produced by chemicals that reach into the atmosphere', 'Falls onto the ground', 'The acid rain starts scouring rocks', 'Destroys vegetation', 'The lack of vegetation alters the surrounding environment.'] ",
+            "output": "No",
+            "explanation": "This answer is incorrect because these steps are in order. The step, 'Acid rain is produced by chemicals that reach into the atmosphere' introduces the subject of the process, acid rain. The step 'Falls onto the ground' refers to the acid rain that was in the previous step. After the acid falls onto the ground, the next step is 'The acid rain starts scouring rocks'. The next step describes what happens after acid rain falls onto the ground, 'Destroys vegetation'. After the acid rain destroys vegetation, 'The lack of vegetation alters the surrounding environment.' Since each step only uses information from previous steps, the correct answer is Yes"
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1548-a4dea7aabeb84d3388fdb4796090bf7d",
+            "input": " ['Cracks also form when rocks heat up', 'Water seeps into rocks', 'The rocks slowly break down.', 'Cracks form in the rocks', 'The water freezes and thaws'] ",
+            "output": [
+                "  No  "
+            ]
+        },
+        {
+            "id": "task1548-8ecc83a769ec4de0af2ca0a6c57cd8fa",
+            "input": " ['Coal is harvested from a coal mine', 'The coal is transported either by train or truck to power station', 'The coal is burned in a furnace', 'Water is turned into steam in the boiler', 'The steam is cooled in cooling towers', 'The steam turns the turbines', 'The generator makes electricity', 'The electricity is sent through transformers.'] ",
+            "output": [
+                "  Yes  "
+            ]
+        },
+        {
+            "id": "task1548-a54c49ac61fe416ea5fee0b00954e199",
+            "input": " ['The oxygen passes through the bronchial tubes to the lungs', 'The bloodstream carries the carbon dioxide back to the lungs', 'The oxygen is moved into the bloodstream', 'Circulates through the body', 'The lungs expel the carbon dioxide through the nose and mouth.', 'A person breathes in oxygen', 'The cells in the body exchange the oxygen with carbon dioxide'] ",
+            "output": [
+                "  No  "
+            ]
+        }
+    ],
+    "Instance License": [
+        "Apache 2.0"
+    ]
+}

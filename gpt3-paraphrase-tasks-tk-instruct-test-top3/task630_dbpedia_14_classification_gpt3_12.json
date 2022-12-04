@@ -1,0 +1,81 @@
+{
+    "Contributors": [
+        "Divya Reddy Katpally"
+    ],
+    "Source": [
+        "dbpedia_14"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/dbpedia_14"
+    ],
+    "Categories": [
+        "Text Matching"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "In this task, you are given a text and a title. The title is present in the text and refers to the entity in the text. The title might have some text in parentheses, for example: \"HMS Mallow (K81)\", or be slightly different from what is present in the text. If they still refer to the same entity, then it is a correct title. Your task is to output \"Yes\" if the title is correct, otherwise output \"No\"."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Wikipedia"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Text: The Mansfield Building Society is a UK building society which has its headquarters in Mansfield Nottinghamshire. It is a member of the Building Societies Association. \nTitle: Mansfield Building Society",
+            "output": "Yes",
+            "explanation": "The title \"Mansfield Building Society\" is present in the text and it is the main entity that is referred in the text. Hence, it is the title of the document."
+        },
+        {
+            "input": "Text:  The third and current HMS Argyll is a Type 23 'Duke' Class frigate. She is currently the oldest serving Type 23 frigate in the Royal Navy. Like all of her class she is named for a British dukedom in this case that of Argyll. \nTitle: HMS Argyll (F231)",
+            "output": "Yes",
+            "explanation": "\"HMS Argyll\" is present in the text and it is the main entity that is referred in the text. Here, the text in parentheses \"F31\" is not present in the document and it can be ignored. Hence, the output is correct. "
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Text: The Mansfield Building Society is a UK building society which has its headquarters in Mansfield Nottinghamshire. It is a member of the Building Societies Association. \nTitle: Mansfield Building Society",
+            "output": "No",
+            "explanation": "The title \"Mansfield Building Society\" is present in the text and it is the main entity that is referred in the text. Hence, the output is incorrect."
+        },
+        {
+            "input": "Text:  The third and current HMS Argyll is a Type 23 'Duke' Class frigate. She is currently the oldest serving Type 23 frigate in the Royal Navy. Like all of her class she is named for a British dukedom in this case that of Argyll. \nTitle: HMS Argyll (F231)",
+            "output": "HMS Argyll",
+            "explanation": "The output should be either \"Yes\" or \"No\". Hence, it is negative example."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task630-3766f163360848629cb71ca41836c3fd",
+            "input": "Text:  The Public Square is a poem from the secondedition (1931) of Wallace Stevens's first book of poetryHarmonium. It was firstpublished in 1923 so it is one ofthe few poems in the collection that is not free of copyright but itis quoted here in full as justified by fair use for scholarlycommentary.The violence of an edifice's demolition is matched by the violence ofthe poem's language particularly in the first two stanzas. \nTitle: The Public Square",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task630-6f087db7696d4c62ac6544090dbda086",
+            "input": "Text:  The London and North Eastern Railway Class P2 was a class of 2-8-2 steam locomotives designed by Sir Nigel Gresley for working heavy express trains over the harsh Edinburgh to Aberdeen Line. As they were to serve on Scottish expresses they were given famous names from Scottish lore.Six locomotives of the class were built; introduced between 1934 and 1936. Between 1943 and 1944 the class were rebuilt under Gresley's successor Edward Thompson into the LNER Thompson Class A2/2 4-6-2 type. \nTitle: LNER Class P2",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task630-1537880aaa9f40ee94c684e45be3a092",
+            "input": "Text:  A Curious Dream is a 1907 short drama film based on Mark Twain's short story The Curious Dream. Twain himself provided the following testimonial: Gentlemen: I authorize the Vitagraph Company of America to make a moving picture from my 'Curious Dream.' I have their picture of John Barter examining his gravestone and find it frightfully and deliciously humorous. \nTitle: Eliksir",
+            "output": [
+                "No"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY-SA",
+        "GNU Free Documentation 2.0"
+    ]
+}

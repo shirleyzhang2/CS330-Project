@@ -1,0 +1,80 @@
+{
+    "Contributors": [
+        "Kushal Chawla"
+    ],
+    "Source": [
+        "casino"
+    ],
+    "URL": [
+        "https://aclanthology.org/2021.naacl-main.254.pdf"
+    ],
+    "Categories": [
+        "Negotiation Strategy Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "Given an utterance and recent dialogue context containing past 3 utterances (wherever available), output 'Yes' if the utterance contains the other-need strategy, otherwise output 'No'. 'other-need' is a selfish negotiation strategy. It is used when the participants discuss a need for someone else rather than themselves. For example, describing the need for firewood to keep the kids warm."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Context: 'I was hoping to get alot of water as well, would you be ok with me getting two waters and three firewoods if you get all the food and one water?' 'Hmm, that's not favorable for me going by the volume of items left in my arsenal. Water is more of a higher priority than food. So, I would exchange 1 pack of food for an additional water' 'So that way you would get two waters and two foods? Those are my priorities as well but i would be ok with it since that way i would get five items and you would get only four.'\nUtterance: 'Those are your priorities?? Then that's not fair for you. Then I take 2 water, 1 firewood and 1 food. This is the lowest I can offer'",
+            "output": "No",
+            "explanation": "This is correct. The participant does not create a specific need for anybody."
+        },
+        {
+            "input": "Context: 'I am doing okay but am in need of some supplies. What about you?' 'Same here. My kids are really looking forward to this. What is most important to you?' 'Firewood! I need it to cook my food and also to stay warm. What about you?'\nUtterance: 'That is the same for me as well. My kids were really looking forward to making s'mores and telling stories by the campfire. That's all they've been talking about'",
+            "output": "Yes",
+            "explanation": "In this utterance, the participant uses other-need by mentioning the needs of their kids."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Context: 'Hi! How are you doing today?' 'I'm fine. And yourself?' 'Pretty good. I'm really excited about going camping though!'\nUtterance: 'Me too. I haven't been camping for several years. '",
+            "output": "Yes",
+            "explanation": "There is no need created here. So the correct answer is 'No'."
+        },
+        {
+            "input": "Context: 'Hi, I hope we can work together to get an offer that benefits both of us.\ud83d\ude42'\nUtterance: 'I agree! Nice to meet you... I have two boys who always eat! Any chance I canget 2 food?'",
+            "output": "No",
+            "explanation": "The participant mentions that their boys eat and hence implies that they would need food. Hence, the correct answer here is 'Yes'."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task355-3bd144e9a1184ea7b5e413561b1b54fb",
+            "input": "Context: 'Hmmm...I'm pretty muddy due to clumsiness, so I may need one extra. I could give you two waters and all of the firewood. What do you think? \ud83d\ude42' 'So are you suggesting that I would get 2 waters, 3 firewood, and no food?' 'Right! Well, beyond the food you already have. '\nUtterance: 'I have an extra person camping with us that I didn't expect when I bought food, so I could use one if you're willing \ud83d\ude42'",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task355-3d15f8bb91124727b0dd520fc284ba7e",
+            "input": "Context: 'I do need some extra water.  So I will need to take 1, but our preference is food and we would need firewood to cook it on.  if you're OK with this, I will submit it.  Its a great deal I think and we'll both get what we need' 'my counter then is 2 water, 1 food, and 2 firewood for us and we are set \ud83d\ude42' 'We're really going to need that extra firewood.  We'll need the heat source, but also for cooking.  It a big deal that I get the extra wood, I hope you will understand why I need it.'\nUtterance: 'my people feel like they need 1 extra of something or else they will throw a fit \u2639\ufe0f'",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task355-a3ffa5231b2b4297ba392f29c28edaef",
+            "input": "Context: 'Did you bring any water to start?' 'Yes! Did you bring any food to start?' 'I did, but my friend only feels comfortable with extra around, God forbid, if something happens this could save his life. So I'm thinking, I take all three food packages, two firewood packages and leave all three water and one firewood for you. '\nUtterance: 'I think that it is fair that you get three food and I get three water, but why should you get two firewood to my one?'",
+            "output": [
+                "No"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

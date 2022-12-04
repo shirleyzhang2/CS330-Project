@@ -1,0 +1,90 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "matres"
+    ],
+    "URL": [
+        "https://github.com/CogComp/MATRES"
+    ],
+    "Categories": [
+        "Word Semantics"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You will be given a context and a verb, separated by a newline character. Your task is to determine if the given verb is a negation or not. A verb is a negation if it is not going to exist, not happen, or has no effect. The output should be \"Yes\" if the verb is a negation and \"No\" otherwise."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "News"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Only the government of the United States can decide if it prefers this variant, continued the letter, which Castro read on a state television station broadcast. Gonzalez for months refused requests by Elian's Miami relatives to go to the United States to (claim) the boy.  \n Verb: claim",
+            "output": "Yes",
+            "explanation": "This is a good example. Gonzalez refused to \"claim\" the boy. So, the claim didn't happen and it's a negation."
+        },
+        {
+            "input": "In Washington today, the Federal Aviation Administration (released) air traffic control tapes from the night the TWA Flight eight hundred went down.  \n Verb: released",
+            "output": "No",
+            "explanation": "In this sentence, the releasing event happened in the past, and it's not a negation."
+        },
+        {
+            "input": "Nobody hurried her up. No one (held) her back.  \n Verb: held",
+            "output": "Yes",
+            "explanation": "In this example, No one held her back. So \"held\" didn't happened and it's a negation."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "WASHINGTON ( AP ) -- Preliminary DNA tests link a missing anti-abortion activist to a strand of hair found near where a sniper shot and killed a Buffalo, N.Y., doctor who (performed) abortions, a law enforcement official said Friday.  \n Verb: performed",
+            "output": "Yes",
+            "explanation": "In this sentence, the performing action happened in the past, and it's not a negation."
+        },
+        {
+            "input": "He insisted that the NGO law \" will not change our position at all \". \" We won't (refuse) foreign donations, nor will we register as a 'foreign agent', \" he said.  \n Verb: refuse",
+            "output": "No",
+            "explanation": "In this sentence, \"refuse\" won't happen, so it's a negation."
+        },
+        {
+            "input": "Hungary has come home. We (are) back in the family, said Hungarian Foreign Minister Janos Martonyi.  \n Verb: are",
+            "output": "Yes",
+            "explanation": "In this example, they are back in the family. So \"are\" is happening now, and it's not a negation."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task458-8894b7222f5542a795e24e0cf73d537d",
+            "input": "Horsley called the move a  temporary setback.   We are presently (searching) for a bolder and more principled ( Internet service provider ) to host the Nuremburg Files,  the statement said.  \n Verb: searching",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task458-2283042d64b84c56a7ec8b3c4e245825",
+            "input": "As NATO allies, the goal is much smaller armies capable of meeting a variety of contingencies. The State Department says the three new members  (enhance) NATO's ability to fulfill its core mission of collective defense, respond to a range of security challenges and reduce the possibility of another major conflict in Europe of the kind that has claimed so many American lives.   \n Verb: enhance",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task458-5a206f4904cd44c188e9ee75b76a5cfe",
+            "input": "Two key suspects in the Kenya bombing have been handed over to the United States for trial. American authorities (allege) the attacks were plotted by Saudi terrorist Osama bin Laden.  \n Verb: allege",
+            "output": [
+                "No"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

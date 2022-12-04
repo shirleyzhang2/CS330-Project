@@ -1,0 +1,93 @@
+{
+    "Contributors": [
+        "Ishan Purohit"
+    ],
+    "Source": [
+        "multilingual_amazon_reviews"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/amazon_reviews_multi"
+    ],
+    "Categories": [
+        "Text Categorization"
+    ],
+    "Reasoning": [
+        "Reasoning on Social Interactions",
+        "Commonsense Reasoning"
+    ],
+    "Definition": [
+        "In this task, you will be given a review from Amazon and a category for the product. Your task is to classify whether the given category matches the review. Output \"True\" if the review and its category match, otherwise output \"False\"."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Reviews"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Review: Arrived broken. Manufacturer defect. Two of the legs of the base were not completely formed, so there was no way to insert the casters. I unpackaged the entire chair and hardware before noticing this. So, I'll spend twice the amount of time boxing up the whole useless thing and send it back with a 1-star review of part of a chair I never got to sit in. I will go so far as to include a picture of what their injection molding and quality assurance process missed though. I will be hesitant to buy again. It makes me wonder if there aren't missing structures and supports that don't impede the assembly process. \n Category: furniture",
+            "output": "True",
+            "explanation": "It's the correct category. Because the customer gives a review of the product which belongs to the furniture category, which we can see it from the way the customer describes his experience sharing how he unpackaged his chair."
+        },
+        {
+            "input": "Review: the cabinet dot were all detached from backing... got me \n Category: home_improvement",
+            "output": "True",
+            "explanation": "It's the correct category. Because the product belongs to the home_improvement category, we can see it in the review where the customer mentions a cabinet dot."
+        },
+        {
+            "input": "Review: I got this with 50% charge. Put it under the sun. two days later, it has 25%. Never able to charge it once. Should have returned it right away. \n Category: utensils",
+            "output": "False",
+            "explanation": "It's an incorrect category. Because the product belongs to the electronics category and not utensils. Because the customer shared his experience related to the charging issue."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Review: Took way too long for these seeds to arrive and for only a single one to germinate is even more disappointing! Not worth the $ \n Category: gardening",
+            "output": "gardening",
+            "explanation": "It's only supposed to generate True or False."
+        },
+        {
+            "input": "Review: This was the third pair that I returned because they did not fit (the first two pairs were the same size). I received a full refund for those, but not for these! I WILL NEVER BUY FROM THEM, AGAIN!!! EVER! \n Category: shoes",
+            "output": "False",
+            "explanation": "The product belongs to shoes category. So, the answer should be True."
+        },
+        {
+            "input": "Review: Junk never work just damaged the brick \n Category: home_improvement",
+            "output": "True False",
+            "explanation": "It should either return True or False not both."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1308-25c2979202c14d1a8db07ac419892f8a",
+            "input": "Reviews: I only received 1 out of the 3 green balls that I ordered. I left a message right away and still have not heard back from someone. Please contact me asap. These were not cheap and I would like my money back or the missing 2 balls. \n Category: sports",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "id": "task1308-c387cfd978d64804af2d1d2040ba9658",
+            "input": "Reviews: This item does not heat the water. My daughter took to college with her, and having ordered early am pasted return date. Have tried all kinds of things....would not order this product ever again. Would love my money back as well. \n Category: kitchen",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "id": "task1308-98af9fe73d0c4d43b4adfc154f92fa91",
+            "input": "Reviews: this knob matched the one that came from the manufacturer so I guess I am not surprised that is broke in the same way as the original. Did not even last a week, Don't buy \n Category: home_improvement",
+            "output": [
+                "True"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Amazon License (https://s3.amazonaws.com/amazon-reviews-pds/license.txt)"
+    ]
+}

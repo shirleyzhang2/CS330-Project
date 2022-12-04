@@ -1,0 +1,85 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "matres"
+    ],
+    "URL": [
+        "https://github.com/CogComp/MATRES"
+    ],
+    "Categories": [
+        "Information Extraction"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You will be given a context and a verb, separated by a newline character. You need to identify if the given verb implies an opinion, an intention, or a wish. A verb refers to an intention only if it refers to an event planned to happen in the future and is not conditional (or part of a condition). If the verb refers to an opinion, an intention, or a wish, output 'Yes'. Otherwise, output 'No'."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "News"
+    ],
+    "Positive Examples": [
+        {
+            "input": "It was followed by Denmark, Norway, Germany, France, Greece, Luxembourg, Spain, Britain, the United States, Iceland, Belgium, Italy, Portugal and Turkey. NATO decided at last year's Madrid summit to (invite) the three eastern European countries to start accession talks.  \n Verb: invite",
+            "output": "Yes",
+            "explanation": "They planned to \"invite\" the three eastern European countries, so this verb refers to an intention."
+        },
+        {
+            "input": "In Washington today, the Federal Aviation Administration (released) air traffic control tapes from the night the TWA Flight eight hundred went down.  \n Verb: released",
+            "output": "No",
+            "explanation": "In this sentence, the releasing event happened in the past, and hence it's not an intention."
+        },
+        {
+            "input": "We will act again if we have evidence he is (rebuilding) his weapons of mass destruction capabilities, senior officials say. In a bit of television diplomacy, Iraq\u2019s deputy foreign minister responded from Baghdad in less than one hour.  \n Verb: rebuilding",
+            "output": "No",
+            "explanation": "In this sentence, the verb is part of of a condition. Therefore, it cannot be known for sure if he is already rebuilding weapons but we have no evidence, or if he will be building weapons in the future, and hence it's not an intention."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "The Justice Department wants the appeals court to suspend the temporary injunction issued Thursday and also order Elian's great-uncle, Lazaro Gonzalez, to release the boy. The relatives want the court to let them meet with Elian's father without being (required) to surrender the boy.  \n Verb: required",
+            "output": "Yes",
+            "explanation": "In this sentence, required is not an intention, wish, or opinion, as it is part of a condition."
+        },
+        {
+            "input": "The federal charge also carries a fine of up to $250,000. The newly filed charges will (intensify) the ongoing international manhunt, Tolbert said.  \n Verb: intensify",
+            "output": "No",
+            "explanation": "In this sentence, \"intensify\" is planned to happen in the future, and it is an opinion or intention."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task456-11e26b6cfc0b48ccacbca7fb1ed9c8ef",
+            "input": "Castro called Munero -- who reportedly drove a taxi and engaged in unofficial businesses in the Cuban city of Cardenas -- a  ruffian  on whom Cuban police had amassed  100 pages of reports.  According to sources quoted by the Miami Herald, Munero had fled to Florida in June 1998 and (returned) to Cuba later that year, only to be jailed for several months.  \n Verb: returned",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task456-b219673d54d74fec94a9e088b6504b7c",
+            "input": "My family is a very close family,  she said. Another cousin, Georgina Cid, said Elian's father had intended to flee Cuba himself, but was being coerced by the Castro government to stay and (make) certain statements.  \n Verb: make",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task456-762023b5d5e740859b4e55e5976897b8",
+            "input": "Then she handed a folded American flag to U.S. Marines and, wearing a white construction hard hat, toured the damage inside. Reporters also were (allowed) inside for the first time since the explosion and found broken glass and smashed furniture scattered throughout the embassy.  \n Verb: allowed",
+            "output": [
+                "No"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

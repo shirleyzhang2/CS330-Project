@@ -1,0 +1,80 @@
+{
+    "Contributors": [
+        "Kushal Chawla"
+    ],
+    "Source": [
+        "casino"
+    ],
+    "URL": [
+        "https://aclanthology.org/2021.naacl-main.254.pdf"
+    ],
+    "Categories": [
+        "Negotiation Strategy Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "In this task, you will be given an utterance and recent dialogue context containing past 3 utterances (wherever available). Your task is to output Yes if the utterance contains the other-need strategy, otherwise output No. The other-need strategy is a selfish negotiation strategy. It is used when the participants discuss a need for someone else rather than themselves. For instance, describing the need for firewood to keep the kids warm."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Context: 'I was hoping to get alot of water as well, would you be ok with me getting two waters and three firewoods if you get all the food and one water?' 'Hmm, that's not favorable for me going by the volume of items left in my arsenal. Water is more of a higher priority than food. So, I would exchange 1 pack of food for an additional water' 'So that way you would get two waters and two foods? Those are my priorities as well but i would be ok with it since that way i would get five items and you would get only four.'\nUtterance: 'Those are your priorities?? Then that's not fair for you. Then I take 2 water, 1 firewood and 1 food. This is the lowest I can offer'",
+            "output": "No",
+            "explanation": "This is correct. The participant does not create a specific need for anybody."
+        },
+        {
+            "input": "Context: 'I am doing okay but am in need of some supplies. What about you?' 'Same here. My kids are really looking forward to this. What is most important to you?' 'Firewood! I need it to cook my food and also to stay warm. What about you?'\nUtterance: 'That is the same for me as well. My kids were really looking forward to making s'mores and telling stories by the campfire. That's all they've been talking about'",
+            "output": "Yes",
+            "explanation": "In this utterance, the participant uses other-need by mentioning the needs of their kids."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Context: 'Hi! How are you doing today?' 'I'm fine. And yourself?' 'Pretty good. I'm really excited about going camping though!'\nUtterance: 'Me too. I haven't been camping for several years. '",
+            "output": "Yes",
+            "explanation": "There is no need created here. So the correct answer is 'No'."
+        },
+        {
+            "input": "Context: 'Hi, I hope we can work together to get an offer that benefits both of us.\ud83d\ude42'\nUtterance: 'I agree! Nice to meet you... I have two boys who always eat! Any chance I canget 2 food?'",
+            "output": "No",
+            "explanation": "The participant mentions that their boys eat and hence implies that they would need food. Hence, the correct answer here is 'Yes'."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task355-b74ce8aed28b4369927fea00ee9fe0a7",
+            "input": "Context: 'Well, there has to be an item that you need the most. If you tell me what you need the most, we can try to make a deal around it.' 'Oh I see, its going to be THAT kind of negotiation \ud83d\ude42  Let's just look at it this way.. I'm with a couple other Floridians so we're not really too worried about firewood as we prefer it cooler, anyway.. and we know the lake is nearby that's stocked with trout for eating if necessary (and of course some fresh water's there, too) - so.. I can tell you that I could go totally without Firewood if I needed to.. I'd rather not, but I could.' 'Do you prefer food or water more?'\nUtterance: 'Since the lake is nearby enough, I think we'd be more interested in ensuring there's enough food for my people, I think \ud83d\ude42'",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task355-f7a36dd5d3af4c4ba66e7e0e63bc827e",
+            "input": "Context: 'do you have a particular item preference?' 'I do.  I have been looking everything over and feel this won't be to hard to come to an agreement' 'Well my camp places a premium on water.  How would you feel about for me: 2 water, 1 food, 1 firewood?'\nUtterance: 'I think we're on the right track.  I am bring my 2 kids with me and they eat everything in sight.'",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task355-36ccc2fdf7e342819557c9d8aa0ac9b1",
+            "input": "Context: 'Hi there! How are you today?' 'Good!  How are you?' 'I'm doing well! Almost ready for my camping trip. Need some more supplies though.'\nUtterance: 'Which supplies do you need?'",
+            "output": [
+                "No"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

@@ -1,0 +1,100 @@
+{
+    "Contributors": [
+        "Jalansh Munshi"
+    ],
+    "Source": [
+        "financial_phrasebank"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/financial_phrasebank"
+    ],
+    "Categories": [
+        "Sentiment Analysis"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "Given a piece of financial news and its corresponding polarity score, output 'true' if the polarity score is correct and output 'false' if the polarity score is incorrect."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "News"
+    ],
+    "Positive Examples": [
+        {
+            "input": "news:According to Gran , the company has no plans to move all production to Russia , although that is where the company is growing .\npolarity:neutral",
+            "output": "true",
+            "explanation": "Although the author uses negative words like 'no' in the news, there is no evidence of the news begin positive or negative for any stakeholder. Hence, the polarity is neutral and the output is True."
+        },
+        {
+            "input": "news:Technopolis plans to develop in stages an area of no less than 100,000 square meters in order to host companies working in computer technologies and telecommunications , the statement said .\npolarity:neutral",
+            "output": "true",
+            "explanation": "This news gives information about a company's plan for development. There is no positive or negative aspect to this news. Therefore, the polarity is neutral and the output is True."
+        },
+        {
+            "input": "news:The international electronic industry company Elcoteq has laid off tens of employees from its Tallinn facility ; contrary to earlier layoffs the company contracted the ranks of its office workers , the daily Postimees reported .\npolarity:negative",
+            "output": "true",
+            "explanation": "This news uses terms like 'laid off', 'tens of employees', and 'contracted the ranks' which are negative terms. Hence, the polarity of the news is negative and the output is true."
+        },
+        {
+            "input": "news:With the new production plant the company would increase its capacity to meet the expected increase in demand and would improve the use of raw materials and therefore increase the production profitability .\npolarity:positive",
+            "output": "true",
+            "explanation": "This news uses terms like 'increase its capacity', 'increase in demand', and 'improve the use' which are positive terms. Hence, the polarity should be positive and the output is true."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "news:According to the company 's updated strategy for the years 2009-2012 , Basware targets a long-term net sales growth in the range of 20 % -40 % with an operating profit margin of 10 % -20 % of net sales .\npolarity:neutral",
+            "output": "false",
+            "explanation": "Here, the news uses terms like 'sales growth' and 'profit margin' which indicates that the polarity should be positive. Hence, the output is false."
+        },
+        {
+            "input": "news:FINANCING OF ASPOCOMP 'S GROWTH Aspocomp is aggressively pursuing its growth strategy by increasingly focusing on technologically more demanding HDI printed circuit boards PCBs .\npolarity:negative",
+            "output": "false",
+            "explanation": "This news uses phrases like 'aggressively pursuing its growth strategy by increasingly focusing' which shows that focus is being made on growth. The polarity should be positive and not negative. Hence, the output should be False."
+        },
+        {
+            "input": "news:For the last quarter of 2010 , Componenta 's net sales doubled to EUR131m from EUR76m for the same period a year earlier , while it moved to a zero pre-tax profit from a pre-tax loss of EUR7m .\npolarity:negative",
+            "output": "false",
+            "explanation": "This news has phrases like 'net sales doubled' and 'moved to a zero pre-tax profit' which suggest that the polarity is positive. Hence, the output should be False as the given polarity is negative."
+        },
+        {
+            "input": "news:In the third quarter of 2010 , net sales increased by 5.2 % to EUR 205.5 mn , and operating profit by 34.9 % to EUR 23.5 mn .\npolarity:neutral",
+            "output": "false",
+            "explanation": "In this news we can see phrases like 'net sales increased' and 'operating profit'. This indicates that the polarity should be positive, and not neutral. Hence, the output should be False."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task844-78c7393d727247f59d8f9f47b935c09e",
+            "input": "news:OTHER  North-Rhine Westphalia - Is to issue a benchmark , 5 year fixed rate deal in Euros .\npolarity:neutral",
+            "output": [
+                "true"
+            ]
+        },
+        {
+            "id": "task844-be16fa16591f47e29454903a8abc0a4d",
+            "input": "news:GENEVA , Feb. 10 -- Tero Aaltonen , Finland has developed a radio resource control method .\npolarity:negative",
+            "output": [
+                "false"
+            ]
+        },
+        {
+            "id": "task844-8a8b0ffe1d754133ad510dcc6d178251",
+            "input": "news:( ADP News ) - Nov 3 , 2008 - Finnish paper , packaging and forest products company Stora Enso Oyj ( OMX : STERV ) said today that it would invest EUR 137 million ( USD 176.6 m ) in the building of a power plant at its Ostroleka Mi\npolarity:negative",
+            "output": [
+                "false"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY-NC-SA 3.0"
+    ]
+}

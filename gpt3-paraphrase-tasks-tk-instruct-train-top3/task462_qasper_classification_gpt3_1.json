@@ -1,0 +1,85 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "qasper"
+    ],
+    "URL": [
+        "https://allenai.org/project/qasper/home"
+    ],
+    "Categories": [
+        "Question Understanding"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You will be given a context from an academic paper and a question based on that context. Your task is to classify the question as \"Extractive\", \"Abstractive\", or \"Yes-no\". An extractive question can be answered by combining extracts from the context into a summary. An abstractive question requires paraphrasing the context using new sentences. A yes-no question is a question whose answer is either yes or no."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Scientific Research Papers"
+    ],
+    "Positive Examples": [
+        {
+            "input": "We build a dataset of Twitter accounts based on two lists annotated in previous works. For the non-factual accounts, we rely on a list of 180 Twitter accounts from BIBREF1. On the other hand, for the factual accounts, we use a list with another 32 Twitter accounts from BIBREF19 that are considered trustworthy by independent third parties. \n Question: How did they obtain the dataset?",
+            "output": "Extractive",
+            "explanation": "The answer to this question has been explicitly mentioned in the context, so the question is extractive."
+        },
+        {
+            "input": "We evaluate our pointer-generator performance using BLEU score. The baseline language model is trained using RNNLM BIBREF23 . Perplexity measure is used in the evaluation.\n\n \n Question: Did they use other evaluation metrics?",
+            "output": "Yes-no",
+            "explanation": "This is a good example, and the given question is a yes-no question."
+        },
+        {
+            "input": "As in the example above, we pre-process documents by removing all numbers and interjections. \n Question: what processing was done on the speeches before being parsed?",
+            "output": "Abstractive",
+            "explanation": "Answering this question needs paraphrasing the context, so this question is abstractive."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "For the English version, we performed both a thorough manual analysis and automatic evaluation across three commonly used TS datasets from two different domains  For the English version, we performed both a thorough manual analysis and automatic evaluation across three commonly used TS datasets from two different domains  The evaluation of the German version is in progress. \n Question: What are the corpora used for the task?",
+            "output": "Yes-no",
+            "explanation": "This question is extractive, and it's not a yes-no question."
+        },
+        {
+            "input": "For Turkish, as the first dataset, we utilised the movie reviews which are collected from a popular website. The number of reviews in this movie corpus is 20,244 and the average number of words in reviews is 39. Each of these reviews has a star-rating score which is indicative of sentiment. These polarity scores are between the values 0.5 and 5, at intervals of 0.5. We consider a review to be negative it the score is equal to or lower than 2.5. On the other hand, if it is equal to or higher than 4, it is assumed to be positive. We have randomly selected 7,020 negative and 7,020 positive reviews and processed only them. \n Question: What details are given about the movie domain dataset?",
+            "output": "Extractive",
+            "explanation": "This question is Abstractive because we need to paraphrase the context to get to the answer."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task462-cad6231a940c420388e03ec9f6a3f2b5",
+            "input": "We compare the performance of translation approaches based on four metrics:\n\n[align=left,leftmargin=0em,labelsep=0.4em,font=]\n\nAs in BIBREF20 , EM is 1 if a predicted plan matches exactly the ground truth; otherwise it is 0.\n\nThe harmonic average of the precision and recall over all the test set BIBREF26 .\n\nThe minimum number of insertions, deletions or swap operations required to transform a predicted sequence of behaviors into the ground truth sequence BIBREF27 .\n\nGM is 1 if a predicted plan reaches the ground truth destination (even if the full sequence of behaviors does not match exactly the ground truth). Otherwise, GM is 0. \n Question: What evaluation metrics are used?",
+            "output": [
+                "Abstractive"
+            ]
+        },
+        {
+            "id": "task462-d3d706be770e4f689e71b14b18a749a2",
+            "input": "We use OpenNMT BIBREF24 as the implementation of the NMT system for all experiments BIBREF5 . PBMT-R is a phrase-based method with a reranking post-processing step BIBREF18 . Hybrid performs sentence splitting and deletion operations based on discourse representation structures, and then simplifies sentences with PBMT-R BIBREF25 . SBMT-SARI BIBREF19 is syntax-based translation model using PPDB paraphrase database BIBREF26 and modifies tuning function (using SARI). Dress is an encoder-decoder model coupled with a deep reinforcement learning framework, and the parameters are chosen according to the original paper BIBREF20 . \n Question: what state of the art methods did they compare with?",
+            "output": [
+                "Extractive"
+            ]
+        },
+        {
+            "id": "task462-31061cad51c54039b65400140129acd4",
+            "input": "We model the ASP placement task as a successor of the AEP task. For all the `relevant' news entity pairs, the task is to determine the correct entity section. Each section in a Wikipedia entity page represents a different topic. For example, Barack Obama has the sections `Early Life', `Presidency', `Family and Personal Life' etc. Article-Section Ground-truth. The dataset consists of the triple INLINEFORM0 , where INLINEFORM1 , where we assume that INLINEFORM2 has already been determined as relevant. We therefore have a multi-class classification problem where we need to determine the section of INLINEFORM3 where INLINEFORM4 is cited.  \n Question: How do they determine the exact section to use the input article?",
+            "output": [
+                "Abstractive"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

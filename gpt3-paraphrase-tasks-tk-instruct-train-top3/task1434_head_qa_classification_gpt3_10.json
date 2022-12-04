@@ -1,0 +1,90 @@
+{
+    "Contributors": [
+        "Shreeshiv Patel"
+    ],
+    "Source": [
+        "head_qa"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/head_qa"
+    ],
+    "Categories": [
+        "Text Categorization"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You are given a question and answer options related to that question. Your task is to classify the question and answer options into different topics: medicine, nursery, psychology, chemistry, pharmacology, biology."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Healthcare"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Question: A distension is defined as: \n Options:  <0> Soft tissue injury. <1> Forced movement of abrupt production. <2> Injury by stretching a muscle. <3> Injury of the joint capsule. <4> Interruption in the continuity of a bone.",
+            "output": "nursery",
+            "explanation": "Distension means Bloating and swelling in the belly area. It does not have much to do with chemistry, psychology, pharmacology, biology and medicine. Hence, the correct topic is nursery."
+        },
+        {
+            "input": "Question: Which of the following steps of cholesterol biosynthesis is what controls the speed and place of metabolic regulation: \n Options:  <0> Geranyl pyrophosphate\uf0e0 Farnesyl pyrophosphate. <1> ,\uf0e0 Lanosterol <2> Lanosterol \uf0e0 Cholesterol. <3> Acetyl CoA \uf0e0 Acetoacetyl CoA. <4> 3-Hydroxy-3-methylglutaryl CoA\uf0e0 Mevalonic acid.",
+            "output": "chemistry",
+            "explanation": "The question text is about cholesterol biosynthesis which looks like some chemical. Options are also related to different chemicals like Geranyl pyrophosphate\uf0e0 Farnesyl pyrophosphate, Lanosterol \uf0e0 Cholesterol, Acetyl CoA, etc. So, it\u2019s clear that the question belongs to the chemistry class."
+        },
+        {
+            "input": "Question: What name does the episode receive with psychotic symptoms that occur after a strong alcohol intoxication in which the individual has been consuming large doses of alcohol for several days? \n Options: <0> Delirium tremens. <1> Partial amnesias. <2> Alcoholic hallucinosis <3> abstinence syndrome. <4> Korsakoff syndrome.",
+            "output": "psychology",
+            "explanation": "The question text and the options are more related to mental conditions. From this information, we can infer that this input belongs to the psychology class. "
+        },
+        {
+            "input": "Question: The liver converts ethanol into: \n Options:  <0> Methanol <1> Acetone. <2> Acetaldehyde <3> Hydrogen peroxide. <4> Glycerol.",
+            "output": "chemistry",
+            "explanation": "The question text and the options are highly related to chemicals like Methanol, Acetone, Glycerol which are well-known chemicals. From this information, one can say that this question is belongs to the chemistry class."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Question: Ketogenic amino acids: \n Options:  <0> They may contribute to the synthesis of glucose. <1> They are intermediaries of the urea cycle. <2> They are the substrate of reactions catalyzed by transketolase. <3> They can produce acetyl-coenzyme A. <4> They are eliminated in the form of ketoses.",
+            "output": "psychology",
+            "explanation": "For the given question the correct topic is biology, so the output is incorrect."
+        },
+        {
+            "input": "Question: Mr. A. P. has been discharged after being operated on for a gastric resection. What recommendations should you give to avoid the rapid evacuation syndrome? \n Options:  <0> Drink liquids during the meal. <1> Take a diet high in carbohydrates. <2> After ingestion, the decubitus position is the most beneficial if the patient tolerates it. <3> You should plan rest periods of 15 minutes after meals. <4> Take a diet low in protein and fat, to avoid abdominal distension.",
+            "output": "biology",
+            "explanation": "The given question is about nursery so correct output should be nursery, not biology."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1434-165ba272fd1c4b8fb18eeb858659a5ef",
+            "input": "Question: Which of the following tests aims to determine the loss of mass of the tablets by abrasion processes? \n Options:  <0> Hardness. <1> Disintegration <2> Friability. <3> Dissolution. <4> Uniformity of mass.",
+            "output": [
+                "pharmacology"
+            ]
+        },
+        {
+            "id": "task1434-53b30216b1e541378a3d57dbf361148b",
+            "input": "Question: What technique, based on the theory of social learning, is considered well established for the treatment of childhood fears? \n Options:  <0> The practice reinforced. <1> The self-instructions of courage. <2> The modeling <3> Modeling with participation. <4> The live exhibition.",
+            "output": [
+                "psychology"
+            ]
+        },
+        {
+            "id": "task1434-3a193233e1f64b68a819ab49ff040f39",
+            "input": "Question: Which of the following enzyme complexes catalyzes the reduction of molecular oxygen to water during oxidative phosphorylation? \n Options:  <0> ATP synthase. <1> Cytochrome c oxidase. <2> NADH-Q oxide-reductase. <3> Q-cytochrome c-oxide-reductase. <4> Succinate-Q reductase.",
+            "output": [
+                "chemistry"
+            ]
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

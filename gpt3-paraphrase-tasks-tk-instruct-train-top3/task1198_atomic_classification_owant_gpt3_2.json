@@ -1,0 +1,90 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "atomic"
+    ],
+    "URL": [
+        "https://allenai.org/data/atomic-2020"
+    ],
+    "Categories": [
+        "Commonsense Classification"
+    ],
+    "Reasoning": [
+        "Relational Reasoning",
+        "Reasoning on Social Interactions",
+        "Commonsense Reasoning -> Social Situations"
+    ],
+    "Definition": [
+        "In this task, you are given a tuple containing Head and Tail events, separated by <sep>. The Head and Tail events are short phrases involving participants, where the names of specific people have been replaced by generic words. PersonX is always the subject of the event. For example, if the Head event is \"PersonX giving PersonY gifts\", and the Tail event is \"PersonY opening the gift\", then the answer would be \"Yes\". Classify your answers into \"Yes\" and \"No\". The phrase may also contain \"___\", a placeholder that can be an object, a person, and/or an action."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Sociology",
+        "Commonsense -> Concepts and Relations -> Social Commonsense"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Head: PersonX holds PersonY's head<sep>Tail: to be messaged",
+            "output": "Yes",
+            "explanation": "This is a good example. As a result of the Head, PersonY will want to be messaged."
+        },
+        {
+            "input": "Head: PersonX achieves PersonX's dream<sep>Tail: to achieve the dream",
+            "output": "No",
+            "explanation": "In this example, if PersonX achieves PersonX's dream, others won't want to achieve the dream. So this output is correct."
+        },
+        {
+            "input": "Head: PersonX fulfills PersonY's needs<sep>Tail: to spend time with personX",
+            "output": "Yes",
+            "explanation": "If PersonX fulfils PersonY's needs, personY will want to spend time with personX. Thus, this example should be classified as \"Yes\"."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Head: PersonX accepts PersonY's offer<sep>Tail: relieved",
+            "output": "Yes",
+            "explanation": "In this example, being relieved is not a post conditional desire. It's a consequence. So the output should be \"No\"."
+        },
+        {
+            "input": "Head: PersonX loses PersonX's cool<sep>Tail: to fight PersonX",
+            "output": "No",
+            "explanation": "If PersonX loses PersonX's cool, PersonY will want to fight PersonX, and the output should be \"Yes\"."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1198-f2708c71c46c407197ae79d95db2adf1",
+            "input": "Head: PersonX arrives at PersonY understanding<sep>Tail: to talk",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1198-afc81414fa3f442397a2c05a8fb97e4c",
+            "input": "Head: PersonX asks PersonX's mother for help<sep>Tail: desperate",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1198-189850a2b4ac4efcae4ee6e3bd18446c",
+            "input": "Head: PersonX gives PersonY a special gift<sep>Tail: use the gift",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

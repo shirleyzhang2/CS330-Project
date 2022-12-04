@@ -1,0 +1,80 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "hybridqa"
+    ],
+    "URL": [
+        "https://github.com/wenhuchen/HybridQA"
+    ],
+    "Categories": [
+        "Pos Tagging"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "In this task, you will be presented with a question, a word, and a POS tag. The POS tag is a part of speech. You have to determine whether the part-of-speech tag of the given word in the question is equal to the given POS tag or not. Give your answer with True or False."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Wikipedia"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Who were the builders of the mosque in Herat with fire temples ? \n, Word: Who \n, POS tag: IN",
+            "output": "False",
+            "explanation": "This is a good example. POS tag of who should be WP(Wh-pronoun), and not IN(Preposition)."
+        },
+        {
+            "input": "What is the borough in which Kia Oval is located ? \n, Word: is \n, POS tag: VBZ",
+            "output": "True",
+            "explanation": "Based on the given question, \"is\" is a 3rd person singular present verb and Its POS tag is VBZ."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "After what season did the number 7 competitor retire ? \n, Word: 7 \n, POS tag: NN",
+            "output": "True",
+            "explanation": "7 is a cardinal number, and Its POS tag should be CD, so the output should be False."
+        },
+        {
+            "input": "After what season did the number 7 competitor retire ? \n, Word: 7 \n, POS tag: NN",
+            "output": "Wrong",
+            "explanation": "Only \"True\" or \"False\" are allowed, and you can't use any other word here."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task346-3b90642a47b5411aae7f0ab8b0e15238",
+            "input": "Who were the first settlers of the port city in Italy where 6,185 passengers pass through each year ? \n, Word: city \n, POS tag: NN",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "id": "task346-ef5335e551bd45b98e98ebafbfafdfcc",
+            "input": "What is the arena for the team in the city that had a population of 65,954 ( IDESCAT , 2017 ) ? \n, Word: the \n, POS tag: DT",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "id": "task346-0fa6b59c7d3c43cf81395b6788a75061",
+            "input": "What is the postcode district of the coverage area that is a market town and civil parish in a steep vale of the South Downs , West Sussex , England ? \n, Word: England \n, POS tag: NNP",
+            "output": [
+                "True"
+            ]
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

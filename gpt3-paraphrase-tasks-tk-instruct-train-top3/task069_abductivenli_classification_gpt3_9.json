@@ -1,0 +1,89 @@
+{
+    "Contributors": [
+        "Anjana Arunkumar"
+    ],
+    "Source": [
+        "abductive_nli"
+    ],
+    "URL": [
+        "https://leaderboard.allenai.org/anli/submissions/about"
+    ],
+    "Categories": [
+        "Coherence Classification"
+    ],
+    "Reasoning": [
+        "Commonsense Reasoning",
+        "Abductive Reasoning",
+        "Textual Entailment -> Abductive Reasoning"
+    ],
+    "Definition": [
+        "You will be given a short story with a beginning, two potential middles, and an ending. Your task is to pick the middle statement that makes the story coherent/plausible by writing \"1\" or \"2\" for the first or second middle, respectively. If both sentences are plausible, pick the one that makes most sense."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Commonsense -> Stories"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Beginning: Butch had a really old computer. Middle 1: Butch decided to order a new computer online. Middle 2: Butch noticed that a storm was approaching to his town. Ending: It arrived and Butch was much happier.",
+            "output": "1",
+            "explanation": "People generally don't feel happy about natural disasters like storms. Therefore, we choose 1 in this case."
+        },
+        {
+            "input": "Beginning: John was on the trail running. Middle 1: John accelerated the speed and broke his leg accidentally. Middle 2: John was chased by a bear. Ending: He ran even faster until he got to his car safely.",
+            "output": "2",
+            "explanation": "When someone breaks his/her leg, it is difficult to run. Therefore, we choose 2 in this case."
+        },
+        {
+            "input": "Beginning: Gina was putting posters on her bedroom walls. Middle 1: Gina wanted to match the colorful posters. Middle 2: Gina ripped the poster on accident. Ending: Gina decided she would wear more colorful clothing.",
+            "output": "1",
+            "explanation": "In this example, both Middle sentences sound plausible, but the first one is MORE plausible as a story. Therefore, we choose 1 in this case."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Beginning: Mary's mom came home with more bananas than they could possibly eat. Middle 1: Mary and her mom decided to make chocolate covered frozen bananas to avoid waste. Middle 2: So Mary made pineapple splits for everyone. Ending: That was the best way ever to eat a banana!",
+            "output": "2",
+            "explanation": "The story talks about bananas, so discussion of pineapples makes the story incoherent. Therefore, we should not choose 2 in this case."
+        },
+        {
+            "input": "Beginning: Jon decided to steal a police car. Middle 1: Jon crashed the police car into a telephone poll. Middle 2: Jon wasn't caught. Ending: Jon went to prison for three years.",
+            "output": "Jon crashed the police car into a telephone poll.",
+            "explanation": "You should not answer with the chosen middle sentence. You should only answer with 1 or 2."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task069-9d52c7b9f14b4ba78ec638e48e76ecd0",
+            "input": "Beginning: Charles' life was considered a wreck. Middle 1: People pointed and laughed at his failures. Then he was killed in a hit and run. Middle 2: People pointed and laughed at his failures. Then he was born in a hit and run. Ending: But it was hard to laugh while the police were towing his car.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "id": "task069-0d4311851a5c465b80b6f163e124fd94",
+            "input": "Beginning: Eli sat on the edge of the cliff and gathered in the view. Middle 1: Eli brought his camera without him. Middle 2: Eli brought his camera with him. Ending: He made it home safely with a camera full of pictures to share.",
+            "output": [
+                "2"
+            ]
+        },
+        {
+            "id": "task069-694cedc128d34bf2813ecd5ed548c70e",
+            "input": "Beginning: Bill had a dog named Charlie. Middle 1: Bill went outside with Charlie to play fetch. Middle 2: Bill went inside with Charlie to play fetch. Ending: Charlie caught the frisbee and brought it back to Bill.",
+            "output": [
+                "1"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

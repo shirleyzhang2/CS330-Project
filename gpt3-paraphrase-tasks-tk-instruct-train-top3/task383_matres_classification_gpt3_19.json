@@ -1,0 +1,97 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "matres"
+    ],
+    "URL": [
+        "https://github.com/CogComp/MATRES"
+    ],
+    "Categories": [
+        "Misc."
+    ],
+    "Reasoning": [
+        "Temporal Reasoning"
+    ],
+    "Definition": [
+        "You will receive a context and a verb, separated by a newline character. You have to answer whether the given verb can be anchored in time or not. A verb can be anchored in the real timeline if it happened in the past, is happening now, or is guaranteed to happen in the future. Output \"Yes\" if the verb can be anchored in time and \"No\" otherwise."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "News"
+    ],
+    "Positive Examples": [
+        {
+            "input": "It was followed by Denmark, Norway, Germany, France, Greece, Luxembourg, Spain, Britain, the United States, Iceland, Belgium, Italy, Portugal and Turkey. NATO decided at last year's Madrid summit to (invite) the three eastern European countries to start accession talks.  \n Verb: invite",
+            "output": "No",
+            "explanation": "This is a good example. The \"invite\" is not anchorable. Although NATO decided to invite them, they haven't invited them yet, and it's not guaranteed to happen in the future. They might change their decision later."
+        },
+        {
+            "input": "In Washington today, the Federal Aviation Administration (released) air traffic control tapes from the night the TWA Flight eight hundred went down.  \n Verb: released",
+            "output": "Yes",
+            "explanation": "In this sentence, the releasing event happened in the past, and it's anchorable."
+        },
+        {
+            "input": "New York State double-jeopardy laws would make it difficult to prosecute a suspect who had been found not guilty at a federal trial. U.S. Attorney Denise E. O'Donnell declined to discuss what federal charges were being pursued, but she said that in a case like this, potential charges would be abortion-related violence, the use of a firearm in an act of violence, crossing state lines to commit a crime, and, if the suspect's act was (tied) to an organization, violation of the so-called RICO statutes, which prohibit an organized criminal enterprise.  \n Verb: tied",
+            "output": "No",
+            "explanation": "In this sentence, \"tied\" is a conditional verb and it's not happening now and it's not guaranteed to happen in the future. So, it's not anchorable."
+        },
+        {
+            "input": "To get him. Nothing more, she (said).  \n Verb: said",
+            "output": "Yes",
+            "explanation": "In this example, she said something in the past. So, this verb is anchorable."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Preliminary DNA tests link a missing anti-abortion activist to a strand of hair found near where a sniper shot and killed a Buffalo, N.Y., doctor who performed abortions, a law enforcement official said Friday. The first round of DNA tests on the hair at the FBI Laboratory here established a high probability it came from the same person as a hair found in a New Jersey home where James C. Kopp , a 44-year-old anti-abortion protester, lived last year, the official (said).  \n Verb :said",
+            "output": "No",
+            "explanation": "In this sentence, the saying action happened in the past, and it's anchorable."
+        },
+        {
+            "input": " Nobody talks to Fidel, because he doesn't listen, Juanita Castro said. He talks and he (decides).  \n Verb: decides",
+            "output": "Yes",
+            "explanation": "In this sentence, \"decides\" is not anchorable. Because it's not happening now and it's not guaranteed to happen in the future."
+        },
+        {
+            "input": "Kopp remains at-large and police admit that despite a worldwide search and a $1 million reward, they don't know where he is. It's very frustrating (knowing) that he's out there, said Ms. Buckham.  \n Verb: knowing",
+            "output": "No",
+            "explanation": "In this sentence, \"knowing\" is happening now, and it's anchorable."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task383-8497e964536444fb989132055685776e",
+            "input": "Slepian, 52, was shot with a rifle. Authorities have said they believe the weapon may have been buried in advance of the shooting, with the killer digging it up to fire the shot, then reburying it and (fleeing).  \n Verb: fleeing",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task383-dffd1b70699f49d9a0bd966166349d25",
+            "input": "On Wednesday, Ricardo Alarcon, head of Cuba's National Assembly and Castro's key man for U.S. - Cuban relations, said the convictions prove the homes of those uncles are no place for Elian.  Practically everyone surrounding him either has been, or may be in the future, joining the prison system in the U.S. That's not the best interest of the child,  Alarcon (told) reporters in Havana.  \n Verb: told",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task383-59d2521ededc4f0883be8bd9a5830623",
+            "input": "The Netherlands early this week became the last country to ratify NATO expansion to include the three former Warsaw Pact nations. The three are expected to (join) in April, as part of marking NATO's 50th anniversary.  \n Verb: join",
+            "output": [
+                "No"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

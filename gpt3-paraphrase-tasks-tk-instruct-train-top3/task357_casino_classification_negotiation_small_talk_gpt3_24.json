@@ -1,0 +1,80 @@
+{
+    "Contributors": [
+        "Kushal Chawla"
+    ],
+    "Source": [
+        "casino"
+    ],
+    "URL": [
+        "https://aclanthology.org/2021.naacl-main.254.pdf"
+    ],
+    "Categories": [
+        "Negotiation Strategy Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "Given an utterance and recent dialogue context containing past 3 utterances (if available), output 'Yes' if the utterance contains the small-talk strategy, otherwise output 'No'. Small-talk is a cooperative negotiation strategy used for discussing topics unrelated to the negotiation in order to build rapport with the opponent. For example, discussing how the opponent is doing during the pandemic or sharing excitement for the camping trip."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Context: 'Great!  So looks like all the water goes to you.  I will take all the food if that is ok and we can split the wood.  ' 'Well i would need one food and one wood' 'OK.  I think that will work out for me.  You get 3 water, 1 wood and 1 food.  I will take the rest.'\nUtterance: 'Great that's an agreement for me'",
+            "output": "No",
+            "explanation": "The participant does not engage in any small talk in this utterance and primarily refers to the negotiation itself."
+        },
+        {
+            "input": "Context: 'Since you would also like firewood, I propose 2 firewood, 2 water to me, and you get 1 wood, 1 water, and all the food to make up for it.' 'Okay I can agree to that deal.\ud83d\ude42' 'That's fantastic, I'm glad we came to something we both agree with'\nUtterance: 'Me too. I hope you have a wonderful camping trip.\ud83d\ude42'",
+            "output": "Yes",
+            "explanation": "The participant engages in small talk when wishing their opponent to have a wonderful trip."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Context: 'Hello! I am looking forward to the camping trip but could use a few more supplies!' 'hello, me too, i guess we can share' 'Sounds good, I need food the most, what is your most needed item?'\nUtterance: 'my item is food too.'",
+            "output": "Yes",
+            "explanation": "The purpose of the utterance is only to take the negotiation forward and there is no side talk. Hence, the correct answer is 'No'."
+        },
+        {
+            "input": "Context: 'I can do without extra water as long as I have food and firewood to purify water I find.  It might be better for you to have a reliable supply though.' 'That totally makes sense! I actually am good on firewood thankfully, I got some from a person selling it from their yard a little bit ago.' 'I would have been able to bring more with me by getting some from my parents, but my father decided he wanted to get rid of what he had left and so has been enjoying his fire pit a lot lately.'\nUtterance: 'Oh I have always wanted a firepit! I totally understand. If you'd like you can have all 3 of the firewood supply stash to get you started.'",
+            "output": "No",
+            "explanation": "This is wrong. The participant engages in small-talk when referring to the firepit that they always wanted. The correct answer is 'Yes'."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task357-79a8b9837416412dbea18aaa38e5516a",
+            "input": "Context: \nUtterance: 'Hi there. Hope you too are looking forward to this much needed camping trip. What are your needs in terms of extra packages?'",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task357-ee3c36ca42b8475284d6553fb35e6440",
+            "input": "Context: 'Thirty I see. No problem, we'll work something out. \ud83d\ude42' 'Do you plan on having lots of campfires?' 'Probably not since its really hot during these days. How's the weather where you live?\ud83d\ude42'\nUtterance: 'Hot here as well. Okay then... How about I'll have 2 waters, 2 firewoods and 1 food, and you 1 water,1 firewood and 2 food?'",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task357-8a2b9fd55b3a41c98038386f9466d90c",
+            "input": "Context: 'Why would you want to give up all that water? You're going to need extra water for your family to drink. All the sodium in the fish is going to make you all thirsty!' 'Your right,\ud83d\ude2e  I didn't think about that. But will probably only need 1 extra package of water so, in exchange I will offer you 1 package of firewood.' 'I know this isn't your problem, but I'm a student and I had to come up here to take photos of the night sky for my astronomy class. I slept really late today as I have to sit up all night to get the different stars, and possibly even the space station if it's clear enough out. I have to sit by a fire to stay warm so I can get these pictures to hand in to my professor tomorrow.'\nUtterance: 'You know that is very impressive.  I admire your determination and effort you put into your class.  You must be very passionate about astronomy.'",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

@@ -1,0 +1,88 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "dream"
+    ],
+    "URL": [
+        "https://github.com/nlpdata/dream"
+    ],
+    "Categories": [
+        "Question Understanding"
+    ],
+    "Reasoning": [
+        "Reasoning on Social Interactions"
+    ],
+    "Definition": [
+        "In this task, you will be given a conversation and a question. You should categorize the question into one of the following groups: matching, summary, logic, arithmetic, and commonsense. A matching question is one that is entailed or paraphrased by exactly one sentence in the dialogue, and the answer can be extracted from that sentence. A summary question requires the whole picture of the dialogue in order to be answered, such as the topic of the dialogue and the relation between the speakers. A logic question requires logical reasoning to answer. An arithmetic question requires arithmetic knowledge to answer. A commonsense question requires knowledge that cannot be obtained from the dialogue, in addition to the textual information in the dialogue. Note that a question can be in more than one group. \"W\" and \"M\" in the conversations stand for \"woman\" and \"man\"."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue",
+        "Natural Science -> School Science Textbooks"
+    ],
+    "Positive Examples": [
+        {
+            "input": "W: The movie next Tuesday has been cancelled due to lack of interest. M: What do you mean? W: Well, by last night only a few tickets has been sold., Question: What can we conclude about the movie? (A) They want to buy the tickets for the movie. (B) The tickets for the movie were sold. (C) The movie will not be shown.",
+            "output": "commonsense",
+            "explanation": "This is a good example. To answer this question we require commonsense knowledge that cannot be obtained from the dialogue. So, this is a commonsense question."
+        },
+        {
+            "input": "W: What does the term \"alternative energy source\" mean? M: When we think of energy or fuel for our homes and cars, we think of petroleum, a fossil fuel processed from oil removed from the ground, of which there is a limited supply. But alternative fuels can be many things. Wind, sun and water can all be used to create fuel. W: Is the threat of running out of petroleum real? M: It has taken thousands of years to create the natural stores of petroleum we have available at a much faster rate than it is being produced over time. The real controversy surrounding the amount of petroleum we have is how much we need to keep in reserve for future use. Most experts agree that by around 2025, the amount of petroleum we use will reach a peak. Then production and availability will begin to seriously decline. This is not to say there will be no petroleum at this point. But it'll become very difficult and therefore expensive to extract. W: Is that the most important reason to develop alternative fuel and energy sources? M: There are two very clear reasons to do so. One is that whether we have 60 or 600 years of fossil fuels left, we have to find other fuel sources eventually. So the sooner we start, the better off we will be. The other big argument is that when long time, which leads to some long-term negative effects, like global warming and the greenhouse effect., Question: What do we usually refer to when we talk about energy according to the man? (A) Coal burnt daily for the comfort of our homes. (B) Anything that can be used to produce power. (C) Fuel refined from oil extracted from underground.",
+            "output": "matching",
+            "explanation": "The first sentence of the man can answer this question. So, it's a matching question."
+        },
+        {
+            "input": "M: What do you think of my new sweater? W: Well, it looks nice, but why don't you put it on, and then I'll tell you if it suits you? M: Okay. You know, I tried on about twenty at the shop, and this one isn't really what I wanted. I especially can't stand the high neck. W: Why did you buy it then? M: The salesman sold it to me before I realized what had happened. He just never stopped talking about the latest fashions and special reduced prices. Before I could say anything he'd wrapped it up and I realized that I'd paid him. W: Well, it doesn't look too bad. I think it looks good on you. M: But I went out to get a blue sweater to match my black trousers-something with a V-neck, short sleeves and pattern-and I came home with a brown sweater with a high neck, long sleeves and no pattern. W: You've got to learn to stand up to these high-pressure salesmen. They will sell you all sorts of things you don't want if you don't watch out. M: Next time I'll send my wife. She would probably sell something to the salesman. W: That's a good idea. Actually women are much better at shopping than men. Whenever my husband and I buy something important, I always have the finalsay. M: I must admit that women are better at shopping. I should simply leave the whole business to them., Question: Why did the man buy a sweater that he doesn't like? (A) He was pushed by the salesman (B) It was sold at a low price (C) It is the latest fashion.",
+            "output": "logic",
+            "explanation": "To answer this question we need logical reasoning. In the dialogues, they talk about high-pressure salesmen. So by logical reasoning, we could understand that he was pushed by the salesman."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "W: What does the term \"alternative energy source\" mean? M: When we think of energy or fuel for our homes and cars, we think of petroleum, a fossil fuel processed from oil removed from the ground, of which there is a limited supply. But alternative fuels can be many things. Wind, sun and water can all be used to create fuel. W: Is the threat of running out of petroleum real? M: It has taken thousands of years to create the natural stores of petroleum we have available at a much faster rate than it is being produced over time. The real controversy surrounding the amount of petroleum we have is how much we need to keep in reserve for future use. Most experts agree that by around 2025, the amount of petroleum we use will reach a peak. Then production and availability will begin to seriously decline. This is not to say there will be no petroleum at this point. But it'll become very difficult and therefore expensive to extract. W: Is that the most important reason to develop alternative fuel and energy sources? M: There are two very clear reasons to do so. One is that whether we have 60 or 600 years of fossil fuels left, we have to find other fuel sources eventually. So the sooner we start, the better off we will be. The other big argument is that when long time, which leads to some long-term negative effects, like global warming and the greenhouse effect., Question: What do most experts agree on according to the man? (A) Oil will soon be replaced by alternative energy sources. (B) Oil production will begin to decline worldwide by 2025. (C) Oil consumption has given rise to many global problems.",
+            "output": "arithmetic",
+            "explanation": "We don't need arithmetic knowledge to answer this question. It's incorrect. This is a matching question."
+        },
+        {
+            "input": "M: Finally, I've got the chance to put on my new suit tonight. I hope to make a good impression on your family. W: Come on! It's only a family reunion. So jeans and T-shirts are just fine., Question: What does the woman mean? (A) The man has left a good impression on her family. (B) The man can dress casually for the occasion. (C) The man should buy himself a new suit.",
+            "output": "matching",
+            "explanation": "The answer to this question cannot be extracted from the context. We need commonsense knowledge to understand wearing jeans and T-shirts means dressing casually. This is a commonsense question."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task248-822676b7c7e74570b4864f185a4c0b7d",
+            "input": "M: We're going to play tennis tomorrow afternoon at two. Do you want to come? W: Oh, well... I've got to go to the hospital at one o'clock and I'll be there for at least three hours., Question: What do we learn about the woman? (A) She has to attend a meeting. (B) She is going to go to a hospital. (C) She does not like sports.",
+            "output": [
+                "matching"
+            ]
+        },
+        {
+            "id": "task248-8bbb27f588ae4272b374644698e9b10f",
+            "input": "M: Good afternoon. W: Hello. I wonder if you could help me. I've just arrived here, and I'm looking for some where to stay. M: Uh huh. W: Can you tell me where I can find a cheap hotel? M: Certainly. There are a few around here, but the nearest and one of the nicest is just around the corner. It's called the Euro Hotel. Would you like me to phone to see if they have a room? W: No, that's OK. I'll just wander round there myself. Ah! Another thing. I need to change some travellers' cheques, but I don't know what time the banks close. M: They close at 7 o'clock in the evening. W: Right, thanks. This is a very pretty town, isn't it? It looks terribly old. Have you any idea how old this town is? M: Yes, it was founded in the thirteenth century. W: Really? As old as that? Wow! Well, I'd better get going. Oh, I'm not sure if we're near the centre of town, because I've only just arrived. M: Yes, this square out there is just about the centre. W: Thanks very much. Thanks for your help. I'll go to... oh, sorry, I can't remember which hotel you suggested. M: The Euro Hotel. W: The Euro. Thanks a lot. Bye., Question: When do the banks close? (A) At 7:00 p.m. (B) At 7:30 p.m. (C) At 6:30 p.m.",
+            "output": [
+                "logic"
+            ]
+        },
+        {
+            "id": "task248-00e88aac47464a418114f5e022b31b07",
+            "input": "Paul: Sara, I've been looking forward to our yearly camp out for three weeks. [Me too] It's going to be a wonderful day for hiking tomorrow. The great outdoors. Camping under the stars. This is the life. Sara: Yeah, but Paul, I'm a little bit worried about the weather though. The weatherman said it was going to rain later tonight. Paul: Ah, nonsense. Nothing can spoil our adventure. Those weather reports are never right. Sara: And it said there was a chance of high winds. Paul: Ah. Don't worry. Sara: [thunder] Paul. Paul. Did you remember to bring our raincoats just in case, like I told you? [light rain] Paul: Uh ... no. I left them on the front porch. [heavy rain] Sara: What are we going to do now? Paul: We'll have to sleep in the car! Hurry get in! [door shut] Sara: So, Paul, what are we going to do now? Paul: How about playing a card game? Sara: Uhh. I left them next to the picnic table. [Hmmm] Hey, you don't want me to go out in this rain and get them, do you? Paul: No. That's okay. So what now? Sara: Well, we could head down the mountain and stay at that hotel we passed on the way up, or go home. Paul: Hmm, why don't we just make the best of it here and hope the weather clears. Sara: That's a good idea., Question: What did Paul forget to bring? (A) rain coats (B) umbrellas (C) rain boots",
+            "output": [
+                "logic"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Dedicated License (https://github.com/nlpdata/dream/blob/master/license.txt)"
+    ]
+}

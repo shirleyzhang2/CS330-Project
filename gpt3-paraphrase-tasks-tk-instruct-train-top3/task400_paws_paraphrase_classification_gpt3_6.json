@@ -1,0 +1,90 @@
+{
+    "Contributors": [
+        "Amirreza Mirzaei"
+    ],
+    "Source": [
+        "paws"
+    ],
+    "URL": [
+        "https://arxiv.org/abs/1904.01130"
+    ],
+    "Categories": [
+        "Text Matching"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You will be given a sentence pair from Wikipedia that has high lexical overlap. If the sentences have the same meaning and are just paraphrases of each other, label them as \"Paraphrase\". If not, label them as \"Not paraphrase\". The two sentences are separated by a new line."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Wikipedia"
+    ],
+    "Positive Examples": [
+        {
+            "input": "In January 2011 , the Deputy Secretary General of FIBA Asia , Hagop Khajirian , inspected the venue together with SBP - President Manuel V. Pangilinan .\nIn January 2011 , FIBA Asia deputy secretary general Hagop Khajirian along with SBP president Manuel V. Pangilinan inspected the venue .",
+            "output": "Paraphrase",
+            "explanation": "The second sentence has the same meaning as the first sentence and is just a paraphrased version of it."
+        },
+        {
+            "input": "The smallest number that can be represented in two positive and seventh ways as a sum of four different powers is 2056364173794800 .\nThe smallest number that can be represented as a sum of four positive seventh potences in two different ways is 2056364173794800 .",
+            "output": "Not paraphrase",
+            "explanation": "The second sentence doesn't have the same meaning as the first."
+        },
+        {
+            "input": "Luciano Williames Dias ( born July 25 , 1970 ) is a Brazilian football coach and former player .\nLuciano Williames Dias ( born 25 July 1970 ) is a former football coach and Brazilian player .",
+            "output": "Not paraphrase",
+            "explanation": "The second sentence doesn't have the same meaning as the first."
+        },
+        {
+            "input": "During her sophomore , junior and senior summers , she spent half of it with her Alaska team , and half playing , and living in Oregon .\nDuring her second , junior and senior summers , she spent half of it with her Alaska team , half playing and living in Oregon .",
+            "output": "Paraphrase",
+            "explanation": "The second sentence doesn't have the same meaning as the first."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "This was a series of nested angular standards , so that measurements in azimuth and elevation could be done directly in polar coordinates relative to the ecliptic .\nThis was a series of nested polar scales , so that measurements in azimuth and elevation could be performed directly in angular coordinates relative to the ecliptic .",
+            "output": "Paraphrase",
+            "explanation": "The second sentence doesn't have the same meaning as the first. As pointed out in the task definition both sentences in all the instances have high lexical overlap, which doesn't mean they have the same meaning."
+        },
+        {
+            "input": "His father emigrated to Missouri in 1868 but returned when his wife became ill and before the rest of the family could also go to America .\nHis father emigrated to America in 1868 , but returned when his wife became ill and before the rest of the family could go to Missouri .",
+            "output": "Paraphrase",
+            "explanation": "In the second sentence, it is not mentioned that the father went to Missouri, so the part about the rest of the family doesn't imply the same meaning as the first sentence. These are not paraphrases."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task400-c7c46623b9c540d7a5aa4be60010b2f7",
+            "input": "The River Teuz is a tributary of the Levele River in Romania .\nThe Levele\u0219 River is a tributary of the Teuz River in Romania .",
+            "output": [
+                "Not paraphrase"
+            ]
+        },
+        {
+            "id": "task400-91c057514c31414abe488b8fd3f801de",
+            "input": "It was available for ordering on November 25 , 2013 , in Beijing , and November 29 , 2013 , in Shanghai .\nIt was available in Shanghai on 25 November 2013 and in Beijing on 29 November 2013 .",
+            "output": [
+                "Not paraphrase"
+            ]
+        },
+        {
+            "id": "task400-d5cb34e6773042878d96d11074b36299",
+            "input": "He is best known as one of the founders and first president of National Teachers Association , now known as the National Education Association .\nHe is best known as one of the founders and the first president of the National Education Association , now known as the National Teachers Association .",
+            "output": [
+                "Not paraphrase"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Dedicated License (https://github.com/google-research-datasets/paws/blob/master/LICENSE)"
+    ]
+}

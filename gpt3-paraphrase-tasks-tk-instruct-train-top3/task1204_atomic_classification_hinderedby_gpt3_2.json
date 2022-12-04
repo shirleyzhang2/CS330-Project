@@ -1,0 +1,90 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "atomic"
+    ],
+    "URL": [
+        "https://allenai.org/data/atomic-2020"
+    ],
+    "Categories": [
+        "Commonsense Classification"
+    ],
+    "Reasoning": [
+        "Relational Reasoning",
+        "Reasoning on Social Interactions",
+        "Commonsense Reasoning -> Social Situations"
+    ],
+    "Definition": [
+        "Given two phrases - Head and Tail - your task is to determine whether the Head can be hindered by what is mentioned in the Tail. If the answer is yes, classify your answer as \"Yes\". If the answer is no, classify your answer as \"No\". The placeholder \"___\" in the phrase can be an object, a person, and/or an action."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Sociology",
+        "Commonsense -> Concepts and Relations -> Social Commonsense"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Head: PersonX touches a nerve<sep>Tail: PersonX is too nice",
+            "output": "Yes",
+            "explanation": "This is a good example. The Tail can hinder the Head."
+        },
+        {
+            "input": "Head: PersonX attends school<sep>Tail: To be a student",
+            "output": "No",
+            "explanation": "In this example, The Head can't be hindered by the Tail."
+        },
+        {
+            "input": "Head: PersonX is driving down the street<sep>Tail: PersonX's car is in the shop.",
+            "output": "Yes",
+            "explanation": "If PersonX's car is in the shop, PersonX can't drive down the street. Thus, this example should be classified as \"Yes\"."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Head: PersonX asks if PersonY was okay<sep>Tail: to thank PersonX",
+            "output": "Yes",
+            "explanation": "In this example, The Head can't be hindered by the Tail. So the output should be \"No\"."
+        },
+        {
+            "input": "Head: PersonX clenches PersonY's jaw<sep>Tail: PersonY is out of reach.",
+            "output": "No",
+            "explanation": "If PersonY is out of reach, PersonX can't clench PersonY's jaw, and the output should be \"Yes\"."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1204-75eda4d3580d4b57959adee61c13daeb",
+            "input": "Head: PersonX amends PersonY act<sep>Tail: grateful",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1204-3f925696abde411f8e1268a109b32ae4",
+            "input": "Head: PersonX becomes PersonY wife<sep>Tail: stresses about marriage",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1204-0fe03f9a24324e57b65623c78c87a76b",
+            "input": "Head: PersonX bears the brunt<sep>Tail: Brave",
+            "output": [
+                "No"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

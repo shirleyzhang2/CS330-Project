@@ -1,0 +1,85 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "qasper"
+    ],
+    "URL": [
+        "https://allenai.org/project/qasper/home"
+    ],
+    "Categories": [
+        "Question Understanding"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "In this task, you will be given a context from an academic paper and a question based on that context. Your task is to classify the questions into \"Extractive\", \"Abstractive\", or \"Yes-no\" questions. Extractive questions can be answered by combining extracts taken from the context into a summary. Answering abstractive questions requires paraphrasing the context using new sentences. A Yes-no question is a question whose answer is either yes or no."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Scientific Research Papers"
+    ],
+    "Positive Examples": [
+        {
+            "input": "We build a dataset of Twitter accounts based on two lists annotated in previous works. For the non-factual accounts, we rely on a list of 180 Twitter accounts from BIBREF1. On the other hand, for the factual accounts, we use a list with another 32 Twitter accounts from BIBREF19 that are considered trustworthy by independent third parties. \n Question: How did they obtain the dataset?",
+            "output": "Extractive",
+            "explanation": "The answer to this question has been explicitly mentioned in the context, so the question is extractive."
+        },
+        {
+            "input": "We evaluate our pointer-generator performance using BLEU score. The baseline language model is trained using RNNLM BIBREF23 . Perplexity measure is used in the evaluation.\n\n \n Question: Did they use other evaluation metrics?",
+            "output": "Yes-no",
+            "explanation": "This is a good example, and the given question is a yes-no question."
+        },
+        {
+            "input": "As in the example above, we pre-process documents by removing all numbers and interjections. \n Question: what processing was done on the speeches before being parsed?",
+            "output": "Abstractive",
+            "explanation": "Answering this question needs paraphrasing the context, so this question is abstractive."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "For the English version, we performed both a thorough manual analysis and automatic evaluation across three commonly used TS datasets from two different domains  For the English version, we performed both a thorough manual analysis and automatic evaluation across three commonly used TS datasets from two different domains  The evaluation of the German version is in progress. \n Question: What are the corpora used for the task?",
+            "output": "Yes-no",
+            "explanation": "This question is extractive, and it's not a yes-no question."
+        },
+        {
+            "input": "For Turkish, as the first dataset, we utilised the movie reviews which are collected from a popular website. The number of reviews in this movie corpus is 20,244 and the average number of words in reviews is 39. Each of these reviews has a star-rating score which is indicative of sentiment. These polarity scores are between the values 0.5 and 5, at intervals of 0.5. We consider a review to be negative it the score is equal to or lower than 2.5. On the other hand, if it is equal to or higher than 4, it is assumed to be positive. We have randomly selected 7,020 negative and 7,020 positive reviews and processed only them. \n Question: What details are given about the movie domain dataset?",
+            "output": "Extractive",
+            "explanation": "This question is Abstractive because we need to paraphrase the context to get to the answer."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task462-a6c9311a85fd4c1f8039d58707c8600b",
+            "input": "For generating a poem from images we use an existing actor-critic architecture BIBREF1. For Shakespearizing modern English texts, we experimented with various types of sequence to sequence models. We use a sequence-to-sequence model which consists of a single layer unidrectional LSTM encoder and a single layer LSTM decoder and pre-trained retrofitted word embeddings shared between source and target sentences. Since a pair of corresponding Shakespeare and modern English sentences have significant vocabulary overlap we extend the sequence-to-sequence model mentioned above using pointer networks BIBREF11 that provide location based attention and have been used to enable copying of tokens directly from the input. \n Question: What models are used for painting embedding and what for language style transfer?",
+            "output": [
+                "Extractive"
+            ]
+        },
+        {
+            "id": "task462-9cbf4d6535614e9caa18ae152a7fd19e",
+            "input": "We have evaluated our models considering the F1 Score, which is the harmonic mean of precision and recall. We have run ten times the experiment for each model and considered the average F1 Score. The results are mentioned in Table TABREF11. Considering F1 Macro the models that include the multi-attention mechanism outperform the others and particularly the one with the Projected Layer has the highest performance. In three out of four pairs of models, the ones with the Projected Layer achieved better performance, so in most cases the addition of the Projected Layer had a significant enhancement.\n\n \n Question: Which variation provides the best results on this dataset?",
+            "output": [
+                "Abstractive"
+            ]
+        },
+        {
+            "id": "task462-b12cde0e8ea54f6bbf79f0f18c80ba24",
+            "input": "In Figure FIGREF32 , we visualize the syntactic distance estimated by the Parsing Network, while reading three different sequences from the PTB test set. We observe that the syntactic distance tends to be higher between the last character of a word and a space, which is a reasonable breakpoint to separate between words.  The model autonomously discovered to avoid inter-word attention connection, and use the hidden states of space (separator) tokens to summarize previous information. This is strong proof that the model can understand the latent structure of data. \n Question: How do they show their model discovers underlying syntactic structure?",
+            "output": [
+                "Abstractive"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

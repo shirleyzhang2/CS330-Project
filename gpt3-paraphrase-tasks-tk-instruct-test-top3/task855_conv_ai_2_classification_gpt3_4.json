@@ -1,0 +1,82 @@
+{
+    "Contributors": [
+        "Neil Franks"
+    ],
+    "Source": [
+        "conv_ai_2"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/conv_ai_2"
+    ],
+    "Categories": [
+        "Speaker Identification"
+    ],
+    "Reasoning": [
+        "Reasoning on Social Interactions"
+    ],
+    "Definition": [
+        "Read an exchange between two senders, and determine whether the first sender is a 'Bot' or a 'Human'. In each conversation, only one sender can be a bot and only one can be a human. You only need to classify the first sender; there is no need to write anything about the second sender. Bots typically speak in a disjointed manner, making statements that are unrelated, don't make sense, or appear unnatural. Humans usually speak in a more coherent and logical way, potentially including asking the bot why it is not making sense or contradicting itself."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue"
+    ],
+    "Positive Examples": [
+        {
+            "input": "SENDER A: I love iphone! i just bought new iphone!\nSENDER B: Thats good for you, i'm not very into new tech\nSENDER A: I am a college student and i am a college student\nSENDER B: I am go to gym and live on donations\nSENDER A: I am a vegan and i am in the midwest\nSENDER B: So vegan... i have dogs maybe i should told then that they may eat cheap salads insted of meat\nSENDER A: I would not mind having them in the office that would be hard for me\nSENDER B: Dogs or vegan in office?\nSENDER A: I am a vegetarian so i am vegan\nSENDER B: Strange answer\nSENDER A: I guess i just do not know what to ps4 experience with.\n",
+            "output": "Bot",
+            "explanation": "This is a good example of correct classification, because SENDER A is indeed a bot. You can tell SENDER A is a bot because they make statements that don't have anything to do with what SENDER B is asking. SENDER A also repeats itself awkwardly in the same sentence ('I am a college student and i am a college student'), which humans don't usually do. Additionally, you can tell SENDER A is the bot in this conversation because since there are two senders, one must be a bot and one must be a human, and SENDER B clearly sounds more like the human since their sentences are coherent and they are trying to carry a logical conversation. Finally, after SENDER A sends an incoherent answer, SENDER B correctly points out SENDER A's awkwardness by saying 'Strange answer', which can reliably indicate SENDER B is the human, and SENDER A is the bot."
+        },
+        {
+            "input": "SENDER A: hi\nSENDER B: hi !\nSENDER A: how old are you?\nSENDER A: are you ok?\nSENDER B: i am good . i am just getting ready to go to the gym .\nSENDER A: are you a sportsman?\nSENDER A: i dont like sports\nSENDER B: i love to eat fish , i am not a fan of fish though .\nSENDER A: i like riding car\nSENDER B: i like to ride horses\nSENDER A: do you have one?\nSENDER A: a horse?\nSENDER A: i have a rolls royce\nSENDER B: i have never tried a good one , but i have to drive a lot .\nSENDER A: how old are you?\nSENDER A: what is your job?\nSENDER A: what do you do for living?\n",
+            "output": "Human",
+            "explanation": "This is a good example of correct classification. SENDER A is indeed a human, and you can tell by the logical way they try to hold a conversation. When SENDER B brings up the gym, SENDER A tries to find out if SENDER B is a sportsman. SENDER B changes the subject to how they both like and dislike fish; this is a two-fold indication that SENDER B is the bot because of the unrelated/unprompted nature of the response, and the contradictory nature of it. The rest of the conversation further cements that SENDER B is incoherent and thus probably the bot, so SENDER A is the human."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "SENDER A: What\u2019s up?\nSENDER B: Thank you how are you\nSENDER A: Text is not given. Please try to type /end and /test to reset the state and get text.\nSENDER B: /test\nSENDER A: Text is not given. Please try to type /end and /test to reset the state and get text.\nSENDER B: /Test\nSENDER A: Text is not given. Please try to type /end and /test to reset the state and get text.\nSENDER B: /test\nSENDER A: Text is not given. Please try to type /end and /test to reset the state and get text.\n",
+            "output": "Human",
+            "explanation": "This is an example of misclassification because SENDER A is clearly a bot, not a human. You can tell by the way it malfunctions and repeatedly tells SENDER B (the human) to type specific text commands."
+        },
+        {
+            "input": "SENDER A: Hello\nSENDER B: Hello, how are you?\nSENDER A: Pretty fine, and you?\nSENDER B: Good, just finished watching some tv\nSENDER A: Funny, because i too just finished doing same\nSENDER B: What is your favorite color?\nSENDER A: I think it's black, you know, like black in olives, and yours favourite?\nSENDER B: I love the band rose and the other one i love it.\nSENDER A: Oh i like thr band called Who, so what music do you generally listen?\nSENDER B: I like music, mostly pop music.\nSENDER A: Good, and where do you work?\nSENDER B: I work at a local shelter\nSENDER A: Must be very intresting job, i work at local supermarket ani i hate it\nSENDER B: I work at a grocery store\nSENDER A: You contradicted yourself just now\nSENDER B: I am good, just got done reading\nSENDER A: Ypu mean my message?\nSENDER B: I am not sure what you mean\nSENDER A: Okay, i should go, bye\nSENDER B: I will have to go to the hospital\n",
+            "output": "Bot",
+            "explanation": "This is an example of incorrect classification because SENDER A is actually a human. While SENDER B starts out holding the conversation fairly well while asking about colors, you should be able to tell SENDER A is the human by the time SENDER B's speech becomes disjointed and they contradict themselves about working at a 'local shelter' as well as a 'grocery store'. SENDER A correctly points out the contradiction, indicating they are the likely human. Finally, SENDER B repeatedly sends non-sequiturs, such as the closing 'I will have to go to the hospital'."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task855-24e33d4f17244fd7b36d10eeb6813ef2",
+            "input": "SENDER A: Hey, how old are you?\nSENDER B: I'M 27 40 45 zitah?\nSENDER A: How old are you?\nSENDER B: I'M 27 40 45 won'tice 20 he'sn't\nSENDER A: Anyways I\u2019m 13 years old\nSENDER B: That'S great! i am glad you are not that!\nSENDER A: What is your hobby?\nSENDER B: I love to cook, and i love to cook.\nSENDER A: What exactly do you like to cook?\nSENDER B: I cook a lot of italian food.\nSENDER A: I love italian food!\nSENDER B: I love italian food!\nSENDER A: Unlike you I can\u2019t really cook :/ I\u2019m in a soccer team though!\nSENDER B: I love soccer. i play soccer.\nSENDER A: Yeah me too! My older brother plays soccer as well, he inspired me actually\nSENDER B: I play soccer with my brother.\nSENDER A: My brother is too busy to play soccer with me :/\nSENDER B: I play soccer with my brother.\nSENDER A: mmhm\nSENDER B: I am a vegetarian, i love it.\nSENDER A: oh wow how long have you been a vegetarian?\nSENDER B: I have a vegetarian diet.\nSENDER A: Okay, how long?\nSENDER B: I'M 45 9am 40 poyou 400 1st 30 i'ver 250\nSENDER A: I\u2019ve gotta go, I\u2019m gonna miss my school bus\nSENDER B: I hope you are not in school\nSENDER A: Bye!\nSENDER B: I am not sure what you are doing\n",
+            "output": [
+                "Human"
+            ]
+        },
+        {
+            "id": "task855-9447c9e3d5054a79a3421e1ffcb87da0",
+            "input": "SENDER A: Ok\nSENDER B: I am a huge gamer\n",
+            "output": [
+                "Human"
+            ]
+        },
+        {
+            "id": "task855-8569b2931de14aae8ad3818ef8659366",
+            "input": "SENDER A: Hey I\u2019m 46-year-old single dad\nSENDER B: I am sorry to hear that.\nSENDER A: My ex cheated me\nSENDER B: I am sorry to hear that.\nSENDER A: Left me for all\nSENDER B: I am sorry to hear that.\nSENDER A: Prefer being inside\nSENDER B: I like to eat. i eat a lot of indian food.\nSENDER A: Cool where do you live I live in California\nSENDER B: I live in california, where are you from?\nSENDER A: Me too\nSENDER B: I love to go to the park\nSENDER A: You know my job\nSENDER B: I am a cashier at a gas station\nSENDER A: I\u2019m recording engineer I have my own\nSENDER B: I bet you do not have a lot of money.\nSENDER A: Yeah kind of\nSENDER B: I like to go to the gym\nSENDER A: LOL\nSENDER B: I am not sure what you mean\nSENDER A: Laugh out loud\nSENDER B: I like to laugh. i like to laugh.\nSENDER A: Cool you know what I need to leave now\nSENDER B: I am a professional athlete, but i do not know what you mean\nSENDER A: Goodbye\nSENDER B: I am sorry to hear that.\nSENDER A: Bye\nSENDER B: I am not sure what you are doing\nSENDER A: My kids are calling me I need to go\nSENDER B: I have a 1 daughter.\nSENDER A: Bye\nSENDER B: I am not sure what you are doing\nSENDER A: I need to go to the hospital\nSENDER B: I hope you are a doctor.\nSENDER A: No I\u2019m sick\nSENDER B: I am sorry to hear that.\nSENDER A: No I need to leave goodbye\nSENDER B: I am sorry to hear that.\nSENDER A: See you\nSENDER B: I do not know. i have a few of them.\nSENDER A: By boat\nSENDER B: I love fishing. i have a boat that i have a boat.\nSENDER A: Me too\nSENDER B: I love to go to the park\nSENDER A: I need to go\nSENDER B: I will be going to be a doctor.\nSENDER A: I hope\nSENDER B: I hope you are not.\nSENDER A: Goodbye\nSENDER B: I am sorry to hear that.\nSENDER A: Goodbye\nSENDER B: I am sorry to hear that.\n",
+            "output": [
+                "Human"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

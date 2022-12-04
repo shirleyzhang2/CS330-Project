@@ -1,0 +1,88 @@
+{
+    "Contributors": [
+        "Pegah Alipoormolabashi"
+    ],
+    "Source": [
+        "wsc; enhanced_wsc"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/winograd_wsc; https://github.com/mhany90/perturbed-wsc"
+    ],
+    "Categories": [
+        "Text Matching"
+    ],
+    "Reasoning": [
+        "Commonsense Reasoning"
+    ],
+    "Definition": [
+        "You will be given two sentences. One of them is a paraphrase of the original sentence, with changes in one or more aspects. Your task is to identify the difference between the two sentences. The possible types of difference are explained below: Tense: The verbs in the sentence are changed in tense. Number: Plural nouns, verbs and pronouns are changed into single ones or the other way around. Voice: If the verbs are in active voice, they're changed to passive or the other way around. Adverb: The paraphrase has one adverb or more than the original sentence. Gender: The paraphrase differs from the original sentence in the gender of the names and pronouns. Synonym: Some words or phrases of the original sentence are replaced with synonym words or phrases. Changes in the names of people are also considered a synonym change. Your task is to classify the difference between the two sentences into Tense, Number, Voice, Adverb, Gender, and Synonym."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue",
+        "Narrative"
+    ],
+    "Positive Examples": [
+        {
+            "input": "original sentence: Lily spoke to Donna , breaking her silence . paraphrase: Lily is speaking to Donna , breaking her silence .",
+            "output": "Tense",
+            "explanation": "The verbs in this example are changed from past tense to present tense."
+        },
+        {
+            "input": "original sentence: I'm sure that my map will show this building ; it is very good . paraphrase: I'm sure that my maps will show these buildings ; they are very good .",
+            "output": "Number",
+            "explanation": "In this example, map and building and their pronouns has been changed. So, the output should be Number."
+        },
+        {
+            "input": "original sentence: Jim signaled the barman and gestured toward his bathroom key . paraphrase: Jim dreamily signaled the barman and vaguely gestured toward his bathroom key .",
+            "output": "Adverb",
+            "explanation": "In this example the adverbs \"vaguely\" and \"dreamily\" are added to the original sentence."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "original sentence: The dog chased the cat , which ran up a tree . It waited at the bottom . paraphrase: The dog is chasing the cat , which is running up a tree . It is waiting at the bottom .",
+            "output": "Voice",
+            "explanation": "The change in the original sentence is to tense, as the past tense verbs are changed to present tense ones. \"Voice\" is not a correct answer here."
+        },
+        {
+            "input": "original sentence: John was doing research in the library when he heard a man humming and whistling . He was very annoyed . paraphrase: John and Steve were doing research in the library when they heard men humming and whistling . They were very annoyed .",
+            "output": "Number is changed.",
+            "explanation": "You should only output the title of the change, and nothing more."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task276-0a3472e4a00d44d2b00a7f32bbcbe270",
+            "input": "original sentence: Ann asked Mary what time the library closes , but she had forgotten . paraphrase: patty asked lola what time the library closes , but she had forgotten .",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "id": "task276-c4b1ba9afe3642a08a09307f81f503ea",
+            "input": "original sentence: Jim comforted Kevin because he was so upset . paraphrase: Jim calmly comforted Kevin because he was so upset .",
+            "output": [
+                "Adverb"
+            ]
+        },
+        {
+            "id": "task276-dc08478fc9c64613955ec65f3be02353",
+            "input": "original sentence: Susan knew that Ann's son had been in a car accident , because she told her about it . paraphrase: Susan actually knew that Ann's son had been in a car accident , because she told her about it .",
+            "output": [
+                "Adverb"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

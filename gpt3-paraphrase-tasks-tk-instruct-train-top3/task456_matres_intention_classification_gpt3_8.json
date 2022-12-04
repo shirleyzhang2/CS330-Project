@@ -1,0 +1,85 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "matres"
+    ],
+    "URL": [
+        "https://github.com/CogComp/MATRES"
+    ],
+    "Categories": [
+        "Information Extraction"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You will be given a context and a verb, separated by a newline character. You have to identify if the given verb implies an opinion, intention, or wish. Please note that a verb refers to an intention only if it refers to an event planned to happen in the future and is not conditional (or part of a condition). The output should be: 'Yes' if the verb refers to an opinion, intention, or wish; and 'No' otherwise."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "News"
+    ],
+    "Positive Examples": [
+        {
+            "input": "It was followed by Denmark, Norway, Germany, France, Greece, Luxembourg, Spain, Britain, the United States, Iceland, Belgium, Italy, Portugal and Turkey. NATO decided at last year's Madrid summit to (invite) the three eastern European countries to start accession talks.  \n Verb: invite",
+            "output": "Yes",
+            "explanation": "They planned to \"invite\" the three eastern European countries, so this verb refers to an intention."
+        },
+        {
+            "input": "In Washington today, the Federal Aviation Administration (released) air traffic control tapes from the night the TWA Flight eight hundred went down.  \n Verb: released",
+            "output": "No",
+            "explanation": "In this sentence, the releasing event happened in the past, and hence it's not an intention."
+        },
+        {
+            "input": "We will act again if we have evidence he is (rebuilding) his weapons of mass destruction capabilities, senior officials say. In a bit of television diplomacy, Iraq\u2019s deputy foreign minister responded from Baghdad in less than one hour.  \n Verb: rebuilding",
+            "output": "No",
+            "explanation": "In this sentence, the verb is part of of a condition. Therefore, it cannot be known for sure if he is already rebuilding weapons but we have no evidence, or if he will be building weapons in the future, and hence it's not an intention."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "The Justice Department wants the appeals court to suspend the temporary injunction issued Thursday and also order Elian's great-uncle, Lazaro Gonzalez, to release the boy. The relatives want the court to let them meet with Elian's father without being (required) to surrender the boy.  \n Verb: required",
+            "output": "Yes",
+            "explanation": "In this sentence, required is not an intention, wish, or opinion, as it is part of a condition."
+        },
+        {
+            "input": "The federal charge also carries a fine of up to $250,000. The newly filed charges will (intensify) the ongoing international manhunt, Tolbert said.  \n Verb: intensify",
+            "output": "No",
+            "explanation": "In this sentence, \"intensify\" is planned to happen in the future, and it is an opinion or intention."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task456-c7d4764da4a4461699357ea5dba4d6bf",
+            "input": "Scharping, ending a two-day visit, said Poland was well prepared to join the alliance. Germany has been a strong advocate of Poland's access to NATO, saying it will (serve) European security and stability.  \n Verb: serve",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task456-081480f0e54343ff822ac61f490b7f67",
+            "input": "Scharping, ending a two-day visit, said Poland was well prepared to join the alliance. Germany has been a strong advocate of Poland's access to NATO, (saying) it will serve European security and stability.  \n Verb: saying",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task456-65278d43d3a145e382c09937d5c7686e",
+            "input": "MIAMI ( AP ) -- In efforts to (prevent) Elian Gonzalez's return to Cuba, an anti-Castro lawmaker subpoenaed him Friday to testify before a congressional committee and one of his Miami relatives sought to become his legal guardian.  \n Verb: prevent",
+            "output": [
+                "Yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

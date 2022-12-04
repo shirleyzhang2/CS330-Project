@@ -1,0 +1,88 @@
+{
+    "Contributors": [
+        "Pegah Alipoormolabashi"
+    ],
+    "Source": [
+        "wsc; enhanced_wsc"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/winograd_wsc; https://github.com/mhany90/perturbed-wsc"
+    ],
+    "Categories": [
+        "Text Matching"
+    ],
+    "Reasoning": [
+        "Commonsense Reasoning"
+    ],
+    "Definition": [
+        "You will be given two sentences. One of them is created by paraphrasing the original one, with changes on an aspect, or using synonyms. Your task is to decide what is the difference between two sentences. The types of change are: Tense: The verbs in the sentence are changed in tense. Number: Plural nouns, verbs and pronouns are changed into single ones or the other way around. Voice: If the verbs are in active voice, they're changed to passive or the other way around. Adverb: The paraphrase has one adverb or more than the original sentence. Gender: The paraphrase differs from the original sentence in the gender of the names and pronouns. Synonym: Some words or phrases of the original sentence are replaced with synonym words or phrases. Changes in the names of people are also considered a synonym change."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue",
+        "Narrative"
+    ],
+    "Positive Examples": [
+        {
+            "input": "original sentence: Lily spoke to Donna , breaking her silence . paraphrase: Lily is speaking to Donna , breaking her silence .",
+            "output": "Tense",
+            "explanation": "The verbs in this example are changed from past tense to present tense."
+        },
+        {
+            "input": "original sentence: I'm sure that my map will show this building ; it is very good . paraphrase: I'm sure that my maps will show these buildings ; they are very good .",
+            "output": "Number",
+            "explanation": "In this example, map and building and their pronouns has been changed. So, the output should be Number."
+        },
+        {
+            "input": "original sentence: Jim signaled the barman and gestured toward his bathroom key . paraphrase: Jim dreamily signaled the barman and vaguely gestured toward his bathroom key .",
+            "output": "Adverb",
+            "explanation": "In this example the adverbs \"vaguely\" and \"dreamily\" are added to the original sentence."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "original sentence: The dog chased the cat , which ran up a tree . It waited at the bottom . paraphrase: The dog is chasing the cat , which is running up a tree . It is waiting at the bottom .",
+            "output": "Voice",
+            "explanation": "The change in the original sentence is to tense, as the past tense verbs are changed to present tense ones. \"Voice\" is not a correct answer here."
+        },
+        {
+            "input": "original sentence: John was doing research in the library when he heard a man humming and whistling . He was very annoyed . paraphrase: John and Steve were doing research in the library when they heard men humming and whistling . They were very annoyed .",
+            "output": "Number is changed.",
+            "explanation": "You should only output the title of the change, and nothing more."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task276-bddfc42b69bd4503a26ee9388f0c22c1",
+            "input": "original sentence: The table won't fit through the doorway because it is too narrow . paraphrase: the bench won't fit through the door because it is too narrow .",
+            "output": [
+                "Synonym"
+            ]
+        },
+        {
+            "id": "task276-95880ceba3a24fe3a0ce63dfdc1d618a",
+            "input": "original sentence: The customer walked into the bank and stabbed one of the tellers . He was immediately taken to the police station . paraphrase: The customer is walking into the bank and stabbing one of the tellers . He is immediately taken to the police station .",
+            "output": [
+                "Tense"
+            ]
+        },
+        {
+            "id": "task276-056b97b886f641fc807bad05f889c0f9",
+            "input": "original sentence: The older students were bullying the younger ones , so we punished them . paraphrase: The older students are bullying the younger ones , so we are punishing them .",
+            "output": [
+                "Tense"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

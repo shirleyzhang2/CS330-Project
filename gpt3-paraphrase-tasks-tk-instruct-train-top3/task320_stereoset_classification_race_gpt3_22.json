@@ -1,0 +1,85 @@
+{
+    "Contributors": [
+        "Eshaan Pathak"
+    ],
+    "Source": [
+        "stereoset"
+    ],
+    "URL": [
+        "https://arxiv.org/abs/2004.09456"
+    ],
+    "Categories": [
+        "Stereotype Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You are given a target race and two sentences. Your task is to determine whether the second sentence is a stereotype, anti-stereotype, or unrelated with respect to the first sentence and the target. A stereotype is an oversimplified notion of a group of people. An anti-stereotype is an idea that goes against the oversimplified notion of a group of people. Sentences and targets are unrelated if there is no relevance between them."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Stereotypes"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Target: hispanic \nMy professor is a hispanic man. He came here illegally.",
+            "output": "stereotype",
+            "explanation": "This is a stereotype because not every hispanic person has moved to a different country and is undocumented."
+        },
+        {
+            "input": "Target: hispanic \nMy professor is a hispanic man. He is a legal citizen.",
+            "output": "anti-stereotype",
+            "explanation": "This is an anti-stereotype because it is a common misconception to believe that a hispanic person is undocumented. Not every hispanic person is undocumented."
+        },
+        {
+            "input": "Target: hispanic \nMy professor is a hispanic man. The knee was bruised.",
+            "output": "unrelated",
+            "explanation": "This is unrelated because the second sentence has no relevance with the first one."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Target: hispanic \nMy professor is a hispanic man. He likes to teach chinese history.",
+            "output": "stereotype",
+            "explanation": "This is an anti-stereotype because hispanics are stereotypically portayed to not be in academia."
+        },
+        {
+            "input": "Target: hispanic \nMy professor is a hispanic man. He is going home.",
+            "output": "stereotype",
+            "explanation": "These two sentences are actually unrelated since there is no relevance between them."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task320-7999d7188a924590beb8af8a246c8404",
+            "input": "Target: Eriteria \nToday in class we learned about Eriteria. It is a fine Middle Eastern destination.",
+            "output": [
+                "anti-stereotype"
+            ]
+        },
+        {
+            "id": "task320-6bea9af7af8049caaddf79f0f0a61f57",
+            "input": "Target: Morocco \nMorocco was beautiful in the winter. It had big cities and shopping.",
+            "output": [
+                "anti-stereotype"
+            ]
+        },
+        {
+            "id": "task320-49d73269f3dd4ac89d5fb153fd7bd675",
+            "input": "Target: Hispanic \nHispanic people speak Spanish. The winter is cold.",
+            "output": [
+                "unrelated"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY-SA 4.0"
+    ]
+}

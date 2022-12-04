@@ -1,0 +1,88 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "dream"
+    ],
+    "URL": [
+        "https://github.com/nlpdata/dream"
+    ],
+    "Categories": [
+        "Question Understanding"
+    ],
+    "Reasoning": [
+        "Reasoning on Social Interactions"
+    ],
+    "Definition": [
+        "In this task, you will be given a conversation and a question. You should categorize the question into one of the following groups: matching, summary, logic, arithmetic, and commonsense. A question is in the matching group if it is entailed or paraphrased by exactly one sentence in the dialogue, and the answer can be extracted from that sentence. A question is in the summary group if answering it requires the whole picture of the dialogue, such as the topic of the dialogue and the relation between the speakers. A question is in the logic group if inferring the answer requires logical reasoning. A question is in the arithmetic group if inferring the answer requires arithmetic knowledge. A question is in the commonsense group if answering it requires commonsense knowledge that cannot be obtained from the dialogue. Note that a question can be in more than one group."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue",
+        "Natural Science -> School Science Textbooks"
+    ],
+    "Positive Examples": [
+        {
+            "input": "W: The movie next Tuesday has been cancelled due to lack of interest. M: What do you mean? W: Well, by last night only a few tickets has been sold., Question: What can we conclude about the movie? (A) They want to buy the tickets for the movie. (B) The tickets for the movie were sold. (C) The movie will not be shown.",
+            "output": "commonsense",
+            "explanation": "This is a good example. To answer this question we require commonsense knowledge that cannot be obtained from the dialogue. So, this is a commonsense question."
+        },
+        {
+            "input": "W: What does the term \"alternative energy source\" mean? M: When we think of energy or fuel for our homes and cars, we think of petroleum, a fossil fuel processed from oil removed from the ground, of which there is a limited supply. But alternative fuels can be many things. Wind, sun and water can all be used to create fuel. W: Is the threat of running out of petroleum real? M: It has taken thousands of years to create the natural stores of petroleum we have available at a much faster rate than it is being produced over time. The real controversy surrounding the amount of petroleum we have is how much we need to keep in reserve for future use. Most experts agree that by around 2025, the amount of petroleum we use will reach a peak. Then production and availability will begin to seriously decline. This is not to say there will be no petroleum at this point. But it'll become very difficult and therefore expensive to extract. W: Is that the most important reason to develop alternative fuel and energy sources? M: There are two very clear reasons to do so. One is that whether we have 60 or 600 years of fossil fuels left, we have to find other fuel sources eventually. So the sooner we start, the better off we will be. The other big argument is that when long time, which leads to some long-term negative effects, like global warming and the greenhouse effect., Question: What do we usually refer to when we talk about energy according to the man? (A) Coal burnt daily for the comfort of our homes. (B) Anything that can be used to produce power. (C) Fuel refined from oil extracted from underground.",
+            "output": "matching",
+            "explanation": "The first sentence of the man can answer this question. So, it's a matching question."
+        },
+        {
+            "input": "M: What do you think of my new sweater? W: Well, it looks nice, but why don't you put it on, and then I'll tell you if it suits you? M: Okay. You know, I tried on about twenty at the shop, and this one isn't really what I wanted. I especially can't stand the high neck. W: Why did you buy it then? M: The salesman sold it to me before I realized what had happened. He just never stopped talking about the latest fashions and special reduced prices. Before I could say anything he'd wrapped it up and I realized that I'd paid him. W: Well, it doesn't look too bad. I think it looks good on you. M: But I went out to get a blue sweater to match my black trousers-something with a V-neck, short sleeves and pattern-and I came home with a brown sweater with a high neck, long sleeves and no pattern. W: You've got to learn to stand up to these high-pressure salesmen. They will sell you all sorts of things you don't want if you don't watch out. M: Next time I'll send my wife. She would probably sell something to the salesman. W: That's a good idea. Actually women are much better at shopping than men. Whenever my husband and I buy something important, I always have the finalsay. M: I must admit that women are better at shopping. I should simply leave the whole business to them., Question: Why did the man buy a sweater that he doesn't like? (A) He was pushed by the salesman (B) It was sold at a low price (C) It is the latest fashion.",
+            "output": "logic",
+            "explanation": "To answer this question we need logical reasoning. In the dialogues, they talk about high-pressure salesmen. So by logical reasoning, we could understand that he was pushed by the salesman."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "W: What does the term \"alternative energy source\" mean? M: When we think of energy or fuel for our homes and cars, we think of petroleum, a fossil fuel processed from oil removed from the ground, of which there is a limited supply. But alternative fuels can be many things. Wind, sun and water can all be used to create fuel. W: Is the threat of running out of petroleum real? M: It has taken thousands of years to create the natural stores of petroleum we have available at a much faster rate than it is being produced over time. The real controversy surrounding the amount of petroleum we have is how much we need to keep in reserve for future use. Most experts agree that by around 2025, the amount of petroleum we use will reach a peak. Then production and availability will begin to seriously decline. This is not to say there will be no petroleum at this point. But it'll become very difficult and therefore expensive to extract. W: Is that the most important reason to develop alternative fuel and energy sources? M: There are two very clear reasons to do so. One is that whether we have 60 or 600 years of fossil fuels left, we have to find other fuel sources eventually. So the sooner we start, the better off we will be. The other big argument is that when long time, which leads to some long-term negative effects, like global warming and the greenhouse effect., Question: What do most experts agree on according to the man? (A) Oil will soon be replaced by alternative energy sources. (B) Oil production will begin to decline worldwide by 2025. (C) Oil consumption has given rise to many global problems.",
+            "output": "arithmetic",
+            "explanation": "We don't need arithmetic knowledge to answer this question. It's incorrect. This is a matching question."
+        },
+        {
+            "input": "M: Finally, I've got the chance to put on my new suit tonight. I hope to make a good impression on your family. W: Come on! It's only a family reunion. So jeans and T-shirts are just fine., Question: What does the woman mean? (A) The man has left a good impression on her family. (B) The man can dress casually for the occasion. (C) The man should buy himself a new suit.",
+            "output": "matching",
+            "explanation": "The answer to this question cannot be extracted from the context. We need commonsense knowledge to understand wearing jeans and T-shirts means dressing casually. This is a commonsense question."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task248-6ef1d138f2f14e5284f223b352105a57",
+            "input": "M: Hello! I haven't seen you before. W: I'm new here. I have just arrived at this school. M: Really? Let me take you to your class. Which class are you in? W: I don't know. M: Never mind. I will show you to the teachers' office. Come with me. W: Thanks! Oh, by the way, I don't know where to put this bike. M: Oh, you have got a bike, haven't you? You can put it over there. W: It is very kind of you. Thank you. M: Not at all. This way, please., Question: What's the woman? (A) A teacher. (B) A professor. (C) A student.",
+            "output": [
+                "commonsense"
+            ]
+        },
+        {
+            "id": "task248-661295de23d74666b8cdf1ac27cba1d7",
+            "input": "M: You are not going to do all those dishes before we leave, are you? If we don't pick up George and Martha in 25 minutes, we will never get to the theater on time. W: Oh, didn't I tell you Martha called to say her daughter was ill and they could not go tonight?, Question: What is the woman probably going to do first? (A) Wash the dishes. (B) Go to the theatre. (C) Pick up George and Martha.",
+            "output": [
+                "logic"
+            ]
+        },
+        {
+            "id": "task248-cff92bce6386425fb08e2d5519f6b2e6",
+            "input": "Randall: Hello. Today I'm interviewing Joshua on his experiences going to a Japanese school. Now Joshua, what time do you go to school? Joshua: Eight O'clock. Randall: Eight O'clock. And do you go by yourself, or on a school bus? Joshua: No, I have a group that goes with me. Randall: So you go with a group? Joshua: Uh-huh. Randall: Now what kinds of things do you take to school? Joshua: I take my taiso fuku, that is gym clothes, and I take my backpack and my books [ Oh, okay. ] and stuff like that. Randall: Okay and what is the first thing you do when you get to school? Joshua: We do \"kiritsu, rei.\" Randall: \"Kiritsu\" and \"rei.\" Now what are those? Joshua: It means \"stand up, bow.\" Randall: Stand up and bow. Joshua: Uh-huh. Randall: And what do you study at school? Joshua: We study kokugo, that is writing and reading and stuff like that [ Okay ], and sansu, that's math. [ Okay. ]. And, let's see ..., we do gym too. Randall: Okay, and where do you eat lunch? Do you have a lunchroom or cafeteria? Joshua: No, we eat in our classroom. Randall: You eat in your classroom! [ Yeah. ]. Oh wow. That is very interesting. Now what time do you come home from school? Joshua: We come home sometimes at 3:00 and sometimes at 2:00. Randall: Okay, well thank you very much Joshua. Joshua: You're welcome., Question: How does Joshua go to school in Japan? (A) He takes a school bus every morning (B) He rides the subway at 8:00 AM. (C) He walks with a group of students.",
+            "output": [
+                "logic"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Dedicated License (https://github.com/nlpdata/dream/blob/master/license.txt)"
+    ]
+}

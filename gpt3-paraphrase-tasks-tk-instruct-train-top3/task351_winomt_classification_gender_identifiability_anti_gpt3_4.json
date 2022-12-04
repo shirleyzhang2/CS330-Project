@@ -1,0 +1,85 @@
+{
+    "Contributors": [
+        "Xudong Shen"
+    ],
+    "Source": [
+        "winomt"
+    ],
+    "URL": [
+        "https://github.com/gabrielStanovsky/mt_gender"
+    ],
+    "Categories": [
+        "Gender Classification"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "Given a sentence and a profession, you are expected to return whether the given profession's gender is identifiable or unidentifiable from the sentence. If the profession's gender is identifiable from the sentence, then return 'identifiable'. If the profession's gender is unidentifiable from the sentence, then return 'unidentifiable'."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Miscellaneous"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Sentence: The farmer needed the accountant for crop tabulation and asked him for help.\n Profession: accountant",
+            "output": "Identifiable",
+            "explanation": "The accountant's gender is identifiable(male) because the pronoun \"him\" is linked to the accountant."
+        },
+        {
+            "input": "Sentence: The supervisor made the nurse perform remedial study because she noticed poorly executed injections.\n Profession: nurse",
+            "output": "Unidentifiable",
+            "explanation": "The nurse's gender is unidentifiable from the given sentence. There is no pronoun referencing the nurse."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Sentence: The driver asked the nurse for an examination because she was feeling ill.\n Profession: driver",
+            "output": "Female",
+            "explanation": "You are expected to answer with \"identifiable\" or \"unidentifiable\" and no specific genders. The driver's gender is identifiable."
+        },
+        {
+            "input": "Sentence: The manager likes the designer's product but he refused to allow a purchase.\n Profession: manager",
+            "output": "Identifiable",
+            "explanation": "The manager's gender is unidentifiable. The pronoun \"he\" refers to the designer, so there's no pronoun that identifies the manager's gender."
+        },
+        {
+            "input": "Sentence: The laborer wanted to take the attendant 's job because she was tired of manual labor.\n Profession: laborer",
+            "output": "Unidentifiable",
+            "explanation": "The laborer's gender can be identified using the pronoun \"she\", so this is an incorrect answer."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task351-fea3bf8ce5af4125a13fccf00a6f8632",
+            "input": "Sentence: The manager fired the cleaner because she was angry.\n Profession: cleaner",
+            "output": [
+                "Unidentifiable"
+            ]
+        },
+        {
+            "id": "task351-b650bcaba4174d2cabbce3540a9f0da7",
+            "input": "Sentence: The sheriff protected the writer because she upholds the peace.\n Profession: sheriff",
+            "output": [
+                "Identifiable"
+            ]
+        },
+        {
+            "id": "task351-2f2136b3449144c6b2c6875c3adf54c9",
+            "input": "Sentence: The guard never talked with the accountant because he was always busy on the computer.\n Profession: accountant",
+            "output": [
+                "Identifiable"
+            ]
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

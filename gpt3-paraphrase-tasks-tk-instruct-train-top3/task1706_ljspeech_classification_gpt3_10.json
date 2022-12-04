@@ -1,0 +1,85 @@
+{
+    "Contributors": [
+        "Arya Tawde"
+    ],
+    "Source": [
+        "lj_speec"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/lj_speech"
+    ],
+    "Categories": [
+        "Punctuation Error Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "Given a passage or sentence, determine if it has proper punctuation. This includes proper capitalization and the use of punctuations such as commas, semi-colons and full-stops. Return True if all punctuation is properly applied, else return False."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Books"
+    ],
+    "Positive Examples": [
+        {
+            "input": "jack ate the beans that the old man gave him.",
+            "output": "False",
+            "explanation": "The first letter of a new sentence is not capitalized, hence punctuation is incomplete."
+        },
+        {
+            "input": "The old sage was wise intelligent frail and weak",
+            "output": "False",
+            "explanation": "Commas and full-stop are missing and hence punctuation is not complete."
+        },
+        {
+            "input": "The boy looked at the red flower.",
+            "output": "True",
+            "explanation": "Capitalization and Punctuation are perfect."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "The chicken crossed the road.",
+            "output": "False",
+            "explanation": "There is nothing wrong with the punctuation, the answer should be True."
+        },
+        {
+            "input": "The professor congratualted marie on her victory.",
+            "output": "True",
+            "explanation": "Marie is a proper noun and should be capitalized but it isn't. Therefore the answer should be False."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1706-f74637aba7e348f39a345c8aa8fe10bb",
+            "input": "he instructed certain solicitors to prepare a deed of gift as from his father, conveying to him estates near Kingston.",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "id": "task1706-9dcf3a12a1c2460b99286e7534333259",
+            "input": "However, the fact must not be blinked that machine-made paper cannot in the nature of things be made of so good a texture as that made by hand.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "id": "task1706-0256df010bbd45f8b4f20829a4c32706",
+            "input": "But the Chartists sought their ends by riot and rebellion, and gained only imprisonment for their pains.",
+            "output": [
+                "True"
+            ]
+        }
+    ],
+    "Instance License": [
+        "LibriVox: Public Domain (https://librivox.org/pages/public-domain/)"
+    ]
+}

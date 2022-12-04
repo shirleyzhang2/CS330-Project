@@ -1,0 +1,90 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "atomic"
+    ],
+    "URL": [
+        "https://allenai.org/data/atomic-2020"
+    ],
+    "Categories": [
+        "Commonsense Classification"
+    ],
+    "Reasoning": [
+        "Relational Reasoning",
+        "Commonsense Reasoning -> Physical Reasoning",
+        "Reasoning on Objects"
+    ],
+    "Definition": [
+        "In this task, you are given two phrases: Head and Tail, separated by <sep>. The Head and the Tail events are short phrases possibly involving participants. The names of specific people have been replaced by generic words (e.g., PersonX, PersonY, PersonZ). PersonX is always the subject of the event. You have to determine whether the Head can be characterized by being or having the Tail or not. Classify your answers into \"Yes\" and \"No\". The phrase may also contain \"___\", a placeholder that can be an object, a person, and/or an action."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Sociology",
+        "Commonsense -> Concepts and Relations -> Physical Commonsense"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Head: water<sep>Tail: effect of making things wet",
+            "output": "Yes",
+            "explanation": "This is a good example. The water can be characterized by making things wet."
+        },
+        {
+            "input": "Head: PersonX always lost<sep>Tail: go home",
+            "output": "No",
+            "explanation": "In this example, PersonX can't be characterized by going home. So the output should be\"No\"."
+        },
+        {
+            "input": "Head: plane ticket<sep>Tail: expensive",
+            "output": "Yes",
+            "explanation": "In this example, the plane ticket can be characterized by being expensive. Thus, this example should be classified as \"Yes\"."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Head: PersonX asks PersonY's boyfriend<sep>Tail: find out where he is",
+            "output": "Yes",
+            "explanation": "In this example, the Head can't be characterized by finding out where he is. Here the tail is the reson for the head, not its characteristic. So the output should be \"No\"."
+        },
+        {
+            "input": "Head: air conditioner<sep>Tail: very important in warm climates",
+            "output": "No",
+            "explanation": "The air conditioner can be characterized by being important in warm climates, and the output should be \"Yes\"."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1212-182bd4adc509408bb9101f4bb6a308d0",
+            "input": "Head: PersonX becomes fast ___<sep>Tail: helps",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1212-de633ea8814041cba3a9395c1c83c3c3",
+            "input": "Head: PersonX amends PersonY act<sep>Tail: Gets hired",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1212-9f869d5d20774859a2ac8cfed4156d78",
+            "input": "Head: PersonX asks PersonY's mother<sep>Tail: help personX",
+            "output": [
+                "No"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

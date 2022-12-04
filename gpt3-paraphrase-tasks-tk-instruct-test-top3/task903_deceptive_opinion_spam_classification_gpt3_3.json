@@ -1,0 +1,92 @@
+{
+    "Contributors": [
+        "Megh Patel"
+    ],
+    "Source": [
+        "deceptive_opinion_spam_dataset"
+    ],
+    "URL": [
+        "https://myleott.com/op-spam.html"
+    ],
+    "Categories": [
+        "Sentiment Analysis"
+    ],
+    "Reasoning": [
+        "Reasoning on Social Interactions"
+    ],
+    "Definition": [
+        "Given a hotel review and its corresponding polarity (i.e., Negative or Positive), identify if the polarity is correct. If it is, write 'true'. If it is not, write 'false'."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Reviews"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Review: I stayed at the Hilton Chicago for my cousins wedding. The service was impeccable. Not only was the staff attentive, they were respectful and careful not to interrupt the guests or make themselves known when serving dinner. I had the chicken wellington and it was to die for! The chicken was perfect and moist but the pastry crust was flaky and crispy. They even had Pakistani dinner options for some of the guests. The amenities were great, and after an open bar the night before, the Mimosas and brunch buffet couldn't have been better! I would love to have my wedding there.\nPolarity: Positive",
+            "output": "true",
+            "explanation": "Review writer likes the hotel. There are strong positive words like 'impeccable' and 'great'. Therefore it is true as the polarity mentioned."
+        },
+        {
+            "input": "Review: During my stay at the Hilton Chicago it has been quite unpleasant. How so you might ask? Well ill tell you, the towels where scratchy and the service was terrible and by terrible I mean they weren't even at the desk when I checked in. Also, When I ordered my breakfast, lunch, and dinner from room service I received the wrong order for all meals and felt a little sick after lunch. Finally, The bill was charging me for stuff I didn't want or ask for. But overall the hotel was very bad and unpleasant for me and others. I give it a half a star.\nPolarity: Negative",
+            "output": "true",
+            "explanation": "There are negative words in the review like 'unpleasant', 'terrible', 'bad' and the writer also gives half a star. Therefore it is a negative review which is true."
+        },
+        {
+            "input": "Review: My parents booked five nights at The James for its location and good reviews. They had a terrible first night with defective air conditioning and not much sympathy from the management staff. They sent engineers three times to repair the unit, and they insisted that it was getting cooler when it wasn't, under the rationale that the summer temperature is high and the filter was dirty. At my parents' request, the hotel staff moved them to a lower floor with a queen instead of a king and with neither a rate discount nor an effort to compensate them for the inconvenience and discomfort. The hotel insisted they were fully booked and reluctantly gave them that room. Don't book this hotel in the summer. And by the way, there is no view at all from any of the rooms - except for the windows of other buildings.\nPolarity: Positive",
+            "output": "false",
+            "explanation": "There are negative words like 'terrible', 'defective', 'inconvenience and discomfort', 'dirty' which are bad for hotel room reviews. Hence this is not a positive review."
+        },
+        {
+            "input": "Review: We stay at Hilton for 4 nights last march. It was a pleasant stay. We got a large room with 2 double beds and 2 bathrooms, The TV was Ok, a 27' CRT Flat Screen. The coincierge was very friendly when we need. The room was very cleaned when we arrived, we ordered some pizzas from room service and the pizza was Ok also.The main Hall is beautiful. The breakfast is charged, 20 dollars, kinda expensive. The internet access (WiFi) is charged, 13 dollars/day. Pros: Low rate price, huge rooms, close to attractions at Loop, close to metro station. Cons: Expensive breakfast, Internet access charged. Tip: When leaving the building, always use the Michigan Av exit. Its a great view.\nPolarity: Negative",
+            "output": "false",
+            "explanation": "There are positive reviews about the hotel room and there are positive words like 'pleasant', 'friendly', 'cleaned', 'huge rooms' which describe a good hotel room. Hence this is not a negative review."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Review: We had a great experience at this hotel. The hotel is Huge! The rooms were very clean, well appointed, and our room was very roomy with a great view of the snow covered park. The Staff was so nice and very helpfull. Donald, at the the Concierge desk scored us tickets to WICKED the day of the performance, and on a Holiday weekend too. They were great seats and a reasonable price. He worked very hard for us to see that show. They truely topped off what was a Fun New Years Celebration. This will be my first pick when I return in the spring.\nPolarity: Negative",
+            "output": "true",
+            "explanation": "The review says that the experience was great and there are positive words like 'Huge', 'clean', 'reasonable price'. This is not a negative review."
+        },
+        {
+            "input": "Review: This hotel was not worth it. From the moment we walked into the hotel lobby through check out, the staff were rude and contemptuous. Rooms were only serviceable, and certainly did not live up to the pompous self-descriptions on the website. The bathroom porthole and sliding door were odd and inconvenient. The 'fitness centre' was tiny and poor. We would not come here again.\nPolarity: Positive",
+            "output": "true",
+            "explanation": "This is a negative review because the writer mentions in the first line that it was not worth it and there are some negative words like 'rude', 'contemptuous' and 'inconvenient'. Hence this is a negative review."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task903-9196c37a39f84ad78799e162d022106f",
+            "input": "Review: Was there recently for one night for a conference. Tried to check-in at 5:30pm (the published check-in was 3pm), they said my room wasn't ready, where as others coming after me were assigned rooms. Was given a dummy door key card and asked to chill in the lounge on the 32nd floor and that they would call on may cell as soon as the room was ready. I chilled there until 8pm, no call, so went out for dinner. Came back at 9:30pm and asked if my room was ready. The gal said of course yes and give me a key. When asked why no one called me, she just shrugged. No, my troubles did not end there. I went to the room and opened the door only to find someone else in the room. Came back to the lobby, then they apologized and gave me another room. I said I was not going to walk-in on somebody else again, so they sent someone with me to open the new room. For all my \"trouble\" they reduced my bill by about 40%. It was definitely not worth the trouble they put me thru. Very bad experience.\nPolarity: Positive",
+            "output": [
+                "false"
+            ]
+        },
+        {
+            "id": "task903-4cf21e96c68f4242a3b55c11ddd874c1",
+            "input": "Review: When I first made reservations at The Palmer House Hilton, I was excited because of all the gorgeous pictures displayed on their website. Little did I know it was going to be a total disaster. First off, my husband and I couldn't find the place. It was our first time in Chicago after all. And when I would call for directions, they just kept putting me on hold. When my husband and I finally arrived, the bus boy was extremely rude. After man-handling our luggage, he held his hands out impatiently expecting a tip. Talk about arrogant. The front desk clerk was a little too pushy. My husband and I were only staying one night just to attend my sister's wedding, but they kept trying to up-sell a suite when all we needed was a regular guest room. The room itself was okay, decorated so ornately that they are forced to jack up the price and take all that you're worth. They even had the nerve to try and say that we purchased some items from the \"snack bar\" and ordered a movie that I've never even heard of! Completely unprofessional. I will never, I repeat, NEVER stay at this hotel ever again.\nPolarity: Negative",
+            "output": [
+                "true"
+            ]
+        },
+        {
+            "id": "task903-d365efd8756b407ea52c5ca91715537f",
+            "input": "Review: This is about the fourth time we stayed at the Allegro. The previous times, I have nothing but good to say about the Allegro. But my reaction has soured on this place. We have stayed here the past few years on the first weekend in December as a kick off to the holiday season and our shopping. From the very start, this year was a disappointment. I had checked the deals on a number of sites before calling the Allegro. I was quoted one price (higher than what was on line), when I mentioned this, I was told I could have the lower price. At check in, the desk was nice but not friendly. We discovered that our room was not as good as in the past (punishment for asking for a lower price?) The closet had no hangers, we had no place to put our suitcase. No one mentioned the wine reception in the evening. On the second day, we discovered that even our bath mat for the shower was missing. It took two phone calls and almost two hours to get a new one. I wrote the management following our stay. I have yet to receive a reply. Needless to say we will be looking elsewhere when we go into the city the next time. I would advise others to do the same.\nPolarity: Positive",
+            "output": [
+                "false"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY-NC-SA 3.0"
+    ]
+}

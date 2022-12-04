@@ -1,0 +1,86 @@
+{
+    "Contributors": [
+        "Ishani Mondal"
+    ],
+    "Source": [
+        "ade_corpus_v2"
+    ],
+    "URL": [
+        "https://github.com/trunghlt/AdverseDrugReaction/tree/master/ADE-Corpus-V2"
+    ],
+    "Categories": [
+        "Text Categorization"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "The task is to read medical case reports extracted from MEDLINE and classify them as non-adverse drug events or adverse drug events. An adverse drug reaction is a harmful or unpleasant reaction resulting from the use of a medical product. It predicts hazard from future administration and warrants prevention or specific treatment, or alteration of the dosage regimen, or withdrawal of the product."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Biology -> Clinical Knowledge",
+        "Healthcare"
+    ],
+    "Positive Examples": [
+        {
+            "input": "A case is reported of a child with fatal pulmonary fibrosis following BCNU therapy.",
+            "output": "adverse drug event",
+            "explanation": "Here, the child is facing some trouble after undergoing a particular therapy, thereby causing an adverse effect of the therapy."
+        },
+        {
+            "input": "She responded well to Sodium valproate.",
+            "output": "non-adverse drug event",
+            "explanation": "This is a pretty straightforward remark because it is related to filing taxes with minimal stress and is unrelated to irony or sarcasm."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "The patient suffered from breathing trouble after taking azithromycin.",
+            "output": "serious",
+            "explanation": "You are expected to return \"adverse drug event\" or \"non-adverse drug event\". This should be classified as adverse drug event because the patient suffers from an issue after taking in a particular drug."
+        },
+        {
+            "input": "The patient is feeling better at the hospital.",
+            "output": "wellness",
+            "explanation": "You are expected to return \"adverse drug event\" or \"non-adverse drug event\". This should be classified as non-adverse drug event because no harmful after-effect of any medical intervention has been mentioned."
+        },
+        {
+            "input": "A case is reported of a child with fatal pulmonary fibrosis following BCNU therapy.",
+            "output": "non-adverse drug event",
+            "explanation": "Here, the child is facing some trouble after undergoing a particular therapy, thereby causing an adverse effect of the therapy. So, it needs to be tagged as adverse drug event instead of non-adverse drug event."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1495-9f689f8ae4714977a6470e3abcb74743",
+            "input": "Neither a complication nor clinical or radiological sequelae occurred in this patient.",
+            "output": [
+                "non-adverse drug event"
+            ]
+        },
+        {
+            "id": "task1495-4792cad636014843a86d837371e5c734",
+            "input": "Acute renal failure during lisinopril and losartan therapy for proteinuria.",
+            "output": [
+                "adverse drug event"
+            ]
+        },
+        {
+            "id": "task1495-85be4fe9846c4d9689f6c710667b400f",
+            "input": "Physiologic data were analyzed with an analysis of variance, with the Kruskal-Wallis test used for nonparametric data.",
+            "output": [
+                "non-adverse drug event"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

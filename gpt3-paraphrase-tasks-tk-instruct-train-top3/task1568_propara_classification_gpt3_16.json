@@ -1,0 +1,92 @@
+{
+    "Contributors": [
+        "Amrit Bhaskar"
+    ],
+    "Source": [
+        "propara"
+    ],
+    "URL": [
+        "https://arxiv.org/abs/1805.06975"
+    ],
+    "Categories": [
+        "Information Extraction"
+    ],
+    "Reasoning": [
+        "Deductive Reasoning"
+    ],
+    "Definition": [
+        "In this task, you are given a paragraph and an event. The event is part of the given paragraph and it changes the state of an entity. Your task is to classify the state of the entity into three classes: 1) not exist, 2) unknown location and 3) known location. \"not exist\" means the entity doesn't exist in that state anymore. \"unknown location\" means the entity exists in that state but location is unknown. \"known location\" means the entity exists and location is known."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Natural Science"
+    ],
+    "Positive Examples": [
+        {
+            "input": " \"process paragraph : Magma rises from deep in the earth. The magma goes into volcanos. The volcanos pressure the magma upwards. The pressure causes the magma to push through the surface of the volcano. The lava cools. The lava forms new rock. New magma is pressured to the surface of the volcano. The volcano bursts through the rock the formed after the last eruption\" , \"event : Magma rises from deep in the earth\" , \"entity : magma\" ",
+            "output": "known location",
+            "explanation": "The process paragraph explains in steps about - the cause for volcano eruption. The event is a part of the process paragraph given. The entity lies both in process paragraph and the event. So, this is a good example."
+        },
+        {
+            "input": " \"process paragraph : Water from the ocean washes onto beaches in waves. The waves contain sediment from the ocean. The water and particles in it hit rocks and sand on the beach. The wind and current sometimes push the water and particles harder. Tiny parts of the rocks on the shore come off the larger rocks. The waves pick up sand and small rocks from the beach. The waves go back out into the ocean. The waves carry the new particles with them. Rocks and the beach look a little different. \", \"event : The waves go back out into the ocean. \", \"entity : waves\" ",
+            "output": " known location ",
+            "explanation": "The process paragraph explains in steps about - the sequence of events during erosion by the ocean. The event is a part of the process paragraph given. The entity lies both in process paragraph and the event. So, this is a good example."
+        },
+        {
+            "input": " \"process paragraph : Water from oceans, lakes, swamps, rivers, and plants turns into water vapor. Water vapor condenses into millions of tiny droplets that form clouds. Clouds lose these droplets through rain or snow, also caused precipitation. Precipitation is either absorbed into the ground or runs off into rivers. Water that was absorbed into the ground is taken up by plants. Plants lose water from their surfaces as vapor. The vapor goes back into the atmosphere. Water that runs off into rivers flows into ponds, lakes, or oceans. The water evaporates back into the atmosphere. \", \"event : Water from oceans, lakes, swamps, rivers, and plants turns into water vapor. \", \"entity : water\" ",
+            "output": " not exist ",
+            "explanation": "The process paragraph explains in steps about - the sequence of events during water cycle. The event is a part of the process paragraph given. The entity lies both in process paragraph and the event. So, this is a good example."
+        },
+        {
+            "input": " \"process paragraph : Sediment settles in a place due to gravity. The sediment breaks down into small particles. Wind or water picks up the sediment. The sediment travels along the same route as the wind or water. The sediment is deposited at new locations by the wind or water. The sediment is picked up again by new wind or water. The sediment travels further. The sediment is deposited again in a new place. \", \"event : The sediment is picked up again by new wind or water. \", \"entity : sediment; small particles\" ",
+            "output": " unknown location ",
+            "explanation": "The process paragraph explains in steps about - the sequence of events during sediment transportation across the earth. The event is a part of the process paragraph given. The entity lies both in process paragraph and the event. So, this is a good example."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": " \"process paragraph : Water from oceans, lakes, swamps, rivers, and plants turns into water vapor. Water vapor condenses into millions of tiny droplets that form clouds. Clouds lose these droplets through rain or snow, also caused precipitation. Precipitation is either absorbed into the ground or runs off into rivers. Water that was absorbed into the ground is taken up by plants. Plants lose water from their surfaces as vapor. The vapor goes back into the atmosphere. Water that runs off into rivers flows into ponds, lakes, or oceans. The water evaporates back into the atmosphere. \", \"event : Water from oceans, lakes, swamps, rivers, and plants turns into water vapor. \", \"entity : water\" ",
+            "output": " known location ",
+            "explanation": "This is a bad example because the output class is incorrect. Water in this event has turned into water vapor and is longer in the form of water. The existence is necessary to find the location. "
+        },
+        {
+            "input": " \"process paragraph : Magma rises to the surface during a volcano. The magma undergoes changes in temperature. The magma undergoes changes in pressure. The magma cools. The magma solidifies. The magma crystallizes. Igneous rock is formed. \", \"event : Magma rises to the surface during a volcano. \", \"entity : magma\" ",
+            "output": " unknown location ",
+            "explanation": "This is a bad example because the output class is incorrect. Magma in this event has risen to the surface and is considered a known location. Only classify to unknown location when the place of entity is not determined. "
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1568-ec79f6103d5a4d79834429db677e0c87",
+            "input": " \"process paragraph : : Something happens to produce a sound. The sound travels in waves. The sound waves hit an object. The object absorbs some of the sound waves. Some of the sound waves bounce off of the object. The reflected sound waves can be heard, though they have slightly different properties than the original sound. The sound continues to bounce off of things and produce echoes until it is totally absorbed or dissipated. \", \"event : The sound travels in waves.\", \"entity : sound ; sound waves\" ",
+            "output": [
+                " unknown location "
+            ]
+        },
+        {
+            "id": "task1568-7edfb05dcc704e07a49156741cd2845e",
+            "input": " \"process paragraph : : Energy builds up in the crust of the earth. The energy causes the fault lines give way. The earth's plates move. The energy radiates outward from the fault in all directions. The seismic waves shake the earth as they move through it. \", \"event : The energy causes the fault lines give way.\", \"entity : energy\" ",
+            "output": [
+                " known location "
+            ]
+        },
+        {
+            "id": "task1568-85a8c69f2c33491990b91d6a57f56544",
+            "input": " \"process paragraph : : The sun gives off radiation. The radiation is aborbed by the Earth. Some of the radiation goes back into space. Some is trapped by the atmosphere. If too much heat is trapped. Global warming occurs. \", \"event : The radiation is aborbed by the Earth.\", \"entity : radiation\" ",
+            "output": [
+                " known location "
+            ]
+        }
+    ],
+    "Instance License": [
+        "Apache 2.0"
+    ]
+}

@@ -1,0 +1,90 @@
+{
+    "Contributors": [
+        "Amirreza Mirzaei"
+    ],
+    "Source": [
+        "paws"
+    ],
+    "URL": [
+        "https://arxiv.org/abs/1904.01130"
+    ],
+    "Categories": [
+        "Text Matching"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "In this task, you are given a sentence pair from Wikipedia that have high lexical overlap. If the sentences have the same meaning and are just paraphrases of each other, label them as \"Paraphrase\". If not, label them as \"Not paraphrase\". The two sentences are seperated by a new line."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Wikipedia"
+    ],
+    "Positive Examples": [
+        {
+            "input": "In January 2011 , the Deputy Secretary General of FIBA Asia , Hagop Khajirian , inspected the venue together with SBP - President Manuel V. Pangilinan .\nIn January 2011 , FIBA Asia deputy secretary general Hagop Khajirian along with SBP president Manuel V. Pangilinan inspected the venue .",
+            "output": "Paraphrase",
+            "explanation": "The second sentence has the same meaning as the first sentence and is just a paraphrased version of it."
+        },
+        {
+            "input": "The smallest number that can be represented in two positive and seventh ways as a sum of four different powers is 2056364173794800 .\nThe smallest number that can be represented as a sum of four positive seventh potences in two different ways is 2056364173794800 .",
+            "output": "Not paraphrase",
+            "explanation": "The second sentence doesn't have the same meaning as the first."
+        },
+        {
+            "input": "Luciano Williames Dias ( born July 25 , 1970 ) is a Brazilian football coach and former player .\nLuciano Williames Dias ( born 25 July 1970 ) is a former football coach and Brazilian player .",
+            "output": "Not paraphrase",
+            "explanation": "The second sentence doesn't have the same meaning as the first."
+        },
+        {
+            "input": "During her sophomore , junior and senior summers , she spent half of it with her Alaska team , and half playing , and living in Oregon .\nDuring her second , junior and senior summers , she spent half of it with her Alaska team , half playing and living in Oregon .",
+            "output": "Paraphrase",
+            "explanation": "The second sentence doesn't have the same meaning as the first."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "This was a series of nested angular standards , so that measurements in azimuth and elevation could be done directly in polar coordinates relative to the ecliptic .\nThis was a series of nested polar scales , so that measurements in azimuth and elevation could be performed directly in angular coordinates relative to the ecliptic .",
+            "output": "Paraphrase",
+            "explanation": "The second sentence doesn't have the same meaning as the first. As pointed out in the task definition both sentences in all the instances have high lexical overlap, which doesn't mean they have the same meaning."
+        },
+        {
+            "input": "His father emigrated to Missouri in 1868 but returned when his wife became ill and before the rest of the family could also go to America .\nHis father emigrated to America in 1868 , but returned when his wife became ill and before the rest of the family could go to Missouri .",
+            "output": "Paraphrase",
+            "explanation": "In the second sentence, it is not mentioned that the father went to Missouri, so the part about the rest of the family doesn't imply the same meaning as the first sentence. These are not paraphrases."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task400-18daa32b31714094b374ed91a7257872",
+            "input": "Once the dog leader is with the subject , the dog is rewarded ( and released during training ) .\nOnce the dog leader is with the subject , the dog is released ( and rewarded during training ) .",
+            "output": [
+                "Not paraphrase"
+            ]
+        },
+        {
+            "id": "task400-e8a6b60f878e4f929f95eee5349ba619",
+            "input": "The first oral consultations between the Soviet embassy and the Norwegian government took place in November 1964 .\nIn November 1964 , the first oral consultations took place between the Soviet Embassy and the Norwegian Government .",
+            "output": [
+                "Paraphrase"
+            ]
+        },
+        {
+            "id": "task400-82f61318cfb045d3b96bb025ca8655a3",
+            "input": "He built weapons factories for Vtorov and Mikhelson in Moscow , Serpukhov , Zatishye ( Elektrostal ) , Bogorodsk ( Noginsk ) .\nHe built weapon factories for Vtorov and Mikhelson in electrostal , Zatishye ( Moscow , Serpukhov ) and Bogorodsk ( Noginsk ) .",
+            "output": [
+                "Not paraphrase"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Dedicated License (https://github.com/google-research-datasets/paws/blob/master/LICENSE)"
+    ]
+}

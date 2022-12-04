@@ -1,0 +1,95 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "atomic"
+    ],
+    "URL": [
+        "https://allenai.org/data/atomic-2020"
+    ],
+    "Categories": [
+        "Commonsense Classification"
+    ],
+    "Reasoning": [
+        "Relational Reasoning",
+        "Reasoning on Social Interactions",
+        "Commonsense Reasoning -> Social Situations"
+    ],
+    "Definition": [
+        "Given two phrases: Head and Tail, separated with <sep>, you have to determine whether PersonX needs what is mentioned in the Tail before the Head or not. Here need is a precondition for PersonX to achieve the event. Classify your answers into \"Yes\" and \"No\"."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Sociology",
+        "Commonsense -> Concepts and Relations -> Social Commonsense"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Head: PersonX is at PersonY's friend's house<sep>Tail: to walk up to PersonY's friend's house",
+            "output": "Yes",
+            "explanation": "This is a good example. PersonX is at PersonY's friend's house. But before, PersonX needed to walk up to PersonY's friend's house."
+        },
+        {
+            "input": "Head: PersonX bats PersonX's eyelashes<sep>Tail: to take someone home",
+            "output": "No",
+            "explanation": "In this example, PersonX doesn't need to take someone home before PersonX bats PersonX's eyelashes. So this output is correct."
+        },
+        {
+            "input": "Head: PersonX finds PersonY opportunity<sep>Tail: research stocks",
+            "output": "Yes",
+            "explanation": "PersonX may need to research stocks before finding an opportunity. Thus, this example should be classified as \"Yes\"."
+        },
+        {
+            "input": "Head: PersonX increases PersonY's rate<sep>Tail: none",
+            "output": "Yes",
+            "explanation": "This is a good example. Since nothing is specified and nothing is a precondition for all the events."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Head: PersonX asks PersonY's boyfriend<sep>Tail: scared",
+            "output": "Yes",
+            "explanation": "PersonX doesn't need to be scared before asking PersonY's boyfriend. So the output should be \"No\"."
+        },
+        {
+            "input": "Head: PersonX holds hands<sep>Tail: to go near him",
+            "output": "No",
+            "explanation": "PersonX needs to go near him before holding the hands, and the output should be \"Yes\"."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1202-7c1aa2c6166a4893b7ede5f9903109d0",
+            "input": "Head: PersonX keeps PersonY up at night<sep>Tail: play music loud",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1202-f0fad431e8f14b73b08981c548e4a8f6",
+            "input": "Head: PersonX also ordered ___<sep>Tail: to store items",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1202-50a9fa088111447284db2749509ef7c8",
+            "input": "Head: PersonX arrives to the restaurant<sep>Tail: To spend time with X",
+            "output": [
+                "No"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

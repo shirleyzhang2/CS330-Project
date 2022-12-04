@@ -1,0 +1,90 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "atomic"
+    ],
+    "URL": [
+        "https://allenai.org/data/atomic-2020"
+    ],
+    "Categories": [
+        "Commonsense Classification"
+    ],
+    "Reasoning": [
+        "Relational Reasoning",
+        "Reasoning on Social Interactions",
+        "Commonsense Reasoning -> Social Situations"
+    ],
+    "Definition": [
+        "In this task, you are given a tuple of Head and Tail events, separated by <sep>. The Head and Tail events are short phrases possibly involving participants, where the names of specific people have been replaced by generic words. PersonX is always the subject of the event. You have to determine whether, as a result of the Head, PersonY or others will be affected as mentioned in the Tail. These effects are social actions that may occur after the Head event. For example, X may get hugged, and Y may blush in response. Classify your answers into \"Yes\" and \"No\". The phrase may also contain \"___\", a placeholder that can be an object, a person, and/or an action."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Sociology",
+        "Commonsense -> Concepts and Relations -> Social Commonsense"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Head: PersonX goes the way of the dodo<sep>Tail: none",
+            "output": "Yes",
+            "explanation": "This is a good example. As a result of the Head, others won't be affected."
+        },
+        {
+            "input": "Head: PersonX applies sunscreen<sep>Tail: safe",
+            "output": "No",
+            "explanation": "In this example, if PersonX applies sunscreen, others won't be safe. So this output is correct."
+        },
+        {
+            "input": "Head: PersonX goes shopping with PersonY<sep>Tail: gets tired",
+            "output": "Yes",
+            "explanation": "If PersonX goes shopping with PersonY, personY will be tired. Thus, this example should be classified as \"Yes\"."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Head: PersonX affords another ___<sep>Tail: to enjoy it",
+            "output": "Yes",
+            "explanation": "If PersonX affords another thing, we don't know whether others enjoy it or not. So the output should be \"No\"."
+        },
+        {
+            "input": "Head: PersonX invites PersonY to join PersonZ<sep>Tail: they get joined by PersonY",
+            "output": "No",
+            "explanation": "If PersonX invites PersonY to join PersonZ, others will be joined by PersonY, and the output should be \"Yes\"."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1196-d23e929be3b043c988564ddfcdf08707",
+            "input": "Head: PersonX adopts PersonY attitude<sep>Tail: ok",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task1196-d2e7cf64275f4e529d1c07ca87e585a8",
+            "input": "Head: PersonX eats PersonY's cereal<sep>Tail: none",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task1196-60bfbf37292949f4a10539373f1e2e0e",
+            "input": "Head: PersonX adapts ___ to conditions<sep>Tail: wants to be accepted",
+            "output": [
+                "No"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

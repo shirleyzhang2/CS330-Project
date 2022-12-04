@@ -1,0 +1,88 @@
+{
+    "Contributors": [
+        "Anjana Arunkumar"
+    ],
+    "Source": [
+        "abductive_nli"
+    ],
+    "URL": [
+        "https://leaderboard.allenai.org/anli/submissions/about"
+    ],
+    "Categories": [
+        "Coherence Classification"
+    ],
+    "Reasoning": [
+        "Commonsense Reasoning",
+        "Abductive Reasoning"
+    ],
+    "Definition": [
+        "You will be given a short story with a beginning, two potential middles, and an ending. Your task is to output 1 or 2 to indicate which middle statement makes the story incoherent or implausible. If both sentences are plausible, pick the one that makes less sense."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Commonsense -> Stories"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Beginning: Butch had a really old computer. Middle 1: Butch decided to order a new computer online. Middle 2: Butch noticed that a storm was approaching to his town. Ending: It arrived and Butch was much happier.",
+            "output": "2",
+            "explanation": "People generally don't feel happy about natural disasters like storms. Therefore, we choose 2 in this case."
+        },
+        {
+            "input": "Beginning: John was on the trail running. Middle 1: John accelerated the speed and broke his leg accidentally. Middle 2: John was chased by a bear. Ending: He ran even faster until he got to his car safely.",
+            "output": "1",
+            "explanation": "When someone breaks his/her leg, it is difficult to run. Therefore, we choose 1 in this case."
+        },
+        {
+            "input": "Beginning: Gina was putting posters on her bedroom walls. Middle 1: Gina wanted to match the colorful posters. Middle 2: Gina ripped the poster on accident. Ending: Gina decided she would wear more colorful clothing.",
+            "output": "2",
+            "explanation": "In this example, both Middle sentences sound plausible, but the first one is MORE plausible as a story. Therefore, we choose 2 in this case."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Beginning: Mary's mom came home with more bananas than they could possibly eat. Middle 1: Mary and her mom decided to make chocolate covered frozen bananas to avoid waste. Middle 2: So Mary made pineapple splits for everyone. Ending: That was the best way ever to eat a banana!",
+            "output": "1",
+            "explanation": "The story talks about bananas, so discussion of pineapples makes the story incoherent. Therefore, we should not choose 1 in this case."
+        },
+        {
+            "input": "Beginning: Jon decided to steal a police car. Middle 1: Jon crashed the police car into a telephone poll. Middle 2: Jon wasn't caught. Ending: Jon went to prison for three years.",
+            "output": "1",
+            "explanation": "If a person is not caught committing a crime, they cannot go to prison. Therefore, we should not choose 1 in this case."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task070-57c6a9825ea94f5b8bdc21c52bb7bb5b",
+            "input": "Beginning: I play baseball in an adult league. Middle 1: I was coach for our last season game. Middle 2: I was pitcher for our last season game. Ending: We won the game and it was a good time.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "id": "task070-1051cdae3a5b4389a15d16309d47a254",
+            "input": "Beginning: Mila hated seeing mirror. Middle 1: Mila didn't look at the mirror. Middle 2: Mila looked at a mirror on accident. Ending: She had such a severe anxiety attack her mom forced her into therapy.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "id": "task070-9108421c08854e6eafcd279bab6bed96",
+            "input": "Beginning: A man in the nineteenth century moved to the midwest. Middle 1: The man found a job to start a family. Middle 2: The man found a family in a need of a job. Ending: After months of hard work, the man has a nice, large new home.",
+            "output": [
+                "2"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

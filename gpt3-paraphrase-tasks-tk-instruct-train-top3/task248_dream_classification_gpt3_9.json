@@ -1,0 +1,88 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "dream"
+    ],
+    "URL": [
+        "https://github.com/nlpdata/dream"
+    ],
+    "Categories": [
+        "Question Understanding"
+    ],
+    "Reasoning": [
+        "Reasoning on Social Interactions"
+    ],
+    "Definition": [
+        "In this task, you will be given a conversation and a question. You will need to categorize the question into one or more of the following groups: matching, summary, logic, arithmetic, and commonsense. A matching question is one that can be answered by a single sentence in the dialogue, and the answer can be extracted from that sentence. A summary question requires the whole picture of the dialogue in order to be answered, such as the topic of the dialogue and the relation between the speakers. A logic question requires logical reasoning to answer. An arithmetic question requires arithmetic knowledge to answer. A commonsense question requires knowledge that cannot be obtained from the dialogue, in addition to the textual information in the dialogue. Note that a question can be in more than one group."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue",
+        "Natural Science -> School Science Textbooks"
+    ],
+    "Positive Examples": [
+        {
+            "input": "W: The movie next Tuesday has been cancelled due to lack of interest. M: What do you mean? W: Well, by last night only a few tickets has been sold., Question: What can we conclude about the movie? (A) They want to buy the tickets for the movie. (B) The tickets for the movie were sold. (C) The movie will not be shown.",
+            "output": "commonsense",
+            "explanation": "This is a good example. To answer this question we require commonsense knowledge that cannot be obtained from the dialogue. So, this is a commonsense question."
+        },
+        {
+            "input": "W: What does the term \"alternative energy source\" mean? M: When we think of energy or fuel for our homes and cars, we think of petroleum, a fossil fuel processed from oil removed from the ground, of which there is a limited supply. But alternative fuels can be many things. Wind, sun and water can all be used to create fuel. W: Is the threat of running out of petroleum real? M: It has taken thousands of years to create the natural stores of petroleum we have available at a much faster rate than it is being produced over time. The real controversy surrounding the amount of petroleum we have is how much we need to keep in reserve for future use. Most experts agree that by around 2025, the amount of petroleum we use will reach a peak. Then production and availability will begin to seriously decline. This is not to say there will be no petroleum at this point. But it'll become very difficult and therefore expensive to extract. W: Is that the most important reason to develop alternative fuel and energy sources? M: There are two very clear reasons to do so. One is that whether we have 60 or 600 years of fossil fuels left, we have to find other fuel sources eventually. So the sooner we start, the better off we will be. The other big argument is that when long time, which leads to some long-term negative effects, like global warming and the greenhouse effect., Question: What do we usually refer to when we talk about energy according to the man? (A) Coal burnt daily for the comfort of our homes. (B) Anything that can be used to produce power. (C) Fuel refined from oil extracted from underground.",
+            "output": "matching",
+            "explanation": "The first sentence of the man can answer this question. So, it's a matching question."
+        },
+        {
+            "input": "M: What do you think of my new sweater? W: Well, it looks nice, but why don't you put it on, and then I'll tell you if it suits you? M: Okay. You know, I tried on about twenty at the shop, and this one isn't really what I wanted. I especially can't stand the high neck. W: Why did you buy it then? M: The salesman sold it to me before I realized what had happened. He just never stopped talking about the latest fashions and special reduced prices. Before I could say anything he'd wrapped it up and I realized that I'd paid him. W: Well, it doesn't look too bad. I think it looks good on you. M: But I went out to get a blue sweater to match my black trousers-something with a V-neck, short sleeves and pattern-and I came home with a brown sweater with a high neck, long sleeves and no pattern. W: You've got to learn to stand up to these high-pressure salesmen. They will sell you all sorts of things you don't want if you don't watch out. M: Next time I'll send my wife. She would probably sell something to the salesman. W: That's a good idea. Actually women are much better at shopping than men. Whenever my husband and I buy something important, I always have the finalsay. M: I must admit that women are better at shopping. I should simply leave the whole business to them., Question: Why did the man buy a sweater that he doesn't like? (A) He was pushed by the salesman (B) It was sold at a low price (C) It is the latest fashion.",
+            "output": "logic",
+            "explanation": "To answer this question we need logical reasoning. In the dialogues, they talk about high-pressure salesmen. So by logical reasoning, we could understand that he was pushed by the salesman."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "W: What does the term \"alternative energy source\" mean? M: When we think of energy or fuel for our homes and cars, we think of petroleum, a fossil fuel processed from oil removed from the ground, of which there is a limited supply. But alternative fuels can be many things. Wind, sun and water can all be used to create fuel. W: Is the threat of running out of petroleum real? M: It has taken thousands of years to create the natural stores of petroleum we have available at a much faster rate than it is being produced over time. The real controversy surrounding the amount of petroleum we have is how much we need to keep in reserve for future use. Most experts agree that by around 2025, the amount of petroleum we use will reach a peak. Then production and availability will begin to seriously decline. This is not to say there will be no petroleum at this point. But it'll become very difficult and therefore expensive to extract. W: Is that the most important reason to develop alternative fuel and energy sources? M: There are two very clear reasons to do so. One is that whether we have 60 or 600 years of fossil fuels left, we have to find other fuel sources eventually. So the sooner we start, the better off we will be. The other big argument is that when long time, which leads to some long-term negative effects, like global warming and the greenhouse effect., Question: What do most experts agree on according to the man? (A) Oil will soon be replaced by alternative energy sources. (B) Oil production will begin to decline worldwide by 2025. (C) Oil consumption has given rise to many global problems.",
+            "output": "arithmetic",
+            "explanation": "We don't need arithmetic knowledge to answer this question. It's incorrect. This is a matching question."
+        },
+        {
+            "input": "M: Finally, I've got the chance to put on my new suit tonight. I hope to make a good impression on your family. W: Come on! It's only a family reunion. So jeans and T-shirts are just fine., Question: What does the woman mean? (A) The man has left a good impression on her family. (B) The man can dress casually for the occasion. (C) The man should buy himself a new suit.",
+            "output": "matching",
+            "explanation": "The answer to this question cannot be extracted from the context. We need commonsense knowledge to understand wearing jeans and T-shirts means dressing casually. This is a commonsense question."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task248-859659a60ed3431cad9e0836ac215e3d",
+            "input": "W: What does the term \"alternative energy source\" mean? M: When we think of energy or fuel for our homes and cars, we think of petroleum, a fossil fuel processed from oil removed from the ground, of which there is a limited supply. But alternative fuels can be many things. Wind, sun and water can all be used to create fuel. W: Is the threat of running out of petroleum real? M: It has taken thousands of years to create the natural stores of petroleum we have available at a much faster rate than it is being produced over time. The real controversy surrounding the amount of petroleum we have is how much we need to keep in reserve for future use. Most experts agree that by around 2025, the amount of petroleum we use will reach a peak. Then production and availability will begin to seriously decline. This is not to say there will be no petroleum at this point. But it'll become very difficult and therefore expensive to extract. W: Is that the most important reason to develop alternative fuel and energy sources? M: There are two very clear reasons to do so. One is that whether we have 60 or 600 years of fossil fuels left, we have to find other fuel sources eventually. So the sooner we start, the better off we will be. The other big argument is that when long time, which leads to some long-term negative effects, like global warming and the greenhouse effect., Question: What does the man think we should do now? (A) Minimize the use of fossil fuels. (B) Start developing alternative fuels. (C) Find the real cause for global warming.",
+            "output": [
+                "logic"
+            ]
+        },
+        {
+            "id": "task248-f79b036316d34423978d8e52eb9f7c5a",
+            "input": "W: Hello, Roger? This is Ann. M: Hi, Ann. How have you been? And how's your new apartment working out? W: Well, that's what I'm calling about. You see, I've decided to look for a new place. M: Oh, what's the problem with your place now? I thought you liked the apartment. W: I do, but it's a little far from the campus. Do you think you could help? M: All right. So, what kind of place are you looking for? W: Well, I'd like to share an apartment with one or two roommates within walking distance of school. M: Okay, how much do you want to spend on rent? W: Oh, somewhere under $ 200 a month. M: Hmm. And anything else? W: Yeah, I need a parking space. M: Well, I know there's an apartment nearby. I'll drop by there on my way to class today. W: Hey, thanks a lot. M: No problem., Question: What's the relationship between the man and the woman? (A) They are teacher and student. (B) They are friends. (C) They are mother and son.",
+            "output": [
+                "commonsense"
+            ]
+        },
+        {
+            "id": "task248-08c0ca1afaf94f0eab25abb1ccab1f56",
+            "input": "M: You're not looking too good. Are you sure you are all right? W: It was a long flight. I'll be fine after a good night's sleep. M: You look very pale. W: These long flights are just so boring, and you just have to sit there in your seat without moving and you know I like to get as much exercise as possible. I'm sure I'll be back to normal tomorrow., Question: Where does the conversation take place? (A) At a hospital. (B) At an airport. (C) At school.",
+            "output": [
+                "commonsense"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Dedicated License (https://github.com/nlpdata/dream/blob/master/license.txt)"
+    ]
+}

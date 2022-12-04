@@ -1,0 +1,85 @@
+{
+    "Contributors": [
+        "Arya Tawde"
+    ],
+    "Source": [
+        "lj_speec"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/lj_speech"
+    ],
+    "Categories": [
+        "Punctuation Error Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "The task is to identify if a given passage or sentence has proper punctuation, including proper capitalization and the use of punctuations such as commas, semi-colons and full-stops. The answer is True if all punctuation is properly applied, else the answer is False."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Books"
+    ],
+    "Positive Examples": [
+        {
+            "input": "jack ate the beans that the old man gave him.",
+            "output": "False",
+            "explanation": "The first letter of a new sentence is not capitalized, hence punctuation is incomplete."
+        },
+        {
+            "input": "The old sage was wise intelligent frail and weak",
+            "output": "False",
+            "explanation": "Commas and full-stop are missing and hence punctuation is not complete."
+        },
+        {
+            "input": "The boy looked at the red flower.",
+            "output": "True",
+            "explanation": "Capitalization and Punctuation are perfect."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "The chicken crossed the road.",
+            "output": "False",
+            "explanation": "There is nothing wrong with the punctuation, the answer should be True."
+        },
+        {
+            "input": "The professor congratualted marie on her victory.",
+            "output": "True",
+            "explanation": "Marie is a proper noun and should be capitalized but it isn't. Therefore the answer should be False."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1706-d5213e17d3af40319609f392cb20e209",
+            "input": "The conviction that he would escape had taken so firm a hold of him,",
+            "output": [
+                "False"
+            ]
+        },
+        {
+            "id": "task1706-592a5fca3d074f288b7aff935898947b",
+            "input": "No report of it was made public, as the man was almost immediately recaptured.",
+            "output": [
+                "True"
+            ]
+        },
+        {
+            "id": "task1706-ff5075bc29ea439c82813d6b552b01b3",
+            "input": "but, in his testimony before the Commission, Brennan stated that his remarks of January 7 were intended by him merely as an accurate report",
+            "output": [
+                "False"
+            ]
+        }
+    ],
+    "Instance License": [
+        "LibriVox: Public Domain (https://librivox.org/pages/public-domain/)"
+    ]
+}

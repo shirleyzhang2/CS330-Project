@@ -1,0 +1,90 @@
+{
+    "Contributors": [
+        "Shreeshiv Patel"
+    ],
+    "Source": [
+        "head_qa"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/head_qa"
+    ],
+    "Categories": [
+        "Text Categorization"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "Given a question and answer options for that question, you have to classify each text into different topics: medicine, nursery, psychology, chemistry, pharmacology, biology."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Healthcare"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Question: A distension is defined as: \n Options:  <0> Soft tissue injury. <1> Forced movement of abrupt production. <2> Injury by stretching a muscle. <3> Injury of the joint capsule. <4> Interruption in the continuity of a bone.",
+            "output": "nursery",
+            "explanation": "Distension means Bloating and swelling in the belly area. It does not have much to do with chemistry, psychology, pharmacology, biology and medicine. Hence, the correct topic is nursery."
+        },
+        {
+            "input": "Question: Which of the following steps of cholesterol biosynthesis is what controls the speed and place of metabolic regulation: \n Options:  <0> Geranyl pyrophosphate\uf0e0 Farnesyl pyrophosphate. <1> ,\uf0e0 Lanosterol <2> Lanosterol \uf0e0 Cholesterol. <3> Acetyl CoA \uf0e0 Acetoacetyl CoA. <4> 3-Hydroxy-3-methylglutaryl CoA\uf0e0 Mevalonic acid.",
+            "output": "chemistry",
+            "explanation": "The question text is about cholesterol biosynthesis which looks like some chemical. Options are also related to different chemicals like Geranyl pyrophosphate\uf0e0 Farnesyl pyrophosphate, Lanosterol \uf0e0 Cholesterol, Acetyl CoA, etc. So, it\u2019s clear that the question belongs to the chemistry class."
+        },
+        {
+            "input": "Question: What name does the episode receive with psychotic symptoms that occur after a strong alcohol intoxication in which the individual has been consuming large doses of alcohol for several days? \n Options: <0> Delirium tremens. <1> Partial amnesias. <2> Alcoholic hallucinosis <3> abstinence syndrome. <4> Korsakoff syndrome.",
+            "output": "psychology",
+            "explanation": "The question text and the options are more related to mental conditions. From this information, we can infer that this input belongs to the psychology class. "
+        },
+        {
+            "input": "Question: The liver converts ethanol into: \n Options:  <0> Methanol <1> Acetone. <2> Acetaldehyde <3> Hydrogen peroxide. <4> Glycerol.",
+            "output": "chemistry",
+            "explanation": "The question text and the options are highly related to chemicals like Methanol, Acetone, Glycerol which are well-known chemicals. From this information, one can say that this question is belongs to the chemistry class."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Question: Ketogenic amino acids: \n Options:  <0> They may contribute to the synthesis of glucose. <1> They are intermediaries of the urea cycle. <2> They are the substrate of reactions catalyzed by transketolase. <3> They can produce acetyl-coenzyme A. <4> They are eliminated in the form of ketoses.",
+            "output": "psychology",
+            "explanation": "For the given question the correct topic is biology, so the output is incorrect."
+        },
+        {
+            "input": "Question: Mr. A. P. has been discharged after being operated on for a gastric resection. What recommendations should you give to avoid the rapid evacuation syndrome? \n Options:  <0> Drink liquids during the meal. <1> Take a diet high in carbohydrates. <2> After ingestion, the decubitus position is the most beneficial if the patient tolerates it. <3> You should plan rest periods of 15 minutes after meals. <4> Take a diet low in protein and fat, to avoid abdominal distension.",
+            "output": "biology",
+            "explanation": "The given question is about nursery so correct output should be nursery, not biology."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1434-955d3798deee4553bdd099d7d3b38ea8",
+            "input": "Question: A spontaneous process is characterized because: \n Options:  <0> In isolated systems the entropy decreases (\u0394S <0). <1> At constant pressure and temperature, the Gibbs energy decreases (\u0394G <0). <2> At constant pressure and temperature, the Helmholtz energy decreases (\u0394A <0). <3> At constant volume and temperature, the Gibbs energy increases (\u0394G> 0). <4> It is reversible.",
+            "output": [
+                "pharmacology"
+            ]
+        },
+        {
+            "id": "task1434-2580a0038f9e482189aec8d7c8e0c866",
+            "input": "Question: What is the definition of a fast cycler ?: \n Options:  <0> The presence of at least four episodes of mood (depressive, manic, or hypomanic) in a period of 12 months. <1> The presence of at least 6 episodes of mood in a period of 6 months. <2> The change from one mood episode to another in a period less than 48 hours. <3> The presence of more than two episodes of mania or hypomania detectable in a month. <4> Patients with Bipolar Disorder I or II with extreme hyperreactivity to minimal stressors.",
+            "output": [
+                "psychology"
+            ]
+        },
+        {
+            "id": "task1434-139ac85d84c84925b917a1a9c7c83a71",
+            "input": "Question: The reaction of ethyl acetate and acetone in the presence of sodium hydride in diethyl ether generates, after hydrolysis: \n Options:  <0> 2,4-Pentanedione. <1> 4-Methyl-3-penten-2-one. <2> 3-Oxobutanoate of ethyl. <3> 2,3-Pentanedione. <4> 4-Hydroxy-4-methyl-2-pentanone.",
+            "output": [
+                "chemistry"
+            ]
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

@@ -1,0 +1,92 @@
+{
+    "Contributors": [
+        "Maitreya Patel"
+    ],
+    "Source": [
+        "haspart_kb"
+    ],
+    "URL": [
+        "https://arxiv.org/abs/2006.07510"
+    ],
+    "Categories": [
+        "Entity Relation Classification"
+    ],
+    "Reasoning": [
+        "Relational Reasoning"
+    ],
+    "Definition": [
+        "Given two entities as input, if the second entity is a part of the first entity, classify as \"yes\". Otherwise, classify as \"no\". A meronym is a semantic relation between a meronym denoting a part and a holonym denoting a whole. In simpler terms, a meronym is in a part-of relationship with its holonym."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Natural Science"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Entity 1: plant \n Entity 2: leaf",
+            "output": "yes",
+            "explanation": "The answer is correct. Because the leaf is part of the plant. Therefore, here leaf is meronym and the plant is holonym."
+        },
+        {
+            "input": "Entity 1: soil \n Entity 2: moon",
+            "output": "no",
+            "explanation": "Soil is part of most of the celestial objects. Not visa versa. Hence, the answer \"no\" is correct."
+        },
+        {
+            "input": "Entity 1: cheese \n Entity 2: protein",
+            "output": "yes",
+            "explanation": "The answer is correct because cheese contains various proteins, fats, and minerals. Therefore, these are the entities of the meronym."
+        },
+        {
+            "input": "Entity 1: wasp \n Entity 2: feather",
+            "output": "no",
+            "explanation": "Wasp is an insect. And it does not have any feathers. Therefore, they do not have part-of relationship. Hence, the answer is correct."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Entity 1: food chain \n Entity 2: nitrogen",
+            "output": "no",
+            "explanation": "Nitrogen is part of the various plants, and animals. And they are parts of the food chain. Hence, nitrogen is also part of the food chain. Therefore, the answer should be \"yes\"."
+        },
+        {
+            "input": "Entity 1: leaf \n Entity 2: carpel",
+            "output": "yes",
+            "explanation": "This is wrong answer because carpel is part of flowers not plants. Hence, right answer is \"no\"."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task472-9e68c86d0abd4342b4d1b256f3897d9f",
+            "input": "Entity 1: air \n Entity 2: proton",
+            "output": [
+                "yes"
+            ]
+        },
+        {
+            "id": "task472-2a0aa45eff684da0bb77dacd925f3fad",
+            "input": "Entity 1: fruit \n Entity 2: positively charge atomic nucleus",
+            "output": [
+                "no"
+            ]
+        },
+        {
+            "id": "task472-f3d9d9be641b42aea22bfd76288c151c",
+            "input": "Entity 1: broad - headed tree \n Entity 2: leave",
+            "output": [
+                "yes"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

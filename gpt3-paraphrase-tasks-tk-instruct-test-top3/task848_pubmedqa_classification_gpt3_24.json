@@ -1,0 +1,90 @@
+{
+    "Contributors": [
+        "Jalansh Munshi"
+    ],
+    "Source": [
+        "pubmed_qa"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/pubmed_qa"
+    ],
+    "Categories": [
+        "Intent Identification"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "Given a passage, classify if the passage has a definite objective/aim/goal. Output '1' if it does, and output '0' if it does not."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Medicine"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Chronic rhinosinusitis (CRS) is a heterogeneous disease with an uncertain pathogenesis. Group 2 innate lymphoid cells (ILC2s) represent a recently discovered cell population which has been implicated in driving Th2 inflammation in CRS; however, their relationship with clinical disease characteristics has yet to be investigated. The aim of this study was to identify ILC2s in sinus mucosa in patients with CRS and controls and compare ILC2s across characteristics of disease. A cross-sectional study of patients with CRS undergoing endoscopic sinus surgery was conducted. Sinus mucosal biopsies were obtained during surgery and control tissue from patients undergoing pituitary tumour resection through transphenoidal approach. ILC2s were identified as CD45(+) Lin(-) CD127(+) CD4(-) CD8(-) CRTH2(CD294)(+) CD161(+) cells in single cell suspensions through flow cytometry. ILC2 frequencies, measured as a percentage of CD45(+) cells, were compared across CRS phenotype, endotype, inflammatory CRS subtype and other disease characteristics including blood eosinophils, serum IgE, asthma status and nasal symptom score. 35 patients (40% female, age 48 \u00b1 17 years) including 13 with eosinophilic CRS (eCRS), 13 with non-eCRS and 9 controls were recruited. ILC2 frequencies were associated with the presence of nasal polyps (P = 0.002) as well as high tissue eosinophilia (P = 0.004) and eosinophil-dominant CRS (P = 0.001) (Mann-Whitney U). They were also associated with increased blood eosinophilia (P = 0.005). There were no significant associations found between ILC2s and serum total IgE and allergic disease. In the CRS with nasal polyps (CRSwNP) population, ILC2s were increased in patients with co-existing asthma (P = 0.03). ILC2s were also correlated with worsening nasal symptom score in CRS (P = 0.04).",
+            "output": "1",
+            "explanation": "There is a line in the passage which say 'The aim of this study was...' which suggests that it is talking about a specific aim. Hence, the output should be 1 as this passage has a definite aim."
+        },
+        {
+            "input": "Phosphatidylethanolamine N-methyltransferase (PEMT), a liver enriched enzyme, is responsible for approximately one third of hepatic phosphatidylcholine biosynthesis. When fed a high-fat diet (HFD), Pemt(-/-) mice are protected from HF-induced obesity; however, they develop steatohepatitis. The vagus nerve relays signals between liver and brain that regulate peripheral adiposity and pancreas function. Here we explore a possible role of the hepatic branch of the vagus nerve in the development of diet induced obesity and steatohepatitis in Pemt(-/-) mice. 8-week old Pemt(-/-) and Pemt(+/+) mice were subjected to hepatic vagotomy (HV) or capsaicin treatment, which selectively disrupts afferent nerves, and were compared to sham-operated or vehicle-treatment, respectively. After surgery, mice were fed a HFD for 10 weeks. HV abolished the protection against the HFD-induced obesity and glucose intolerance in Pemt(-/-) mice. HV normalized phospholipid content and prevented steatohepatitis in Pemt(-/-) mice. Moreover, HV increased the hepatic anti-inflammatory cytokine interleukin-10, reduced chemokine monocyte chemotactic protein-1 and the ER stress marker C/EBP homologous protein. Furthermore, HV normalized the expression of mitochondrial electron transport chain proteins and of proteins involved in fatty acid synthesis, acetyl-CoA carboxylase and fatty acid synthase in Pemt(-/-) mice. However, disruption of the hepatic afferent vagus nerve by capsaicin failed to reverse either the protection against the HFD-induced obesity or the development of HF-induced steatohepatitis in Pemt(-/-) mice.",
+            "output": "1",
+            "explanation": "If you take a look at the line 'Here we explore a possible role of the hepatic branch', it says that it is exploring a possible role. This means that it has a specific goal and hence, the output should be 1."
+        },
+        {
+            "input": "Psammaplin A (PsA) is a natural product isolated from marine sponges, which has been demonstrated to have anticancer activity against several human cancer cell lines via the induction of cell cycle arrest and apoptosis. New drugs that are less toxic and more effective against multidrug-resistant cancers are urgently needed. We tested cell proliferation, cell cycle progression and autophagic cell death pathway in doxorubicin-resistant MCF-7 (MCF-7/adr) human breast cancer cells. The potency of PsA was further determined using an in vivo xenograft model.",
+            "output": "0",
+            "explanation": "This passage does not have any sentences which talk about a specific goal, objective, or aim. Hence, the output should be 0."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "This study examined links between DNA methylation and birth weight centile (BWC), and explored the impact of genetic variation. Using HumanMethylation450 arrays, we examined candidate gene-associated CpGs in cord blood from newborns with low (<15th centile), medium (40-60th centile) and high (>85th centile) BWC (n = 12). Candidates were examined in an investigation cohort (n = 110) using pyrosequencing and genotyping for putative methylation-associated polymorphisms performed using standard PCR. Array analysis identified 314 candidate genes associated with BWC extremes, four of which showed \u2265 4 BWC-linked CpGs. Of these, PM20D1 and MI886 suggested genetically determined methylation levels. However, methylation at three CpGs in FGFR2 remained significantly associated with high BWC (p = 0.004-0.027).",
+            "output": "0",
+            "explanation": "This passage talks about examining links between DNA methylation and also explores impact of genetic variation. This suggests that it has a definite objective and hence, the output should be 1. Output 0 is wrong."
+        },
+        {
+            "input": "Tumor microenvironment immunity is associated with breast cancer outcome. A high lymphocytic infiltration has been associated with response to neoadjuvant chemotherapy, but the contribution to response and prognosis of immune cell subpopulations profiles in both pre-treated and post-treatment residual tumor is still unclear. We analyzed pre- and post-treatment tumor-infiltrating immune cells (CD3, CD4, CD8, CD20, CD68, Foxp3) by immunohistochemistry in a series of 121 breast cancer patients homogeneously treated with neoadjuvant chemotherapy. Immune cell profiles were analyzed and correlated with response and survival. We identified three tumor-infiltrating immune cell profiles, which were able to predict pathological complete response (pCR) to neoadjuvant chemotherapy (cluster B: 58%, versus clusters A and C: 7%). A higher infiltration by CD4 lymphocytes was the main factor explaining the occurrence of pCR, and this association was validated in six public genomic datasets. A higher chemotherapy effect on lymphocytic infiltration, including an inversion of CD4/CD8 ratio, was associated with pCR and with better prognosis. Analysis of the immune infiltrate in post-chemotherapy residual tumor identified a profile (cluster Y), mainly characterized by high CD3 and CD68 infiltration, with a worse disease free survival.",
+            "output": "1",
+            "explanation": "There is no mention about how chemotherapy can cure breast cancer in the input passage. Hence, this question is a bad example."
+        },
+        {
+            "input": "Hidradenitis suppurativa (HS) is a chronic inflammatory disease involving intertriginous skin. Previous epidemiologic studies have been limited by small sample size. We sought to describe the prevalence and comorbidities of HS in a large patient care database. In this retrospective case-control study, we chart-validated all patients within a hospital database who received at least 1 billing code for HS between 1980 and 2013. Verified cases were matched with controls based on age, gender, and race. Prevalences of a priori selected comorbidities were compared between HS and control groups. A total of 2292 patients at Massachusetts General Hospital received at least 1 code for HS. A total of 1776 cases had a validated diagnosis of HS, yielding a prevalence of 0.08%. In unadjusted analysis, all comorbidities were diagnosed significantly more in HS compared with control including (in rank order of likelihood): smoking, arthropathies, dyslipidemia, polycystic ovarian syndrome, psychiatric disorders, obesity, drug dependence, hypertension, diabetes, thyroid disease, alcohol dependence, and lymphoma (all P < .01).",
+            "output": "0",
+            "explanation": "In the line 'We sought to describe the prevalence...' it is evident that the passage has a specific goal in mind. Hence, the output should be 1 and not 0. Therefore, the output is wrong."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task848-b888e9115d4a417dba32e1a131521fbf",
+            "input": "Although drug-eluting stents (DES) have been widely used for the treatment of coronary artery disease, they potentially increase the risk of late thrombosis. It is, therefore, desirable to establish a strategy to stimulate reendothelialization. Endothelial injury models have been widely used to analyze the mechanisms of coronary restenosis. However, animal models deployed with coronary stents in the blood vessels are necessary to accurately analyze the mechanisms of coronary restenosis and late thrombosis because persistent inflammation occurs around the coronary stents.', 'Coronary stents were implanted into rat abdominal aorta and adipose tissue-derived stem cells (ASC) were administered from the adventitial side. Reendothelialization was then visualized by Evans blue staining, and neointimal formation was analyzed histologically. ASC significantly stimulated reendothelialization and inhibited neointimal formation in bare metal stents (BMS)-implanted aorta. In addition, ASC promoted reendothelialization in DES-implanted aorta; however, the effects were weaker than in BMS-implanted aorta. Among the cytokines that ASC produce, adrenomedullin (AM) significantly stimulated reendothelialization and inhibited neointimal formation in BMS-implanted aorta, when an adenovirus expressing AM was administered from the adventitial side.",
+            "output": [
+                "0"
+            ]
+        },
+        {
+            "id": "task848-e65f21c94e964b9f9f0744feb96840dd",
+            "input": "Prognosis of severe coronary artery disease with no indication of percutaneous coronary intervention or coronary artery bypass grafting remains poor. We have recently demonstrated that shock wave therapy effectively induces neovascularization and improves myocardial ischemia in a porcine model in vivo.', 'With permission from the Ethical Committee of our Institute, we treated nine patients with end-stage coronary artery disease with no indication of percutaneous coronary intervention or coronary artery bypass grafting (55-82 years old, five men and four women) with our cardiac shock wave therapy (200 shots/spot at 0.09 mJ/mm for 20-40 spots, 3 times a week/series). We followed-up the patients at 1, 3, 6, and 12 months after the therapy to examine the amelioration of myocardial ischemia. When needed, shock wave therapy was performed up to three series at 0, and 1, 3 or 6 months.', 'The cardiac shock wave therapy improved symptoms (Canadian Cardiovascular Society functional class score, from 2.7+/-0.2 to 1.8+/-0.2, P<0.01) and reduced nitroglycerin use (from 5.4+/-2.5 to 0.3+/-0.3/week, P<0.05). The treatment also improved myocardial perfusion as assessed by dipyridamole stress thallium scintigraphy (severity score, 25.2+/-7.2% improvement, P<0.05; extent score, 23.3+/-9.0% improvement, P=0.10; washout rate, 20+/-3 to 34+/-3, P<0.05). Myocardial perfusion was improved only in the ischemic area treated with the therapy. These beneficial effects persisted for 12 months. No procedural complications or adverse effects were noted.",
+            "output": [
+                "1"
+            ]
+        },
+        {
+            "id": "task848-f7e35ecd062149a589096e28f5c40f71",
+            "input": "Hypertension of the recipient is strongly associated with chronic allograft nephropathy. It is unclear, however, whether hypertension is the cause or the consequence of chronic allograft nephropathy.', 'The present study was performed in the Fisher to Lewis rat kidney transplant model. Transplanted rats (N = eight in each group) received either no treatment or were made hypertensive by administration of deoxycorticosteron acetate (DOCA) and salt. Proteinuria and systolic blood pressure was measured monthly, grafts were harvested at 3 and 6 months for semiquantitative reverse transcription-polymerase chain reaction (RT-PCR) and for immunohistology.', 'Systolic blood pressure was markedly elevated in rats receiving DOCA/salt. Allografts of hypertensive animals contained significantly more cells expressing the proliferating cell nuclear antigen compared to isografts and to allografts from normotensive animals (P < 0.05). Histologic staining and mRNA expression of major histocompatibility complex (MHC) II was markedly increased in allografts of hypertensive animals compared to all other groups (P < 0.05). Expression of mRNA for platelet-derived growth factor-B (PDGF-B), transforming growth factor-beta (TGF-beta) and collagen was higher in allografts than in isografts and was highest in hypertensive animals.",
+            "output": [
+                "0"
+            ]
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

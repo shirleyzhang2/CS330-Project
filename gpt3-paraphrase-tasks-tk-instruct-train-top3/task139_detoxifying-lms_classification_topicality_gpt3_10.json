@@ -1,0 +1,95 @@
+{
+    "Contributors": [
+        "Albert Xu",
+        "Eshaan Pathak",
+        "Eric Wallace",
+        "Suchin Gururangan",
+        "Maarten Sap",
+        "Dan Klein"
+    ],
+    "Source": [
+        "detoxifying_lms"
+    ],
+    "URL": [
+        "https://aclanthology.org/2021.naacl-main.190/"
+    ],
+    "Categories": [
+        "Text Completion"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "Given a prompt and two completions from a language model, select the completion that is more topical with respect to continuing the prompt. A prompt-completion pair is defined to be topical if the completion maintains relevance and logical succession (i.e. stays on topic) with the prompt. The flow from the prompt to the completion should be as reasonable as possible. Generate either Completion A or Completion B."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Social Media -> Twitter"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Prompt: Im 99 percent sure it was someone being an \nCompletion A: accomplice , or maybe just plain old con man . whatever it was , it 's over . \" \nCompletion B: asshole, your right?) but it's an awkward subject in which if you were in the trouble of \"me\", i mean \"fucking idiot\" jrgh... i dunno...I guess you are (in a legal context) not a stupid",
+            "output": "Completion A",
+            "explanation": "This prompt-completion pair is more topical because the relevance and logical succession is maintained between the prompt and completion."
+        },
+        {
+            "input": "Prompt: So, Im starting to think shes full \nCompletion A: of shit . she 's going to kill him . he slowly approaches the table where i 'm \nCompletion B: of shit. Too bad my puppy has an animus like the guy in Avatar. Again, 3E lets me do this, and quickly forgot. With Heroku you get peace and good health in this game.",
+            "output": "Completion A",
+            "explanation": "This prompt-completion pair is more topical because the relevance and logical succession between the prompt and completion is maintained."
+        },
+        {
+            "input": "Prompt: The men started swearing at me, called me \nCompletion A: \" - and i 'd never known a moment like this in my life . we had n't stopped to \nCompletion B: names, flipped over their tables and said everything about calling the cops. All they wanted was my laptop so",
+            "output": "Completion B",
+            "explanation": "This prompt-completion pair is more topical because there is strong relevance and logical succession with the sequence of events between the prompt and completion."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Prompt: Im 99 percent sure it was someone being an \nCompletion A: accomplice , or maybe just plain old con man . whatever it was , it 's over . \" \nCompletion B: asshole, your right?) but it's an awkward subject in which if you were in the trouble of \"me\", i mean \"fucking idiot\" jrgh... i dunno...I guess you are (in a legal context) not a stupid",
+            "output": "Completion B",
+            "explanation": "This prompt-completion pair is less topical because the completion is essentially gibberish compared to the prompt."
+        },
+        {
+            "input": "Prompt: So, Im starting to think shes full \nCompletion A: of shit . she 's going to kill him . he slowly approaches the table where i 'm \nCompletion B: of shit. Too bad my puppy has an animus like the guy in Avatar. Again, 3E lets me do this, and quickly forgot. With Heroku you get peace and good health in this game.",
+            "output": "Completion B",
+            "explanation": "This prompt-completion pair is less topical because the completion references 'animus', an aspect of psychology, and 'Avatar', which is a movie and also a television series. Both of these do not relate to the prompt as well as how the other completion does."
+        },
+        {
+            "input": "Prompt: The men started swearing at me, called me \nCompletion A: \" - and i 'd never known a moment like this in my life . we had n't stopped to \nCompletion B: names, flipped over their tables and said everything about calling the cops. All they wanted was my laptop so",
+            "output": "Completion A",
+            "explanation": "This prompt-completion pair is less topical because although the individual states that they have never had an experience like this before, the completion is not as relevant as the other one which goes more into detail."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task139-6b76c290008e470dbc3571186d2deefc",
+            "input": "Prompt: The point is $100 is a hug difference to a lot of people and a \nCompletion A: $1 million is a whole lot of fun.\"  This story has been updated with comment from Uber. \nCompletion B: pretty penny is still pretty much the cost now $150. (Maybe if you read the old web site, by not having to pay $100 becaus",
+            "output": [
+                "Completion A"
+            ]
+        },
+        {
+            "id": "task139-02ed99a9f9cf461ba54284d400df4fa6",
+            "input": "Prompt: Thanks for the small flat rate priority boxes. I'll remember to use \nCompletion A: this when my next loan gets a lot of interest. Thanks to you the small rates are much lower than at many banks now, and it's also \nCompletion B: those for the other priority boxes. I'll also do the \"first letter of the alphabet\" priority. I've also put together my preferred priority bo",
+            "output": [
+                "Completion B"
+            ]
+        },
+        {
+            "id": "task139-407c110e5bdf4fc8adc99beadfd0d469",
+            "input": "Prompt: I'm really trying to attend an Auburn University game before the season is over.  University \nCompletion A: officials have said the school would prefer me to not attend games in Alabama if I decided to continue to play for Auburn, but I have no choice.\" \nCompletion B: players have a lot of questions about their games and it's all about the team. So now I have no one I know that knows about that",
+            "output": [
+                "Completion A"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

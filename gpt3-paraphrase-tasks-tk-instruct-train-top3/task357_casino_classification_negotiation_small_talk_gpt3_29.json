@@ -1,0 +1,80 @@
+{
+    "Contributors": [
+        "Kushal Chawla"
+    ],
+    "Source": [
+        "casino"
+    ],
+    "URL": [
+        "https://aclanthology.org/2021.naacl-main.254.pdf"
+    ],
+    "Categories": [
+        "Negotiation Strategy Detection"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "You will receive an utterance and recent dialogue context containing past 3 utterances. small-talk is a cooperative negotiation strategy used for discussing topics apart from the negotiation, in an attempt to build a rapport with the opponent. Output 'Yes' if the utterance contains the small-talk strategy, otherwise output 'No'."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Context: 'Great!  So looks like all the water goes to you.  I will take all the food if that is ok and we can split the wood.  ' 'Well i would need one food and one wood' 'OK.  I think that will work out for me.  You get 3 water, 1 wood and 1 food.  I will take the rest.'\nUtterance: 'Great that's an agreement for me'",
+            "output": "No",
+            "explanation": "The participant does not engage in any small talk in this utterance and primarily refers to the negotiation itself."
+        },
+        {
+            "input": "Context: 'Since you would also like firewood, I propose 2 firewood, 2 water to me, and you get 1 wood, 1 water, and all the food to make up for it.' 'Okay I can agree to that deal.\ud83d\ude42' 'That's fantastic, I'm glad we came to something we both agree with'\nUtterance: 'Me too. I hope you have a wonderful camping trip.\ud83d\ude42'",
+            "output": "Yes",
+            "explanation": "The participant engages in small talk when wishing their opponent to have a wonderful trip."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Context: 'Hello! I am looking forward to the camping trip but could use a few more supplies!' 'hello, me too, i guess we can share' 'Sounds good, I need food the most, what is your most needed item?'\nUtterance: 'my item is food too.'",
+            "output": "Yes",
+            "explanation": "The purpose of the utterance is only to take the negotiation forward and there is no side talk. Hence, the correct answer is 'No'."
+        },
+        {
+            "input": "Context: 'I can do without extra water as long as I have food and firewood to purify water I find.  It might be better for you to have a reliable supply though.' 'That totally makes sense! I actually am good on firewood thankfully, I got some from a person selling it from their yard a little bit ago.' 'I would have been able to bring more with me by getting some from my parents, but my father decided he wanted to get rid of what he had left and so has been enjoying his fire pit a lot lately.'\nUtterance: 'Oh I have always wanted a firepit! I totally understand. If you'd like you can have all 3 of the firewood supply stash to get you started.'",
+            "output": "No",
+            "explanation": "This is wrong. The participant engages in small-talk when referring to the firepit that they always wanted. The correct answer is 'Yes'."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task357-899503a4f8104a38b7742c6da1d40948",
+            "input": "Context: 'I would say that sounds like a good deal! I am a little worried about water though, there aren't any sources of water where we are going. Hmm..' 'I think having 3 packages of firewood will help! you can always boil water from a  fresh spring \ud83d\ude42' 'That's true! Thank you so much for the advice, I am definitely new to this camping thing \ud83d\ude42 Well I think 3 foods, 2 waters for you sounds like a good deal. Firewood will definitely be needed on our trip! \ud83d\ude42'\nUtterance: 'Thank you so much!! Camping is so much fun! you will love it!'",
+            "output": [
+                "Yes"
+            ]
+        },
+        {
+            "id": "task357-05ba4c8f9bc14056a5ba1ee7d71bd45c",
+            "input": "Context: 'Hi, I would like to get 2 additional packages of food, 2 additional jugs of water, and 1 additional bundle of firewood. I need the additional food because I will have 3 children with me on the trip and one of those being a baby. The baby needs water for her bottles and I need an additional bundle of firewood to warm her bottles.'\nUtterance: 'Hi, I appreciate your response. I would like to compromise. I will give you the bundle of firewood you requested as well as the 2 packages of food. However, I would like to get 2 jugs of water. I have 2 other adults with me on this trip and they require more water to stay hydrated than a baby would.'",
+            "output": [
+                "No"
+            ]
+        },
+        {
+            "id": "task357-d8d4ae5045724c65bd83b600e30c836e",
+            "input": "Context: 'Ok, so I could take 2 firewood, 1 food, and 1 water, the original deal, do you still want to do that one?' 'I would prefer the original deal' 'Ok, I am good with the original deal also. '\nUtterance: 'That sounds good to me.'",
+            "output": [
+                "No"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}
