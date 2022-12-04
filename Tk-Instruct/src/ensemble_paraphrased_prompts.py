@@ -9,10 +9,10 @@ from compute_metrics import compute_grouped_metrics
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-p', "--predictions_path", default="../output/textual_entailment/tk-instruct-small-def-pos/predict_eval_predictions_all_paraphrases.jsonl", help="input path to load predictions jsonl for all paraphrased prompts")
-parser.add_argument('-m', "--metrics_path", default="../output/gpt3-paraphrase-tasks-tk-instruct-train/predict_results.json", help="input path to load metrics json for all paraphrased prompts")
-parser.add_argument('-o', "--output_path", default="../output/gpt3-paraphrase-tasks-tk-instruct-train/predict_results_best.json", help="output path to save metrics, e.g. best, ensemble, k_random_avg")
+parser.add_argument('-m', "--metrics_path", default="../output/gpt3-paraphrase-tasks-tk-instruct-train-train-original-model/predict_results_all_paraphrases.json", help="input path to load metrics json for all paraphrased prompts")
+parser.add_argument('-o', "--output_path", default="../output/gpt3-paraphrase-tasks-tk-instruct-train-train-original-model/predict_results_best.json", help="output path to save metrics, e.g. best, ensemble, k_random_avg")
 parser.add_argument('-k', "--k", default=32, help="number of paraphrased prompts to sample")
-parser.add_argument('-ps', "--paraphrase_save_file", default="../output/gpt3-paraphrase-tasks-tk-instruct-train/predict_results_save_paraphrase.json", help="output path to save metrics, e.g. best, ensemble, k_random_avg")
+parser.add_argument('-ps', "--paraphrase_save_file", default="../output/gpt3-paraphrase-tasks-tk-instruct-train-train-original-model/predict_results_save_paraphrase.json", help="output path to save metrics, e.g. best, ensemble, k_random_avg")
 parser.add_argument('-t', "--task_dir", default="../../gpt3-paraphrase-tasks-tk-instruct-train", help="output path to save metrics, e.g. best, ensemble, k_random_avg")
 args = parser.parse_args()
 

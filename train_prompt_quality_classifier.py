@@ -124,11 +124,11 @@ def train(args, prompts_dataset_train, prompts_dataset_test):
 if __name__=="__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('-p', "--process_data", default=False, type=bool)
-    parser.add_argument('-train', "--train_path", default="prompt_quality_data/train_regression.csv")
-    parser.add_argument('-test', "--test_path", default="prompt_quality_data/test_regression.csv")
-    parser.add_argument('-ps', "--paraphrase_save_file", default="Tk-Instruct/output/gpt3-paraphrase-tasks-tk-instruct-train/predict_results_save_paraphrase.json")
+    parser.add_argument('-train', "--train_path", default="prompt_quality_data/train_classification.csv")
+    parser.add_argument('-test', "--test_path", default="prompt_quality_data/test_classification.csv")
+    parser.add_argument('-ps', "--paraphrase_save_file", default="Tk-Instruct/output/gpt3-paraphrase-tasks-tk-instruct-train-train-original-model/predict_results_save_paraphrase.json")
     parser.add_argument("-m", "--model_name", default="distilbert-base-cased")
-    parser.add_argument("-t", "--task_type", default="regression")
+    parser.add_argument("-t", "--task_type", default="classification")
     args = parser.parse_args()
 
     if args.process_data:
