@@ -1,8 +1,10 @@
 # CS330-Project
 
 ## Data
-- classification task data are adapted from natural-instructions-master
-- selected tasks from [937, 1388] stored in the `tasks/` folder and on google drive [here](https://drive.google.com/file/d/1HZixR9XLz4X6sQJXIP7viNtPRsx0ZND4/view?usp=share_link)
+- classification task data are adapted from [natural-instructions](https://github.com/allenai/natural-instructions)
+- we follow the split specified in natural-instructions/splits/default
+    - we select classification tasks from train_tasks.txt for our train/validation set
+    - we select classification tasks from test_tasks.txt for our test (eval) set
 
 ### Data sample
 First 10 textual entailment tasks: `eval/textual_entailment_first10.txt`
@@ -45,11 +47,12 @@ Note: it seems that `tk-instruct-small-def-pos` actually has a better eval exact
 
 ## GPT-3 prompt engineering
 #### Paraphrase
-Run `paraphrase_prompts.py` with desired arguments. The script uses `paraphrase.prompt` as its template and stores generated prompts by default at `gpt3-results`. The generated results have the following signature:
+Run `paraphrase_prompts.py` with desired arguments. The script uses `paraphrase.prompt` as its default template. The generated results have the following signature:
 ```
     {
         "orignal_task": "task*.json",
-        "action": "Paraphrase",
+        'engine': GPT-3 generation engine,
+        'template': paraphrase.prompt,
         "original_prompt": "",
         "generated_prompts": []
     }
