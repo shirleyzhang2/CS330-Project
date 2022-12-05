@@ -186,13 +186,13 @@ Run `splits/make_splits_v2.py` to split this dataset for training and testing (n
 
 The prediction results on `test_tasks_v2` by the original and finetuned Tk-Instruct model are stored in `Tk-Instruct/output/gpt3-paraphrase-tasks-tk-instruct-finetuned-v2` and `Tk-Instruct/output/gpt3-paraphrase-tasks-tk-instruct-notfinetuned-v2`. 
 
-The original model has a predict_exact_match of 48.5091, while the finetuned model has a predict_exact_match of 46.1247 which is slightly lower. Note that these predictions are made on paraphrased prompts. Only the predict_exact_match_for_sentiment_analysis is higher than the original model. One hypothesis is that the model has overfit to the training data during finetuning and does not generalize as well to unseen prompts, especially with a small learning rate of 1e-5 and a very large number of training samples of 529836.
+The original model has a predict_exact_match of 48.5091, while the finetuned model has a predict_exact_match of 46.1247 which is slightly lower. Only the predict_exact_match_for_sentiment_analysis is higher than the original model. One hypothesis is that the model has overfit to the training data during finetuning and does not generalize as well to unseen prompts, especially with a small learning rate of 1e-5 and a very large number of training samples of 529836.
 
 Another observation that these evaluation scores are still higher than the predict_exact match from our previous experiments with 16 paraphrased prompts, which was around 40. This may be attributed to the improvement we made when prompting GPT-3 to generate higher-quality paraphrases.
 
 It appears that as we hypothesized, the model becomes less sensitive to different wordings after finetuning. The standard deviation among different paraphrases averaged across all tasks in the test split drops drastically from 5.1135 to 1.4318.
 
-The predict_exact_match on original, non-paraphrased prompts (`splits/test_tasks_v2_original.txt`) is 47.0546. These results are saved in `Tk-Instruct/output/gpt3-paraphrase-tasks-tk-instruct-finetuned-v2-original-instruction`.
+ Note that the predictions mentioned above are made on tasks with paraphrased prompts. The predict_exact_match on original, non-paraphrased prompts (`splits/test_tasks_v2_original.txt`) is 47.0546. These results are saved in `Tk-Instruct/output/gpt3-paraphrase-tasks-tk-instruct-finetuned-v2-original-instruction`.
 
 #### Experiment v3
 A validation set is added to track the model's performance on unseen tasks. The validation loss keeps increasing which confirms our hypothesis that the model is overfitting.
@@ -200,11 +200,11 @@ A validation set is added to track the model's performance on unseen tasks. The 
 ![Finetune1_train](images/finetune3.png) ![Finetune1_val](images/finetune3_eval.png)
 
 #### Experiment v4
-Randomly sample 8 instances for each paraphrase so that each task has 32 * 8 = 256 instances. The training and evaluation data is stored in `gpt3-paraphrase-tasks-tk-instruct-train-top8` and `gpt3-paraphrase-tasks-tk-instruct-test-top8`. The output is stored in `Tk-Instruct/output/finetuned-v4-original-instruction`. The validation loss still increases with training, but the "predict_exact_match" on original prompts (`splits/test_tasks_v2_original.txt`) is 50.3592 which is an improvement from v2.
+Randomly sample 8 instances for each paraphrase so that each task has 32 * 8 = 256 instances. The training and evaluation data is stored in `gpt3-paraphrase-tasks-tk-instruct-train-top8` and `gpt3-paraphrase-tasks-tk-instruct-test-top8`. The output is stored in `Tk-Instruct/output/finetuned-v4-original-instruction`. The validation loss still increases with training, but the "predict_exact_match" on original prompts (`splits/test_tasks_v2_original.txt`) is 50.3592 which is an improvement from v2 (47.0546). This is also slightly better than the non-finetuned, original model, which has a "predict_exact_match" of 50.3352. The results from the original model are saved in `Tk-Instruct/output/notfinetuned-original-instruction`.
 
 
 #### Experiment v5
-Randomly sample 3 instances for each paraphrase so that each task has 32 * 3 = 96 instances. The training and evaluation data is stored in `gpt3-paraphrase-tasks-tk-instruct-train-top3` and `gpt3-paraphrase-tasks-tk-instruct-test-top3`. The output is stored in `Tk-Instruct/output/finetuned-v5-original-instruction`. The validation loss still increases with training, but the "predict_exact_match" on original prompts further improves to 50.4789.
+Randomly sample 3 instances for each paraphrase so that each task has 32 * 3 = 96 instances. The training and evaluation data is stored in `gpt3-paraphrase-tasks-tk-instruct-train-top3` and `gpt3-paraphrase-tasks-tk-instruct-test-top3`. The output is stored in `Tk-Instruct/output/finetuned-v5-original-instruction`. The validation loss still increases with training, but the "predict_exact_match" on original prompts further improves to 50.4789. This is even better than the original model!
 
 
 ### Train prompt quality classification/regression model
