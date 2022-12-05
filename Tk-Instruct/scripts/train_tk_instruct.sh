@@ -22,8 +22,8 @@ deepspeed --master_port $port src/run_s2s.py \
     --add_explanation False \
     --tk_instruct False \
     --data_dir ../splits \
-    --task_dir ../gpt3-paraphrase-tasks-tk-instruct-train \
-    --output_dir ../output/finetune_v1 \
+    --task_dir ../gpt3-paraphrase-tasks-tk-instruct-top3 \
+    --output_dir ../output/finetune_v5 \
     --cache_dir ./cache/ \
     --overwrite_cache \
     --per_device_train_batch_size 1 \
@@ -36,8 +36,8 @@ deepspeed --master_port $port src/run_s2s.py \
     --logging_strategy steps \
     --logging_steps 500 \
     --evaluation_strategy steps \
-    --eval_steps 5000 \
+    --eval_steps 2500 \
     --save_strategy steps \
-    --save_steps 5000 \
+    --save_steps 2500 \
     --deepspeed ds_configs/stage2.config \
-    --run_name tk-finetune-experiment-v1
+    --run_name tk-finetune-experiment-v5

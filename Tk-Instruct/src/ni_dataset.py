@@ -119,7 +119,7 @@ class NaturalInstructions(datasets.GeneratorBasedBuilder):
                 name=datasets.Split.TRAIN,
                 gen_kwargs={
                     "path": os.path.join(split_dir, "train.txt"), 
-                    #  "path": os.path.join(split_dir, "train_tasks_v2_original.txt"),
+                    # "path": os.path.join(split_dir, "train_tasks_v3.txt"),
                     "task_dir": task_dir, 
                     "max_num_instances_per_task": self.config.max_num_instances_per_task,
                     "subset": "train"
@@ -128,7 +128,7 @@ class NaturalInstructions(datasets.GeneratorBasedBuilder):
                 name=datasets.Split.VALIDATION,
                 gen_kwargs={
                     "path": os.path.join(split_dir, "dev.txt"), 
-                    #  "path": os.path.join(split_dir, "train_tasks_v2_original.txt"),
+                    # "path": os.path.join(split_dir, "dev_tasks_v3.txt"),
                     "task_dir": task_dir,
                     "max_num_instances_per_task": self.config.max_num_instances_per_eval_task,
                     "subset": "dev"
@@ -139,6 +139,7 @@ class NaturalInstructions(datasets.GeneratorBasedBuilder):
                     # "path": os.path.join(split_dir, "train_tasks_v2.txt"),
                     # "path": os.path.join(split_dir, "train_tasks_v2_original.txt"),
                     "path": os.path.join(split_dir, "test_tasks_v2_original.txt"),
+                    # "path": os.path.join(split_dir, "test.txt"),
                     # "path": os.path.join(split_dir, "test_tasks_v2.txt"),
                     # "path": os.path.join(split_dir, "test_tasks.txt"),
                     #"path": os.path.join(split_dir, "train_tasks_original.txt"),
