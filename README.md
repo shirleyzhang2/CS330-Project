@@ -204,7 +204,7 @@ To reduce overfitting, we randomly sample 8 instances for each paraphrase so tha
 
 The "predict_exact_match" on original prompts (`splits/test_tasks_v2_original.txt`) is 50.3592 which is a significant improvement from v2 (47.0546) and is slightly higher than the non-finetuned, original model (50.3352). The test results from the finetuned model are stored in `Tk-Instruct/output/finetuned-v4-original-instruction`. The test results from the original model are saved in `Tk-Instruct/output/notfinetuned-original-instruction`.
 
-The "predict_exact_match" on paraphrased prompts (`gpt3-paraphrase-tasks-tk-instruct-test-top8`) is 49.4811 which is slightly worse than the original model (49.5283). The test results from the finetuned model are stored in `Tk-Instruct/output/finetuned-v4-paraphrased-instruction`. The test results from the original model are saved in `Tk-Instruct/output/notfinetuned-v5-paraphrased-instruction`.
+The "predict_exact_match" on paraphrased prompts (`gpt3-paraphrase-tasks-tk-instruct-test-top8`) is 49.4811 which is slightly worse than the original model (49.5283). The test results from the finetuned model are stored in `Tk-Instruct/output/finetuned-v4-paraphrased-instruction-top8`. The test results from the original model are saved in `Tk-Instruct/output/notfinetuned-v5-paraphrased-instruction`.
 
 
 #### Experiment v5
@@ -213,7 +213,7 @@ To further reduce overfitting, we randomly sample 3 instances for each paraphras
 
 The "predict_exact_match" on original prompts further improves to 50.4789 which is better than the original model (50.3352)! The test results are stored in `Tk-Instruct/output/finetuned-v5-original-instruction`.
 
-The "predict_exact_match" on paraphrased prompts (`gpt3-paraphrase-tasks-tk-instruct-test-top3`) is 49.4591, which is also an improvement from the original model (49.1824). The test results from the finetuned model are stored in `Tk-Instruct/output/finetuned-v5-paraphrased-instruction`. The test results from the original model are saved in `Tk-Instruct/output/notfinetuned-v5-paraphrased-instruction`.
+The "predict_exact_match" on paraphrased prompts (`gpt3-paraphrase-tasks-tk-instruct-test-top3`) is 49.4591, which is also an improvement from the original model (49.1824). The test results from the finetuned model are stored in `Tk-Instruct/output/finetuned-v5-paraphrased-instruction-top3`. The test results from the original model are saved in `Tk-Instruct/output/notfinetuned-v5-paraphrased-instruction`.
 
 This experiment shows that finetuning on paraphrased prompts with a reduced number of instances indeed helps the model make more accurate predictions during text classification without overfitting.
 
