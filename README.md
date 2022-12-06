@@ -171,6 +171,9 @@ The prediction results on `test_tasks` by the original and finetuned Tk-Instruct
 
 The original model has a predict_exact_match of 48.4846, while the finetuned model has a predict_exact_match of 77.2986 which is a significant improvement.
 
+Also, the finetuned model is less sensitive to different wordings, which is consistent with other experiments. The original model has a standard deviation of 2.1100, while the finetuned model has a standard deviation  of 0.4707. The original model has a best predict_exact_match of 54.50 (6% headroom from 48.4846), while the finetuned model has a best predict_exact_match of 77.79% (0.5% headroom from 77.2986%).
+
+
 #### Experiment v1
 A validation set is added to track the model's performance on unseen tasks. Both training and validation loss for this model are decreasing as training proceeds which is a good sign.
 
