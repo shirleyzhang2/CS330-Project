@@ -247,6 +247,18 @@ Model: `allenai/tk-instruct-small-def-pos`
 | ---- | ---- |  ---- |  ---- | ---- | ---- | 
 | 39.5833 | 41.25 | 40.2188 | 40.0833 | 43.8333 | 37.2916 | 
 
+Eval set: all text classification tasks in `splits/test_tasks_v2.txt`
+
+| k | Best of k random label | Baseline Best of k paraphrased prompts | Finetuned v2 Best of k paraphrased prompts | Finetuned v4 Best of k paraphrased prompts| Finetuned v5 Best of k paraphrased prompts | 
+| ---- |  ---- |  ---- | ---- | ---- | ---- | 
+| 1 | 41.42 | 47.79 | 46.91 | 51.12 | 50.48 |
+| 2 | 44.04 | 51.08 | 47.69 | 52.41 |52.84 |
+| 4 | 46.30 | 53.92 | 48.50 | 52.42 |54.19 |
+| 8 | 47.61 | 55.39 | 48.93 | 53.79 |54.84 |
+| 16 | 49.54 | 56.34 | 49.05 | 54.37 |55.82 |
+| 32 | 50.83 | 56.99 | 49.29 | 55.27 |56.68 |
+
+
 
 #### Prompt Quality Model
 
