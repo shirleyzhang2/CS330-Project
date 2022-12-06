@@ -9,10 +9,10 @@ from compute_metrics import compute_grouped_metrics
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-p', "--predictions_path", default="../output/textual_entailment/tk-instruct-small-def-pos/predict_eval_predictions_all_paraphrases.jsonl", help="input path to load predictions jsonl for all paraphrased prompts")
-parser.add_argument('-m', "--metrics_path", default="../output/finetuned-v4-paraphrased-instruction/predict_results.json", help="input path to load metrics json for all paraphrased prompts")
-parser.add_argument('-o', "--output_path", default="../output/finetuned-v4-paraphrased-instruction/predict_results_best.json", help="output path to save metrics, e.g. best, ensemble, k_random_avg")
+parser.add_argument('-m', "--metrics_path", default="../output/gpt3-paraphrase-tasks-tk-instruct-finetuned-v2/predict_results_all_paraphrases.json", help="input path to load metrics json for all paraphrased prompts")
+parser.add_argument('-o', "--output_path", default="../output/gpt3-paraphrase-tasks-tk-instruct-notfinetuned-v2/predict_results_best.json", help="output path to save metrics, e.g. best, ensemble, k_random_avg")
 parser.add_argument('-k', "--k", default=32, help="number of paraphrased prompts to sample")
-parser.add_argument('-ps', "--paraphrase_save_file", default="../output/finetuned-v4-paraphrased-instruction/predict_results_save_paraphrase.json", help="output path to save metrics, e.g. best, ensemble, k_random_avg")
+parser.add_argument('-ps', "--paraphrase_save_file", default="../output/finetuned-v5-paraphrased-instruction/predict_results_save_paraphrase.json", help="output path to save metrics, e.g. best, ensemble, k_random_avg")
 parser.add_argument('-t', "--task_dir", default="../../gpt3-paraphrase-tasks-tk-instruct-train", help="output path to save metrics, e.g. best, ensemble, k_random_avg")
 args = parser.parse_args()
 
@@ -20,6 +20,27 @@ def read_instruction_from_task_file(filename):
     data = json.load(open(filename))
     instruction = data["Definition"][0]
     return instruction
+
+def read_classes_from_task_file(filename):
+    task_dict = json.load(open(filename))
+    pos_examples = task_dict["Positive Examples"]
+    classes = list(set([pos_example["output"] for pos_example in pos_examples]))
+    return classes
+
+def find_random_class_acc_from_task_file(filename):
+    task_dict = json.load(open(filename))
+    pos_examples = task_dict["Positive Examples"]
+    classes = list(set([pos_example["output"] for pos_example in pos_examples]))
+    instances = task_dict["Instances"]
+    correct_sum = 0
+    for instance in instances[:100]:
+        sampled_class = random.choice(classes)
+        gt_class = instance["output"][0]
+        # print(sampled_class, gt_class)
+        correct_sum += gt_class == sampled_class
+    acc = correct_sum / 100 # 100 instances
+    return acc 
+
 
 def process_filename(metric_name):
     task_name = metric_name.removeprefix("predict_exact_match_for_")
@@ -68,28 +89,7 @@ def find_majority_vote_metrics(predictions_path, output_path, k):
     with open(output_path, 'w') as output_file:
         json.dump(metrics, output_file, indent=4)
 
-def find_paraphrase_metrics(metrics_path, output_path, k, best=True, paraphrase_save_file=""):
-    metrics = json.load(open(metrics_path))
-    # group by tasks
-    metrics_by_task = {}
-    for key, value in metrics.items():
-        if not key.startswith("predict_exact_match_for_task"):
-            continue
-        task = key.split("_gpt")[0]
-        selected_paraphrase_filename = process_filename(key)
-        selected_paraphrase = read_instruction_from_task_file(selected_paraphrase_filename)
-        pair = {
-            "value": value,
-            "paraphrase": selected_paraphrase
-        }
-        if task in metrics_by_task:
-            metrics_by_task[task].append(pair)
-        else:
-            metrics_by_task[task] = [pair]
-    if paraphrase_save_file:
-        with open(paraphrase_save_file, 'w') as output_file:
-            json.dump(metrics_by_task, output_file, indent=4)
-    
+def find_best_metrics_by_task(metrics_by_task, k, best=True):
     best_metrics_by_task = {}
     best_paraphrase_by_task = {}
     exact_match_total = []
@@ -116,9 +116,88 @@ def find_paraphrase_metrics(metrics_path, output_path, k, best=True, paraphrase_
     
     exact_match = sum(exact_match_total) / len(exact_match_total)
     best_metrics_by_task["exact_match"] = exact_match
+    print("best_metrics_by_task['exact_match']: ", best_metrics_by_task["exact_match"])
+    return best_metrics_by_task
+
+def find_best_metrics_by_task_allk(metrics_by_task, best=True):
+    for k in [1, 2, 4, 8, 16, 32]:
+        best_metrics_by_task = {}
+        best_paraphrase_by_task = {}
+        exact_match_total = []
+        for task, pairs in metrics_by_task.items():
+            values = [pair["value"] for pair in pairs]
+            paraphrases = [pair["paraphrase"] for pair in pairs]
+            # downsample
+            if k > len(values):
+                print(f"{task} has fewer than {k} paraphrases")
+            min_k = min(int(k), len(values))
+            
+            sampled_values = random.sample(values, min_k)
+            if best:
+                index, selected_value = max(enumerate(sampled_values), key=itemgetter(1))
+            else:
+                index, selected_value = min(enumerate(sampled_values), key=itemgetter(1))
+            best_metrics_by_task[task] = selected_value
+            exact_match_total.append(selected_value)
+        
+        exact_match = sum(exact_match_total) / len(exact_match_total)
+        best_metrics_by_task["exact_match"] = exact_match
+        print(f"best exact match at {k}: ", best_metrics_by_task["exact_match"])
+
+def find_paraphrase_metrics(metrics_path, output_path, k, best=True, paraphrase_save_file=""):
+    metrics = json.load(open(metrics_path))
+    # group by tasks
+    metrics_by_task = {}
+    for key, value in metrics.items():
+        if not key.startswith("predict_exact_match_for_task"):
+            continue
+        task = key.split("_gpt")[0]
+        if paraphrase_save_file:
+            selected_paraphrase_filename = process_filename(key)
+            selected_paraphrase = read_instruction_from_task_file(selected_paraphrase_filename)
+        else:
+            selected_paraphrase = key
+        pair = {
+            "value": value,
+            "paraphrase": selected_paraphrase
+        }
+        if task in metrics_by_task:
+            metrics_by_task[task].append(pair)
+        else:
+            metrics_by_task[task] = [pair]
+    if paraphrase_save_file:
+        with open(paraphrase_save_file, 'w') as output_file:
+            json.dump(metrics_by_task, output_file, indent=4)
+    
+    best_metrics_by_task = find_best_metrics_by_task(metrics_by_task, k)
+    # find_best_metrics_by_task_allk(metrics_by_task)
     
     with open(output_path, 'w') as output_file:
         json.dump(best_metrics_by_task, output_file, indent=4)
+
+def find_best_random_label(metrics_path):
+    # assign random label for each instance in each paraphrased task
+    metrics = json.load(open(metrics_path))
+    # group by tasks
+    metrics_by_task = {}
+    for key, value in metrics.items():
+        if not key.startswith("predict_exact_match_for_task"):
+            continue
+        task = key.split("_gpt")[0]
+        filename = process_filename(key)
+        acc = find_random_class_acc_from_task_file(filename)
+        # selected_paraphrase = read_instruction_from_task_file(selected_paraphrase_filename)
+        pair = {
+            "value": acc,
+            "paraphrase": key
+        }
+        if task in metrics_by_task:
+            metrics_by_task[task].append(pair)
+        else:
+            metrics_by_task[task] = [pair]
+
+    find_best_metrics_by_task_allk(metrics_by_task)
+    
 
 def find_k_paraphrase_avg_metrics(metrics_path, output_path, k):
     metrics = json.load(open(metrics_path))
@@ -154,6 +233,8 @@ if __name__=="__main__":
 
     # find paraphrase metrics (best or worth)
     find_paraphrase_metrics(args.metrics_path, args.output_path, args.k, best=True, paraphrase_save_file=args.paraphrase_save_file)
+    # find_paraphrase_metrics(args.metrics_path, 32, best=True)
+    # find_best_random_label(args.metrics_path)
 
     # find average of k randomly sampled paraphrase
     # find_k_paraphrase_avg_metrics(args.metrics_path, args.output_path, k=args.k)
