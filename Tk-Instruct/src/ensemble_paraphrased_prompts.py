@@ -9,10 +9,10 @@ from compute_metrics import compute_grouped_metrics
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-p', "--predictions_path", default="../output/textual_entailment/tk-instruct-small-def-pos/predict_eval_predictions_all_paraphrases.jsonl", help="input path to load predictions jsonl for all paraphrased prompts")
-parser.add_argument('-m', "--metrics_path", default="../output/gpt3-paraphrase-tasks-tk-instruct-finetuned-v2/predict_results_all_paraphrases.json", help="input path to load metrics json for all paraphrased prompts")
-parser.add_argument('-o', "--output_path", default="../output/gpt3-paraphrase-tasks-tk-instruct-notfinetuned-v2/predict_results_best.json", help="output path to save metrics, e.g. best, ensemble, k_random_avg")
+parser.add_argument('-m', "--metrics_path", default="../output/gpt3-paraphrase-tasks-tk-instruct-train-train-original-model/predict_results_all_paraphrases.json", help="input path to load metrics json for all paraphrased prompts")
+parser.add_argument('-o', "--output_path", default="../output/gpt3-paraphrase-tasks-tk-instruct-train-train-original-model/predict_results_best.json", help="output path to save metrics, e.g. best, ensemble, k_random_avg")
 parser.add_argument('-k', "--k", default=32, help="number of paraphrased prompts to sample")
-parser.add_argument('-ps', "--paraphrase_save_file", default="../output/finetuned-v5-paraphrased-instruction/predict_results_save_paraphrase.json", help="output path to save metrics, e.g. best, ensemble, k_random_avg")
+parser.add_argument('-ps', "--paraphrase_save_file", default="../output/gpt3-paraphrase-tasks-tk-instruct-train-train-original-model/predict_results_save_paraphrase_pos.json", help="output path to save metrics, e.g. best, ensemble, k_random_avg")
 parser.add_argument('-t', "--task_dir", default="../../gpt3-paraphrase-tasks-tk-instruct-train", help="output path to save metrics, e.g. best, ensemble, k_random_avg")
 args = parser.parse_args()
 
@@ -20,6 +20,36 @@ def read_instruction_from_task_file(filename):
     data = json.load(open(filename))
     instruction = data["Definition"][0]
     return instruction
+
+def read_instruction_and_pos_from_task_file(filename):
+    task_dict = json.load(open(filename))
+    instruction = task_dict["Definition"][0]
+    if not instruction.endswith('.'):
+        instruction += '.' # prevent gpt3 generating a dot
+    result = "Task instruction: " + instruction
+
+    pos_examples = task_dict["Positive Examples"]
+    pos_examples_by_class = {}
+    for pos_example in pos_examples:
+        example_output = pos_example["output"]
+        if example_output in pos_examples_by_class:
+            pos_examples_by_class[example_output].append(pos_example)
+        else:
+            pos_examples_by_class[example_output] = [pos_example]
+    first_examples = []
+    num_examples = 1
+    for _, examples in pos_examples_by_class.items():
+        first_example = examples[0] # select 1 example per class
+        first_examples.append(first_example)
+        result += f"({num_examples})\n"
+        example_input = first_example["input"]
+        result += "Input: " + example_input + "\n"
+        example_output = first_example["output"]
+        result += "Output: " + example_output + "\n"
+        # example_explanation = first_example["explanation"]
+        # result += "Explanation: " + example_explanation + "\n"
+    # print(result)
+    return result
 
 def read_classes_from_task_file(filename):
     task_dict = json.load(open(filename))
@@ -155,6 +185,7 @@ def find_paraphrase_metrics(metrics_path, output_path, k, best=True, paraphrase_
         if paraphrase_save_file:
             selected_paraphrase_filename = process_filename(key)
             selected_paraphrase = read_instruction_from_task_file(selected_paraphrase_filename)
+            # selected_paraphrase = read_instruction_and_pos_from_task_file(selected_paraphrase_filename)
         else:
             selected_paraphrase = key
         pair = {

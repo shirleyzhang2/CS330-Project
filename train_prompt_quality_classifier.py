@@ -11,7 +11,7 @@ from transformers import AutoTokenizer
 from transformers import DataCollatorWithPadding
 from transformers import AutoModelForSequenceClassification, TrainingArguments, Trainer
 
-os.environ["WANDB_DISABLED"] = "true"
+os.environ["WANDB_DISABLED"] = "false"
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
 def find_value_std(value, mean, std):
@@ -33,7 +33,7 @@ def process_data(args):
         values = [pair["value"] for pair in pairs]
         mean = np.mean(values)
         std = np.std(values)
-        if std <= 5:
+        if std <= 3:
             continue
         paraphrases = [pair["paraphrase"] for pair in pairs]
         if args.task_type == "classification":
@@ -96,8 +96,8 @@ def train(args, prompts_dataset_train, prompts_dataset_test):
     training_args = TrainingArguments(
         output_dir="./results",
         learning_rate=2e-5,
-        per_device_train_batch_size=16,
-        per_device_eval_batch_size=16,
+        per_device_train_batch_size=4,
+        per_device_eval_batch_size=4,
         num_train_epochs=5,
         weight_decay=0.01,
         load_best_model_at_end=True,
@@ -124,11 +124,11 @@ def train(args, prompts_dataset_train, prompts_dataset_test):
 if __name__=="__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('-p', "--process_data", default=False, type=bool)
-    parser.add_argument('-train', "--train_path", default="prompt_quality_data/train_classification.csv")
-    parser.add_argument('-test', "--test_path", default="prompt_quality_data/test_classification.csv")
-    parser.add_argument('-ps', "--paraphrase_save_file", default="Tk-Instruct/output/gpt3-paraphrase-tasks-tk-instruct-train-train-original-model/predict_results_save_paraphrase.json")
-    parser.add_argument("-m", "--model_name", default="distilbert-base-cased")
-    parser.add_argument("-t", "--task_type", default="classification")
+    parser.add_argument('-train', "--train_path", default="prompt_quality_data/train_regression_v2.csv")
+    parser.add_argument('-test', "--test_path", default="prompt_quality_data/test_regression_v2.csv")
+    parser.add_argument('-ps', "--paraphrase_save_file", default="Tk-Instruct/output/gpt3-paraphrase-tasks-tk-instruct-train-train-original-model/predict_results_save_paraphrase_pos.json")
+    parser.add_argument("-m", "--model_name", default="roberta-base")
+    parser.add_argument("-t", "--task_type", default="regression")
     args = parser.parse_args()
 
     if args.process_data:
